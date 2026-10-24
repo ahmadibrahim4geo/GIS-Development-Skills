@@ -1,5 +1,4 @@
 <p align="center"><img src="assets/logo.svg" alt="شعار مشروع GIS Development Skills" width="720"></p>
-<p align="center"><strong>The Heart of Geospatial Innovation</strong> — قلب الابتكار في التقنيات الجغرافية</p>
 <p align="center"><strong>مهارات ومراجع مفتوحة المصدر لتطوير برمجيات وأدوات نظم المعلومات الجغرافية.</strong></p>
 
 # مهارات تطوير نظم المعلومات الجغرافية — GIS Development Skills
