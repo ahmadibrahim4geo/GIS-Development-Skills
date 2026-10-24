@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GIS Development Skills: an open-source agent skill, 44 curated GIS development references, free geospatial API directory, and practical starter templates for ArcGIS, QGIS, desktop GIS and remote sensing.">
+  <meta name="theme-color" content="#0d1519">
+  <meta property="og:title" content="GIS Development Skills | Open Geospatial Engineering">
+  <meta property="og:description" content="Skills, software references, APIs and starter templates for building better GIS applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.svg">
+  <title>GIS Development Skills — Open Geospatial Engineering</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <style>
+    :root{--bg:#0b1418;--panel:#121f24;--panel2:#19292e;--stroke:#2d4144;--text:#edf6f1;--muted:#a9bab7;--green:#b4eb91;--mint:#5cd0ba;--white:#fff;--radius:19px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;color:var(--text);background:var(--bg);font-family:Inter,"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;line-height:1.65}
+    body:before{content:"";position:absolute;inset:0 0 auto;height:770px;pointer-events:none;background:radial-gradient(ellipse at 73% 7%,#214c3d70 0,transparent 49%),radial-gradient(ellipse at 8% 36%,#193d4e43 0,transparent 46%)}
+    a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,input,select{outline-offset:3px}
+    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--green)}
+    .container{width:min(1170px,calc(100% - 40px));margin-inline:auto;position:relative}
+    .skip{position:absolute;left:12px;top:-60px;background:var(--green);color:#0d1619;padding:9px;z-index:50}.skip:focus{top:10px}
+    .nav-wrap{position:sticky;top:0;z-index:10;background:#0b1418e8;border-bottom:1px solid #29403c;backdrop-filter:blur(16px)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:22px;min-height:80px}
+    .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}.brand img{width:216px;height:50px;object-fit:contain;object-position:left center}
+    .nav-links{display:flex;gap:28px;align-items:center;color:#cbdad6;font-size:13px;font-weight:700}.nav-links a:hover{color:var(--green)}
+    .nav-right{display:flex;gap:9px;align-items:center}
+    .lang,.nav-git{border:1px solid var(--stroke);border-radius:999px;background:var(--panel);padding:8px 14px;color:var(--text);cursor:pointer;font-weight:700;font-size:13px}
+    .lang:hover,.nav-git:hover{border-color:var(--mint)}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px;padding-block:92px 70px;min-height:570px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);letter-spacing:2px;text-transform:uppercase;font-size:11px;font-weight:800}
+    .dot{display:inline-block;border-radius:50%;width:7px;height:7px;background:var(--green);box-shadow:0 0 16px var(--green)}
+    h1{margin:21px 0;font-size:clamp(38px,5.25vw,67px);font-weight:850;letter-spacing:-2.6px;line-height:1.12}
+    h1 em{font-style:normal;color:var(--green)}.lead{font-size:17px;color:var(--muted);max-width:600px;line-height:1.8}
+    .buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .btn{border:1px solid var(--stroke);border-radius:11px;padding:12px 19px;font-size:14px;font-weight:800;display:inline-flex;align-items:center;gap:10px;justify-content:center;cursor:pointer;transition:transform .16s,background .16s}
+    .btn:hover{transform:translateY(-2px)}.btn.primary{background:var(--green);color:#0b1715;border-color:var(--green)}
+    .btn.secondary{background:#193029bd;color:var(--text)}
+    .hero-visual{position:relative;padding:25px;border:1px solid #3a5950;border-radius:27px;background:linear-gradient(145deg,#19302c,#0f1d23 70%);box-shadow:0 38px 100px #0008;min-height:388px;overflow:hidden}
+    .hero-visual:after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(#99edcb0e 1px,transparent 1px),linear-gradient(90deg,#99edcb0e 1px,transparent 1px);background-size:27px 27px}
+    .visual-top{display:flex;justify-content:space-between;align-items:center;color:#a2c1b5;font-family:monospace;font-size:11px;letter-spacing:2px}
+    .lights{display:flex;gap:6px}.lights i{width:7px;height:7px;background:#5aa08e;border-radius:50%}
+    .globe-art{display:block;width:100%;max-height:245px;margin:15px auto 0;filter:drop-shadow(0 0 30px #5ed1ba2e)}
+    .visual-foot{display:flex;position:relative;z-index:1;gap:9px;flex-wrap:wrap;justify-content:center}.tech{border-radius:8px;background:#162b2d;border:1px solid #396057;padding:7px 11px;color:#c7eee1;font-size:11px;font-weight:700}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:0 0 74px}
+    .stat{padding:21px 24px;background:#152227;border:1px solid var(--stroke);border-radius:14px}.stat strong{display:block;color:var(--green);font-size:35px;line-height:1.2;letter-spacing:-1px}.stat span{font-size:13px;color:var(--muted)}
+    section{padding-block:52px;scroll-margin-top:80px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:24px}.section-head h2{margin:5px 0;font-size:clamp(27px,3.5vw,39px);letter-spacing:-1.1px;line-height:1.2}.section-head p{max-width:620px;color:var(--muted);margin:10px 0 0}
+    .overline{color:var(--mint);font-size:11px;letter-spacing:2.5px;font-weight:900}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .feature{padding:24px;background:linear-gradient(150deg,#17282a,#111e24);border:1px solid var(--stroke);border-radius:var(--radius);transition:border-color .2s,transform .2s;display:flex;flex-direction:column;min-height:210px}
+    .feature:hover{border-color:#619e80;transform:translateY(-3px)}.feature .glyph{display:inline-flex;align-items:center;justify-content:center;width:43px;height:43px;border-radius:11px;background:#2a443e;color:var(--green);font-size:16px;font-weight:800;font-family:monospace}
+    .feature h3{margin:20px 0 6px;font-size:18px;line-height:1.3}.feature p{margin:0 0 18px;color:var(--muted);font-size:13px;flex:1}
+    .learn{color:var(--green);font-size:13px;font-weight:800}
+    .explorer{margin-top:20px;border:1px solid var(--stroke);border-radius:24px;background:#122025;overflow:hidden}
+    .explorer-top{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:21px 22px;border-bottom:1px solid var(--stroke);flex-wrap:wrap}
+    .tabs{display:flex;gap:5px;flex-wrap:wrap;padding:5px;border:1px solid var(--stroke);border-radius:12px;background:#0e1b1e}
+    .tab{border:none;border-radius:8px;padding:9px 15px;cursor:pointer;color:#a9bdba;background:transparent;font-size:13px;font-weight:700}.tab[aria-selected=true]{background:var(--green);color:#0a1716}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;padding:18px 22px}
+    .filters input,.filters select{background:#0e1b1e;color:var(--text);border:1px solid #3a5553;border-radius:10px;padding:11px 12px;font-size:13px;min-height:43px}
+    .filters input{flex:1;min-width:190px}.filters select{width:190px;max-width:100%}
+    .results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 22px 22px}
+    .result{display:flex;flex-direction:column;gap:9px;padding:19px;border:1px solid #31484a;background:#18272c;border-radius:13px;min-width:0}
+    .result-head{display:flex;gap:14px;justify-content:space-between;align-items:start}.result h3{font-size:15px;line-height:1.45;margin:0}.result p{font-size:12px;color:var(--muted);margin:0;flex:1}
+    .chip{font-size:10px;letter-spacing:.2px;white-space:nowrap;color:#c0dfd8;border:1px solid #41645b;background:#203632;border-radius:99px;padding:4px 8px;text-transform:capitalize}
+    .result a{font-weight:800;color:var(--green);font-size:12px;align-self:flex-start;overflow-wrap:anywhere}
+    .explorer-note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:13px 22px;border-top:1px solid var(--stroke);font-size:12px;color:var(--muted)}
+    .explorer-note a,.fine-link{color:var(--green);font-weight:700}
+    .paths{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .path-card{border-radius:19px;border:1px solid var(--stroke);background:#142428;padding:25px}
+    .path-card h3{margin:0 0 8px;font-size:20px}.path-card p{color:var(--muted);font-size:13px}
+    .code-bar{display:flex;gap:14px;align-items:center;justify-content:space-between;border:1px solid #37594f;background:#091a1d;border-radius:11px;margin-top:20px;padding:15px 13px 15px 18px}
+    .code-bar code{font-size:12px;color:#c8f7c1;overflow-wrap:anywhere}
+    .copy{background:#21463c;border:1px solid #42725a;color:#e6f9d6;font-size:12px;font-weight:750;border-radius:9px;padding:7px 12px;cursor:pointer;flex-shrink:0}
+    .template-list{display:grid;gap:9px;margin-top:14px}.template-list a{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-radius:9px;background:#203137;color:#d9efea;font-size:12px;gap:10px}.template-list a:hover{background:#2e4b43}
+    .workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{border-top:2px solid #669e79;padding:20px 12px 12px 0}.step b{color:var(--green);font-family:monospace;font-size:12px}.step h3{font-size:17px;margin:8px 0}.step p{font-size:12px;margin:0;color:var(--muted)}
+    .cta{padding:36px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border:1px solid #567c63;border-radius:23px;background:linear-gradient(130deg,#203a30,#152b2c)}.cta h2{margin:0 0 4px;font-size:25px}.cta p{margin:0;color:#bdcfc8}
+    footer{margin-top:75px;border-top:1px solid var(--stroke);padding:30px 0 42px;color:var(--muted);font-size:12px}.foot{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap}.foot a:hover{color:var(--green)}
+    .error{grid-column:1/-1;border:1px dashed #7e8c67;border-radius:11px;padding:20px;color:#ccd8b5}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    [dir=rtl] .brand img{object-position:right center}[dir=rtl] h1{letter-spacing:-.5px}[dir=rtl] .step{padding:20px 0 12px 12px}
+    @media(max-width:900px){.nav-links{display:none}.hero{grid-template-columns:1fr;gap:40px;padding-top:63px;min-height:auto}.hero-visual{max-width:570px;width:100%;margin:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.container{width:calc(100% - 30px)}.nav{min-height:68px}.brand img{width:165px}.nav-git{display:none}.hero{padding:52px 0 34px}.hero-visual{min-height:300px;padding:18px}.globe-art{max-height:198px}h1{font-size:40px;letter-spacing:-1.5px}.stats{grid-template-columns:repeat(2,1fr);gap:9px;padding-bottom:28px}.stat{padding:15px}.stat strong{font-size:28px}.grid,.results,.paths{grid-template-columns:1fr}.results{padding:0 14px 14px}.explorer-top{padding:15px}.filters{padding:15px}.filters select{width:100%}.section-head{display:block}.workflow{gap:10px}.cta{padding:24px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.feature{transition:none}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav-wrap"><nav class="nav container" aria-label="Main navigation">
+  <a class="brand" href="#home" aria-label="GIS Development Skills home"><img src="assets/logo.svg" alt="GIS Development Skills" width="216" height="50"></a>
+  <div class="nav-links">
+    <a href="#capabilities" data-i18n="navSkills">Skills</a>
+    <a href="#catalog" data-i18n="navExplorer">Explorer</a>
+    <a href="#get-started" data-i18n="navStart">Get started</a>
+    <a href="#contribute" data-i18n="navContribute">Contribute</a>
+  </div>
+  <div class="nav-right">
+    <button class="lang" id="langBtn" type="button" aria-label="Switch language">العربية</button>
+    <a class="nav-git" target="_blank" rel="noopener noreferrer" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills">GitHub ↗</a>
+  </div>
+</nav></header>
+<main id="main">
+  <div class="container" id="home">
+    <div class="hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Open-source • Agent-ready • GIS engineering</span></div>
+        <h1 data-i18n-html="heroTitle">Develop GIS.<br><em>Build with confidence.</em></h1>
+        <p class="lead" data-i18n="heroText">A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#capabilities" data-i18n="exploreSkills">Explore skills ↓</a>
+          <a class="btn secondary" href="#catalog" data-i18n="browseCatalog">Browse catalog →</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Stylized geospatial globe and software layers">
+        <div class="visual-top"><span>GEO / DEV / STACK</span><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <svg class="globe-art" viewBox="0 0 440 270" role="img" aria-label="Illustrated latitude and longitude globe with GIS coordinates">
+          <defs><radialGradient id="g" cx="50%" cy="50%" r="58%"><stop stop-color="#2c5b4c" stop-opacity=".8"/><stop offset="1" stop-color="#112b2e" stop-opacity=".06"/></radialGradient></defs>
+          <circle cx="220" cy="135" r="108" fill="url(#g)" stroke="#8dd9ae" stroke-width="1.7"/>
+          <ellipse cx="220" cy="135" rx="56" ry="108" stroke="#6fd2af" stroke-opacity=".8" stroke-width="1.3" fill="none"/>
+          <ellipse cx="220" cy="135" rx="92" ry="108" stroke="#6fd2af" stroke-opacity=".4" stroke-width="1" fill="none"/>
+          <path d="M113 135h214M131 82c59 27 119 27 178 0M131 188c59-27 119-27 178 0M154 55c40 49 92 49 132 0M154 215c40-49 92-49 132 0" fill="none" stroke="#64c7b4" stroke-opacity=".68" stroke-width="1.3"/>
+          <path d="m166 80 21-13 24 7 10 18-9 15-20 4-9 17-15-11-22-5-10-16zM234 131l35 2 16 16-9 28-21 18-3 26-18-13-12-34-8-17zM271 66l33-1 14 20-12 17-29 3-17-19z" fill="#a5e9a1" opacity=".14" stroke="#9bebac" stroke-opacity=".55" stroke-width="1.5"/>
+          <path d="M220 16v29M220 225v29M100 135H72M340 135h28" stroke="#c0ec9e" stroke-width="2"/>
+          <circle cx="220" cy="135" r="15" fill="#c2f0a1" fill-opacity=".16" stroke="#c2f0a1" stroke-width="2"/><circle cx="220" cy="135" r="4" fill="#d0ffc5"/>
+          <g fill="#a6f0c9" font-family="monospace" font-size="11"><text x="18" y="54">EPSG:4326</text><text x="335" y="224">X / Y / Z</text><text x="20" y="235">VECTOR + RASTER</text></g>
+          <path d="M65 65l-16 15 16 15M375 65l16 15-16 15" fill="none" stroke="#b4eb91" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div class="visual-foot"><span class="tech">ArcGIS Pro</span><span class="tech">QGIS</span><span class="tech">GDAL</span><span class="tech">RustGIS</span><span class="tech">GeoLibre R</span></div>
+      </div>
+    </div>
+    <div class="stats" aria-label="Project scope">
+      <div class="stat"><strong>01</strong><span data-i18n="statSkill">Installable agent skill</span></div>
+      <div class="stat"><strong id="projectsCount">44</strong><span data-i18n="statProjects">Curated project references</span></div>
+      <div class="stat"><strong id="apisCount">18</strong><span data-i18n="statApis">Public GIS API entries</span></div>
+      <div class="stat"><strong>04</strong><span data-i18n="statTemplates">Developer starter templates</span></div>
+    </div>
+  </div>
+
+  <section id="capabilities" class="container">
+    <div class="section-head"><div><span class="overline" data-i18n="overlineSkills">DEVELOPMENT PATHWAYS</span><h2 data-i18n="skillsTitle">One skill. Multiple GIS stacks.</h2><p data-i18n="skillsDesc">Choose the right architecture for the platform instead of forcing one GIS runtime onto another.</p></div></div>
+    <div class="grid">
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/arcgis-pro.md"><span class="glyph">PRO</span><h3>ArcGIS Pro</h3><p data-i18n="arcPro">ArcPy, Python toolboxes, geoprocessing and application-aware testing.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/arcmap-legacy.md"><span class="glyph">10.x</span><h3>ArcMap / ArcCatalog</h3><p data-i18n="arcMap">Legacy Python and compatibility-safe script tool development.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/qgis.md"><span class="glyph">Q</span><h3>QGIS & PyQGIS</h3><p data-i18n="qgis">Processing providers, QGIS plugins and cross-version considerations.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/desktop-and-web.md"><span class="glyph">2D/3D</span><h3>Desktop, Web & 3D</h3><p data-i18n="desktop">Qt, MapLibre, CesiumJS, and dependable geospatial desktop architecture.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/remote-sensing.md"><span class="glyph">RS</span><h3>Remote Sensing & GeoAI</h3><p data-i18n="remote">Satellite processing, raster pipelines, reproducibility and AI research checks.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/rustgis-and-geolibre-r.md"><span class="glyph">R/Rs</span><h3>RustGIS & GeoLibre R</h3><p data-i18n="rust">Rust GIS architecture and interactive geospatial mapping for R.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+    </div>
+  </section>
+
+  <section id="catalog" class="container">
+    <div class="section-head"><div><span class="overline" data-i18n="overlineCatalog">SOURCE DIRECTORY</span><h2 data-i18n="catalogTitle">Explore the geospatial ecosystem.</h2><p data-i18n="catalogDesc">Search the repository's real source catalogs. Each entry is an attributed reference, not a claim of guaranteed functionality, free commercial use, or bundled code.</p></div></div>
+    <div class="explorer">
+      <div class="explorer-top"><div class="tabs" role="tablist" aria-label="Catalog type"><button class="tab" id="projectsTab" type="button" role="tab" aria-selected="true" aria-controls="catalogResults" data-i18n="projectsTab">Projects & libraries</button><button class="tab" id="apisTab" type="button" role="tab" aria-selected="false" aria-controls="catalogResults" data-i18n="apisTab">GIS APIs & data</button></div><span class="chip" id="shownCount" aria-live="polite">Loading…</span></div>
+      <div class="filters"><label class="sr-only" for="searchInput">Search</label><input id="searchInput" type="search" autocomplete="off" placeholder="Search names, platforms or descriptions…"><label class="sr-only" for="categoryFilter">Category</label><select id="categoryFilter"><option value="all">All categories</option></select></div>
+      <div class="results" id="catalogResults" role="region" aria-live="polite" aria-label="Filtered catalog results"></div>
+      <div class="explorer-note"><span data-i18n="catalogDisclaimer">Live directory from versioned repository JSON · upstream terms must be checked.</span><a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/references" target="_blank" rel="noopener noreferrer" data-i18n="allRefs">View all reference files ↗</a></div>
+    </div>
+  </section>
+
+  <section id="get-started" class="container">
+    <div class="section-head"><div><span class="overline" data-i18n="overlineStart">QUICK START</span><h2 data-i18n="startTitle">From reference to real implementation.</h2><p data-i18n="startDesc">Install the skill into a compatible coding agent or inspect the documented templates before building your own tool.</p></div></div>
+    <div class="paths">
+      <div class="path-card"><h3 data-i18n="installTitle">Install the agent skill</h3><p data-i18n="installDesc">Requires Node.js and a compatible skills CLI/agent. Verify your environment before running.</p>
+        <div class="code-bar"><code id="command">npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development</code><button class="copy" id="copyBtn" type="button" data-i18n="copy">Copy</button></div>
+        <p><a class="fine-link" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/gis-development/SKILL.md" target="_blank" rel="noopener noreferrer" data-i18n="inspectSkill">Inspect SKILL.md ↗</a></p>
+      </div>
+      <div class="path-card"><h3 data-i18n="templatesTitle">Starter templates</h3><p data-i18n="templatesDesc">Reference examples to adapt and validate in the target GIS installation.</p>
+        <div class="template-list">
+          <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/templates/arcgis-pro-toolbox.pyt"><span>ArcGIS Pro · .pyt</span><span>↗</span></a>
+          <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/templates/arcmap-script-tool.py"><span>ArcMap · Python</span><span>↗</span></a>
+          <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/templates/qgis-processing-algorithm.py"><span>QGIS · Processing</span><span>↗</span></a>
+          <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/templates/standalone-geojson-summary.py"><span>Standalone · GeoJSON</span><span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="section-head"><div><span class="overline" data-i18n="overlineWorkflow">ENGINEERING PRINCIPLES</span><h2 data-i18n="workflowTitle">A practical validation workflow.</h2></div></div>
+    <div class="workflow">
+      <div class="step"><b>01 / SCOPE</b><h3 data-i18n="step1Title">Specify the target</h3><p data-i18n="step1Desc">Version, operating system, formats, UI, runtime and licenses.</p></div>
+      <div class="step"><b>02 / SELECT</b><h3 data-i18n="step2Title">Choose proven building blocks</h3><p data-i18n="step2Desc">Check APIs, source code availability, compatibility and attribution.</p></div>
+      <div class="step"><b>03 / BUILD</b><h3 data-i18n="step3Title">Implement an end-to-end slice</h3><p data-i18n="step3Desc">Build actual working commands before expanding the interface.</p></div>
+      <div class="step"><b>04 / VERIFY</b><h3 data-i18n="step4Title">Test GIS correctness</h3><p data-i18n="step4Desc">CRS, units, geometry, nodata, output repeatability and GUI actions.</p></div>
+    </div>
+  </section>
+
+  <section class="container" id="contribute">
+    <div class="cta"><div><h2 data-i18n="contributeTitle">Help build a better GIS developer ecosystem.</h2><p data-i18n="contributeDesc">Suggest a source, report a broken link or contribute a tested improvement.</p></div>
+      <div class="buttons"><a class="btn primary" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues/new" target="_blank" rel="noopener noreferrer" data-i18n="suggest">Suggest an improvement ↗</a><a class="btn secondary" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" data-i18n="guide">Contribution guide ↗</a></div></div>
+  </section>
+</main>
+<footer><div class="container foot"><span>© <span id="year">2026</span> GIS Development Skills · <a href="https://github.com/ahmadibrahim4geo">Ahmed Ibrahim</a> · MIT (original project content)</span><span data-i18n="footerNote">Independent open-source resource. Third-party licenses and service terms remain in effect.</span></div></footer>
+<script>
+(function(){
+  "use strict";
+  const REPO="https://github.com/ahmadibrahim4geo/GIS-Development-Skills";
+  const data={projects:[],apis:[]};
+  const state={lang:"en",tab:"projects",query:"",category:"all",ready:{projects:false,apis:false},failed:{projects:false,apis:false}};
+  const tr={
+    en:{
+      navSkills:"Skills",navExplorer:"Explorer",navStart:"Get started",navContribute:"Contribute",
+      eyebrow:"Open-source • Agent-ready • GIS engineering",heroTitle:"Develop GIS.<br><em>Build with confidence.</em>",
+      heroText:"A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.",
+      exploreSkills:"Explore skills ↓",browseCatalog:"Browse catalog →",statSkill:"Installable agent skill",statProjects:"Curated project references",statApis:"Public GIS API entries",statTemplates:"Developer starter templates",
+      overlineSkills:"DEVELOPMENT PATHWAYS",skillsTitle:"One skill. Multiple GIS stacks.",skillsDesc:"Choose the right architecture for the platform instead of forcing one GIS runtime onto another.",
+      arcPro:"ArcPy, Python toolboxes, geoprocessing and application-aware testing.",arcMap:"Legacy Python and compatibility-safe script tool development.",
+      qgis:"Processing providers, QGIS plugins and cross-version considerations.",desktop:"Qt, MapLibre, CesiumJS, and dependable geospatial desktop architecture.",
+      remote:"Satellite processing, raster pipelines, reproducibility and AI research checks.",rust:"Rust GIS architecture and interactive geospatial mapping for R.",readGuide:"Read development guide ↗",
+      overlineCatalog:"SOURCE DIRECTORY",catalogTitle:"Explore the geospatial ecosystem.",catalogDesc:"Search the repository's real source catalogs. Each entry is an attributed reference, not a claim of guaranteed functionality, free commercial use, or bundled code.",
+      projectsTab:"Projects & libraries",apisTab:"GIS APIs & data",catalogDisclaimer:"Live directory from versioned repository JSON · upstream terms must be checked.",allRefs:"View all reference files ↗",
+      overlineStart:"QUICK START",startTitle:"From reference to real implementation.",startDesc:"Install the skill into a compatible coding agent or inspect the documented templates before building your own tool.",
+      installTitle:"Install the agent skill",installDesc:"Requires Node.js and a compatible skills CLI/agent. Verify your environment before running.",inspectSkill:"Inspect SKILL.md ↗",copy:"Copy",copied:"Copied!",
+      templatesTitle:"Starter templates",templatesDesc:"Reference examples to adapt and validate in the target GIS installation.",
+      overlineWorkflow:"ENGINEERING PRINCIPLES",workflowTitle:"A practical validation workflow.",
+      step1Title:"Specify the target",step1Desc:"Version, operating system, formats, UI, runtime and licenses.",
+      step2Title:"Choose proven building blocks",step2Desc:"Check APIs, source code availability, compatibility and attribution.",
+      step3Title:"Implement an end-to-end slice",step3Desc:"Build actual working commands before expanding the interface.",
+      step4Title:"Test GIS correctness",step4Desc:"CRS, units, geometry, nodata, output repeatability and GUI actions.",
+      contributeTitle:"Help build a better GIS developer ecosystem.",contributeDesc:"Suggest a source, report a broken link or contribute a tested improvement.",
+      suggest:"Suggest an improvement ↗",guide:"Contribution guide ↗",footerNote:"Independent open-source resource. Third-party licenses and service terms remain in effect.",
+      allCategories:"All categories",search:"Search names, platforms or descriptions…",results:"results",loading:"Loading catalog…",none:"No matching entries. Try another keyword or category.",
+      error:"The live catalog could not be loaded. Open this site through GitHub Pages or browse the source JSON on GitHub.",openSource:"Open source / docs ↗",openAPI:"Provider documentation ↗"
+    },
+    ar:{
+      navSkills:"المهارات",navExplorer:"استكشاف المصادر",navStart:"ابدأ هنا",navContribute:"المساهمة",
+      eyebrow:"مفتوح المصدر • مخصص للوكلاء البرمجيين • تطوير GIS",heroTitle:"طوّر أدوات GIS.<br><em>على أسس هندسية موثوقة.</em>",
+      heroText:"مهارة برمجية ودليل مصادر مُنظّم لتطوير أدوات ArcGIS وإضافات QGIS والخرائط ثنائية وثلاثية الأبعاد وتطبيقات سطح المكتب ومعالجة البيانات الجغرافية.",
+      exploreSkills:"استكشف المهارات ↓",browseCatalog:"تصفح الدليل ←",statSkill:"مهارة قابلة للتثبيت",statProjects:"مرجع ومشروع جغرافي",statApis:"مصدر GIS API",statTemplates:"قوالب برمجية مبدئية",
+      overlineSkills:"مسارات التطوير",skillsTitle:"مهارة واحدة، ومسارات GIS متعددة.",skillsDesc:"اختر البنية المناسبة لكل برنامج بدلًا من افتراض أن بيئات نظم المعلومات الجغرافية متطابقة.",
+      arcPro:"برمجة ArcPy وملفات Python Toolbox وأدوات المعالجة والاختبارات داخل التطبيق.",arcMap:"تطوير أدوات متوافقة مع بيئات ArcMap وإصدارات Python القديمة.",
+      qgis:"إضافات QGIS وخوارزميات Processing وفروق الإصدارات.",desktop:"تطبيقات سطح المكتب والخرائط عبر Qt وMapLibre وCesiumJS.",
+      remote:"معالجة المرئيات والأرصاد وتدفقات البيانات النقطية والتحقق من نماذج الذكاء الاصطناعي.",rust:"بنية برامج GIS بلغة Rust والخرائط التفاعلية باستخدام R.",readGuide:"عرض الدليل البرمجي ↗",
+      overlineCatalog:"دليل المصادر",catalogTitle:"استكشف منظومة البرمجيات والبيانات الجغرافية.",catalogDesc:"ابحث مباشرة في كتالوجات المستودع. إدراج المصادر لا يعني ضمان عملها أو إتاحة استخدامها التجاري دون قيود أو توفير أكوادها داخل المشروع.",
+      projectsTab:"المشروعات والمكتبات",apisTab:"مصادر GIS API",catalogDisclaimer:"الفهرس يُقرأ من ملفات JSON بالمستودع · يُرجى مراجعة شروط الجهات الأصلية.",allRefs:"عرض ملفات المراجع ↗",
+      overlineStart:"البداية السريعة",startTitle:"من المراجع إلى تطوير أداة حقيقية.",startDesc:"ثبّت المهارة في وكيل برمجي متوافق، أو راجع القوالب البرمجية قبل البدء.",
+      installTitle:"تثبيت المهارة البرمجية",installDesc:"يتطلب Node.js وواجهة skills ووكيلًا برمجيًا متوافقًا. تحقّق من بيئة التشغيل أولًا.",inspectSkill:"عرض ملف SKILL.md ↗",copy:"نسخ",copied:"تم النسخ",
+      templatesTitle:"القوالب البرمجية",templatesDesc:"أمثلة مبدئية تُعدَّل وتُختبر داخل بيئة GIS المناسبة.",
+      overlineWorkflow:"قواعد التطوير",workflowTitle:"منهجية عملية للتحقق والجودة.",
+      step1Title:"تحديد بيئة التشغيل",step1Desc:"الإصدار ونظام التشغيل والصيغ والواجهة والترخيص.",
+      step2Title:"اختيار المكونات المناسبة",step2Desc:"فحص الواجهات البرمجية والمصدر والترخيص والتوافق.",
+      step3Title:"تنفيذ وظيفة مكتملة",step3Desc:"اختبار وظيفة حقيقية قبل التوسع في الواجهة والأوامر.",
+      step4Title:"اختبار صحة النتائج",step4Desc:"الأنظمة الإحداثية والوحدات والهندسة والبيانات المفقودة وسلوك الواجهة.",
+      contributeTitle:"ساهم في بناء بيئة أفضل لمطوري GIS.",contributeDesc:"اقترح مصدرًا جديدًا أو أبلغ عن رابط معطل أو قدم تحسينًا اختبرته.",
+      suggest:"اقترح تحسينًا ↗",guide:"دليل المساهمة ↗",footerNote:"مشروع مستقل مفتوح المصدر. تراخيص المشروعات والخدمات الخارجية سارية كما هي.",
+      allCategories:"جميع التصنيفات",search:"ابحث بالاسم أو المجال أو الوصف…",results:"نتيجة",loading:"جارٍ تحميل الفهرس…",none:"لا توجد نتائج مطابقة. جرّب كلمة أو تصنيفًا آخر.",
+      error:"تعذر تحميل الفهرس. افتح الموقع عبر GitHub Pages أو تصفّح ملفات JSON داخل GitHub.",openSource:"المصدر أو التوثيق ↗",openAPI:"توثيق مقدم الخدمة ↗"
+    }
+  };
+  const els={results:document.getElementById("catalogResults"),search:document.getElementById("searchInput"),category:document.getElementById("categoryFilter"),count:document.getElementById("shownCount"),lang:document.getElementById("langBtn")};
+  function T(k){return tr[state.lang][k]||k;}
+  function setLanguage(lang){
+    state.lang=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+    els.lang.textContent=lang==="en"?"العربية":"English";
+    document.querySelectorAll("[data-i18n]").forEach(e=>e.textContent=T(e.dataset.i18n));
+    document.querySelectorAll("[data-i18n-html]").forEach(e=>{if(e.dataset.i18nHtml==="heroTitle")e.innerHTML=T("heroTitle");});
+    els.search.placeholder=T("search");
+    render();
+  }
+  function build(tag,className,txt){const el=document.createElement(tag);if(className)el.className=className;if(txt!==undefined)el.textContent=txt;return el;}
+  function categories(){
+    const rows=data[state.tab]||[];
+    const previous=state.category;
+    els.category.replaceChildren();
+    const all=build("option","",T("allCategories"));all.value="all";els.category.appendChild(all);
+    [...new Set(rows.map(x=>x.category).filter(Boolean))].sort().forEach(cat=>{const opt=build("option","",cat.replace(/-/g," "));opt.value=cat;els.category.appendChild(opt);});
+    els.category.value=previous;if(els.category.value!==previous){state.category="all";els.category.value="all";}
+  }
+  function render(){
+    const rows=data[state.tab]||[];
+    categories();
+    const needle=state.query.toLocaleLowerCase();
+    const filtered=rows.filter(x=>(state.category==="all"||x.category===state.category)&&
+      [x.name,x.description,x.category,(x.platforms||[]).join(" "),x.use_cases?x.use_cases.join(" "):"",(x.access||"")].join(" ").toLocaleLowerCase().includes(needle));
+    els.count.textContent=state.ready[state.tab]?filtered.length+" "+T("results"):T("loading");
+    els.results.replaceChildren();
+    if(state.failed[state.tab]){
+      const error=build("div","error",T("error")+" ");
+      const link=build("a","fine-link",state.tab==="projects"?"project-catalog.json ↗":"free-geospatial-apis.json ↗");
+      link.href=REPO+"/blob/main/references/"+(state.tab==="projects"?"project-catalog.json":"free-geospatial-apis.json");
+      error.appendChild(link);els.results.appendChild(error);return;
+    }
+    if(!state.ready[state.tab]){els.results.appendChild(build("div","error",T("loading")));return;}
+    if(!filtered.length){els.results.appendChild(build("div","error",T("none")));return;}
+    filtered.slice(0,60).forEach(entry=>{
+      const box=build("article","result"),head=build("div","result-head");
+      head.appendChild(build("h3","",entry.name||"Unnamed source"));
+      head.appendChild(build("span","chip",(entry.category||"GIS").replace(/-/g," ")));
+      box.appendChild(head);
+      box.appendChild(build("p","",entry.description||entry.use_cases?.join(" • ")||entry.coverage||""));
+      if(state.tab==="apis"&&entry.access){box.appendChild(build("span","chip",entry.access.replace(/-/g," ")));}
+      const link=build("a","",T(state.tab==="projects"?"openSource":"openAPI"));
+      const href=state.tab==="projects"?entry.url:entry.documentation_url;
+      if(typeof href==="string"&&/^https:\/\/[a-z0-9.-]+\//i.test(href)){link.href=href;link.target="_blank";link.rel="noopener noreferrer";box.appendChild(link);}
+      els.results.appendChild(box);
+    });
+  }
+  function setTab(tab){
+    state.tab=tab;state.category="all";
+    document.getElementById("projectsTab").setAttribute("aria-selected",String(tab==="projects"));
+    document.getElementById("apisTab").setAttribute("aria-selected",String(tab==="apis"));
+    render();
+  }
+  async function loadCatalog(tab,path,key,countId){
+    try{const response=await fetch(path,{cache:"no-store"});if(!response.ok)throw new Error("HTTP "+response.status);
+      const json=await response.json();if(!Array.isArray(json[key]))throw new Error("Unexpected format");
+      data[tab]=json[key];state.ready[tab]=true;document.getElementById(countId).textContent=data[tab].length;
+    }catch(e){state.failed[tab]=true;console.warn("Catalog unavailable:",path,e.message);}
+    if(state.tab===tab)render();
+  }
+  document.getElementById("year").textContent=new Date().getFullYear();
+  document.getElementById("projectsTab").addEventListener("click",()=>setTab("projects"));
+  document.getElementById("apisTab").addEventListener("click",()=>setTab("apis"));
+  els.search.addEventListener("input",e=>{state.query=e.target.value;render();});
+  els.category.addEventListener("change",e=>{state.category=e.target.value;render();});
+  els.lang.addEventListener("click",()=>setLanguage(state.lang==="en"?"ar":"en"));
+  document.getElementById("copyBtn").addEventListener("click",async()=>{
+    const btn=document.getElementById("copyBtn");
+    try{await navigator.clipboard.writeText(document.getElementById("command").textContent);btn.textContent=T("copied");}
+    catch(e){const code=document.getElementById("command");const range=document.createRange();range.selectNodeContents(code);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);btn.textContent=T("copy");}
+  });
+  setLanguage("en");
+  loadCatalog("projects","references/project-catalog.json","projects","projectsCount");
+  loadCatalog("apis","references/free-geospatial-apis.json","services","apisCount");
+})();
+</script>
+</body>
+</html>
