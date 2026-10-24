@@ -1,10 +1,14 @@
 ---
 name: gis-development
-description: Build, audit, debug or migrate GIS software and geoprocessing tools for ArcMap, ArcGIS Pro, QGIS, standalone desktop apps, 2D web mapping, 3D globes, remote sensing, R widgets, and geospatial Rust/Python stacks. Find public GIS APIs with accurate key, rate-limit, licensing and attribution constraints. Choose compatible spatial libraries, verify CRS and geospatial correctness, generate starter code, and test before claiming a GIS feature works.
+description: Develop, debug, audit, test or migrate GIS software using ArcGIS Pro/ArcPy, legacy ArcMap, QGIS/PyQGIS, GDAL, GeoRust, RustGIS, GeoLibre R, MapLibre and CesiumJS. Use for GIS Python toolboxes, QGIS plugins, geospatial desktop/web/3D apps, remote sensing, GeoAI and free/public geospatial data APIs. Verify version compatibility, CRS, geometry, source licenses, service quotas, real command wiring and tests before calling a feature complete.
 license: MIT
 ---
 
 # GIS Development — Agent Skill
+
+**Project:** [GIS Development Skills](https://github.com/ahmadibrahim4geo/GIS-Development-Skills) · [Interactive website source](../../index.html) · [Project catalog](../../references/project-catalog.json) · [GIS API directory](../../references/free-geospatial-apis.md)
+
+**Purpose:** Make software-building agents choose a compatible geospatial stack, write working tools and verify spatial correctness. This is a development guide and reference skill, not an installed GIS engine, free-data entitlement, or a guarantee that third-party libraries will work unchanged.
 
 Use this skill when designing or implementing a GIS **tool, add-in, plugin, desktop app, raster/vector processing pipeline, web map, or 3D globe**. This skill supplies decision and QA rules. It is **not** an installable substitute for ArcPy, QGIS, GDAL or vendor SDKs.
 
