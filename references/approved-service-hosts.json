@@ -1,0 +1,4 @@
+{
+  "purpose": "Explicit committed host allowlist for low-impact documentation HEAD availability checks; new hosts require source review.",
+  "hosts": []
+}
