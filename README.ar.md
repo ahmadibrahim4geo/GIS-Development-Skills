@@ -21,6 +21,17 @@
 
 **هذا مشروع مهارة قابلة للتثبيت، وليس مجرد قائمة روابط.** يوجد ملف `SKILL.md` يحدد أسلوب العمل، ومراجع تقنية، وقوالب أولية، وفهرس قابل للبحث عن المشروعات مفتوحة المصدر.
 
+## النظام العملي لوكلاء تطوير GIS
+
+أصبح [Core Skill](skills/gis-development/SKILL.md) موجّهًا مختصرًا للمهام، مع [حفظ التعليمات القديمة كاملة](references/gis-development-full-guidance.md) و[شجرة قرار](references/agent-decision-tree.md).
+
+- [تقرير قبول GIS](templates/GIS_ACCEPTANCE_REPORT.md) و[التحقق من مستوى الإثبات](scripts/validate_evidence.py).
+- [بيانات اختبار ونتائج متوقعة](fixtures/README.md) و[اختبارات ArcGIS Pro وQGIS داخل بيئتهما](native_tests/README.md).
+- [أمان GIS](references/geospatial-security.md) و[الأداء](references/geospatial-performance.md) و[أمثلة الأخطاء قبل وبعد تصحيحها](references/gis-antipatterns.md).
+- [بيان أعداد مركزي](references/repository-manifest.json) و[متابعة منفصلة لإتاحة الخدمات](docs/SERVICE_MONITORING.md).
+
+جميع المهارات والمراجع والـAPI والشعار والواجهة السابقة محفوظة دون حذف. لا ندّعي نجاح اختبار برامج GIS الأصلية دون تشغيلها.
+
 ## تطبيقات GIS هندسية ومعيار الجودة — 24 أكتوبر 2026
 
 **توسعة بإضافات جديدة فقط دون حذف أي مهارات أو قوالب أو مراجع أو تغيير الشعار والواجهة السابقة.** أصبح المشروع يضم **11 مهارة قابلة للتثبيت** و**104 مراجع جغرافية** و**39 خدمة GIS API**.
