@@ -422,7 +422,9 @@
       "authentication": "none",
       "coverage": "Global administrative boundaries; levels vary by country",
       "formats": [
-        "JSON"
+        "JSON metadata",
+        "GeoJSON",
+        "Shapefile"
       ],
       "limits": "No guaranteed public throughput; cache only in line with source license",
       "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
@@ -443,7 +445,8 @@
       "authentication": "none or approved key",
       "coverage": "Global modeled population datasets by year",
       "formats": [
-        "JSON"
+        "JSON",
+        "GeoJSON request"
       ],
       "limits": "1,000 daily no-key requests; 50,000 square km maximum no-key polygon",
       "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
@@ -464,7 +467,8 @@
       "authentication": "username",
       "coverage": "Global gazetteer",
       "formats": [
-        "JSON"
+        "JSON",
+        "XML"
       ],
       "limits": "Free username: 10,000 credits per day and 1,000 per hour",
       "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
@@ -485,7 +489,9 @@
       "authentication": "map-key",
       "coverage": "Global MODIS/VIIRS thermal detections",
       "formats": [
-        "JSON"
+        "CSV",
+        "WMS",
+        "WFS"
       ],
       "limits": "Free map key; 5,000 map transactions per 10 minutes, area requests 1 to 5 days",
       "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
@@ -506,7 +512,9 @@
       "authentication": "none",
       "coverage": "Global earthquake catalog, variable completeness",
       "formats": [
-        "JSON"
+        "GeoJSON",
+        "CSV",
+        "QuakeML"
       ],
       "limits": "Fair-use and result limits; restrict queries by bounding box and time",
       "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
@@ -527,7 +535,9 @@
       "authentication": "none for public metadata",
       "coverage": "Global Earth observation collection/granule metadata",
       "formats": [
-        "JSON"
+        "JSON",
+        "XML",
+        "STAC"
       ],
       "limits": "Paging and service constraints; downloads may require Earthdata Login",
       "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
@@ -569,7 +579,9 @@
       "authentication": "none",
       "coverage": "Global/regional model-based pollution datasets",
       "formats": [
-        "JSON"
+        "JSON",
+        "CSV",
+        "XLSX"
       ],
       "limits": "Free noncommercial limits: under 10,000 daily, 5,000 hourly, 600 per minute",
       "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
@@ -590,7 +602,9 @@
       "authentication": "none",
       "coverage": "Global modeled river discharge at about 5 km",
       "formats": [
-        "JSON"
+        "JSON",
+        "CSV",
+        "XLSX"
       ],
       "limits": "Open-Meteo noncommercial fair-use quotas apply",
       "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
@@ -611,7 +625,9 @@
       "authentication": "api-key",
       "coverage": "Global OSM historical data",
       "formats": [
-        "JSON"
+        "JSON",
+        "GeoJSON",
+        "Parquet"
       ],
       "limits": "Free key with account plan quotas; v1 retires 2026-11-30",
       "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
@@ -620,6 +636,205 @@
         "HeiGIT ohsome API v2"
       ],
       "caveat": "OSM edit time is not real-world building date; do not use deprecated v2-rc",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "openrouteservice-heigit",
+      "name": "HeiGIT openrouteservice v2",
+      "category": "routing-accessibility",
+      "documentation_url": "https://api.heigit.org/",
+      "service_url": "https://api.heigit.org/openrouteservice/v2/",
+      "access": "free-key-required",
+      "authentication": "api-key",
+      "coverage": "Global where OpenStreetMap routing graph available",
+      "formats": [
+        "JSON",
+        "GeoJSON"
+      ],
+      "limits": "Free Standard plan quotas vary by directions, isochrone and matrix endpoint",
+      "attribution": "Credit the service provider and the original contributing dataset under its own license.",
+      "use_cases": [
+        "routing accessibility",
+        "HeiGIT openrouteservice v2"
+      ],
+      "caveat": "Use new api.heigit.org host; old api.openrouteservice.org is being shut down in November 2026",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "hdx-hapi",
+      "name": "HDX Humanitarian API HAPI",
+      "category": "humanitarian-data",
+      "documentation_url": "https://hdx-hapi.readthedocs.io/en/latest/getting-started/",
+      "service_url": "https://hapi.humdata.org/api/v1/",
+      "access": "free-registration",
+      "authentication": "app-identifier",
+      "coverage": "Humanitarian datasets by country and administrative zone",
+      "formats": [
+        "JSON",
+        "CSV"
+      ],
+      "limits": "Generate free app identifier; use filtering, pagination and fair-use quotas",
+      "attribution": "Credit the service provider and the original contributing dataset under its own license.",
+      "use_cases": [
+        "humanitarian data",
+        "HDX Humanitarian API HAPI"
+      ],
+      "caveat": "Original dataset has its own temporal coverage, spatial references and attribution",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "usgs-waterdata",
+      "name": "USGS Water Data OGC API",
+      "category": "hydrology-water",
+      "documentation_url": "https://api.waterdata.usgs.gov/docs/ogcapi/migration/",
+      "service_url": "https://api.waterdata.usgs.gov/ogcapi/v1/collections",
+      "access": "public-fair-use",
+      "authentication": "none for public reads",
+      "coverage": "US and supported territories only",
+      "formats": [
+        "JSON",
+        "GeoJSON"
+      ],
+      "limits": "Paged modern OGC collections and fair-use limits",
+      "attribution": "Credit the service provider and the original contributing dataset under its own license.",
+      "use_cases": [
+        "hydrology water",
+        "USGS Water Data OGC API"
+      ],
+      "caveat": "US-only; legacy WaterServices endpoints retire in early 2027",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "noaa-coops",
+      "name": "NOAA CO-OPS Tides and Currents API",
+      "category": "ocean-coastal",
+      "documentation_url": "https://api.tidesandcurrents.noaa.gov/api/dev",
+      "service_url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "US coastal/territorial observation stations",
+      "formats": [
+        "JSON",
+        "CSV",
+        "XML"
+      ],
+      "limits": "Station/product-specific date limits and usage guidelines",
+      "attribution": "Credit the service provider and the original contributing dataset under its own license.",
+      "use_cases": [
+        "ocean coastal",
+        "NOAA CO-OPS Tides and Currents API"
+      ],
+      "caveat": "Requires explicit tidal datum, units, station ID and time zone",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "nasa-eonet",
+      "name": "NASA EONET Natural Events v3",
+      "category": "hazards-disasters",
+      "documentation_url": "https://eonet.gsfc.nasa.gov/docs/v3",
+      "service_url": "https://eonet.gsfc.nasa.gov/api/v3/events/geojson",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "Global curated natural event metadata",
+      "formats": [
+        "GeoJSON",
+        "JSON"
+      ],
+      "limits": "Use bounding box, category, day and limit parameters with fair use",
+      "attribution": "Credit the service provider and the original contributing dataset under its own license.",
+      "use_cases": [
+        "hazards disasters",
+        "NASA EONET Natural Events v3"
+      ],
+      "caveat": "Curated natural events not a complete scientific disaster census",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "worldbank-indicators",
+      "name": "World Bank Indicators API v2",
+      "category": "population-demographics",
+      "documentation_url": "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392",
+      "service_url": "https://api.worldbank.org/v2/country/EG/indicator/SP.POP.TOTL",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "Global country-level statistical indicators",
+      "formats": [
+        "JSON",
+        "XML"
+      ],
+      "limits": "Paged API with responsible request use",
+      "attribution": "Credit the service provider and the original contributing dataset under its own license.",
+      "use_cases": [
+        "population demographics",
+        "World Bank Indicators API v2"
+      ],
+      "caveat": "National statistical totals are not local population grids",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "noaa-ncei-cdo",
+      "name": "NOAA NCEI Climate Data Online v2",
+      "category": "climate-weather",
+      "documentation_url": "https://www.ncei.noaa.gov/cdo-web/webservices/v2",
+      "service_url": "https://www.ncei.noaa.gov/cdo-web/api/v2/datasets",
+      "access": "free-key-required",
+      "authentication": "access-token",
+      "coverage": "Station archives vary by NOAA dataset",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Free token: 5 requests/second and 10,000 requests/day",
+      "attribution": "Credit the service provider and the original contributing dataset under its own license.",
+      "use_cases": [
+        "climate weather",
+        "NOAA NCEI Climate Data Online v2"
+      ],
+      "caveat": "Station records need quality and missing-value checks",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "noaa-ncei-erddap",
+      "name": "NOAA NCEI ERDDAP",
+      "category": "ocean-coastal",
+      "documentation_url": "https://www.ncei.noaa.gov/erddap/rest.html",
+      "service_url": "https://www.ncei.noaa.gov/erddap/search/index.json",
+      "access": "public-with-asset-restrictions",
+      "authentication": "none for many public collections",
+      "coverage": "Dataset-specific gridded/tabular marine and ocean data",
+      "formats": [
+        "JSON",
+        "NetCDF",
+        "CSV",
+        "OPeNDAP"
+      ],
+      "limits": "Use bounded griddap/tabledap subsets; dataset size/access varies",
+      "attribution": "Credit the service provider and the original contributing dataset under its own license.",
+      "use_cases": [
+        "ocean coastal",
+        "NOAA NCEI ERDDAP"
+      ],
+      "caveat": "ERDDAP gateway does not mean every dataset permits all reuse",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "inaturalist",
+      "name": "iNaturalist Observations API",
+      "category": "biodiversity",
+      "documentation_url": "https://www.inaturalist.org/pages/developers",
+      "service_url": "https://api.inaturalist.org/v1/observations",
+      "access": "public-fair-use",
+      "authentication": "none for public searches",
+      "coverage": "Global citizen-science observations",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Recommended ~1 request/sec, under 10,000/day; max throttle 100/min; no bulk exports",
+      "attribution": "Credit the service provider and the original contributing dataset under its own license.",
+      "use_cases": [
+        "biodiversity",
+        "iNaturalist Observations API"
+      ],
+      "caveat": "Sensitive species coordinates may be obscured; respect observation and image licenses",
       "verified_on": "2026-10-24"
     }
   ]
