@@ -1,4 +1,6 @@
 import json
+import base64
+import re
 import unittest
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
@@ -37,8 +39,8 @@ class LandingPageTests(unittest.TestCase):
             self.assertIn(element, self.parser.ids)
 
     def test_local_assets_exist(self):
-        self.assertIn("assets/logo.svg", self.parser.links)
         self.assertIn("assets/icon.svg", self.parser.links)
+        self.assertIn("assets/logo.svg", (ROOT / "README.md").read_text(encoding="utf-8"))
         for asset in ("assets/logo.svg", "assets/icon.svg"):
             tree = ET.parse(ROOT / asset)
             self.assertTrue(tree.getroot().tag.endswith("svg"))
@@ -56,7 +58,9 @@ class LandingPageTests(unittest.TestCase):
             "Build GIS tools, plugins and geospatial applications with a verifiable development workflow.",
             self.html,
         )
-        self.assertIn('src="assets/logo.svg"', self.html)
+        self.assertIn('class="hero-symbol" src="assets/icon.svg"', self.html)
+        self.assertIn('class="hero-wordmark"', self.html)
+        self.assertIn('class="word-development"', self.html)
         self.assertIn('href="assets/brand-refresh.css"', self.html)
         self.assertTrue((ROOT / "assets/brand-refresh.css").is_file())
 
@@ -64,10 +68,16 @@ class LandingPageTests(unittest.TestCase):
         full_logo = (ROOT / "assets/logo.svg").read_text(encoding="utf-8")
         icon_logo = (ROOT / "assets/icon.svg").read_text(encoding="utf-8")
         self.assertIn("The Heart of Geospatial Innovation", full_logo)
-        self.assertIn('id="clipTopo"', full_logo)
-        self.assertIn('id="clipGrid"', full_logo)
-        self.assertIn('id="clipTopo"', icon_logo)
-        self.assertIn('id="clipGrid"', icon_logo)
+        # Both assets embed the same scaled approved G photographically, avoiding
+        # a structurally different hand-redrawn symbol that distorted the G.
+        logos = []
+        for asset in (full_logo, icon_logo):
+            match = re.search(r'data:image/png;base64,([A-Za-z0-9+/=]+)', asset)
+            self.assertIsNotNone(match)
+            data = base64.b64decode(match.group(1), validate=True)
+            self.assertTrue(data.startswith(b"\\x89PNG\\r\\n\\x1a\\n"))
+            logos.append(data)
+        self.assertEqual(logos[0], logos[1])
         self.assertIn('class="scene-logo" src="assets/icon.svg"', self.html)
         self.assertNotIn('class="globe-art"', self.html)
 
