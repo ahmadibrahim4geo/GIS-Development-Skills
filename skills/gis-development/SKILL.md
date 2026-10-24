@@ -49,6 +49,19 @@ Use this skill when designing or implementing a GIS **tool, add-in, plugin, desk
 
 When the target is a GeoLibre map, `.geolibre.json` project, plugin, or hosted/desktop GeoLibre deployment, consult `../../references/geolibre-integration.md` and the official upstream `https://github.com/opengeos/GeoLibre/tree/main/skills/geolibre`. Use the official GeoLibre skill with its MCP/Python authoring paths instead of guessing an undocumented file schema. For plugins use the official template, `plugin.json`, declared compatible rendering engines and real host integration tests. For desktop architecture reuse **patterns** (renderer-neutral state, command capability checks, data-source licensing) without treating external code or imagery as automatically reusable. Do not claim GeoLibre code runs as an ArcMap, ArcGIS Pro or QGIS plugin. Verify portability, CRS, credentials, live-vs-file workflow and provider terms.
 
+## Specialist routing from Qiusheng Wu's GIS software ecosystem
+
+For tasks matching https://gishub.org/software/, consult `../../references/gishub-software.md` first, then the verified GitHub repository entry in `../../references/project-catalog.json`.
+
+- **Data discovery:** `../geospatial-data-discovery/SKILL.md` for STAC, NASA, imagery, climate/DEM and legitimate API access.
+- **QGIS plugins:** `../qgis-plugin-development/SKILL.md` and `opengeos/qgis-plugin-template` for PyQGIS, Qt and functional toolbar/Processing acceptance.
+- **Web GIS and standalone maps:** `../geospatial-web-mapping/SKILL.md` for MapLibre component integration, layer state, geometry editing, time sliders and actual data availability.
+- **ArcGIS/Whitebox:** the older `opengeos/WhiteboxTools-ArcGIS` documentation specifies ArcGIS Pro and ArcGIS **10.6+**, not ArcGIS 10.5 and earlier; verify Python runtime for the exact target.
+- **GeoAI:** `opengeos/GeoAgent` is an orchestration framework; agents must call verified spatial tools and require confirmations before destructive operations.
+- **Catalogs:** `geospatial-data-catalogs`, `NASA-CMR-STAC` and `stac-index-catalogs` list candidate data endpoints, not guaranteed working/free APIs.
+
+Public source availability is **not** runtime integration testing. Verify current software releases, licenses, provider authentication, coordinate systems, scientific provenance and end-to-end feature behavior; do not copy third-party code without rights.
+
 ## Required pre-delivery check
 
 - [ ] Specify exact target runtime and versions; prove compatibility or clearly label assumptions.
