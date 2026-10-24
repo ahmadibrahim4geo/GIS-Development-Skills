@@ -11,13 +11,27 @@ Use for DEM, climate, satellite images, environmental rasters, OSM/POIs and geos
 ## Procedure
 
 1. Ask for or infer domain, area, period, resolution, coordinate system, output type and intended commercial/noncommercial use.
-2. Read `../../references/free-geospatial-apis.md` and its JSON catalog. For supplementary discovery, read `../../references/gishub-software.md` and `../../references/project-catalog.json`.
+2. Read `../../references/free-geospatial-apis.md` and its JSON catalog (37 service entries across boundaries, demographic, climate, water, routing, hazards, satellite and more). For supplementary discovery, read `../../references/gishub-software.md` and `../../references/project-catalog.json`.
 3. Browse catalogs like `opengeos/geospatial-data-catalogs`, `opengeos/stac-index-catalogs`, `opengeos/NASA-CMR-STAC` as **indexes**, never assume an indexed API is available.
 4. Verify the *underlying* provider's official page for current access, key requirements, geographic/time coverage, quotas, TOS, attribution and CORS.
 5. Try a small legally accessible sample if tools/environment permit. Confirm CRS, pixel size, date, DEM vertical datum, NoData and geolocation.
 6. Provide a reproducible download workflow, metadata/provenance fields, failure/retry handling, and license caveats.
 7. Don't fabricate endpoints, keys, imagery dates or missing measurements. Never embed users' API tokens in source.
 8. Disclose untested endpoints and mark current live access as unverified if it was not checked.
+
+## Expanded provider routing
+
+- For **Egyptian administrative boundaries**, use geoBoundaries metadata with explicit ADM level, year and layer licence; do not claim historic editions are current legal limits.
+- For **population**, choose WorldPop modeled cells/polygon estimates separately from World Bank country indicators. Respect WorldPop 50,000 km² maximum no-key polygons.
+- For **hazards**, distinguish FIRMS thermal hotspot points, USGS earthquake catalog and EONET curated events.
+- For **air quality**, distinguish OpenAQ measured sensors from Open-Meteo CAMS modeled fields; compare only matching units, averaging intervals and sources.
+- For **river discharge**, GloFAS modeled m³/s is not flooded-area mapping. USGS Water and NOAA CO-OPS are US-focused services, not defaults for Egypt.
+- For **routes/history**, HeiGIT openrouteservice and ohsome v2 require keys, current URL versions and OSM ODbL attribution.
+- For **satellite scenes**, CMR/STAC search metadata is separate from original scientific asset download permission.
+- For **coastal/climate data**, NOAA CDO/CO-OPS/ERDDAP require dataset/station selection and separate temporal/spatial datum checks.
+- For **biodiversity**, GBIF and iNaturalist are different catalogs; do not reveal privacy-obscured locations or bulk query shared public APIs.
+
+For creating actual adapters and GIS output pipelines, route to `../geospatial-api-integration/SKILL.md`. Never assume the reference catalog confirms endpoint uptime.
 
 ## Prefer
 

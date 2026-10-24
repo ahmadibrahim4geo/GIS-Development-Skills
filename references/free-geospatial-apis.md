@@ -13,7 +13,11 @@
 | Basemaps | [OpenFreeMap](https://openfreemap.org/quick_start/), [OSMF tiles](https://operations.osmfoundation.org/policies/tiles/) | OpenFreeMap hosted maps no key; OSMF tiles are NOT an unlimited production/offline tile service |
 | OSM POIs & geocoding | [Overpass](https://wiki.openstreetmap.org/wiki/Overpass_API), [Nominatim](https://operations.osmfoundation.org/policies/nominatim/) | Volunteer services; restricted usage. Never auto-generate generic Nominatim integration into apps |
 | Soil | [ISRIC SoilGrids](https://isric.org/explore/soilgrids) | REST service **temporarily paused** in provider notice; prefer data download/WebDAV or WCS |
-| Biodiversity | [GBIF API](https://techdocs.gbif.org/en/openapi/) | Search pagination limit; use dataset downloads for bulk, maintain provenance |
+| Biodiversity | [GBIF API](https://techdocs.gbif.org/en/openapi/), [iNaturalist](https://www.inaturalist.org/pages/developers) | Different observation licences; avoid API bulk downloading |
+| Boundaries, population and names | [geoBoundaries](https://www.geoboundaries.org/api.html), [WorldPop](https://api.worldpop.org/v2/), [GeoNames](https://www.geonames.org/export/) | Check boundary year, estimated populations and username quota |
+| Hazards and humanitarian | [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/api/area), [EONET](https://eonet.gsfc.nasa.gov/docs/v3), [USGS Earthquake](https://earthquake.usgs.gov/fdsnws/event/1/), [HDX HAPI](https://hdx-hapi.readthedocs.io/en/latest/) | Event semantics, quality and coverage differ |
+| Routing/OSM history | [HeiGIT](https://api.heigit.org/), [ohsome v2](https://docs.ohsome.org/ohsome-api/v2/) | Keys, OSM attribution and endpoint migrations |
+| Water, ocean and air | [Open-Meteo Flood](https://open-meteo.com/en/docs/flood-api), [OpenAQ](https://docs.openaq.org/api), [NOAA NCEI](https://www.ncei.noaa.gov/erddap/rest.html) | Validate model-vs-observation, area of coverage and datums |
 
 ## Recommended API selection procedure for AI agents
 
@@ -53,6 +57,45 @@ https://tiles.openfreemap.org/styles/liberty
 - OpenFreeMap [offline rules](https://openfreemap.org/quick_start/): offline download caps differ from public map views. OSM contributors' attribution applies.
 - ISRIC [SoilGrids](https://isric.org/explore/soilgrids) currently reports its REST API temporarily paused, no restoration ETA.
 - Nominatim [acceptable-use policy](https://operations.osmfoundation.org/policies/nominatim/) forbids autocomplete/systematic harvesting and generic embedding in code-generating tools; entries here are **documentation only**, not permission to programmatically generate an integration.
+
+
+## Expanded free/public API reference (2026-10-24): 19 additions, 37 entries total
+
+This directory includes **37 distinct service entries**. Search the [machine-readable JSON catalog](free-geospatial-apis.json) rather than hardcoding URLs or access assumptions. All endpoints below are provider-documented; no end-to-end live data ingestion test is implied by this catalog.
+
+| Domain | Added APIs | Required GIS interpretation |
+|---|---|---|
+| Administrative boundaries and names | [geoBoundaries](https://www.geoboundaries.org/api.html), [GeoNames](https://www.geonames.org/export/) | Preserve boundary edition/year and original layer licence; GeoNames free username with daily credits |
+| Population and humanitarian | [WorldPop v2](https://api.worldpop.org/v2/), [World Bank v2](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392), [HDX HAPI](https://hdx-hapi.readthedocs.io/en/latest/getting-started/) | WorldPop modeled population grids vs World Bank country indicators vs humanitarian publisher-specific statistics |
+| Hazards | [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/api/area), [USGS Earthquake](https://earthquake.usgs.gov/fdsnws/event/1/), [NASA EONET v3](https://eonet.gsfc.nasa.gov/docs/v3) | Hotspot detections are not burned perimeters; EONET curated events are not an exhaustive official disaster registry |
+| Satellite discovery | [NASA Earthdata CMR](https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html) | Collection/granule metadata access is separate from signed scientific asset download |
+| Measured and modeled air quality | [OpenAQ v3](https://docs.openaq.org/api), [Open-Meteo Air Quality](https://open-meteo.com/en/docs/air-quality-api) | Real station readings are not interchangeable with CAMS model outputs |
+| Floods and water stations | [Open-Meteo GloFAS](https://open-meteo.com/en/docs/flood-api), [USGS Water Data](https://api.waterdata.usgs.gov/docs/ogcapi/migration/) | Discharge is m³/s, not a flood polygon; USGS gauge services are primarily US-only |
+| Routing and historical OSM | [HeiGIT openrouteservice](https://api.heigit.org/), [ohsome v2](https://docs.ohsome.org/ohsome-api/v2/) | Both need free keys; an OSM edit timestamp does not show actual building construction date |
+| Climate/coasts/ocean | [NOAA CDO v2](https://www.ncei.noaa.gov/cdo-web/webservices/v2), [NOAA CO-OPS](https://api.tidesandcurrents.noaa.gov/api/dev), [NOAA NCEI ERDDAP](https://www.ncei.noaa.gov/erddap/rest.html) | Different coverage, tidal/vertical datums, observation quality and dataset-level licences |
+| Biodiversity | [iNaturalist API](https://www.inaturalist.org/pages/developers) | Citizen observations may obscure protected taxa coordinates; media carry separate licences |
+
+### Operational notices and migrations
+
+- **WorldPop:** public calls without a key are limited to 1,000/day and 50,000 km² per polygon. An all-Egypt large-polygon workflow requires approved higher access, licensed local raster processing or partitioning under policy.
+- **NASA FIRMS:** request a personal free MAP_KEY; 5,000 map transactions per 10 minutes, with larger requests consuming multiple transactions. Never publish a MAP_KEY or include it in a shared build.
+- **OpenAQ v3:** free key, up to 60/minute and 2,000/hour. Verify sensor identity, timezone, measurement units and averaging windows.
+- **NOAA CDO v2:** free personal access token, up to 5 requests/second and 10,000/day.
+- **GeoNames:** free account username, 10,000 daily and 1,000 hourly service credits. GeoNames permits commercial use with its CC BY attribution obligations.
+- **HeiGIT:** new openrouteservice host is `api.heigit.org`, not old `api.openrouteservice.org`. ohsome uses stable `/ohsome-api/v2/` (not `v2-rc`) and v1 is scheduled for shutdown 2026-11-30.
+- **USGS Water:** migrate to modern `api.waterdata.usgs.gov/ogcapi/v1/` collections. The historical `waterservices.usgs.gov` services are expected to retire in early 2027.
+- **iNaturalist:** keep requests near one per second and below 10,000/day; use legitimate bulk export paths for large data rather than scraping observation pages.
+
+### Minimal reproducible samples (documentation, not live integration tests)
+
+```text
+https://www.geoboundaries.org/api/current/gbOpen/EGY/ADM1/
+https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&minmagnitude=5&limit=5
+https://eonet.gsfc.nasa.gov/api/v3/events/geojson?limit=5
+https://api.worldbank.org/v2/country/EG/indicator/SP.POP.TOTL?format=json
+```
+
+For implementation, follow [geospatial-api-integration](../skills/geospatial-api-integration/SKILL.md) and [geospatial-data-discovery](../skills/geospatial-data-discovery/SKILL.md): record provider, product/year, source, retrieval time, CRS, vertical/tidal datum, units, resolution, observation/model distinction, NoData, licence and attribution. Handle 401/403/404/429/timeouts, paging and partial results explicitly. Avoid automatically switching providers without disclosing scientific differences.
 
 ## Search and validation
 

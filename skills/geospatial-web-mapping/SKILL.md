@@ -17,7 +17,7 @@ Use when the deliverable is a web GIS map, browser-based spatial tool or mapping
 5. Implement a real user action end-to-end before adding more ribbon/toolbar commands; persist layer visibility, style, selections and camera.
 6. Ensure layers use correct CRS and NoData, handle feature editing with undo, validate project save/open and loading failures.
 7. Historical layers/time controls require actual dated data from legal sources; do not fake or imply imagery availability.
-8. Validate remote data licensing, keys, attribution, offline limitations, provider rates and CORS.
+8. Validate remote data licensing, keys, attribution, offline limitations, provider rates and CORS. Read `../geospatial-api-integration/SKILL.md` and `../../references/free-geospatial-apis.md` for approved source adapters: geoBoundaries, NASA FIRMS/CMR/EONET, HeiGIT routing, water/air layers and data disclaimers. Do not mistake discovery metadata for imagery tiles or OSM edit dates for real-world construction dates.
 9. Run in browser/desktop where possible, check event handlers and real rendering; otherwise state what remains untested.
 
 ## Acceptance

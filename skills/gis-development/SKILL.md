@@ -16,7 +16,7 @@ Use this skill when designing or implementing a GIS **tool, add-in, plugin, desk
 
 1. **Identify the deliverable and deployment target.** Exact product + version (ArcMap 10.x, ArcGIS Pro major version, QGIS version, or standalone); OS; programming language; data formats; offline needs; license constraints; intended user interaction; test environment. If a crucial value is unknown, state an assumption, mark it unverified, and use the conservative route.
 2. **Choose the right pathway.** Read one platform reference and `../../references/geospatial-foundations.md` for file and coordinate considerations. Use `../../references/project-catalog.json` to find *verified links*, not to uncritically import projects.
-3. **For hosted GIS, elevation, imagery, terrain, or climate data, select a legitimate service.** Read `../../references/free-geospatial-apis.md` and the offline `../../references/free-geospatial-apis.json` catalog. Distinguish no-key, personal-key, free-noncommercial, limited public, restricted and temporarily unavailable services. Validate live terms before proposing a runtime integration.
+3. **For hosted GIS, elevation, imagery, boundaries, population, hazards, routing, terrain or climate data, select a legitimate service.** Consult `../geospatial-data-discovery/SKILL.md`, then `../../references/free-geospatial-apis.md` and the offline JSON catalog (37 services); if coding a remote client use `../geospatial-api-integration/SKILL.md`. Distinguish no-key, personal-key, free-noncommercial, limited public, restricted and temporarily unavailable services. Validate live terms before proposing a runtime integration.
 4. **Write a minimal architecture and acceptance contract.** Input schema, geometry type, expected CRS and units, optional elevation/Z/M, invalid/empty geometry behavior, nodata/masked raster behavior, output format/fields/metadata, working directory, dependencies and licensing.
 5. **Protect portability.** ArcMap and ArcGIS Pro have separate runtime and API assumptions. Isolate GIS analysis from UI/ribbon wrappers; choose an engine only if allowed in that environment.
 6. **Implement a vertical slice.** Start with an example from `../../templates/` if appropriate. Make a *functional end-to-end action* before adding extra commands; no placeholder commands presented as implemented.
@@ -45,6 +45,8 @@ Use this skill when designing or implementing a GIS **tool, add-in, plugin, desk
 - Do not generate generic integrations that use the **public Nominatim endpoint**; provider policy explicitly restricts use by code-generating platforms. Use self-hosted or separately authorized geocoders.
 - Avoid embedding personal OpenTopography keys, scraping/bulk public tile services, or relying on paused SoilGrids REST.
 - Check reproducible datasets and elevation vertical datum before presenting numerical results.
+- Distinguish observed (OpenAQ, NOAA stations), modeled (Open-Meteo/GloFAS/WorldPop), curated events (EONET), metadata search (CMR/STAC), and legal administrative boundary editions (geoBoundaries).
+- Use current HeiGIT host/v2 APIs, not deprecated ohsome v1 or routing host; migrate USGS WaterServices by its early-2027 retirement.
 
 ## GeoLibre-specific development routing
 

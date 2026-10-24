@@ -15,7 +15,7 @@ Read `../../references/ahmad-ibrahim-gis-case-studies.md` and the real code in:
 - [MIRSAD](https://github.com/ahmadibrahim4geo/MIRSAD): `Toolboxes/*.pyt`, `mirsad_core/`, `tests/`, `MIRSAD Desktop/`, `Documents/TESTING.md`.
 - [CreateFlowArrow](https://github.com/ahmadibrahim4geo/Create-FlowArrow-Tool): `CreateFlowArrow.pyt`, `CreateFlowArrow.py`, `data/`.
 - [GeologicalCrossSectionToolbox](https://github.com/ahmadibrahim4geo/GeologicalCrossSectionToolbox): `GeologicalCrossSectionToolbox.pyt`, `geo_cross_section_engine.py`, `Data_Test/`.
-- For CRS accuracy, load `../coordinate-reference-systems/SKILL.md`; for free imagery/climate/DEM sources read `../geospatial-data-discovery/SKILL.md`.
+- For CRS accuracy, load `../coordinate-reference-systems/SKILL.md`; for free imagery/climate/DEM and the 37-service API directory read `../geospatial-data-discovery/SKILL.md` and `../geospatial-api-integration/SKILL.md`.
 
 ## Engineering procedure
 
