@@ -88,7 +88,7 @@ For building or evaluating ArcGIS Pro/ArcMap Python Toolboxes, prefer the specia
 - MIRSAD: climate and station tools, `mirsad_core` scientific and environment management, separate development-only MIRSAD Desktop.
 - CreateFlowArrow: geodesy/slope, pipe digitizing and topology; **do not execute optional in-place auto-flip without explicit consent and safe backup**.
 - GeologicalCrossSectionToolbox: DEM elevation profiles, geological intersections, DXF/HTML/CSV exports and fixture-based checks.
-- Also inspect GeoVision (Kotlin mobile GIS), ArcMap Style Collection (verify asset licenses) and the GIS Data Repositories data discovery catalog.
+- Also inspect ArcMap Style Collection (verify asset licenses) and the GIS Data Repositories data discovery catalog.
 
 Distinguish **T0 source review**, **T1 unit/mock ArcPy test**, **T2 licensed native toolbox load**, **T3 real geoprocessing execution and output validation**, and **T4 packaged standalone deployment**. A GitHub Actions check cannot establish T3 unless it really ran the target licensed GIS runtime with fixture readback. Report exact tested versions and known gaps.
 
