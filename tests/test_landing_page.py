@@ -60,6 +60,17 @@ class LandingPageTests(unittest.TestCase):
         self.assertIn('href="assets/brand-refresh.css"', self.html)
         self.assertTrue((ROOT / "assets/brand-refresh.css").is_file())
 
+    def test_approved_layered_g_brand_used_consistently(self):
+        full_logo = (ROOT / "assets/logo.svg").read_text(encoding="utf-8")
+        icon_logo = (ROOT / "assets/icon.svg").read_text(encoding="utf-8")
+        self.assertIn("The Heart of Geospatial Innovation", full_logo)
+        self.assertIn('id="clipTopo"', full_logo)
+        self.assertIn('id="clipGrid"', full_logo)
+        self.assertIn('id="clipTopo"', icon_logo)
+        self.assertIn('id="clipGrid"', icon_logo)
+        self.assertIn('class="scene-logo" src="assets/icon.svg"', self.html)
+        self.assertNotIn('class="globe-art"', self.html)
+
     def test_public_creator_section_and_contacts(self):
         self.assertIn("author", self.parser.ids)
         self.assertIn("ahmad_ibrahim_original.png", self.html)
