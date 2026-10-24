@@ -30,3 +30,10 @@
 - A repository link, static test, mock ArcPy, screenshot or compiled Python package is not proof of successful **native** ArcGIS/QGIS/Desktop execution. Record T0-T4 evidence as defined in `references/ahmad-ibrahim-gis-case-studies.md` and `references/desktop-application-engineering.md`.
 - Keep a standalone GIS application path distinct from ArcGIS SDK extensions and QGIS plugins. Verify full executable launch and packaging before stable claims.
 - Do not re-add excluded immature reference projects without a fresh documented maturity review and user approval.
+
+## Additive production engineering initiative
+
+- Never delete or rename older skills, references, API catalog items, starter templates, user-authored assets, author section, or language controls to accommodate new examples.
+- When new specialist skills or example paths are introduced, update the main `gis-development` router, both READMEs, `index.html`, English/Arabic translation dictionaries, link validators and skill counters together.
+- All examples declare non-destructive defaults, source/CRS/unit limitations and exact T0–T4 test evidence per [GIS Skill Quality Benchmark](docs/QUALITY_BENCHMARK.md).
+- A GitHub CI run does not substitute for an ArcGIS Pro/ArcMap/QGIS/PostGIS/Windows application test; note all native acceptance gaps honestly.

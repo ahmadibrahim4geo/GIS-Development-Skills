@@ -24,3 +24,7 @@ Include the supported **product and version**, expected inputs and outputs, envi
 ## Add or change a specialist agent skill
 
 Maintain valid YAML metadata in `skills/<skill-name>/SKILL.md`; the name must match its lower-case hyphenated folder and the description must not exceed 1024 characters. Make the skill solve a distinct use case, link to domain references rather than copy long guides, and describe versions, inputs, risks, exact QA evidence and what was not tested. Keep `gis-development` as the entry point for cross-platform routing. Run the full validator after edits, update the website skill counter and README, and never claim native GIS execution from generic Python syntax checks.
+
+## Production GIS engineering examples
+
+Contribute new examples under `examples/` **without deleting or altering older content**. Each needs an exact supported version/environment, data license/provenance, synthetic or redistributable fixture, input/output schema, CRS and units, repeatable command, expected outcome, failure cases, and safe output paths. Classify actual evidence using [the T0–T4 quality benchmark](docs/QUALITY_BENCHMARK.md); generic CI, unexecuted PostGIS statements and ArcPy mocks are not native acceptance. Synchronize both README languages, website links, both language dictionaries and counters in the same change.

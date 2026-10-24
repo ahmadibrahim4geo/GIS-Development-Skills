@@ -18,3 +18,4 @@ jobs:
           python scripts/validate_skill_pack.py
           python -m unittest discover -s tests -v
           python -m py_compile templates/arcmap-script-tool.py templates/arcgis-pro-toolbox.pyt templates/qgis-processing-algorithm.py templates/standalone-geojson-summary.py
+          python -m py_compile examples/network-topology/audit_network.py examples/api-ingestion/weather_to_geojson.py examples/batch-export/export_layouts_arcgis_pro.py
