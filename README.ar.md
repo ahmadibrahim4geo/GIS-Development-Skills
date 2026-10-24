@@ -46,12 +46,11 @@ python scripts/crs_catalog.py --source ./projection-engine-db-doc/csv --kind pro
 
 ## أمثلة واقعية من أدوات GIS الأصلية — v0.3.3
 
-أضفنا **6 مستودعات من مشروعات أحمد إبراهيم** إلى فهرس المصادر، ليصبح الإجمالي **105 مشروعات**، مع مهارة سادسة لتطوير واختبار أدوات ArcGIS. وتشمل:
+أضفنا **5 مستودعات من مشروعات أحمد إبراهيم** إلى فهرس المصادر، ليصبح الإجمالي **104 مشروعات**، مع مهارة سادسة لتطوير واختبار أدوات ArcGIS. وتشمل:
 
 - [MIRSAD](https://github.com/ahmadibrahim4geo/MIRSAD): ثلاث حزم ArcGIS Python Toolbox للحسابات المناخية، ونواة مشتركة، ونسخة Desktop مستقلة ما زالت تحت التطوير.
 - [CreateFlowArrow](https://github.com/ahmadibrahim4geo/Create-FlowArrow-Tool): أسهم واتجاهات الجريان وتدقيق شبكات الانحدار، مع معالجة خاصة لخطر التعديل المباشر للمدخلات.
 - [Geological Cross-Section Toolbox](https://github.com/ahmadibrahim4geo/GeologicalCrossSectionToolbox): قطاعات جيولوجية وتضاريسية وأدلة وبيانات تدريبية.
-- [GeoVision](https://github.com/ahmadibrahim4geo/GeoVision): تطبيق GIS للموبايل بلغة Kotlin.
 - [ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection): مرجع للرموز والستايلات؛ تراخيص ملفات الجهات الأخرى تحتاج مراجعة مستقلة.
 - [GIS Data Repositories Professional](https://github.com/ahmadibrahim4geo/gis-data-repositories-professional-2026): فهرس بيانات متعدد المصادر وأدوات تدقيق الروابط.
 
