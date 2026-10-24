@@ -3,7 +3,7 @@
 
 # GIS Development Skills 🌍
 
-[![GIS Skill validation](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml/badge.svg)](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml) ![License: MIT](https://img.shields.io/badge/license-MIT-3f8c76) ![Release: v0.3.1](https://img.shields.io/badge/release-v0.3.1-24483d)
+[![GIS Skill validation](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml/badge.svg)](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml) ![License: MIT](https://img.shields.io/badge/license-MIT-3f8c76) ![Release: v0.3.2](https://img.shields.io/badge/release-v0.3.1-24483d)
 
 **Project homepage:** [GitHub Pages website](https://ahmadibrahim4geo.github.io/GIS-Development-Skills/) *(check publication status in repository Pages settings)* · [View homepage source](index.html) · [English / العربية](README.ar.md) · [Logo](assets/logo.svg).
 
@@ -13,13 +13,26 @@
 
 Created by [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). Independent community resource; **not affiliated with Esri, QGIS, GeoRust, GeoLibre, or other catalogued projects**.
 
-> **Status:** v0.3.1 expanded open-source GIS catalog, GeoLibre R/RustGIS and public geospatial APIs. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
+> **Status:** v0.3.2 expanded open-source GIS catalog, GeoLibre R/RustGIS and public geospatial APIs. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
 
 [اقرأ بالعربية](README.ar.md) · [Contributing](CONTRIBUTING.md) · [Publishing](PUBLISHING.md) · [Catalog](references/project-catalog.json) · [Skill](skills/gis-development/SKILL.md) · [Free GIS APIs](references/free-geospatial-apis.md) · [GeoLibre integrations](references/geolibre-integration.md) · [Report issues / propose features](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues/new/choose)
 
 ## What makes this different from an awesome-list?
 
 This repository includes a **working agent skill**: step-by-step architecture selection, compatibility rules, geospatial correctness checks, GIS application pathways, and reference starter code. The catalog is supporting evidence, **not a code-vending collection**. A coding agent must establish requirements, consult the relevant reference, verify package APIs, implement, and test before claiming success.
+
+## New in v0.3.2 — Dr. Qiusheng Wu GIS software ecosystem
+
+We reviewed the [official software directory](https://gishub.org/software/) maintained by Dr. Qiusheng Wu and added **40 distinct verified repository links**. Our searchable catalog now contains **84 projects** covering Python, ArcGIS/Whitebox, QGIS, GeoAI, Rust/WebAssembly, MapLibre and metadata-based data discovery.
+
+- [Technology and integration guide](references/gishub-software.md)
+- [Geospatial data discovery skill](skills/geospatial-data-discovery/SKILL.md)
+- [QGIS plugin development skill](skills/qgis-plugin-development/SKILL.md)
+- [Geospatial web mapping skill](skills/geospatial-web-mapping/SKILL.md)
+
+Install individual specialist skills with `npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill qgis-plugin-development` (replace the skill name as needed). The main `gis-development` skill continues to route broader requests.
+
+**Boundary:** a verified GitHub repository is not a guarantee that its examples work in a given GIS release or that its hosted imagery and APIs are free to reuse. Check versions, licenses, authentication and data terms before deployment.
 
 ## Target development paths
 
