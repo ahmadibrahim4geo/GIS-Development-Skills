@@ -24,10 +24,10 @@ If the installer does not discover the skill, verify the folder `skills/gis-deve
 
 ## Release checklist
 
-1. Run `python scripts/validate_catalog.py` and `python -m unittest discover -s tests -v`.
+1. Run `python scripts/validate_catalog.py`, `python scripts/validate_api_catalog.py`, `python scripts/validate_skill_pack.py`, and `python -m unittest discover -s tests -v`.
 2. Ensure every new source has license and source-availability notes.
 3. Wait for the GitHub Actions checks to pass on the commit being released.
-4. Tag the tested commit with the appropriate next semantic version (for example `v0.3.2`) and publish a GitHub Release when ready.
+4. Tag the tested commit with the appropriate next semantic version (for example `vX.Y.Z` after accepting that exact commit) and publish a GitHub Release when ready.
 5. State clearly that templates are reference implementations, not GIS-app integration-tested binaries.
 
 ## Publish the static homepage with GitHub Pages
@@ -42,3 +42,5 @@ The repository includes a standalone responsive bilingual `index.html` and `asse
 4. After GitHub Pages successfully publishes the page, check https://ahmadibrahim4geo.github.io/GIS-Development-Skills/ . Verify the catalog/API tabs, keyword and category search, Arabic RTL toggle, responsive mobile layout, and relative JSON requests. The URL should **not** be advertised as live until the Pages deploy reports success.
 
 Opening `index.html` directly from a `file://` URL may block JSON fetching due to browser security policies. Use GitHub Pages or a local HTTP server such as `python -m http.server` from the repository root. No API keys or external JavaScript libraries are needed to display the page.
+
+**Documentation revision is not a GitHub Release.** A README badge or changelog section alone does not create a tag or downloadable release. Verify any published release on the repository's Releases page before advertising it as available.
