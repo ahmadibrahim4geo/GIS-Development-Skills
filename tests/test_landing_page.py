@@ -64,6 +64,31 @@ class LandingPageTests(unittest.TestCase):
         self.assertIn('href="assets/brand-refresh.css"', self.html)
         self.assertTrue((ROOT / "assets/brand-refresh.css").is_file())
 
+    def test_readme_header_has_only_one_slogan_and_balanced_wordmark(self):
+        logo = ET.parse(ROOT / "assets/logo.svg").getroot()
+        svg_ns = "{http://www.w3.org/2000/svg}"
+        text_elements = logo.findall(f".//{svg_ns}text")
+        wordmark = [
+            element for element in text_elements
+            if (element.text or "").startswith("Development")
+        ]
+        self.assertEqual(len(wordmark), 1)
+        skills = wordmark[0].find(f"{svg_ns}tspan")
+        self.assertIsNotNone(skills)
+        self.assertEqual(skills.text, "Skills")
+        self.assertEqual(skills.attrib.get("dx"), "17")
+
+        for path in ("README.md", "README.ar.md"):
+            readme = (ROOT / path).read_text(encoding="utf-8")
+            self.assertIn('src="assets/logo.svg"', readme.splitlines()[0])
+            self.assertNotIn("<strong>The Heart of Geospatial Innovation</strong>", readme)
+            self.assertIn("GIS Development Skills", readme)
+        english = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn(
+            "Build GIS tools, plugins and geospatial applications with a verifiable development workflow.",
+            english,
+        )
+
     def test_approved_layered_g_brand_used_consistently(self):
         full_logo = (ROOT / "assets/logo.svg").read_text(encoding="utf-8")
         icon_logo = (ROOT / "assets/icon.svg").read_text(encoding="utf-8")
