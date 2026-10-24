@@ -12,12 +12,12 @@ The design is based on the author's selected concept featuring a cyan-to-mint **
 
 | File | Purpose |
 |---|---|
-| [logo.svg](logo.svg) | Full name + approved slogan, used at the top of the English and Arabic READMEs and the website hero |
+| [logo.svg](logo.svg) | Full name + approved slogan, used at the top of the English and Arabic READMEs. The website hero uses semantic HTML wordmark text for reliable typography |
 | [icon.svg](icon.svg) | Compact layered G used by the navigation header and browser favicon |
 | [brand-refresh.css](brand-refresh.css) | Responsive presentation styling, consistent with the same colors |
 | [../index.html](../index.html) | Live landing page layout, headings, catalog and creator section |
 
-The SVG files are **maintainable vector interpretations** of the approved illustrated concept, allowing browser/GitHub use and scaling without depending on an external font or paid asset. The original generated PNG is preserved in the design conversation and is distinct from these vector assets.
+**Important correction (2026-10-24):** The earlier hand-drawn SVG G did not visually match the approved concept. Both SVG files now embed the **same raster asset scaled from the approved Layered Geospatial G image**, so the icon stays consistent. These are SVG containers with raster icon content, **not fully vector versions of the illustrated symbol**. The full brand wordmark in `logo.svg` remains SVG text, while the website hero deliberately uses styled HTML text to avoid stretched letters or excessive fixed character spacing. The full-size concept image remains in the design conversation, not in the repository.
 
 ## Brand language
 
@@ -28,7 +28,7 @@ The SVG files are **maintainable vector interpretations** of the approved illust
 - Primary text: `#F5F9FB`
 - Secondary text: `#B2CED5`
 
-Avoid competing design motifs (a standalone globe, giant pin, or unrelated contour G). Use the **same layered G** on GitHub, the homepage, social presentations and small-screen icons. Keep the full name readable independently of the logo on accessible pages.
+Avoid competing design motifs (a standalone globe, giant pin, or unrelated contour G). Use the **same layered G** on GitHub, the homepage, social presentations and small-screen icons. Keep the full name readable independently of the logo on accessible pages. Avoid custom `letter-spacing` on the big wordmark; support reflow on mobile without stretching the G.
 
 ## Non-negotiable wording
 
