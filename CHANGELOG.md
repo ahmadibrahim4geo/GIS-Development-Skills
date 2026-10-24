@@ -2,6 +2,11 @@
 
 ## Unreleased — site and repository experience (2026-10-24)
 
+- Add two GEBCO_2026 access methods: no-key WMS visualization and CEDA OPeNDAP numeric global bathymetry/topography, increasing API catalog from 37 to 39 entries. Document source TID, 15 arc-second spacing, vertical datum caveats, public-domain credits, polar ice variants and no navigation use.
+- Update English/Arabic site and README, discovery/integration/general/Desktop agent guidance and API validation regression tests.
+
+
+
 - Add a dedicated **eighth** Geospatial API Integration skill and two new bilingual homepage pathway cards for data discovery and safe provider adapters.
 - Extend the free/public geospatial API directory from 18 to **37 services** with 19 new documented providers and explicit access, license, coverage and quota warnings.
 - Update bilingual homepage API count and explanatory text; add source-selection guidance to discovery, ArcPy, desktop and web GIS skills.
