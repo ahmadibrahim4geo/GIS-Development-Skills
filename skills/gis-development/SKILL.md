@@ -41,6 +41,10 @@ Use this skill when designing or implementing a GIS **tool, add-in, plugin, desk
 - Avoid embedding personal OpenTopography keys, scraping/bulk public tile services, or relying on paused SoilGrids REST.
 - Check reproducible datasets and elevation vertical datum before presenting numerical results.
 
+## GeoLibre-specific development routing
+
+When the target is a GeoLibre map, `.geolibre.json` project, plugin, or hosted/desktop GeoLibre deployment, consult `../../references/geolibre-integration.md` and the official upstream `https://github.com/opengeos/GeoLibre/tree/main/skills/geolibre`. Use the official GeoLibre skill with its MCP/Python authoring paths instead of guessing an undocumented file schema. For plugins use the official template, `plugin.json`, declared compatible rendering engines and real host integration tests. For desktop architecture reuse **patterns** (renderer-neutral state, command capability checks, data-source licensing) without treating external code or imagery as automatically reusable. Do not claim GeoLibre code runs as an ArcMap, ArcGIS Pro or QGIS plugin. Verify portability, CRS, credentials, live-vs-file workflow and provider terms.
+
 ## Required pre-delivery check
 
 - [ ] Specify exact target runtime and versions; prove compatibility or clearly label assumptions.

@@ -4,7 +4,7 @@
 
 Created by [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). Independent community resource; **not affiliated with Esri, QGIS, GeoRust, GeoLibre, or other catalogued projects**.
 
-> **Status:** v0.3.0 expanded open-source GIS catalog, GeoLibre R/RustGIS and public geospatial APIs. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
+> **Status:** v0.3.1 expanded open-source GIS catalog, GeoLibre R/RustGIS and public geospatial APIs. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
 
 [اقرأ بالعربية](README.ar.md) · [Contributing](CONTRIBUTING.md) · [Publishing](PUBLISHING.md) · [Catalog](references/project-catalog.json) · [Skill](skills/gis-development/SKILL.md) · [Free GIS APIs](references/free-geospatial-apis.md)
 
@@ -21,6 +21,7 @@ This repository includes a **working agent skill**: step-by-step architecture se
 | QGIS plugin / Processing toolbox | PyQGIS, Processing provider | `references/qgis.md` |
 | GIS desktop application | Python/Qt, Tauri/Rust, or C# + interoperable core | `references/desktop-and-web.md`, `references/dotnet-gis.md` |
 | 2D maps / web mapping | MapLibre, GeoLibre, appropriate provider | `references/desktop-and-web.md` |
+| GeoLibre-native maps, plugins, MCP and Python integration | Official GeoLibre skill, Python package, Plugin API | `references/geolibre-integration.md` |
 | 3D globe / terrain | CesiumJS + verified imagery/terrain source | `references/desktop-and-web.md` |
 | GIS in R / Rust-native GIS apps | GeoLibre R, RustGIS | `references/rustgis-and-geolibre-r.md` |
 | Free/public geospatial services | Weather, DEM, imagery, tiles, OSM, biodiversity | `references/free-geospatial-apis.md` |

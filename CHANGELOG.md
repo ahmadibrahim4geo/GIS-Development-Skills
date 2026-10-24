@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1 — 2026-10-24
+
+- Add practical GeoLibre integration guidance covering its official agent skill, MCP server, Python API, plugin template and renderer-neutral architecture.
+- Route GeoLibre-specific agent requests to the official upstream skill while keeping independent GIS QA and license rules.
+- Link the new guide in English and Arabic documentation. No third-party code copied.
+
 ## 0.3.0 — 2026-10-24
 
 - Add GeoLibre R (MIT; verified R source) and RustGIS (Apache-2.0; verified Rust workspace) with architecture and integration guide.

@@ -20,6 +20,10 @@
 
 أضفنا مراجع مكتبات مفيدة مثل NetTopologySuite، وWebView2Samples، وArcGIS Pro SDK وGeoAI وPySTAC وTiTiler وDuckDB، مع توضيح استخداماتها ومحاذير الترخيص. التفاصيل في [`earthmapper-case-studies.md`](references/earthmapper-case-studies.md) و[`dotnet-gis.md`](references/dotnet-gis.md).
 
+## دليل تكامل GeoLibre (الإصدار v0.3.1)
+
+أضفنا [`references/geolibre-integration.md`](references/geolibre-integration.md) لتوجيه مطوّري نظم المعلومات الجغرافية ووكلاء الذكاء الاصطناعي لاستخدام مهارة GeoLibre الرسمية وMCP وPython وواجهات تطوير Plugins، مع الاستفادة من معمارية التطبيق في فصل محركات الخرائط عن التحليل المكاني. لا ننقل كود الجهات الخارجية دون تراخيص واضحة ولا نخلط GeoLibre بإضافات ArcGIS أو QGIS.
+
 ## إضافات الإصدار v0.3.0
 
 - **[GeoLibre R](https://github.com/opengeos/geolibre-r)**: مكتبة مفتوحة المصدر MIT لعرض وتطوير الخرائط داخل RStudio وShiny وQuarto.
@@ -47,7 +51,7 @@ python scripts/search_catalog.py --query rust
 
 > جميع الأمثلة البرمجية نقطة انطلاق ولا يُفترض تشغيلها داخل ArcGIS أو QGIS بنجاح دون اختبارها في الإصدار المستهدف. والمستودعات الخارجية ليست أجزاء من هذا المشروع ولا تُنقل منها الأكواد تلقائيًا.
 
-**تاريخ إعداد الفهرس:** 24 أكتوبر 2026.  **المؤلف:** Ahmed Ibrahim.  **الحالة:** v0.3.0.
+**تاريخ إعداد الفهرس:** 24 أكتوبر 2026.  **المؤلف:** Ahmed Ibrahim.  **الحالة:** v0.3.1.
 
 تعليمات النشر: [`PUBLISHING.md`](PUBLISHING.md).
 
