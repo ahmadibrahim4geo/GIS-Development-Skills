@@ -55,3 +55,16 @@ html[lang="en"] .lang-ar,html[lang="ar"] .lang-en{display:none!important}
 @media(max-width:900px){.hero-visual{transform:none}.nav-links{display:none}.hero{grid-template-columns:1fr;padding-block:54px 30px}.hero-visual{max-width:620px}.author-panel{grid-template-columns:1fr 1.7fr;gap:19px;padding:22px}.author-image-frame{width:185px;height:185px}}
 @media(max-width:640px){.container{width:calc(100% - 30px)}.brand img{width:42px;height:42px}.nav-brand-name small{font-size:9px}.hero-signature{padding-top:16px}.hero-brand{width:100%;border-radius:13px}.hero-exact{font-size:19px}.hero .lead{font-size:14px}.hero-visual{min-height:360px;transform:none}.float-a{top:70px}.float-b{bottom:55px}.visual-float{padding:6px 8px}.visual-float strong{font-size:9px}.stat strong{font-size:30px}.author-panel{grid-template-columns:1fr;gap:30px;padding:22px}.author-image-frame{width:200px;height:200px}.author-copy h3{font-size:29px}.author-links a{flex:1 1 100px}.author-section{padding-top:60px}}
 @media(prefers-reduced-motion:reduce){.hero-visual,.author-image-frame{transform:none!important}}
+
+/* Brand v2: the approved layered G is the focal point instead of a generic globe */
+.scene-identity{height:312px;min-height:240px;position:relative;display:grid;place-items:center;isolation:isolate;margin:8px auto 9px;overflow:visible}
+.scene-logo{height:252px;width:252px;max-width:75%;object-fit:contain;z-index:2;position:relative;filter:drop-shadow(0 16px 24px rgba(1,10,18,.65));transition:transform .35s ease}
+.hero-visual:hover .scene-logo{transform:translateY(-5px)}
+.scene-orbit{width:300px;height:205px;max-width:88%;border:1px solid rgba(77,228,194,.22);border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-26deg)}
+.orbit-two{transform:translate(-50%,-50%) rotate(26deg);border-color:rgba(112,197,233,.19)}
+.scene-axis{height:1px;background:linear-gradient(90deg,transparent,#6cdbbd40,transparent);position:absolute;inset-inline:7%;top:50%}
+.scene-axis-y{transform:rotate(90deg)}
+.scene-label{color:#82c9b8;font:10px/1.3 monospace;letter-spacing:1px;position:absolute;z-index:1}
+.label-north{top:22px;left:10%}.label-east{right:10%;bottom:18px}
+@media(max-width:640px){.scene-identity{height:235px;min-height:195px}.scene-logo{height:194px;width:194px}.scene-orbit{width:220px;height:140px}.label-north{top:0}.label-east{bottom:0}}
+@media(prefers-reduced-motion:reduce){.scene-logo{transition:none!important}.hero-visual:hover .scene-logo{transform:none!important}}
