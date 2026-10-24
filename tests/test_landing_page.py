@@ -75,7 +75,7 @@ class LandingPageTests(unittest.TestCase):
             match = re.search(r'data:image/png;base64,([A-Za-z0-9+/=]+)', asset)
             self.assertIsNotNone(match)
             data = base64.b64decode(match.group(1), validate=True)
-            self.assertTrue(data.startswith(b"\\x89PNG\\r\\n\\x1a\\n"))
+            self.assertTrue(data.startswith(bytes([137, 80, 78, 71, 13, 10, 26, 10])))
             logos.append(data)
         self.assertEqual(logos[0], logos[1])
         self.assertIn('class="scene-logo" src="assets/icon.svg"', self.html)
