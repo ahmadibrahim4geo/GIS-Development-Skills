@@ -9,7 +9,6 @@ REPOS = (
     "MIRSAD",
     "Create-FlowArrow-Tool",
     "GeologicalCrossSectionToolbox",
-    "GeoVision",
     "ArcMap-Style-Collection",
     "gis-data-repositories-professional-2026",
 )
@@ -29,6 +28,11 @@ class AuthorGISCaseStudyTests(unittest.TestCase):
                 self.assertIn(url, self.entries)
                 self.assertIn("source_availability", self.entries[url])
                 self.assertIn("reviewed", self.entries[url]["provenance"])
+
+    def test_excluded_unready_software(self):
+        self.assertNotIn(OWNER + "GeoVision", self.entries)
+        guide = (ROOT / "references" / "ahmad-ibrahim-gis-case-studies.md").read_text(encoding="utf-8")
+        self.assertNotIn("GeoVision", guide)
 
     def test_scope_separates_tools_and_assets(self):
         styles = self.entries[OWNER + "ArcMap-Style-Collection"]
