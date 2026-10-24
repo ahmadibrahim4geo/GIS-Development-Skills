@@ -1,21 +1,63 @@
-<p align="center"><img src="assets/logo.svg" alt="GIS Development Skills logo" width="720"></p>
-<p align="center"><strong>Build GIS tools, plugins and geospatial applications with a verifiable development workflow.</strong></p>
+<p align="center">
+  <img src="assets/readme-banner.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
+</p>
 
-# GIS Development Skills 🌍
+<p align="center">
+  <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills"><img alt="Open source" src="https://img.shields.io/badge/Open%20Source-GitHub-172B3C?style=for-the-badge&amp;logo=github&amp;logoColor=white"></a>
+  <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/ahmadibrahim4geo/GIS-Development-Skills?style=for-the-badge&amp;label=Stars&amp;color=F2F5F9&amp;labelColor=172B3C"></a>
+  <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/forks"><img alt="GitHub forks" src="https://img.shields.io/github/forks/ahmadibrahim4geo/GIS-Development-Skills?style=for-the-badge&amp;label=Forks&amp;color=F2F5F9&amp;labelColor=172B3C"></a>
+  <a href="CHANGELOG.md"><img alt="Documentation version v0.3.5, not a published software release" src="https://img.shields.io/badge/Docs-v0.3.5-2582ED?style=for-the-badge&amp;labelColor=172B3C"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/ahmadibrahim4geo/GIS-Development-Skills?style=for-the-badge&amp;label=License&amp;color=35D592&amp;labelColor=172B3C"></a>
+  <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/"><img alt="Website status" src="https://img.shields.io/website?url=https%3A%2F%2Fahmadibrahim4geo.github.io%2FGIS-Development-Skills%2F&amp;style=for-the-badge&amp;label=Website&amp;labelColor=172B3C"></a>
+  <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml"><img alt="Validation workflow status" src="https://img.shields.io/github/actions/workflow/status/ahmadibrahim4geo/GIS-Development-Skills/validate.yml?style=for-the-badge&amp;label=Tests&amp;labelColor=172B3C"></a>
+</p>
 
-[![GIS Skill validation](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml/badge.svg)](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml) ![License: MIT](https://img.shields.io/badge/license-MIT-3f8c76) ![Documentation: v0.3.5](https://img.shields.io/badge/docs-v0.3.5-24483d)
+## Build GIS tools, plugins and geospatial applications with a verifiable development workflow.
 
-**Project homepage:** [GitHub Pages website](https://ahmadibrahim4geo.github.io/GIS-Development-Skills/) *(check publication status in repository Pages settings)* · [View homepage source](index.html) · [English / العربية](README.ar.md) · [Logo](assets/logo.svg).
+A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.
 
-**Project overview:** A version-aware GIS developer agent skill plus curated references, public geospatial API catalog, and practical starter templates. Supports ArcGIS Pro, ArcMap, QGIS, GeoLibre, RustGIS, desktop applications, web maps, 3D terrain, remote sensing and GeoAI.
+<table width="100%">
+  <tr>
+    <td align="center" valign="top" width="16%">
+      <a href="skills/arcgis-toolbox-engineering/SKILL.md"><img src="assets/readme-tools.svg" alt="" width="48" height="48"><br><strong>GIS Tools</strong></a><br>
+      <sub>ArcGIS, QGIS<br>and Python tools</sub>
+    </td>
+    <td align="center" valign="top" width="16%">
+      <a href="references/free-geospatial-apis.md"><img src="assets/readme-apis.svg" alt="" width="48" height="48"><br><strong>Geospatial APIs</strong></a><br>
+      <sub>Datasets and<br>web services</sub>
+    </td>
+    <td align="center" valign="top" width="16%">
+      <a href="skills/gis-development/SKILL.md"><img src="assets/readme-development.svg" alt="" width="48" height="48"><br><strong>Development</strong></a><br>
+      <sub>Skills, examples<br>and templates</sub>
+    </td>
+    <td align="center" valign="top" width="16%">
+      <a href="skills/geospatial-web-mapping/SKILL.md"><img src="assets/readme-maps.svg" alt="" width="48" height="48"><br><strong>Maps & 3D</strong></a><br>
+      <sub>2D/3D mapping<br>and visualization</sub>
+    </td>
+    <td align="center" valign="top" width="16%">
+      <a href="skills/gis-desktop-application-development/SKILL.md"><img src="assets/readme-desktop.svg" alt="" width="48" height="48"><br><strong>Desktop Apps</strong></a><br>
+      <sub>Standalone GIS<br>applications</sub>
+    </td>
+    <td align="center" valign="top" width="16%">
+      <a href="references"><img src="assets/readme-guides.svg" alt="" width="48" height="48"><br><strong>Guides & References</strong></a><br>
+      <sub>Curated resources<br>and best practices</sub>
+    </td>
+  </tr>
+</table>
 
-**An open, installable Agent Skill for building reliable GIS tools, plugins, web maps, and desktop geospatial applications.**
+<p align="center"><strong>7 installable GIS skills</strong> · <strong>104 curated geospatial references</strong> · <strong>18 public API sources</strong></p>
 
-Created by [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). Independent community resource; **not affiliated with Esri, QGIS, GeoRust, GeoLibre, or other catalogued projects**.
+<p align="center">
+  <a href="README.ar.md">العربية</a> ·
+  <a href="skills/gis-development/SKILL.md">Install the core skill</a> ·
+  <a href="references/project-catalog.json">Explore project catalog</a> ·
+  <a href="CONTRIBUTING.md">Contribute</a> ·
+  <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website ↗</a>
+</p>
 
-> **Status:** documentation revision v0.3.5 (not a tagged GitHub Release) — expanded open-source GIS catalog, GeoLibre R/RustGIS and public geospatial APIs. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
+**Maintainer:** [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). This is an independent community engineering resource, not an official project of Esri, QGIS, GeoRust or other third-party catalog entries. **Documentation v0.3.5** is not a GitHub software release; starter code and GIS host integrations require separate runtime testing.
 
-[اقرأ بالعربية](README.ar.md) · [Contributing](CONTRIBUTING.md) · [Publishing](PUBLISHING.md) · [Catalog](references/project-catalog.json) · [Skill](skills/gis-development/SKILL.md) · [Free GIS APIs](references/free-geospatial-apis.md) · [GeoLibre integrations](references/geolibre-integration.md) · [Report issues / propose features](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues/new/choose)
+---
 
 ## What makes this different from an awesome-list?
 

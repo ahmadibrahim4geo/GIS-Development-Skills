@@ -40,7 +40,7 @@ class LandingPageTests(unittest.TestCase):
 
     def test_local_assets_exist(self):
         self.assertIn("assets/icon.svg", self.parser.links)
-        self.assertIn("assets/logo.svg", (ROOT / "README.md").read_text(encoding="utf-8"))
+        self.assertIn("assets/readme-banner.svg", (ROOT / "README.md").read_text(encoding="utf-8"))
         for asset in ("assets/logo.svg", "assets/icon.svg"):
             tree = ET.parse(ROOT / asset)
             self.assertTrue(tree.getroot().tag.endswith("svg"))
@@ -80,7 +80,7 @@ class LandingPageTests(unittest.TestCase):
 
         for path in ("README.md", "README.ar.md"):
             readme = (ROOT / path).read_text(encoding="utf-8")
-            self.assertIn('src="assets/logo.svg"', readme.splitlines()[0])
+            self.assertIn('src="assets/readme-banner.svg"', readme)
             self.assertNotIn("<strong>The Heart of Geospatial Innovation</strong>", readme)
             self.assertIn("GIS Development Skills", readme)
         english = (ROOT / "README.md").read_text(encoding="utf-8")

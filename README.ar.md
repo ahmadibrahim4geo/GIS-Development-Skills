@@ -1,9 +1,17 @@
-<p align="center"><img src="assets/logo.svg" alt="شعار مشروع GIS Development Skills" width="720"></p>
-<p align="center"><strong>مهارات ومراجع مفتوحة المصدر لتطوير برمجيات وأدوات نظم المعلومات الجغرافية.</strong></p>
+<p align="center">
+  <img src="assets/readme-banner.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
+</p>
 
-# مهارات تطوير نظم المعلومات الجغرافية — GIS Development Skills
+<p align="center">
+  <a href="README.md">English</a> ·
+  <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">الموقع الإلكتروني</a> ·
+  <a href="skills/gis-development/SKILL.md">المهارة الأساسية</a> ·
+  <a href="CONTRIBUTING.md">المساهمة</a>
+</p>
 
-[![فحوصات GIS Skill](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml/badge.svg)](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml) ![MIT](https://img.shields.io/badge/license-MIT-3f8c76)
+## طوّر أدوات وتطبيقات نظم المعلومات الجغرافية وفق منهجية يمكن التحقق منها.
+
+مهارات تطوير برمجيات نظم المعلومات الجغرافية ومراجع مفتوحة المصدر، تشمل **7 مهارات متخصصة** و**104 مراجع جغرافية** و**18 مصدرًا لواجهات البيانات والخدمات الجغرافية**.
 
 **الصفحة التعريفية:** [موقع المشروع على GitHub Pages](https://ahmadibrahim4geo.github.io/GIS-Development-Skills/) *(تُراجع حالة النشر في إعدادات Pages)* · [كود الواجهة](index.html) · [الشعار](assets/logo.svg) · [ملف المهارة](skills/gis-development/SKILL.md) · [الإبلاغ عن مشكلة أو اقتراح تطوير](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues/new/choose).
 
