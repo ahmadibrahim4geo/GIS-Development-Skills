@@ -59,6 +59,19 @@ A practical development skill and curated reference hub for building reliable Ar
 
 ---
 
+## Production GIS workflows and quality benchmark — 2026-10-24
+
+**Additive upgrade, without deleting any earlier skills, reference sources, templates or site features:** this repository now includes **11 installable GIS agent skills**, **104 curated project references** and **39 public GIS API entries**.
+
+- [Spatial Databases](skills/spatial-databases/SKILL.md): PostGIS/SpatiaLite, spatial indexing and measured query plans.
+- [Geospatial Data Processing](skills/geospatial-data-processing/SKILL.md): vector/raster pipelines, safe coordinate transformations and reproducible checks.
+- [Remote Sensing Pipelines](skills/remote-sensing-pipelines/SKILL.md): STAC/COG, Earth Engine, radiometric QA and aligned raster grids.
+- [Reproducible engineering examples](examples/README.md): topology audit, modeled weather to GeoJSON, batch map PDF export, PostGIS SQL and STAC/COG checklist.
+- [GIS Quality Benchmark](docs/QUALITY_BENCHMARK.md): T0–T4 test-evidence levels and native GIS acceptance requirements.
+- [Production workflow reference](references/production-workflows.md): implementation safeguards, test limits and examples.
+
+Network and weather examples have synthetic offline fixtures for deterministic unit tests. ArcGIS/QGIS/PostGIS/Windows and live-provider acceptance still need real host evidence.
+
 ## What makes this different from an awesome-list?
 
 This repository includes a **working agent skill**: step-by-step architecture selection, compatibility rules, geospatial correctness checks, GIS application pathways, and reference starter code. The catalog is supporting evidence, **not a code-vending collection**. A coding agent must establish requirements, consult the relevant reference, verify package APIs, implement, and test before claiming success.
@@ -72,7 +85,7 @@ The full source/skill-pack integrity audit introduced:
 - `python scripts/validate_skill_pack.py` — offline checks of all skill frontmatters, local documentation links, website resources, and synchronized project/API/skill counters.
 - [Technical audit and outstanding verification](docs/TECHNICAL_AUDIT_2026-10-24.md), with exact test limits and remaining host-runtime checks.
 
-**Current inventory:** 104 curated code/data references, 39 API service entries and **8 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
+**Current inventory:** 104 curated code/data references, 39 API service entries and **11 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
 
 ```bash
 python scripts/validate_catalog.py

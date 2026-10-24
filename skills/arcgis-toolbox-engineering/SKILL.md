@@ -15,7 +15,7 @@ Read `../../references/ahmad-ibrahim-gis-case-studies.md` and the real code in:
 - [MIRSAD](https://github.com/ahmadibrahim4geo/MIRSAD): `Toolboxes/*.pyt`, `mirsad_core/`, `tests/`, `MIRSAD Desktop/`, `Documents/TESTING.md`.
 - [CreateFlowArrow](https://github.com/ahmadibrahim4geo/Create-FlowArrow-Tool): `CreateFlowArrow.pyt`, `CreateFlowArrow.py`, `data/`.
 - [GeologicalCrossSectionToolbox](https://github.com/ahmadibrahim4geo/GeologicalCrossSectionToolbox): `GeologicalCrossSectionToolbox.pyt`, `geo_cross_section_engine.py`, `Data_Test/`.
-- For CRS accuracy, load `../coordinate-reference-systems/SKILL.md`; for free imagery/climate/DEM and the 37-service API directory read `../geospatial-data-discovery/SKILL.md` and `../geospatial-api-integration/SKILL.md`.
+- For CRS accuracy, load `../coordinate-reference-systems/SKILL.md`; for free imagery/climate/DEM and the current 39-service API catalog read `../geospatial-data-discovery/SKILL.md` and `../geospatial-api-integration/SKILL.md`.
 
 ## Engineering procedure
 
@@ -58,3 +58,7 @@ When converting a toolbox into a standalone app (as with MIRSAD Desktop):
 - `../../references/arcgis-pro.md`
 - `../../references/ahmad-ibrahim-gis-case-studies.md`
 - `../../references/geospatial-foundations.md`
+
+## Additional production-grade batch-export example
+
+Read the [ArcGIS Pro batch PDF exporter](../../examples/batch-export/README.md). Verify actual export API compatibility and resulting PDFs inside the intended ArcGIS Pro version; passing generic Python syntax checks is not native GIS acceptance.
