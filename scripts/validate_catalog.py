@@ -13,7 +13,12 @@ URL_PATTERN = re.compile(r'^https://github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-
 
 def validate_catalog(path=CATALOG):
     errors = []
-    data = json.loads(Path(path).read_text(encoding='utf-8'))
+    try:
+        data = json.loads(Path(path).read_text(encoding='utf-8'))
+    except (OSError, ValueError) as exc:
+        return ['Cannot read project catalog JSON: {}'.format(exc)]
+    if not isinstance(data, dict):
+        return ['Catalog root must be a JSON object']
     if data.get('schema_version') != '1.0':
         errors.append('Unsupported catalog schema_version')
     items = data.get('projects')
@@ -31,9 +36,10 @@ def validate_catalog(path=CATALOG):
         url = entry.get('url', '')
         if not isinstance(url, str) or not URL_PATTERN.match(url):
             errors.append('{} invalid canonical GitHub URL'.format(tag))
-        elif url.casefold() in seen_urls:
+        elif url.rstrip('/').casefold() in seen_urls:
             errors.append('{} duplicate URL'.format(tag))
-        seen_urls.add(str(url).casefold())
+        if isinstance(url, str):
+            seen_urls.add(url.rstrip('/').casefold())
         if not isinstance(entry.get('platforms'), list) or not entry['platforms'] or not all(isinstance(x,str) and x for x in entry['platforms']):
             errors.append('{} nonempty platforms string array required'.format(tag))
         for field in ('name','category','description','role','license','integration','reviewed_on'):
