@@ -28,3 +28,11 @@ Maintain valid YAML metadata in `skills/<skill-name>/SKILL.md`; the name must ma
 ## Production GIS engineering examples
 
 Contribute new examples under `examples/` **without deleting or altering older content**. Each needs an exact supported version/environment, data license/provenance, synthetic or redistributable fixture, input/output schema, CRS and units, repeatable command, expected outcome, failure cases, and safe output paths. Classify actual evidence using [the T0–T4 quality benchmark](docs/QUALITY_BENCHMARK.md); generic CI, unexecuted PostGIS statements and ArcPy mocks are not native acceptance. Synchronize both README languages, website links, both language dictionaries and counters in the same change.
+
+## Production GIS Agent quality gates
+
+- Add new capabilities without deleting old skills, data catalogs, templates or approved website branding.
+- Write cases and acceptance evidence using [the T0–T4 contract](templates/GIS_ACCEPTANCE_REPORT.md), [geospatial fixture pack](fixtures/README.md) and, when relevant, [native ArcGIS/QGIS tests](native_tests/README.md).
+- Follow [security](references/geospatial-security.md) and [performance](references/geospatial-performance.md) rules. Read [common before/after mistakes](references/gis-antipatterns.md).
+- Keep per-record status unknown unless independently tested, and do not infer license compliance from URL reachability.
+- Run `python scripts/build_manifest.py --check` and the full test suite, and update EN/AR README and website when adding user-facing tools or paths.

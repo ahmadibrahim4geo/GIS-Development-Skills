@@ -1,0 +1,54 @@
+{
+  "type": "FeatureCollection",
+  "name": "synthetic_distance_examples",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "origin",
+      "properties": {
+        "kind": "point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "one-degree",
+      "properties": {
+        "kind": "point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "degree-line",
+      "properties": {
+        "kind": "line"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    }
+  ]
+}

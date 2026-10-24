@@ -15,7 +15,12 @@
       "description": "ArcGIS Python developer resources and package/environment links",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Esri sample GP tools",
@@ -29,7 +34,12 @@
       "description": "Legacy and Pro geoprocessing tool examples; confirm compatibility for each example",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Esri ArcGIS Python API",
@@ -43,7 +53,12 @@
       "description": "GIS portal and feature-service Python examples, distinct from ArcPy",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GEE ArcGIS Toolbox",
@@ -56,7 +71,12 @@
       "description": "Google Earth Engine integration for ArcGIS Pro; service access requirements apply",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "QGIS core",
@@ -70,7 +90,12 @@
       "description": "QGIS application and PyQGIS host implementation",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "QGIS Documentation",
@@ -83,7 +108,12 @@
       "description": "Official PyQGIS developer cookbook and plugin guidance",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GDAL",
@@ -100,7 +130,12 @@
       "description": "Raster/vector format support and geoprocessing",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "PROJ",
@@ -116,7 +151,12 @@
       "description": "Coordinate reference system transformations",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GEOS",
@@ -131,7 +171,12 @@
       "description": "Planar geometry/topology operations",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GRASS GIS",
@@ -146,7 +191,12 @@
       "description": "Geoprocessing engine for raster/vector/terrain/time-series workflows",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Rasterio",
@@ -160,7 +210,12 @@
       "description": "Python geospatial raster IO and processing",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoRust geo",
@@ -175,7 +230,12 @@
       "description": "Rust geometry algorithms and geospatial primitives",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoRust GDAL bindings",
@@ -190,7 +250,12 @@
       "description": "Rust GDAL bindings for geodata I/O",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoRust GeoZero",
@@ -205,7 +270,12 @@
       "description": "Streaming geospatial format conversions",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoRust PROJ bindings",
@@ -220,7 +290,12 @@
       "description": "Rust bindings for PROJ transformations",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoRust RStar",
@@ -235,7 +310,12 @@
       "description": "R-tree spatial indexing in Rust",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoLibre",
@@ -249,7 +329,12 @@
       "description": "Open-source GIS web/desktop/mobile platform with Tauri and mapping stack",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "EarthMapper Windows Desktop",
@@ -265,7 +350,12 @@
       "license": "not-declared; free-for-noncommercial-use is not an open-source license",
       "integration": "design-reference-only",
       "source_availability": "readme-only",
-      "caveat": "Do not assume source code, SDK, binaries or redistribution rights are provided."
+      "caveat": "Do not assume source code, SDK, binaries or redistribution rights are provided.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoLibre Plugin Template",
@@ -279,7 +369,12 @@
       "description": "Plugin scaffolding for GeoLibre; verify current plugin API",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "MapLibre GL JS",
@@ -293,7 +388,12 @@
       "description": "Open 2D interactive web maps and vector tile rendering",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "CesiumJS",
@@ -308,7 +408,12 @@
       "description": "Browser-based 2D/3D globe renderer (data services are separate)",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "EarthMapper segmentation",
@@ -323,7 +428,12 @@
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
       "integration": "reference-only",
-      "caveat": "Different historical remote-sensing EarthMapper project, not the Windows desktop GIS or the satellite-map generative study."
+      "caveat": "Different historical remote-sensing EarthMapper project, not the Windows desktop GIS or the satellite-map generative study.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "EarthMapper satellite-map translation",
@@ -338,7 +448,12 @@
       "license": "Apache-2.0 (repository files only; model availability unverified)",
       "integration": "research-reference-only",
       "source_availability": "paper-assets-no-implementation",
-      "caveat": "The repository contains LICENSE, README and assets but no runnable model implementation or checkpoint. Do not claim the Apache license covers absent weights or external datasets."
+      "caveat": "The repository contains LICENSE, README and assets but no runnable model implementation or checkpoint. Do not claim the Apache license covers absent weights or external datasets.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Awesome GeoRust",
@@ -352,7 +467,12 @@
       "description": "Third-party curated geospatial Rust ecosystem resources",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Awesome GIS",
@@ -368,7 +488,12 @@
       "description": "Third-party curated GIS libraries, tools and software",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Geo AI Skills",
@@ -383,7 +508,12 @@
       "description": "Independent geospatial AI agent skills; reference for alternative workflows",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "NetTopologySuite",
@@ -399,7 +529,12 @@
       "license": "verify-upstream",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
-      "caveat": "Geometry engine only; CRS and metric units must be handled separately."
+      "caveat": "Geometry engine only; CRS and metric units must be handled separately.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "ProjNET",
@@ -415,7 +550,12 @@
       "license": "verify-upstream",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
-      "caveat": "Verify the transformation accuracy and available grid shifts for the target region."
+      "caveat": "Verify the transformation accuracy and available grid shifts for the target region.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Microsoft WebView2 Samples",
@@ -430,7 +570,12 @@
       "license": "verify-upstream",
       "integration": "sample-reference",
       "source_availability": "source-code",
-      "caveat": "WebView2 is an application view bridge, not a GIS renderer or spatial engine."
+      "caveat": "WebView2 is an application view bridge, not a GIS renderer or spatial engine.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "LibTiff.NET",
@@ -446,7 +591,12 @@
       "license": "verify-upstream",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
-      "caveat": "TIFF encoding alone does not replace GeoTIFF georeferencing/CRS processing or GDAL."
+      "caveat": "TIFF encoding alone does not replace GeoTIFF georeferencing/CRS processing or GDAL.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "netDxf (archived)",
@@ -462,7 +612,12 @@
       "license": "verify-upstream",
       "integration": "legacy-reference-only",
       "source_availability": "source-code-archived",
-      "caveat": "Archived upstream: reassess maintenance, security and alternatives before adopting."
+      "caveat": "Archived upstream: reassess maintenance, security and alternatives before adopting.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "DuckDB",
@@ -479,7 +634,12 @@
       "license": "verify-upstream",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
-      "caveat": "Check DuckDB Spatial extension availability, versions, and file-format limitations."
+      "caveat": "Check DuckDB Spatial extension availability, versions, and file-format limitations.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "ArcGIS Pro SDK for .NET",
@@ -494,7 +654,12 @@
       "license": "verify-upstream",
       "integration": "sdk-reference-only",
       "source_availability": "documentation-and-samples",
-      "caveat": "ArcGIS Pro version and .NET SDK compatibility are strict; separate from ArcPy."
+      "caveat": "ArcGIS Pro version and .NET SDK compatibility are strict; separate from ArcPy.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Whitebox Next Gen ArcGIS",
@@ -509,7 +674,12 @@
       "license": "verify-upstream",
       "integration": "toolbox-reference",
       "source_availability": "source-code",
-      "caveat": "Some tools/features require specific Whitebox licensing and runtime configuration."
+      "caveat": "Some tools/features require specific Whitebox licensing and runtime configuration.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "PySTAC Client",
@@ -526,7 +696,12 @@
       "license": "verify-upstream",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
-      "caveat": "STAC discovery does not automatically grant hosted imagery access/usage rights."
+      "caveat": "STAC discovery does not automatically grant hosted imagery access/usage rights.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "TiTiler",
@@ -542,7 +717,12 @@
       "license": "verify-upstream",
       "integration": "service-reference",
       "source_availability": "source-code",
-      "caveat": "Operating a tile service has caching, server, security and data-service cost implications."
+      "caveat": "Operating a tile service has caching, server, security and data-service cost implications.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Leafmap",
@@ -558,7 +738,12 @@
       "license": "verify-upstream",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
-      "caveat": "Some basemap services and notebooks rely on external provider access."
+      "caveat": "Some basemap services and notebooks rely on external provider access.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoAI Python",
@@ -574,7 +759,12 @@
       "license": "verify-upstream",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
-      "caveat": "Model weights, datasets and framework dependencies retain separate licenses."
+      "caveat": "Model weights, datasets and framework dependencies retain separate licenses.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoPandas",
@@ -591,7 +781,12 @@
       "license": "verify-upstream",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
-      "caveat": "Use projected coordinates/geodesic operations for physical distances and areas."
+      "caveat": "Use projected coordinates/geodesic operations for physical distances and areas.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "PyProj",
@@ -608,7 +803,12 @@
       "license": "verify-upstream",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
-      "caveat": "Check axis order, datum grids and CRS units in explicit tests."
+      "caveat": "Check axis order, datum grids and CRS units in explicit tests.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "ONNX Runtime",
@@ -624,7 +824,12 @@
       "license": "verify-upstream",
       "integration": "runtime-with-license-review",
       "source_availability": "source-code",
-      "caveat": "Neural networks are not automatically geospatially aware: preserve pixel-to-world transforms."
+      "caveat": "Neural networks are not automatically geospatially aware: preserve pixel-to-world transforms.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Segment Anything 2",
@@ -640,7 +845,12 @@
       "license": "verify-upstream",
       "integration": "model-reference",
       "source_availability": "source-code",
-      "caveat": "Check pretrained-weight licenses, data handling, GPU requirements, and georeferencing of results."
+      "caveat": "Check pretrained-weight licenses, data handling, GPU requirements, and georeferencing of results.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoLibre R",
@@ -657,7 +867,12 @@
       "license": "MIT (LICENSE.md verified)",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
-      "caveat": "Hosted GeoLibre deployment and remote raster/map services retain independent availability, access and terms. COG requires CORS/range support."
+      "caveat": "Hosted GeoLibre deployment and remote raster/map services retain independent availability, access and terms. COG requires CORS/range support.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "RustGIS by opengeos",
@@ -674,7 +889,12 @@
       "license": "Apache-2.0 (LICENSE and Cargo.toml verified)",
       "integration": "architecture-and-source-reference",
       "source_availability": "source-code",
-      "caveat": "Do not confuse this application with the independent GeoRust libraries ecosystem. Benchmark and test releases and underlying online services before adopting."
+      "caveat": "Do not confuse this application with the independent GeoRust libraries ecosystem. Benchmark and test releases and underlying online services before adopting.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "geolibre-rust",
@@ -692,7 +912,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "whitebox-wasm",
@@ -709,7 +934,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "anymap",
@@ -726,7 +956,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "geemap",
@@ -743,7 +978,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GeoAgent",
@@ -760,7 +1000,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "geospatial",
@@ -777,7 +1022,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "geospatial-ml",
@@ -793,7 +1043,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "HyperCoast",
@@ -810,7 +1065,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "lidar",
@@ -826,7 +1086,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "mapwidget",
@@ -843,7 +1108,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "open-buildings",
@@ -859,7 +1129,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "pygis",
@@ -875,7 +1150,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "segment-geospatial",
@@ -892,7 +1172,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "whitebox-python",
@@ -909,7 +1194,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "whiteboxgui",
@@ -925,7 +1215,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "geospatial-data-catalogs",
@@ -942,7 +1237,12 @@
       "license": "verify-upstream",
       "integration": "discovery-reference-only",
       "source_availability": "machine-readable-index-or-documentation",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Earth-Engine-Catalog",
@@ -958,7 +1258,12 @@
       "license": "verify-upstream",
       "integration": "discovery-reference-only",
       "source_availability": "machine-readable-index-or-documentation",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "NASA-CMR-STAC",
@@ -975,7 +1280,12 @@
       "license": "verify-upstream",
       "integration": "discovery-reference-only",
       "source_availability": "machine-readable-index-or-documentation",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "NASA-Earth-Data",
@@ -991,7 +1301,12 @@
       "license": "verify-upstream",
       "integration": "discovery-reference-only",
       "source_availability": "machine-readable-index-or-documentation",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "stac-index-catalogs",
@@ -1007,7 +1322,12 @@
       "license": "verify-upstream",
       "integration": "discovery-reference-only",
       "source_availability": "machine-readable-index-or-documentation",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "qgis-basemaps",
@@ -1022,7 +1342,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "qgis-cdse-plugin",
@@ -1038,7 +1363,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "qgis-nasa-opera-plugin",
@@ -1054,7 +1384,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "qgis-plugin-template",
@@ -1070,7 +1405,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "qgis-stac-plugin",
@@ -1087,7 +1427,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "qgis-timelapse-plugin",
@@ -1104,7 +1449,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "maplibre-gl-components",
@@ -1121,7 +1471,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "maplibre-gl-geo-editor",
@@ -1138,7 +1493,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "maplibre-gl-layer-manager",
@@ -1155,7 +1515,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "maplibre-gl-plugin-template",
@@ -1172,7 +1537,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "maplibre-gl-swipe",
@@ -1189,7 +1559,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "maplibre-gl-time-slider",
@@ -1206,7 +1581,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "maplibre-gl-storymaps",
@@ -1223,7 +1603,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "maplibre-gl-lidar",
@@ -1240,7 +1625,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "maplibre-gl-planetary-computer",
@@ -1257,7 +1647,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "WhiteboxTools-ArcGIS",
@@ -1273,7 +1668,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "streamlit-geospatial",
@@ -1290,7 +1690,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "streamlit-map-template",
@@ -1307,7 +1712,12 @@
       "license": "verify-upstream",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Awesome-GEE",
@@ -1324,7 +1734,12 @@
       "license": "verify-upstream",
       "integration": "discovery-reference-only",
       "source_availability": "machine-readable-index-or-documentation",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "python-geospatial",
@@ -1341,7 +1756,12 @@
       "license": "verify-upstream",
       "integration": "discovery-reference-only",
       "source_availability": "machine-readable-index-or-documentation",
-      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Esri Projection Engine DB Documentation",
@@ -1358,7 +1778,12 @@
       "description": "Esri factory CRS objects, geographic/projected/vertical systems, WKID aliases, WKT, extents, transformations and datums",
       "reviewed_on": "2026-10-24",
       "license": "Apache-2.0",
-      "integration": "data-reference-and-catalog-inspector"
+      "integration": "data-reference-and-catalog-inspector",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "SpatialReference.org",
@@ -1375,7 +1800,12 @@
       "description": "PROJ-derived authority browser (EPSG, ESRI, IAU, IGNF, NKG, OGC) with WKT2, Esri WKT and PROJJSON exports",
       "reviewed_on": "2026-10-24",
       "license": "MIT (website source; upstream CRS authority terms separately apply)",
-      "integration": "authority-lookup-reference"
+      "integration": "authority-lookup-reference",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Esri ArcGIS Pro SDK community samples",
@@ -1389,7 +1819,12 @@
       "description": "Ribbon, dockpane, editing, command wiring and event integration examples for ArcGIS Pro",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "platform-samples"
+      "integration": "platform-samples",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Esri raster-functions",
@@ -1403,7 +1838,12 @@
       "description": "Raster function and imagery-processing samples; verify installed raster tools and compatible ArcGIS runtime",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "reference-only"
+      "integration": "reference-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Esri geometry API for Java",
@@ -1417,7 +1857,12 @@
       "description": "Java geometry/topology primitives such as buffer, intersect and union; require CRS-aware metric validation",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "library-evaluate"
+      "integration": "library-evaluate",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Esri LERC",
@@ -1433,7 +1878,12 @@
       "description": "Limited Error Raster Compression codec for efficient raster/DEM storage; no external elevation datasets included",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "library-evaluate"
+      "integration": "library-evaluate",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "ArcGIS Maps SDK for .NET samples",
@@ -1447,7 +1897,12 @@
       "description": "WPF, WinUI and .NET GIS interface and navigation samples; ArcGIS Maps SDK runtime terms separate",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "platform-samples"
+      "integration": "platform-samples",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "ArcGIS Maps SDK for .NET Toolkit",
@@ -1461,7 +1916,12 @@
       "description": "Reusable GIS UI components and navigation/toolkit patterns for .NET; check SDK/deployment licenses",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "library-evaluate"
+      "integration": "library-evaluate",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Esri Leaflet",
@@ -1475,7 +1935,12 @@
       "description": "ArcGIS map and feature services integration in Leaflet apps; respect service authentication and terms",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "library-evaluate"
+      "integration": "library-evaluate",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "MapLibre ArcGIS integration",
@@ -1489,7 +1954,12 @@
       "description": "Interoperate with supported ArcGIS feature, tile or map services through MapLibre; no hosted basemap entitlement",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "library-evaluate"
+      "integration": "library-evaluate",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "ArcGIS REST JS",
@@ -1503,7 +1973,12 @@
       "description": "ArcGIS REST requests, typed feature/service access and authentication integration patterns",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "library-evaluate"
+      "integration": "library-evaluate",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Esri CIM specification",
@@ -1518,7 +1993,12 @@
       "description": "Versioned cartographic information model and renderer/layout metadata reference; not a renderer implementation",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "standards-reference"
+      "integration": "standards-reference",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Esri I3S specification",
@@ -1533,7 +2013,12 @@
       "description": "Indexed 3D Scene Layer format and interoperable scene cache architecture",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "standards-reference"
+      "integration": "standards-reference",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Awesome ArcGIS Developers",
@@ -1548,7 +2033,12 @@
       "description": "Esri-maintained curated index of resources and project examples; inspect licenses of each underlying project",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "discovery-reference"
+      "integration": "discovery-reference",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "PROJ CRS Explorer",
@@ -1563,7 +2053,12 @@
       "description": "Interactive projection system explorer and filtering concepts; verify repository license before code adoption",
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
-      "integration": "ui-reference"
+      "integration": "ui-reference",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "MIRSAD — Climate ArcGIS Toolboxes & Desktop",
@@ -1581,7 +2076,12 @@
       "license": "MIT",
       "integration": "reference-and-QA-case-study",
       "source_availability": "public-original-source; desktop-dev-build; native-ArcMap-acceptance-incomplete",
-      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "CreateFlowArrow — Gravity Network QA",
@@ -1598,7 +2098,12 @@
       "license": "MIT",
       "integration": "reference-and-QA-case-study",
       "source_availability": "public-source-and-sample-data; native-multi-version-tests-not-established",
-      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "Geological Cross Section Toolbox",
@@ -1616,7 +2121,12 @@
       "license": "MIT",
       "integration": "reference-and-QA-case-study",
       "source_availability": "public-source-and-test-data; native-environment-integration-needs-verification",
-      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "ArcMap Style Collection",
@@ -1633,7 +2143,12 @@
       "license": "varies-by-third-party-asset-verify",
       "integration": "reference-only-no-asset-copy",
       "source_availability": "public-style-and-font-collection; review-each-upstream-license",
-      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     },
     {
       "name": "GIS Data Repositories Professional 2026",
@@ -1650,7 +2165,12 @@
       "license": "MIT-original-code-external-datasets-separate",
       "integration": "catalog-design-reference",
       "source_availability": "public-app-and-catalog-source; individual-provider-rights-vary",
-      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     }
   ]
 }
