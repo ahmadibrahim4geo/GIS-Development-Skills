@@ -11,3 +11,10 @@ These **additive** examples supplement the existing `templates/` and installed s
 | Satellite STAC/COG processing | [Workflow checklist](remote-sensing/STAC_COG_WORKFLOW.md) | Depends on source | Documentation only |
 
 See [quality benchmark](../docs/QUALITY_BENCHMARK.md). All commands should write to **new output locations** and never silently modify input datasets.
+
+## Related quality resources
+
+- [Synthetic GIS fixture pack and expected outcomes](../fixtures/README.md)
+- [Native ArcGIS Pro and QGIS acceptance harnesses](../native_tests/README.md)
+- [Security standard](../references/geospatial-security.md), [performance guidance](../references/geospatial-performance.md), [before/after anti-patterns](../references/gis-antipatterns.md)
+- [Mandatory acceptance report](../templates/GIS_ACCEPTANCE_REPORT.md)
