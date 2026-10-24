@@ -20,7 +20,7 @@
 <g font-family="DejaVu Sans,Segoe UI,Arial,sans-serif" text-anchor="start">
  <text x="390" y="182" fill="url(#cyan)" font-size="94" font-weight="800" letter-spacing="-3">GIS</text>
  <text x="594" y="182" fill="#F6F9FC" font-size="75" font-weight="700" letter-spacing="-3">Development</text>
- <text x="1200" y="182" fill="url(#mint)" font-size="75" font-weight="700" letter-spacing="-3">Skills</text>
+ <text x="1156" y="182" fill="url(#mint)" font-size="75" font-weight="700" letter-spacing="-3">Skills</text>
  <text x="599" y="237" fill="url(#tag)" font-size="31" font-weight="500" letter-spacing="1.3">The Heart of Geospatial Innovation</text>
 </g>
 <path d="M598 252H1295" stroke="#0C6577" stroke-width="1" opacity=".45"/>
