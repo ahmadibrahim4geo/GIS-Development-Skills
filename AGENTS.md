@@ -17,6 +17,6 @@
 
 - Approved brand title: **GIS Development Skills**; approved tagline: **The Heart of Geospatial Innovation**. Keep both in `assets/logo.svg` and the homepage hero.
 - Preserve this original English mission sentence **verbatim** immediately below the hero logo and in the English README: `Build GIS tools, plugins and geospatial applications with a verifiable development workflow.`
-- Visual language: custom contour-line `G` mark, vector/cartographic layers, dark charcoal, cyan/teal and pale green, restrained typography; keep `assets/icon.svg` synchronized with `assets/logo.svg`.
+- Visual language: **Approved Concept 02 — Layered Geospatial G**. A teal/mint geometric G over two tilted map layers (topographic contours and coordinate grid), on charcoal. Keep `assets/icon.svg` synchronized with `assets/logo.svg` and follow `assets/README.md`. Do not return to the earlier globe or contour-only G designs.
 - The bilingual author panel `#author` is based on Ahmad Ibrahim's published biography and portrait on https://ahmadibrahim4geo.github.io/MIRSAD/ . Preserve meaningful contact links while keeping phone digits invisible in the UI, and do not repurpose MIRSAD-specific climate/consulting material as claims about this repository.
 - The page enhancements live in `assets/brand-refresh.css`, loaded after inline base styles. Avoid duplication or breaking the existing working catalog filters, the language switch and GitHub Pages relative links.
