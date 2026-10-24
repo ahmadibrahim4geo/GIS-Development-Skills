@@ -29,5 +29,32 @@ class ReadmeLayoutTests(unittest.TestCase):
             ET.parse(ROOT / "assets" / ("readme-" + name + ".svg"))
         self.assertNotIn("v1.0.0", md.split("## What makes this different")[0])
 
+    def test_header_banner_tight_word_spacing_and_no_white_edges(self):
+        """Prevent the huge Development/Skills gap from reappearing in the README SVG."""
+        root = ET.parse(ROOT / "assets/readme-banner.svg").getroot()
+        self.assertEqual(root.attrib.get("viewBox"), "0 0 1600 330")
+        self.assertEqual(root.attrib.get("width"), "1600")
+        self.assertEqual(root.attrib.get("height"), "330")
+        svg = "{http://www.w3.org/2000/svg}"
+        labels = {
+            (node.text or "").strip(): node for node in root.iter(svg + "text")
+        }
+        for word in ("GIS", "Development", "Skills"):
+            self.assertIn(word, labels)
+        # Approximate word widths for the declared DejaVu Sans bold sizing
+        # and -3 letter-spacing. Both inter-word gaps are ~30 SVG units.
+        gis_gap = float(labels["Development"].get("x")) - float(labels["GIS"].get("x")) - 174
+        dev_gap = float(labels["Skills"].get("x")) - float(labels["Development"].get("x")) - 532
+        self.assertGreater(gis_gap, 15)
+        self.assertLess(gis_gap, 45)
+        self.assertGreater(dev_gap, 15)
+        self.assertLess(dev_gap, 45)
+        self.assertLessEqual(abs(gis_gap - dev_gap), 12)
+        svg_text = (ROOT / "assets/readme-banner.svg").read_text(encoding="utf-8")
+        self.assertIn('<rect width="1600" height="330" fill="url(#background)"/>', svg_text)
+        self.assertNotIn('fill="#FFFFFF"', svg_text)
+        self.assertNotIn('fill="white"', svg_text)
+
+
 if __name__ == "__main__":
     unittest.main()
