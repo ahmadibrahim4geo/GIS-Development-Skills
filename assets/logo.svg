@@ -1,24 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="205" viewBox="0 0 1000 205" role="img" aria-labelledby="title desc"><title id="title">GIS Development Skills</title><desc id="desc">The Heart of Geospatial Innovation. A custom geospatial G made from contour lines, spatial layers, and coordinate markers.</desc>
-<rect width="1000" height="205" rx="22" fill="#0C1920"/><defs>
-<linearGradient id="g0" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#26C6F2"/><stop offset=".5" stop-color="#40D7C0"/><stop offset="1" stop-color="#B8E58D"/></linearGradient>
-<linearGradient id="g1" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#82F4BC"/><stop offset="1" stop-color="#14BBAE"/></linearGradient>
-<clipPath id="cl"><path d="M130 47 C104 27 64 29 45 55 C27 79 31 115 51 135 C72 155 110 151 128 129 L128 102 L101 102"/></clipPath></defs>
-<g transform="translate(9,8)">
-<path d="M89 5V26M89 153v24M7 90h25M147 90h24" stroke="#3CD5CB" stroke-width="2.6" stroke-linecap="round" opacity=".8"/>
-<rect x="84.5" y="13" width="9" height="9" rx="1" fill="#25CBE5"/><rect x="84.5" y="158" width="9" height="9" rx="1" fill="#25CBE5"/>
-<path d="M132 47 C107 23 66 27 43 53 C20 79 26 119 50 140 C76 163 114 157 137 134 L137 101 L104 101" fill="none" stroke="url(#g0)" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
-<g clip-path="url(#cl)" fill="none" stroke="#45DCCB" stroke-width="2.5" stroke-linecap="round" opacity=".76">
-<path d="M145 47 C117 14 61 14 31 48 C2 80 9 135 42 154 C79 181 126 160 148 131"/>
-<path d="M142 56 C117 31 68 30 49 57 C31 83 35 119 56 137 C80 154 116 143 133 119"/>
-<path d="M135 68 C108 45 75 44 60 67 C47 86 48 111 68 126 C91 141 113 124 122 109"/>
-<path d="M121 77 C100 63 80 65 72 78 C61 96 69 115 85 120"/>
-<path d="M49 50 C83 76 100 84 135 83"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="270" viewBox="0 0 1200 270" role="img" aria-labelledby="title desc">
+<title id="title">GIS Development Skills</title><desc id="desc">The Heart of Geospatial Innovation. Approved concept two: a cyan-to-green G letterform positioned over topographic contour and coordinate grid layers.</desc>
+<rect width="1200" height="270" rx="20" fill="#101B23"/>
+<svg x="12" y="20" width="238" height="238" viewBox="0 0 230 230"><defs>
+<linearGradient id="cyanlime" x1="0%" y1="80%" x2="100%" y2="0%"><stop stop-color="#00BDF0"/><stop offset=".48" stop-color="#23DED0"/><stop offset="1" stop-color="#B2FC92"/></linearGradient>
+<linearGradient id="top" x1="0%" y1="100%" x2="100%" y2="0%"><stop stop-color="#0BC2EA"/><stop offset=".55" stop-color="#36E8C7"/><stop offset="1" stop-color="#9AF5AF"/></linearGradient>
+<linearGradient id="middle" x1="15%" y1="5%" x2="85%" y2="100%"><stop stop-color="#007C95"/><stop offset=".55" stop-color="#0FC4C7"/><stop offset="1" stop-color="#0C8599"/></linearGradient>
+<linearGradient id="base" x1="0%" y1="0%" x2="80%" y2="100%"><stop stop-color="#08526E"/><stop offset="1" stop-color="#009BC0"/></linearGradient>
+<linearGradient id="label" x1="0%" x2="100%"><stop stop-color="#14D8F1"/><stop offset="1" stop-color="#21E6BC"/></linearGradient>
+<filter id="drop" x="-30%" y="-45%" width="160%" height="190%"><feGaussianBlur in="SourceAlpha" stdDeviation="5"/><feOffset dy="6"/><feComponentTransfer><feFuncA type="linear" slope=".32"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<clipPath id="clipGrid"><path d="M23 164 L108 117 Q118 113 127 117 L212 163 Q221 168 211 176 L138 214 Q125 221 115 215 L23 177 Q12 171 23 164Z"/></clipPath>
+<clipPath id="clipTopo"><path d="M23 141 L107 96 Q117 90 127 96 L213 139 Q223 144 210 151 L137 191 Q125 196 114 190 L23 153 Q12 148 23 141Z"/></clipPath>
+</defs><g filter="url(#drop)" stroke-linejoin="round">
+<path d="M23 164 L108 117 Q118 113 127 117 L212 163 Q221 168 211 176 L138 214 Q125 221 115 215 L23 177 Q12 171 23 164Z" fill="url(#base)" stroke="#16B1DA" stroke-width="2.5"/>
+<g clip-path="url(#clipGrid)" stroke="#27D5EC" stroke-width="2" opacity=".46"><path d="M3 162L126 225M25 146L148 209M52 132L175 195M80 116L202 177M107 102L230 165M-5 190L120 111M22 204L148 125M52 220L176 140M88 226L207 160M123 234L238 174" fill="none"/></g>
+<path d="M23 140 L107 95 Q117 90 127 95 L213 138 Q223 144 210 151 L137 189 Q125 196 114 190 L23 152 Q12 148 23 140Z" fill="url(#middle)" stroke="#24E6EA" stroke-width="2.5"/>
+<g clip-path="url(#clipTopo)" fill="none" stroke="#65FFF6" stroke-width="2.7" opacity=".7">
+<path d="M14 128C36 112 57 147 79 138C112 124 121 113 156 135S205 133 223 115"/>
+<path d="M15 143C40 122 57 160 87 153C118 146 127 127 159 146S197 145 228 125"/>
+<path d="M8 156C44 141 48 172 83 168C120 163 130 142 162 161S208 161 231 141"/>
+<path d="M48 185C74 166 101 190 130 175S175 168 201 174"/>
+<path d="M48 128C74 107 95 135 123 122S161 116 178 125"/>
+<path d="M79 172c18-14 32-2 46-8 18-8 29-15 48-4"/>
 </g>
-<path d="M91 110L117 98L143 109L116 122Z" fill="#BCE89A"/><path d="M91 124L117 136L143 123" fill="none" stroke="#33D2B7" stroke-width="5" stroke-linejoin="round"/><path d="M91 133L117 146L143 132" fill="none" stroke="#2CAEA7" stroke-width="3" stroke-linejoin="round"/>
-<circle cx="143" cy="52" r="10" fill="#B7EC93"/>
-</g>
-<text x="215" y="82" font-family="Segoe UI,Inter,Arial,sans-serif" fill="#F4F9F7" font-size="53" font-weight="820" letter-spacing="1">GIS DEVELOPMENT</text>
-<text x="215" y="135" font-family="Segoe UI,Inter,Arial,sans-serif" fill="#BCE89A" font-size="51" font-weight="820" letter-spacing="8">SKILLS</text>
-<path d="M216 158H256" stroke="#4ACFB8" stroke-width="3.5" stroke-linecap="round"/>
-<text x="272" y="165" font-family="Segoe UI,Inter,Arial,sans-serif" fill="#7FE0CB" font-size="24" letter-spacing="2">The Heart of Geospatial Innovation</text>
+<path d="M21 87 L108 38 Q118 33 127 39 L212 82 Q221 87 209 95 L181 111 L129 83 Q119 77 111 82 L76 102 L152 141 L180 126 L214 143 L149 180 Q138 186 125 180 L24 123 Q11 115 13 103 Q14 93 21 87Z" fill="#065773" opacity=".55" transform="translate(0,7)"/>
+<path d="M22 79 L105 32 Q116 25 127 32 L214 80 L185 96 L128 64 Q118 58 110 64 L78 82 L143 120 L176 101 L212 123 L149 160 Q136 167 124 161 L25 105 Q11 97 22 79Z" fill="url(#top)" stroke="#16DDEB" stroke-width="2"/>
+<path d="M75 82 L143 120 L176 101 L212 123 L149 160 L131 151 L172 126 L111 91Z" fill="url(#cyanlime)" opacity=".94"/>
+<path d="M22 79L105 32Q116 25 127 32L214 80" fill="none" stroke="#B2FFE0" stroke-width="2.4" opacity=".54"/>
+<path d="M25 106L124 161Q136 167 149 160" fill="none" stroke="#05A9B9" stroke-width="2"/>
+</g></svg>
+<text x="278" y="120" fill="url(#label2)" font-family="Segoe UI,Arial,sans-serif" font-size="83" font-weight="900" letter-spacing="-2">GIS</text>
+<text x="466" y="120" fill="#F5F9FB" font-family="Segoe UI,Arial,sans-serif" font-size="66" font-weight="620" letter-spacing="-2">Development</text>
+<text x="957" y="120" fill="#AEF3A7" font-family="Segoe UI,Arial,sans-serif" font-size="66" font-weight="700" letter-spacing="-2">Skills</text>
+<text x="283" y="164" fill="#B2CED5" font-family="Segoe UI,Arial,sans-serif" font-size="31" letter-spacing="5">The Heart of Geospatial Innovation</text>
+<path d="M282 183H1125" stroke="#31535B" stroke-width="1.5"/>
+<text x="282" y="218" fill="#7DB5B7" font-family="Segoe UI,Arial,sans-serif" font-size="15" letter-spacing="4">BUILD • DEVELOP • VERIFY</text>
+<defs><linearGradient id="label2"><stop stop-color="#06C8ED"/><stop offset="1" stop-color="#18EAC0"/></linearGradient></defs>
 </svg>
