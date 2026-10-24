@@ -8,6 +8,14 @@
 - Add reproducible landing-page checks and GitHub Issue forms for bugs and feature suggestions.
 - Provide copy-ready repository About, topics, homepage and publication instructions under `docs/REPOSITORY_SETTINGS.md`; GitHub sidebar values must still be set by an authorized administrator.
 
+## 0.3.3 — 2026-10-24
+
+- Inspect six public, author-owned GIS projects: MIRSAD, CreateFlowArrow, GeologicalCrossSectionToolbox, GeoVision, ArcMap Style Collection and GIS Data Repositories Professional 2026.
+- Expand the source catalog to 105 repositories with explicit engineering roles, reference availability, original licensing and caveats.
+- Add `references/ahmad-ibrahim-gis-case-studies.md` and an installable `arcgis-toolbox-engineering` skill covering Python 2/3 ArcPy, native acceptance tiers, scientific results, safe in-place geometry edits and Desktop migration.
+- Add offline regression tests for case-study coverage and native-test disclosure; update primary skill, English/Arabic READMEs and GitHub Pages homepage to show six skills.
+- Do not mirror third-party styles, run mutation workflows or claim ArcGIS-native processing was tested by the reference catalog CI.
+
 ## 0.3.2 — 2026-10-24
 
 - Review Dr. Qiusheng Wu's official software directory (gishub.org/software) and add 40 verified, nonduplicate GitHub sources to the project catalog (84 total).
