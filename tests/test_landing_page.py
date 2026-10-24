@@ -50,6 +50,25 @@ class LandingPageTests(unittest.TestCase):
             contents = json.loads((ROOT / path).read_text(encoding="utf-8"))
             self.assertTrue(contents[key])
 
+    def test_brand_tagline_and_original_mission_statement(self):
+        self.assertIn("The Heart of Geospatial Innovation", self.html)
+        self.assertIn(
+            "Build GIS tools, plugins and geospatial applications with a verifiable development workflow.",
+            self.html,
+        )
+        self.assertIn('src="assets/logo.svg"', self.html)
+        self.assertIn('href="assets/brand-refresh.css"', self.html)
+        self.assertTrue((ROOT / "assets/brand-refresh.css").is_file())
+
+    def test_public_creator_section_and_contacts(self):
+        self.assertIn("author", self.parser.ids)
+        self.assertIn("ahmad_ibrahim_original.png", self.html)
+        self.assertIn("https://github.com/ahmadibrahim4geo", self.html)
+        self.assertIn("https://www.linkedin.com/in/ahmadibrahim4geo/", self.html)
+        self.assertIn("mailto:ahmadibrahim.geo@gmail.com", self.html)
+        self.assertIn('class="lang-ar"', self.html)
+        self.assertIn('class="lang-en"', self.html)
+
     def test_language_and_accessibility_features(self):
         for term in ("lang=\"en\"", "aria-selected",
                      "document.documentElement.dir", "prefers-reduced-motion",
