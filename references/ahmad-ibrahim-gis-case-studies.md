@@ -40,7 +40,6 @@ These are **author-owned projects linked as implementation and QA references**. 
 
 | Project | What to inspect | Integration boundary |
 | --- | --- | --- |
-| [GeoVision](https://github.com/ahmadibrahim4geo/GeoVision) | Kotlin/Jetpack Compose GIS Android app, offline data loaders and optional Esri variant | Mobile SDK and advertised format support require device tests; not an ArcPy plugin |
 | [ArcMap-Style-Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection) | Cartographic reference files, Arabic terminology, ArcMap `.style` and Pro `.stylx` handling | Third-party Esri/USGS/styles/fonts retain their source licenses and redistribution terms; **do not copy assets** to the skill |
 | [GIS Data Repositories Professional 2026](https://github.com/ahmadibrahim4geo/gis-data-repositories-professional-2026) | Searchable open data index, URL audit scripts, exported metadata, bilingual browser UI | Indexed URLs are not proof of current availability, dataset access rights, or provider API stability |
 
