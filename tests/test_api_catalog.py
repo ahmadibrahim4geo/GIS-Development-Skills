@@ -41,7 +41,7 @@ class APICatalogTests(unittest.TestCase):
              'hdx-hapi','usgs-waterdata','noaa-coops','nasa-eonet',
              'worldbank-indicators','noaa-ncei-cdo','noaa-ncei-erddap',
              'inaturalist'}
-        self.assertEqual(len(self.catalog['services']),37)
+        self.assertEqual(len(self.catalog['services']),39)
         self.assertTrue(ids.issubset(src))
         self.assertEqual('free-key-required',src['openaq-v3']['access'])
         self.assertEqual('free-noncommercial',src['open-meteo-flood']['access'])
@@ -49,6 +49,18 @@ class APICatalogTests(unittest.TestCase):
         self.assertNotIn('v2-rc',src['ohsome-v2']['service_url'])
         self.assertIn('early 2027',src['usgs-waterdata']['caveat'])
         self.assertEqual(len(src),len(self.catalog['services']))
+
+    def test_gebco_2026_api_access_and_safety(self):
+        entries={s['id']:s for s in self.catalog['services']}
+        wms=entries['gebco-2026-wms']
+        grid=entries['gebco-2026-ceda-opendap']
+        self.assertIn('wms.gebco.net',wms['service_url'])
+        self.assertEqual(wms['authentication'],'none')
+        self.assertIn('OPeNDAP',grid['formats'])
+        self.assertIn('gebco_2026',grid['service_url'])
+        self.assertIn('TID',grid['caveat'])
+        self.assertIn('navigation',wms['caveat'])
+        self.assertNotEqual(wms['service_url'],grid['service_url'])
 
     def test_filter(self):
         hits=self.searcher.search(self.catalog['services'],category='terrain-elevation')
