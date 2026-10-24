@@ -87,3 +87,99 @@ html[lang="en"] .lang-ar,html[lang="ar"] .lang-en{display:none!important}
 @media(max-width:900px){.hero-symbol{width:clamp(105px,22vw,154px)}.hero-wordmark h1{font-size:clamp(23px,3.4vw,36px)}}
 @media(max-width:640px){.hero-lockup{gap:10px;align-items:center}.hero-symbol{width:90px}.hero-wordmark h1{font-size:clamp(20px,5vw,27px);gap:.16em}.hero-tagline{font-size:12px;line-height:1.4;margin-top:7px!important}.hero-exact{margin-top:22px}}
 @media(max-width:360px){.hero-symbol{width:69px}.hero-wordmark h1{font-size:19px}}
+
+
+/* MIRSAD-inspired creator panel, adapted for GIS Development Skills.
+   Keep this after previous author styles: identical visual hierarchy to MIRSAD.
+   All text is switched by html[lang] and direction by html[dir]. */
+.author-section{padding-top:76px;padding-bottom:38px}
+.author-panel.mirsad-author{
+  display:grid;grid-template-columns:200px minmax(0,1fr);gap:2.3rem;
+  align-items:start;position:relative;overflow:visible;padding:2.6rem;
+  border:1px solid #355563;border-top:3px solid #e5b957;border-radius:20px;
+  background:#112a36;box-shadow:0 22px 52px rgba(0,5,13,.22);
+}
+.author-panel.mirsad-author::after{content:none}
+.mirsad-author .author-portrait{text-align:center;display:flex;flex-direction:column;gap:0;align-items:center;min-width:0}
+.mirsad-author .portrait-frame{
+  width:164px;height:164px;flex-shrink:0;margin-inline:auto;padding:4px;
+  border-radius:50%;background:linear-gradient(135deg,#13bcc8,#e6b75b);box-shadow:none;
+}
+.mirsad-author .portrait-frame img{
+  display:block;width:100%;height:100%;object-fit:cover;object-position:center 8%;
+  border:4px solid #112a36;border-radius:50%;background:#fff;
+}
+.mirsad-author .portrait-caption{margin:13px 0 3px;font-size:13px;line-height:1.8;color:#bacdd3;text-align:center}
+.mirsad-author .author-portrait > bdi{font-size:12px;color:#5ce4d8;direction:ltr;unicode-bidi:isolate}
+.mirsad-author .author-content{text-align:start;min-width:0}
+.mirsad-author .author-eyebrow{margin:0 0 8px;color:#64e1d6;font-weight:800;font-size:12px;letter-spacing:0;line-height:1.6}
+.mirsad-author .author-content h2{
+  color:#f5fbfa;font-size:clamp(30px,3vw,39px);font-weight:790;
+  letter-spacing:0;line-height:1.35;margin:0 0 8px;
+}
+.mirsad-author .author-badge{
+  display:inline-block;border:1px solid #345c67;border-radius:5px;
+  padding:5px 11px;margin-top:2px;color:#64e1d6;background:#143340;
+  font-size:12px;font-weight:700;letter-spacing:0;
+}
+.mirsad-author .author-bio{
+  margin:20px 0 0;font-size:14px;color:#bfd5da;
+  line-height:2.05;max-width:none;
+}
+.mirsad-author .contact-actions{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:19px;
+}
+.mirsad-author .contact-button{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:44px;padding:9px 15px;border-radius:9px;
+  border:1px solid #355762;background:#173744;color:#e9f3f8;
+  font-size:13px;font-weight:720;text-decoration:none;
+  transition:border-color .18s ease,background-color .18s ease;
+}
+.mirsad-author .contact-button:hover{border-color:#68d9cf;background:#204650}
+.mirsad-author .contact-button.whatsapp{color:#79f3bd;background:#114536;border-color:#345b52}
+.mirsad-author .contact-button.whatsapp:hover{background:#185643;border-color:#6edbaa}
+.mirsad-author .profile-icon{width:19px;height:19px;flex-shrink:0;color:#69ded5}
+.mirsad-author .contact-button.whatsapp .profile-icon{color:#79f3bd}
+.mirsad-author .consultation{
+  grid-column:1 / -1;display:flex;align-items:center;gap:19px;
+  padding:22px;border:1px solid #316251;border-radius:12px;
+  background:#103e33;margin-top:4px;min-width:0;
+}
+.mirsad-author .consult-icon{
+  display:grid;place-items:center;flex-shrink:0;width:48px;height:48px;
+  border:1px solid #67e2aa;border-radius:11px;color:#75ebbb;
+}
+.mirsad-author .consult-icon .profile-icon{width:26px;height:26px;color:#83e9bc}
+.mirsad-author .consult-copy{flex:1;min-width:0}
+.mirsad-author .consult-copy h3{margin:0;color:#81e9b8;font-size:16px;font-weight:780;line-height:1.5}
+.mirsad-author .consult-copy p{color:#bdd9d0;font-size:13px;line-height:1.9;margin:6px 0 0}
+.mirsad-author .consult-button{
+  white-space:nowrap;display:inline-flex;gap:9px;align-items:center;justify-content:center;
+  min-height:46px;padding:10px 14px;background:#0d2b30;
+  border:1px solid #75e3b4;color:#96f3cb;border-radius:10px;
+  font-size:13px;font-weight:760;
+}
+.mirsad-author .consult-button:hover{background:#1e4a3d}
+.mirsad-author .consult-button .profile-icon{height:18px;width:18px;color:inherit}
+html[lang="ar"] .mirsad-author{direction:rtl}
+html[lang="en"] .mirsad-author{direction:ltr}
+@media(max-width:1080px){
+  .author-panel.mirsad-author{grid-template-columns:170px minmax(0,1fr);gap:24px;padding:30px}
+}
+@media(max-width:720px){
+  .author-section{padding-top:54px}
+  .author-panel.mirsad-author{grid-template-columns:1fr;gap:26px;padding:24px 19px}
+  .mirsad-author .author-content{text-align:start}
+  .mirsad-author .portrait-frame{width:156px;height:156px}
+  .mirsad-author .author-content h2{font-size:30px}
+  .mirsad-author .consultation{flex-wrap:wrap;gap:14px;padding:18px}
+  .mirsad-author .consult-copy{flex:1 1 calc(100% - 70px)}
+  .mirsad-author .consult-button{width:100%;white-space:normal}
+  .mirsad-author .contact-actions{gap:8px}
+  .mirsad-author .contact-button{flex:1 1 auto;padding:9px 12px}
+}
+@media(max-width:400px){
+  .mirsad-author .contact-button{flex-basis:100%}
+  .mirsad-author .consult-copy{flex:1 1 100%}
+}
