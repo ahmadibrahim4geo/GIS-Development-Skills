@@ -7,6 +7,7 @@
 | Domain | Primary providers | Access caveat |
 |---|---|---|
 | Forecast and historical climate | [Open-Meteo](https://open-meteo.com/en/docs), [NASA POWER](https://power.larc.nasa.gov/docs/services/api/temporal/), [Copernicus CDS](https://cds.climate.copernicus.eu/how-to-api) | Open-Meteo free service is non-commercial with explicit quotas; NASA POWER enforces fair use; CDS needs account/token and dataset licence |
+| Land + ocean bathymetry | [GEBCO_2026 WMS](https://www.gebco.net/data-products/gebco-web-services/web-map-service), [CEDA OPeNDAP](https://www.gebco.net/data-products/gridded-bathymetry-data) | Free global 15 arc-second terrain; WMS map imagery vs numeric data, TID source classification, no marine navigation |
 | Point elevation & DEM | [Open-Meteo Elevation](https://open-meteo.com/en/docs/elevation-api), [OpenTopography](https://opentopography.org/developers), [Open-Elevation](https://www.open-elevation.com/), [USGS EPQS](https://www.usgs.gov/the-national-map-data-delivery/gis-data-download) | Open-Meteo elevation GLO-90 ~90m; OpenTopography requires personal key; Open-Elevation tiny free quotas; USGS primarily US only |
 | Satellite imagery catalog | [Earth Search](https://element84.com/earth-search), [Planetary Computer](https://planetarycomputer.microsoft.com/docs/), [Copernicus Data Space](https://dataspace.copernicus.eu/analyse/apis) | STAC metadata access differs from asset download/auth, COG CORS and redistribution terms |
 | Satellite image tiles | [NASA GIBS](https://www.earthdata.nasa.gov/engage/open-data-services-software/earthdata-developer-portal/gibs-api) | WMS/WMTS visualize imagery; scientific raster analysis requires real source data |
@@ -18,6 +19,25 @@
 | Hazards and humanitarian | [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/api/area), [EONET](https://eonet.gsfc.nasa.gov/docs/v3), [USGS Earthquake](https://earthquake.usgs.gov/fdsnws/event/1/), [HDX HAPI](https://hdx-hapi.readthedocs.io/en/latest/) | Event semantics, quality and coverage differ |
 | Routing/OSM history | [HeiGIT](https://api.heigit.org/), [ohsome v2](https://docs.ohsome.org/ohsome-api/v2/) | Keys, OSM attribution and endpoint migrations |
 | Water, ocean and air | [Open-Meteo Flood](https://open-meteo.com/en/docs/flood-api), [OpenAQ](https://docs.openaq.org/api), [NOAA NCEI](https://www.ncei.noaa.gov/erddap/rest.html) | Validate model-vs-observation, area of coverage and datums |
+
+## GEBCO_2026: free global bathymetry + land elevation
+
+**Latest official GEBCO release: GEBCO_2026, published April 2026.** Its 15 arc-second regular WGS84 grid covers sea-floor and land elevation, approximately 463 m between north/south samples at the equator; longitude spacing in metres varies with latitude. Cells are pixel-centre registered. Heights are in metres: **negative seafloor depth, positive land elevation**. The grid interval is *not* the measured accuracy of seafloor depth.
+
+- **Visual map API:** no-key [GEBCO WMS 1.3.0](https://www.gebco.net/data-products/gebco-web-services/web-map-service), base `https://wms.gebco.net/mapserv`, with GetCapabilities and GetMap. Includes hillshade, flat maps, sub-ice variants and the TID map. **Rendered WMS imagery is not numeric elevation/DEM input.**
+- **Numerical data protocol:** [GEBCO at CEDA with OPeNDAP](https://www.gebco.net/data-products/gridded-bathymetry-data). Official GEBCO_2026 NetCDF archive: `https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2026/ice_surface_elevation/netcdf/GEBCO_2026.nc`. Get the dataset-specific OPeNDAP subsetting URL from CEDA; validate current access, constraint expressions and client compatibility rather than fabricating API parameter names.
+- **GeoTIFF, NetCDF and Esri ASCII:** use the [official GEBCO download interface](https://download.gebco.net/). It is a web download application, **not an independently advertised public REST API**. Use user-selected spatial subset rather than downloading multi-GB global coverage unnecessarily.
+- **Data-quality companion:** the **Type Identifier (TID) Grid** indicates each underlying cell's source type, including direct observations versus interpolated or predicted bathymetry. Keep TID alongside any science-facing output and in provenance.
+- **Polar modes:** differentiate surface-of-ice GEBCO from separately released **under-ice bathymetry/topography**.
+- **Datum:** GEBCO aims to reference mean sea level, but includes some nearshore inputs with differing vertical datums. Never present it as surveyed vertical control.
+- **Licensing:** public-domain grid, free including commercial reuse, provided source is acknowledged and no GEBCO/IHO/IOC endorsement is implied. Cite **GEBCO Bathymetric Compilation Group 2026 (2026), GEBCO_2026 Grid, doi:10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa**. **Never use GEBCO for navigation or safety at sea**.
+
+Documented example (not a claim of live protocol testing):
+
+```text
+https://wms.gebco.net/mapserv?request=getcapabilities&service=wms&version=1.3.0
+https://data.ceda.ac.uk/bodc/gebco/global/gebco_2026/ice_surface_elevation/netcdf
+```
 
 ## Recommended API selection procedure for AI agents
 
@@ -61,7 +81,7 @@ https://tiles.openfreemap.org/styles/liberty
 
 ## Expanded free/public API reference (2026-10-24): 19 additions, 37 entries total
 
-This directory includes **37 distinct service entries**. Search the [machine-readable JSON catalog](free-geospatial-apis.json) rather than hardcoding URLs or access assumptions. All endpoints below are provider-documented; no end-to-end live data ingestion test is implied by this catalog.
+This section describes the earlier 19-service expansion (37 at that milestone); the current catalog now has **39 service entries including two GEBCO_2026 access routes**. Search the [machine-readable JSON catalog](free-geospatial-apis.json) rather than hardcoding URLs or access assumptions. All endpoints below are provider-documented; no end-to-end live data ingestion test is implied by this catalog.
 
 | Domain | Added APIs | Required GIS interpretation |
 |---|---|---|
