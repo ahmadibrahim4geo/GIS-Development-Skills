@@ -3,7 +3,11 @@
 
 # مهارات تطوير نظم المعلومات الجغرافية — GIS Development Skills
 
-**واجهة المشروع:** [ملف الموقع الرئيسي (`index.html`)](index.html) · [الشعار والهوية](assets/). يمكن نشر الصفحة التفاعلية عبر GitHub Pages من إعدادات المستودع.
+[![فحوصات GIS Skill](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml/badge.svg)](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml) ![MIT](https://img.shields.io/badge/license-MIT-3f8c76)
+
+**الصفحة التعريفية:** [موقع المشروع على GitHub Pages](https://ahmadibrahim4geo.github.io/GIS-Development-Skills/) *(تُراجع حالة النشر في إعدادات Pages)* · [كود الواجهة](index.html) · [الشعار](assets/logo.svg) · [ملف المهارة](skills/gis-development/SKILL.md) · [الإبلاغ عن مشكلة أو اقتراح تطوير](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues/new/choose).
+
+**نبذة:** دليل عملي ومهارة قابلة للتثبيت لمساعدة المطورين والوكلاء البرمجيين على بناء واختبار أدوات نظم المعلومات الجغرافية، مع فهرس للمكتبات والمشروعات، ومصادر البيانات وواجهات GIS API، وقوالب جاهزة للانطلاق. المشروع لا يتضمن نسخًا من البرامج أو تراخيص استخدام الخدمات الخارجية.
 
 مشروع مفتوح المصدر لإرشاد المطورين ووكلاء الذكاء الاصطناعي عند إنشاء أدوات GIS وإضافات ArcGIS وQGIS وبرامج GIS المستقلة وخرائط الويب والكرة الأرضية ثلاثية الأبعاد.
 
