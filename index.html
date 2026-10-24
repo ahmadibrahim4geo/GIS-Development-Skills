@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GIS Development Skills — The Heart of Geospatial Innovation. Eight GIS agent skills, 104 curated geospatial references, 39 public GIS API entries and developer templates.">
+  <meta name="description" content="GIS Development Skills — The Heart of Geospatial Innovation. Eleven GIS agent skills, 104 curated geospatial references, 39 public GIS API entries and developer templates.">
   <meta name="theme-color" content="#0d1519">
   <meta property="og:title" content="GIS Development Skills | The Heart of Geospatial Innovation">
   <meta property="og:description" content="Build GIS tools, plugins and geospatial applications with a verifiable development workflow.">
@@ -92,7 +92,7 @@
   <a class="brand" href="#home" aria-label="GIS Development Skills home"><img src="assets/icon.svg" alt="" width="52" height="52"><span class="nav-brand-name">GIS <strong>Development Skills</strong><small>The Heart of Geospatial Innovation</small></span></a>
   <div class="nav-links">
     <a href="#capabilities" data-i18n="navSkills">Skills</a>
-    <a href="#catalog" data-i18n="navExplorer">Explorer</a>
+    <a href="#catalog" data-i18n="navExplorer">Explorer</a><a href="#examples" data-i18n="navExamples">Examples</a>
     <a href="#get-started" data-i18n="navStart">Get started</a>
     <a href="#contribute" data-i18n="navContribute">Contribute</a><a href="#author"><span class="lang-en">Creator</span><span class="lang-ar">المطور</span></a>
   </div>
@@ -139,7 +139,7 @@
       </div>
     </div>
     <div class="stats" aria-label="Project scope">
-      <div class="stat"><strong>08</strong><span data-i18n="statSkill">Installable agent skill</span></div>
+      <div class="stat"><strong>11</strong><span data-i18n="statSkill">Installable agent skill</span></div>
       <div class="stat"><strong id="projectsCount">104</strong><span data-i18n="statProjects">Curated project references</span></div>
       <div class="stat"><strong id="apisCount">39</strong><span data-i18n="statApis">Public GIS API entries</span></div>
       <div class="stat"><strong>04</strong><span data-i18n="statTemplates">Developer starter templates</span></div>
@@ -157,7 +157,26 @@
       <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/rustgis-and-geolibre-r.md"><span class="glyph">R/Rs</span><h3>RustGIS & GeoLibre R</h3><p data-i18n="rust">Rust GIS architecture and interactive geospatial mapping for R.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
       <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/geospatial-data-discovery/SKILL.md"><span class="glyph">DATA</span><h3 data-i18n="dataSkillTitle">GIS Data Discovery</h3><p data-i18n="dataSkill">Find appropriate geospatial providers, boundaries, population and scientific products.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
       <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/geospatial-api-integration/SKILL.md"><span class="glyph">API</span><h3 data-i18n="apiSkillTitle">GIS API Integration</h3><p data-i18n="apiSkill">Connect 39 curated services with secure keys, validated data and reliable error handling.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/spatial-databases/SKILL.md"><span class="glyph">SQL</span><h3 data-i18n="dbTitle">Spatial Databases</h3><p data-i18n="dbDesc">PostGIS and SpatiaLite queries, indexes and QA.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/geospatial-data-processing/SKILL.md"><span class="glyph">GDAL</span><h3 data-i18n="processingTitle">Geospatial Processing</h3><p data-i18n="processingDesc">Independent raster/vector workflows and repeatable tests.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/remote-sensing-pipelines/SKILL.md"><span class="glyph">EO</span><h3 data-i18n="rsTitle">Remote Sensing Pipelines</h3><p data-i18n="rsDesc">STAC, COG, Earth Engine, QA and grid alignment.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
     </div>
+  </section>
+
+
+  <section id="examples" class="container">
+    <div class="section-head"><div>
+      <span class="overline" data-i18n="examplesOverline">REPRODUCIBLE WORKFLOWS</span>
+      <h2 data-i18n="examplesTitle">Production GIS engineering examples.</h2>
+      <p data-i18n="examplesDesc">Synthetic fixtures, verified output expectations and honest native GIS test limitations.</p>
+    </div></div>
+    <div class="grid">
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/examples/network-topology"><span class="glyph">NET</span><h3 data-i18n="networkExampleTitle">Network endpoint audit</h3><p data-i18n="networkExampleDesc">Read-only duplicate and dangling-line screening.</p><span class="learn" data-i18n="exampleLink">View example and test ↗</span></a>
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/examples/api-ingestion"><span class="glyph">API</span><h3 data-i18n="weatherExampleTitle">Weather API to GeoJSON</h3><p data-i18n="weatherExampleDesc">UTC weather response converted into GIS features.</p><span class="learn" data-i18n="exampleLink">View example and test ↗</span></a>
+      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/examples/batch-export"><span class="glyph">PDF</span><h3 data-i18n="batchExampleTitle">Batch layout PDF export</h3><p data-i18n="batchExampleDesc">ArcGIS Pro layout exports awaiting host-native tests.</p><span class="learn" data-i18n="exampleLink">View example and test ↗</span></a>
+    </div>
+    <p><a class="fine-link" href="examples/README.md" data-i18n="allExamples">All examples, including PostGIS and STAC/COG ↗</a> · <a class="fine-link" href="docs/QUALITY_BENCHMARK.md" data-i18n="benchmarkLink">Read the quality benchmark ↗</a></p>
   </section>
 
   <section id="catalog" class="container">
@@ -245,14 +264,15 @@
   const state={lang:"en",tab:"projects",query:"",category:"all",ready:{projects:false,apis:false},failed:{projects:false,apis:false}};
   const tr={
     en:{
-      navSkills:"Skills",navExplorer:"Explorer",navStart:"Get started",navContribute:"Contribute",authorPortraitAlt:"Ahmad Ibrahim — GIS specialist and cartographer",authorGitHubLabel:"Ahmad Ibrahim on GitHub",authorEmailLabel:"Email Ahmad Ibrahim",authorWhatsAppLabel:"Ahmad Ibrahim on WhatsApp",authorContributeLabel:"Suggest a GIS skill or tool",
+      navSkills:"Skills",navExplorer:"Explorer",navExamples:"Examples",navStart:"Get started",navContribute:"Contribute",authorPortraitAlt:"Ahmad Ibrahim — GIS specialist and cartographer",authorGitHubLabel:"Ahmad Ibrahim on GitHub",authorEmailLabel:"Email Ahmad Ibrahim",authorWhatsAppLabel:"Ahmad Ibrahim on WhatsApp",authorContributeLabel:"Suggest a GIS skill or tool",
       eyebrow:"Open-source • Agent-ready • GIS engineering",heroTitle:"Develop GIS.<br><em>Build with confidence.</em>",
       heroText:"A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.",
       exploreSkills:"Explore skills ↓",browseCatalog:"Browse catalog →",statSkill:"Installable agent skills",statProjects:"Curated project references",statApis:"Public GIS API entries",statTemplates:"Developer starter templates",
       overlineSkills:"DEVELOPMENT PATHWAYS",skillsTitle:"One skill. Multiple GIS stacks.",skillsDesc:"Choose the right architecture for the platform instead of forcing one GIS runtime onto another.",
       arcPro:"ArcPy, Python toolboxes, geoprocessing and application-aware testing.",arcMap:"Legacy Python and compatibility-safe script tool development.",
       qgis:"Processing providers, QGIS plugins and cross-version considerations.",desktop:"Qt, MapLibre, CesiumJS, and dependable geospatial desktop architecture.",
-      remote:"Satellite processing, raster pipelines, reproducibility and AI research checks.",rust:"Rust GIS architecture and interactive geospatial mapping for R.",dataSkillTitle:"GIS Data Discovery",apiSkillTitle:"GIS API Integration",dataSkill:"Find appropriate geospatial providers, boundaries, population and scientific products.",apiSkill:"Connect 37 curated services with secure keys, validated data and reliable error handling.",readGuide:"Read development guide ↗",
+      remote:"Satellite processing, raster pipelines, reproducibility and AI research checks.",rust:"Rust GIS architecture and interactive geospatial mapping for R.",dataSkillTitle:"GIS Data Discovery",apiSkillTitle:"GIS API Integration",dataSkill:"Find appropriate geospatial providers, boundaries, population and scientific products.",apiSkill:"Connect 39 curated services with secure keys, validated data and reliable error handling.",readGuide:"Read development guide ↗",
+      dbTitle:"Spatial Databases",dbDesc:"PostGIS, SpatiaLite, query plans and spatial indexes.",processingTitle:"Geospatial Processing",processingDesc:"Portable vector and raster pipelines with geometric QA.",rsTitle:"Remote Sensing Pipelines",rsDesc:"STAC/COG and Earth Engine sensor-aware processing.",examplesOverline:"REPRODUCIBLE WORKFLOWS",examplesTitle:"Production GIS engineering examples.",examplesDesc:"Synthetic fixtures and transparent native acceptance limits for each example.",networkExampleTitle:"Network endpoint audit",networkExampleDesc:"Non-destructive duplicate/dangle screening on synthetic lines.",weatherExampleTitle:"Weather API to GeoJSON",weatherExampleDesc:"An offline UTC modeled-weather fixture converted to GIS points.",batchExampleTitle:"Batch layout PDF export",batchExampleDesc:"ArcGIS Pro PDF export; native testing remains required.",exampleLink:"View example and test ↗",allExamples:"All examples, including PostGIS and STAC/COG ↗",benchmarkLink:"Read the quality benchmark ↗",
       overlineCatalog:"SOURCE DIRECTORY",catalogTitle:"Explore the geospatial ecosystem.",catalogDesc:"Search the repository's real source catalogs. Each entry is an attributed reference, not a claim of guaranteed functionality, free commercial use, or bundled code.",
       apiExpansion:"39 documented GIS APIs including GEBCO_2026 seabed and land elevation, boundaries, population, hazards, water, air quality, routing and Earth observation. Free access is not unlimited or automatically commercial-safe.",
       projectsTab:"Projects & libraries",apisTab:"GIS APIs & data",catalogDisclaimer:"Live directory from versioned repository JSON · upstream terms must be checked.",allRefs:"View all reference files ↗",
@@ -270,7 +290,7 @@
       error:"The live catalog could not be loaded. Open this site through GitHub Pages or browse the source JSON on GitHub.",openSource:"Open source / docs ↗",openAPI:"Provider documentation ↗"
     },
     ar:{
-      navSkills:"المهارات",navExplorer:"استكشاف المصادر",navStart:"ابدأ هنا",navContribute:"المساهمة",authorPortraitAlt:"أحمد إبراهيم — أخصائي نظم معلومات جغرافية وكارتوجرافي",authorGitHubLabel:"حساب أحمد إبراهيم على GitHub",authorEmailLabel:"إرسال بريد إلكتروني إلى أحمد إبراهيم",authorWhatsAppLabel:"التواصل مع أحمد إبراهيم عبر واتساب",authorContributeLabel:"اقتراح مهارة أو أداة جديدة",
+      navSkills:"المهارات",navExplorer:"استكشاف المصادر",navExamples:"الأمثلة",navStart:"ابدأ هنا",navContribute:"المساهمة",authorPortraitAlt:"أحمد إبراهيم — أخصائي نظم معلومات جغرافية وكارتوجرافي",authorGitHubLabel:"حساب أحمد إبراهيم على GitHub",authorEmailLabel:"إرسال بريد إلكتروني إلى أحمد إبراهيم",authorWhatsAppLabel:"التواصل مع أحمد إبراهيم عبر واتساب",authorContributeLabel:"اقتراح مهارة أو أداة جديدة",
       eyebrow:"مفتوح المصدر • مخصص للوكلاء البرمجيين • تطوير GIS",heroTitle:"طوّر أدوات GIS.<br><em>على أسس هندسية موثوقة.</em>",
       heroText:"مهارة برمجية ودليل مصادر مُنظّم لتطوير أدوات ArcGIS وإضافات QGIS والخرائط ثنائية وثلاثية الأبعاد وتطبيقات سطح المكتب ومعالجة البيانات الجغرافية.",
       exploreSkills:"استكشف المهارات ↓",browseCatalog:"تصفح الدليل ←",statSkill:"مهارات قابلة للتثبيت",statProjects:"مرجع ومشروع جغرافي",statApis:"مصدر GIS API",statTemplates:"قوالب برمجية مبدئية",
@@ -278,6 +298,7 @@
       arcPro:"برمجة ArcPy وملفات Python Toolbox وأدوات المعالجة والاختبارات داخل التطبيق.",arcMap:"تطوير أدوات متوافقة مع بيئات ArcMap وإصدارات Python القديمة.",
       qgis:"إضافات QGIS وخوارزميات Processing وفروق الإصدارات.",desktop:"تطبيقات سطح المكتب والخرائط عبر Qt وMapLibre وCesiumJS.",
       remote:"معالجة المرئيات والأرصاد وتدفقات البيانات النقطية والتحقق من نماذج الذكاء الاصطناعي.",rust:"بنية برامج GIS بلغة Rust والخرائط التفاعلية باستخدام R.",dataSkillTitle:"اكتشاف البيانات الجغرافية",apiSkillTitle:"دمج خدمات GIS API",dataSkill:"اختيار مصادر الحدود والسكان والبيانات الجغرافية والعلمية المناسبة.",apiSkill:"ربط 39 خدمة API بإدارة آمنة للمفاتيح والتحقق من البيانات والأخطاء.",readGuide:"عرض الدليل البرمجي ↗",
+      dbTitle:"قواعد البيانات المكانية",dbDesc:"PostGIS وSpatiaLite والفهارس وخطط تنفيذ الاستعلامات.",processingTitle:"معالجة البيانات الجغرافية",processingDesc:"الراستر والفيكتور مع اختبار النتائج وصحة الهندسة.",rsTitle:"تدفقات الاستشعار عن بُعد",rsDesc:"STAC وCOG وEarth Engine وفحص جودة المرئيات.",examplesOverline:"سير عمل قابل لإعادة التشغيل",examplesTitle:"أمثلة عملية لهندسة GIS.",examplesDesc:"بيانات اصطناعية واختبارات موثقة وحدود واضحة لتشغيل برامج GIS الفعلي.",networkExampleTitle:"تدقيق نهايات الشبكات",networkExampleDesc:"اكتشاف التكرار والنهايات المعلقة دون تغيير البيانات الأصلية.",weatherExampleTitle:"تحويل الطقس إلى GeoJSON",weatherExampleDesc:"تحويل بيانات تجريبية بتوقيت UTC إلى عناصر جغرافية.",batchExampleTitle:"تصدير PDF دفعة واحدة",batchExampleDesc:"تصدير تخطيطات ArcGIS Pro ويستلزم اختبارًا داخل البرنامج.",exampleLink:"عرض المثال والاختبار ↗",allExamples:"استكشف الأمثلة بما فيها PostGIS وSTAC/COG ↗",benchmarkLink:"قراءة معيار الجودة ↗",
       overlineCatalog:"دليل المصادر",catalogTitle:"استكشف منظومة البرمجيات والبيانات الجغرافية.",catalogDesc:"ابحث مباشرة في كتالوجات المستودع. إدراج المصادر لا يعني ضمان عملها أو إتاحة استخدامها التجاري دون قيود أو توفير أكوادها داخل المشروع.",
       apiExpansion:"39 خدمة GIS API موثقة تشمل GEBCO_2026 لأعماق البحار وتضاريس اليابسة، والحدود والسكان والأخطار والمياه وجودة الهواء والمسارات والاستشعار عن بُعد. المجانية لا تعني استخدامًا غير محدود أو تجاريًا بلا شروط.",
       projectsTab:"المشروعات والمكتبات",apisTab:"مصادر GIS API",catalogDisclaimer:"الفهرس يُقرأ من ملفات JSON بالمستودع · يُرجى مراجعة شروط الجهات الأصلية.",allRefs:"عرض ملفات المراجع ↗",

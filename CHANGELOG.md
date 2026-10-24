@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — production-oriented GIS skills and examples (2026-10-24)
+
+- Non-destructively retain all earlier installable skills, curated sources, API records, templates, tests, bilingual UI and approved branding.
+- Add three independent skills for spatial databases, geospatial vector/raster processing and remote-sensing pipelines (11 total).
+- Add a deterministic synthetic network topology example and weather API-to-GeoJSON example with offline unit tests; include batch ArcGIS Pro PDF export, PostGIS sandbox SQL and STAC/COG validation procedure.
+- Publish an evidence-based GIS Skill Quality Benchmark and production workflow reference; route from core skill, contribution rules, bilingual READMEs and homepage.
+- Add six bilingual homepage cards, a reproducible example section, site navigation, updated skill count and example source syntax checks.
+
 ## Unreleased — site and repository experience (2026-10-24)
 
 - Add two GEBCO_2026 access methods: no-key WMS visualization and CEDA OPeNDAP numeric global bathymetry/topography, increasing API catalog from 37 to 39 entries. Document source TID, 15 arc-second spacing, vertical datum caveats, public-domain credits, polar ice variants and no navigation use.

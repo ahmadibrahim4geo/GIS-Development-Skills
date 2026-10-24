@@ -120,3 +120,6 @@ When new sources are needed, consult their official repositories/docs, verify th
 - "Build a QGIS Processing plugin to create spatial buffers using a projected working CRS."
 - "Select an open 2D+3D stack for a Windows GIS desktop viewer, including KML and GeoPackage."
 - "Audit coordinate systems and identify why output area measurements are wrong."
+## Additive specialized routes for production GIS
+
+Use [Spatial Databases](../spatial-databases/SKILL.md) for PostGIS/SpatiaLite index design, SQL and QA; use [Geospatial Data Processing](../geospatial-data-processing/SKILL.md) for independent raster/vector pipelines, deterministic geometry tests and CRS checks; use [Remote Sensing Pipelines](../remote-sensing-pipelines/SKILL.md) for STAC/COG, Earth Engine and QA-driven pixel processing. Start at the [examples index](../../examples/README.md) and consult the [production workflow reference](../../references/production-workflows.md) and [GIS Quality Benchmark](../../docs/QUALITY_BENCHMARK.md). Keep all prior skills; a generic CI test cannot establish native GIS T3 readiness.
