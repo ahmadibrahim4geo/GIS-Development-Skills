@@ -1,5 +1,4 @@
 <p align="center"><img src="assets/logo.svg" alt="GIS Development Skills logo" width="720"></p>
-<p align="center"><strong>The Heart of Geospatial Innovation</strong></p>
 <p align="center"><strong>Build GIS tools, plugins and geospatial applications with a verifiable development workflow.</strong></p>
 
 # GIS Development Skills 🌍
