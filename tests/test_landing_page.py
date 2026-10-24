@@ -109,11 +109,28 @@ class LandingPageTests(unittest.TestCase):
     def test_public_creator_section_and_contacts(self):
         self.assertIn("author", self.parser.ids)
         self.assertIn("ahmad_ibrahim_original.png", self.html)
+        self.assertIn('class="author-panel mirsad-author"', self.html)
+        self.assertIn('class="portrait-frame"', self.html)
+        self.assertIn('class="contact-actions"', self.html)
+        self.assertIn('class="consultation"', self.html)
         self.assertIn("https://github.com/ahmadibrahim4geo", self.html)
-        self.assertIn("https://www.linkedin.com/in/ahmadibrahim4geo/", self.html)
         self.assertIn("mailto:ahmadibrahim.geo@gmail.com", self.html)
-        self.assertIn('class="lang-ar"', self.html)
-        self.assertIn('class="lang-en"', self.html)
+        self.assertIn("https://wa.me/201111915925", self.html)
+        self.assertIn("feature-request.yml", self.html)
+
+    def test_author_name_and_profile_are_fully_bilingual(self):
+        section = self.html.split('<section id="author"', 1)[1].split("</section>", 1)[0]
+        self.assertIn('<span class="lang-ar" lang="ar">أحمد إبراهيم</span>', section)
+        self.assertIn('<span class="lang-en" lang="en">Ahmad Ibrahim</span>', section)
+        self.assertNotIn('Ahmad Ibrahim <span', section)
+        self.assertIn('data-i18n-alt="authorPortraitAlt"', section)
+        for token in ('class="lang-ar" lang="ar"', 'class="lang-en" lang="en"'):
+            self.assertGreaterEqual(section.count(token), 6)
+        self.assertIn("document.querySelectorAll(\"[data-i18n-alt]\")", self.html)
+        self.assertIn("document.querySelectorAll(\"[data-i18n-aria]\")", self.html)
+        css = (ROOT / "assets/brand-refresh.css").read_text(encoding="utf-8")
+        self.assertIn('html[lang="ar"] .mirsad-author{direction:rtl}', css)
+        self.assertIn('html[lang="en"] .mirsad-author{direction:ltr}', css)
 
     def test_language_and_accessibility_features(self):
         for term in ("lang=\"en\"", "aria-selected",
