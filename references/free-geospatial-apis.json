@@ -36,7 +36,12 @@
       ],
       "caveat": "Forecast model availability and native resolution vary by area; do not represent forecasts as ground station observations.",
       "verified_on": "2026-10-24",
-      "example_url": "https://api.open-meteo.com/v1/forecast?latitude=30.0444&longitude=31.2357&hourly=temperature_2m,relative_humidity_2m"
+      "example_url": "https://api.open-meteo.com/v1/forecast?latitude=30.0444&longitude=31.2357&hourly=temperature_2m,relative_humidity_2m",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "open-meteo-archive",
@@ -60,7 +65,12 @@
       ],
       "caveat": "Select a consistent source/model over the entire study period; reanalysis is gridded, not a station record.",
       "verified_on": "2026-10-24",
-      "example_url": "https://archive-api.open-meteo.com/v1/archive?latitude=30.0444&longitude=31.2357&start_date=2023-01-01&end_date=2023-01-03&daily=temperature_2m_max"
+      "example_url": "https://archive-api.open-meteo.com/v1/archive?latitude=30.0444&longitude=31.2357&start_date=2023-01-01&end_date=2023-01-03&daily=temperature_2m_max",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "nasa-power",
@@ -85,7 +95,12 @@
       ],
       "caveat": "Spatial/time resolution and near-real-time latency vary. Daily values may be local solar time unless explicitly set.",
       "verified_on": "2026-10-24",
-      "example_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M&community=AG&longitude=31.2357&latitude=30.0444&start=20230101&end=20230103&format=JSON"
+      "example_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M&community=AG&longitude=31.2357&latitude=30.0444&start=20230101&end=20230103&format=JSON",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "copernicus-cds",
@@ -108,7 +123,12 @@
         "gridded reanalysis"
       ],
       "caveat": "Use CDS API client and secrets via environment or private configuration, not source control.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "open-meteo-elevation",
@@ -130,7 +150,12 @@
       ],
       "caveat": "Uses Copernicus GLO-90, roughly 90 m; not a survey-grade height or local high-resolution DEM.",
       "verified_on": "2026-10-24",
-      "example_url": "https://api.open-meteo.com/v1/elevation?latitude=30.0444&longitude=31.2357"
+      "example_url": "https://api.open-meteo.com/v1/elevation?latitude=30.0444&longitude=31.2357",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "opentopography",
@@ -151,7 +176,12 @@
         "SRTM/Copernicus elevation grids"
       ],
       "caveat": "Never embed or redistribute a personal key in a desktop or multiuser app; commercial software integration may require Enterprise access.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "open-elevation",
@@ -172,7 +202,12 @@
       ],
       "caveat": "Approximate/resampled heights; no-data may return 0; self-hostable GPLv2 server has separate licence.",
       "verified_on": "2026-10-24",
-      "example_url": "https://api.open-elevation.com/api/v1/lookup?locations=30.0444,31.2357"
+      "example_url": "https://api.open-elevation.com/api/v1/lookup?locations=30.0444,31.2357",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "usgs-epqs",
@@ -192,7 +227,12 @@
         "US terrain elevations"
       ],
       "caveat": "Not a globally applicable DEM service. Elevations are interpolated from varying 3DEP resolutions.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "earth-search",
@@ -215,7 +255,12 @@
         "STAC querying"
       ],
       "caveat": "STAC search metadata is not itself a basemap or unrestricted satellite image redistribution.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "microsoft-planetary-computer",
@@ -237,7 +282,12 @@
         "satellite imagery STAC"
       ],
       "caveat": "Do not treat anonymous catalogue access as an unlimited anonymous asset download licence.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "copernicus-dataspace",
@@ -261,7 +311,12 @@
         "cloud processing"
       ],
       "caveat": "Obtain tokens through official flow when required; do not publish refresh credentials.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "nasa-gibs",
@@ -284,7 +339,12 @@
         "GIS map overlays"
       ],
       "caveat": "GIBS map images are visualization services; not a substitute for the underlying scientific pixel data or original raster.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "openfreemap",
@@ -307,7 +367,12 @@
       ],
       "caveat": "Hosted service best-effort; do not assume unlimited bulk download or remove attribution.",
       "verified_on": "2026-10-24",
-      "example_url": "https://tiles.openfreemap.org/styles/liberty"
+      "example_url": "https://tiles.openfreemap.org/styles/liberty",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "osm-tiles",
@@ -327,7 +392,12 @@
         "low-volume interactive map previews"
       ],
       "caveat": "Not a free unlimited production tile CDN and not suitable for harvesting tiles.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "overpass",
@@ -349,7 +419,12 @@
         "regional feature extraction"
       ],
       "caveat": "For high-volume operations use planet/regional extracts or self-host rather than public API.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "nominatim",
@@ -369,7 +444,12 @@
         "occasional manually triggered geocoding"
       ],
       "caveat": "Public endpoint must not be embedded as a generic geocoder in code-generation/no-code/vibe coding platforms; choose self-hosted or permissioned alternatives for software products.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "soilgrids",
@@ -389,7 +469,12 @@
         "soil properties by point"
       ],
       "caveat": "Do not build runtime dependency on paused service. See ISRIC alternate WCS/WebDAV data access.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "gbif",
@@ -410,7 +495,12 @@
         "biodiversity maps"
       ],
       "caveat": "Species occurrence coordinates may be generalized or imprecise; sensitive species data require care.",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "geoboundaries",
@@ -433,7 +523,12 @@
         "geoBoundaries"
       ],
       "caveat": "Boundary editions and original layer licenses vary; gbOpen generally CC BY 4.0",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "worldpop-v2",
@@ -455,7 +550,12 @@
         "WorldPop API v2"
       ],
       "caveat": "Population is modeled rather than official census; asynchronous tasks may apply",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "geonames",
@@ -477,7 +577,12 @@
         "GeoNames Web Services"
       ],
       "caveat": "Validate transliteration and administrative names; GeoNames data CC BY",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "nasa-firms",
@@ -500,7 +605,12 @@
         "NASA FIRMS Area API"
       ],
       "caveat": "Hotspots are not burned-area perimeters; product latency differs",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "usgs-earthquake",
@@ -523,7 +633,12 @@
         "USGS Earthquake Event API"
       ],
       "caveat": "Locations/depths uncertain and catalogue records may be revised",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "nasa-cmr",
@@ -546,7 +661,12 @@
         "NASA Earthdata CMR Search"
       ],
       "caveat": "Metadata discovery does not grant access to every asset",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "openaq-v3",
@@ -567,7 +687,12 @@
         "OpenAQ v3 Observations"
       ],
       "caveat": "Ground observations not modeled air quality; harmonize timestamps and units",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "open-meteo-air-quality",
@@ -590,7 +715,12 @@
         "Open-Meteo Air Quality API"
       ],
       "caveat": "Forecast model grids not observed sensor data; attribute original CAMS inputs",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "open-meteo-flood",
@@ -613,7 +743,12 @@
         "Open-Meteo Flood GloFAS"
       ],
       "caveat": "Discharge (m3/s) is not an inundation polygon or an ephemeral wadi map",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "ohsome-v2",
@@ -636,7 +771,12 @@
         "HeiGIT ohsome API v2"
       ],
       "caveat": "OSM edit time is not real-world building date; do not use deprecated v2-rc",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "openrouteservice-heigit",
@@ -658,7 +798,12 @@
         "HeiGIT openrouteservice v2"
       ],
       "caveat": "Use new api.heigit.org host; old api.openrouteservice.org is being shut down in November 2026",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "hdx-hapi",
@@ -680,7 +825,12 @@
         "HDX Humanitarian API HAPI"
       ],
       "caveat": "Original dataset has its own temporal coverage, spatial references and attribution",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "usgs-waterdata",
@@ -702,7 +852,12 @@
         "USGS Water Data OGC API"
       ],
       "caveat": "US-only; legacy WaterServices endpoints retire in early 2027",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "noaa-coops",
@@ -725,7 +880,12 @@
         "NOAA CO-OPS Tides and Currents API"
       ],
       "caveat": "Requires explicit tidal datum, units, station ID and time zone",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "nasa-eonet",
@@ -747,7 +907,12 @@
         "NASA EONET Natural Events v3"
       ],
       "caveat": "Curated natural events not a complete scientific disaster census",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "worldbank-indicators",
@@ -769,7 +934,12 @@
         "World Bank Indicators API v2"
       ],
       "caveat": "National statistical totals are not local population grids",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "noaa-ncei-cdo",
@@ -790,7 +960,12 @@
         "NOAA NCEI Climate Data Online v2"
       ],
       "caveat": "Station records need quality and missing-value checks",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "noaa-ncei-erddap",
@@ -814,7 +989,12 @@
         "NOAA NCEI ERDDAP"
       ],
       "caveat": "ERDDAP gateway does not mean every dataset permits all reuse",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "inaturalist",
@@ -835,7 +1015,12 @@
         "iNaturalist Observations API"
       ],
       "caveat": "Sensitive species coordinates may be obscured; respect observation and image licenses",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "gebco-2026-wms",
@@ -860,7 +1045,12 @@
       ],
       "caveat": "WMS is rendered map imagery and NOT numeric DEM cell data; not suitable for quantitative terrain modeling. GEBCO must NOT be used for navigation or other safety-at-sea uses. Mean sea level vertical reference is approximate in some coastal areas.",
       "verified_on": "2026-10-24",
-      "example_url": "https://wms.gebco.net/mapserv?request=getcapabilities&service=wms&version=1.3.0"
+      "example_url": "https://wms.gebco.net/mapserv?request=getcapabilities&service=wms&version=1.3.0",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     },
     {
       "id": "gebco-2026-ceda-opendap",
@@ -886,7 +1076,12 @@
       ],
       "caveat": "Official CEDA NetCDF archive file; OPeNDAP constraint syntax and current access must be checked at runtime. Land elevations positive, underwater depths negative (m). TID identifies measured/predicted/interpolated data. Grid spacing is not actual bathymetric accuracy; vertical reference approximates mean sea level with local variations. Not for marine navigation.",
       "verified_on": "2026-10-24",
-      "example_url": "https://data.ceda.ac.uk/bodc/gebco/global/gebco_2026/ice_surface_elevation/netcdf"
+      "example_url": "https://data.ceda.ac.uk/bodc/gebco/global/gebco_2026/ice_surface_elevation/netcdf",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     }
   ]
 }
