@@ -1,10 +1,10 @@
 # Agent rules for this repository
 
-- Edit the canonical `skills/gis-development/SKILL.md`; do not create duplicate skills for each small change.
+- Maintain `skills/gis-development/SKILL.md` as the **general routing skill** and use domain-specific `skills/*/SKILL.md` for distinctly scoped engineering disciplines. Do not duplicate the same instructions across skills for minor changes.
 - Maintain concise progressive-disclosure reference guides under `references/`.
 - Keep platform compatibility, migration, licenses, CRS/measurement and source provenance prominent.
 - Never copy code from catalog entries without examining that upstream license.
-- Run `python scripts/validate_catalog.py` and `python -m unittest discover -s tests -v` for changes.
+- Before publishing run `python scripts/validate_catalog.py`, `python scripts/validate_api_catalog.py`, `python scripts/validate_skill_pack.py`, and `python -m unittest discover -s tests -v`. All six prior specialist skills and the standalone Desktop skill must remain discoverable.
 - Keep titles/descriptions developer focused. Clearly label illustrative templates as untested inside host apps until verified.
 
 - Maintain the static site at repository-root `index.html` and its assets in `assets/`; it must work at the project subpath under GitHub Pages, not only at a domain root.
@@ -22,3 +22,11 @@
 - The page enhancements live in `assets/brand-refresh.css`, loaded after inline base styles. Avoid duplication or breaking the existing working catalog filters, the language switch and GitHub Pages relative links.
 
 - The logo SVG containers embed the same approved G bitmap: preserve that shared icon rather than recreating a stretched vector approximation. The homepage `hero-wordmark` renders the name and tagline in HTML with responsive CSS to prevent letter-spacing distortion. Preserve the exact original mission statement.
+
+## Engineering evidence and website counts
+
+- The website's initial project, API and skill counters must agree with the JSON catalogs and `skills/*/SKILL.md`; do not manually increase a counter without updating the actual source.
+- Follow the published Agent Skills `SKILL.md` frontmatter format: name matches folder, lowercase kebab-case, description at most 1024 characters, progressive links to original references.
+- A repository link, static test, mock ArcPy, screenshot or compiled Python package is not proof of successful **native** ArcGIS/QGIS/Desktop execution. Record T0-T4 evidence as defined in `references/ahmad-ibrahim-gis-case-studies.md` and `references/desktop-application-engineering.md`.
+- Keep a standalone GIS application path distinct from ArcGIS SDK extensions and QGIS plugins. Verify full executable launch and packaging before stable claims.
+- Do not re-add excluded immature reference projects without a fresh documented maturity review and user approval.
