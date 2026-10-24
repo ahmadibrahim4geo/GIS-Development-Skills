@@ -1564,6 +1564,110 @@
       "reviewed_on": "2026-10-24",
       "license": "verify-upstream",
       "integration": "ui-reference"
+    },
+    {
+      "name": "MIRSAD — Climate ArcGIS Toolboxes & Desktop",
+      "url": "https://github.com/ahmadibrahim4geo/MIRSAD",
+      "category": "arcgis",
+      "role": "source-code-case-study",
+      "platforms": [
+        "arcgis-pro",
+        "arcmap",
+        "desktop",
+        "python"
+      ],
+      "description": "Climate Python toolboxes and a separate PySide6 Windows desktop development app; shared scientific modules, bilingual guides, headless and separate native Pro acceptance reports",
+      "reviewed_on": "2026-10-24",
+      "license": "MIT",
+      "integration": "reference-and-QA-case-study",
+      "source_availability": "public-original-source; desktop-dev-build; native-ArcMap-acceptance-incomplete",
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
+    },
+    {
+      "name": "CreateFlowArrow — Gravity Network QA",
+      "url": "https://github.com/ahmadibrahim4geo/Create-FlowArrow-Tool",
+      "category": "arcgis",
+      "role": "source-code-case-study",
+      "platforms": [
+        "arcgis-pro",
+        "arcmap",
+        "python"
+      ],
+      "description": "ArcPy .pyt/.py for pipe-flow arrows, slopes, network QA/defect layers and optional in-place flip; destructive modes require explicit consent",
+      "reviewed_on": "2026-10-24",
+      "license": "MIT",
+      "integration": "reference-and-QA-case-study",
+      "source_availability": "public-source-and-sample-data; native-multi-version-tests-not-established",
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
+    },
+    {
+      "name": "Geological Cross Section Toolbox",
+      "url": "https://github.com/ahmadibrahim4geo/GeologicalCrossSectionToolbox",
+      "category": "arcgis",
+      "role": "source-code-case-study",
+      "platforms": [
+        "arcgis-pro",
+        "arcmap",
+        "python",
+        "terrain"
+      ],
+      "description": "ArcPy geological section .pyt plus separate engine, DEM/geology/fault profiles, DXF/HTML/CSV outputs, bilingual guides and fixture data",
+      "reviewed_on": "2026-10-24",
+      "license": "MIT",
+      "integration": "reference-and-QA-case-study",
+      "source_availability": "public-source-and-test-data; native-environment-integration-needs-verification",
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
+    },
+    {
+      "name": "GeoVision — Android GIS Viewer",
+      "url": "https://github.com/ahmadibrahim4geo/GeoVision",
+      "category": "mobile-gis",
+      "role": "mobile-case-study",
+      "platforms": [
+        "android",
+        "kotlin",
+        "mobile"
+      ],
+      "description": "Kotlin Jetpack Compose offline-first mobile GIS viewer with multiple format loaders, map UI and optional Esri variant; verify claimed formats on device",
+      "reviewed_on": "2026-10-24",
+      "license": "MIT",
+      "integration": "mobile-architecture-reference",
+      "source_availability": "public-source; device-and-format-support-not-independently-tested",
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
+    },
+    {
+      "name": "ArcMap Style Collection",
+      "url": "https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection",
+      "category": "cartography",
+      "role": "cartographic-asset-reference",
+      "platforms": [
+        "arcmap",
+        "arcgis-pro",
+        "cartography"
+      ],
+      "description": "Extensive ArcMap .style and Pro .stylx curated symbology and Arabic translation reference; third-party style and font permissions vary and assets must not be mirrored",
+      "reviewed_on": "2026-10-24",
+      "license": "varies-by-third-party-asset-verify",
+      "integration": "reference-only-no-asset-copy",
+      "source_availability": "public-style-and-font-collection; review-each-upstream-license",
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
+    },
+    {
+      "name": "GIS Data Repositories Professional 2026",
+      "url": "https://github.com/ahmadibrahim4geo/gis-data-repositories-professional-2026",
+      "category": "data-catalog",
+      "role": "data-discovery-case-study",
+      "platforms": [
+        "web",
+        "python",
+        "data-discovery"
+      ],
+      "description": "Searchable bilingual GIS dataset/source directory with JSON/CSV/Excel exports, link-audit utilities and static/Flask explorers; historic link status is not live availability",
+      "reviewed_on": "2026-10-24",
+      "license": "MIT-original-code-external-datasets-separate",
+      "integration": "catalog-design-reference",
+      "source_availability": "public-app-and-catalog-source; individual-provider-rights-vary",
+      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
     }
   ]
 }
