@@ -3,7 +3,7 @@
 
 # GIS Development Skills 🌍
 
-[![GIS Skill validation](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml/badge.svg)](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml) ![License: MIT](https://img.shields.io/badge/license-MIT-3f8c76) ![Release: v0.3.5](https://img.shields.io/badge/release-v0.3.5-24483d)
+[![GIS Skill validation](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml/badge.svg)](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml) ![License: MIT](https://img.shields.io/badge/license-MIT-3f8c76) ![Documentation: v0.3.5](https://img.shields.io/badge/docs-v0.3.5-24483d)
 
 **Project homepage:** [GitHub Pages website](https://ahmadibrahim4geo.github.io/GIS-Development-Skills/) *(check publication status in repository Pages settings)* · [View homepage source](index.html) · [English / العربية](README.ar.md) · [Logo](assets/logo.svg).
 
@@ -13,7 +13,7 @@
 
 Created by [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). Independent community resource; **not affiliated with Esri, QGIS, GeoRust, GeoLibre, or other catalogued projects**.
 
-> **Status:** v0.3.5 expanded open-source GIS catalog, GeoLibre R/RustGIS and public geospatial APIs. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
+> **Status:** documentation revision v0.3.5 (not a tagged GitHub Release) — expanded open-source GIS catalog, GeoLibre R/RustGIS and public geospatial APIs. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
 
 [اقرأ بالعربية](README.ar.md) · [Contributing](CONTRIBUTING.md) · [Publishing](PUBLISHING.md) · [Catalog](references/project-catalog.json) · [Skill](skills/gis-development/SKILL.md) · [Free GIS APIs](references/free-geospatial-apis.md) · [GeoLibre integrations](references/geolibre-integration.md) · [Report issues / propose features](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues/new/choose)
 
