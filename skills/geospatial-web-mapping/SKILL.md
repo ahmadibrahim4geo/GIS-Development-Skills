@@ -1,0 +1,29 @@
+---
+name: geospatial-web-mapping
+description: Build and evaluate web maps and desktop-embedded MapLibre/GeoLibre 2D/3D UIs, with real geometry editing, layer state, historical imagery time controls, raster/COG rendering and correctly licensed basemaps.
+license: MIT
+---
+
+# Geospatial Web Mapping
+
+Use when the deliverable is a web GIS map, browser-based spatial tool or mapping UI in a desktop application.
+
+## Procedure
+
+1. Clarify if it is a standalone web app, Tauri/WebView2 desktop shell or GeoLibre project.
+2. Read `../../references/desktop-and-web.md`, `../../references/geolibre-integration.md` and `../../references/gishub-software.md`.
+3. Choose mapping renderer (MapLibre/Cesium/GeoLibre) separately from processing engine (GDAL/Whitebox-WASM/Rust/Python).
+4. Use official modules from https://github.com/opengeos/maplibre-gl-components, layer-manager, geo-editor, time-slider and plugin-template as architecture candidates **only after version checks**.
+5. Implement a real user action end-to-end before adding more ribbon/toolbar commands; persist layer visibility, style, selections and camera.
+6. Ensure layers use correct CRS and NoData, handle feature editing with undo, validate project save/open and loading failures.
+7. Historical layers/time controls require actual dated data from legal sources; do not fake or imply imagery availability.
+8. Validate remote data licensing, keys, attribution, offline limitations, provider rates and CORS.
+9. Run in browser/desktop where possible, check event handlers and real rendering; otherwise state what remains untested.
+
+## Acceptance
+
+- [ ] Renderer and data dependencies separated
+- [ ] Buttons work, not visual placeholders
+- [ ] Export, save, reopen and undo functional
+- [ ] Responsive map, long data performance, time axis accuracy
+- [ ] API terms, CRS, attribution and secrets checked
