@@ -37,3 +37,12 @@
 - When new specialist skills or example paths are introduced, update the main `gis-development` router, both READMEs, `index.html`, English/Arabic translation dictionaries, link validators and skill counters together.
 - All examples declare non-destructive defaults, source/CRS/unit limitations and exact T0–T4 test evidence per [GIS Skill Quality Benchmark](docs/QUALITY_BENCHMARK.md).
 - A GitHub CI run does not substitute for an ArcGIS Pro/ArcMap/QGIS/PostGIS/Windows application test; note all native acceptance gaps honestly.
+
+## Agent runtime improvement policy (additive 2026-10-24)
+
+- Use [the task decision tree](references/agent-decision-tree.md) and the compact `gis-development` router; the original full core exists at [unchanged archival copy](skills/gis-development/LEGACY_FULL_SKILL.md) and [link-adjusted guide](references/gis-development-full-guidance.md).
+- Fill [the acceptance report](templates/GIS_ACCEPTANCE_REPORT.md), validate machine-readable evidence with `python scripts/validate_evidence.py <report.json>`, and label T0/T1 vs host-native T2–T4 honestly.
+- Apply [geospatial security](references/geospatial-security.md) and [performance](references/geospatial-performance.md) standards. Compare against [fixtures](fixtures/README.md) and [native test harnesses](native_tests/README.md).
+- Generate or check the [manifest](references/repository-manifest.json) via `python scripts/build_manifest.py --check`. Do not manually drift current inventory counters or overwrite historical CHANGELOG version counts.
+- The independent weekly availability check does not establish service license, JSON validity or scientific correctness. Keep status unknown until tests and terms are verified.
+- Preserve all existing skills, templates, API/reference entries, original artwork, brand and bilingual controls; synchronize README.md, README.ar.md, index.html and tests for relevant changes.
