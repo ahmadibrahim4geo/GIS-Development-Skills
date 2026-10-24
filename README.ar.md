@@ -20,6 +20,14 @@
 
 أضفنا مراجع مكتبات مفيدة مثل NetTopologySuite، وWebView2Samples، وArcGIS Pro SDK وGeoAI وPySTAC وTiTiler وDuckDB، مع توضيح استخداماتها ومحاذير الترخيص. التفاصيل في [`earthmapper-case-studies.md`](references/earthmapper-case-studies.md) و[`dotnet-gis.md`](references/dotnet-gis.md).
 
+## إضافات الإصدار v0.3.0
+
+- **[GeoLibre R](https://github.com/opengeos/geolibre-r)**: مكتبة مفتوحة المصدر MIT لعرض وتطوير الخرائط داخل RStudio وShiny وQuarto.
+- **[RustGIS](https://github.com/opengeos/RustGIS)**: برنامج GIS مكتوب بلغة Rust تحت Apache-2.0؛ يصلح مرجعًا لبناء تطبيقات الديسكتوب وأوامر الريبون والإضافات. مختلف عن منظومة GeoRust.
+- **[دليل واجهات GIS المجانية والعامة](references/free-geospatial-apis.md)**: 18 خدمة للمناخ والارتفاعات والـDEM والصور الفضائية والخرائط الأساسية والبحث المكاني والتربة والتنوع الحيوي، مع نوع المفتاح وشروط المجانية وحدود الطلبات والتراخيص.
+
+**تنبيه:** المجانية لا تعني حرية الاستخدام التجاري أو عددًا غير محدود من الطلبات أو حق التخزين دون اتصال. SoilGrids REST متوقفة مؤقتًا حسب الجهة، وبعض خدمات OpenStreetMap العامة مقيّدة بشدة.
+
 ## البداية
 
 بعد إنشاء المستودع العام ورفع ملفاته إلى GitHub:
@@ -32,12 +40,14 @@ npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development
 
 ```bash
 python scripts/validate_catalog.py
+python scripts/validate_api_catalog.py
+python scripts/search_api_catalog.py --category satellite-imagery
 python scripts/search_catalog.py --query rust
 ```
 
 > جميع الأمثلة البرمجية نقطة انطلاق ولا يُفترض تشغيلها داخل ArcGIS أو QGIS بنجاح دون اختبارها في الإصدار المستهدف. والمستودعات الخارجية ليست أجزاء من هذا المشروع ولا تُنقل منها الأكواد تلقائيًا.
 
-**تاريخ إعداد الفهرس:** 24 أكتوبر 2026.  **المؤلف:** Ahmed Ibrahim.  **الحالة:** v0.2.0.
+**تاريخ إعداد الفهرس:** 24 أكتوبر 2026.  **المؤلف:** Ahmed Ibrahim.  **الحالة:** v0.3.0.
 
 تعليمات النشر: [`PUBLISHING.md`](PUBLISHING.md).
 

@@ -1,6 +1,6 @@
 ---
 name: gis-development
-description: Build, audit, debug or migrate GIS software and geoprocessing tools for ArcMap, ArcGIS Pro, QGIS, standalone desktop apps, 2D web mapping, 3D globes, remote sensing and geospatial Rust/Python stacks. Choose compatible spatial libraries, verify CRS and geospatial correctness, generate starter code, and test before claiming a GIS feature works.
+description: Build, audit, debug or migrate GIS software and geoprocessing tools for ArcMap, ArcGIS Pro, QGIS, standalone desktop apps, 2D web mapping, 3D globes, remote sensing, R widgets, and geospatial Rust/Python stacks. Find public GIS APIs with accurate key, rate-limit, licensing and attribution constraints. Choose compatible spatial libraries, verify CRS and geospatial correctness, generate starter code, and test before claiming a GIS feature works.
 license: MIT
 ---
 
@@ -12,12 +12,13 @@ Use this skill when designing or implementing a GIS **tool, add-in, plugin, desk
 
 1. **Identify the deliverable and deployment target.** Exact product + version (ArcMap 10.x, ArcGIS Pro major version, QGIS version, or standalone); OS; programming language; data formats; offline needs; license constraints; intended user interaction; test environment. If a crucial value is unknown, state an assumption, mark it unverified, and use the conservative route.
 2. **Choose the right pathway.** Read one platform reference and `../../references/geospatial-foundations.md` for file and coordinate considerations. Use `../../references/project-catalog.json` to find *verified links*, not to uncritically import projects.
-3. **Write a minimal architecture and acceptance contract.** Input schema, geometry type, expected CRS and units, optional elevation/Z/M, invalid/empty geometry behavior, nodata/masked raster behavior, output format/fields/metadata, working directory, dependencies and licensing.
-4. **Protect portability.** ArcMap and ArcGIS Pro have separate runtime and API assumptions. Isolate GIS analysis from UI/ribbon wrappers; choose an engine only if allowed in that environment.
-5. **Implement a vertical slice.** Start with an example from `../../templates/` if appropriate. Make a *functional end-to-end action* before adding extra commands; no placeholder commands presented as implemented.
-6. **Verify source and licenses.** Re-check upstream APIs against the exact pinned release, its license and deployment constraints. Avoid unverified code recipes, private tokens or unsupported imagery endpoints.
-7. **Test geospatial correctness.** Load known examples; verify geometry count and types, area/distance units, datum transformations, invalid features, NoData, output location, field names, and repeatability. Test user interface commands as actually wired, not just displayed.
-8. **Deliver an auditable report.** Changed files, target version, what runs, what was tested (and where), what remains unverified, permissions/licenses, and exact next steps.
+3. **For hosted GIS, elevation, imagery, terrain, or climate data, select a legitimate service.** Read `../../references/free-geospatial-apis.md` and the offline `../../references/free-geospatial-apis.json` catalog. Distinguish no-key, personal-key, free-noncommercial, limited public, restricted and temporarily unavailable services. Validate live terms before proposing a runtime integration.
+4. **Write a minimal architecture and acceptance contract.** Input schema, geometry type, expected CRS and units, optional elevation/Z/M, invalid/empty geometry behavior, nodata/masked raster behavior, output format/fields/metadata, working directory, dependencies and licensing.
+5. **Protect portability.** ArcMap and ArcGIS Pro have separate runtime and API assumptions. Isolate GIS analysis from UI/ribbon wrappers; choose an engine only if allowed in that environment.
+6. **Implement a vertical slice.** Start with an example from `../../templates/` if appropriate. Make a *functional end-to-end action* before adding extra commands; no placeholder commands presented as implemented.
+7. **Verify source and licenses.** Re-check upstream APIs against the exact pinned release, its license and deployment constraints. Avoid unverified code recipes, private tokens or unsupported imagery endpoints.
+8. **Test geospatial correctness.** Load known examples; verify geometry count and types, area/distance units, datum transformations, invalid features, NoData, output location, field names, and repeatability. Test user interface commands as actually wired, not just displayed.
+9. **Deliver an auditable report.** Changed files, target version, what runs, what was tested (and where), what remains unverified, permissions/licenses, and exact next steps.
 
 ## Platform selector
 
@@ -29,7 +30,16 @@ Use this skill when designing or implementing a GIS **tool, add-in, plugin, desk
 | Desktop / 2D / 3D | `../../references/desktop-and-web.md` | Tauri/Rust, Qt, MapLibre, CesiumJS | Treat rendering engine as geoprocessing engine |
 | Remote sensing / AI | `../../references/remote-sensing.md`, `../../references/geoai-satellite-map.md` | GDAL, STAC, raster processing, model inference | Ignore radiometry, alignment, licensing and reproducibility |
 | .NET GIS desktop / Pro SDK | `../../references/dotnet-gis.md` | WPF, WebView2, NetTopologySuite, ArcGIS Pro SDK | Assume .NET GIS components or ArcGIS SDK are free of platform and license constraints |
+| R-based mapping and Rust GIS architecture | `../../references/rustgis-and-geolibre-r.md` | GeoLibre R, RustGIS | Assume a client rendering library grants permissions for its underlying web data |
+| Hosted GIS services / APIs | `../../references/free-geospatial-apis.md` | Open-Meteo, NASA POWER, STAC, OpenFreeMap, DEM providers | Treat any public URL as unlimited, keyless, commercial or offline-safe |
 | Spatial libraries | `../../references/geospatial-foundations.md` | GDAL, PROJ, GEOS, GeoRust | Do metric buffers on longitude/latitude degrees |
+
+## Public API safety rules
+
+- Read the exact provider access/limit/attribution entry and current official terms before integration.
+- Do not generate generic integrations that use the **public Nominatim endpoint**; provider policy explicitly restricts use by code-generating platforms. Use self-hosted or separately authorized geocoders.
+- Avoid embedding personal OpenTopography keys, scraping/bulk public tile services, or relying on paused SoilGrids REST.
+- Check reproducible datasets and elevation vertical datum before presenting numerical results.
 
 ## Required pre-delivery check
 
@@ -44,7 +54,7 @@ Use this skill when designing or implementing a GIS **tool, add-in, plugin, desk
 
 ## Catalog behavior
 
-Open `../../references/project-catalog.json` for tools matching the exact need. For exact EarthMapper source review, read `../../references/earthmapper-case-studies.md`. The catalog includes **multiple EarthMapper repositories with different meanings**. Match the user's intended project by owner and purpose; do not assume one name maps to one software system. `GeoRust` is a Rust library ecosystem; `GeoLibre` is a geospatial app platform; `GeoLibra` is a distinct GitHub user and must not be conflated.
+Open `../../references/project-catalog.json` for tools matching the exact need. For exact EarthMapper source review, read `../../references/earthmapper-case-studies.md`. For public services, separately consult `../../references/free-geospatial-apis.json`, and for R/Rust review `../../references/rustgis-and-geolibre-r.md`. The catalog includes **multiple EarthMapper repositories with different meanings**. Match the user's intended project by owner and purpose; do not assume one name maps to one software system. `GeoRust` is a Rust library ecosystem; `GeoLibre` is a geospatial app platform; `GeoLibra` is a distinct GitHub user and must not be conflated.
 
 When new sources are needed, consult their official repositories/docs, verify the exact URL, and propose a catalog pull request with the required metadata. Source links are references and do not imply endorsed or guaranteed functionality. Distinguish **README-only product showcases**, **research papers with no released code**, **archived source repositories** and **actually inspectable source libraries** before suggesting code reuse.
 

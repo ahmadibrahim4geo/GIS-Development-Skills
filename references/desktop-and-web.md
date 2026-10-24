@@ -30,3 +30,7 @@ A rendering SDK's open-source license does **not** make its imagery, style, tile
 ## Windows .NET GIS and the EarthMapper examples
 
 Read [`dotnet-gis.md`](dotnet-gis.md) and [`earthmapper-case-studies.md`](earthmapper-case-studies.md). **AliAlkazraji/EarthMapper** is a README-only Windows GIS product overview, not a reusable code repository in the inspected state. **HIT-SIRS/EarthMapper** is separate satellite/map generation research.
+
+## GeoLibre R / RustGIS and real API service requirements
+
+Read [`rustgis-and-geolibre-r.md`](rustgis-and-geolibre-r.md) for inspectable RustGIS and R GeoLibre integration examples. For climate data, DEM, imagery, tiles and geocoding use [`free-geospatial-apis.md`](free-geospatial-apis.md). Never assume a free/open renderer guarantees rights to a hosted map tile or imagery service.

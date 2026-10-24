@@ -1,0 +1,416 @@
+{
+  "schema_version": "1.0",
+  "reviewed_on": "2026-10-24",
+  "description": "Curated GIS and Earth science service directory. The free tier refers to provider access, not unrestricted reuse of data or hosting.",
+  "policy": "Verify live docs, quotas, keys, data licenses, geographic/temporal coverage and uptime before production use; never hardcode credentials; obey caching and attribution rules.",
+  "access_vocabulary": {
+    "free-noncommercial": "Free only within noncommercial fair-use quota; commercial use requires a separate plan or permission.",
+    "free-key-required": "Free tier available after personal API key issuance; no shared embedded keys.",
+    "free-registration": "Registration and personal access token needed for programmatic access.",
+    "free-limited": "Low-volume public trial or free key tier.",
+    "public-fair-use": "Open public entry point without unlimited traffic, availability or asset redistribution promise.",
+    "public-with-asset-restrictions": "Open catalog; asset access or volumes may require signing, auth or throttling.",
+    "restricted-public": "Public endpoint with explicit strict usage policy, unsuitable for bulk/generic integrations.",
+    "temporarily-unavailable": "Provider reports service unavailable; use alternatives."
+  },
+  "services": [
+    {
+      "id": "open-meteo-forecast",
+      "name": "Open-Meteo Forecast",
+      "category": "climate-weather",
+      "documentation_url": "https://open-meteo.com/en/docs",
+      "service_url": "https://api.open-meteo.com/v1/forecast",
+      "access": "free-noncommercial",
+      "authentication": "none",
+      "coverage": "global",
+      "formats": [
+        "JSON",
+        "CSV",
+        "XLSX"
+      ],
+      "limits": "Free non-commercial service: <10,000 calls/day, 5,000/hour, 600/minute; commercial subscriptions required.",
+      "attribution": "CC BY 4.0 data attribution to Open-Meteo and applicable original sources.",
+      "use_cases": [
+        "weather forecasts",
+        "hourly time series"
+      ],
+      "caveat": "Forecast model availability and native resolution vary by area; do not represent forecasts as ground station observations.",
+      "verified_on": "2026-10-24",
+      "example_url": "https://api.open-meteo.com/v1/forecast?latitude=30.0444&longitude=31.2357&hourly=temperature_2m,relative_humidity_2m"
+    },
+    {
+      "id": "open-meteo-archive",
+      "name": "Open-Meteo Historical Weather",
+      "category": "climate-weather",
+      "documentation_url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "service_url": "https://archive-api.open-meteo.com/v1/archive",
+      "access": "free-noncommercial",
+      "authentication": "none",
+      "coverage": "global",
+      "formats": [
+        "JSON",
+        "CSV",
+        "XLSX"
+      ],
+      "limits": "Same free non-commercial Open-Meteo service limits; data coverage/resolution depend on selected model.",
+      "attribution": "CC BY 4.0 data attribution.",
+      "use_cases": [
+        "ERA5/ERA5-Land reanalysis",
+        "historical climate studies"
+      ],
+      "caveat": "Select a consistent source/model over the entire study period; reanalysis is gridded, not a station record.",
+      "verified_on": "2026-10-24",
+      "example_url": "https://archive-api.open-meteo.com/v1/archive?latitude=30.0444&longitude=31.2357&start_date=2023-01-01&end_date=2023-01-03&daily=temperature_2m_max"
+    },
+    {
+      "id": "nasa-power",
+      "name": "NASA POWER Temporal API",
+      "category": "climate-weather",
+      "documentation_url": "https://power.larc.nasa.gov/docs/services/api/temporal/",
+      "service_url": "https://power.larc.nasa.gov/api/temporal/daily/point",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "global",
+      "formats": [
+        "JSON",
+        "CSV",
+        "NetCDF"
+      ],
+      "limits": "Respect service 429/rate constraints; point daily API has parameter constraints; avoid redundant requests over same coarse grid cell.",
+      "attribution": "Cite NASA POWER, underlying source data and version according to product guidelines.",
+      "use_cases": [
+        "daily meteorology",
+        "solar radiation",
+        "agroclimatology"
+      ],
+      "caveat": "Spatial/time resolution and near-real-time latency vary. Daily values may be local solar time unless explicitly set.",
+      "verified_on": "2026-10-24",
+      "example_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M&community=AG&longitude=31.2357&latitude=30.0444&start=20230101&end=20230103&format=JSON"
+    },
+    {
+      "id": "copernicus-cds",
+      "name": "Copernicus Climate Data Store CDS API",
+      "category": "climate-weather",
+      "documentation_url": "https://cds.climate.copernicus.eu/how-to-api",
+      "service_url": "https://cds.climate.copernicus.eu/api",
+      "access": "free-registration",
+      "authentication": "account-token",
+      "coverage": "global and regional by dataset",
+      "formats": [
+        "NetCDF",
+        "GRIB"
+      ],
+      "limits": "Account and personal access token required; accept the requested dataset-specific licence; job queues and size restrictions apply.",
+      "attribution": "Cite ECMWF/Copernicus and specific dataset/licence.",
+      "use_cases": [
+        "ERA5 retrieval",
+        "climate time-series",
+        "gridded reanalysis"
+      ],
+      "caveat": "Use CDS API client and secrets via environment or private configuration, not source control.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "open-meteo-elevation",
+      "name": "Open-Meteo Elevation API",
+      "category": "terrain-elevation",
+      "documentation_url": "https://open-meteo.com/en/docs/elevation-api",
+      "service_url": "https://api.open-meteo.com/v1/elevation",
+      "access": "free-noncommercial",
+      "authentication": "none",
+      "coverage": "global",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Up to 100 coordinates per request; general Open-Meteo non-commercial rate limits apply.",
+      "attribution": "Open-Meteo/Copernicus DEM source attribution.",
+      "use_cases": [
+        "point elevation",
+        "weather downscaling"
+      ],
+      "caveat": "Uses Copernicus GLO-90, roughly 90 m; not a survey-grade height or local high-resolution DEM.",
+      "verified_on": "2026-10-24",
+      "example_url": "https://api.open-meteo.com/v1/elevation?latitude=30.0444&longitude=31.2357"
+    },
+    {
+      "id": "opentopography",
+      "name": "OpenTopography Global DEM API",
+      "category": "terrain-elevation",
+      "documentation_url": "https://opentopography.org/developers",
+      "service_url": "https://portal.opentopography.org/API/globaldem",
+      "access": "free-key-required",
+      "authentication": "api-key",
+      "coverage": "global coverage depends on DEM selection",
+      "formats": [
+        "GeoTIFF"
+      ],
+      "limits": "Free academic key generally 200 calls/day and non-academic 50/day for global datasets; product and area limits apply.",
+      "attribution": "Dataset-specific attribution; review OpenTopography API agreement.",
+      "use_cases": [
+        "DEM downloads",
+        "SRTM/Copernicus elevation grids"
+      ],
+      "caveat": "Never embed or redistribute a personal key in a desktop or multiuser app; commercial software integration may require Enterprise access.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "open-elevation",
+      "name": "Open-Elevation Hosted API",
+      "category": "terrain-elevation",
+      "documentation_url": "https://www.open-elevation.com/",
+      "service_url": "https://api.open-elevation.com/api/v1/lookup",
+      "access": "free-limited",
+      "authentication": "none-or-api-key",
+      "coverage": "global",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Public no-key trial: up to 500 coordinates/month per IP; free account/key advertised up to 1,000 coordinates/month.",
+      "attribution": "SRTM/NASA data and service attribution per current provider terms.",
+      "use_cases": [
+        "simple elevation samples"
+      ],
+      "caveat": "Approximate/resampled heights; no-data may return 0; self-hostable GPLv2 server has separate licence.",
+      "verified_on": "2026-10-24",
+      "example_url": "https://api.open-elevation.com/api/v1/lookup?locations=30.0444,31.2357"
+    },
+    {
+      "id": "usgs-epqs",
+      "name": "USGS Elevation Point Query Service",
+      "category": "terrain-elevation",
+      "documentation_url": "https://www.usgs.gov/the-national-map-data-delivery/gis-data-download",
+      "service_url": "https://epqs.nationalmap.gov/v1/json",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "United States and supported territories",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Public point queries; USGS service policies and availability may change.",
+      "attribution": "USGS 3DEP attribution recommended.",
+      "use_cases": [
+        "US terrain elevations"
+      ],
+      "caveat": "Not a globally applicable DEM service. Elevations are interpolated from varying 3DEP resolutions.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "earth-search",
+      "name": "Element 84 Earth Search STAC",
+      "category": "satellite-imagery",
+      "documentation_url": "https://element84.com/earth-search",
+      "service_url": "https://earth-search.aws.element84.com/v1",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "multi-collection global or regional",
+      "formats": [
+        "STAC JSON",
+        "COG asset links"
+      ],
+      "limits": "Free public catalog with no guaranteed SLA. Assets may have their own rules or requester-pays S3 links.",
+      "attribution": "Cite original dataset provider and asset terms.",
+      "use_cases": [
+        "Sentinel-2 scene search",
+        "Landsat discovery",
+        "STAC querying"
+      ],
+      "caveat": "STAC search metadata is not itself a basemap or unrestricted satellite image redistribution.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "microsoft-planetary-computer",
+      "name": "Microsoft Planetary Computer STAC",
+      "category": "satellite-imagery",
+      "documentation_url": "https://planetarycomputer.microsoft.com/docs/",
+      "service_url": "https://planetarycomputer.microsoft.com/api/stac/v1",
+      "access": "public-with-asset-restrictions",
+      "authentication": "none-for-stac",
+      "coverage": "global or collection-specific",
+      "formats": [
+        "STAC JSON",
+        "cloud-optimized imagery assets"
+      ],
+      "limits": "STAC search anonymously available; most assets can be read without account but are throttled and sometimes need signed URLs or tokens.",
+      "attribution": "Original collection/provider licences and required attribution.",
+      "use_cases": [
+        "environmental datasets",
+        "satellite imagery STAC"
+      ],
+      "caveat": "Do not treat anonymous catalogue access as an unlimited anonymous asset download licence.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "copernicus-dataspace",
+      "name": "Copernicus Data Space APIs",
+      "category": "satellite-imagery",
+      "documentation_url": "https://dataspace.copernicus.eu/analyse/apis",
+      "service_url": "https://catalogue.dataspace.copernicus.eu/stac",
+      "access": "free-registration",
+      "authentication": "service-dependent",
+      "coverage": "Copernicus Sentinel missions",
+      "formats": [
+        "STAC",
+        "OData",
+        "openEO"
+      ],
+      "limits": "Catalog/search and actual processing/download endpoints have differing authentication, quota and subscription/access rules.",
+      "attribution": "Copernicus Sentinel data-use terms and provider acknowledgements.",
+      "use_cases": [
+        "Sentinel imagery search",
+        "Sentinel download",
+        "cloud processing"
+      ],
+      "caveat": "Obtain tokens through official flow when required; do not publish refresh credentials.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "nasa-gibs",
+      "name": "NASA GIBS Web Map Services",
+      "category": "satellite-imagery",
+      "documentation_url": "https://www.earthdata.nasa.gov/engage/open-data-services-software/earthdata-developer-portal/gibs-api",
+      "service_url": "https://gibs.earthdata.nasa.gov/wms/epsg4326/best",
+      "access": "public-fair-use",
+      "authentication": "none-for-many-layers",
+      "coverage": "global",
+      "formats": [
+        "WMS",
+        "WMTS",
+        "tiles"
+      ],
+      "limits": "Follow layer-specific temporal, projection, attribution and terms; no public SLA.",
+      "attribution": "NASA Earthdata product-specific credits.",
+      "use_cases": [
+        "time-enabled satellite imagery layers",
+        "GIS map overlays"
+      ],
+      "caveat": "GIBS map images are visualization services; not a substitute for the underlying scientific pixel data or original raster.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "openfreemap",
+      "name": "OpenFreeMap Hosted Styles",
+      "category": "basemaps",
+      "documentation_url": "https://openfreemap.org/quick_start/",
+      "service_url": "https://tiles.openfreemap.org/styles/liberty",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "global OSM-derived coverage",
+      "formats": [
+        "MapLibre style",
+        "vector tiles"
+      ],
+      "limits": "Site advertises no public map-view/request limit; offline per-download limit 3,000 tiles or 50 MB with max 4 concurrent requests; terms may evolve.",
+      "attribution": "Visible OpenStreetMap/OpenMapTiles attribution as applicable.",
+      "use_cases": [
+        "free vector basemaps",
+        "MapLibre maps"
+      ],
+      "caveat": "Hosted service best-effort; do not assume unlimited bulk download or remove attribution.",
+      "verified_on": "2026-10-24",
+      "example_url": "https://tiles.openfreemap.org/styles/liberty"
+    },
+    {
+      "id": "osm-tiles",
+      "name": "OSM Foundation Standard Tile Server",
+      "category": "basemaps",
+      "documentation_url": "https://operations.osmfoundation.org/policies/tiles/",
+      "service_url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      "access": "restricted-public",
+      "authentication": "none",
+      "coverage": "global",
+      "formats": [
+        "PNG XYZ tiles"
+      ],
+      "limits": "No bulk/offline prefetching; use correct attribution and valid identifying client; no SLA; block risk for heavy use.",
+      "attribution": "© OpenStreetMap contributors (ODbL for OSM data).",
+      "use_cases": [
+        "low-volume interactive map previews"
+      ],
+      "caveat": "Not a free unlimited production tile CDN and not suitable for harvesting tiles.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "overpass",
+      "name": "OSM Overpass Public API",
+      "category": "vector-poi",
+      "documentation_url": "https://wiki.openstreetmap.org/wiki/Overpass_API",
+      "service_url": "https://overpass-api.de/api/interpreter",
+      "access": "restricted-public",
+      "authentication": "none",
+      "coverage": "global OSM data",
+      "formats": [
+        "JSON",
+        "XML"
+      ],
+      "limits": "Shared volunteer instances subject to load/usage policies; avoid large or repeated bulk queries and cache results.",
+      "attribution": "OSM contributors / ODbL.",
+      "use_cases": [
+        "targeted OSM POI queries",
+        "regional feature extraction"
+      ],
+      "caveat": "For high-volume operations use planet/regional extracts or self-host rather than public API.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "nominatim",
+      "name": "OSM Foundation Nominatim Public API",
+      "category": "geocoding",
+      "documentation_url": "https://operations.osmfoundation.org/policies/nominatim/",
+      "service_url": "https://nominatim.openstreetmap.org",
+      "access": "restricted-public",
+      "authentication": "none",
+      "coverage": "global OSM data",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Absolute maximum 1 request/second per application; identifying User-Agent/Referer; no autocomplete; no systematic scraping.",
+      "attribution": "OSM contributors / ODbL.",
+      "use_cases": [
+        "occasional manually triggered geocoding"
+      ],
+      "caveat": "Public endpoint must not be embedded as a generic geocoder in code-generation/no-code/vibe coding platforms; choose self-hosted or permissioned alternatives for software products.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "soilgrids",
+      "name": "ISRIC SoilGrids REST API",
+      "category": "soil",
+      "documentation_url": "https://isric.org/explore/soilgrids",
+      "service_url": "https://rest.isric.org/soilgrids/v2.0",
+      "access": "temporarily-unavailable",
+      "authentication": "none",
+      "coverage": "global",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Official site reports the REST service temporarily paused as of 2026-10-24; no restoration ETA.",
+      "attribution": "ISRIC SoilGrids data-specific citation.",
+      "use_cases": [
+        "soil properties by point"
+      ],
+      "caveat": "Do not build runtime dependency on paused service. See ISRIC alternate WCS/WebDAV data access.",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "gbif",
+      "name": "GBIF Occurrence API",
+      "category": "biodiversity",
+      "documentation_url": "https://techdocs.gbif.org/en/openapi/",
+      "service_url": "https://api.gbif.org/v1/occurrence/search",
+      "access": "public-fair-use",
+      "authentication": "none-for-search",
+      "coverage": "global biodiversity records",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Search endpoint max 300 records per page and offset pagination totals 100,000 records; use download API for bulk.",
+      "attribution": "Cite GBIF download DOI and original publishers/datasets as appropriate.",
+      "use_cases": [
+        "species occurrence points",
+        "biodiversity maps"
+      ],
+      "caveat": "Species occurrence coordinates may be generalized or imprecise; sensitive species data require care.",
+      "verified_on": "2026-10-24"
+    }
+  ]
+}

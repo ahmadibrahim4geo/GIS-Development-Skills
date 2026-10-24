@@ -14,5 +14,6 @@ jobs:
       - name: Catalog and skill checks
         run: |
           python scripts/validate_catalog.py
+          python scripts/validate_api_catalog.py
           python -m unittest discover -s tests -v
           python -m py_compile templates/arcmap-script-tool.py templates/standalone-geojson-summary.py

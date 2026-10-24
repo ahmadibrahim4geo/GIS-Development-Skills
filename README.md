@@ -4,9 +4,9 @@
 
 Created by [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). Independent community resource; **not affiliated with Esri, QGIS, GeoRust, GeoLibre, or other catalogued projects**.
 
-> **Status:** v0.2.0 expanded catalog and EarthMapper audit. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
+> **Status:** v0.3.0 expanded open-source GIS catalog, GeoLibre R/RustGIS and public geospatial APIs. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
 
-[اقرأ بالعربية](README.ar.md) · [Contributing](CONTRIBUTING.md) · [Publishing](PUBLISHING.md) · [Catalog](references/project-catalog.json) · [Skill](skills/gis-development/SKILL.md)
+[اقرأ بالعربية](README.ar.md) · [Contributing](CONTRIBUTING.md) · [Publishing](PUBLISHING.md) · [Catalog](references/project-catalog.json) · [Skill](skills/gis-development/SKILL.md) · [Free GIS APIs](references/free-geospatial-apis.md)
 
 ## What makes this different from an awesome-list?
 
@@ -22,6 +22,8 @@ This repository includes a **working agent skill**: step-by-step architecture se
 | GIS desktop application | Python/Qt, Tauri/Rust, or C# + interoperable core | `references/desktop-and-web.md`, `references/dotnet-gis.md` |
 | 2D maps / web mapping | MapLibre, GeoLibre, appropriate provider | `references/desktop-and-web.md` |
 | 3D globe / terrain | CesiumJS + verified imagery/terrain source | `references/desktop-and-web.md` |
+| GIS in R / Rust-native GIS apps | GeoLibre R, RustGIS | `references/rustgis-and-geolibre-r.md` |
+| Free/public geospatial services | Weather, DEM, imagery, tiles, OSM, biodiversity | `references/free-geospatial-apis.md` |
 | Spatial engines / big data | GDAL, PROJ, GEOS, GeoRust, Rasterio | `references/geospatial-foundations.md` |
 | Satellite imagery / AI | Open GeoAI libraries and research **with explicit source availability** | `references/remote-sensing.md`, `references/geoai-satellite-map.md` |
 
@@ -32,6 +34,14 @@ This repository includes a **working agent skill**: step-by-step architecture se
 - **[rmkemker/EarthMapper](https://github.com/rmkemker/EarthMapper)** — distinct older remote-sensing segmentation reference.
 
 Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-studies.md) for practical building blocks, caveats and test criteria.
+
+## Public GIS APIs and Rust/R integrations
+
+- **[GeoLibre R](https://github.com/opengeos/geolibre-r)** — MIT R `htmlwidgets` binding for interactive GIS maps in RStudio, Shiny and Quarto.
+- **[RustGIS](https://github.com/opengeos/RustGIS)** — Apache-2.0 Rust-native GIS application architecture, command bus, crates and WASM/plugin system; distinct from GeoRust.
+- **[Free/public API guide](references/free-geospatial-apis.md)** — 18 curated climate, elevation, DEM, STAC, imagery, basemap, geocoding, OSM, soils and biodiversity services, with credentials, free-tier constraints and caveats.
+
+The API guide **does not** treat public endpoints as unlimited or licensed for any use. SoilGrids REST is marked paused; OSMF tiles and Nominatim have restrictive public usage policies.
 
 ## Installation for coding agents
 
@@ -64,6 +74,8 @@ For manual use, copy `skills/gis-development/` into the supported skills directo
 
 ```bash
 python scripts/validate_catalog.py
+python scripts/validate_api_catalog.py
+python scripts/search_api_catalog.py --category terrain-elevation
 python scripts/search_catalog.py --platform arcgis-pro
 python scripts/search_catalog.py --query 3d
 python -m unittest discover -s tests -v
@@ -83,8 +95,9 @@ The searchable data lives in [`references/project-catalog.json`](references/proj
 
 1. **v0.1.0** — foundation skill, 25 curated references, 4 starter templates and local validation.
 2. **v0.2.0** — EarthMapper source audit, Windows .NET stack, additional verified repository pointers, satellite-AI research separation.
-3. **v0.3 (planned)** — tested sample data, ArcGIS/QGIS environment integration, packaging and advanced parameter validation.
-4. **v0.4 (planned)** — reference 2D/3D GIS desktop implementation with offline data tests and strict license tracking.
+3. **v0.3.0** — GeoLibre R / RustGIS source audit and public geospatial API catalog (18 providers) with independent validation and tests.
+4. **v0.4 (planned)** — ArcGIS/QGIS environment integration, tested sample data, advanced parameter validation.
+5. **v0.5 (planned)** — reference 2D/3D GIS desktop implementation with offline data tests and strict license tracking.
 
 Community proposals and verified pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 

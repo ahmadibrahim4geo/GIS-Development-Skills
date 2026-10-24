@@ -641,6 +641,40 @@
       "integration": "model-reference",
       "source_availability": "source-code",
       "caveat": "Check pretrained-weight licenses, data handling, GPU requirements, and georeferencing of results."
+    },
+    {
+      "name": "GeoLibre R",
+      "url": "https://github.com/opengeos/geolibre-r",
+      "category": "r-gis",
+      "role": "library",
+      "platforms": [
+        "standalone",
+        "desktop",
+        "web"
+      ],
+      "description": "MIT-licensed R htmlwidgets package embedding GeoLibre in RStudio, Quarto, R Markdown and Shiny with geospatial layers, project files and interactive controls.",
+      "reviewed_on": "2026-10-24",
+      "license": "MIT (LICENSE.md verified)",
+      "integration": "library-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "Hosted GeoLibre deployment and remote raster/map services retain independent availability, access and terms. COG requires CORS/range support."
+    },
+    {
+      "name": "RustGIS by opengeos",
+      "url": "https://github.com/opengeos/RustGIS",
+      "category": "rust-gis",
+      "role": "desktop-app-and-engine",
+      "platforms": [
+        "desktop",
+        "web",
+        "standalone"
+      ],
+      "description": "Apache-2.0 Rust GIS workspace with raster/vector functionality, ribbon UI, command/CLI architecture, WASM targets, plugins and Python interface.",
+      "reviewed_on": "2026-10-24",
+      "license": "Apache-2.0 (LICENSE and Cargo.toml verified)",
+      "integration": "architecture-and-source-reference",
+      "source_availability": "source-code",
+      "caveat": "Do not confuse this application with the independent GeoRust libraries ecosystem. Benchmark and test releases and underlying online services before adopting."
     }
   ]
 }

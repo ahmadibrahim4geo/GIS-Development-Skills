@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0 — 2026-10-24
+
+- Add GeoLibre R (MIT; verified R source) and RustGIS (Apache-2.0; verified Rust workspace) with architecture and integration guide.
+- Publish independently searchable 18-entry public/free GIS API reference (weather, climate, DEM, imagery, basemaps, OSM, soils, biodiversity) with explicit authentication, service limits, source terms and no-key caveats.
+- Respect Open-Meteo commercial restrictions, OpenTopography personal keys, OSMF tile/Nominatim rules, and the ISRIC SoilGrids API pause.
+- Add independent API catalog validation/filter scripts and regression tests.
+
 ## 0.2.0 — 2026-10-24
 
 - Inspect exact AliAlkazraji and HIT-SIRS EarthMapper repositories, and distinguish a README-only desktop product showcase from a research paper without released model code.
