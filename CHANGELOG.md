@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — site and repository experience (2026-10-24)
+
+- Add branded responsive bilingual static website, with interactive search/filter for the real GIS project and API catalogs.
+- Add official vector logo, favicon, and GitHub Pages static-site support (`.nojekyll`).
+- Improve English/Arabic README project introduction, status links and installable agent-skill metadata.
+- Add reproducible landing-page checks and GitHub Issue forms for bugs and feature suggestions.
+- Provide copy-ready repository About, topics, homepage and publication instructions under `docs/REPOSITORY_SETTINGS.md`; GitHub sidebar values must still be set by an authorized administrator.
+
 ## 0.3.1 — 2026-10-24
 
 - Add practical GeoLibre integration guidance covering its official agent skill, MCP server, Python API, plugin template and renderer-neutral architecture.
