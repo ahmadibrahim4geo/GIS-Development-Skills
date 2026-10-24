@@ -45,7 +45,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>8 installable GIS skills</strong> · <strong>104 curated geospatial references</strong> · <strong>39 public API sources</strong></p>
+<p align="center"><strong>11 installable GIS skills</strong> · <strong>104 curated geospatial references</strong> · <strong>39 public API sources</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -58,6 +58,12 @@ A practical development skill and curated reference hub for building reliable Ar
 **Maintainer:** [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). This is an independent community engineering resource, not an official project of Esri, QGIS, GeoRust or other third-party catalog entries. **Documentation v0.3.5** is not a GitHub software release; starter code and GIS host integrations require separate runtime testing.
 
 ---
+
+## GIS Agent Operating System
+
+The core skill is now a lightweight router with [the complete previous guidance preserved](references/gis-development-full-guidance.md) and a [decision tree](references/agent-decision-tree.md). New resources: [evidence form](templates/GIS_ACCEPTANCE_REPORT.md), [evidence validation](scripts/validate_evidence.py), [test fixtures](fixtures/README.md), [native GIS harness](native_tests/README.md), [security](references/geospatial-security.md), [performance](references/geospatial-performance.md), [before/after examples](references/gis-antipatterns.md), [generated manifest](references/repository-manifest.json) and [weekly provider checks](docs/SERVICE_MONITORING.md).
+
+Previous skills, original guidance, project/API references, brand assets and bilingual content are preserved; native and live provider verification remain separate.
 
 ## Production GIS workflows and quality benchmark — 2026-10-24
 
