@@ -6,7 +6,7 @@ license: MIT
 
 # GIS Development — Agent Skill
 
-**Project:** [GIS Development Skills](https://github.com/ahmadibrahim4geo/GIS-Development-Skills) · [Interactive website source](../../index.html) · [Project catalog](../../references/project-catalog.json) · [GIS API directory](../../references/free-geospatial-apis.md)
+**Project:** [GIS Development Skills](https://github.com/ahmadibrahim4geo/GIS-Development-Skills) · [Interactive website source](../index.html) · [Project catalog](../references/project-catalog.json) · [GIS API directory](../references/free-geospatial-apis.md)
 
 **Purpose:** Make software-building agents choose a compatible geospatial stack, write working tools and verify spatial correctness. This is a development guide and reference skill, not an installed GIS engine, free-data entitlement, or a guarantee that third-party libraries will work unchanged.
 
@@ -122,4 +122,4 @@ When new sources are needed, consult their official repositories/docs, verify th
 - "Audit coordinate systems and identify why output area measurements are wrong."
 ## Additive specialized routes for production GIS
 
-Use [Spatial Databases](../spatial-databases/SKILL.md) for PostGIS/SpatiaLite index design, SQL and QA; use [Geospatial Data Processing](../geospatial-data-processing/SKILL.md) for independent raster/vector pipelines, deterministic geometry tests and CRS checks; use [Remote Sensing Pipelines](../remote-sensing-pipelines/SKILL.md) for STAC/COG, Earth Engine and QA-driven pixel processing. Start at the [examples index](../../examples/README.md) and consult the [production workflow reference](../../references/production-workflows.md) and [GIS Quality Benchmark](../../docs/QUALITY_BENCHMARK.md). Keep all prior skills; a generic CI test cannot establish native GIS T3 readiness.
+Use [Spatial Databases](../skills/spatial-databases/SKILL.md) for PostGIS/SpatiaLite index design, SQL and QA; use [Geospatial Data Processing](../skills/geospatial-data-processing/SKILL.md) for independent raster/vector pipelines, deterministic geometry tests and CRS checks; use [Remote Sensing Pipelines](../skills/remote-sensing-pipelines/SKILL.md) for STAC/COG, Earth Engine and QA-driven pixel processing. Start at the [examples index](../examples/README.md) and consult the [production workflow reference](../references/production-workflows.md) and [GIS Quality Benchmark](../docs/QUALITY_BENCHMARK.md). Keep all prior skills; a generic CI test cannot establish native GIS T3 readiness.
