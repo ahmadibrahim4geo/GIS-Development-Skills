@@ -836,6 +836,57 @@
       ],
       "caveat": "Sensitive species coordinates may be obscured; respect observation and image licenses",
       "verified_on": "2026-10-24"
+    },
+    {
+      "id": "gebco-2026-wms",
+      "name": "GEBCO_2026 Global Seafloor/Land Terrain WMS",
+      "category": "terrain-bathymetry",
+      "documentation_url": "https://www.gebco.net/data-products/gebco-web-services/web-map-service",
+      "service_url": "https://wms.gebco.net/mapserv",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "Global land and ocean; GEBCO_2026 15-arc-second underlying grid",
+      "formats": [
+        "WMS 1.3.0",
+        "GetCapabilities XML",
+        "rendered map image"
+      ],
+      "limits": "Public WMS with no unlimited request allowance or uptime guarantee; obtain layer IDs via GetCapabilities and make bounded GetMap requests.",
+      "attribution": "GEBCO Bathymetric Compilation Group 2026 (2026), GEBCO_2026 Grid, doi:10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa; public domain with source acknowledgment required.",
+      "use_cases": [
+        "bathymetry shaded relief visualization",
+        "land and ocean topographic map layers",
+        "TID source-class map display"
+      ],
+      "caveat": "WMS is rendered map imagery and NOT numeric DEM cell data; not suitable for quantitative terrain modeling. GEBCO must NOT be used for navigation or other safety-at-sea uses. Mean sea level vertical reference is approximate in some coastal areas.",
+      "verified_on": "2026-10-24",
+      "example_url": "https://wms.gebco.net/mapserv?request=getcapabilities&service=wms&version=1.3.0"
+    },
+    {
+      "id": "gebco-2026-ceda-opendap",
+      "name": "GEBCO_2026 Bathymetry/Topography via CEDA OPeNDAP",
+      "category": "terrain-bathymetry",
+      "documentation_url": "https://www.gebco.net/data-products/gridded-bathymetry-data",
+      "service_url": "https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2026/ice_surface_elevation/netcdf/GEBCO_2026.nc",
+      "access": "public-with-asset-restrictions",
+      "authentication": "Check current CEDA dataset/OPeNDAP access conditions; no shared keys",
+      "coverage": "Global ocean and land; 15 arc-second WGS84 lat/lon grid, ~463 m at equator (grid interval only)",
+      "formats": [
+        "OPeNDAP",
+        "NetCDF4",
+        "GeoTIFF through official separate download tool",
+        "Esri ASCII through official separate download tool"
+      ],
+      "limits": "Free public-domain dataset but no verified unlimited OPeNDAP quota; prefer spatial subsets, verify authentication/constraint syntax and avoid whole-global multi-GB transfer.",
+      "attribution": "GEBCO Bathymetric Compilation Group 2026 (2026), GEBCO_2026 Grid, doi:10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa. Free commercial/noncommercial reuse with required credit.",
+      "use_cases": [
+        "numeric ocean bathymetry and land elevation rasters",
+        "coastal and submarine terrain analysis",
+        "GEBCO TID source-type quality companion"
+      ],
+      "caveat": "Official CEDA NetCDF archive file; OPeNDAP constraint syntax and current access must be checked at runtime. Land elevations positive, underwater depths negative (m). TID identifies measured/predicted/interpolated data. Grid spacing is not actual bathymetric accuracy; vertical reference approximates mean sea level with local variations. Not for marine navigation.",
+      "verified_on": "2026-10-24",
+      "example_url": "https://data.ceda.ac.uk/bodc/gebco/global/gebco_2026/ice_surface_elevation/netcdf"
     }
   ]
 }
