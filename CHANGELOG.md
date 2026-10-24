@@ -8,6 +8,15 @@
 - Add reproducible landing-page checks and GitHub Issue forms for bugs and feature suggestions.
 - Provide copy-ready repository About, topics, homepage and publication instructions under `docs/REPOSITORY_SETTINGS.md`; GitHub sidebar values must still be set by an authorized administrator.
 
+## 0.3.5 — 2026-10-24
+
+- Audit all installable skills, repository tools, geospatial templates, bilingual documentation and GitHub Pages source.
+- Introduce a dedicated standalone Desktop GIS engineering skill and accompanying QA/release guide.
+- Add a network-free skill pack validator covering official frontmatter rules, broken local links, site assets and synchronized project/API/skill counters with negative-case tests.
+- Modernize developer rules and CI to validate all four Python template examples without implying native GIS execution.
+- Clarify documentation revision vs actual GitHub Releases; avoid duplicating logo tagline under the wordmark.
+- Publish prioritized findings and untested native GIS, API, installer and browser acceptance boundaries in `docs/TECHNICAL_AUDIT_2026-10-24.md`.
+
 ## 0.3.4 — 2026-10-24
 
 - Remove an early-stage mobile GIS app from curated case studies and catalog recommendations; maintain only sufficiently mature engineering references.
