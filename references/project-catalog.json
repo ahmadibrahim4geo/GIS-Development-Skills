@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "curated_on": "2026-10-24",
-  "policy": "Curated link-only catalog. Confirm exact upstream source availability, license, version, service terms and data/model rights before adoption. A README-only showcase is not open-source code.",
+  "policy": "Curated link-only catalog. Verify code, exact runtime versions, licenses, external API terms, and authentication independently. Entries sourced from gishub.org/software are credited to Dr. Qiusheng Wu's directory; no upstream code is bundled.",
   "projects": [
     {
       "name": "Esri ArcPy",
@@ -675,6 +675,673 @@
       "integration": "architecture-and-source-reference",
       "source_availability": "source-code",
       "caveat": "Do not confuse this application with the independent GeoRust libraries ecosystem. Benchmark and test releases and underlying online services before adopting."
+    },
+    {
+      "name": "geolibre-rust",
+      "url": "https://github.com/opengeos/geolibre-rust",
+      "category": "rust-gis",
+      "role": "engine",
+      "platforms": [
+        "web",
+        "desktop",
+        "rust",
+        "python"
+      ],
+      "description": "Rust/WebAssembly GIS processing engine and geolibre-wasm library; distinct from RustGIS",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "whitebox-wasm",
+      "url": "https://github.com/opengeos/whitebox-wasm",
+      "category": "rust-gis",
+      "role": "engine",
+      "platforms": [
+        "web",
+        "javascript",
+        "rust"
+      ],
+      "description": "Pure Rust WASM geospatial raster/vector/LiDAR I/O and Whitebox tools; check bundled algorithm licenses",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "anymap",
+      "url": "https://github.com/opengeos/anymap",
+      "category": "python",
+      "role": "library",
+      "platforms": [
+        "python",
+        "jupyter",
+        "web"
+      ],
+      "description": "Jupyter anywidget map abstraction using MapLibre and other JavaScript map renderers",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "geemap",
+      "url": "https://github.com/gee-community/geemap",
+      "category": "remote-sensing",
+      "role": "library",
+      "platforms": [
+        "python",
+        "jupyter",
+        "earth-engine"
+      ],
+      "description": "Python visual analysis, data processing and map widgets with Google Earth Engine; authentication required",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "GeoAgent",
+      "url": "https://github.com/opengeos/GeoAgent",
+      "category": "geoai",
+      "role": "agent-framework",
+      "platforms": [
+        "python",
+        "qgis",
+        "jupyter"
+      ],
+      "description": "Shared agent framework with structured geospatial tools, optional providers and confirmation hooks",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "geospatial",
+      "url": "https://github.com/opengeos/geospatial",
+      "category": "python",
+      "role": "environment",
+      "platforms": [
+        "python",
+        "desktop",
+        "jupyter"
+      ],
+      "description": "Python geospatial package bundle; verify dependency environment and version constraints",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "geospatial-ml",
+      "url": "https://github.com/opengeos/geospatial-ml",
+      "category": "geoai",
+      "role": "environment",
+      "platforms": [
+        "python",
+        "jupyter"
+      ],
+      "description": "Geospatial machine-learning package environment and development bootstrap",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "HyperCoast",
+      "url": "https://github.com/opengeos/HyperCoast",
+      "category": "remote-sensing",
+      "role": "library",
+      "platforms": [
+        "python",
+        "jupyter",
+        "qgis"
+      ],
+      "description": "Hyperspectral and coastal imaging data analysis and visualization",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "lidar",
+      "url": "https://github.com/opengeos/lidar",
+      "category": "terrain",
+      "role": "library",
+      "platforms": [
+        "python",
+        "desktop"
+      ],
+      "description": "DEM depression identification and nested terrain hydrology analysis",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "mapwidget",
+      "url": "https://github.com/opengeos/mapwidget",
+      "category": "python",
+      "role": "library",
+      "platforms": [
+        "python",
+        "jupyter",
+        "web"
+      ],
+      "description": "Reusable map widgets for notebook interfaces",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "open-buildings",
+      "url": "https://github.com/opengeos/open-buildings",
+      "category": "remote-sensing",
+      "role": "library",
+      "platforms": [
+        "python",
+        "jupyter"
+      ],
+      "description": "Tools for open building footprint datasets and access workflows",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "pygis",
+      "url": "https://github.com/opengeos/pygis",
+      "category": "python",
+      "role": "library",
+      "platforms": [
+        "python",
+        "jupyter"
+      ],
+      "description": "Educational Python GIS and geospatial analysis examples",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "segment-geospatial",
+      "url": "https://github.com/opengeos/segment-geospatial",
+      "category": "geoai",
+      "role": "library",
+      "platforms": [
+        "python",
+        "qgis",
+        "remote-sensing"
+      ],
+      "description": "Segment Anything Model geospatial imagery segmentation and GeoTIFF integration",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "whitebox-python",
+      "url": "https://github.com/opengeos/whitebox-python",
+      "category": "terrain",
+      "role": "engine-frontend",
+      "platforms": [
+        "python",
+        "arcgis-pro",
+        "qgis"
+      ],
+      "description": "Python wrapper for WhiteboxTools; external executable and licensing require separate checks",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "whiteboxgui",
+      "url": "https://github.com/opengeos/whiteboxgui",
+      "category": "terrain",
+      "role": "interface",
+      "platforms": [
+        "python",
+        "jupyter"
+      ],
+      "description": "GUI for interactive WhiteboxTools processing",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "geospatial-data-catalogs",
+      "url": "https://github.com/opengeos/geospatial-data-catalogs",
+      "category": "data-catalog",
+      "role": "catalog",
+      "platforms": [
+        "python",
+        "web",
+        "data-discovery"
+      ],
+      "description": "Cross-provider machine-readable catalogs for AWS, GEE, STAC, NASA and Copernicus; not APIs themselves",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "discovery-reference-only",
+      "source_availability": "machine-readable-index-or-documentation",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "Earth-Engine-Catalog",
+      "url": "https://github.com/opengeos/Earth-Engine-Catalog",
+      "category": "data-catalog",
+      "role": "catalog",
+      "platforms": [
+        "earth-engine",
+        "data-discovery"
+      ],
+      "description": "Earth Engine collection metadata in structured files, not an anonymous Earth Engine API",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "discovery-reference-only",
+      "source_availability": "machine-readable-index-or-documentation",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "NASA-CMR-STAC",
+      "url": "https://github.com/opengeos/NASA-CMR-STAC",
+      "category": "data-catalog",
+      "role": "catalog",
+      "platforms": [
+        "stac",
+        "remote-sensing",
+        "data-discovery"
+      ],
+      "description": "NASA CMR STAC dataset metadata and discovery pointers",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "discovery-reference-only",
+      "source_availability": "machine-readable-index-or-documentation",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "NASA-Earth-Data",
+      "url": "https://github.com/opengeos/NASA-Earth-Data",
+      "category": "data-catalog",
+      "role": "catalog",
+      "platforms": [
+        "remote-sensing",
+        "data-discovery"
+      ],
+      "description": "Curated NASA Earth science datasets and discovery metadata",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "discovery-reference-only",
+      "source_availability": "machine-readable-index-or-documentation",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "stac-index-catalogs",
+      "url": "https://github.com/opengeos/stac-index-catalogs",
+      "category": "data-catalog",
+      "role": "catalog",
+      "platforms": [
+        "stac",
+        "data-discovery"
+      ],
+      "description": "STAC API endpoint listings requiring separate availability checks",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "discovery-reference-only",
+      "source_availability": "machine-readable-index-or-documentation",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "qgis-basemaps",
+      "url": "https://github.com/opengeos/qgis-basemaps",
+      "category": "qgis",
+      "role": "plugin",
+      "platforms": [
+        "qgis"
+      ],
+      "description": "QGIS basemap plugin; map tile provider terms and attribution still apply",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "qgis-cdse-plugin",
+      "url": "https://github.com/opengeos/qgis-cdse-plugin",
+      "category": "qgis",
+      "role": "plugin",
+      "platforms": [
+        "qgis",
+        "remote-sensing"
+      ],
+      "description": "QGIS Copernicus Data Space Ecosystem access plugin; provider authentication and quotas vary",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "qgis-nasa-opera-plugin",
+      "url": "https://github.com/opengeos/qgis-nasa-opera-plugin",
+      "category": "qgis",
+      "role": "plugin",
+      "platforms": [
+        "qgis",
+        "remote-sensing"
+      ],
+      "description": "QGIS NASA OPERA product search and visualization plugin",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "qgis-plugin-template",
+      "url": "https://github.com/opengeos/qgis-plugin-template",
+      "category": "qgis",
+      "role": "template",
+      "platforms": [
+        "qgis",
+        "python"
+      ],
+      "description": "QGIS plugin starter with dock panels, metadata, packaging and Qt5/Qt6 compatibility guidance",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "qgis-stac-plugin",
+      "url": "https://github.com/opengeos/qgis-stac-plugin",
+      "category": "qgis",
+      "role": "plugin",
+      "platforms": [
+        "qgis",
+        "stac",
+        "remote-sensing"
+      ],
+      "description": "STAC Explorer plugin with catalog search, COG streaming, time series and downloads",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "qgis-timelapse-plugin",
+      "url": "https://github.com/opengeos/qgis-timelapse-plugin",
+      "category": "qgis",
+      "role": "plugin",
+      "platforms": [
+        "qgis",
+        "earth-engine",
+        "remote-sensing"
+      ],
+      "description": "Earth Engine-based QGIS timelapse imagery animation plugin",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "maplibre-gl-components",
+      "url": "https://github.com/opengeos/maplibre-gl-components",
+      "category": "web-mapping",
+      "role": "library",
+      "platforms": [
+        "javascript",
+        "web",
+        "maplibre"
+      ],
+      "description": "Legends, colorbars and common map UI components",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "maplibre-gl-geo-editor",
+      "url": "https://github.com/opengeos/maplibre-gl-geo-editor",
+      "category": "web-mapping",
+      "role": "plugin",
+      "platforms": [
+        "javascript",
+        "web",
+        "maplibre"
+      ],
+      "description": "Web geometry editing, attributes, undo and snapping integration; check MapLibre version",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "maplibre-gl-layer-manager",
+      "url": "https://github.com/opengeos/maplibre-gl-layer-manager",
+      "category": "web-mapping",
+      "role": "plugin",
+      "platforms": [
+        "javascript",
+        "web",
+        "maplibre"
+      ],
+      "description": "MapLibre layer ordering and management UI",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "maplibre-gl-plugin-template",
+      "url": "https://github.com/opengeos/maplibre-gl-plugin-template",
+      "category": "web-mapping",
+      "role": "template",
+      "platforms": [
+        "javascript",
+        "typescript",
+        "maplibre"
+      ],
+      "description": "MapLibre TypeScript/React plugin development template",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "maplibre-gl-swipe",
+      "url": "https://github.com/opengeos/maplibre-gl-swipe",
+      "category": "web-mapping",
+      "role": "plugin",
+      "platforms": [
+        "javascript",
+        "maplibre",
+        "web"
+      ],
+      "description": "Before/after map layer comparison UI",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "maplibre-gl-time-slider",
+      "url": "https://github.com/opengeos/maplibre-gl-time-slider",
+      "category": "web-mapping",
+      "role": "plugin",
+      "platforms": [
+        "javascript",
+        "maplibre",
+        "remote-sensing"
+      ],
+      "description": "Dated vector/raster timeline including COG, WMS, XYZ and GeoJSON",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "maplibre-gl-storymaps",
+      "url": "https://github.com/opengeos/maplibre-gl-storymaps",
+      "category": "web-mapping",
+      "role": "plugin",
+      "platforms": [
+        "javascript",
+        "maplibre",
+        "web"
+      ],
+      "description": "Interactive narrative story mapping using MapLibre",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "maplibre-gl-lidar",
+      "url": "https://github.com/opengeos/maplibre-gl-lidar",
+      "category": "web-mapping",
+      "role": "plugin",
+      "platforms": [
+        "javascript",
+        "maplibre",
+        "lidar"
+      ],
+      "description": "Interactive LiDAR mapping plugin with data source-specific constraints",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "maplibre-gl-planetary-computer",
+      "url": "https://github.com/opengeos/maplibre-gl-planetary-computer",
+      "category": "web-mapping",
+      "role": "plugin",
+      "platforms": [
+        "javascript",
+        "maplibre",
+        "stac"
+      ],
+      "description": "Microsoft Planetary Computer imagery integration; access requirements must be checked",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "WhiteboxTools-ArcGIS",
+      "url": "https://github.com/opengeos/WhiteboxTools-ArcGIS",
+      "category": "arcgis",
+      "role": "toolbox",
+      "platforms": [
+        "arcgis-pro",
+        "arcmap"
+      ],
+      "description": "WhiteboxTools ArcGIS Python Toolbox; upstream states ArcGIS Pro and ArcGIS 10.6+ (not 10.5 or earlier)",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "streamlit-geospatial",
+      "url": "https://github.com/opengeos/streamlit-geospatial",
+      "category": "web-app",
+      "role": "template",
+      "platforms": [
+        "python",
+        "streamlit",
+        "web"
+      ],
+      "description": "Multipage geospatial Streamlit application patterns",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "streamlit-map-template",
+      "url": "https://github.com/opengeos/streamlit-map-template",
+      "category": "web-app",
+      "role": "template",
+      "platforms": [
+        "python",
+        "streamlit",
+        "web"
+      ],
+      "description": "Streamlit map page template and deployment example",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "implementation-reference-with-version-check",
+      "source_availability": "public-repository; runtime-not-tested",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "Awesome-GEE",
+      "url": "https://github.com/opengeos/Awesome-GEE",
+      "category": "curation",
+      "role": "resource-list",
+      "platforms": [
+        "earth-engine",
+        "python",
+        "data-discovery"
+      ],
+      "description": "Curated Earth Engine examples, tutorials and tooling; licensing of assets separate",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "discovery-reference-only",
+      "source_availability": "machine-readable-index-or-documentation",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "python-geospatial",
+      "url": "https://github.com/opengeos/python-geospatial",
+      "category": "curation",
+      "role": "resource-list",
+      "platforms": [
+        "python",
+        "jupyter",
+        "education"
+      ],
+      "description": "Python geospatial toolkit survey and teaching reference",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "discovery-reference-only",
+      "source_availability": "machine-readable-index-or-documentation",
+      "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
     }
   ]
 }
