@@ -2,6 +2,10 @@
 
 ## Unreleased — site and repository experience (2026-10-24)
 
+- Extend the free/public geospatial API directory from 18 to **37 services** with 19 new documented providers and explicit access, license, coverage and quota warnings.
+- Update bilingual homepage API count and explanatory text; add source-selection guidance to discovery, ArcPy, desktop and web GIS skills.
+- Document migration from legacy HeiGIT and USGS endpoints; add regression checks for provider IDs and site counts.
+
 - Add branded responsive bilingual static website, with interactive search/filter for the real GIS project and API catalogs.
 - Add official vector logo, favicon, and GitHub Pages static-site support (`.nojekyll`).
 - Improve English/Arabic README project introduction, status links and installable agent-skill metadata.
