@@ -11,13 +11,17 @@ Use for DEM, climate, satellite images, environmental rasters, OSM/POIs and geos
 ## Procedure
 
 1. Ask for or infer domain, area, period, resolution, coordinate system, output type and intended commercial/noncommercial use.
-2. Read `../../references/free-geospatial-apis.md` and its JSON catalog (37 service entries across boundaries, demographic, climate, water, routing, hazards, satellite and more). For supplementary discovery, read `../../references/gishub-software.md` and `../../references/project-catalog.json`.
+2. Read `../../references/free-geospatial-apis.md` and its JSON catalog (39 service entries across bathymetry and boundaries, demographic, climate, water, routing, hazards, satellite and more). For supplementary discovery, read `../../references/gishub-software.md` and `../../references/project-catalog.json`.
 3. Browse catalogs like `opengeos/geospatial-data-catalogs`, `opengeos/stac-index-catalogs`, `opengeos/NASA-CMR-STAC` as **indexes**, never assume an indexed API is available.
 4. Verify the *underlying* provider's official page for current access, key requirements, geographic/time coverage, quotas, TOS, attribution and CORS.
 5. Try a small legally accessible sample if tools/environment permit. Confirm CRS, pixel size, date, DEM vertical datum, NoData and geolocation.
 6. Provide a reproducible download workflow, metadata/provenance fields, failure/retry handling, and license caveats.
 7. Don't fabricate endpoints, keys, imagery dates or missing measurements. Never embed users' API tokens in source.
 8. Disclose untested endpoints and mark current live access as unverified if it was not checked.
+
+## GEBCO_2026 global bathymetry and terrain
+
+Use GEBCO_2026 for global ocean depths plus land elevation. It provides 15 arc-second grid **spacing**, not assured 463 m measurement accuracy. Use GEBCO WMS only for visual shaded-relief/flat-map layers, not numerical terrain analysis. Use numeric CEDA OPeNDAP/NetCDF or official user-subset raster downloads for elevation calculations; verify CEDA subset URL/access. Keep the **TID grid** to distinguish measured and predicted/interpolated seafloor cells, record approximate mean sea level and source datum uncertainties, and distinguish under-ice from ice-surface polar variants. **Never use for navigation/safety at sea.** See `../../references/free-geospatial-apis.md` for citation and method details.
 
 ## Expanded provider routing
 
