@@ -1,0 +1,23 @@
+name: Suggest a GIS source
+description: Propose a verified geospatial project for the catalog
+labels: []
+body:
+  - type: input
+    id: repository
+    attributes:
+      label: Canonical GitHub URL
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: textarea
+    id: usecase
+    attributes:
+      label: GIS development use case and supported platform
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Version, maintenance status, upstream license and documentation evidence
+    validations:
+      required: true

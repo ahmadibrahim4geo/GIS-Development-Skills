@@ -35,13 +35,13 @@ Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-stud
 
 ## Installation for coding agents
 
-After publishing this repository at `ahmadibrahim4geo/GIS-Development-Skills`:
+Install from the public repository `ahmadibrahim4geo/GIS-Development-Skills`:
 
 ```powershell
 npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development
 ```
 
-Run inside a project to install to that project; `-g` installs globally. The public CLI is documented at https://github.com/vercel-labs/skills. The `npx` command requires Node.js; confirm your installation meets its current runtime requirements. The repository location is **proposed until it has been created and pushed to GitHub**.
+Run inside a project to install to that project; `-g` installs globally. The public CLI is documented at https://github.com/vercel-labs/skills. The `npx` command requires Node.js; confirm your installation meets its current runtime requirements. The published repository is at **https://github.com/ahmadibrahim4geo/GIS-Development-Skills**.
 
 For manual use, copy `skills/gis-development/` into the supported skills directory for your agent, or read `SKILL.md` directly.
 

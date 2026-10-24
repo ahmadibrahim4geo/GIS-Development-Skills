@@ -1,0 +1,646 @@
+{
+  "schema_version": "1.0",
+  "curated_on": "2026-10-24",
+  "policy": "Curated link-only catalog. Confirm exact upstream source availability, license, version, service terms and data/model rights before adoption. A README-only showcase is not open-source code.",
+  "projects": [
+    {
+      "name": "Esri ArcPy",
+      "url": "https://github.com/Esri/arcpy",
+      "category": "arcgis",
+      "role": "docs",
+      "platforms": [
+        "arcgis-pro",
+        "arcmap"
+      ],
+      "description": "ArcGIS Python developer resources and package/environment links",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "Esri sample GP tools",
+      "url": "https://github.com/arcpy/sample-gp-tools",
+      "category": "arcgis",
+      "role": "samples",
+      "platforms": [
+        "arcmap",
+        "arcgis-pro"
+      ],
+      "description": "Legacy and Pro geoprocessing tool examples; confirm compatibility for each example",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "Esri ArcGIS Python API",
+      "url": "https://github.com/Esri/arcgis-python-api",
+      "category": "arcgis",
+      "role": "samples",
+      "platforms": [
+        "arcgis-pro",
+        "standalone"
+      ],
+      "description": "GIS portal and feature-service Python examples, distinct from ArcPy",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "GEE ArcGIS Toolbox",
+      "url": "https://github.com/gee-community/arcgis-earthengine-toolbox",
+      "category": "arcgis",
+      "role": "toolbox",
+      "platforms": [
+        "arcgis-pro"
+      ],
+      "description": "Google Earth Engine integration for ArcGIS Pro; service access requirements apply",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "QGIS core",
+      "url": "https://github.com/qgis/QGIS",
+      "category": "qgis",
+      "role": "engine",
+      "platforms": [
+        "qgis",
+        "desktop"
+      ],
+      "description": "QGIS application and PyQGIS host implementation",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "QGIS Documentation",
+      "url": "https://github.com/qgis/QGIS-Documentation",
+      "category": "qgis",
+      "role": "docs",
+      "platforms": [
+        "qgis"
+      ],
+      "description": "Official PyQGIS developer cookbook and plugin guidance",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "GDAL",
+      "url": "https://github.com/OSGeo/gdal",
+      "category": "spatial-core",
+      "role": "engine",
+      "platforms": [
+        "standalone",
+        "arcgis-pro",
+        "qgis",
+        "desktop",
+        "web"
+      ],
+      "description": "Raster/vector format support and geoprocessing",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "PROJ",
+      "url": "https://github.com/OSGeo/PROJ",
+      "category": "spatial-core",
+      "role": "engine",
+      "platforms": [
+        "standalone",
+        "arcgis-pro",
+        "qgis",
+        "desktop"
+      ],
+      "description": "Coordinate reference system transformations",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "GEOS",
+      "url": "https://github.com/libgeos/geos",
+      "category": "spatial-core",
+      "role": "engine",
+      "platforms": [
+        "standalone",
+        "qgis",
+        "desktop"
+      ],
+      "description": "Planar geometry/topology operations",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "GRASS GIS",
+      "url": "https://github.com/OSGeo/grass",
+      "category": "spatial-core",
+      "role": "engine",
+      "platforms": [
+        "qgis",
+        "standalone",
+        "desktop"
+      ],
+      "description": "Geoprocessing engine for raster/vector/terrain/time-series workflows",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "Rasterio",
+      "url": "https://github.com/rasterio/rasterio",
+      "category": "python",
+      "role": "library",
+      "platforms": [
+        "standalone",
+        "arcgis-pro"
+      ],
+      "description": "Python geospatial raster IO and processing",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "GeoRust geo",
+      "url": "https://github.com/georust/geo",
+      "category": "rust",
+      "role": "library",
+      "platforms": [
+        "rust",
+        "desktop",
+        "standalone"
+      ],
+      "description": "Rust geometry algorithms and geospatial primitives",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "GeoRust GDAL bindings",
+      "url": "https://github.com/georust/gdal",
+      "category": "rust",
+      "role": "library",
+      "platforms": [
+        "rust",
+        "desktop",
+        "standalone"
+      ],
+      "description": "Rust GDAL bindings for geodata I/O",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "GeoRust GeoZero",
+      "url": "https://github.com/georust/geozero",
+      "category": "rust",
+      "role": "library",
+      "platforms": [
+        "rust",
+        "desktop",
+        "standalone"
+      ],
+      "description": "Streaming geospatial format conversions",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "GeoRust PROJ bindings",
+      "url": "https://github.com/georust/proj",
+      "category": "rust",
+      "role": "library",
+      "platforms": [
+        "rust",
+        "desktop",
+        "standalone"
+      ],
+      "description": "Rust bindings for PROJ transformations",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "GeoRust RStar",
+      "url": "https://github.com/georust/rstar",
+      "category": "rust",
+      "role": "library",
+      "platforms": [
+        "rust",
+        "desktop",
+        "standalone"
+      ],
+      "description": "R-tree spatial indexing in Rust",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "GeoLibre",
+      "url": "https://github.com/opengeos/GeoLibre",
+      "category": "desktop-web",
+      "role": "platform",
+      "platforms": [
+        "desktop",
+        "web"
+      ],
+      "description": "Open-source GIS web/desktop/mobile platform with Tauri and mapping stack",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "EarthMapper Windows Desktop",
+      "url": "https://github.com/AliAlkazraji/EarthMapper",
+      "category": "desktop-web",
+      "role": "product-reference",
+      "platforms": [
+        "desktop",
+        "web"
+      ],
+      "description": "Windows desktop GIS feature and architecture reference (.NET/WPF, WebView2, MapLibre, analysis, elevation, imagery, GeoAI); GitHub currently contains README only.",
+      "reviewed_on": "2026-10-24",
+      "license": "not-declared; free-for-noncommercial-use is not an open-source license",
+      "integration": "design-reference-only",
+      "source_availability": "readme-only",
+      "caveat": "Do not assume source code, SDK, binaries or redistribution rights are provided."
+    },
+    {
+      "name": "GeoLibre Plugin Template",
+      "url": "https://github.com/opengeos/geolibre-plugin-template",
+      "category": "desktop-web",
+      "role": "template",
+      "platforms": [
+        "desktop",
+        "web"
+      ],
+      "description": "Plugin scaffolding for GeoLibre; verify current plugin API",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "MapLibre GL JS",
+      "url": "https://github.com/maplibre/maplibre-gl-js",
+      "category": "desktop-web",
+      "role": "renderer",
+      "platforms": [
+        "web",
+        "desktop"
+      ],
+      "description": "Open 2D interactive web maps and vector tile rendering",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "CesiumJS",
+      "url": "https://github.com/CesiumGS/cesium",
+      "category": "desktop-web",
+      "role": "renderer",
+      "platforms": [
+        "web",
+        "desktop",
+        "3d"
+      ],
+      "description": "Browser-based 2D/3D globe renderer (data services are separate)",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "EarthMapper segmentation",
+      "url": "https://github.com/rmkemker/EarthMapper",
+      "category": "remote-sensing",
+      "role": "research",
+      "platforms": [
+        "remote-sensing",
+        "standalone"
+      ],
+      "description": "Multispectral/hyperspectral imagery classification and semantic segmentation research; legacy environment",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only",
+      "caveat": "Different historical remote-sensing EarthMapper project, not the Windows desktop GIS or the satellite-map generative study."
+    },
+    {
+      "name": "EarthMapper satellite-map translation",
+      "url": "https://github.com/HIT-SIRS/EarthMapper",
+      "category": "remote-sensing",
+      "role": "research-paper",
+      "platforms": [
+        "remote-sensing"
+      ],
+      "description": "Research on bidirectional satellite/map translation; repository currently contains paper README/assets/license without runnable implementation or checkpoints",
+      "reviewed_on": "2026-10-24",
+      "license": "Apache-2.0 (repository files only; model availability unverified)",
+      "integration": "research-reference-only",
+      "source_availability": "paper-assets-no-implementation",
+      "caveat": "The repository contains LICENSE, README and assets but no runnable model implementation or checkpoint. Do not claim the Apache license covers absent weights or external datasets."
+    },
+    {
+      "name": "Awesome GeoRust",
+      "url": "https://github.com/pka/awesome-georust",
+      "category": "curation",
+      "role": "catalog",
+      "platforms": [
+        "rust",
+        "standalone"
+      ],
+      "description": "Third-party curated geospatial Rust ecosystem resources",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "Awesome GIS",
+      "url": "https://github.com/elasticlabs/awesome-gis",
+      "category": "curation",
+      "role": "catalog",
+      "platforms": [
+        "standalone",
+        "qgis",
+        "arcgis-pro",
+        "web"
+      ],
+      "description": "Third-party curated GIS libraries, tools and software",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "Geo AI Skills",
+      "url": "https://github.com/TerraLabAI/geoai-skills",
+      "category": "curation",
+      "role": "skill",
+      "platforms": [
+        "qgis",
+        "remote-sensing",
+        "standalone"
+      ],
+      "description": "Independent geospatial AI agent skills; reference for alternative workflows",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "NetTopologySuite",
+      "url": "https://github.com/NetTopologySuite/NetTopologySuite",
+      "category": "dotnet",
+      "role": "library",
+      "platforms": [
+        "desktop",
+        "standalone"
+      ],
+      "description": "C#/.NET geometry algorithms and topological operations, suitable for desktop spatial editing and analysis.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "Geometry engine only; CRS and metric units must be handled separately."
+    },
+    {
+      "name": "ProjNET",
+      "url": "https://github.com/NetTopologySuite/ProjNet4GeoAPI",
+      "category": "dotnet",
+      "role": "library",
+      "platforms": [
+        "desktop",
+        "standalone"
+      ],
+      "description": "Coordinate transformation support for .NET workflows; inspect supported CRS and datum operations for the chosen release.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "Verify the transformation accuracy and available grid shifts for the target region."
+    },
+    {
+      "name": "Microsoft WebView2 Samples",
+      "url": "https://github.com/MicrosoftEdge/WebView2Samples",
+      "category": "dotnet",
+      "role": "samples",
+      "platforms": [
+        "desktop"
+      ],
+      "description": "Reference code for embedding and communicating with web map/rendering engines in Windows desktop apps.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "sample-reference",
+      "source_availability": "source-code",
+      "caveat": "WebView2 is an application view bridge, not a GIS renderer or spatial engine."
+    },
+    {
+      "name": "LibTiff.NET",
+      "url": "https://github.com/BitMiracle/libtiff.net",
+      "category": "dotnet",
+      "role": "library",
+      "platforms": [
+        "desktop",
+        "standalone"
+      ],
+      "description": "C# TIFF image reading/writing useful for raster data formats.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "TIFF encoding alone does not replace GeoTIFF georeferencing/CRS processing or GDAL."
+    },
+    {
+      "name": "netDxf (archived)",
+      "url": "https://github.com/haplokuon/netDxf",
+      "category": "dotnet",
+      "role": "library",
+      "platforms": [
+        "desktop",
+        "standalone"
+      ],
+      "description": "DXF support used by some desktop GIS workflows; repository is archived.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "legacy-reference-only",
+      "source_availability": "source-code-archived",
+      "caveat": "Archived upstream: reassess maintenance, security and alternatives before adopting."
+    },
+    {
+      "name": "DuckDB",
+      "url": "https://github.com/duckdb/duckdb",
+      "category": "spatial-core",
+      "role": "database",
+      "platforms": [
+        "desktop",
+        "standalone",
+        "web"
+      ],
+      "description": "Embedded analytical SQL engine; spatial extension supports location-data workflows where installed and configured.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "Check DuckDB Spatial extension availability, versions, and file-format limitations."
+    },
+    {
+      "name": "ArcGIS Pro SDK for .NET",
+      "url": "https://github.com/Esri/arcgis-pro-sdk",
+      "category": "arcgis",
+      "role": "docs",
+      "platforms": [
+        "arcgis-pro"
+      ],
+      "description": "Official documentation and architecture for ArcGIS Pro C#/.NET add-ins, DAML ribbon commands, MVVM and CoreHost.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "sdk-reference-only",
+      "source_availability": "documentation-and-samples",
+      "caveat": "ArcGIS Pro version and .NET SDK compatibility are strict; separate from ArcPy."
+    },
+    {
+      "name": "Whitebox Next Gen ArcGIS",
+      "url": "https://github.com/opengeos/Whitebox-Next-Gen-ArcGIS",
+      "category": "arcgis",
+      "role": "toolbox",
+      "platforms": [
+        "arcgis-pro"
+      ],
+      "description": "ArcGIS Pro Python toolbox frontend for Whitebox Next Gen with runtime diagnostics and package integration.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "toolbox-reference",
+      "source_availability": "source-code",
+      "caveat": "Some tools/features require specific Whitebox licensing and runtime configuration."
+    },
+    {
+      "name": "PySTAC Client",
+      "url": "https://github.com/stac-utils/pystac-client",
+      "category": "remote-sensing",
+      "role": "library",
+      "platforms": [
+        "standalone",
+        "arcgis-pro",
+        "qgis"
+      ],
+      "description": "Python STAC API discovery client for satellite imagery catalogs and metadata.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "STAC discovery does not automatically grant hosted imagery access/usage rights."
+    },
+    {
+      "name": "TiTiler",
+      "url": "https://github.com/developmentseed/titiler",
+      "category": "remote-sensing",
+      "role": "service",
+      "platforms": [
+        "web",
+        "desktop"
+      ],
+      "description": "Python dynamic tiling server for raster and cloud-optimized GeoTIFF data.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "service-reference",
+      "source_availability": "source-code",
+      "caveat": "Operating a tile service has caching, server, security and data-service cost implications."
+    },
+    {
+      "name": "Leafmap",
+      "url": "https://github.com/opengeos/leafmap",
+      "category": "python",
+      "role": "library",
+      "platforms": [
+        "standalone",
+        "web"
+      ],
+      "description": "Interactive geospatial visualization and analysis from Python and notebooks.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "Some basemap services and notebooks rely on external provider access."
+    },
+    {
+      "name": "GeoAI Python",
+      "url": "https://github.com/opengeos/geoai",
+      "category": "remote-sensing",
+      "role": "library",
+      "platforms": [
+        "standalone",
+        "qgis"
+      ],
+      "description": "Geospatial machine-learning workflows, remote-sensing inference and related QGIS plugin integration.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "Model weights, datasets and framework dependencies retain separate licenses."
+    },
+    {
+      "name": "GeoPandas",
+      "url": "https://github.com/geopandas/geopandas",
+      "category": "python",
+      "role": "library",
+      "platforms": [
+        "standalone",
+        "arcgis-pro",
+        "qgis"
+      ],
+      "description": "Python GeoDataFrame processing built on pandas/Shapely/PyProj and file IO.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "Use projected coordinates/geodesic operations for physical distances and areas."
+    },
+    {
+      "name": "PyProj",
+      "url": "https://github.com/pyproj4/pyproj",
+      "category": "spatial-core",
+      "role": "library",
+      "platforms": [
+        "standalone",
+        "arcgis-pro",
+        "qgis"
+      ],
+      "description": "Python interface to PROJ for CRS transformations and geodesic calculations.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "Check axis order, datum grids and CRS units in explicit tests."
+    },
+    {
+      "name": "ONNX Runtime",
+      "url": "https://github.com/microsoft/onnxruntime",
+      "category": "geoai",
+      "role": "runtime",
+      "platforms": [
+        "standalone",
+        "desktop"
+      ],
+      "description": "Cross-platform inference runtime for compatible ML/ONNX models in desktop and GIS applications.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "runtime-with-license-review",
+      "source_availability": "source-code",
+      "caveat": "Neural networks are not automatically geospatially aware: preserve pixel-to-world transforms."
+    },
+    {
+      "name": "Segment Anything 2",
+      "url": "https://github.com/facebookresearch/sam2",
+      "category": "geoai",
+      "role": "model-code",
+      "platforms": [
+        "standalone",
+        "desktop"
+      ],
+      "description": "Open vision-segmentation research model and tools for imagery; requires GIS-aware postprocessing for usable map layers.",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "model-reference",
+      "source_availability": "source-code",
+      "caveat": "Check pretrained-weight licenses, data handling, GPU requirements, and georeferencing of results."
+    }
+  ]
+}

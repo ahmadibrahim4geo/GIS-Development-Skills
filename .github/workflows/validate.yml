@@ -1,0 +1,18 @@
+name: Validate GIS Skill
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Catalog and skill checks
+        run: |
+          python scripts/validate_catalog.py
+          python -m unittest discover -s tests -v
+          python -m py_compile templates/arcmap-script-tool.py templates/standalone-geojson-summary.py
