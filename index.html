@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GIS Development Skills: an open-source agent skill, 99 curated GIS development references, free geospatial API directory, and practical starter templates for ArcGIS, QGIS, desktop GIS and remote sensing.">
+  <meta name="description" content="GIS Development Skills — The Heart of Geospatial Innovation. Five GIS agent skills, 99 curated geospatial references, GIS APIs and developer templates.">
   <meta name="theme-color" content="#0d1519">
-  <meta property="og:title" content="GIS Development Skills | Open Geospatial Engineering">
-  <meta property="og:description" content="Skills, software references, APIs and starter templates for building better GIS applications.">
+  <meta property="og:title" content="GIS Development Skills | The Heart of Geospatial Innovation">
+  <meta property="og:description" content="Build GIS tools, plugins and geospatial applications with a verifiable development workflow.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/logo.svg">
-  <title>GIS Development Skills — Open Geospatial Engineering</title>
+  <title>GIS Development Skills | The Heart of Geospatial Innovation</title>
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <style>
     :root{--bg:#0b1418;--panel:#121f24;--panel2:#19292e;--stroke:#2d4144;--text:#edf6f1;--muted:#a9bab7;--green:#b4eb91;--mint:#5cd0ba;--white:#fff;--radius:19px}
@@ -82,16 +82,17 @@
     @media(max-width:640px){.container{width:calc(100% - 30px)}.nav{min-height:68px}.brand img{width:165px}.nav-git{display:none}.hero{padding:52px 0 34px}.hero-visual{min-height:300px;padding:18px}.globe-art{max-height:198px}h1{font-size:40px;letter-spacing:-1.5px}.stats{grid-template-columns:repeat(2,1fr);gap:9px;padding-bottom:28px}.stat{padding:15px}.stat strong{font-size:28px}.grid,.results,.paths{grid-template-columns:1fr}.results{padding:0 14px 14px}.explorer-top{padding:15px}.filters{padding:15px}.filters select{width:100%}.section-head{display:block}.workflow{gap:10px}.cta{padding:24px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.feature{transition:none}}
   </style>
+  <link rel="stylesheet" href="assets/brand-refresh.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav-wrap"><nav class="nav container" aria-label="Main navigation">
-  <a class="brand" href="#home" aria-label="GIS Development Skills home"><img src="assets/logo.svg" alt="GIS Development Skills" width="216" height="50"></a>
+  <a class="brand" href="#home" aria-label="GIS Development Skills home"><img src="assets/icon.svg" alt="" width="52" height="52"><span class="nav-brand-name">GIS <strong>Development Skills</strong><small>The Heart of Geospatial Innovation</small></span></a>
   <div class="nav-links">
     <a href="#capabilities" data-i18n="navSkills">Skills</a>
     <a href="#catalog" data-i18n="navExplorer">Explorer</a>
     <a href="#get-started" data-i18n="navStart">Get started</a>
-    <a href="#contribute" data-i18n="navContribute">Contribute</a>
+    <a href="#contribute" data-i18n="navContribute">Contribute</a><a href="#author"><span class="lang-en">Creator</span><span class="lang-ar">المطور</span></a>
   </div>
   <div class="nav-right">
     <button class="lang" id="langBtn" type="button" aria-label="Switch language">العربية</button>
@@ -103,7 +104,11 @@
     <div class="hero">
       <div>
         <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Open-source • Agent-ready • GIS engineering</span></div>
-        <h1 data-i18n-html="heroTitle">Develop GIS.<br><em>Build with confidence.</em></h1>
+        <div class="hero-signature">
+          <img class="hero-brand" src="assets/logo.svg" width="1000" height="205" alt="GIS Development Skills — The Heart of Geospatial Innovation" fetchpriority="high">
+          <h1 class="sr-only">GIS Development Skills — The Heart of Geospatial Innovation</h1>
+          <p class="hero-exact">Build GIS tools, plugins and geospatial applications with a verifiable development workflow.</p>
+        </div>
         <p class="lead" data-i18n="heroText">A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.</p>
         <div class="buttons">
           <a class="btn primary" href="#capabilities" data-i18n="exploreSkills">Explore skills ↓</a>
@@ -111,7 +116,7 @@
         </div>
       </div>
       <div class="hero-visual" aria-label="Stylized geospatial globe and software layers">
-        <div class="visual-top"><span>GEO / DEV / STACK</span><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="visual-top"><span>GEOSPATIAL / DEVELOPMENT / SKILLS</span><span class="lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
         <svg class="globe-art" viewBox="0 0 440 270" role="img" aria-label="Illustrated latitude and longitude globe with GIS coordinates">
           <defs><radialGradient id="g" cx="50%" cy="50%" r="58%"><stop stop-color="#2c5b4c" stop-opacity=".8"/><stop offset="1" stop-color="#112b2e" stop-opacity=".06"/></radialGradient></defs>
           <circle cx="220" cy="135" r="108" fill="url(#g)" stroke="#8dd9ae" stroke-width="1.7"/>
@@ -124,6 +129,8 @@
           <g fill="#a6f0c9" font-family="monospace" font-size="11"><text x="18" y="54">EPSG:4326</text><text x="335" y="224">X / Y / Z</text><text x="20" y="235">VECTOR + RASTER</text></g>
           <path d="M65 65l-16 15 16 15M375 65l16 15-16 15" fill="none" stroke="#b4eb91" stroke-width="3" stroke-linecap="round"/>
         </svg>
+        <div class="visual-float float-a"><b>01</b><span>ARCHITECTURE</span><strong>Choose the right stack</strong></div>
+        <div class="visual-float float-b"><b>02</b><span>VERIFICATION</span><strong>CRS • GEOMETRY • TESTS</strong></div>
         <div class="visual-foot"><span class="tech">ArcGIS Pro</span><span class="tech">QGIS</span><span class="tech">GDAL</span><span class="tech">RustGIS</span><span class="tech">GeoLibre R</span></div>
       </div>
     </div>
@@ -190,8 +197,40 @@
     <div class="cta"><div><h2 data-i18n="contributeTitle">Help build a better GIS developer ecosystem.</h2><p data-i18n="contributeDesc">Suggest a source, report a broken link or contribute a tested improvement.</p></div>
       <div class="buttons"><a class="btn primary" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues/new" target="_blank" rel="noopener noreferrer" data-i18n="suggest">Suggest an improvement ↗</a><a class="btn secondary" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" data-i18n="guide">Contribution guide ↗</a></div></div>
   </section>
+  <section id="author" class="container author-section" aria-labelledby="author-title">
+    <div class="section-head"><div>
+      <span class="overline"><span class="lang-en">THE PERSON BEHIND THE SKILLS</span><span class="lang-ar">وراء مشروع GIS DEVELOPMENT SKILLS</span></span>
+      <h2 id="author-title"><span class="lang-en">Built by a GIS specialist. Made for builders.</span><span class="lang-ar">من خبرة تطوير GIS إلى معرفة مفتوحة للجميع.</span></h2>
+      <p><span class="lang-en">A growing geospatial engineering resource shaped by practical GIS tools and real software development challenges.</span><span class="lang-ar">مورد معرفي مفتوح ينمو بالتجربة والمراجع الموثوقة ومشروعات نظم المعلومات الجغرافية.</span></p>
+    </div></div>
+    <div class="author-panel">
+      <div class="author-portrait">
+        <div class="author-image-frame">
+          <img src="https://ahmadibrahim4geo.github.io/MIRSAD/assets/ahmad_ibrahim_original.png" alt="Ahmad Ibrahim — GIS specialist and cartographer" loading="lazy" width="250" height="250" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://github.com/ahmadibrahim4geo.png';">
+        </div>
+        <span class="author-handle">@ahmadibrahim4geo</span>
+        <a href="https://ahmadibrahim4geo.github.io/MIRSAD/" class="author-project-ref" target="_blank" rel="noopener noreferrer"><span class="lang-en">Explore the MIRSAD project ↗</span><span class="lang-ar">استكشف مشروع مرصاد ↗</span></a>
+      </div>
+      <div class="author-copy">
+        <span class="author-mark"><span class="lang-en">CREATOR & GIS DEVELOPER</span><span class="lang-ar">مؤسس المشروع ومطور نظم المعلومات الجغرافية</span></span>
+        <h3>Ahmad Ibrahim <span class="author-arabic" lang="ar">— أحمد إبراهيم</span></h3>
+        <p class="author-role"><span class="lang-en">GIS Specialist · Cartographer · Geospatial Software Developer</span><span class="lang-ar">أخصائي نظم معلومات جغرافية · كارتوجرافي · مطور برمجيات مكانية</span></p>
+        <p class="author-description">
+          <span class="lang-en">I develop practical GIS tools and research-oriented geospatial applications, focusing on cartography, spatial data processing and reliable implementation. GIS Development Skills brings together hands-on lessons, verified references and development workflows from projects including MIRSAD to support GIS developers, researchers and contributors.</span>
+          <span class="lang-ar">أعمل على تطوير أدوات نظم المعلومات الجغرافية والتطبيقات البحثية المكانية، مع الاهتمام بالكارتوجرافيا ومعالجة البيانات المكانية ودقة التنفيذ. يجمع GIS Development Skills الخبرة العملية والمراجع الموثقة ومنهجيات التطوير المكتسبة من مشروعات مثل مرصاد، لإتاحتها لمطوري GIS والباحثين والمساهمين.</span>
+        </p>
+        <div class="author-links">
+          <a href="https://github.com/ahmadibrahim4geo" target="_blank" rel="noopener noreferrer" aria-label="Ahmad Ibrahim GitHub"><span class="contact-symbol">⌘</span> GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/ahmadibrahim4geo/" target="_blank" rel="noopener noreferrer" aria-label="Ahmad Ibrahim LinkedIn"><span class="contact-symbol">in</span> LinkedIn ↗</a>
+          <a href="mailto:ahmadibrahim.geo@gmail.com" aria-label="Email Ahmad Ibrahim"><span class="contact-symbol">@</span> <span class="lang-en">Email</span><span class="lang-ar">البريد الإلكتروني</span> ↗</a>
+          <a href="https://wa.me/201111915925" target="_blank" rel="noopener noreferrer" aria-label="Ahmad Ibrahim WhatsApp"><span class="contact-symbol">✳</span> WhatsApp ↗</a>
+        </div>
+      </div>
+    </div>
+    <p class="author-footnote"><span class="lang-en">Independent community project · useful, reproducible and accessible geospatial knowledge.</span><span class="lang-ar">مشروع مستقل مفتوح للمساهمة · معرفة جغرافية عملية وقابلة للتحقق ومتاحة للجميع.</span></p>
+  </section>
 </main>
-<footer><div class="container foot"><span>© <span id="year">2026</span> GIS Development Skills · <a href="https://github.com/ahmadibrahim4geo">Ahmed Ibrahim</a> · MIT (original project content)</span><span data-i18n="footerNote">Independent open-source resource. Third-party licenses and service terms remain in effect.</span></div></footer>
+<footer><div class="container foot"><span>© <span id="year">2026</span> GIS Development Skills · <a href="#author">Ahmad Ibrahim</a> · The Heart of Geospatial Innovation · MIT</span><span data-i18n="footerNote">Independent open-source resource. Third-party licenses and service terms remain in effect.</span></div></footer>
 <script>
 (function(){
   "use strict";
