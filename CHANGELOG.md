@@ -8,6 +8,14 @@
 - Add reproducible landing-page checks and GitHub Issue forms for bugs and feature suggestions.
 - Provide copy-ready repository About, topics, homepage and publication instructions under `docs/REPOSITORY_SETTINGS.md`; GitHub sidebar values must still be set by an authorized administrator.
 
+## 0.3.2 — 2026-10-24
+
+- Review Dr. Qiusheng Wu's official software directory (gishub.org/software) and add 40 verified, nonduplicate GitHub sources to the project catalog (84 total).
+- Add `references/gishub-software.md` with stack selection, ArcGIS version boundaries, QGIS plugin workflows, spatial backend choices, provider/API licensing cautions and test criteria.
+- Publish three independent agent skills: geospatial-data-discovery, qgis-plugin-development, and geospatial-web-mapping.
+- Expand the general GIS development skill and English/Arabic documentation to route real development requests.
+- Add offline regression tests while retaining unrelated branding, website and maintenance changes.
+
 ## 0.3.1 — 2026-10-24
 
 - Add practical GeoLibre integration guidance covering its official agent skill, MCP server, Python API, plugin template and renderer-neutral architecture.
