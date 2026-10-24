@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased — agent routing, evidence and operational validation (2026-10-24)
+
+- Preserve the entire former core instruction text verbatim in `skills/gis-development/LEGACY_FULL_SKILL.md` and an archived reference with corrected links; shorten the active Core Skill to a task router and specialist decision tree.
+- Add auditable T0–T4 GIS Acceptance Report, machine-readable evidence validator, synthetic polygon/distance and binary fixture generator, native ArcGIS Pro/QGIS runtime harnesses.
+- Add common before/after GIS mistake cases, security and performance guides, reproducible offline benchmarking and regression tests.
+- Extend all 104 project and 39 API records with conservative verification metadata; add one derived manifest and CI checks for live counts.
+- Add weekly isolated, rate-bounded public documentation availability reporting. Provider policy and actual JSON endpoint behavior remain separate validations.
+- Refresh bilingual website, English/Arabic READMEs, agent/contribution/publishing rules and existing CI without removing prior assets or historical entries.
+
+
 ## Unreleased — production-oriented GIS skills and examples (2026-10-24)
 
 - Non-destructively retain all earlier installable skills, curated sources, API records, templates, tests, bilingual UI and approved branding.
