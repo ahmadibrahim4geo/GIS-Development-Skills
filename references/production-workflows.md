@@ -10,3 +10,7 @@ The established [general GIS skill](../skills/gis-development/SKILL.md) routes w
 - [STAC/COG workflow](../examples/remote-sensing/STAC_COG_WORKFLOW.md): remote-sensing reproducibility and pixel checks.
 
 Start with the [examples index](../examples/README.md). Each example must preserve source data, declare environment and licensing, avoid hardcoded paths, validate CRS/units, and report the highest evidenced test tier from the [quality benchmark](../docs/QUALITY_BENCHMARK.md).
+
+## GIS Agent runtime entry points
+
+Read the [short decision tree](agent-decision-tree.md) instead of loading all specializations. Implement [security](geospatial-security.md), [performance](geospatial-performance.md), [before/after examples](gis-antipatterns.md), [test fixtures](../fixtures/README.md), [native acceptance](../native_tests/README.md) and [machine-checkable evidence reports](../templates/GIS_ACCEPTANCE_REPORT.md). All existing case studies, tools and reference catalogs remain available.
