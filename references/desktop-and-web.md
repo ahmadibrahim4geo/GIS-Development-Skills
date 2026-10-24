@@ -14,6 +14,8 @@ A GIS application needs more than a map view: data loading, CRS handling, layer 
 
 Official sources: https://github.com/opengeos/GeoLibre ; https://github.com/maplibre/maplibre-gl-js ; https://github.com/CesiumGS/cesium
 
+**Detailed implementation and release checklist:** [desktop-application-engineering.md](desktop-application-engineering.md). For an independent Windows executable, activate [gis-desktop-application-development](../skills/gis-desktop-application-development/SKILL.md) rather than treating a web-map renderer as a complete app. Real installer and UI acceptance are separate from static code tests.
+
 ## Workflow for a desktop app
 
 1. Document explicit functional acceptance criteria: open GeoPackage/GeoTIFF/Shapefile/KML; CRS; lat/lon status; zoom/pan/rotate; project save/open; large layers.
