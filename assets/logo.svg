@@ -1,11 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="112" viewBox="0 0 500 112" role="img" aria-labelledby="title desc">
-<title id="title">GIS Development Skills</title><desc id="desc">Globe and geospatial code symbol next to the project name</desc>
-<rect width="500" height="112" rx="18" fill="#0B1418"/>
-<rect x="4" y="8" width="94" height="94" rx="24" fill="#102028"/>
-<circle cx="51" cy="55" r="29" fill="none" stroke="#A9E99B" stroke-width="3"/>
-<path d="M22 55h58M26 44h50M26 66h50M51 26c-9 10-13 19-13 29s4 19 13 29M51 26c9 10 13 19 13 29s-4 19-13 29" fill="none" stroke="#5FD2BB" stroke-width="2.4" stroke-linecap="round"/>
-<path d="m16 40-8 15 8 15M86 40l8 15-8 15" fill="none" stroke="#F0F7F4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="51" cy="55" r="5" fill="#F2FCBA"/>
-<text x="119" y="47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="800" fill="#F3F7F5" letter-spacing="1.2">GIS DEVELOPMENT</text>
-<text x="120" y="81" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="29" font-weight="800" fill="#A9E99B" letter-spacing="5">SKILLS</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="205" viewBox="0 0 1000 205" role="img" aria-labelledby="title desc"><title id="title">GIS Development Skills</title><desc id="desc">The Heart of Geospatial Innovation. A custom geospatial G made from contour lines, spatial layers, and coordinate markers.</desc>
+<rect width="1000" height="205" rx="22" fill="#0C1920"/><defs>
+<linearGradient id="g0" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#26C6F2"/><stop offset=".5" stop-color="#40D7C0"/><stop offset="1" stop-color="#B8E58D"/></linearGradient>
+<linearGradient id="g1" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#82F4BC"/><stop offset="1" stop-color="#14BBAE"/></linearGradient>
+<clipPath id="cl"><path d="M130 47 C104 27 64 29 45 55 C27 79 31 115 51 135 C72 155 110 151 128 129 L128 102 L101 102"/></clipPath></defs>
+<g transform="translate(9,8)">
+<path d="M89 5V26M89 153v24M7 90h25M147 90h24" stroke="#3CD5CB" stroke-width="2.6" stroke-linecap="round" opacity=".8"/>
+<rect x="84.5" y="13" width="9" height="9" rx="1" fill="#25CBE5"/><rect x="84.5" y="158" width="9" height="9" rx="1" fill="#25CBE5"/>
+<path d="M132 47 C107 23 66 27 43 53 C20 79 26 119 50 140 C76 163 114 157 137 134 L137 101 L104 101" fill="none" stroke="url(#g0)" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
+<g clip-path="url(#cl)" fill="none" stroke="#45DCCB" stroke-width="2.5" stroke-linecap="round" opacity=".76">
+<path d="M145 47 C117 14 61 14 31 48 C2 80 9 135 42 154 C79 181 126 160 148 131"/>
+<path d="M142 56 C117 31 68 30 49 57 C31 83 35 119 56 137 C80 154 116 143 133 119"/>
+<path d="M135 68 C108 45 75 44 60 67 C47 86 48 111 68 126 C91 141 113 124 122 109"/>
+<path d="M121 77 C100 63 80 65 72 78 C61 96 69 115 85 120"/>
+<path d="M49 50 C83 76 100 84 135 83"/>
+</g>
+<path d="M91 110L117 98L143 109L116 122Z" fill="#BCE89A"/><path d="M91 124L117 136L143 123" fill="none" stroke="#33D2B7" stroke-width="5" stroke-linejoin="round"/><path d="M91 133L117 146L143 132" fill="none" stroke="#2CAEA7" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="143" cy="52" r="10" fill="#B7EC93"/>
+</g>
+<text x="215" y="82" font-family="Segoe UI,Inter,Arial,sans-serif" fill="#F4F9F7" font-size="53" font-weight="820" letter-spacing="1">GIS DEVELOPMENT</text>
+<text x="215" y="135" font-family="Segoe UI,Inter,Arial,sans-serif" fill="#BCE89A" font-size="51" font-weight="820" letter-spacing="8">SKILLS</text>
+<path d="M216 158H256" stroke="#4ACFB8" stroke-width="3.5" stroke-linecap="round"/>
+<text x="272" y="165" font-family="Segoe UI,Inter,Arial,sans-serif" fill="#7FE0CB" font-size="24" letter-spacing="2">The Heart of Geospatial Innovation</text>
 </svg>
