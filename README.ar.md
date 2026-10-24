@@ -13,6 +13,27 @@
 
 **هذا مشروع مهارة قابلة للتثبيت، وليس مجرد قائمة روابط.** يوجد ملف `SKILL.md` يحدد أسلوب العمل، ومراجع تقنية، وقوالب أولية، وفهرس قابل للبحث عن المشروعات مفتوحة المصدر.
 
+## دمج منظومة Esri للمساقط والمشروعات المفتوحة (24 أكتوبر 2026)
+
+أصبح الفهرس يضم **99 مشروعًا** بعد إضافة 15 مصدرًا جديدًا موثقًا من منظومة Esri وSpatialReference.org ومصادر CRS المكملة. المهارة المتخصصة الجديدة هي [coordinate-reference-systems](skills/coordinate-reference-systems/SKILL.md)، ويمكن تثبيتها بالأمر:
+
+```powershell
+npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill coordinate-reference-systems
+```
+
+**التقسيم يتبع المصطلحات الرسمية لإزري**: `Favorites`، `Layers`، `Geographic Coordinate Systems`، `Projected Coordinate Systems`، `Vertical Coordinate Systems`، و`Custom` مع فصل الأفقي عن الرأسي. ويتضمن توثيق `Zone Series`، أكواد `WKID` و`latestWkid`، نطاق الاستخدام، المساقط والتحويلات الجيوديسية ودقتها.
+
+- [الدليل الشامل لقاعدة مساقط Esri وموقع SpatialReference.org](references/esri-crs-and-spatialreference.md).
+- [مصفوفة الاستفادة من مشروعات Esri المفتوحة](references/esri-open-source-integration.md).
+- [أداة بحث وفحص ملفات Esri CSV/JSON](scripts/crs_catalog.py) تعمل محليًا بعد تنزيل ملفات المصادر؛ لا تحتوي على محرك التحويل التجاري ولا تعيد توزيع قاعدة البيانات كاملة.
+
+```bash
+python scripts/crs_catalog.py --source ./projection-engine-db-doc/csv --tree
+python scripts/crs_catalog.py --source ./projection-engine-db-doc/csv --kind projcs --query Egypt
+```
+
+**ملاحظة مهمة:** شجرة المجلدات الجغرافية التفصيلية في واجهة ArcGIS Pro ليست متاحة كاملة في جداول Projection Engine المنشورة؛ تم الالتزام بالمسميات العليا الصحيحة، ولا تُعرض التقسيمات المستنتجة بوصفها نسخة رسمية حرفية. إجراء تحويل الإحداثيات يحتاج محركًا معتمدًا مثل PROJ أو ArcPy والتحقق من شبكات التحويل وحقوق استخدامها.
+
 ## الفئات الأساسية
 
 - **ArcMap القديم:** نماذج متوافقة مع Python 2.7، دون استخدام خصائص Python 3.
