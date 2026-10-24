@@ -49,6 +49,25 @@ Use this skill when designing or implementing a GIS **tool, add-in, plugin, desk
 
 When the target is a GeoLibre map, `.geolibre.json` project, plugin, or hosted/desktop GeoLibre deployment, consult `../../references/geolibre-integration.md` and the official upstream `https://github.com/opengeos/GeoLibre/tree/main/skills/geolibre`. Use the official GeoLibre skill with its MCP/Python authoring paths instead of guessing an undocumented file schema. For plugins use the official template, `plugin.json`, declared compatible rendering engines and real host integration tests. For desktop architecture reuse **patterns** (renderer-neutral state, command capability checks, data-source licensing) without treating external code or imagery as automatically reusable. Do not claim GeoLibre code runs as an ArcMap, ArcGIS Pro or QGIS plugin. Verify portability, CRS, credentials, live-vs-file workflow and provider terms.
 
+## Esri Projection Engine, SpatialReference.org and reusable Esri projects
+
+For CRS selection, projection/coordinate-system UI, WKID/latestWKID compatibility, datum transformation, WKT/.prj, axis order, 3D Z or local/vertical reference systems **always route first** to `../coordinate-reference-systems/SKILL.md` and `../../references/esri-crs-and-spatialreference.md`.
+
+Use ArcGIS Pro's *exact official top-level names* **Favorites, Layers, Geographic Coordinate Systems, Projected Coordinate Systems, Vertical Coordinate Systems, Custom**, split into Horizontal and Vertical tabs. Never claim `Favorites` or `Layers` are Esri factory database files; they represent user state and active map layers. Esri `projection-engine-db-doc` metadata supplies CRS names/WKIDs/extents/WKT/transformations, but **not** a complete machine-readable export of the ArcGIS Pro geographic folder hierarchy. Require verified provenance for every region/country folder mapping.
+
+The portable, optional-source, standard-library Esri catalog inspector is `../../scripts/crs_catalog.py`; it queries locally supplied PE CSV/JSON and user-scoped Favorites, but it does not transform coordinates. For transformations, choose an installed validated PROJ/pyproj/GDAL/ArcPy/QGIS engine and real datum grid availability; read SpatialReference.org for authoritative definitions and interchange.
+
+For the other **14 reviewed Esri/PROJ complementary repositories**, read `../../references/esri-open-source-integration.md` before designing integration:
+- ArcGIS Pro UI commands: `Esri/arcgis-pro-sdk-community-samples`
+- Python portal workflows: `Esri/arcgis-python-api` (already in catalog; not ArcPy)
+- Raster/geometry/performance: `Esri/raster-functions`, `Esri/geometry-api-java`, `Esri/lerc`
+- .NET desktop: `Esri/arcgis-maps-sdk-dotnet-samples`, `Esri/arcgis-maps-sdk-dotnet-toolkit`
+- Web services: `Esri/esri-leaflet`, `Esri/maplibre-arcgis`, `Esri/arcgis-rest-js`
+- Cartography/3D: `Esri/cim-spec`, `Esri/i3s-spec`
+- Discovery/CRS UX: `Esri/awesome-arcgis-developers`, `OSGeo/PROJ-CRS-Explorer`.
+
+Catalog entries and source examples are **not installed dependencies, proprietary SDK entitlements or evidence of host-level tests**. Verify upstream repository licenses and Esri hosted service terms separately before borrowing code or shipping binaries.
+
 ## Specialist routing from Qiusheng Wu's GIS software ecosystem
 
 For tasks matching https://gishub.org/software/, consult `../../references/gishub-software.md` first, then the verified GitHub repository entry in `../../references/project-catalog.json`.

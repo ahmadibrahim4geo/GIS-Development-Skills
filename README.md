@@ -22,6 +22,32 @@ Created by [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). Independent com
 
 This repository includes a **working agent skill**: step-by-step architecture selection, compatibility rules, geospatial correctness checks, GIS application pathways, and reference starter code. The catalog is supporting evidence, **not a code-vending collection**. A coding agent must establish requirements, consult the relevant reference, verify package APIs, implement, and test before claiming success.
 
+## Esri coordinate systems and GIS development integration (2026-10-24)
+
+**99 curated GitHub projects** now include 15 newly reviewed Esri / CRS-source entries. The new specialist **[coordinate-reference-systems](skills/coordinate-reference-systems/SKILL.md)** preserves official ArcGIS Pro labels **Favorites · Layers · Geographic Coordinate Systems · Projected Coordinate Systems · Vertical Coordinate Systems · Custom**, with horizontal/vertical separation, Zone Series guidance, versioned WKID/latestWkid, datum grids and area-of-use safeguards.
+
+- [Esri Projection Engine + SpatialReference.org + PROJ specification](references/esri-crs-and-spatialreference.md)
+- [Esri open-source integration matrix](references/esri-open-source-integration.md)
+- [Offline CSV/JSON catalog inspector](scripts/crs_catalog.py), with independent tests. Requires user-supplied Esri factory tables; does not bundle Esri's full database or proprietary engine.
+- [SpatialReference.org](https://spatialreference.org/) for authority-linked WKT2 / Esri WKT / PROJJSON exports.
+- [Official ArcGIS Pro folder structure](https://doc.esri.com/en/arcgis-pro/latest/help/mapping/properties/coordinate-system-folder-structure.html).
+
+Install the specialist:
+
+```powershell
+npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill coordinate-reference-systems
+```
+
+Explore a downloaded [Esri PE factory CSV/JSON dataset](https://github.com/Esri/projection-engine-db-doc):
+
+```bash
+python scripts/crs_catalog.py --source ./projection-engine-db-doc/csv --tree
+python scripts/crs_catalog.py --source ./projection-engine-db-doc/csv --kind projcs --query Egypt
+python scripts/crs_catalog.py --source ./projection-engine-db-doc/json --kind geogcs --format json --limit 5
+```
+
+**Scope and provenance:** this reproduces verified Esri *top-level presentation terminology*, not an unprovided exact country-level folder export. Actual datum transformation requires an installed, tested ArcPy/PROJ/GDAL/QGIS engine and relevant grids. Linked libraries and service plans retain their original terms.
+
 ## New in v0.3.2 — Dr. Qiusheng Wu GIS software ecosystem
 
 We reviewed the [official software directory](https://gishub.org/software/) maintained by Dr. Qiusheng Wu and added **40 distinct verified repository links**. Our searchable catalog now contains **84 projects** covering Python, ArcGIS/Whitebox, QGIS, GeoAI, Rust/WebAssembly, MapLibre and metadata-based data discovery.
