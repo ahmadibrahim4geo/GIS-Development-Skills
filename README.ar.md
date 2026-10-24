@@ -55,7 +55,7 @@ python scripts/crs_catalog.py --source ./projection-engine-db-doc/csv --kind pro
 
 أضفنا مهارة سابعة متخصصة في [تطوير برامج GIS Desktop المستقلة](skills/gis-desktop-application-development/SKILL.md)، مع [دليل هندسة البرامج والاختبار والتوزيع](references/desktop-application-engineering.md)، يستفيد من التجارب الواقعية في مرصاد Desktop دون اعتبار النسخة التجريبية إصدارًا مستقرًا.
 
-كمان أضفنا أداة `scripts/validate_skill_pack.py` لمراجعة تعريفات كل المهارات، وروابط الملفات الداخلية، وملفات الموقع، وتطابق العدادات مع الفهارس. بقى المستودع يحتوي **7 مهارات** و**104 مشروعات مرجعية** و**37 خدمة بيانات**. [التقرير الفني](docs/TECHNICAL_AUDIT_2026-10-24.md) يوضح ما جرى اختباره وما زال يحتاج تشغيلًا حيًا داخل ArcGIS/QGIS وWindows.
+كمان أضفنا أداة `scripts/validate_skill_pack.py` لمراجعة تعريفات كل المهارات، وروابط الملفات الداخلية، وملفات الموقع، وتطابق العدادات مع الفهارس. بقى المستودع يحتوي **8 مهارات** و**104 مشروعات مرجعية** و**37 خدمة بيانات**. [التقرير الفني](docs/TECHNICAL_AUDIT_2026-10-24.md) يوضح ما جرى اختباره وما زال يحتاج تشغيلًا حيًا داخل ArcGIS/QGIS وWindows.
 
 ```bash
 python scripts/validate_skill_pack.py
@@ -67,6 +67,12 @@ python -m unittest discover -s tests -v
 أصبح لدينا **37 خدمة API موثقة بعد إضافة 19 خدمة** تغطي الحدود الإدارية (geoBoundaries)، السكان (WorldPop وWorld Bank)، الأسماء الجغرافية (GeoNames)، الحرائق والزلازل والأحداث الطبيعية (NASA FIRMS وEONET وUSGS)، صور الأقمار الصناعية (NASA CMR)، جودة الهواء (OpenAQ وOpen-Meteo)، تصريف الأنهار (GloFAS)، المسارات وتاريخ OSM (HeiGIT openrouteservice وohsome v2)، البيانات الإنسانية (HDX HAPI)، المد والجزر والبيانات البحرية والمناخية (NOAA)، والأحياء (iNaturalist).
 
 الفهرس متاح عبر [دليل الخدمات](references/free-geospatial-apis.md)، و[ملف JSON](references/free-geospatial-apis.json)، و[مهارة اكتشاف البيانات](skills/geospatial-data-discovery/SKILL.md)، كما تظهر الخدمات تلقائيًا في بحث الصفحة الرئيسية. **المجانية لا تعني السماح باستخدام تجاري غير محدود**؛ يجب حفظ المفاتيح الشخصية بأمان وتوثيق مصدر كل بيانات ودقتها.
+
+تتوفر الآن [مهارة ثامنة متخصصة في دمج واجهات GIS API](skills/geospatial-api-integration/SKILL.md)، مكملة لمهارة اكتشاف البيانات، وتشرح إدارة مفاتيح API، والحصص، والأخطاء، وتوحيد الإحداثيات والوحدات، وتوثيق المصدر، واختبار المخرجات داخل ArcGIS وQGIS وDesktop.
+
+~~~bash
+npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill geospatial-api-integration
+~~~
 
 ## أمثلة واقعية من أدوات GIS الأصلية — v0.3.3
 

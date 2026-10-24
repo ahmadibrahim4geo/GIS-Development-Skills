@@ -2,6 +2,7 @@
 
 ## Unreleased — site and repository experience (2026-10-24)
 
+- Add a dedicated **eighth** Geospatial API Integration skill and two new bilingual homepage pathway cards for data discovery and safe provider adapters.
 - Extend the free/public geospatial API directory from 18 to **37 services** with 19 new documented providers and explicit access, license, coverage and quota warnings.
 - Update bilingual homepage API count and explanatory text; add source-selection guidance to discovery, ArcPy, desktop and web GIS skills.
 - Document migration from legacy HeiGIT and USGS endpoints; add regression checks for provider IDs and site counts.

@@ -45,6 +45,14 @@ class LandingPageTests(unittest.TestCase):
             tree = ET.parse(ROOT / asset)
             self.assertTrue(tree.getroot().tag.endswith("svg"))
 
+    def test_api_expansion_and_skill_path(self):
+        catalog=json.loads((ROOT/'references/free-geospatial-apis.json').read_text(encoding='utf-8'))
+        self.assertIn('id="apisCount">{}<'.format(len(catalog['services'])),self.html)
+        self.assertIn('data-i18n="apiExpansion"',self.html)
+        self.assertIn('data-i18n="dataSkill"',self.html)
+        self.assertIn('data-i18n="apiSkill"',self.html)
+        self.assertTrue((ROOT/'skills/geospatial-api-integration/SKILL.md').exists())
+
     def test_catalog_endpoints_and_shapes(self):
         for path, key in (("references/project-catalog.json", "projects"),
                           ("references/free-geospatial-apis.json", "services")):

@@ -45,7 +45,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>7 installable GIS skills</strong> · <strong>104 curated geospatial references</strong> · <strong>18 public API sources</strong></p>
+<p align="center"><strong>8 installable GIS skills</strong> · <strong>104 curated geospatial references</strong> · <strong>37 public API sources</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -72,7 +72,7 @@ The full source/skill-pack integrity audit introduced:
 - `python scripts/validate_skill_pack.py` — offline checks of all skill frontmatters, local documentation links, website resources, and synchronized project/API/skill counters.
 - [Technical audit and outstanding verification](docs/TECHNICAL_AUDIT_2026-10-24.md), with exact test limits and remaining host-runtime checks.
 
-**Current inventory:** 104 curated code/data references, 37 API service entries and **7 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
+**Current inventory:** 104 curated code/data references, 37 API service entries and **8 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
 
 ```bash
 python scripts/validate_catalog.py
@@ -83,7 +83,7 @@ python -m unittest discover -s tests -v
 
 ## Tested-source references from our own GIS projects (v0.3.3)
 
-**104 curated software projects and seven installable agent skills.** Five public source projects developed or curated by Ahmad Ibrahim are now documented as real engineering case studies, including native ArcGIS toolboxes and a standalone Desktop migration path:
+**104 curated software projects and eight installable agent skills.** Five public source projects developed or curated by Ahmad Ibrahim are now documented as real engineering case studies, including native ArcGIS toolboxes and a standalone Desktop migration path:
 
 - [MIRSAD](https://github.com/ahmadibrahim4geo/MIRSAD) — three ArcGIS Python Toolboxes, shared climate calculations, offline/headless and Pro acceptance evidence; separate **development-only** Windows Desktop build.
 - [CreateFlowArrow](https://github.com/ahmadibrahim4geo/Create-FlowArrow-Tool) — gravity-network arrows, topology/slope audits and optional in-place geometry changes requiring explicit consent.
@@ -202,6 +202,12 @@ For manual use, copy `skills/gis-development/` into the supported skills directo
 The catalog now contains **37 provider/service entries** (19 additions): geoBoundaries, WorldPop, GeoNames, NASA FIRMS, NASA CMR/EONET, USGS Earthquake/Water, OpenAQ v3, Open-Meteo Air Quality/Flood, HeiGIT ohsome v2/openrouteservice, HDX HAPI, NOAA CO-OPS/CDO/ERDDAP, World Bank Indicators, and iNaturalist. The bilingual homepage reads the actual JSON directory with live filtering and access labels.
 
 [Provider limitations and examples](references/free-geospatial-apis.md) · [Data discovery skill](skills/geospatial-data-discovery/SKILL.md). Free access does not automatically permit commercial usage, offline mirroring or credential embedding. Modeled, curated and observed records remain clearly distinguished.
+
+Install the dedicated [Geospatial API Integration Skill](skills/geospatial-api-integration/SKILL.md) to build reliable service clients for the new providers. It complements [Geospatial Data Discovery](skills/geospatial-data-discovery/SKILL.md) by covering credentials, pagination, rate controls, provenance, GIS outputs and error-path testing.
+
+~~~bash
+npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill geospatial-api-integration
+~~~
 
 ## Catalog search (Python 3, no external packages)
 

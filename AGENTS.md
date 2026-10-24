@@ -4,7 +4,7 @@
 - Maintain concise progressive-disclosure reference guides under `references/`.
 - Keep platform compatibility, migration, licenses, CRS/measurement and source provenance prominent.
 - Never copy code from catalog entries without examining that upstream license.
-- Before publishing run `python scripts/validate_catalog.py`, `python scripts/validate_api_catalog.py`, `python scripts/validate_skill_pack.py`, and `python -m unittest discover -s tests -v`. All six prior specialist skills and the standalone Desktop skill must remain discoverable.
+- Before publishing run `python scripts/validate_catalog.py`, `python scripts/validate_api_catalog.py`, `python scripts/validate_skill_pack.py`, and `python -m unittest discover -s tests -v`. All existing skills plus the dedicated Geospatial API Integration skill must remain discoverable.
 - Keep titles/descriptions developer focused. Clearly label illustrative templates as untested inside host apps until verified.
 
 - Maintain the static site at repository-root `index.html` and its assets in `assets/`; it must work at the project subpath under GitHub Pages, not only at a domain root.

@@ -33,6 +33,23 @@ class APICatalogTests(unittest.TestCase):
         self.assertEqual('free-noncommercial',sources['open-meteo-forecast']['access'])
         self.assertIn('offline',sources['openfreemap']['limits'])
 
+    def test_2026_expanded_apis_and_migrations(self):
+        src={s['id']:s for s in self.catalog['services']}
+        ids={'geoboundaries','worldpop-v2','geonames','nasa-firms',
+             'usgs-earthquake','nasa-cmr','openaq-v3','open-meteo-air-quality',
+             'open-meteo-flood','ohsome-v2','openrouteservice-heigit',
+             'hdx-hapi','usgs-waterdata','noaa-coops','nasa-eonet',
+             'worldbank-indicators','noaa-ncei-cdo','noaa-ncei-erddap',
+             'inaturalist'}
+        self.assertEqual(len(self.catalog['services']),37)
+        self.assertTrue(ids.issubset(src))
+        self.assertEqual('free-key-required',src['openaq-v3']['access'])
+        self.assertEqual('free-noncommercial',src['open-meteo-flood']['access'])
+        self.assertIn('/ohsome-api/v2/',src['ohsome-v2']['service_url'])
+        self.assertNotIn('v2-rc',src['ohsome-v2']['service_url'])
+        self.assertIn('early 2027',src['usgs-waterdata']['caveat'])
+        self.assertEqual(len(src),len(self.catalog['services']))
+
     def test_filter(self):
         hits=self.searcher.search(self.catalog['services'],category='terrain-elevation')
         self.assertGreaterEqual(len(hits),3)
