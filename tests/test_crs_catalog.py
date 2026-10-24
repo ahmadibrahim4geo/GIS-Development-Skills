@@ -69,7 +69,7 @@ class CoordinateReferenceTests(unittest.TestCase):
         self.assertIn("Favorites", tree["Horizontal systems"])
         self.assertIn("Layers", tree["Horizontal systems"])
         self.assertEqual(2, tree["Horizontal systems"]["Projected Coordinate Systems"])
-        self.assertEqual(1, tree["Vertical systems"]["Vertical Coordinate Systems"] if False else 0)
+        self.assertEqual(0, tree["Vertical systems"]["Vertical Coordinate Systems"])
         self.assertIn("hierarchy_provenance", tree)
 
     def test_cli_json_and_no_download(self):
