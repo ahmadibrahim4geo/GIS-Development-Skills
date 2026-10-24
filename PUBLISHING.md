@@ -44,3 +44,11 @@ The repository includes a standalone responsive bilingual `index.html` and `asse
 Opening `index.html` directly from a `file://` URL may block JSON fetching due to browser security policies. Use GitHub Pages or a local HTTP server such as `python -m http.server` from the repository root. No API keys or external JavaScript libraries are needed to display the page.
 
 **Documentation revision is not a GitHub Release.** A README badge or changelog section alone does not create a tag or downloadable release. Verify any published release on the repository's Releases page before advertising it as available.
+
+## GIS agent operational publication checks
+
+Validate the [derived manifest](references/repository-manifest.json) using `python scripts/build_manifest.py --check` and the [acceptance example](templates/gis-acceptance.example.json) with `python scripts/validate_evidence.py templates/gis-acceptance.example.json`. Run the standard offline CI tests before publishing.
+
+[Native acceptance tests](native_tests/README.md) require real ArcGIS Pro and QGIS. [Weekly documentation URL checks](docs/SERVICE_MONITORING.md) are isolated and nonblocking, and cannot prove endpoint JSON availability, provider licensing or host compatibility.
+
+Retain all previously published files and design elements; keep English and Arabic READMEs and `index.html` synchronized with new functionality.
