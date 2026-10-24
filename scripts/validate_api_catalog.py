@@ -2,6 +2,7 @@
 """Offline structural validator for curated web service entries."""
 import json
 import re
+from urllib.parse import urlsplit
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +16,12 @@ ALLOWED_ACCESS = {'free-noncommercial', 'free-key-required', 'free-registration'
 
 
 def validate_catalog(path=CATALOG):
-    data = json.loads(Path(path).read_text(encoding='utf-8'))
+    try:
+        data = json.loads(Path(path).read_text(encoding='utf-8'))
+    except (OSError, ValueError) as exc:
+        return ['Cannot read API catalog JSON: {}'.format(exc)]
+    if not isinstance(data, dict):
+        return ['API catalog root must be a JSON object']
     errors = []
     if data.get('schema_version') != '1.0':
         errors.append('Unsupported API schema_version')
@@ -40,12 +46,17 @@ def validate_catalog(path=CATALOG):
         if item.get('access') not in ALLOWED_ACCESS:
             errors.append(f'{tag} unknown access type')
         for field in ('documentation_url', 'service_url', 'example_url'):
-            if field in item and (not isinstance(item[field],str) or not item[field].startswith('https://') or ' ' in item[field]):
-                errors.append(f'{tag} {field} must be HTTPS URL')
-        ident=item.get('id')
-        if ident in ids:
+            if field in item:
+                value = item[field]
+                if not isinstance(value, str) or not value.startswith('https://') or ' ' in value or not urlsplit(value).hostname:
+                    errors.append(f'{tag} {field} must be a valid HTTPS URL')
+        ident = item.get('id')
+        if not isinstance(ident, str) or not ident.strip():
+            errors.append(f'{tag} invalid id')
+        elif ident in ids:
             errors.append(f'{tag} duplicate id {ident}')
-        ids.add(ident)
+        else:
+            ids.add(ident)
     return errors
 
 
