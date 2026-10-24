@@ -45,7 +45,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>8 installable GIS skills</strong> · <strong>104 curated geospatial references</strong> · <strong>37 public API sources</strong></p>
+<p align="center"><strong>8 installable GIS skills</strong> · <strong>104 curated geospatial references</strong> · <strong>39 public API sources</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -72,7 +72,7 @@ The full source/skill-pack integrity audit introduced:
 - `python scripts/validate_skill_pack.py` — offline checks of all skill frontmatters, local documentation links, website resources, and synchronized project/API/skill counters.
 - [Technical audit and outstanding verification](docs/TECHNICAL_AUDIT_2026-10-24.md), with exact test limits and remaining host-runtime checks.
 
-**Current inventory:** 104 curated code/data references, 37 API service entries and **8 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
+**Current inventory:** 104 curated code/data references, 39 API service entries and **8 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
 
 ```bash
 python scripts/validate_catalog.py
@@ -166,7 +166,7 @@ Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-stud
 
 - **[GeoLibre R](https://github.com/opengeos/geolibre-r)** — MIT R `htmlwidgets` binding for interactive GIS maps in RStudio, Shiny and Quarto.
 - **[RustGIS](https://github.com/opengeos/RustGIS)** — Apache-2.0 Rust-native GIS application architecture, command bus, crates and WASM/plugin system; distinct from GeoRust.
-- **[Free/public API guide](references/free-geospatial-apis.md)** — 37 curated climate, elevation, DEM, STAC, imagery, basemap, boundaries, population, hazards, routing, ocean and biodiversity service entries, with credentials, free-tier constraints and caveats.
+- **[Free/public API guide](references/free-geospatial-apis.md)** — 39 curated climate, elevation, DEM, STAC, imagery, basemap, boundaries, population, hazards, routing, ocean and biodiversity service entries, with credentials, free-tier constraints and caveats.
 
 The API guide **does not** treat public endpoints as unlimited or licensed for any use. SoilGrids REST is marked paused; OSMF tiles and Nominatim have restrictive public usage policies.
 
@@ -196,6 +196,12 @@ For manual use, copy `skills/gis-development/` into the supported skills directo
 - `templates/arcmap-script-tool.py` — legacy ArcMap script-tool starter.
 - `templates/qgis-processing-algorithm.py` — QGIS Processing algorithm starter.
 - `templates/standalone-geojson-summary.py` — standard-library, non-destructive file checker.
+
+## GEBCO_2026 — global land/ocean bathymetry and terrain
+
+Two official GEBCO_2026 access methods are indexed: the [WMS](https://www.gebco.net/data-products/gebco-web-services/web-map-service) for ocean/land terrain visualization, and [CEDA OPeNDAP](https://www.gebco.net/data-products/gridded-bathymetry-data) for numeric 15 arc-second bathymetry and topography data. Also documented: the official GeoTIFF/NetCDF/ASCII subset download interface and **TID source-type grid**. Public-domain data with attribution, **not for marine navigation**. See the [scientific usage notes](references/free-geospatial-apis.md).
+
+**Current directory: 39 GIS API entries and eight installable skills.** The 37-entry expansion below is a historical milestone.
 
 ## Expanded free and public GIS APIs — 2026-10-24
 
