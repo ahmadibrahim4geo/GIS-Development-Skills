@@ -15,5 +15,6 @@ jobs:
         run: |
           python scripts/validate_catalog.py
           python scripts/validate_api_catalog.py
+          python scripts/validate_skill_pack.py
           python -m unittest discover -s tests -v
-          python -m py_compile templates/arcmap-script-tool.py templates/standalone-geojson-summary.py
+          python -m py_compile templates/arcmap-script-tool.py templates/arcgis-pro-toolbox.pyt templates/qgis-processing-algorithm.py templates/standalone-geojson-summary.py
