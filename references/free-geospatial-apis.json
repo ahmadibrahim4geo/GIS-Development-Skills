@@ -411,6 +411,216 @@
       ],
       "caveat": "Species occurrence coordinates may be generalized or imprecise; sensitive species data require care.",
       "verified_on": "2026-10-24"
+    },
+    {
+      "id": "geoboundaries",
+      "name": "geoBoundaries",
+      "category": "administrative-boundaries",
+      "documentation_url": "https://www.geoboundaries.org/api.html",
+      "service_url": "https://www.geoboundaries.org/api/current/gbOpen/EGY/ADM1/",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "Global administrative boundaries; levels vary by country",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "No guaranteed public throughput; cache only in line with source license",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "administrative boundaries",
+        "geoBoundaries"
+      ],
+      "caveat": "Boundary editions and original layer licenses vary; gbOpen generally CC BY 4.0",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "worldpop-v2",
+      "name": "WorldPop API v2",
+      "category": "population-demographics",
+      "documentation_url": "https://api.worldpop.org/v2/",
+      "service_url": "https://api.worldpop.org/v2/",
+      "access": "public-fair-use",
+      "authentication": "none or approved key",
+      "coverage": "Global modeled population datasets by year",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "1,000 daily no-key requests; 50,000 square km maximum no-key polygon",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "population demographics",
+        "WorldPop API v2"
+      ],
+      "caveat": "Population is modeled rather than official census; asynchronous tasks may apply",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "geonames",
+      "name": "GeoNames Web Services",
+      "category": "geocoding",
+      "documentation_url": "https://www.geonames.org/export/",
+      "service_url": "https://secure.geonames.org/searchJSON",
+      "access": "free-registration",
+      "authentication": "username",
+      "coverage": "Global gazetteer",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Free username: 10,000 credits per day and 1,000 per hour",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "geocoding",
+        "GeoNames Web Services"
+      ],
+      "caveat": "Validate transliteration and administrative names; GeoNames data CC BY",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "nasa-firms",
+      "name": "NASA FIRMS Area API",
+      "category": "hazards-disasters",
+      "documentation_url": "https://firms.modaps.eosdis.nasa.gov/api/area",
+      "service_url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv",
+      "access": "free-key-required",
+      "authentication": "map-key",
+      "coverage": "Global MODIS/VIIRS thermal detections",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Free map key; 5,000 map transactions per 10 minutes, area requests 1 to 5 days",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "hazards disasters",
+        "NASA FIRMS Area API"
+      ],
+      "caveat": "Hotspots are not burned-area perimeters; product latency differs",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "usgs-earthquake",
+      "name": "USGS Earthquake Event API",
+      "category": "hazards-disasters",
+      "documentation_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
+      "service_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "Global earthquake catalog, variable completeness",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Fair-use and result limits; restrict queries by bounding box and time",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "hazards disasters",
+        "USGS Earthquake Event API"
+      ],
+      "caveat": "Locations/depths uncertain and catalogue records may be revised",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "nasa-cmr",
+      "name": "NASA Earthdata CMR Search",
+      "category": "satellite-imagery",
+      "documentation_url": "https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html",
+      "service_url": "https://cmr.earthdata.nasa.gov/search/collections.json",
+      "access": "public-with-asset-restrictions",
+      "authentication": "none for public metadata",
+      "coverage": "Global Earth observation collection/granule metadata",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Paging and service constraints; downloads may require Earthdata Login",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "satellite imagery",
+        "NASA Earthdata CMR Search"
+      ],
+      "caveat": "Metadata discovery does not grant access to every asset",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "openaq-v3",
+      "name": "OpenAQ v3 Observations",
+      "category": "air-quality",
+      "documentation_url": "https://docs.openaq.org/api",
+      "service_url": "https://api.openaq.org/v3/locations",
+      "access": "free-key-required",
+      "authentication": "api-key",
+      "coverage": "Global station monitoring where available",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Free key: 60 requests/minute and 2,000/hour",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "air quality",
+        "OpenAQ v3 Observations"
+      ],
+      "caveat": "Ground observations not modeled air quality; harmonize timestamps and units",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "open-meteo-air-quality",
+      "name": "Open-Meteo Air Quality API",
+      "category": "air-quality",
+      "documentation_url": "https://open-meteo.com/en/docs/air-quality-api",
+      "service_url": "https://air-quality-api.open-meteo.com/v1/air-quality",
+      "access": "free-noncommercial",
+      "authentication": "none",
+      "coverage": "Global/regional model-based pollution datasets",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Free noncommercial limits: under 10,000 daily, 5,000 hourly, 600 per minute",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "air quality",
+        "Open-Meteo Air Quality API"
+      ],
+      "caveat": "Forecast model grids not observed sensor data; attribute original CAMS inputs",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "open-meteo-flood",
+      "name": "Open-Meteo Flood GloFAS",
+      "category": "hydrology-water",
+      "documentation_url": "https://open-meteo.com/en/docs/flood-api",
+      "service_url": "https://flood-api.open-meteo.com/v1/flood",
+      "access": "free-noncommercial",
+      "authentication": "none",
+      "coverage": "Global modeled river discharge at about 5 km",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Open-Meteo noncommercial fair-use quotas apply",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "hydrology water",
+        "Open-Meteo Flood GloFAS"
+      ],
+      "caveat": "Discharge (m3/s) is not an inundation polygon or an ephemeral wadi map",
+      "verified_on": "2026-10-24"
+    },
+    {
+      "id": "ohsome-v2",
+      "name": "HeiGIT ohsome API v2",
+      "category": "osm-history",
+      "documentation_url": "https://docs.ohsome.org/ohsome-api/v2/",
+      "service_url": "https://api.heigit.org/ohsome-api/v2/",
+      "access": "free-key-required",
+      "authentication": "api-key",
+      "coverage": "Global OSM historical data",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Free key with account plan quotas; v1 retires 2026-11-30",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "osm history",
+        "HeiGIT ohsome API v2"
+      ],
+      "caveat": "OSM edit time is not real-world building date; do not use deprecated v2-rc",
+      "verified_on": "2026-10-24"
     }
   ]
 }
