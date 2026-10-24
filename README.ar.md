@@ -16,7 +16,7 @@
 
 ## دمج منظومة Esri للمساقط والمشروعات المفتوحة (24 أكتوبر 2026)
 
-أصبح الفهرس يضم **99 مشروعًا** بعد إضافة 15 مصدرًا جديدًا موثقًا من منظومة Esri وSpatialReference.org ومصادر CRS المكملة. المهارة المتخصصة الجديدة هي [coordinate-reference-systems](skills/coordinate-reference-systems/SKILL.md)، ويمكن تثبيتها بالأمر:
+كان الفهرس قد بلغ **99 مشروعًا** قبل إضافة الأمثلة الستة بعد إضافة 15 مصدرًا جديدًا موثقًا من منظومة Esri وSpatialReference.org ومصادر CRS المكملة. المهارة المتخصصة الجديدة هي [coordinate-reference-systems](skills/coordinate-reference-systems/SKILL.md)، ويمكن تثبيتها بالأمر:
 
 ```powershell
 npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill coordinate-reference-systems
@@ -43,6 +43,23 @@ python scripts/crs_catalog.py --source ./projection-engine-db-doc/csv --kind pro
 - **التطبيقات المستقلة:** محركات GDAL وPROJ وGEOS، وRust/Tauri وQt وغيرها حسب المتطلبات.
 - **خرائط 2D/3D:** MapLibre وCesiumJS وGeoLibre، مع مراجعة سياسات مصادر الخرائط والتضاريس.
 - **الاستشعار عن بعد:** النماذج المفتوحة للتحليل والتصنيف ودمج البيانات المكانية.
+
+## أمثلة واقعية من أدوات GIS الأصلية — v0.3.3
+
+أضفنا **6 مستودعات من مشروعات أحمد إبراهيم** إلى فهرس المصادر، ليصبح الإجمالي **105 مشروعات**، مع مهارة سادسة لتطوير واختبار أدوات ArcGIS. وتشمل:
+
+- [MIRSAD](https://github.com/ahmadibrahim4geo/MIRSAD): ثلاث حزم ArcGIS Python Toolbox للحسابات المناخية، ونواة مشتركة، ونسخة Desktop مستقلة ما زالت تحت التطوير.
+- [CreateFlowArrow](https://github.com/ahmadibrahim4geo/Create-FlowArrow-Tool): أسهم واتجاهات الجريان وتدقيق شبكات الانحدار، مع معالجة خاصة لخطر التعديل المباشر للمدخلات.
+- [Geological Cross-Section Toolbox](https://github.com/ahmadibrahim4geo/GeologicalCrossSectionToolbox): قطاعات جيولوجية وتضاريسية وأدلة وبيانات تدريبية.
+- [GeoVision](https://github.com/ahmadibrahim4geo/GeoVision): تطبيق GIS للموبايل بلغة Kotlin.
+- [ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection): مرجع للرموز والستايلات؛ تراخيص ملفات الجهات الأخرى تحتاج مراجعة مستقلة.
+- [GIS Data Repositories Professional](https://github.com/ahmadibrahim4geo/gis-data-repositories-professional-2026): فهرس بيانات متعدد المصادر وأدوات تدقيق الروابط.
+
+يمكن تثبيت [مهارة تطوير ArcGIS Toolbox](skills/arcgis-toolbox-engineering/SKILL.md)، وقراءة [دليل الحالات العملية والاختبارات](references/ahmad-ibrahim-gis-case-studies.md). الاختبار باستخدام ArcPy مقلّد لا يثبت تشغيل ArcMap أو ArcGIS Pro فعليًا؛ التحقق النهائي يتطلب تشغيلًا داخل البرامج ذاتها.
+
+```bash
+npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill arcgis-toolbox-engineering
+```
 
 ## إضافات برامج الدكتور Qiusheng Wu — الإصدار v0.3.2
 
