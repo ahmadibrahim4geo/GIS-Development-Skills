@@ -1619,23 +1619,6 @@
       "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
     },
     {
-      "name": "GeoVision — Android GIS Viewer",
-      "url": "https://github.com/ahmadibrahim4geo/GeoVision",
-      "category": "mobile-gis",
-      "role": "mobile-case-study",
-      "platforms": [
-        "android",
-        "kotlin",
-        "mobile"
-      ],
-      "description": "Kotlin Jetpack Compose offline-first mobile GIS viewer with multiple format loaders, map UI and optional Esri variant; verify claimed formats on device",
-      "reviewed_on": "2026-10-24",
-      "license": "MIT",
-      "integration": "mobile-architecture-reference",
-      "source_availability": "public-source; device-and-format-support-not-independently-tested",
-      "provenance": "First-party public source reviewed 2026-10-24; follow references/ahmad-ibrahim-gis-case-studies.md; external runtime not independently tested"
-    },
-    {
       "name": "ArcMap Style Collection",
       "url": "https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection",
       "category": "cartography",
