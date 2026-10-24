@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "curated_on": "2026-10-24",
-  "policy": "Curated link-only catalog. Verify code, exact runtime versions, licenses, external API terms, and authentication independently. Entries sourced from gishub.org/software are credited to Dr. Qiusheng Wu's directory; no upstream code is bundled.",
+  "policy": "Curated link-only catalog. Verify code, exact runtime versions, licenses, external API terms, and authentication independently. Entries sourced from gishub.org/software are credited to Dr. Qiusheng Wu's directory; no upstream code is bundled. Esri PE is factory metadata, not proprietary engine code; SpatialReference.org is an independent PROJ-generated authority resource. Preserve official Esri UI folder terminology but do not invent unexported folder paths.",
   "projects": [
     {
       "name": "Esri ArcPy",
@@ -1342,6 +1342,228 @@
       "integration": "discovery-reference-only",
       "source_availability": "machine-readable-index-or-documentation",
       "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24"
+    },
+    {
+      "name": "Esri Projection Engine DB Documentation",
+      "url": "https://github.com/Esri/projection-engine-db-doc",
+      "category": "spatial-core",
+      "role": "reference",
+      "platforms": [
+        "arcgis-pro",
+        "arcmap",
+        "qgis",
+        "standalone",
+        "desktop"
+      ],
+      "description": "Esri factory CRS objects, geographic/projected/vertical systems, WKID aliases, WKT, extents, transformations and datums",
+      "reviewed_on": "2026-10-24",
+      "license": "Apache-2.0",
+      "integration": "data-reference-and-catalog-inspector"
+    },
+    {
+      "name": "SpatialReference.org",
+      "url": "https://github.com/OSGeo/spatialreference.org",
+      "category": "spatial-core",
+      "role": "reference",
+      "platforms": [
+        "arcgis-pro",
+        "qgis",
+        "standalone",
+        "desktop",
+        "web"
+      ],
+      "description": "PROJ-derived authority browser (EPSG, ESRI, IAU, IGNF, NKG, OGC) with WKT2, Esri WKT and PROJJSON exports",
+      "reviewed_on": "2026-10-24",
+      "license": "MIT (website source; upstream CRS authority terms separately apply)",
+      "integration": "authority-lookup-reference"
+    },
+    {
+      "name": "Esri ArcGIS Pro SDK community samples",
+      "url": "https://github.com/Esri/arcgis-pro-sdk-community-samples",
+      "category": "arcgis",
+      "role": "samples",
+      "platforms": [
+        "arcgis-pro",
+        "dotnet"
+      ],
+      "description": "Ribbon, dockpane, editing, command wiring and event integration examples for ArcGIS Pro",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "platform-samples"
+    },
+    {
+      "name": "Esri raster-functions",
+      "url": "https://github.com/Esri/raster-functions",
+      "category": "remote-sensing",
+      "role": "samples",
+      "platforms": [
+        "arcgis-pro",
+        "remote-sensing"
+      ],
+      "description": "Raster function and imagery-processing samples; verify installed raster tools and compatible ArcGIS runtime",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "reference-only"
+    },
+    {
+      "name": "Esri geometry API for Java",
+      "url": "https://github.com/Esri/geometry-api-java",
+      "category": "spatial-core",
+      "role": "library",
+      "platforms": [
+        "standalone",
+        "desktop"
+      ],
+      "description": "Java geometry/topology primitives such as buffer, intersect and union; require CRS-aware metric validation",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-evaluate"
+    },
+    {
+      "name": "Esri LERC",
+      "url": "https://github.com/Esri/lerc",
+      "category": "spatial-core",
+      "role": "library",
+      "platforms": [
+        "standalone",
+        "desktop",
+        "web",
+        "remote-sensing"
+      ],
+      "description": "Limited Error Raster Compression codec for efficient raster/DEM storage; no external elevation datasets included",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-evaluate"
+    },
+    {
+      "name": "ArcGIS Maps SDK for .NET samples",
+      "url": "https://github.com/Esri/arcgis-maps-sdk-dotnet-samples",
+      "category": "dotnet",
+      "role": "samples",
+      "platforms": [
+        "desktop",
+        "dotnet"
+      ],
+      "description": "WPF, WinUI and .NET GIS interface and navigation samples; ArcGIS Maps SDK runtime terms separate",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "platform-samples"
+    },
+    {
+      "name": "ArcGIS Maps SDK for .NET Toolkit",
+      "url": "https://github.com/Esri/arcgis-maps-sdk-dotnet-toolkit",
+      "category": "dotnet",
+      "role": "library",
+      "platforms": [
+        "desktop",
+        "dotnet"
+      ],
+      "description": "Reusable GIS UI components and navigation/toolkit patterns for .NET; check SDK/deployment licenses",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-evaluate"
+    },
+    {
+      "name": "Esri Leaflet",
+      "url": "https://github.com/Esri/esri-leaflet",
+      "category": "desktop-web",
+      "role": "library",
+      "platforms": [
+        "web",
+        "desktop"
+      ],
+      "description": "ArcGIS map and feature services integration in Leaflet apps; respect service authentication and terms",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-evaluate"
+    },
+    {
+      "name": "MapLibre ArcGIS integration",
+      "url": "https://github.com/Esri/maplibre-arcgis",
+      "category": "desktop-web",
+      "role": "library",
+      "platforms": [
+        "web",
+        "desktop"
+      ],
+      "description": "Interoperate with supported ArcGIS feature, tile or map services through MapLibre; no hosted basemap entitlement",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-evaluate"
+    },
+    {
+      "name": "ArcGIS REST JS",
+      "url": "https://github.com/Esri/arcgis-rest-js",
+      "category": "desktop-web",
+      "role": "library",
+      "platforms": [
+        "web",
+        "desktop"
+      ],
+      "description": "ArcGIS REST requests, typed feature/service access and authentication integration patterns",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "library-evaluate"
+    },
+    {
+      "name": "Esri CIM specification",
+      "url": "https://github.com/Esri/cim-spec",
+      "category": "cartography",
+      "role": "specification",
+      "platforms": [
+        "arcgis-pro",
+        "desktop",
+        "standalone"
+      ],
+      "description": "Versioned cartographic information model and renderer/layout metadata reference; not a renderer implementation",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "standards-reference"
+    },
+    {
+      "name": "Esri I3S specification",
+      "url": "https://github.com/Esri/i3s-spec",
+      "category": "3d",
+      "role": "specification",
+      "platforms": [
+        "3d",
+        "web",
+        "desktop"
+      ],
+      "description": "Indexed 3D Scene Layer format and interoperable scene cache architecture",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "standards-reference"
+    },
+    {
+      "name": "Awesome ArcGIS Developers",
+      "url": "https://github.com/Esri/awesome-arcgis-developers",
+      "category": "curation",
+      "role": "catalog",
+      "platforms": [
+        "arcgis-pro",
+        "web",
+        "desktop"
+      ],
+      "description": "Esri-maintained curated index of resources and project examples; inspect licenses of each underlying project",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "discovery-reference"
+    },
+    {
+      "name": "PROJ CRS Explorer",
+      "url": "https://github.com/OSGeo/PROJ-CRS-Explorer",
+      "category": "spatial-core",
+      "role": "reference",
+      "platforms": [
+        "web",
+        "desktop",
+        "standalone"
+      ],
+      "description": "Interactive projection system explorer and filtering concepts; verify repository license before code adoption",
+      "reviewed_on": "2026-10-24",
+      "license": "verify-upstream",
+      "integration": "ui-reference"
     }
   ]
 }
