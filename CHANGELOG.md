@@ -8,9 +8,15 @@
 - Add reproducible landing-page checks and GitHub Issue forms for bugs and feature suggestions.
 - Provide copy-ready repository About, topics, homepage and publication instructions under `docs/REPOSITORY_SETTINGS.md`; GitHub sidebar values must still be set by an authorized administrator.
 
+## 0.3.4 — 2026-10-24
+
+- Remove an early-stage mobile GIS app from curated case studies and catalog recommendations; maintain only sufficiently mature engineering references.
+- Update the searchable catalog to 104 entries while preserving six installable skills.
+- Align bilingual documentation and website counters; add a regression test preventing accidental re-inclusion. No changes to the excluded app's own repository.
+
 ## 0.3.3 — 2026-10-24
 
-- Inspect six public, author-owned GIS projects: MIRSAD, CreateFlowArrow, GeologicalCrossSectionToolbox, GeoVision, ArcMap Style Collection and GIS Data Repositories Professional 2026.
+- Inspect public, author-owned GIS projects and identify suitable first-party engineering references.
 - Expand the source catalog to 105 repositories with explicit engineering roles, reference availability, original licensing and caveats.
 - Add `references/ahmad-ibrahim-gis-case-studies.md` and an installable `arcgis-toolbox-engineering` skill covering Python 2/3 ArcPy, native acceptance tiers, scientific results, safe in-place geometry edits and Desktop migration.
 - Add offline regression tests for case-study coverage and native-test disclosure; update primary skill, English/Arabic READMEs and GitHub Pages homepage to show six skills.
