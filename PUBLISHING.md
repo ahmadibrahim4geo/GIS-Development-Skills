@@ -27,10 +27,12 @@ If the installer does not discover the skill, verify the folder `skills/gis-deve
 1. Run `python scripts/validate_catalog.py` and `python -m unittest discover -s tests -v`.
 2. Ensure every new source has license and source-availability notes.
 3. Wait for the GitHub Actions checks to pass on the commit being released.
-4. Tag the tested commit as `v0.2.0` (or the next version) and publish a GitHub Release when ready.
+4. Tag the tested commit with the appropriate next semantic version (for example `v0.3.2`) and publish a GitHub Release when ready.
 5. State clearly that templates are reference implementations, not GIS-app integration-tested binaries.
 
 ## Publish the static homepage with GitHub Pages
+
+The complete copy-ready description, topics and Pages settings are maintained in [docs/REPOSITORY_SETTINGS.md](docs/REPOSITORY_SETTINGS.md). **Committing these files does not change GitHub About or Pages admin settings.**
 
 The repository includes a standalone responsive bilingual `index.html` and `assets/logo.svg` / `assets/icon.svg`. It loads `references/project-catalog.json` and `references/free-geospatial-apis.json` from the same repository directory, so the cards reflect future catalog updates.
 
