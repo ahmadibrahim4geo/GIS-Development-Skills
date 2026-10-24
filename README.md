@@ -1,4 +1,9 @@
+<p align="center"><img src="assets/logo.svg" alt="GIS Development Skills logo" width="440"></p>
+<p align="center"><strong>Build GIS tools, plugins and geospatial applications with a verifiable development workflow.</strong></p>
+
 # GIS Development Skills 🌍
+
+**Project website:** [Homepage source (`index.html`)](index.html) · [Brand assets](assets/) · [Arabic guide](README.ar.md). The interactive homepage is ready for GitHub Pages publishing; until Pages is enabled, browse the file and project documentation here.
 
 **An open, installable Agent Skill for building reliable GIS tools, plugins, web maps, and desktop geospatial applications.**
 
