@@ -68,3 +68,22 @@ html[lang="en"] .lang-ar,html[lang="ar"] .lang-en{display:none!important}
 .label-north{top:22px;left:10%}.label-east{right:10%;bottom:18px}
 @media(max-width:640px){.scene-identity{height:235px;min-height:195px}.scene-logo{height:194px;width:194px}.scene-orbit{width:220px;height:140px}.label-north{top:0}.label-east{bottom:0}}
 @media(prefers-reduced-motion:reduce){.scene-logo{transition:none!important}.hero-visual:hover .scene-logo{transform:none!important}}
+
+/* Identity correction, 2026-10-24: real wordmark text, no baked SVG letter-spacing or G distortion. */
+.hero-lockup{display:flex;align-items:center;gap:16px;width:100%;min-width:0;direction:ltr;text-align:left}
+.hero-symbol{width:clamp(96px,11vw,158px);height:auto;aspect-ratio:1;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 10px 20px rgba(2,19,29,.28))}
+.hero-wordmark{min-width:0;flex:1}
+.hero-wordmark h1{display:flex;align-items:baseline;gap:.22em;flex-wrap:wrap;margin:0;font-family:Inter,'Segoe UI',system-ui,sans-serif;font-size:clamp(22px,2.35vw,33px);line-height:1.18;letter-spacing:-.045em;font-weight:700;white-space:normal}
+.hero-wordmark h1 span{display:inline-block}
+.hero-wordmark .word-gis{color:#08d6dc;font-weight:850;font-size:1.22em;letter-spacing:-.03em}
+.hero-wordmark .word-development{color:#f6fafb;font-weight:650}
+.hero-wordmark .word-skills{color:#9eedaa;font-weight:740}
+.hero-tagline{margin:10px 0 0!important;line-height:1.5;color:#b6d7dc;font-size:clamp(12px,1.3vw,16px);font-weight:500;letter-spacing:normal;white-space:normal}
+.hero-exact{margin-top:30px}
+.scene-identity .scene-logo{object-fit:contain}
+.nav-brand-name,.nav-brand-name strong,.nav-brand-name small{letter-spacing:0}
+.nav-brand-name strong{font-weight:740}
+@media(max-width:1100px){.hero-lockup{gap:10px}.hero-symbol{width:112px}.hero-wordmark h1{font-size:clamp(20px,2vw,28px)}}
+@media(max-width:900px){.hero-symbol{width:clamp(105px,22vw,154px)}.hero-wordmark h1{font-size:clamp(23px,3.4vw,36px)}}
+@media(max-width:640px){.hero-lockup{gap:10px;align-items:center}.hero-symbol{width:90px}.hero-wordmark h1{font-size:clamp(20px,5vw,27px);gap:.16em}.hero-tagline{font-size:12px;line-height:1.4;margin-top:7px!important}.hero-exact{margin-top:22px}}
+@media(max-width:360px){.hero-symbol{width:69px}.hero-wordmark h1{font-size:19px}}
