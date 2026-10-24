@@ -32,6 +32,7 @@ Use this skill when designing or implementing a GIS **tool, add-in, plugin, desk
 | ArcGIS Pro | `../../references/arcgis-pro.md` | ArcPy / `.pyt` / Python 3 | Pretend `arcpy.mapping` equals `arcpy.mp` |
 | QGIS | `../../references/qgis.md` | PyQGIS / Processing algorithms | Assume every version shares one Qt/PyQGIS API |
 | Desktop / 2D / 3D | `../../references/desktop-and-web.md` | Tauri/Rust, Qt, MapLibre, CesiumJS | Treat rendering engine as geoprocessing engine |
+| Independent GIS Desktop executable / toolbox migration | `../gis-desktop-application-development/SKILL.md`, `../../references/desktop-application-engineering.md` | PySide6/Qt, Tauri/Rust, WPF + independent GIS I/O | Mistake a shell UI or an ArcPy-hosted toolbox for a tested standalone installer |
 | Remote sensing / AI | `../../references/remote-sensing.md`, `../../references/geoai-satellite-map.md` | GDAL, STAC, raster processing, model inference | Ignore radiometry, alignment, licensing and reproducibility |
 | .NET GIS desktop / Pro SDK | `../../references/dotnet-gis.md` | WPF, WebView2, NetTopologySuite, ArcGIS Pro SDK | Assume .NET GIS components or ArcGIS SDK are free of platform and license constraints |
 | R-based mapping and Rust GIS architecture | `../../references/rustgis-and-geolibre-r.md` | GeoLibre R, RustGIS | Assume a client rendering library grants permissions for its underlying web data |
