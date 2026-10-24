@@ -4,7 +4,7 @@
 
 # GIS Development Skills 🌍
 
-[![GIS Skill validation](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml/badge.svg)](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml) ![License: MIT](https://img.shields.io/badge/license-MIT-3f8c76) ![Release: v0.3.3](https://img.shields.io/badge/release-v0.3.3-24483d)
+[![GIS Skill validation](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml/badge.svg)](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml) ![License: MIT](https://img.shields.io/badge/license-MIT-3f8c76) ![Release: v0.3.4](https://img.shields.io/badge/release-v0.3.4-24483d)
 
 **Project homepage:** [GitHub Pages website](https://ahmadibrahim4geo.github.io/GIS-Development-Skills/) *(check publication status in repository Pages settings)* · [View homepage source](index.html) · [English / العربية](README.ar.md) · [Logo](assets/logo.svg).
 
@@ -14,7 +14,7 @@
 
 Created by [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). Independent community resource; **not affiliated with Esri, QGIS, GeoRust, GeoLibre, or other catalogued projects**.
 
-> **Status:** v0.3.3 expanded open-source GIS catalog, GeoLibre R/RustGIS and public geospatial APIs. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
+> **Status:** v0.3.4 expanded open-source GIS catalog, GeoLibre R/RustGIS and public geospatial APIs. Curated source pointers, development workflows, code starter templates and offline catalog tools. Templates are illustrative; production workflows must be tested in the target GIS installation.
 
 [اقرأ بالعربية](README.ar.md) · [Contributing](CONTRIBUTING.md) · [Publishing](PUBLISHING.md) · [Catalog](references/project-catalog.json) · [Skill](skills/gis-development/SKILL.md) · [Free GIS APIs](references/free-geospatial-apis.md) · [GeoLibre integrations](references/geolibre-integration.md) · [Report issues / propose features](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues/new/choose)
 
@@ -24,12 +24,11 @@ This repository includes a **working agent skill**: step-by-step architecture se
 
 ## Tested-source references from our own GIS projects (v0.3.3)
 
-**105 curated software projects and six installable agent skills.** Six public source projects developed or curated by Ahmad Ibrahim are now documented as real engineering case studies, including native ArcGIS toolboxes and a standalone Desktop migration path:
+**104 curated software projects and six installable agent skills.** Five public source projects developed or curated by Ahmad Ibrahim are now documented as real engineering case studies, including native ArcGIS toolboxes and a standalone Desktop migration path:
 
 - [MIRSAD](https://github.com/ahmadibrahim4geo/MIRSAD) — three ArcGIS Python Toolboxes, shared climate calculations, offline/headless and Pro acceptance evidence; separate **development-only** Windows Desktop build.
 - [CreateFlowArrow](https://github.com/ahmadibrahim4geo/Create-FlowArrow-Tool) — gravity-network arrows, topology/slope audits and optional in-place geometry changes requiring explicit consent.
 - [Geological Cross-Section Toolbox](https://github.com/ahmadibrahim4geo/GeologicalCrossSectionToolbox) — `.pyt`, separate geological engine, DEM and DXF/HTML export.
-- [GeoVision](https://github.com/ahmadibrahim4geo/GeoVision) — Android/Kotlin GIS application architecture.
 - [ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection) — cartographic/Arabic style references; third-party fonts and styles retain independent rights.
 - [GIS Data Repositories Professional 2026](https://github.com/ahmadibrahim4geo/gis-data-repositories-professional-2026) — reusable data discovery and link auditing patterns.
 
