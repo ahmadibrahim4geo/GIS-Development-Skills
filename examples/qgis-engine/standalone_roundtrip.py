@@ -16,7 +16,7 @@ def main(argv=None):
         parser.error("Refusing to overwrite an existing output")
     try:
         from qgis.core import (QgsApplication, QgsFeature, QgsGeometry, QgsPointXY,
-                               QgsVectorFileWriter, QgsVectorLayer)
+                               QgsVectorFileWriter, QgsVectorLayer, QgsProject)
     except ImportError:
         print("PyQGIS runtime missing; use the Python environment supplied with QGIS", file=sys.stderr)
         return 2
@@ -42,7 +42,7 @@ def main(argv=None):
             options = QgsVectorFileWriter.SaveVectorOptions()
             options.driverName = "GPKG"
             code, *_ = QgsVectorFileWriter.writeAsVectorFormatV3(
-                layer, str(path), app.transformContext(), options)
+                layer, str(path), QgsProject.instance().transformContext(), options)
             if code != QgsVectorFileWriter.NoError:
                 raise RuntimeError("GeoPackage write failed: {}".format(code))
             check = QgsVectorLayer(str(path), "readback", "ogr")
