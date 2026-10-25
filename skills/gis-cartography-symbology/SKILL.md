@@ -14,6 +14,7 @@ Use for point, line, polygon, raster, labels, legends, scientific color maps, ma
 - [Curated, license-aware catalog](../../references/cartographic-style-sources.json) and [selection guide](../../references/cartographic-style-guide.md).
 - [Own ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection) is the primary external discovery source. It contains third-party assets with *independent* licenses. Reference assets by URL and exact path, not by copying or automatically installing.
 - [Cartography example](../../examples/cartography/README.md) is a testable MapLibre vector fixture, **not** proof of ArcGIS/QGIS renderer parity.
+- [Open map marker/icon libraries](../../references/map-marker-icon-library.md) cover eight icon packs plus Cesium PinBuilder, distinguishing CC0, Apache, CC BY-SA, MIT plugin, SIL OFL font and other asset rights; [mandatory imported KMZ fidelity](../../references/kml-kmz-symbol-preservation.md) takes precedence on external files.
 
 ## Action contract
 1. Inspect actual geometry (Point/MultiPoint, LineString/MultiLineString, Polygon/MultiPolygon, raster bands/pixel type), coordinate system, scale, field semantics, nulls and category/numeric distribution; verify raster NoData, statistics and band definitions. Distinguish geographic units from graphic symbol units.
@@ -36,6 +37,14 @@ Use for point, line, polygon, raster, labels, legends, scientific color maps, ma
 - Repository MIT licenses do **not** automatically relicense included Esri/USGS/BGS files, fonts or converted styles; verify per-file rights, attribution and embedding/redistribution rules before shipping.
 - Do not download/run untrusted bundled scripts, font installers, SVG scripts or external QML expressions automatically. Sanitize URLs and validate imports.
 
+## Map icons and the KML/KMZ branch
+
+1. **New layers / new user-authored placemarks only:** search [style source catalog](../../references/cartographic-style-sources.json) by map-icon library, license, target platform and KML packaging role. Favor CC0 Pinhead, Maki and Temaki for general maps; optionally Material Symbols, licensed Map Icons Collection, Scott Map Icons or Leaflet marker generators. Cesium PinBuilder is a runtime generator, not an importer.
+2. When exporting *new* KML/KMZ icons, generate portable transparent PNGs from licensed SVG/canvas pins, include safe relative `files/icons/...` paths, and author user-chosen `IconStyle` color/scale/hotSpot/heading. Browser icon fonts, SVG elements and CSS are not portable substitutes for KML images.
+3. **Imported KML/KMZ must never be automatically re-styled:** source `Style`, `StyleMap` normal/highlight, `styleUrl`, all icon images, line/polygon color/width/opacity, labels and folders override default app theme/marker pack. Save original resource bytes and style links. A missing icon fallback is *display-only*, not an exported replacement.
+4. Allow restyling a selected imported object only by an **explicit user command** with Undo/Reset to original and Save As. Do not modify source files, shared styles or sibling placemarks by accident. Record whether the choice modifies one feature or a shared style.
+5. Test [offline KMZ resource/style comparison](../../examples/kml-style-preservation/README.md) and real host rendering independently. Follow [KML/KMZ import/export contract](../../references/kml-kmz-symbol-preservation.md) and the existing [Google/OGC fidelity guide](../../references/google-kml-kmz-compatibility.md).
+
 ## Imported KML/KMZ style exception
 
 When symbols originate in an imported KML/KMZ, user-authored styling wins over application palettes. Apply [KML/KMZ preservation rules](../kml-kmz-engineering/SKILL.md) and [Google styling semantics](../../references/google-kml-kmz-compatibility.md) (KML ABGR color, StyleMap normal/highlight, hotspot, inline/shared styles, KMZ assets). Never replace them with a default cartographic renderer without explicit user action; record unsupported style capabilities separately.
@@ -51,3 +60,4 @@ When symbols originate in an imported KML/KMZ, user-authored styling wins over a
 - [ ] Tested native format and target version; original geometry/pixels unchanged
 - [ ] External assets' exact license/attribution verified; fallback available if not
 - [ ] Preview, apply, save/reopen and real appearance verified (or limitations explicitly recorded)
+- [ ] Imported styled KML/KMZ retained original colors, StyleMaps, local image bytes and labels without automatic icons/palette overrides
