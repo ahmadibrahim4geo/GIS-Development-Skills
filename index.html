@@ -230,7 +230,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     <!-- Preserve manifest-backed IDs and semantic counters exactly -->
     <div class="studio-metrics">
         <div class="p-2 text-center">
-          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">22</strong>
+          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">23</strong>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Installable Agent Skills</span>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مهارة برمجية قابلة للتثبيت</span>
         </div>
@@ -283,6 +283,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
               <option value="gis-development">General GIS / GIS عام</option>
               <option value="arcgis-toolbox-engineering">ArcGIS Pro / ArcMap</option>
               <option value="qgis-plugin-development">QGIS Plugins</option>
+              <option value="qgis-engine-integration">QGIS Engine · Core / Desktop / Server</option>
               <option value="kml-kmz-engineering">Google Earth · KML/KMZ</option>
               <option value="gis-desktop-application-development">Desktop GIS · WPF / Qt / Cesium</option>
               <option value="geospatial-web-mapping">Web GIS · 2D / 3D</option>
@@ -738,11 +739,11 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         tag: 'QGIS',
         tagColor: 'emerald',
         category: 'desktop',
-        title: 'QGIS & PyQGIS',
-        en: 'Processing providers, QGIS plugins, Qt UI patterns and cross-version considerations.',
-        ar: 'بناء إضافات QGIS ومزودي المعالجة (Processing Providers) مع مراعاة توافق الإصدارات.',
+        title: 'QGIS Engine & PyQGIS',
+        en: 'Core/GUI engines, headless PyQGIS, plugins and Qt/Cesium worker integration.',
+        ar: 'محرك QGIS Core/GUI وخدمات PyQGIS والتكامل مع التطبيقات المستقلة.',
         checks: '✓ QgsProcessingAlgorithm • ✓ Background QgsTask thread safety • ✓ Qt5/Qt6 compatibility',
-        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/qgis.md'
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/qgis-engine-integration/SKILL.md'
       },
       {
         id: 'global-mapper',
@@ -1026,6 +1027,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       'gis-internationalization-arabic':{en:'Test UTF-8 text, Arabic RTL/BiDi UI and map labels without changing geometry or GIS field identifiers.',ar:'اختبر عرض العربية واتجاه RTL والنص المختلط وملصقات الخرائط دون تعديل الإحداثيات أو أسماء الحقول.',enTask:'Inspect my GIS application localization architecture. Preserve stable field identifiers and geometry while adding tested Arabic RTL/BiDi strings, Unicode attributes and map-label rendering. Propose a numbered plan before edits, implement approved changes, and verify exports in the actual GIS host when available.',arTask:'افحص دعم العربية واللغات في تطبيق GIS، وحافظ على أسماء الحقول والمعرّفات والإحداثيات، وطوّر عرض العربية واتجاه RTL/BiDi وملصقات الخرائط والسمات النصية. اعرض خطة مرقمة قبل التعديل ثم نفذ ما اعتمدته واختبر النواتج داخل البرنامج عند توفره.'},
       'gis-development':{en:'For mixed GIS projects, start with the core router.',ar:'للمشروعات التي تضم عدة تخصصات ابدأ بالـ GIS Router.',enTask:'Inspect my existing GIS project. Identify its runtime, CRS, data formats and key risks. Propose a numbered plan for my approval; execute approved tasks using suitable GIS skills; provide real test evidence and a numbered development journal, stating any tests not run.',arTask:'افحص مشروع GIS الموجود وحدد بيئة التشغيل ونظام الإحداثيات والصيغ والمخاطر. اعرض خطة مرقمة لاعتمادها، ونفّذ المهام المعتمدة بالمهارات المناسبة، واختبر النتائج الفعلية وسجّل كل خطوة، ووضح ما لم تختبره.'},
       'arcgis-toolbox-engineering':{en:'ArcGIS Pro and ArcMap require the correct licensed host, version and ArcPy environment.',ar:'أدوات ArcGIS Pro أو ArcMap تحتاج الإصدار والترخيص وبيئة ArcPy المناسبة.',enTask:'Inspect my ArcGIS toolbox (.pyt / script tool) and identify the ArcGIS version and parameter requirements. Propose a reviewed plan. Implement approved changes; test validation, CRS, outputs and ArcPy in the actual host if available. Record evidence, failures and numbered progress.',arTask:'افحص أداة ArcGIS وملف .pyt أو script tool، وحدد الإصدار والبارامترات. اعرض خطة للاعتماد، ثم نفّذ المعتمد واختبر المدخلات ونظام الإحداثيات والنواتج داخل ArcGIS إن توفر، وسجّل الاختبارات والتعديلات بالترتيب.'},
+      'qgis-engine-integration':{en:'Use QGIS Core/GUI and a headless Processing worker safely in independent GIS apps; audit GPL and versions.',ar:'دمج محرك QGIS والتشغيل المستقل وخدمات المعالجة مع التحقق من توافق الإصدارات والترخيص.',enTask:'Assess QGIS as the engine for an independent GIS application. Compare native Qt GUI with a headless PyQGIS worker for WPF/Cesium; document real providers, CRS/units, GPL requirements, security, output readback and T2-T4 native testing.',arTask:'راجع دمج محرك QGIS في تطبيق GIS مستقل مع فصل واجهة Qt عن خدمة PyQGIS لبرامج WPF/Cesium. وثق المساقط والتراخيص وأمان التشغيل واختبارات T2-T4 داخل بيئة QGIS الحقيقية.'},
       'qgis-plugin-development':{en:'Use PyQGIS/Processing and confirm your installed QGIS version before testing.',ar:'استخدم PyQGIS/Processing وحدد إصدار QGIS المثبت قبل الاختبار.',enTask:'Inspect my QGIS plugin and version constraints. Propose a numbered plan; implement only approved changes and verify PyQGIS imports, Processing outputs, CRS and GUI actions in native QGIS if possible. Keep a numbered development journal.',arTask:'افحص إضافة QGIS وحدد الإصدار والتوافق. اعرض خطة مرقمة، ثم نفّذ المعتمد واختبر PyQGIS وProcessing ونظام الإحداثيات والواجهة داخل QGIS عند توفره. وثّق كل خطوة في سجل مرقم.'},
       'kml-kmz-engineering':{en:'Preserve original KML/KMZ styling, folders, embedded icons and portable resources.',ar:'احفظ الأنماط والألوان والمجلدات والأيقونات والموارد الأصلية في KML/KMZ.',enTask:'Inspect the KML/KMZ import and export pipeline. Preserve original placemark icons, shared styles, colors, folders and portable assets. Show a numbered plan for approval, implement safely, test round-trip fidelity and record every correction. State native Google Earth limitations.',arTask:'افحص استيراد وتصدير KML/KMZ وحافظ على أيقونات المعالم والأنماط المشتركة والألوان والمجلدات والموارد الأصلية. اعرض خطة مرقمة لاعتمادها ثم نفّذ واختبر حفظ الخصائص والتصدير والاستعادة، وسجل التعديلات وقيود الاختبارات الأصلية.'},
       'gis-desktop-application-development':{en:'Test real window/navigation behavior; WPF/Qt/Cesium needs a working desktop runtime.',ar:'اختبر تشغيل النافذة والتنقل الحقيقي؛ WPF/Qt/Cesium يحتاج بيئة سطح المكتب المناسبة.',enTask:'Inspect my GIS desktop app, including the renderer, ribbon, Places/Layers, KML import, camera and save/open lifecycle. Propose numbered tasks and obtain approval. Implement end-to-end functions, run available native UI/navigation tests and record steps, blockers and evidence.',arTask:'افحص تطبيق GIS المكتبي: محرك العرض والشريط وPlaces/Layers واستيراد KML والكاميرا والحفظ والفتح. اعرض خطة مرقمة ثم نفّذ وظائف حقيقية واختبر الواجهة والتنقل في البرنامج إن أمكن، وسجل كل خطوة وعائق ونتيجة.'},

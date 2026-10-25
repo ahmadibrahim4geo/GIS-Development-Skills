@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 22,
+  "skill_count": 23,
   "skill_ids": [
     "agent-development-journal",
     "arcgis-toolbox-engineering",
@@ -21,6 +21,7 @@
     "global-mapper-development",
     "kml-kmz-engineering",
     "prompt-intent-orchestrator",
+    "qgis-engine-integration",
     "qgis-plugin-development",
     "remote-sensing-pipelines",
     "spatial-databases",

@@ -20,6 +20,8 @@
 
 A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.
 
+**New QGIS Engine Integration:** [specialist skill](skills/qgis-engine-integration/SKILL.md) · [official QGIS architecture and upstream repositories](references/qgis-engine-integration.md) · [native PyQGIS GeoPackage smoke test](examples/qgis-engine/README.md). Covers Core/GUI/Processing/3D/Server and safe Cesium/WPF workers; release packaging and native execution require separate tests and license review.
+
 <table width="100%">
   <tr>
     <td align="center" valign="top" width="16%">
@@ -49,7 +51,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>22 installable GIS skills</strong> · <strong>148 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>23 installable GIS skills</strong> · <strong>148 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·

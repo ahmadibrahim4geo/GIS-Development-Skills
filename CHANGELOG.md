@@ -1,3 +1,9 @@
+# Unreleased — QGIS Engine Integration specialist (2026-10-25)
+
+- Add a QGIS Core/GUI/Processing/Server standalone-engine skill, upstream source/license guide and native-only PyQGIS GeoPackage readback sample.
+- Integrate new QGIS engine option with bilingual README, index, Explorer, desktop/plugin routing and decision tree; synchronize 23-skill inventory and offline tests.
+- No claim of native QGIS/WPF runtime testing or packaged application validation.
+
 # Changelog
 
 ## Unreleased — Project Wizard bilingual behavior and stale-export repair (2026-10-25)
