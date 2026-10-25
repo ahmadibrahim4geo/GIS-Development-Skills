@@ -6,6 +6,8 @@ license: MIT
 
 # GIS Internationalization, Localization & Arabic Engineering
 
+**Free-first policy:** Follow [free-first-policy.md](../../references/free-first-policy.md). Disclose commercial runtime and library dependencies.
+
 **First read:** [Plain-language concepts, examples and upstream references](../../references/gis-multilingual-arabic-guide.md). Read the guide before designing multilingual schemas, map labels or Arabic UI.
 
 Load this skill for GIS UI, cartography, spatial attributes, geocoding, exports, or toolboxes that accept or display multilingual text. Arabic is a first-class test target; French, English and other languages use the same extensible locale architecture.
