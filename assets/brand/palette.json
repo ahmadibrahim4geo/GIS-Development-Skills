@@ -42,6 +42,11 @@
     "assets/brand/icon.svg",
     "assets/brand/favicon.svg",
     "assets/brand/logo-compact-dark.svg",
-    "assets/brand/logo-compact-light.svg"
+    "assets/brand/logo-compact-light.svg",
+    "assets/brand/showcase.html",
+    "assets/brand/export_png.py",
+    "assets/brand/tokens.css",
+    "assets/brand/README.md",
+    "assets/brand/palette.json"
   ]
 }
