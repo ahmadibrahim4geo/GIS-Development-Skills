@@ -45,7 +45,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>16 installable GIS skills</strong> · <strong>138 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>17 installable GIS skills</strong> · <strong>138 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -93,6 +93,8 @@ Previous skills, original guidance, project/API references, brand assets and bil
 
 ## GIS Project Wizard, KML/KMZ and reliability
 
+- [Multilingual GIS and Arabic-first localization skill](skills/gis-internationalization-arabic/SKILL.md): RTL/BiDi, Unicode attributes, map labels, localized toolboxes, exports and language-aware search.
+
 - [Launch the bilingual GIS Project Wizard](project-wizard.html) — free-first architecture choices and downloadable Markdown implementation plans.
 - [Project Wizard implementation roadmap](docs/PROJECT_WIZARD_PLAN.md).
 - [KML/KMZ Engineering Skill](skills/kml-kmz-engineering/SKILL.md) and [open-source repository review](references/kml-kmz-repository-review.md).
@@ -126,7 +128,7 @@ The full source/skill-pack integrity audit introduced:
 - `python scripts/validate_skill_pack.py` — offline checks of all skill frontmatters, local documentation links, website resources, and synchronized project/API/skill counters.
 - [Technical audit and outstanding verification](docs/TECHNICAL_AUDIT_2026-10-24.md), with exact test limits and remaining host-runtime checks.
 
-**Current inventory:** 138 curated software references, 52 API service entries, 24 data repositories and **16 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
+**Current inventory:** 138 curated software references, 52 API service entries, 24 data repositories and **17 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
 
 ```bash
 python scripts/validate_catalog.py
