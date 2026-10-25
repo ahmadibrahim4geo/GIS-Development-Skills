@@ -213,7 +213,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
           <div class="flex gap-1.5">
             <button onclick="setCliCommand('clone', this)" class="cli-tab px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono font-semibold">Clone Repo</button>
             <button onclick="setCliCommand('verify', this)" class="cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono">Run QA Tests</button>
-            <button onclick="setCliCommand('skills', this)" class="cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono">List 20 Skills</button>
+            <button onclick="setCliCommand('skills', this)" class="cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono">List 21 Skills</button>
           </div>
         </div>
         <div class="flex items-center justify-between gap-3">
@@ -237,8 +237,8 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
           href="#capabilities" 
           class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-400 to-emerald-400 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-sky-500/20 hover:brightness-110 transition-all"
         >
-          <span data-lang="en">Explore 20 Specialist Skills ↓</span>
-          <span data-lang="ar">استكشف الـ 20 مهارة تخصصية ↓</span>
+          <span data-lang="en">Explore 21 Specialist Skills ↓</span>
+          <span data-lang="ar">استكشف الـ 21 مهارة تخصصية ↓</span>
         </a>
         <a 
           href="explorer.html#all-skills" 
@@ -254,7 +254,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       <!-- 5-Metric Scope Counter Bar -->
       <div class="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-slate-900/75 border border-slate-800/90 backdrop-blur-md">
         <div class="p-2 text-center">
-          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">20</strong>
+          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">21</strong>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Installable Agent Skills</span>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مهارة برمجية قابلة للتثبيت</span>
         </div>
@@ -295,6 +295,18 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       </div>
       <p class="text-sm"><a class="text-sky-300 underline mr-5" href="skills/prompt-intent-orchestrator/SKILL.md"><span data-lang="en">Read the skill</span><span data-lang="ar">اقرأ المهارة</span></a><a class="text-sky-300 underline" href="references/intent-orchestration-workflow.md"><span data-lang="en">Review workflow contract</span><span data-lang="ar">راجع خطة التشغيل والاعتماد</span></a></p>
       <p class="text-xs text-slate-400 mt-3"><span data-lang="en">Informational workflow; this page cannot run LLMs or change your project.</span><span data-lang="ar">واجهة تعريفية لا تُشغّل الذكاء الاصطناعي أو تغير المشروع مباشرة.</span></p>
+    </section>
+
+    <section id="development-journal" class="py-12 border-t border-slate-800/70" aria-label="Agent Development Journal">
+      <p class="text-xs font-bold text-sky-400 tracking-widest"><span data-lang="en">PERSISTENT PROJECT MEMORY</span><span data-lang="ar">سجل دائم لتطوير المشروع</span></p>
+      <h2 class="mt-3 text-3xl font-bold"><span data-lang="en">Agent Development Journal</span><span data-lang="ar">سجل التطوير المرقّم وذاكرة الوكيل</span></h2>
+      <p class="mt-3 mb-5 text-slate-300"><span data-lang="en">Numbered reports for user requests, implementations, corrections and tests, with context recovery across sessions.</span><span data-lang="ar">تقارير مرقمة لكل طلب وتنفيذ وتعديل وإلغاء واختبار مع استعادة تاريخ المشروع بين الجلسات.</span></p>
+      <div class="flex flex-wrap gap-4 text-sm">
+        <a class="text-sky-300 underline" href="skills/agent-development-journal/SKILL.md"><span data-lang="en">Read journal skill</span><span data-lang="ar">اقرأ مهارة السجل</span></a>
+        <a class="text-sky-300 underline" href="examples/development-journal/README.md"><span data-lang="en">Offline example</span><span data-lang="ar">مثال للتجربة</span></a>
+        <a class="text-sky-300 underline" href="references/agent-memory-skill-references.md"><span data-lang="en">Related skills</span><span data-lang="ar">المهارات المرجعية</span></a>
+      </div>
+      <p class="mt-3 text-xs text-slate-400"><span data-lang="en">An agent must invoke the logger; this page does not run processes.</span><span data-lang="ar">لا بد أن يستدعي الوكيل التسجيل؛ هذه الصفحة لا تنفذ العمليات.</span></p>
     </section>
 
     <!-- INTERACTIVE DEVELOPMENT PATHWAYS & SKILLS EXPLORER -->

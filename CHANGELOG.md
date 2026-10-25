@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — Agent Development Journal & Project Memory (2026-10-25)
+
+- Add numbered append-only project-local request/action/revision/cancellation/rollback-intent/verification/handoff records with resumed context, hash-chain integrity and safe derived Markdown repair.
+- Add standard-library offline CLI and tests, reference guide and a review of Planning with Files, Superpowers and Spec Kit (design inspiration only; no third-party tools installed).
+- Update agent router integration, bilingual README/site, free-first matrix, manifest, security and CI. No automatic process monitoring, GIS host execution or Git rollback is claimed.
+
+
 ## Unreleased — Prompt Intent & Execution Orchestrator (2026-10-25)
 
 - Add a review-first Arabic/English natural-language intent skill, dependency-aware plan format, skill routing and cross-cutting security requirements.
