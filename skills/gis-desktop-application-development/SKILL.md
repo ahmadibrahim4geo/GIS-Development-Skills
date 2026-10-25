@@ -7,6 +7,23 @@ compatibility: Requires the target desktop build toolchain and GIS runtime to ru
 
 # GIS Desktop Application Development
 
+## Start here: guided navigation
+
+For a complete step-by-step implementation, use the [Desktop GIS Engineering Playbook](../../references/desktop-application-engineering.md). It contains concrete component contracts, architecture recipes, file-format acceptance matrices, UI requirements, security controls, and T0-T4 release gates.
+
+For source repositories, licenses, and choosing an actual GIS engine or interface toolkit, use the [Desktop GIS Technology Directory](../../references/desktop-gis-technology-directory.md).
+
+**Choose your route:**
+- Full-featured GIS workstation: QGIS Core / GUI / Processing and Qt; follow the QGIS integration specialist.
+- Lightweight 2D viewer: MapLibre renderer with separately chosen GDAL / PROJ / GEOS processing.
+- 3D globe: CesiumJS plus a GIS data-processing adapter.
+- Scientific batch application: GDAL / PROJ / GEOS with a desktop shell and background workers.
+- Rust-first desktop GIS: review RustGIS as an application reference, choose a maintained Rust shell and verify GIS crates individually.
+- Adapt an existing open-source GIS application: complete the fork and license review before reusing source.
+
+**Required outputs:** architecture decision, dependency and license inventory, working vertical slice, format readback tests, GUI command matrix, packaged-app evidence, and limitations. Use shared security and acceptance skills rather than duplicating them.
+
+
 **Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
 
 Use this for **independent executable applications**, not ArcGIS Pro SDK add-ins or a QGIS plugin. Select host OS, packaging model, renderer and processing engine separately. A working toolbar mockup is not a completed GIS app.
