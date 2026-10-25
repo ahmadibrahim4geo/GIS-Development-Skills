@@ -21,6 +21,14 @@ class APICatalogTests(unittest.TestCase):
     def test_schema_valid(self):
         self.assertEqual([],self.validator.validate_catalog())
 
+    def test_free_first_cost_tiers(self):
+        entries=self.catalog['services']
+        tiers={x['cost_tier'] for x in entries}
+        self.assertEqual(tiers,{'free-self-hosted','free-conditional','restricted','trial','commercial','unavailable'})
+        self.assertEqual(43,len(self.searcher.search(entries,free_only=True)))
+        self.assertFalse(any(x['cost_tier'] in ('commercial','trial','restricted','unavailable') for x in self.searcher.search(entries,free_only=True)))
+        self.assertEqual([],self.searcher.search(entries,cost_tier='unrecognized'))
+
     def test_multiple_domains(self):
         self.assertGreaterEqual(len(self.catalog['services']),15)
         self.assertGreaterEqual(len({s['category'] for s in self.catalog['services']}),7)

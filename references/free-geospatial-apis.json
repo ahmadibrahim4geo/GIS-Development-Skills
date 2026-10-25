@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "reviewed_on": "2026-10-25",
   "description": "Curated GIS, Earth-science and place-search service directory; free quotas, evaluation, production rights and hosted/self-hosted use are distinct.",
-  "policy": "Verify live docs, quotas, keys, data licenses, geographic/temporal coverage and uptime before production use; never hardcode credentials; obey caching and attribution rules.",
+  "policy": "Verify live docs, quotas, keys, data licenses, geographic/temporal coverage and uptime before production use; never hardcode credentials; obey caching and attribution rules. Default free-only recommendations use cost_tier free-self-hosted or free-conditional only, subject to account, scientific data and terms verification. Pricing groups for geocoding are separate subtypes.",
   "access_vocabulary": {
     "free-noncommercial": "Free only within noncommercial fair-use quota; commercial use requires a separate plan or permission.",
     "free-key-required": "Free tier available after personal API key issuance; no shared embedded keys.",
@@ -44,7 +44,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "open-meteo-archive",
@@ -73,7 +74,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "nasa-power",
@@ -103,7 +105,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "copernicus-cds",
@@ -131,7 +134,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "open-meteo-elevation",
@@ -158,7 +162,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "opentopography",
@@ -184,7 +189,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "open-elevation",
@@ -210,7 +216,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "usgs-epqs",
@@ -235,7 +242,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "earth-search",
@@ -263,7 +271,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "microsoft-planetary-computer",
@@ -290,7 +299,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "copernicus-dataspace",
@@ -319,7 +329,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "nasa-gibs",
@@ -347,7 +358,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "openfreemap",
@@ -375,7 +387,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "osm-tiles",
@@ -400,7 +413,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "restricted"
     },
     {
       "id": "overpass",
@@ -427,7 +441,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "restricted"
     },
     {
       "id": "pelias-self-hosted",
@@ -456,7 +471,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-self-hosted"
     },
     {
       "id": "soilgrids",
@@ -481,7 +497,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "unavailable"
     },
     {
       "id": "gbif",
@@ -507,7 +524,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "geoboundaries",
@@ -535,7 +553,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "worldpop-v2",
@@ -562,7 +581,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "open-meteo-geocoding",
@@ -589,7 +609,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "nasa-firms",
@@ -617,7 +638,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "usgs-earthquake",
@@ -645,7 +667,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "nasa-cmr",
@@ -673,7 +696,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "openaq-v3",
@@ -699,7 +723,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "open-meteo-air-quality",
@@ -727,7 +752,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "open-meteo-flood",
@@ -755,7 +781,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "ohsome-v2",
@@ -783,7 +810,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "openrouteservice-heigit",
@@ -810,7 +838,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "hdx-hapi",
@@ -837,7 +866,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "usgs-waterdata",
@@ -864,7 +894,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "noaa-coops",
@@ -892,7 +923,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "nasa-eonet",
@@ -919,7 +951,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "worldbank-indicators",
@@ -946,7 +979,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "noaa-ncei-cdo",
@@ -972,7 +1006,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "noaa-ncei-erddap",
@@ -1001,7 +1036,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "inaturalist",
@@ -1027,7 +1063,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "gebco-2026-wms",
@@ -1057,7 +1094,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "gebco-2026-ceda-opendap",
@@ -1088,7 +1126,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "nominatim",
@@ -1115,7 +1154,8 @@
       "tested_by_repository": false,
       "native_runtime_verified": false,
       "policy_changed": null,
-      "pricing_group": "public-fair-use"
+      "pricing_group": "public-fair-use",
+      "cost_tier": "restricted"
     },
     {
       "id": "photon-komoot",
@@ -1144,7 +1184,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "arcgis-world-geocoding",
@@ -1172,7 +1213,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "geoapify-geocoding",
@@ -1201,7 +1243,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "geocode-maps-co",
@@ -1228,7 +1271,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "geonames",
@@ -1256,7 +1300,8 @@
       "tested_by_repository": false,
       "native_runtime_verified": false,
       "policy_changed": null,
-      "pricing_group": "free-with-quota"
+      "pricing_group": "free-with-quota",
+      "cost_tier": "free-conditional"
     },
     {
       "id": "locationiq-geocoding",
@@ -1284,7 +1329,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "maptiler-geocoding",
@@ -1313,7 +1359,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     },
     {
       "id": "opencage-geocoding",
@@ -1340,7 +1387,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "trial"
     },
     {
       "id": "google-places-new",
@@ -1368,7 +1416,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "commercial"
     },
     {
       "id": "here-search",
@@ -1396,7 +1445,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "commercial"
     },
     {
       "id": "mapbox-search-box",
@@ -1423,7 +1473,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "commercial"
     },
     {
       "id": "tomtom-search",
@@ -1451,7 +1502,8 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "policy_changed": null
+      "policy_changed": null,
+      "cost_tier": "commercial"
     }
   ],
   "pricing_groups": {
@@ -1460,5 +1512,13 @@
     "free-with-quota": "Free service allowance under provider-specific account/key, daily/monthly limits and licensing.",
     "trial-only": "Free for evaluation only; not an ongoing free production entitlement.",
     "commercial": "Commercial/metered service; some billable SKUs may have free monthly allowances."
+  },
+  "cost_tiers": {
+    "free-self-hosted": "Open-source service that you operate; hosting/resources may cost.",
+    "free-conditional": "Public/registered/noncommercial/quota/terms restricted: verify eligible use.",
+    "restricted": "Public-facing endpoint with strict policy; not default free-only app backend.",
+    "trial": "Temporary/test-only free evaluation; not a durable free service.",
+    "commercial": "Billing or commercial platform; any free allowance is conditional.",
+    "unavailable": "Source reports unavailable; never recommend as active without checking."
   }
 }
