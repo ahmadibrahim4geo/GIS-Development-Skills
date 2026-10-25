@@ -110,7 +110,7 @@ def inspect_repository(root=ROOT):
             errors.extend(check_links(markdown, root))
     for guide in (root / "references").glob("*.md"):
         errors.extend(check_links(guide, root))
-    html = root / "index.html"
+    html = root / "explorer.html"
     if html.is_file():
         page = html.read_text(encoding="utf-8")
         parser = LocalLinks()
@@ -137,6 +137,20 @@ def inspect_repository(root=ROOT):
         shown = re.search(r'<div class="stat"><strong>([0-9]+)</strong><span data-i18n="statSkill">', page)
         if shown is None or int(shown.group(1)) != len(skill_files):
             errors.append("index.html: skill counter differs from discoverable skills ({})".format(len(skill_files)))
+
+    # Interactive homepage is a separate entry point. Validate its local
+    # assets and links without weakening the complete Explorer inventory checks.
+    homepage = root / "index.html"
+    if homepage.is_file():
+        home_parser = LocalLinks()
+        home_parser.feed(homepage.read_text(encoding="utf-8"))
+        for ref in home_parser.refs:
+            try:
+                target = local_target(ref, homepage, root)
+                if target is not None and not target.exists():
+                    errors.append("index.html: missing local target {}".format(ref))
+            except ValueError as exc:
+                errors.append("index.html: {}".format(exc))
     return errors
 
 
