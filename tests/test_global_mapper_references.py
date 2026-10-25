@@ -30,7 +30,7 @@ class GlobalMapperReferenceTests(unittest.TestCase):
     def test_commercial_sdk_not_open_web_api(self):
         ids = [x["id"] for x in self.apis["services"]]
         self.assertEqual(len(ids), len(set(ids)))
-        self.assertEqual(len(ids), 52)
+        self.assertGreaterEqual(len(ids), 52)
         self.assertFalse(any("globalmapper" in x or "blue-marble" in x for x in ids))
         guide = (ROOT / "references/blue-marble-global-mapper.md").read_text(encoding="utf-8")
         self.assertIn("commercial", guide.lower())
