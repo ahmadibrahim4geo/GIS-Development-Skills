@@ -386,7 +386,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
           </p>
         </div>
         <div class="text-xs font-mono text-slate-400">
-          <span id="visibleCount">12</span> / 12 <span data-lang="en">Pathways Shown</span><span data-lang="ar">مسار معروض</span>
+          <span id="visibleCount">13</span> / <span id="pathwayTotal">13</span> <span data-lang="en">Pathways Shown</span><span data-lang="ar">مسار معروض</span>
         </div>
       </div>
 
@@ -394,20 +394,20 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800 mb-8">
         <div class="flex flex-wrap gap-2" role="tablist">
           <button onclick="filterPathways('all', this)" class="pathway-tab active px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/40 transition-all">
-            <span data-lang="en">All Stacks (12)</span>
-            <span data-lang="ar">جميع المسارات (12)</span>
+            <span data-lang="en">All Stacks (<span data-pathway-count="all">13</span>)</span>
+            <span data-lang="ar">جميع المسارات (<span data-pathway-count="all">13</span>)</span>
           </button>
           <button onclick="filterPathways('desktop', this)" class="pathway-tab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 border border-transparent transition-all">
-            <span data-lang="en">Desktop GIS (4)</span>
-            <span data-lang="ar">برامج سطح المكتب (4)</span>
+            <span data-lang="en">Desktop GIS (<span data-pathway-count="desktop">5</span>)</span>
+            <span data-lang="ar">برامج سطح المكتب (<span data-pathway-count="desktop">5</span>)</span>
           </button>
           <button onclick="filterPathways('eo', this)" class="pathway-tab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 border border-transparent transition-all">
-            <span data-lang="en">Remote Sensing &amp; Data (4)</span>
-            <span data-lang="ar">الاستشعار والبيانات (4)</span>
+            <span data-lang="en">Remote Sensing &amp; Data (<span data-pathway-count="eo">4</span>)</span>
+            <span data-lang="ar">الاستشعار والبيانات (<span data-pathway-count="eo">4</span>)</span>
           </button>
           <button onclick="filterPathways('dev', this)" class="pathway-tab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 border border-transparent transition-all">
-            <span data-lang="en">Web, 3D, APIs &amp; SQL (4)</span>
-            <span data-lang="ar">الويب وقواعد البيانات (4)</span>
+            <span data-lang="en">Web, 3D, APIs &amp; SQL (<span data-pathway-count="dev">4</span>)</span>
+            <span data-lang="ar">الويب وقواعد البيانات (<span data-pathway-count="dev">4</span>)</span>
           </button>
         </div>
 
@@ -423,7 +423,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         </div>
       </div>
 
-      <!-- 12 Pathways Cards Grid (Rendered Dynamically for Clean Modal & Filtering) -->
+      <!-- Source-driven Pathways Cards Grid (Rendered for filtering and modal) -->
       <div id="pathwaysContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
     </section>
 
@@ -739,10 +739,22 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         tag: 'QGIS',
         tagColor: 'emerald',
         category: 'desktop',
-        title: 'QGIS Engine & PyQGIS',
-        en: 'Core/GUI engines, headless PyQGIS, plugins and Qt/Cesium worker integration.',
-        ar: 'محرك QGIS Core/GUI وخدمات PyQGIS والتكامل مع التطبيقات المستقلة.',
-        checks: '✓ QgsProcessingAlgorithm • ✓ Background QgsTask thread safety • ✓ Qt5/Qt6 compatibility',
+        title: 'QGIS Plugins & PyQGIS',
+        en: 'Hosted QGIS plugins, Processing providers and PyQGIS/Qt lifecycle engineering.',
+        ar: 'تطوير إضافات QGIS وخوارزميات Processing داخل البرنامج باستخدام PyQGIS وQt.',
+        checks: 'Processing providers • Plugin packaging • QGIS-native UI tests required',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/qgis-plugin-development/SKILL.md'
+      },
+      {
+        id: 'qgis-engine',
+        tag: 'QGIS CORE',
+        tagColor: 'emerald',
+        category: 'desktop',
+        title: 'QGIS Engine Integration',
+        titleAr: 'دمج محرك QGIS',
+        en: 'Use QGIS Core, GUI, Processing or Server in independent GIS software with versioned APIs, no forced renderer and verified interoperability.',
+        ar: 'استخدام QGIS Core وGUI وProcessing وServer داخل تطبيقات GIS مستقلة مع توافق الإصدارات والمهارات الأخرى دون فرض محرك عرض.',
+        checks: 'Source/runtime compatibility • GIS output readback • Native tests T2–T4 • GPL review',
         url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/qgis-engine-integration/SKILL.md'
       },
       {
@@ -863,21 +875,26 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       const container = document.getElementById('pathwaysContainer');
       const filtered = pathwaysData.filter(item => {
         const matchesCat = activeCategory === 'all' || item.category === activeCategory;
-        const haystack = (item.title + ' ' + item.en + ' ' + item.ar + ' ' + item.tag).toLowerCase();
+        const haystack = (item.title + ' ' + (item.titleAr || '') + ' ' + item.en + ' ' + item.ar + ' ' + item.tag).toLowerCase();
         const matchesSearch = haystack.includes(currentSearch.toLowerCase());
         return matchesCat && matchesSearch;
       });
 
       document.getElementById('visibleCount').innerText = filtered.length;
+      document.getElementById('pathwayTotal').innerText = pathwaysData.length;
+      document.querySelectorAll('[data-pathway-count]').forEach(counter => {
+        const category = counter.getAttribute('data-pathway-count');
+        counter.textContent = pathwaysData.filter(item => category === 'all' || item.category === category).length;
+      });
 
       container.innerHTML = filtered.map(item => `
-        <div onclick="openSkillModal('${item.id}')" class="glass-card rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
+        <div role="button" tabindex="0" aria-label="${item.title}" onclick="openSkillModal('${item.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSkillModal('${item.id}')}" class="glass-card rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-md border ${getTagBadgeClasses(item.tagColor)}">${item.tag}</span>
               <span class="text-xs text-slate-400 group-hover:text-sky-300 transition-colors">Inspect Spec ↗</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">${item.title}</h3>
+            <h3 class="text-xl font-bold text-white mb-2"><span data-lang="en">${item.title}</span><span data-lang="ar">${item.titleAr || item.title}</span></h3>
             <p class="text-sm text-slate-300 mb-4 leading-relaxed">
               <span data-lang="en">${item.en}</span>
               <span data-lang="ar">${item.ar}</span>
@@ -911,7 +928,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       if (!item) return;
       const isAr = document.documentElement.getAttribute('lang') === 'ar';
       document.getElementById('modalTag').innerText = item.tag;
-      document.getElementById('modalTitle').innerText = item.title;
+      document.getElementById('modalTitle').innerText = isAr ? (item.titleAr || item.title) : item.title;
       document.getElementById('modalDesc').innerText = isAr ? item.ar : item.en;
       document.getElementById('modalChecks').innerText = item.checks;
       document.getElementById('modalLink').href = item.url;
@@ -1027,7 +1044,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       'gis-internationalization-arabic':{en:'Test UTF-8 text, Arabic RTL/BiDi UI and map labels without changing geometry or GIS field identifiers.',ar:'اختبر عرض العربية واتجاه RTL والنص المختلط وملصقات الخرائط دون تعديل الإحداثيات أو أسماء الحقول.',enTask:'Inspect my GIS application localization architecture. Preserve stable field identifiers and geometry while adding tested Arabic RTL/BiDi strings, Unicode attributes and map-label rendering. Propose a numbered plan before edits, implement approved changes, and verify exports in the actual GIS host when available.',arTask:'افحص دعم العربية واللغات في تطبيق GIS، وحافظ على أسماء الحقول والمعرّفات والإحداثيات، وطوّر عرض العربية واتجاه RTL/BiDi وملصقات الخرائط والسمات النصية. اعرض خطة مرقمة قبل التعديل ثم نفذ ما اعتمدته واختبر النواتج داخل البرنامج عند توفره.'},
       'gis-development':{en:'For mixed GIS projects, start with the core router.',ar:'للمشروعات التي تضم عدة تخصصات ابدأ بالـ GIS Router.',enTask:'Inspect my existing GIS project. Identify its runtime, CRS, data formats and key risks. Propose a numbered plan for my approval; execute approved tasks using suitable GIS skills; provide real test evidence and a numbered development journal, stating any tests not run.',arTask:'افحص مشروع GIS الموجود وحدد بيئة التشغيل ونظام الإحداثيات والصيغ والمخاطر. اعرض خطة مرقمة لاعتمادها، ونفّذ المهام المعتمدة بالمهارات المناسبة، واختبر النتائج الفعلية وسجّل كل خطوة، ووضح ما لم تختبره.'},
       'arcgis-toolbox-engineering':{en:'ArcGIS Pro and ArcMap require the correct licensed host, version and ArcPy environment.',ar:'أدوات ArcGIS Pro أو ArcMap تحتاج الإصدار والترخيص وبيئة ArcPy المناسبة.',enTask:'Inspect my ArcGIS toolbox (.pyt / script tool) and identify the ArcGIS version and parameter requirements. Propose a reviewed plan. Implement approved changes; test validation, CRS, outputs and ArcPy in the actual host if available. Record evidence, failures and numbered progress.',arTask:'افحص أداة ArcGIS وملف .pyt أو script tool، وحدد الإصدار والبارامترات. اعرض خطة للاعتماد، ثم نفّذ المعتمد واختبر المدخلات ونظام الإحداثيات والنواتج داخل ArcGIS إن توفر، وسجّل الاختبارات والتعديلات بالترتيب.'},
-      'qgis-engine-integration':{en:'Use QGIS Core/GUI and a headless Processing worker safely in independent GIS apps; audit GPL and versions.',ar:'دمج محرك QGIS والتشغيل المستقل وخدمات المعالجة مع التحقق من توافق الإصدارات والترخيص.',enTask:'Assess QGIS as the engine for an independent GIS application. Compare native Qt GUI with a headless PyQGIS worker for WPF/Cesium; document real providers, CRS/units, GPL requirements, security, output readback and T2-T4 native testing.',arTask:'راجع دمج محرك QGIS في تطبيق GIS مستقل مع فصل واجهة Qt عن خدمة PyQGIS لبرامج WPF/Cesium. وثق المساقط والتراخيص وأمان التشغيل واختبارات T2-T4 داخل بيئة QGIS الحقيقية.'},
+      'qgis-engine-integration':{en:'Select QGIS Core, GUI, Processing, Server or a headless worker only when the target GIS project needs them; audit licensing and versions.',ar:'اختيار QGIS Core أو GUI أو Processing أو Server أو خدمة مستقلة عند الحاجة دون فرض محرك عرض.',enTask:'Inspect the target GIS project and assess optional QGIS Core/GUI/Processing/Server integration against simpler alternatives. Preserve its existing UI and rendering engine; document runtime versions, licensing, CRS, data readback, security and verifiable T2–T4 native tests.',arTask:'افحص مشروع GIS وحدد هل يحتاج QGIS Core أو GUI أو Processing أو Server، وقارنها بالبدائل الأبسط. حافظ على الواجهة ومحرك العرض الحاليين ووثق الإصدارات والتراخيص والمساقط والاختبارات الأصلية T2–T4.'},
       'qgis-plugin-development':{en:'Use PyQGIS/Processing and confirm your installed QGIS version before testing.',ar:'استخدم PyQGIS/Processing وحدد إصدار QGIS المثبت قبل الاختبار.',enTask:'Inspect my QGIS plugin and version constraints. Propose a numbered plan; implement only approved changes and verify PyQGIS imports, Processing outputs, CRS and GUI actions in native QGIS if possible. Keep a numbered development journal.',arTask:'افحص إضافة QGIS وحدد الإصدار والتوافق. اعرض خطة مرقمة، ثم نفّذ المعتمد واختبر PyQGIS وProcessing ونظام الإحداثيات والواجهة داخل QGIS عند توفره. وثّق كل خطوة في سجل مرقم.'},
       'kml-kmz-engineering':{en:'Preserve original KML/KMZ styling, folders, embedded icons and portable resources.',ar:'احفظ الأنماط والألوان والمجلدات والأيقونات والموارد الأصلية في KML/KMZ.',enTask:'Inspect the KML/KMZ import and export pipeline. Preserve original placemark icons, shared styles, colors, folders and portable assets. Show a numbered plan for approval, implement safely, test round-trip fidelity and record every correction. State native Google Earth limitations.',arTask:'افحص استيراد وتصدير KML/KMZ وحافظ على أيقونات المعالم والأنماط المشتركة والألوان والمجلدات والموارد الأصلية. اعرض خطة مرقمة لاعتمادها ثم نفّذ واختبر حفظ الخصائص والتصدير والاستعادة، وسجل التعديلات وقيود الاختبارات الأصلية.'},
       'gis-desktop-application-development':{en:'Test real window/navigation behavior; WPF/Qt/Cesium needs a working desktop runtime.',ar:'اختبر تشغيل النافذة والتنقل الحقيقي؛ WPF/Qt/Cesium يحتاج بيئة سطح المكتب المناسبة.',enTask:'Inspect my GIS desktop app, including the renderer, ribbon, Places/Layers, KML import, camera and save/open lifecycle. Propose numbered tasks and obtain approval. Implement end-to-end functions, run available native UI/navigation tests and record steps, blockers and evidence.',arTask:'افحص تطبيق GIS المكتبي: محرك العرض والشريط وPlaces/Layers واستيراد KML والكاميرا والحفظ والفتح. اعرض خطة مرقمة ثم نفّذ وظائف حقيقية واختبر الواجهة والتنقل في البرنامج إن أمكن، وسجل كل خطوة وعائق ونتيجة.'},

@@ -13,7 +13,7 @@ Use this for **independent executable applications**, not ArcGIS Pro SDK add-ins
 
 ## Free QGIS Engine integration option
 
-For a new Qt GIS app or an isolated WPF/Cesium GIS worker, route to [QGIS Engine Integration](../qgis-engine-integration/SKILL.md) and [the official architecture guide](../../references/qgis-engine-integration.md). Retain CesiumJS as the globe renderer in existing WPF apps, isolate Processing and GeoPackage I/O, and review QGIS GPL/ABI/deployment obligations before release. Do not confuse a QGIS plugin or Qt widget with a standalone WPF engine.
+For an independent desktop GIS app that actually needs QGIS functionality, route to [QGIS Engine Integration](../qgis-engine-integration/SKILL.md) and [the architecture guide](../../references/qgis-engine-integration.md). Keep any existing renderer and UI framework independent of optional PyQGIS/Processing or GeoPackage I/O, and review QGIS GPL/ABI/deployment obligations before release. A hosted plugin, a Qt widget and an unrelated standalone GIS executable are different deployment models.
 
 ## Global Mapper SDK is a licensed engine, not a free backend
 

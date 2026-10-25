@@ -19,7 +19,7 @@ const vm = require('node:vm');
 const fs = require('node:fs');
 const code = fs.readFileSync(process.argv[2], 'utf8');
 const selectors = {
-  type: ['desktop','pro','arcmap','dual','qgis','web','remote','database','geoai'],
+  type: ['desktop','pro','arcmap','dual','qgis','qgis-engine','web','remote','database','geoai'],
   locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host']
 };
 const elements = Object.create(null);
@@ -85,6 +85,15 @@ assert.equal(document.documentElement.dir,'rtl');
 assert.match(e('type').options[0].textContent,/تطبيق/);
 assert.match(e('result').textContent,/خطة تنفيذ مشروع/);
 assert.match(e('result').textContent,/إضافة QGIS/);
+e('type').value='qgis-engine';
+e('type').fire('change');
+e('generate').onclick();
+assert.match(e('result').textContent,/محرك QGIS لتطبيق مستقل/);
+assert.match(e('result').textContent,/skills\/qgis-engine-integration\/SKILL.md/);
+assert.match(e('result').textContent,/references\/qgis-engine-integration.md/);
+e('lang').onclick();
+assert.match(e('result').textContent,/QGIS Engine \/ Standalone GIS/);
+e('lang').onclick();
 assert.match(e('status').textContent,/تم إنشاء/);
 e('download').onclick();
 assert.equal(lastLink.download,'gis-project-plan-ar.md');
