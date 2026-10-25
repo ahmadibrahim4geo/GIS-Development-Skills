@@ -195,3 +195,7 @@ python scripts/search_catalog.py --query rust
 تعليمات النشر: [`PUBLISHING.md`](PUBLISHING.md).
 
 اقرأ: [`SKILL.md`](skills/gis-development/SKILL.md) · [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`README.md`](README.md).
+
+## دليل دعم اللغات واللغة العربية
+
+لشرح Unicode وUTF-8 واتجاه النصوص RTL وBiDi وتشكيل الحروف والتعامل مع أسماء المعالم والحقول العربية، راجع [الدليل العملي لتعدد اللغات في GIS](references/gis-multilingual-arabic-guide.md) و[المهارة المتخصصة](skills/gis-internationalization-arabic/SKILL.md).
