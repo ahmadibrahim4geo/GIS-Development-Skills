@@ -37,6 +37,8 @@ license: MIT
 | Point/line/polygon/raster symbols, color ramps, map layout | [GIS Cartography & Symbology](../gis-cartography-symbology/SKILL.md) |
 | Device time/date/timezone, permission-controlled location, Sunlight simulation | [GIS Device Context](../gis-device-context/SKILL.md) |
 | KML/KMZ fidelity | [KML/KMZ skill](../kml-kmz-engineering/SKILL.md) · [Google guide](../../references/google-kml-kmz-compatibility.md) |
+| Google Earth Pro-like globe, Places/Tours/overlays | [Google Earth Pro engineering](../../references/google-earth-pro-engineering.md) + [GIS Desktop](../gis-desktop-application-development/SKILL.md) |
+| Dated satellite images, time slider, swipe comparison | [Historical Imagery Timeline](../../references/historical-imagery-timeline.md) + [Remote Sensing](../remote-sensing-pipelines/SKILL.md) |
 
 ## Global rules (always apply)
 
