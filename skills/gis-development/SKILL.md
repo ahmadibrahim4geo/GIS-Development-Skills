@@ -34,7 +34,7 @@ license: MIT
 | WKID, projection, transformation, vertical datum | [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md) |
 | Point/line/polygon/raster symbols, color ramps, map layout | [GIS Cartography & Symbology](../gis-cartography-symbology/SKILL.md) |
 | Device time/date/timezone, permission-controlled location, Sunlight simulation | [GIS Device Context](../gis-device-context/SKILL.md) |
-| KML/KMZ reading, writing, faithful symbol/asset/folder preservation, Google Earth compatibility and interchange | [KML/KMZ Engineering](../kml-kmz-engineering/SKILL.md) + [Google fidelity reference](../../references/google-kml-kmz-compatibility.md) |
+| KML/KMZ fidelity | [KML/KMZ skill](../kml-kmz-engineering/SKILL.md) · [Google guide](../../references/google-kml-kmz-compatibility.md) |
 
 ## Global rules (always apply)
 
