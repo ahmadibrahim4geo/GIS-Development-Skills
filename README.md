@@ -268,6 +268,10 @@ Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-stud
 
 The API guide **does not** treat public endpoints as unlimited or licensed for any use. SoilGrids REST is marked paused; OSMF tiles and Nominatim have restrictive public usage policies.
 
+## How to Use — illustrated bilingual workflow
+
+The website now includes [How to Use](index.html#how-to-use), an accessible English/Arabic onboarding sequence, copyable install command, realistic copyable request for an AI coding agent, and a no-agent/manual route. The existing [Explorer Quick Start](explorer.html#get-started) was expanded rather than replaced. Detailed [English](docs/HOW_TO_USE.md) and [Arabic](docs/HOW_TO_USE.ar.md) guides explain prerequisites, approval, safe execution, testing, journals, rollback limits and third-party licensing.
+
 ## Installation for coding agents
 
 Install from the public repository `ahmadibrahim4geo/GIS-Development-Skills`:

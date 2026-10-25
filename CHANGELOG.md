@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — bilingual How to Use onboarding (2026-10-25)
+
+- Expand index.html with an accessible English/Arabic onboarding walkthrough, four steps, real sample request with working copy button, coding-agent CLI and manual/self-study paths, FAQ and navigation link.
+- Enhance Explorer's existing Quick Start rather than duplicating core functionality; add detailed English and Arabic usage guides, source/lifecycle caveats and regression tests.
+- Preserve existing brand, footer/contact details, complete Explorer, GIS security/agent distinctions, dynamic skill catalog and release-gate CI checks.
+
+# Changelog
+
 ## Unreleased — Agent Development Journal & Project Memory (2026-10-25)
 
 - Add numbered append-only project-local request/action/revision/cancellation/rollback-intent/verification/handoff records with resumed context, hash-chain integrity and safe derived Markdown repair.

@@ -6,7 +6,8 @@
 - Maintain concise progressive-disclosure reference guides under `references/`.
 - Keep platform compatibility, migration, licenses, CRS/measurement and source provenance prominent.
 - Never copy code from catalog entries without examining that upstream license.
-- For rapid PR development, CI runs on PR events and main pushes (not both feature pushes and PRs). Maintain [CI failure triage guidance](docs/GITHUB_ACTIONS_TROUBLESHOOTING.md), cancellation of stale runs, and never suppress a failing quality test only to reduce notifications.
+- Keep a practical bilingual [How to Use guide](docs/HOW_TO_USE.md) and [Arabic translation](docs/HOW_TO_USE.ar.md) linked from index.html and Explorer. Expose clear prerequisites, manual and agent routes, an actual copyable request, real test/permission caveats, and preserve creator/footer data.
+- For rapid PR development- For rapid PR development, CI runs on PR events and main pushes (not both feature pushes and PRs). Maintain [CI failure triage guidance](docs/GITHUB_ACTIONS_TROUBLESHOOTING.md), cancellation of stale runs, and never suppress a failing quality test only to reduce notifications.
 - Before publishing run `python scripts/validate_catalog.py`, `python scripts/validate_api_catalog.py`, `python scripts/validate_skill_pack.py`, and `python -m unittest discover -s tests -v`. All existing skills plus the dedicated Geospatial API Integration skill must remain discoverable.
 - Keep titles/descriptions developer focused. Clearly label illustrative templates as untested inside host apps until verified.
 

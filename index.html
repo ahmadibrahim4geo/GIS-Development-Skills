@@ -95,6 +95,35 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 :focus-visible{outline:2px solid #1CC8E8;outline-offset:3px}
 
+
+    /* Bilingual, no-framework How to Use section; no changes to the existing footer. */
+    .usage-help{scroll-margin-top:94px;border-top:1px solid #334155;padding:56px 0}
+    .usage-help .usage-head{max-width:760px;margin-bottom:24px}
+    .usage-help .usage-eyebrow{font-size:11px;letter-spacing:.15em;font-weight:800;color:#7dd3fc}
+    .usage-help h2{font-size:clamp(27px,3.5vw,38px);line-height:1.2;font-weight:800;margin:9px 0 12px;color:#fff}
+    .usage-help p,.usage-help li{color:#cbd5e1;font-size:13px;line-height:1.75}
+    .usage-help .usage-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:19px}
+    .usage-help .usage-step,.usage-help .usage-panel{background:linear-gradient(145deg,#132334,#0c1726);border:1px solid #334155;border-radius:15px;min-width:0;padding:21px}
+    .usage-help .usage-step strong{color:#7dd3fc;font:700 12px ui-monospace,monospace}
+    .usage-help .usage-step h3{font-size:16px;font-weight:700;margin:12px 0 7px;color:#f8fafc}
+    .usage-help .usage-options{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);gap:16px}
+    .usage-help .usage-panel h3{font-size:19px;font-weight:750;color:#fff;margin:0 0 10px}
+    .usage-help .usage-panel ul{list-style:disc;padding-inline-start:20px;margin:10px 0}
+    .usage-help .usage-command{display:flex;gap:12px;align-items:center;justify-content:space-between;margin:12px 0;padding:13px;border-radius:10px;background:#05111e;border:1px solid #345167}
+    .usage-help .usage-command code{font-size:12px;color:#b4f4d8;overflow-wrap:anywhere}
+    .usage-help .usage-prompt{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.7 ui-monospace,monospace;color:#dcfce7;background:#05111e;border:1px solid #345167;padding:15px;border-radius:10px;margin:11px 0}
+    .usage-help .usage-copy{background:#183e54;border:1px solid #44748b;color:#e0f2fe;border-radius:8px;font-weight:700;padding:8px 11px;cursor:pointer;font-size:12px;flex-shrink:0}
+    .usage-help .usage-copy:hover{background:#245874}
+    .usage-help .usage-links{display:flex;flex-wrap:wrap;gap:10px 17px;margin-top:15px}
+    .usage-help .usage-links a{color:#7dd3fc;text-decoration:underline;font-size:13px;font-weight:700}
+    .usage-help .usage-caveat{font-size:12px;color:#a3b8ce;margin-top:12px;line-height:1.75}
+    .usage-help .usage-faq{margin-top:18px;border:1px solid #334155;border-radius:13px;overflow:hidden}
+    .usage-help details{padding:14px 18px;background:#0e1b2b}.usage-help details+details{border-top:1px solid #334155}
+    .usage-help summary{color:#f8fafc;cursor:pointer;font-size:14px;font-weight:700}
+    .usage-help details p{margin-top:9px}
+    @media(max-width:950px){.usage-help .usage-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.usage-help .usage-options{grid-template-columns:1fr}}
+    @media(max-width:550px){.usage-help .usage-steps{grid-template-columns:1fr}.usage-help .usage-command{flex-wrap:wrap}.usage-help .usage-copy{margin-inline-start:auto}}
+
 #mobileMenu a{display:block;padding:10px;color:#cbd5e1}#mobileMenu a:hover{background:#1e293b;color:#fff;border-radius:8px}
   </style>
 </head>
@@ -117,6 +146,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       <!-- Desktop Nav Links -->
       <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="explorer.html" class="hover:text-sky-400 transition-colors"><span data-lang="en">Full Data Explorer</span><span data-lang="ar">مستكشف البيانات الكامل</span></a>
+        <a href="#how-to-use" class="hover:text-sky-400 transition-colors"><span data-lang="en">How to Use</span><span data-lang="ar">طريقة الاستخدام</span></a>
         <a href="#capabilities" class="hover:text-sky-400 transition-colors">
           <span data-lang="en">Skills &amp; Pathways</span>
           <span data-lang="ar">المهارات والمسارات</span>
@@ -163,7 +193,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         </a>
       </div>
     </div>
-<nav id="mobileMenu" class="lg:hidden hidden p-4 border-t border-slate-800 bg-[#050912]" aria-label="Mobile navigation"><a href="explorer.html"><span data-lang="en">Full Data Explorer</span><span data-lang="ar">مستكشف البيانات الكامل</span></a><a href="#capabilities"><span data-lang="en">Skills &amp; Pathways</span><span data-lang="ar">المهارات والمسارات</span></a><a href="#earth-kml"><span data-lang="en">Earth &amp; KML</span><span data-lang="ar">الأرض وKML</span></a><a href="#cartography"><span data-lang="en">Cartography</span><span data-lang="ar">الكارتوجرافيا</span></a><a href="#security"><span data-lang="en">Security &amp; QA</span><span data-lang="ar">الأمان والاختبارات</span></a><a href="#author"><span data-lang="en">Creator</span><span data-lang="ar">المطور</span></a></nav>
+<nav id="mobileMenu" class="lg:hidden hidden p-4 border-t border-slate-800 bg-[#050912]" aria-label="Mobile navigation"><a href="explorer.html"><span data-lang="en">Full Data Explorer</span><span data-lang="ar">مستكشف البيانات الكامل</span></a><a href="#how-to-use"><span data-lang="en">How to Use</span><span data-lang="ar">طريقة الاستخدام</span></a><a href="#capabilities"><span data-lang="en">Skills &amp; Pathways</span><span data-lang="ar">المهارات والمسارات</span></a><a href="#earth-kml"><span data-lang="en">Earth &amp; KML</span><span data-lang="ar">الأرض وKML</span></a><a href="#cartography"><span data-lang="en">Cartography</span><span data-lang="ar">الكارتوجرافيا</span></a><a href="#security"><span data-lang="en">Security &amp; QA</span><span data-lang="ar">الأمان والاختبارات</span></a><a href="#author"><span data-lang="en">Creator</span><span data-lang="ar">المطور</span></a></nav>
   </header>
 
   <!-- Main Content Container -->
@@ -251,6 +281,8 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         </a>
       </div>
 
+      <p class="text-center mb-8 text-sm"><a href="#how-to-use" class="text-sky-300 underline underline-offset-4 font-semibold"><span data-lang="en">New here? Start with How to Use ↓</span><span data-lang="ar">أول مرة هنا؟ ابدأ بدليل الاستخدام ↓</span></a></p>
+
       <!-- 5-Metric Scope Counter Bar -->
       <div class="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-slate-900/75 border border-slate-800/90 backdrop-blur-md">
         <div class="p-2 text-center">
@@ -278,6 +310,50 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Starter Templates</span>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">قوالب انطلاق جاهزة للمطورين</span>
         </div>
+      </div>
+    </section>
+
+    <!-- How to Use: a real onboarding guide, not an embedded AI runner -->
+    <section id="how-to-use" class="usage-help" aria-labelledby="howToHeading">
+      <div class="usage-head">
+        <span class="usage-eyebrow"><span data-lang="en">GET STARTED · PRACTICAL GUIDE</span><span data-lang="ar">البداية · دليل استخدام عملي</span></span>
+        <h2 id="howToHeading"><span data-lang="en">How to Use GIS Development Skills</span><span data-lang="ar">طريقة استخدام مهارات تطوير GIS</span></h2>
+        <p><span data-lang="en">Pick the right skill, connect it to a compatible coding agent, review the work and verify real GIS results. You can also use all guides manually.</span><span data-lang="ar">اختر المهارة، واربطها بوكيل برمجي متوافق، وراجع خطة التطوير والاختبارات. وتقدر تستخدم الدليل يدويًا من غير وكيل.</span></p>
+      </div>
+      <div class="usage-steps">
+        <article class="usage-step"><strong>01 / SELECT</strong><h3><span data-lang="en">Choose a GIS task</span><span data-lang="ar">حدد نوع المهمة</span></h3><p><span data-lang="en">ArcGIS, QGIS, KML/KMZ, desktop, web or remote sensing.</span><span data-lang="ar">ArcGIS أو QGIS أو KML/KMZ أو التطبيقات المكتبية والويب والاستشعار عن بعد.</span></p></article>
+        <article class="usage-step"><strong>02 / INSTALL</strong><h3><span data-lang="en">Prepare your agent</span><span data-lang="ar">جهّز الوكيل</span></h3><p><span data-lang="en">Use Node.js, a compatible coding agent and the Skills CLI.</span><span data-lang="ar">استخدم Node.js ووكيلًا برمجيًا يدعم Skills.</span></p></article>
+        <article class="usage-step"><strong>03 / REVIEW</strong><h3><span data-lang="en">Approve the plan</span><span data-lang="ar">راجع الخطة</span></h3><p><span data-lang="en">State your goal in Arabic or English; approve tasks before edits.</span><span data-lang="ar">اشرح هدفك بالعربية أو الإنجليزية، واعتمد المهام قبل تعديل الملفات.</span></p></article>
+        <article class="usage-step"><strong>04 / VERIFY</strong><h3><span data-lang="en">Test and log</span><span data-lang="ar">اختبر ووثّق</span></h3><p><span data-lang="en">Check real outputs, native GIS tests and numbered development reports.</span><span data-lang="ar">راجع النتائج واختبارات GIS الفعلية وتقارير التطوير المرقمة.</span></p></article>
+      </div>
+      <div class="usage-options">
+        <article class="usage-panel">
+          <h3><span data-lang="en">Path A · With a coding agent</span><span data-lang="ar">المسار الأول · مع وكيل برمجي</span></h3>
+          <p><span data-lang="en">Open a terminal in your project folder. After checking the CLI permissions and compatibility, install the core router:</span><span data-lang="ar">افتح الطرفية داخل مشروعك. بعد مراجعة توافق أداة التثبيت وصلاحياتها، ثبّت المهارة الأساسية:</span></p>
+          <div class="usage-command" dir="ltr"><code id="howToCommand">npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development</code><button type="button" class="usage-copy" onclick="copyUsage('install',this)"><span data-lang="en">Copy</span><span data-lang="ar">نسخ</span></button></div>
+          <p class="usage-caveat"><span data-lang="en">Node.js and a compatible agent are required. The CLI installs skill instructions, not ArcGIS, QGIS or an AI model. The published main branch may not include unmerged PR skills.</span><span data-lang="ar">يلزم Node.js ووكيل متوافق. الأمر يثبت تعليمات المهارات وليس ArcGIS أو QGIS أو نموذج ذكاء اصطناعي. المهارات التي لم تُدمج في main قد لا تكون متاحة بالتثبيت العام بعد.</span></p>
+          <h3 style="margin-top:22px;font-size:15px"><span data-lang="en">Example: what to tell the agent</span><span data-lang="ar">مثال: تقول إيه للوكيل؟</span></h3>
+          <pre id="howToExampleEn" class="usage-prompt" data-lang="en" dir="auto">Inspect my GIS project's KML/KMZ import. Preserve original icons, folders, styles and colors. First present a numbered plan for approval. Implement only approved changes, record each step and correction, run real tests, and clearly report any native GIS tests not run.</pre>
+          <pre id="howToExampleAr" class="usage-prompt" data-lang="ar" dir="auto">افحص استيراد KML/KMZ في مشروع GIS، وحافظ على الأيقونات والمجلدات والألوان والأنماط الأصلية. اعرض خطة مرقمة لاعتمادها أولًا، ثم نفّذ المعتمد فقط، وسجل كل خطوة وتعديل، واختبر النتائج فعليًا، ووضح أي اختبارات لم تُنفذ داخل البرنامج.</pre>
+          <button type="button" class="usage-copy" onclick="copyUsage('prompt',this)"><span data-lang="en">Copy sample request</span><span data-lang="ar">نسخ مثال الطلب</span></button>
+          <div class="usage-links"><a href="docs/HOW_TO_USE.md"><span data-lang="en">Full English guide</span><span data-lang="ar">الدليل الإنجليزي</span></a><a href="docs/HOW_TO_USE.ar.md"><span data-lang="en">Arabic guide</span><span data-lang="ar">الدليل العربي</span></a><a href="explorer.html#get-started"><span data-lang="en">Explorer quick start</span><span data-lang="ar">البداية السريعة في المستكشف</span></a></div>
+        </article>
+        <article class="usage-panel">
+          <h3><span data-lang="en">Path B · Without an agent</span><span data-lang="ar">المسار الثاني · بدون وكيل</span></h3>
+          <p><span data-lang="en">Study the source and examples directly. No agent installation is necessary.</span><span data-lang="ar">تصفح ملفات المهارات والأمثلة بنفسك، بدون تثبيت وكيل.</span></p>
+          <ul>
+            <li><span data-lang="en">Explore the directory and open a specialist SKILL.md.</span><span data-lang="ar">افتح دليل المهارات واقرأ ملف SKILL.md المناسب.</span></li>
+            <li><span data-lang="en">Review examples, data sources and third-party licenses.</span><span data-lang="ar">راجع الأمثلة ومصادر البيانات وتراخيص الطرف الثالث.</span></li>
+            <li><span data-lang="en">Adapt a safe copy of your project and run its native GIS tests.</span><span data-lang="ar">اشتغل على نسخة آمنة من مشروعك واختبرها في برنامج GIS المناسب.</span></li>
+            <li><span data-lang="en">Record results; static checks alone do not prove the GUI works.</span><span data-lang="ar">سجّل النواتج؛ فحص الكود وحده لا يثبت عمل واجهة البرنامج.</span></li>
+          </ul>
+          <div class="usage-links"><a href="explorer.html#all-skills"><span data-lang="en">Browse 21 skills</span><span data-lang="ar">استعراض 21 مهارة</span></a><a href="examples/README.md"><span data-lang="en">GIS examples</span><span data-lang="ar">أمثلة GIS</span></a><a href="references/free-first-policy.md"><span data-lang="en">Free-first licensing</span><span data-lang="ar">المجانية والتراخيص</span></a></div>
+          <p class="usage-caveat"><span data-lang="en">This website is a guide and catalog. It does not run AI agents or GIS software in your browser.</span><span data-lang="ar">الموقع دليل ومكتبة مرجعية، ولا يشغّل الوكيل أو برامج GIS داخل المتصفح.</span></p>
+        </article>
+      </div>
+      <div class="usage-faq">
+        <details><summary><span data-lang="en">How do I know the change actually works?</span><span data-lang="ar">إزاي أعرف إن التعديل شغال فعلًا؟</span></summary><p><span data-lang="en">Ask for changed files, observed tests, outputs and an acceptance report. Native ArcGIS/QGIS verification is separate from offline unit tests.</span><span data-lang="ar">اطلب الملفات المعدّلة والاختبارات وملفات النتائج وتقرير قبول. التشغيل داخل ArcGIS أو QGIS اختبار مستقل عن فحوص الكود.</span></p></details>
+        <details><summary><span data-lang="en">Can I resume or undo an old task?</span><span data-lang="ar">هل ينفع أكمل أو أتراجع عن خطوة قديمة؟</span></summary><p><span data-lang="en">A host-integrated development journal can restore numbered history and link revisions. A written rollback note is not a Git revert; real source changes need authorization and testing.</span><span data-lang="ar">سجل التطوير المفعّل مع الوكيل يساعده يراجع الخطوات القديمة ويربط التعديلات الجديدة بها. كتابة تقرير تراجع وحدها لا تسترجع ملفات Git؛ يلزم تنفيذ آمن واعتماد واختبار.</span></p></details>
       </div>
     </section>
 
@@ -883,13 +959,35 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       const commands = {
         clone: 'git clone https://github.com/ahmadibrahim4geo/GIS-Development-Skills.git',
         verify: 'python -m unittest discover -s tests -p "test_*.py"',
-        skills: 'ls -1 skills/ # 19 installable geospatial specialist skills'
+        skills: 'ls -1 skills/ # list available specialist skills'
       };
       document.getElementById('cliText').innerText = commands[mode];
       document.querySelectorAll('.cli-tab').forEach(b => {
         b.className = 'cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono';
       });
       btn.className = 'cli-tab px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono font-semibold';
+    }
+
+    async function copyUsage(mode,button) {
+      const id=mode==='install'?'howToCommand':
+        (document.documentElement.lang==='ar'?'howToExampleAr':'howToExampleEn');
+      const source=document.getElementById(id);
+      if(!source || !button)return;
+      const value=source.textContent.trim();
+      let ok=false;
+      try {
+        if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(value);ok=true;}
+        else {
+          const field=document.createElement('textarea');
+          field.value=value;field.setAttribute('readonly','');field.style.position='fixed';
+          field.style.opacity='0';document.body.appendChild(field);field.select();
+          ok=document.execCommand('copy');field.remove();
+        }
+      }catch(error){ok=false;}
+      if(!ok){source.setAttribute('tabindex','-1');source.focus();return;}
+      const previous=button.innerHTML;
+      button.textContent=document.documentElement.lang==='ar'?'تم النسخ ✓':'Copied ✓';
+      setTimeout(()=>{button.innerHTML=previous;},1800);
     }
 
     function copyCli() {
