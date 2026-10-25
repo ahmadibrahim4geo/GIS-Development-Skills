@@ -49,7 +49,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>21 installable GIS skills</strong> · <strong>148 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>22 installable GIS skills</strong> · <strong>148 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -267,6 +267,10 @@ Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-stud
 - **[Free/public API guide](references/free-geospatial-apis.md)** — 52 curated climate, elevation, DEM, STAC, imagery, basemap, boundaries, population, hazards, routing, ocean and biodiversity service entries, with credentials, free-tier constraints and caveats.
 
 The API guide **does not** treat public endpoints as unlimited or licensed for any use. SoilGrids REST is marked paused; OSMF tiles and Nominatim have restrictive public usage policies.
+
+## Project Wizard + Arabic GIS i18n — 25 October 2026
+
+[Launch the bilingual GIS Project Wizard](project-wizard.html) to select your target GIS platform, languages, KML/KMZ and licensing preferences, then generate and download a Markdown implementation plan. The wizard runs locally in the browser; it does **not** build software or execute a coding agent. Its suggestions must be validated in the real GIS host. Explore the [Wizard roadmap](docs/PROJECT_WIZARD_PLAN.md), [Arabic/international GIS skill](skills/gis-internationalization-arabic/SKILL.md), [KML library review](references/kml-kmz-repository-review.md) and [performance/reliability guide](docs/PERFORMANCE_RELIABILITY.md). This release incorporates the useful parts of PR #12 without replacing the newer homepage, branding, tests or core skill.
 
 ## Complete homepage redesign — 25 October 2026
 

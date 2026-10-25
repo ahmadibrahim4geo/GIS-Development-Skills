@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 21,
+  "skill_count": 22,
   "skill_ids": [
     "agent-development-journal",
     "arcgis-toolbox-engineering",
@@ -16,6 +16,7 @@
     "gis-desktop-application-development",
     "gis-development",
     "gis-device-context",
+    "gis-internationalization-arabic",
     "gis-security-guardian",
     "global-mapper-development",
     "kml-kmz-engineering",

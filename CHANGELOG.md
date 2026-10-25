@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — recover Project Wizard PR #12 on current main (2026-10-25)
+
+- Resolved PR #12's stale main divergence without reverting the current bilingual homepage/footer, its GitHub Actions setup, security guardian, core router or KML author-style preservation.
+- Published client-side bilingual GIS Project Wizard; Arabic and multilingual GIS specialist (22 skills), source review, reliability guides and KMZ fixture unit tests.
+- Fixed invalid literal escaped newlines in the Wizard JS, synchronized manifest, README, homepage count, Explorer and free-first policy. Kept commercial host and native test limitations explicit.
+
+
 ## Unreleased — complete homepage redesign with in-page GIS How to Use (2026-10-25)
 
 - Rebuild the homepage hero as a typographic 2-column studio layout with the original approved vector logo, workflow illustration and source-driven metrics.

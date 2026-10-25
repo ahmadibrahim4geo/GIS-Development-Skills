@@ -210,6 +210,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         <div class="studio-buttons">
           <a class="studio-action main" href="#how-to-use"><span data-lang="en">Start here · How to Use ↓</span><span data-lang="ar">ابدأ هنا · طريقة الاستخدام ↓</span></a>
           <a class="studio-action secondary" href="#capabilities"><span data-lang="en">Explore GIS specialties</span><span data-lang="ar">استكشف تخصصات GIS</span></a>
+          <a class="studio-action secondary" href="project-wizard.html"><span data-lang="en">Project Wizard ↗</span><span data-lang="ar">معالج مشاريع GIS ↗</span></a>
         </div>
         <p class="studio-footnote"><span data-lang="en">Guidance for compatible coding agents and developers. <strong>Not a hosted AI executor or a licensed GIS application.</strong></span><span data-lang="ar">تعليمات للوكلاء البرمجيين المتوافقين والمطورين. <strong>ليست خدمة تنفيذ ذكاء اصطناعي أو برنامج GIS مرخصًا.</strong></span></p>
       </div>
@@ -229,7 +230,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     <!-- Preserve manifest-backed IDs and semantic counters exactly -->
     <div class="studio-metrics">
         <div class="p-2 text-center">
-          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">21</strong>
+          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">22</strong>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Installable Agent Skills</span>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مهارة برمجية قابلة للتثبيت</span>
         </div>
@@ -287,6 +288,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
               <option value="geospatial-web-mapping">Web GIS · 2D / 3D</option>
               <option value="remote-sensing-pipelines">Remote Sensing</option>
               <option value="geospatial-data-processing">GDAL · Vector / Raster</option>
+              <option value="gis-internationalization-arabic">Arabic &amp; Multilingual GIS</option>
             </select>
           </div>
           <p id="studioChoiceEn" data-lang="en" class="studio-small">For mixed projects, start with the core router.</p>
@@ -1021,6 +1023,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',closeMobileMenu));
     document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMobileMenu();closeSkillModal();}});
     const studioTopics={
+      'gis-internationalization-arabic':{en:'Test UTF-8 text, Arabic RTL/BiDi UI and map labels without changing geometry or GIS field identifiers.',ar:'اختبر عرض العربية واتجاه RTL والنص المختلط وملصقات الخرائط دون تعديل الإحداثيات أو أسماء الحقول.',enTask:'Inspect my GIS application localization architecture. Preserve stable field identifiers and geometry while adding tested Arabic RTL/BiDi strings, Unicode attributes and map-label rendering. Propose a numbered plan before edits, implement approved changes, and verify exports in the actual GIS host when available.',arTask:'افحص دعم العربية واللغات في تطبيق GIS، وحافظ على أسماء الحقول والمعرّفات والإحداثيات، وطوّر عرض العربية واتجاه RTL/BiDi وملصقات الخرائط والسمات النصية. اعرض خطة مرقمة قبل التعديل ثم نفذ ما اعتمدته واختبر النواتج داخل البرنامج عند توفره.'},
       'gis-development':{en:'For mixed GIS projects, start with the core router.',ar:'للمشروعات التي تضم عدة تخصصات ابدأ بالـ GIS Router.',enTask:'Inspect my existing GIS project. Identify its runtime, CRS, data formats and key risks. Propose a numbered plan for my approval; execute approved tasks using suitable GIS skills; provide real test evidence and a numbered development journal, stating any tests not run.',arTask:'افحص مشروع GIS الموجود وحدد بيئة التشغيل ونظام الإحداثيات والصيغ والمخاطر. اعرض خطة مرقمة لاعتمادها، ونفّذ المهام المعتمدة بالمهارات المناسبة، واختبر النتائج الفعلية وسجّل كل خطوة، ووضح ما لم تختبره.'},
       'arcgis-toolbox-engineering':{en:'ArcGIS Pro and ArcMap require the correct licensed host, version and ArcPy environment.',ar:'أدوات ArcGIS Pro أو ArcMap تحتاج الإصدار والترخيص وبيئة ArcPy المناسبة.',enTask:'Inspect my ArcGIS toolbox (.pyt / script tool) and identify the ArcGIS version and parameter requirements. Propose a reviewed plan. Implement approved changes; test validation, CRS, outputs and ArcPy in the actual host if available. Record evidence, failures and numbered progress.',arTask:'افحص أداة ArcGIS وملف .pyt أو script tool، وحدد الإصدار والبارامترات. اعرض خطة للاعتماد، ثم نفّذ المعتمد واختبر المدخلات ونظام الإحداثيات والنواتج داخل ArcGIS إن توفر، وسجّل الاختبارات والتعديلات بالترتيب.'},
       'qgis-plugin-development':{en:'Use PyQGIS/Processing and confirm your installed QGIS version before testing.',ar:'استخدم PyQGIS/Processing وحدد إصدار QGIS المثبت قبل الاختبار.',enTask:'Inspect my QGIS plugin and version constraints. Propose a numbered plan; implement only approved changes and verify PyQGIS imports, Processing outputs, CRS and GUI actions in native QGIS if possible. Keep a numbered development journal.',arTask:'افحص إضافة QGIS وحدد الإصدار والتوافق. اعرض خطة مرقمة، ثم نفّذ المعتمد واختبر PyQGIS وProcessing ونظام الإحداثيات والواجهة داخل QGIS عند توفره. وثّق كل خطوة في سجل مرقم.'},
