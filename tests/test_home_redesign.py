@@ -78,6 +78,8 @@ class StudioHomepageTests(unittest.TestCase):
         self.assertIn('onclick="toggleLanguage()"',self.site)
         self.assertIn('id="mobileMenu"',self.site)
         self.assertIn("renderPathways()",self.site)
+        self.assertIn("function copyStudioText(value, button, focusTarget)",self.site)
+        self.assertIn("studio-tab-active",self.site)
         self.assertIn('href="explorer.html#all-skills"',self.site)
 
 

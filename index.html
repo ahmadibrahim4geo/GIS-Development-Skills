@@ -320,9 +320,9 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
           <p><span data-lang="en">Clone the source and run the automated quality checks; these commands test the repository, not an installed ArcGIS/QGIS application.</span><span data-lang="ar">استنسخ المستودع وشغّل اختبارات الجودة. الأوامر دي تفحص المستودع، مش تشغيل الأداة داخل ArcGIS أو QGIS.</span></p>
           <div class="studio-cmd" dir="ltr"><code id="cliText">git clone https://github.com/ahmadibrahim4geo/GIS-Development-Skills.git</code><button type="button" id="copyCliBtn" class="studio-copy" onclick="copyCli()"><span data-lang="en">Copy</span><span data-lang="ar">نسخ</span></button></div>
           <div style="display:flex;flex-wrap:wrap;gap:8px;margin:11px 0">
-            <button type="button" class="cli-tab studio-copy" onclick="setCliCommand('clone',this)"><span data-lang="en">Clone</span><span data-lang="ar">استنساخ</span></button>
-            <button type="button" class="cli-tab studio-copy" onclick="setCliCommand('verify',this)"><span data-lang="en">Run tests</span><span data-lang="ar">شغّل الفحوص</span></button>
-            <button type="button" class="cli-tab studio-copy" onclick="setCliCommand('skills',this)"><span data-lang="en">List skills</span><span data-lang="ar">قائمة المهارات</span></button>
+            <button type="button" class="cli-tab studio-copy studio-tab-active" aria-pressed="true" onclick="setCliCommand('clone',this)"><span data-lang="en">Clone</span><span data-lang="ar">استنساخ</span></button>
+            <button type="button" class="cli-tab studio-copy" aria-pressed="false" onclick="setCliCommand('verify',this)"><span data-lang="en">Run tests</span><span data-lang="ar">شغّل الفحوص</span></button>
+            <button type="button" class="cli-tab studio-copy" aria-pressed="false" onclick="setCliCommand('skills',this)"><span data-lang="en">List skills</span><span data-lang="ar">قائمة المهارات</span></button>
           </div>
           <p class="studio-small"><span data-lang="en">Node.js + Skills CLI are optional for manual reading. Native GIS acceptance depends on real host availability.</span><span data-lang="ar">Node.js وأداة التثبيت مش مطلوبين للقراءة اليدوية. اختبار GIS الفعلي يحتاج البرنامج المناسب.</span></p>
         </article>
@@ -941,46 +941,58 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         verify: 'python -m unittest discover -s tests -p "test_*.py"',
         skills: 'ls -1 skills/ # list available specialist skills'
       };
-      document.getElementById('cliText').innerText = commands[mode];
-      document.querySelectorAll('.cli-tab').forEach(b => {
-        b.className = 'cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono';
+      if (!Object.prototype.hasOwnProperty.call(commands, mode)) return;
+      document.getElementById('cliText').textContent = commands[mode];
+      document.querySelectorAll('.cli-tab').forEach(node => {
+        node.classList.remove('studio-tab-active');
+        node.setAttribute('aria-pressed', String(node === btn));
       });
-      btn.className = 'cli-tab px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono font-semibold';
+      btn.classList.add('studio-tab-active');
     }
 
-    async function copyUsage(mode,button) {
-      const id=mode==='install'?'howToCommand':mode==='specialist'?'studioSpecialistCommand':
-        (document.documentElement.lang==='ar'?'howToExampleAr':'howToExampleEn');
-      const source=document.getElementById(id);
-      if(!source || !button)return;
-      const value=source.textContent.trim();
-      let ok=false;
+    async function copyStudioText(value, button, focusTarget) {
+      let copied = false;
       try {
-        if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(value);ok=true;}
-        else {
-          const field=document.createElement('textarea');
-          field.value=value;field.setAttribute('readonly','');field.style.position='fixed';
-          field.style.opacity='0';document.body.appendChild(field);field.select();
-          ok=document.execCommand('copy');field.remove();
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(value);
+          copied = true;
+        } else {
+          const input = document.createElement('textarea');
+          input.value = value;
+          input.readOnly = true;
+          input.style.position = 'fixed';
+          input.style.opacity = '0';
+          document.body.appendChild(input);
+          input.select();
+          copied = document.execCommand('copy');
+          input.remove();
         }
-      }catch(error){ok=false;}
-      if(!ok){source.setAttribute('tabindex','-1');source.focus();return;}
-      const previous=button.innerHTML;
-      button.textContent=document.documentElement.lang==='ar'?'تم النسخ ✓':'Copied ✓';
-      setTimeout(()=>{button.innerHTML=previous;},1800);
+      } catch (error) { copied = false; }
+      if (!copied) {
+        if (focusTarget) {
+          focusTarget.setAttribute('tabindex', '-1');
+          focusTarget.focus();
+        }
+        return;
+      }
+      const contents = button.innerHTML;
+      button.textContent = document.documentElement.lang === 'ar' ? 'تم النسخ ✓' : 'Copied ✓';
+      window.setTimeout(() => { button.innerHTML = contents; }, 1600);
+    }
+
+    function copyUsage(mode, button) {
+      const id = mode === 'install' ? 'howToCommand' : mode === 'specialist' ?
+        'studioSpecialistCommand' : (document.documentElement.lang==='ar'?'howToExampleAr':'howToExampleEn');
+      const target = document.getElementById(id);
+      if (!target || !button) return;
+      return copyStudioText(target.textContent.trim(), button, target);
     }
 
     function copyCli() {
-      const text = document.getElementById('cliText').innerText;
-      const btn = document.getElementById('copyCliBtn');
-      const temp = document.createElement('textarea');
-      temp.value = text;
-      document.body.appendChild(temp);
-      temp.select();
-      document.execCommand('copy');
-      document.body.removeChild(temp);
-      btn.innerText = 'Copied ✓';
-      setTimeout(() => { btn.innerText = 'Copy CLI'; }, 1800);
+      const target = document.getElementById('cliText');
+      const button = document.getElementById('copyCliBtn');
+      if (!target || !button) return;
+      return copyStudioText(target.textContent.trim(), button, target);
     }
 
     const timelineScenes = [
