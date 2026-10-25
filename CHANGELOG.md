@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — Blue Marble Geographics / Global Mapper specialist (2026-10-25)
+
+- Add dedicated Global Mapper GMS, Python and licensed SDK engineering skill with version-specific runtime/redistribution controls.
+- Add seven public third-party forks under Blue Marble's official GitHub organization and one independent, older GMS community scripting tutorial (138 curated code references).
+- Document OpenMVG/OpenMVS photogrammetry, 3D Tiles, Cesium terrain tiling, glTF/Assimp/CGAL license caveats; no proprietary engine binaries or source copied.
+- Synchronize English/Arabic README, index skill card and source count, router, desktop/web/terrain references, manifest and new offline regression tests. No native licensed runtime tested.
+
 ## Unreleased — Earth View and synchronized source intake (2026-10-25)
 
 - Review Earth View's Three.js globe, NASA GIBS/Sentinel imagery, time-lapse, Electron and optional AI architecture, documenting upstream missing license and T0-only evidence.

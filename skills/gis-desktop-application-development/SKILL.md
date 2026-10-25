@@ -9,6 +9,10 @@ compatibility: Requires the target desktop build toolchain and GIS runtime to ru
 
 Use this for **independent executable applications**, not ArcGIS Pro SDK add-ins or a QGIS plugin. Select host OS, packaging model, renderer and processing engine separately. A working toolbar mockup is not a completed GIS app.
 
+## Global Mapper SDK is a licensed engine, not a free backend
+
+The [Blue Marble Global Mapper guide](../../references/blue-marble-global-mapper.md) explains why proprietary Global Mapper DLLs and Pro tools cannot be embedded in our open-source GIS desktop app without explicit SDK and redistribution rights. For a stand-alone alternative, use independently licensed engines and test equivalent features instead of assuming source availability from Blue Marble's public GitHub forks.
+
 ## External Earth View desktop reference
 
 Read [Earth View architecture](../../references/earth-view-architecture.md) for an Electron web-shell + loopback API pattern, **not** a WPF/Cesium drop-in. Upstream license not observed: no source reuse. Do not copy its plaintext desktop key storage: use OS-protected secrets, validate localhost origin/CORS and installer integrity.
@@ -30,7 +34,7 @@ Read [Earth View architecture](../../references/earth-view-architecture.md) for 
 4. Create an acceptance table with **one observable, user-triggered operation per command**. Implement a complete flow: load data -> analyze -> render -> save/export -> reopen and inspect. Hide unfinished commands; do not ship clickable placeholders.
 5. Define a CRS policy: detect layer CRS; explicit transformations and grids; preserve original coordinates; distinguish horizontal from vertical datum and meters from angular degrees. Test real DEM NoData and cell alignment.
 6. Use independently licensed formats/engines (GeoPackage, GeoJSON, COG/GeoTIFF, GDAL/PROJ where permitted). FileGDB write support must be verified for the selected driver and deployment license; do not assume ArcPy can be redistributed.
-7. Treat HTTP imagery, terrain, climate, boundary, population, hazard and routing providers as separate external dependencies. Use `../geospatial-api-integration/SKILL.md` and the 39-entry API catalog; validate API keys, cache/offline permissions, request caps, retries, CORS and attribution. Never bundle free personal provider keys in redistributable desktop executables.
+7. Treat HTTP imagery, terrain, climate, boundary, population, hazard and routing providers as separate external dependencies. Use `../geospatial-api-integration/SKILL.md` and the current versioned API catalog; validate API keys, cache/offline permissions, request caps, retries, CORS and attribution. Never bundle free personal provider keys in redistributable desktop executables.
 8. Isolate calculation workers and never block the UI event loop with network downloads or raster loops. Support cancellation, progress, large datasets and crash recovery; test worker cleanup.
 9. Make Arabic/English directionality, geospatial field aliases, symbol labels, keyboard navigation, DPI scaling and dialogs functional in both languages. Preserve scientific metadata in exported files.
 10. Build an installer from a clean environment, **not** the developer's machine state. Check source-to-binary identity, bundled runtime licenses, updater rollback, user-data preservation, security, uninstall and reinstallation.

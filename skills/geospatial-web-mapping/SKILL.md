@@ -28,6 +28,10 @@ Use when the deliverable is a web GIS map, browser-based spatial tool or mapping
 - [ ] Responsive map, long data performance, time axis accuracy
 - [ ] API terms, CRS, attribution and secrets checked
 
+## Blue Marble 3D Tiles and terrain forks
+
+See the [Global Mapper / Blue Marble reference](../../references/blue-marble-global-mapper.md) for forked Cesium 3D Tiles Tools and an older Cesium Terrain Builder. They are independent utilities, not the proprietary Global Mapper renderer. Check terrain tiling scheme, NoData, dataset licensing, 3D Tiles metadata/transform and server support before using in CesiumJS or MapLibre.
+
 ## Earth View: globe-to-modal architecture
 
 Review [Earth View](../../references/earth-view-architecture.md) for typed base/overlay imagery provider registries, WMS 1.3.0 EPSG:4326 BBOX axis order, temporal images, camera controls and regional zoom/view-state restoration. Avoid copying code without an upstream license; do not infer displayed date is the satellite acquisition date or assume optional AI controls are visible.
