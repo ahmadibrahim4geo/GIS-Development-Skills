@@ -46,12 +46,6 @@ license: MIT
 
 ## Global rules (always apply)
 
-1. **Protect sources:** use new outputs; approve destructive edits and back up.
-2. **Geospatial correctness:** verify CRS/axis order, true transformations, area/distance units, Z/vertical datum, invalid geometries, NoData, raster alignment and output readback.
-3. **Compatibility:** separate ArcMap/Pro; pin runtime, licenses and quotas.
-4. **Security:** apply [GIS Security Guardian](../gis-security-guardian/SKILL.md) at preflight, runtime and release gates, plus [geospatial input rules](../../references/geospatial-security.md) for files, APIs, SQL and credentials. A policy document does not enforce runtime sandbox permissions.
-5. **Performance:** [measure real inputs](../../references/geospatial-performance.md).
-6. **Evidence:** complete [the acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and check it with [the evidence validator](../../scripts/validate_evidence.py). Record T0–T4 honestly; generic syntax checks or UI mockups are **not** native GIS execution.
-7. **References:** [projects](../../references/project-catalog.json), [APIs](../../references/free-geospatial-apis.json), [data](../../references/geospatial-data-repositories.json) require source/license verification.
+Use the [repository-wide execution contract](../../references/repository-wide-skill-orchestration.md), [full guidance](../../references/gis-development-full-guidance.md), and [Security Guardian](../gis-security-guardian/SKILL.md). Protect source data, verify CRS/units/NoData, preserve provenance, check licenses/versions, measure performance and test output readback. Obtain required approval before consequential writes; host permissions remain authoritative. Record T0–T4 evidence using the [acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py). Never treat static checks as native GIS or GUI proof.
 
 **More:** [full guide](../../references/gis-development-full-guidance.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
