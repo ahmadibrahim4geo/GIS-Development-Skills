@@ -1,5 +1,35 @@
 # Changelog
 
+## Unreleased — complete homepage redesign with in-page GIS How to Use (2026-10-25)
+
+- Rebuild the homepage hero as a typographic 2-column studio layout with the original approved vector logo, workflow illustration and source-driven metrics.
+- Move all essential install, platform selection, prompt-writing, permission/review, verification and journal guidance into the homepage; selectable eight-topic specialist command and bilingual sample request, clipboard controls, offline/manual route and FAQ.
+- Add scoped responsive `assets/home-redesign.css` with a consistent charcoal/mint palette across sections. Preserve the existing bottom developer portrait, exact biography/contact markup and layout while recoloring backgrounds, accents and borders.
+- Keep complete Explorer and existing GIS catalog/skills/QA functionality, add regression test for page functionality and author section stability.
+
+
+## Unreleased — bilingual How to Use onboarding (2026-10-25)
+
+- Expand index.html with an accessible English/Arabic onboarding walkthrough, four steps, real sample request with working copy button, coding-agent CLI and manual/self-study paths, FAQ and navigation link.
+- Enhance Explorer's existing Quick Start rather than duplicating core functionality; add detailed English and Arabic usage guides, source/lifecycle caveats and regression tests.
+- Preserve existing brand, footer/contact details, complete Explorer, GIS security/agent distinctions, dynamic skill catalog and release-gate CI checks.
+
+# Changelog
+
+## Unreleased — Agent Development Journal & Project Memory (2026-10-25)
+
+- Add numbered append-only project-local request/action/revision/cancellation/rollback-intent/verification/handoff records with resumed context, hash-chain integrity and safe derived Markdown repair.
+- Add standard-library offline CLI and tests, reference guide and a review of Planning with Files, Superpowers and Spec Kit (design inspiration only; no third-party tools installed).
+- Update agent router integration, bilingual README/site, free-first matrix, manifest, security and CI. No automatic process monitoring, GIS host execution or Git rollback is claimed.
+
+
+## Unreleased — Prompt Intent & Execution Orchestrator (2026-10-25)
+
+- Add a review-first Arabic/English natural-language intent skill, dependency-aware plan format, skill routing and cross-cutting security requirements.
+- Add offline standard-library keyword hints (not LLM inference), structured JSON validation, revision and risk approval assertions, ZEarth draft example and unit tests. The helper does not authenticate approval or execute GIS.
+- Integrate router, decision tree, bilingual READMEs, bilingual website and derived inventory without replacing existing resources.
+
+
 ## Unreleased — Esri official references and Python environment audit (2026-10-25)
 
 - Review original Apache-2.0 root license files of ten additional Esri official repositories. Record evidence and host/service caveats, with no new native-runtime validation claims (138 → 148 curated project links).

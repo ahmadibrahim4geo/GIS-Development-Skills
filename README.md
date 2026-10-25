@@ -49,7 +49,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>19 installable GIS skills</strong> · <strong>148 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>21 installable GIS skills</strong> · <strong>148 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -58,6 +58,18 @@ A practical development skill and curated reference hub for building reliable Ar
   <a href="CONTRIBUTING.md">Contribute</a> ·
   <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website ↗</a>
 </p>
+
+## Agent Development Journal & Project Memory — 25 October 2026
+
+The new [Agent Development Journal skill](skills/agent-development-journal/SKILL.md) adds project-local **numbered reports** for every user requirement, implementation milestone, revision, cancellation and verification. Its [offline Python journal tool](scripts/development_journal.py) creates immutable linked JSON records and generated Markdown reports/INDEX.md/STATE.md in each target project's `.agent-development-log/`. See [recovery and lifecycle](references/agent-development-journal-guide.md), [external skills comparison](references/agent-memory-skill-references.md) and [offline example](examples/development-journal/README.md).
+
+Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planning-with-files), [Superpowers](https://github.com/obra/superpowers), [GitHub Spec Kit](https://github.com/github/spec-kit), without copying their hooks or tools. The **hosting agent must invoke the logger** at action checkpoints; it does not automatically monitor processes, execute code or reverse Git commits.
+
+## Prompt Intent & Execution Orchestrator — 25 October 2026
+
+The new [installable orchestration skill](skills/prompt-intent-orchestrator/SKILL.md) converts informal Arabic/English requests into explicit, testable requirements and task dependencies. Users review, edit and approve each plan revision before implementation. The agent then selects [existing GIS specialists](skills/gis-development/SKILL.md), actual available tools, [GIS Security Guardian](skills/gis-security-guardian/SKILL.md), and T0–T4 acceptance tests.
+
+Read the [workflow contract](references/intent-orchestration-workflow.md), [ZEarth example plan](examples/intent-orchestrator/README.md) and [offline JSON validator / keyword hints](scripts/intent_router.py). The helper is **not** an AI model, does not authenticate user approval and does not execute GIS software; native behavior still requires host tests.
 
 ## Google Earth Pro engineering and historical imagery — 2026-10-25
 
@@ -255,6 +267,14 @@ Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-stud
 - **[Free/public API guide](references/free-geospatial-apis.md)** — 52 curated climate, elevation, DEM, STAC, imagery, basemap, boundaries, population, hazards, routing, ocean and biodiversity service entries, with credentials, free-tier constraints and caveats.
 
 The API guide **does not** treat public endpoints as unlimited or licensed for any use. SoilGrids REST is marked paused; OSMF tiles and Nominatim have restrictive public usage policies.
+
+## Complete homepage redesign — 25 October 2026
+
+The public [homepage](index.html#how-to-use) now features a new charcoal/mint GIS engineering design, clear bilingual hero, verified workflow illustration, integrated four-step How to Use, in-page selectable GIS platform (8 tracks), context-sensitive installation command and Arabic/English sample agent request (copyable), manual without-agent workflow, QA expectations and inline troubleshooting FAQ. Visitors do **not** need to open repository Markdown files for first use. Full docs remain optional reading. Existing creator biography, portrait and contact actions are preserved; only their styling palette changes. All interactive catalog/skills features remain available.
+
+## How to Use — illustrated bilingual workflow
+
+The website now includes [How to Use](index.html#how-to-use), an accessible English/Arabic onboarding sequence, copyable install command, realistic copyable request for an AI coding agent, and a no-agent/manual route. The existing [Explorer Quick Start](explorer.html#get-started) was expanded rather than replaced. Detailed [English](docs/HOW_TO_USE.md) and [Arabic](docs/HOW_TO_USE.ar.md) guides explain prerequisites, approval, safe execution, testing, journals, rollback limits and third-party licensing.
 
 ## Installation for coding agents
 

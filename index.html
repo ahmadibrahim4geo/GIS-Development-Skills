@@ -95,8 +95,38 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 :focus-visible{outline:2px solid #1CC8E8;outline-offset:3px}
 
+
+    /* Bilingual, no-framework How to Use section; no changes to the existing footer. */
+    .usage-help{scroll-margin-top:94px;border-top:1px solid #334155;padding:56px 0}
+    .usage-help .usage-head{max-width:760px;margin-bottom:24px}
+    .usage-help .usage-eyebrow{font-size:11px;letter-spacing:.15em;font-weight:800;color:#7dd3fc}
+    .usage-help h2{font-size:clamp(27px,3.5vw,38px);line-height:1.2;font-weight:800;margin:9px 0 12px;color:#fff}
+    .usage-help p,.usage-help li{color:#cbd5e1;font-size:13px;line-height:1.75}
+    .usage-help .usage-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:19px}
+    .usage-help .usage-step,.usage-help .usage-panel{background:linear-gradient(145deg,#132334,#0c1726);border:1px solid #334155;border-radius:15px;min-width:0;padding:21px}
+    .usage-help .usage-step strong{color:#7dd3fc;font:700 12px ui-monospace,monospace}
+    .usage-help .usage-step h3{font-size:16px;font-weight:700;margin:12px 0 7px;color:#f8fafc}
+    .usage-help .usage-options{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);gap:16px}
+    .usage-help .usage-panel h3{font-size:19px;font-weight:750;color:#fff;margin:0 0 10px}
+    .usage-help .usage-panel ul{list-style:disc;padding-inline-start:20px;margin:10px 0}
+    .usage-help .usage-command{display:flex;gap:12px;align-items:center;justify-content:space-between;margin:12px 0;padding:13px;border-radius:10px;background:#05111e;border:1px solid #345167}
+    .usage-help .usage-command code{font-size:12px;color:#b4f4d8;overflow-wrap:anywhere}
+    .usage-help .usage-prompt{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.7 ui-monospace,monospace;color:#dcfce7;background:#05111e;border:1px solid #345167;padding:15px;border-radius:10px;margin:11px 0}
+    .usage-help .usage-copy{background:#183e54;border:1px solid #44748b;color:#e0f2fe;border-radius:8px;font-weight:700;padding:8px 11px;cursor:pointer;font-size:12px;flex-shrink:0}
+    .usage-help .usage-copy:hover{background:#245874}
+    .usage-help .usage-links{display:flex;flex-wrap:wrap;gap:10px 17px;margin-top:15px}
+    .usage-help .usage-links a{color:#7dd3fc;text-decoration:underline;font-size:13px;font-weight:700}
+    .usage-help .usage-caveat{font-size:12px;color:#a3b8ce;margin-top:12px;line-height:1.75}
+    .usage-help .usage-faq{margin-top:18px;border:1px solid #334155;border-radius:13px;overflow:hidden}
+    .usage-help details{padding:14px 18px;background:#0e1b2b}.usage-help details+details{border-top:1px solid #334155}
+    .usage-help summary{color:#f8fafc;cursor:pointer;font-size:14px;font-weight:700}
+    .usage-help details p{margin-top:9px}
+    @media(max-width:950px){.usage-help .usage-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.usage-help .usage-options{grid-template-columns:1fr}}
+    @media(max-width:550px){.usage-help .usage-steps{grid-template-columns:1fr}.usage-help .usage-command{flex-wrap:wrap}.usage-help .usage-copy{margin-inline-start:auto}}
+
 #mobileMenu a{display:block;padding:10px;color:#cbd5e1}#mobileMenu a:hover{background:#1e293b;color:#fff;border-radius:8px}
   </style>
+<link rel="stylesheet" href="assets/home-redesign.css">
 </head>
 <body class="min-h-screen antialiased selection:bg-sky-500/30 selection:text-sky-200">
 
@@ -117,6 +147,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       <!-- Desktop Nav Links -->
       <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
         <a href="explorer.html" class="hover:text-sky-400 transition-colors"><span data-lang="en">Full Data Explorer</span><span data-lang="ar">مستكشف البيانات الكامل</span></a>
+        <a href="#how-to-use" class="hover:text-sky-400 transition-colors"><span data-lang="en">How to Use</span><span data-lang="ar">طريقة الاستخدام</span></a>
         <a href="#capabilities" class="hover:text-sky-400 transition-colors">
           <span data-lang="en">Skills &amp; Pathways</span>
           <span data-lang="ar">المهارات والمسارات</span>
@@ -163,98 +194,42 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         </a>
       </div>
     </div>
-<nav id="mobileMenu" class="lg:hidden hidden p-4 border-t border-slate-800 bg-[#050912]" aria-label="Mobile navigation"><a href="explorer.html"><span data-lang="en">Full Data Explorer</span><span data-lang="ar">مستكشف البيانات الكامل</span></a><a href="#capabilities"><span data-lang="en">Skills &amp; Pathways</span><span data-lang="ar">المهارات والمسارات</span></a><a href="#earth-kml"><span data-lang="en">Earth &amp; KML</span><span data-lang="ar">الأرض وKML</span></a><a href="#cartography"><span data-lang="en">Cartography</span><span data-lang="ar">الكارتوجرافيا</span></a><a href="#security"><span data-lang="en">Security &amp; QA</span><span data-lang="ar">الأمان والاختبارات</span></a><a href="#author"><span data-lang="en">Creator</span><span data-lang="ar">المطور</span></a></nav>
+<nav id="mobileMenu" class="lg:hidden hidden p-4 border-t border-slate-800 bg-[#050912]" aria-label="Mobile navigation"><a href="explorer.html"><span data-lang="en">Full Data Explorer</span><span data-lang="ar">مستكشف البيانات الكامل</span></a><a href="#how-to-use"><span data-lang="en">How to Use</span><span data-lang="ar">طريقة الاستخدام</span></a><a href="#capabilities"><span data-lang="en">Skills &amp; Pathways</span><span data-lang="ar">المهارات والمسارات</span></a><a href="#earth-kml"><span data-lang="en">Earth &amp; KML</span><span data-lang="ar">الأرض وKML</span></a><a href="#cartography"><span data-lang="en">Cartography</span><span data-lang="ar">الكارتوجرافيا</span></a><a href="#security"><span data-lang="en">Security &amp; QA</span><span data-lang="ar">الأمان والاختبارات</span></a><a href="#author"><span data-lang="en">Creator</span><span data-lang="ar">المطور</span></a></nav>
   </header>
 
   <!-- Main Content Container -->
   <main id="home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- HERO SECTION -->
-    <section class="pt-10 pb-16 text-center">
-      <!-- Official Full Hero Logo Banner -->
-      <div class="max-w-3xl mx-auto mb-6">
-        <img 
-          src="assets/brand/logo-dark.svg" 
-          alt="GIS Development Skills — The Heart of Geospatial Innovation" 
-          class="w-full h-auto max-h-56 object-contain mx-auto drop-shadow-[0_12px_30px_rgba(56,189,248,0.22)]"
-          onerror="this.onerror=null; this.src='assets/brand/logo-light.svg';"
-        />
-      </div>
-
-      <!-- Status Pill -->
-      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-semibold mb-6">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span data-lang="en">Open-Source • Agent-Ready • Verifiable GIS Engineering</span>
-        <span data-lang="ar">مفتوح المصدر • جاهز للـ Agents • هندسة نظم معلومات جغرافية موثقة</span>
-      </div>
-
-      <!-- Main Headline -->
-      <h1 class="sr-only">GIS Development Skills — The Heart of Geospatial Innovation</h1>
-
-      <!-- Subtitle / Lead -->
-      <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
-        <span data-lang="en">
-          Build reliable ArcGIS Pro &amp; ArcMap toolboxes, PyQGIS plugins, 2D/3D Earth explorers, KML/KMZ engines, and Remote Sensing pipelines with an agent-ready development workflow.
-        </span>
-        <span data-lang="ar">
-          طوّر أدوات ArcGIS Pro و ArcMap، وإضافات QGIS، ومستعرضات الأرض ثلاثية الأبعاد، ومحركات KML/KMZ، وخطوط معالجة الاستشعار عن بعد بمنهجية هندسية قابلة للتحقق والاختبار.
-        </span>
-      </p>
-
-      <!-- Interactive Agent CLI Quick-Install Box -->
-      <div class="max-w-2xl mx-auto mb-9 bg-[#03060c] border border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xl text-left" dir="ltr">
-        <div class="flex items-center justify-between border-b border-slate-800/80 pb-2.5 mb-3 text-xs">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-            <span class="ml-2 font-mono text-slate-400">agent-cli-quickstart</span>
-          </div>
-          <div class="flex gap-1.5">
-            <button onclick="setCliCommand('clone', this)" class="cli-tab px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono font-semibold">Clone Repo</button>
-            <button onclick="setCliCommand('verify', this)" class="cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono">Run QA Tests</button>
-            <button onclick="setCliCommand('skills', this)" class="cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono">List 19 Skills</button>
-          </div>
+    <!-- 2026 studio redesign: editorial hero, actual roadmap and synchronized source metrics -->
+    <section class="studio-hero" aria-labelledby="heroHeading">
+      <div class="studio-hero-copy">
+        <span class="studio-eyebrow"><span data-lang="en">ENGINEERING WORKFLOW · FREE-FIRST</span><span data-lang="ar">منهجية تطوير هندسي · المجاني أولًا</span></span>
+        <img src="assets/brand/logo-dark.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" class="studio-logo" onerror="this.onerror=null;this.src='assets/brand/logo-light.svg';">
+        <h1 id="heroHeading"><span data-lang="en">Build GIS tools.<br><em>Prove they work.</em></span><span data-lang="ar">طوّر أدوات GIS.<br><em>واختبرها على أرض الواقع.</em></span></h1>
+        <p class="studio-description"><span data-lang="en">An open development toolkit for ArcGIS, QGIS, KML/KMZ, remote sensing and 2D/3D mapping. Move from requirements to safe implementation with reusable specialist skills, real testing and project memory.</span><span data-lang="ar">منظومة مفتوحة لتطوير أدوات ArcGIS وQGIS وملفات KML/KMZ والاستشعار عن بُعد والخرائط ثنائية وثلاثية الأبعاد، من فهم المطلوب إلى تنفيذ آمن واختبارات فعلية وسجل دائم لتطورات المشروع.</span></p>
+        <div class="studio-buttons">
+          <a class="studio-action main" href="#how-to-use"><span data-lang="en">Start here · How to Use ↓</span><span data-lang="ar">ابدأ هنا · طريقة الاستخدام ↓</span></a>
+          <a class="studio-action secondary" href="#capabilities"><span data-lang="en">Explore GIS specialties</span><span data-lang="ar">استكشف تخصصات GIS</span></a>
         </div>
-        <div class="flex items-center justify-between gap-3">
-          <div class="font-mono text-xs sm:text-sm text-slate-200 overflow-x-auto whitespace-nowrap py-1">
-            <span class="text-emerald-400 select-none mr-2">$</span>
-            <span id="cliText">git clone https://github.com/ahmadibrahim4geo/GIS-Development-Skills.git</span>
-          </div>
-          <button 
-            id="copyCliBtn"
-            onclick="copyCli()" 
-            class="shrink-0 px-3.5 py-1.5 rounded-lg bg-sky-500/15 hover:bg-sky-400 text-sky-300 hover:text-slate-950 border border-sky-400/30 font-mono text-xs font-bold transition-all"
-          >
-            Copy CLI
-          </button>
+        <p class="studio-footnote"><span data-lang="en">Guidance for compatible coding agents and developers. <strong>Not a hosted AI executor or a licensed GIS application.</strong></span><span data-lang="ar">تعليمات للوكلاء البرمجيين المتوافقين والمطورين. <strong>ليست خدمة تنفيذ ذكاء اصطناعي أو برنامج GIS مرخصًا.</strong></span></p>
+      </div>
+      <aside class="studio-workbench" aria-label="GIS development workflow illustration">
+        <div class="studio-workbench-title"><span>PROJECT / GIS DEVELOPMENT</span><span><span data-lang="en">VERIFIABLE</span><span data-lang="ar">قابل للتحقق</span></span></div>
+        <h2><span data-lang="en">Your development workflow</span><span data-lang="ar">مسار تطوير مشروعك</span></h2>
+        <p><span data-lang="en">A reliable GIS agent should do more than generate code.</span><span data-lang="ar">وكيل GIS الجيد مش بس بيكتب كود؛ لازم ينفّذ ويتحقق ويوثّق.</span></p>
+        <div class="studio-flow">
+          <div><strong>01</strong><span><b><span data-lang="en">Understand the request</span><span data-lang="ar">فهم طلب المستخدم</span></b><small><span data-lang="en">Intent, scope and requirements</span><span data-lang="ar">الهدف والمتطلبات والقيود</span></small></span><i>✓</i></div>
+          <div><strong>02</strong><span><b><span data-lang="en">Plan &amp; approve</span><span data-lang="ar">تخطيط واعتماد</span></b><small><span data-lang="en">Dependencies, skills and permissions</span><span data-lang="ar">المهام والمهارات والصلاحيات</span></small></span><i>✓</i></div>
+          <div><strong>03</strong><span><b><span data-lang="en">Build &amp; verify</span><span data-lang="ar">تنفيذ واختبار</span></b><small><span data-lang="en">Real artifacts and observed test evidence</span><span data-lang="ar">ملفات حقيقية ونتائج اختبار</span></small></span><i>✓</i></div>
+          <div><strong>04</strong><span><b><span data-lang="en">Document &amp; resume</span><span data-lang="ar">التوثيق واستكمال العمل</span></b><small><span data-lang="en">Numbered journal and safe handoff</span><span data-lang="ar">تقارير مرقمة وحفظ سجل التطوير</span></small></span><i>✓</i></div>
         </div>
-      </div>
-
-      <!-- Hero CTA Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-4 mb-12">
-        <a 
-          href="#capabilities" 
-          class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-400 to-emerald-400 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-sky-500/20 hover:brightness-110 transition-all"
-        >
-          <span data-lang="en">Explore 19 Specialist Skills ↓</span>
-          <span data-lang="ar">استكشف الـ 19 مهارة تخصصية ↓</span>
-        </a>
-        <a 
-          href="explorer.html#all-skills" 
-          target="_blank" 
-          rel="noopener"
-          class="px-6 py-3.5 rounded-xl glass-card text-slate-100 font-semibold text-sm sm:text-base hover:border-sky-400/60"
-        >
-          <span data-lang="en">Open Complete GIS Explorer ↗</span>
-          <span data-lang="ar">افتح المستكشف الجغرافي الشامل ↗</span>
-        </a>
-      </div>
-
-      <!-- 5-Metric Scope Counter Bar -->
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-slate-900/75 border border-slate-800/90 backdrop-blur-md">
+        <div class="studio-status"><span><b><span data-lang="en">Evidence over assumptions</span><span data-lang="ar">النتائج قبل الادعاءات</span></b><small><span data-lang="en">Offline checks ≠ native GIS success</span><span data-lang="ar">فحص الكود ≠ نجاح التطبيق الفعلي</span></small></span><em>T0 → T4</em></div>
+      </aside>
+    </section>
+    <!-- Preserve manifest-backed IDs and semantic counters exactly -->
+    <div class="studio-metrics">
         <div class="p-2 text-center">
-          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">19</strong>
+          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">21</strong>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Installable Agent Skills</span>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مهارة برمجية قابلة للتثبيت</span>
         </div>
@@ -279,6 +254,115 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">قوالب انطلاق جاهزة للمطورين</span>
         </div>
       </div>
+
+    <!-- Complete How to Use — all essential user guidance lives ON the homepage -->
+    <section id="how-to-use" class="studio-howto" aria-labelledby="howToHeading">
+      <div class="studio-head"><div>
+        <span class="studio-head-label"><span data-lang="en">HOW TO USE · STEP BY STEP</span><span data-lang="ar">طريقة الاستخدام · خطوة بخطوة</span></span>
+        <h2 id="howToHeading"><span data-lang="en">Everything you need to get started.</span><span data-lang="ar">كل اللي تحتاجه علشان تبدأ.</span></h2>
+        <p><span data-lang="en">No need to read repository files to understand the workflow. Choose your GIS platform, copy installation instructions, adapt a request and check the finished work.</span><span data-lang="ar">مش محتاج تدخل ملفات المستودع علشان تفهم طريقة الشغل. اختَر بيئة GIS، وانسخ أمر التثبيت والطلب المناسب، وراجع خطة التنفيذ والتعديلات والنتيجة.</span></p>
+      </div><span class="studio-head-aside">01 — 04 / GIS GUIDE</span></div>
+      <div class="studio-four">
+        <article><b>01 / PREPARE</b><h3><span data-lang="en">Identify your target</span><span data-lang="ar">حدد هدفك</span></h3><p><span data-lang="en">Tell the agent your software version, data, CRS and desired output.</span><span data-lang="ar">اذكر البرنامج والإصدار والبيانات ونظام الإحداثيات والنواتج.</span></p></article>
+        <article><b>02 / INSTALL</b><h3><span data-lang="en">Connect your agent</span><span data-lang="ar">جهّز الوكيل</span></h3><p><span data-lang="en">Install guidance in a compatible coding agent, or explore examples manually.</span><span data-lang="ar">ثبّت المهارة لوكيل متوافق، أو راجع الأمثلة يدويًا.</span></p></article>
+        <article><b>03 / REVIEW</b><h3><span data-lang="en">Approve before editing</span><span data-lang="ar">اعتمد قبل التعديل</span></h3><p><span data-lang="en">Review numbered tasks, safe permissions and test criteria.</span><span data-lang="ar">راجع المهام المرقمة والصلاحيات ومعايير النجاح.</span></p></article>
+        <article><b>04 / DELIVER</b><h3><span data-lang="en">Verify and document</span><span data-lang="ar">اختبر وسجّل</span></h3><p><span data-lang="en">Demand real files, test evidence and development journal entries.</span><span data-lang="ar">اطلب الملفات والاختبارات الحقيقية وتقارير سجل التطوير.</span></p></article>
+      </div>
+      <div class="studio-how-grid">
+        <article class="studio-use-card emphasis">
+          <span class="tag">A / AGENT WORKFLOW</span>
+          <h3><span data-lang="en">Use with a coding agent</span><span data-lang="ar">استخدام المهارات مع Agent</span></h3>
+          <p><span data-lang="en">You'll need Node.js, a coding agent supporting Agent Skills, and permission to modify an existing project. Review CLI security prompts before installing.</span><span data-lang="ar">تحتاج Node.js ووكيلًا يدعم Agent Skills وصلاحية تعديل مشروعك. راجع طلبات الصلاحيات قبل استخدام أوامر التثبيت.</span></p>
+          <p style="margin-top:13px"><strong><span data-lang="en">1. Install the core GIS router</span><span data-lang="ar">١. ثبّت المهارة الأساسية</span></strong></p>
+          <div class="studio-cmd" dir="ltr"><code id="howToCommand">npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development</code><button type="button" class="studio-copy" onclick="copyUsage('install',this)"><span data-lang="en">Copy</span><span data-lang="ar">نسخ</span></button></div>
+          <p class="studio-small"><span data-lang="en">This uses the third-party Skills CLI. It installs instructions, not GIS software or an AI model. Unmerged PR-only skills are not in public main yet.</span><span data-lang="ar">الأمر يستخدم أداة Skills CLI خارجية. يثبت تعليمات، وليس برنامج GIS أو نموذج AI. المهارات الموجودة فقط في PR غير مدموج لن تكون في main المنشور بعد.</span></p>
+          <p style="margin-top:15px"><strong><span data-lang="en">2. Select your project type</span><span data-lang="ar">٢. اختَر نوع مشروعك</span></strong></p>
+          <div class="studio-select-wrap"><label for="studioPlatform"><span data-lang="en">GIS platform / skill</span><span data-lang="ar">البرنامج / المهارة</span></label>
+            <select class="studio-platform-picker" id="studioPlatform">
+              <option value="gis-development">General GIS / GIS عام</option>
+              <option value="arcgis-toolbox-engineering">ArcGIS Pro / ArcMap</option>
+              <option value="qgis-plugin-development">QGIS Plugins</option>
+              <option value="kml-kmz-engineering">Google Earth · KML/KMZ</option>
+              <option value="gis-desktop-application-development">Desktop GIS · WPF / Qt / Cesium</option>
+              <option value="geospatial-web-mapping">Web GIS · 2D / 3D</option>
+              <option value="remote-sensing-pipelines">Remote Sensing</option>
+              <option value="geospatial-data-processing">GDAL · Vector / Raster</option>
+            </select>
+          </div>
+          <p id="studioChoiceEn" data-lang="en" class="studio-small">For mixed projects, start with the core router.</p>
+          <p id="studioChoiceAr" data-lang="ar" class="studio-small">للمشروعات متعددة المجالات، ابدأ بالمهارة الأساسية.</p>
+          <div class="studio-cmd" dir="ltr"><code id="studioSpecialistCommand">npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development</code><button type="button" class="studio-copy" onclick="copyUsage('specialist',this)"><span data-lang="en">Copy</span><span data-lang="ar">نسخ</span></button></div>
+          <p style="margin-top:16px"><strong><span data-lang="en">3. Ask the agent (editable example)</span><span data-lang="ar">٣. ابعت الطلب للوكيل</span></strong></p>
+          <pre id="howToExampleEn" class="studio-example" data-lang="en" dir="auto">Inspect my GIS project, propose a numbered plan before editing, implement approved changes, run real GIS tests, keep numbered development reports and clearly state anything unverified.</pre>
+          <pre id="howToExampleAr" class="studio-example" data-lang="ar" dir="auto">افحص مشروع GIS، اعرض خطة مرقمة للاعتماد قبل التعديل، نفّذ المعتمد، اختبر النواتج الفعلية، ووثّق كل خطوة في سجل تطوير مرقم واذكر ما لم تختبره.</pre>
+          <button type="button" class="studio-copy" onclick="copyUsage('prompt',this)"><span data-lang="en">Copy example request</span><span data-lang="ar">نسخ الطلب الجاهز</span></button>
+          <p class="studio-small" style="margin-top:13px"><span data-lang="en">The selected example is guidance, not an executable job. Ask the agent to confirm its host capabilities.</span><span data-lang="ar">المثال تعليمات توجهها للوكيل، وليس أمرًا ينفّذ التطبيق مباشرة. تأكد من أدوات الوكيل وصلاحياته.</span></p>
+        </article>
+        <article class="studio-use-card">
+          <span class="tag">B / NO AGENT REQUIRED</span>
+          <h3><span data-lang="en">Use without an AI agent</span><span data-lang="ar">الاستفادة بدون Agent</span></h3>
+          <p><span data-lang="en">All reference material can be read without installation. You can inspect the repository examples yourself and adapt them for your GIS environment.</span><span data-lang="ar">تقدر تستخدم المراجع والأمثلة من غير تثبيت وكيل. اختر مهارتك واقرأ ملفاتها واستفد من الأمثلة في بيئة GIS عندك.</span></p>
+          <ol>
+            <li><span data-lang="en">Browse the specialist directory and choose your GIS stack.</span><span data-lang="ar">افتح دليل المهارات وحدد البيئة الجغرافية المناسبة.</span></li>
+            <li><span data-lang="en">Read the relevant SKILL.md, implementation notes and source licenses.</span><span data-lang="ar">اقرأ SKILL.md والملاحظات التقنية وتراخيص المصادر.</span></li>
+            <li><span data-lang="en">Use a starter template or offline sample in a safe working copy.</span><span data-lang="ar">استفد من القوالب أو الأمثلة المحلية على نسخة آمنة.</span></li>
+            <li><span data-lang="en">Check coordinate systems, units, data quality and output formats.</span><span data-lang="ar">اختبر نظم الإحداثيات والوحدات وجودة البيانات والنواتج.</span></li>
+            <li><span data-lang="en">Record source changes in Git and actual verification evidence.</span><span data-lang="ar">احتفظ بالتغييرات في Git وأدلة الاختبار الفعلية.</span></li>
+          </ol>
+          <div class="studio-use-links">
+            <a href="#capabilities"><span data-lang="en">Browse skill categories ↓</span><span data-lang="ar">استعرض تخصصات GIS ↓</span></a>
+            <a href="explorer.html#all-skills"><span data-lang="en">Full searchable catalog</span><span data-lang="ar">دليل المهارات الكامل</span></a>
+            <a href="#security"><span data-lang="en">Security &amp; QA ↓</span><span data-lang="ar">الأمان والاختبارات ↓</span></a>
+          </div>
+          <div style="border-top:1px solid #365648;margin:21px 0"></div>
+          <span class="tag">C / DEVELOPER WORKFLOW</span>
+          <h3><span data-lang="en">Working on the repository itself?</span><span data-lang="ar">بتطور المستودع نفسه؟</span></h3>
+          <p><span data-lang="en">Clone the source and run the automated quality checks; these commands test the repository, not an installed ArcGIS/QGIS application.</span><span data-lang="ar">استنسخ المستودع وشغّل اختبارات الجودة. الأوامر دي تفحص المستودع، مش تشغيل الأداة داخل ArcGIS أو QGIS.</span></p>
+          <div class="studio-cmd" dir="ltr"><code id="cliText">git clone https://github.com/ahmadibrahim4geo/GIS-Development-Skills.git</code><button type="button" id="copyCliBtn" class="studio-copy" onclick="copyCli()"><span data-lang="en">Copy</span><span data-lang="ar">نسخ</span></button></div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:11px 0">
+            <button type="button" class="cli-tab studio-copy studio-tab-active" aria-pressed="true" onclick="setCliCommand('clone',this)"><span data-lang="en">Clone</span><span data-lang="ar">استنساخ</span></button>
+            <button type="button" class="cli-tab studio-copy" aria-pressed="false" onclick="setCliCommand('verify',this)"><span data-lang="en">Run tests</span><span data-lang="ar">شغّل الفحوص</span></button>
+            <button type="button" class="cli-tab studio-copy" aria-pressed="false" onclick="setCliCommand('skills',this)"><span data-lang="en">List skills</span><span data-lang="ar">قائمة المهارات</span></button>
+          </div>
+          <p class="studio-small"><span data-lang="en">Node.js + Skills CLI are optional for manual reading. Native GIS acceptance depends on real host availability.</span><span data-lang="ar">Node.js وأداة التثبيت مش مطلوبين للقراءة اليدوية. اختبار GIS الفعلي يحتاج البرنامج المناسب.</span></p>
+        </article>
+      </div>
+      <div class="studio-steps-hint"><strong><span data-lang="en">Before you accept a delivery:</span><span data-lang="ar">قبل ما تعتمد نتيجة أي تطوير:</span></strong> <span data-lang="en">Check what the agent actually changed, the exact test outcomes, native-runtime limitations, security implications, and the numbered journal. A passing Python check does not prove the UI or GIS processing worked in the host application.</span><span data-lang="ar">راجع الملفات المعدلة ونتائج الاختبار الحقيقية وما لم يُختبر داخل البرنامج، وتأثيرات الأمان وسجل الخطوات. نجاح Python وحده مش دليل إن واجهة التطبيق أو أدواته اشتغلت.</span></div>
+      <div class="studio-faq">
+        <details><summary><span data-lang="en">Does installing a skill install ArcGIS, QGIS or ChatGPT?</span><span data-lang="ar">هل تثبيت المهارة يثبّت ArcGIS أو QGIS أو ChatGPT؟</span></summary><p><span data-lang="en">No. A skill gives instructions to a compatible agent. AI model access, GIS software and licenses are separate.</span><span data-lang="ar">لا. المهارة تعليمات لوكيل متوافق؛ نموذج الذكاء الاصطناعي والبرامج والتراخيص متطلبات منفصلة.</span></p></details>
+        <details><summary><span data-lang="en">Can the agent remember, revise or undo a previous step?</span><span data-lang="ar">هل يقدر الوكيل يكمل أو يلغي أو يرجع خطوة قديمة؟</span></summary><p><span data-lang="en">Only if the agent maintains the project journal. It adds numbered linked revision/rollback reports. A rollback note itself does not revert source code, which needs separate safe authorized execution.</span><span data-lang="ar">يقدر إذا كان سجل التطوير مفعّلًا في المشروع. التعديل أو الإلغاء يسجّل تقريرًا جديدًا مرتبطًا بالقديم؛ التراجع الحقيقي في الكود يحتاج تنفيذًا وصلاحيات واختبارات.</span></p></details>
+        <details><summary><span data-lang="en">How can I check that an output actually works?</span><span data-lang="ar">إزاي أتأكد إن الأداة شغالة مش مجرد أكواد؟</span></summary><p><span data-lang="en">Require files, tests, output samples and an acceptance report. Native ArcGIS/QGIS/desktop execution is a separate test from source checks.</span><span data-lang="ar">اطلب الملفات والنواتج وعينات الاختبار وتقرير قبول. اختبار تشغيل برنامج ArcGIS أو QGIS مختلف عن فحص ملفات الكود.</span></p></details>
+        <details><summary><span data-lang="en">Are the skills free and do they require internet?</span><span data-lang="ar">هل المهارات مجانية أو تحتاج إنترنت؟</span></summary><p><span data-lang="en">The skills are free open documentation. Installation and some APIs use the internet. Many GIS test examples run offline; some vendor runtimes and services have separate terms.</span><span data-lang="ar">الوثائق والمهارات مفتوحة ومجانية، لكن التثبيت وبعض APIs يحتاجان الإنترنت؛ أمثلة كثيرة تعمل محليًا وبعض البرامج والخدمات لها شروط مستقلة.</span></p></details>
+      </div>
+      <p class="studio-qa-note"><span data-lang="en">More optional detail:</span><span data-lang="ar">مزيد من التفاصيل الاختيارية:</span> <a href="docs/HOW_TO_USE.md" style="color:var(--ui-lime);text-decoration:underline">English guide</a> · <a href="docs/HOW_TO_USE.ar.md" style="color:var(--ui-lime);text-decoration:underline">الدليل العربي</a> · <a href="references/free-first-policy.md" style="color:var(--ui-lime);text-decoration:underline"><span data-lang="en">Licensing terms</span><span data-lang="ar">التراخيص</span></a>. <span data-lang="en">Everything needed for a first successful use is explained above on this page.</span><span data-lang="ar">طريقة الاستخدام الأساسية كاملة موجودة هنا في الصفحة نفسها.</span></p>
+    </section>
+
+    <!-- ORCHESTRATION — Documentation; no live AI execution -->
+    <section id="prompt-orchestration" class="py-14 border-t border-slate-800/70" aria-label="Prompt intent orchestration">
+      <p class="text-xs font-bold text-sky-400 tracking-widest"><span data-lang="en">NATURAL LANGUAGE → VERIFIED EXECUTION</span><span data-lang="ar">من كلام المستخدم إلى تنفيذ موثق</span></p>
+      <h2 class="mt-3 text-3xl font-bold"><span data-lang="en">Prompt Intent &amp; Execution Orchestrator</span><span data-lang="ar">مهارة فهم وتنظيم وتوجيه الطلبات</span></h2>
+      <p class="mt-3 mb-6 text-slate-300"><span data-lang="en">Understand informal requests, extract testable tasks, get approval, select available tools and specialist GIS skills, then verify securely.</span><span data-lang="ar">فهم الكلام الارتجالي، تنظيم المهام، عرضها للاعتماد، ثم توجيهها للمهارات والأدوات الفعلية مع الأمان والاختبارات.</span></p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-5">
+        <div class="glass-card rounded-xl p-4"><b>01 · Understand</b><p class="text-sm text-slate-300"><span data-lang="en">Intent &amp; constraints</span><span data-lang="ar">الفهم والقيود</span></p></div>
+        <div class="glass-card rounded-xl p-4"><b>02 · Organize</b><p class="text-sm text-slate-300"><span data-lang="en">Tasks &amp; dependencies</span><span data-lang="ar">المهام والاعتماديات</span></p></div>
+        <div class="glass-card rounded-xl p-4"><b>03 · Review</b><p class="text-sm text-slate-300"><span data-lang="en">Plan revision approval</span><span data-lang="ar">مراجعة واعتماد الخطة</span></p></div>
+        <div class="glass-card rounded-xl p-4"><b>04 · Route</b><p class="text-sm text-slate-300"><span data-lang="en">Skills &amp; real tools</span><span data-lang="ar">المهارات والأدوات الفعلية</span></p></div>
+        <div class="glass-card rounded-xl p-4"><b>05 · Verify</b><p class="text-sm text-slate-300"><span data-lang="en">Security &amp; T0–T4</span><span data-lang="ar">الأمان والاختبارات</span></p></div>
+      </div>
+      <p class="text-sm"><a class="text-sky-300 underline mr-5" href="skills/prompt-intent-orchestrator/SKILL.md"><span data-lang="en">Read the skill</span><span data-lang="ar">اقرأ المهارة</span></a><a class="text-sky-300 underline" href="references/intent-orchestration-workflow.md"><span data-lang="en">Review workflow contract</span><span data-lang="ar">راجع خطة التشغيل والاعتماد</span></a></p>
+      <p class="text-xs text-slate-400 mt-3"><span data-lang="en">Informational workflow; this page cannot run LLMs or change your project.</span><span data-lang="ar">واجهة تعريفية لا تُشغّل الذكاء الاصطناعي أو تغير المشروع مباشرة.</span></p>
+    </section>
+
+    <section id="development-journal" class="py-12 border-t border-slate-800/70" aria-label="Agent Development Journal">
+      <p class="text-xs font-bold text-sky-400 tracking-widest"><span data-lang="en">PERSISTENT PROJECT MEMORY</span><span data-lang="ar">سجل دائم لتطوير المشروع</span></p>
+      <h2 class="mt-3 text-3xl font-bold"><span data-lang="en">Agent Development Journal</span><span data-lang="ar">سجل التطوير المرقّم وذاكرة الوكيل</span></h2>
+      <p class="mt-3 mb-5 text-slate-300"><span data-lang="en">Numbered reports for user requests, implementations, corrections and tests, with context recovery across sessions.</span><span data-lang="ar">تقارير مرقمة لكل طلب وتنفيذ وتعديل وإلغاء واختبار مع استعادة تاريخ المشروع بين الجلسات.</span></p>
+      <div class="flex flex-wrap gap-4 text-sm">
+        <a class="text-sky-300 underline" href="skills/agent-development-journal/SKILL.md"><span data-lang="en">Read journal skill</span><span data-lang="ar">اقرأ مهارة السجل</span></a>
+        <a class="text-sky-300 underline" href="examples/development-journal/README.md"><span data-lang="en">Offline example</span><span data-lang="ar">مثال للتجربة</span></a>
+        <a class="text-sky-300 underline" href="references/agent-memory-skill-references.md"><span data-lang="en">Related skills</span><span data-lang="ar">المهارات المرجعية</span></a>
+      </div>
+      <p class="mt-3 text-xs text-slate-400"><span data-lang="en">An agent must invoke the logger; this page does not run processes.</span><span data-lang="ar">لا بد أن يستدعي الوكيل التسجيل؛ هذه الصفحة لا تنفذ العمليات.</span></p>
     </section>
 
     <!-- INTERACTIVE DEVELOPMENT PATHWAYS & SKILLS EXPLORER -->
@@ -855,26 +939,60 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       const commands = {
         clone: 'git clone https://github.com/ahmadibrahim4geo/GIS-Development-Skills.git',
         verify: 'python -m unittest discover -s tests -p "test_*.py"',
-        skills: 'ls -1 skills/ # 19 installable geospatial specialist skills'
+        skills: 'ls -1 skills/ # list available specialist skills'
       };
-      document.getElementById('cliText').innerText = commands[mode];
-      document.querySelectorAll('.cli-tab').forEach(b => {
-        b.className = 'cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono';
+      if (!Object.prototype.hasOwnProperty.call(commands, mode)) return;
+      document.getElementById('cliText').textContent = commands[mode];
+      document.querySelectorAll('.cli-tab').forEach(node => {
+        node.classList.remove('studio-tab-active');
+        node.setAttribute('aria-pressed', String(node === btn));
       });
-      btn.className = 'cli-tab px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono font-semibold';
+      btn.classList.add('studio-tab-active');
+    }
+
+    async function copyStudioText(value, button, focusTarget) {
+      let copied = false;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(value);
+          copied = true;
+        } else {
+          const input = document.createElement('textarea');
+          input.value = value;
+          input.readOnly = true;
+          input.style.position = 'fixed';
+          input.style.opacity = '0';
+          document.body.appendChild(input);
+          input.select();
+          copied = document.execCommand('copy');
+          input.remove();
+        }
+      } catch (error) { copied = false; }
+      if (!copied) {
+        if (focusTarget) {
+          focusTarget.setAttribute('tabindex', '-1');
+          focusTarget.focus();
+        }
+        return;
+      }
+      const contents = button.innerHTML;
+      button.textContent = document.documentElement.lang === 'ar' ? 'تم النسخ ✓' : 'Copied ✓';
+      window.setTimeout(() => { button.innerHTML = contents; }, 1600);
+    }
+
+    function copyUsage(mode, button) {
+      const id = mode === 'install' ? 'howToCommand' : mode === 'specialist' ?
+        'studioSpecialistCommand' : (document.documentElement.lang==='ar'?'howToExampleAr':'howToExampleEn');
+      const target = document.getElementById(id);
+      if (!target || !button) return;
+      return copyStudioText(target.textContent.trim(), button, target);
     }
 
     function copyCli() {
-      const text = document.getElementById('cliText').innerText;
-      const btn = document.getElementById('copyCliBtn');
-      const temp = document.createElement('textarea');
-      temp.value = text;
-      document.body.appendChild(temp);
-      temp.select();
-      document.execCommand('copy');
-      document.body.removeChild(temp);
-      btn.innerText = 'Copied ✓';
-      setTimeout(() => { btn.innerText = 'Copy CLI'; }, 1800);
+      const target = document.getElementById('cliText');
+      const button = document.getElementById('copyCliBtn');
+      if (!target || !button) return;
+      return copyStudioText(target.textContent.trim(), button, target);
     }
 
     const timelineScenes = [
@@ -902,6 +1020,30 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     function closeMobileMenu(){document.getElementById('mobileMenu').classList.add('hidden');document.getElementById('mobileMenuBtn').setAttribute('aria-expanded','false');}
     document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',closeMobileMenu));
     document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMobileMenu();closeSkillModal();}});
+    const studioTopics={
+      'gis-development':{en:'For mixed GIS projects, start with the core router.',ar:'للمشروعات التي تضم عدة تخصصات ابدأ بالـ GIS Router.',enTask:'Inspect my existing GIS project. Identify its runtime, CRS, data formats and key risks. Propose a numbered plan for my approval; execute approved tasks using suitable GIS skills; provide real test evidence and a numbered development journal, stating any tests not run.',arTask:'افحص مشروع GIS الموجود وحدد بيئة التشغيل ونظام الإحداثيات والصيغ والمخاطر. اعرض خطة مرقمة لاعتمادها، ونفّذ المهام المعتمدة بالمهارات المناسبة، واختبر النتائج الفعلية وسجّل كل خطوة، ووضح ما لم تختبره.'},
+      'arcgis-toolbox-engineering':{en:'ArcGIS Pro and ArcMap require the correct licensed host, version and ArcPy environment.',ar:'أدوات ArcGIS Pro أو ArcMap تحتاج الإصدار والترخيص وبيئة ArcPy المناسبة.',enTask:'Inspect my ArcGIS toolbox (.pyt / script tool) and identify the ArcGIS version and parameter requirements. Propose a reviewed plan. Implement approved changes; test validation, CRS, outputs and ArcPy in the actual host if available. Record evidence, failures and numbered progress.',arTask:'افحص أداة ArcGIS وملف .pyt أو script tool، وحدد الإصدار والبارامترات. اعرض خطة للاعتماد، ثم نفّذ المعتمد واختبر المدخلات ونظام الإحداثيات والنواتج داخل ArcGIS إن توفر، وسجّل الاختبارات والتعديلات بالترتيب.'},
+      'qgis-plugin-development':{en:'Use PyQGIS/Processing and confirm your installed QGIS version before testing.',ar:'استخدم PyQGIS/Processing وحدد إصدار QGIS المثبت قبل الاختبار.',enTask:'Inspect my QGIS plugin and version constraints. Propose a numbered plan; implement only approved changes and verify PyQGIS imports, Processing outputs, CRS and GUI actions in native QGIS if possible. Keep a numbered development journal.',arTask:'افحص إضافة QGIS وحدد الإصدار والتوافق. اعرض خطة مرقمة، ثم نفّذ المعتمد واختبر PyQGIS وProcessing ونظام الإحداثيات والواجهة داخل QGIS عند توفره. وثّق كل خطوة في سجل مرقم.'},
+      'kml-kmz-engineering':{en:'Preserve original KML/KMZ styling, folders, embedded icons and portable resources.',ar:'احفظ الأنماط والألوان والمجلدات والأيقونات والموارد الأصلية في KML/KMZ.',enTask:'Inspect the KML/KMZ import and export pipeline. Preserve original placemark icons, shared styles, colors, folders and portable assets. Show a numbered plan for approval, implement safely, test round-trip fidelity and record every correction. State native Google Earth limitations.',arTask:'افحص استيراد وتصدير KML/KMZ وحافظ على أيقونات المعالم والأنماط المشتركة والألوان والمجلدات والموارد الأصلية. اعرض خطة مرقمة لاعتمادها ثم نفّذ واختبر حفظ الخصائص والتصدير والاستعادة، وسجل التعديلات وقيود الاختبارات الأصلية.'},
+      'gis-desktop-application-development':{en:'Test real window/navigation behavior; WPF/Qt/Cesium needs a working desktop runtime.',ar:'اختبر تشغيل النافذة والتنقل الحقيقي؛ WPF/Qt/Cesium يحتاج بيئة سطح المكتب المناسبة.',enTask:'Inspect my GIS desktop app, including the renderer, ribbon, Places/Layers, KML import, camera and save/open lifecycle. Propose numbered tasks and obtain approval. Implement end-to-end functions, run available native UI/navigation tests and record steps, blockers and evidence.',arTask:'افحص تطبيق GIS المكتبي: محرك العرض والشريط وPlaces/Layers واستيراد KML والكاميرا والحفظ والفتح. اعرض خطة مرقمة ثم نفّذ وظائف حقيقية واختبر الواجهة والتنقل في البرنامج إن أمكن، وسجل كل خطوة وعائق ونتيجة.'},
+      'geospatial-web-mapping':{en:'Choose a free-first web mapping stack and verify 2D/3D interactions in a browser.',ar:'اختر مكتبات خرائط ويب مجانية مناسبة واختبر التفاعل 2D/3D في المتصفح.',enTask:'Inspect my Web GIS project and identify the map renderer, layers, projections and data APIs. Propose an approved plan, implement a real 2D/3D feature, test in a browser and report CRS/attribution/security checks and numbered journal entries.',arTask:'افحص مشروع Web GIS وحدد محرك الخرائط والطبقات والمساقط وواجهات البيانات. اعرض خطة للاعتماد ثم نفّذ ميزة حقيقية ثنائية أو ثلاثية الأبعاد واختبرها في المتصفح ووثّق المساقط والتراخيص والأمان والخطوات.'},
+      'remote-sensing-pipelines':{en:'Document image sources, sensors, projections and output validation; do not invent scenes.',ar:'وثّق مصادر الصور والمستشعرات والمساقط وفحوص النتائج بدون افتراض صور غير متاحة.',enTask:'Inspect my remote sensing processing pipeline. Specify scene/source provenance, bands, masking, projection and output raster metadata. Get plan approval, implement only real available steps, verify sample outputs and preserve a numbered development journal.',arTask:'افحص مسار الاستشعار عن بعد وحدد مصادر الصور والباندات والماسكات والمساقط وبيانات الراستر الناتج. اعرض خطة للاعتماد ونفّذ وفق البيانات المتاحة فعليًا، واختبر عينات النواتج ووثّق كل خطوة.'},
+      'geospatial-data-processing':{en:'Require valid sample data; check CRS, NoData, geometries and output reproducibility.',ar:'استخدم بيانات نموذجية صحيحة، واختبر CRS وNoData والهندسة وقابلية تكرار النواتج.',enTask:'Inspect my GDAL/vector/raster workflow. Review data types, CRS and measurement units, NoData and geometry edge cases. Propose a plan, execute approved processing, verify real artifacts and append numbered test/development reports.',arTask:'افحص معالجة الراستر والفيكتور باستخدام GDAL أو الأدوات المناسبة، وراجع الإحداثيات والوحدات وNoData والهندسة. اعرض خطة للاعتماد ثم نفّذ واختبر ملفات ناتجة فعلية وسجّل النتائج والخطوات المرقمة.'}
+    };
+    function updateStudioTopic(){
+      const selector=document.getElementById('studioPlatform');
+      if(!selector)return;
+      const key=Object.prototype.hasOwnProperty.call(studioTopics,selector.value)?selector.value:'gis-development';
+      const topic=studioTopics[key];
+      document.getElementById('studioSpecialistCommand').textContent='npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill '+key;
+      document.getElementById('howToExampleEn').textContent=topic.enTask;
+      document.getElementById('howToExampleAr').textContent=topic.arTask;
+      document.getElementById('studioChoiceEn').textContent=topic.en;
+      document.getElementById('studioChoiceAr').textContent=topic.ar;
+    }
+    document.getElementById('studioPlatform')?.addEventListener('change',updateStudioTopic);
+    updateStudioTopic();
+
     // Initialize Pathways Grid on Load
     window.addEventListener('DOMContentLoaded', renderPathways);
   </script>
