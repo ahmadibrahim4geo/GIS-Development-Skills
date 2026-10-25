@@ -23,7 +23,11 @@ class GishubSoftwareTests(unittest.TestCase):
     def test_provenance_and_upstream_license_review(self):
         refs = [r for r in self.entries if "gishub.org/software/" in r.get("provenance", "")]
         self.assertEqual(len(refs), 40)
-        self.assertTrue(all(r["license"] == "verify-upstream" for r in refs))
+        self.assertTrue(all(
+            (r.get("license_verified") is True and bool(r.get("license_evidence_url")))
+            or (r.get("license_verified") is not True and r.get("license") == "verify-upstream")
+            for r in refs
+        ))
 
     def test_priority_repositories(self):
         urls = {r["url"] for r in self.entries}

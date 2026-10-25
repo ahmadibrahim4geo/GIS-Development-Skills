@@ -36,7 +36,7 @@ class LicenseAuditTests(unittest.TestCase):
         source=next(x for x in self.catalog["projects"] if x["url"]=="https://github.com/Esri/arcgis-python-api")
         self.assertTrue(source["license_verified"])
         self.assertIn("ArcGIS platform",source["license_caveat"])
-        self.assertIn("Free-first", (ROOT/"references/free-first-policy.md").read_text(encoding="utf-8").title())
+        self.assertIn("free-first", (ROOT/"references/free-first-policy.md").read_text(encoding="utf-8").lower())
 
     def test_bilingual_site_displays_license_coverage_from_json(self):
         page=(ROOT/"index.html").read_text(encoding="utf-8")
