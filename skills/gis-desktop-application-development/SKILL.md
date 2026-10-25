@@ -27,6 +27,7 @@ Read [Earth View architecture](../../references/earth-view-architecture.md) for 
 - Scientific data and API access: `../geospatial-data-discovery/SKILL.md`
 - Real MIRSAD Desktop development experience: `../../references/ahmad-ibrahim-gis-case-studies.md`
 - GIS backend and I/O: `../../references/geospatial-foundations.md`
+- Imported KML/KMZ exact styles, asset bundles, ExtendedData and hierarchy: [KML/KMZ Engineering](../kml-kmz-engineering/SKILL.md) and [Google interoperability contract](../../references/google-kml-kmz-compatibility.md). In Earth/Explorer-style desktop apps, keep imported user styles and Temporary/My Places separate; geometry-only conversion is not faithful rendering.
 
 ## Implementation workflow
 
