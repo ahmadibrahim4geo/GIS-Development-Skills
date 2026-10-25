@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "last_reviewed": "2026-10-25",
+  "purpose": "Reference-only GIS style libraries, palettes and official renderer specifications. Not a bundle of redistributed assets.",
+  "sources": [
+    {
+      "id": "ahmad-arcmap-styles",
+      "name": "ArcMap Style Collection",
+      "url": "https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection",
+      "kind": "mixed-symbol-library",
+      "platforms": [
+        "ArcMap",
+        "ArcGIS Pro",
+        "QGIS source conversions"
+      ],
+      "assets": [
+        "style",
+        "stylx",
+        "lyrx",
+        "font",
+        "palette"
+      ],
+      "license": "Mixed upstream terms; organization/translation code MIT only",
+      "license_status": "unverified-per-item",
+      "redistribution": "do-not-repackage",
+      "cost": "free-download-with-license-review",
+      "notes": "Primary reference; inspect Esri, USGS, BGS, DGGS and font licenses individually; QGIS source conversions not a warranty of rendering fidelity"
+    },
+    {
+      "id": "qgis-resources",
+      "name": "QGIS Resources Sharing Collections",
+      "url": "https://github.com/qgis/QGIS-Resources",
+      "kind": "community-symbol-library",
+      "platforms": [
+        "QGIS"
+      ],
+      "assets": [
+        "svg",
+        "qml",
+        "xml",
+        "color-ramp"
+      ],
+      "license": "Varies by collection and individual asset",
+      "license_status": "unverified-per-item",
+      "redistribution": "review-per-asset",
+      "cost": "free-download",
+      "notes": "Official catalog/index for community collections. Consult exact resource metadata"
+    },
+    {
+      "id": "qgis-resource-sharing-plugin",
+      "name": "QGIS Resource Sharing Plugin",
+      "url": "https://github.com/QGIS-Contribution/QGIS-ResourceSharing",
+      "kind": "open-source-integration",
+      "platforms": [
+        "QGIS"
+      ],
+      "assets": [
+        "symbol-management",
+        "style-discovery"
+      ],
+      "license": "AGPL-3.0",
+      "license_status": "upstream-declared",
+      "redistribution": "follow-AGPL-3.0-for-code",
+      "cost": "open-source",
+      "notes": "Plugin code license is distinct from styles downloaded through it"
+    },
+    {
+      "id": "ordnance-geodataviz",
+      "name": "OS GeoDataViz Toolkit",
+      "url": "https://github.com/OrdnanceSurvey/GeoDataViz-Toolkit",
+      "kind": "design-and-symbol-guide",
+      "platforms": [
+        "ArcGIS Pro",
+        "QGIS",
+        "general"
+      ],
+      "assets": [
+        "symbol",
+        "color",
+        "design-principles"
+      ],
+      "license": "Open Government Licence v3.0",
+      "license_status": "upstream-declared",
+      "redistribution": "attribution-required",
+      "cost": "open-data-license",
+      "notes": "Contains CVD palettes, principles and examples"
+    },
+    {
+      "id": "cartocolor",
+      "name": "CARTOColors",
+      "url": "https://github.com/CartoDB/CartoColor",
+      "kind": "color-palette",
+      "platforms": [
+        "Python",
+        "JavaScript",
+        "web GIS",
+        "general"
+      ],
+      "assets": [
+        "sequential",
+        "diverging",
+        "qualitative"
+      ],
+      "license": "CC-BY-4.0",
+      "license_status": "upstream-declared",
+      "redistribution": "attribution-required",
+      "cost": "free-with-attribution",
+      "notes": "Do not transfer license to the separately included ColorBrewer definitions without checking their terms"
+    },
+    {
+      "id": "scientific-colour-maps",
+      "name": "Scientific Colour Maps",
+      "url": "https://www.fabiocrameri.ch/colourmaps/",
+      "kind": "scientific-palette",
+      "platforms": [
+        "ArcGIS Pro",
+        "QGIS",
+        "Python",
+        "web GIS"
+      ],
+      "assets": [
+        "perceptual-colormap",
+        "raster-ramp"
+      ],
+      "license": "Check exact downloaded scientific map version and license",
+      "license_status": "not-independently-verified",
+      "redistribution": "review-per-asset",
+      "cost": "free-to-access",
+      "notes": "Prefer for perceptually uniform scientific surface rendering and color-vision accessibility"
+    },
+    {
+      "id": "cmocean",
+      "name": "cmocean",
+      "url": "https://github.com/matplotlib/cmocean",
+      "kind": "scientific-palette",
+      "platforms": [
+        "Python",
+        "QGIS",
+        "ArcGIS",
+        "web GIS"
+      ],
+      "assets": [
+        "oceanography-colormap",
+        "raster-ramp"
+      ],
+      "license": "MIT (repository code; validate downloaded datasets)",
+      "license_status": "upstream-declared",
+      "redistribution": "retain-license-and-attribution",
+      "cost": "open-source",
+      "notes": "Scientific oceanographic palettes; port the actual stops only when license allows"
+    },
+    {
+      "id": "colorbrewer",
+      "name": "ColorBrewer",
+      "url": "https://colorbrewer2.org/",
+      "kind": "color-palette",
+      "platforms": [
+        "all"
+      ],
+      "assets": [
+        "qualitative",
+        "sequential",
+        "diverging"
+      ],
+      "license": "Attribution and redistribution conditions; verify asset-specific terms",
+      "license_status": "review-required",
+      "redistribution": "review-per-asset",
+      "cost": "free-public-reference",
+      "notes": "Class-count limits and color-vision accessibility checks"
+    },
+    {
+      "id": "maplibre-spec",
+      "name": "MapLibre Style Specification",
+      "url": "https://maplibre.org/maplibre-style-spec/layers/",
+      "kind": "renderer-specification",
+      "platforms": [
+        "MapLibre GL JS",
+        "MapLibre Native"
+      ],
+      "assets": [
+        "circle",
+        "line",
+        "fill",
+        "raster",
+        "hillshade",
+        "color-relief"
+      ],
+      "license": "Documentation/source terms govern reuse; link reference only",
+      "license_status": "documentation-reference",
+      "redistribution": "link-only",
+      "cost": "free-reference",
+      "notes": "Use paint/layout expressions and validate supported SDK property"
+    },
+    {
+      "id": "qgis-source",
+      "name": "QGIS core source and Symbology APIs",
+      "url": "https://github.com/qgis/QGIS",
+      "kind": "renderer-implementation",
+      "platforms": [
+        "QGIS"
+      ],
+      "assets": [
+        "QgsRenderer",
+        "QgsStyle",
+        "raster-renderer"
+      ],
+      "license": "GPL-2.0-or-later per upstream code sections",
+      "license_status": "upstream-declared",
+      "redistribution": "follow-upstream-license",
+      "cost": "open-source",
+      "notes": "Use public APIs, not private implementation copies"
+    }
+  ]
+}
