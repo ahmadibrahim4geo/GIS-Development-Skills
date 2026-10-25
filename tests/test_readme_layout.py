@@ -47,18 +47,29 @@ class ReadmeLayoutTests(unittest.TestCase):
         transparent_logo = (ROOT / "assets/brand/logo-dark.svg").read_text(encoding="utf-8")
         self.assertNotIn('<rect width="1400"', transparent_logo)
 
-        labels = {(node.text or "").strip(): node for node in root.iter(ns + "text")}
-        for word in ("G", "S", "Development", "Skills",
-                     "The", "Heart", "of", "Geospatial", "Innovation"):
-            self.assertIn(word, labels)
-        # Inter Display ExtraBold @78 has ~493 units for Development;
-        # the new word gap remains ~29 units instead of the old huge gap.
-        dev_gap = float(labels["Skills"].get("x")) - float(labels["Development"].get("x")) - 493
-        self.assertGreater(dev_gap, 15)
-        self.assertLess(dev_gap, 50)
-        self.assertEqual(labels["Heart"].get("fill"), "#82D53E")
-        self.assertEqual(labels["Innovation"].get("fill"), "#1CC8E8")
-        self.assertEqual(labels["Geospatial"].get("fill"), "#398CE3")
+        # SVG lays out adjacent tspans by glyph advance, not hardcoded
+        # absolute word start X values. This prevents overlaps in Inter
+        # and system fallback fonts at every responsive display size.
+        name = root.find(".//*[@id='brand-name']")
+        tagline = root.find(".//*[@id='brand-tagline']")
+        self.assertIsNotNone(name)
+        self.assertIsNotNone(tagline)
+        name_parts = name.findall(ns + "tspan")
+        self.assertEqual(["Development", "Skills"], [p.text for p in name_parts])
+        self.assertIsNone(name_parts[1].get("x"))
+        self.assertGreaterEqual(float(name_parts[1].get("dx")), 16)
+        self.assertLessEqual(float(name_parts[1].get("dx")), 30)
+        tagline_parts = tagline.findall(ns + "tspan")
+        self.assertEqual(["The", "Heart", "of", "Geospatial", "Innovation"],
+                         [p.text for p in tagline_parts])
+        for word in tagline_parts[1:]:
+            self.assertIsNone(word.get("x"))
+            self.assertGreaterEqual(float(word.get("dx")), 8)
+        palette = {p.text: p.get("fill") for p in name_parts + tagline_parts}
+        self.assertEqual(palette["Heart"], "#82D53E")
+        self.assertEqual(palette["Skills"], "#82D53E")
+        self.assertEqual(palette["Innovation"], "#1CC8E8")
+        self.assertEqual(palette["Geospatial"], "#398CE3")
         banner = path.read_text(encoding="utf-8")
         self.assertNotIn("<image", banner)
         self.assertNotIn("data:image/", banner)
