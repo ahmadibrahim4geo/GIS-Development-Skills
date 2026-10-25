@@ -66,3 +66,12 @@ main .step p{color:#adc4c3;font-size:13px;line-height:1.75}
 @media(max-width:900px){#home .hero{grid-template-columns:1fr;min-height:auto;padding-top:58px}#home .hero-visual{max-width:640px}main>section.container:not(.author-section){padding-block:58px}}
 @media(max-width:640px){#home .hero{padding-top:42px;gap:25px}#home .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}#home .stat{min-height:100px;padding:15px}#home .stat strong{font-size:30px}#home .buttons .btn{flex:1 1 100%;justify-content:center}main>section.container:not(.author-section){padding-block:44px}#capabilities .feature,#agent-quality .feature,#examples .feature{min-height:auto;padding:22px}#catalog .explorer-top,#catalog .filters{padding:16px}#catalog .results{grid-template-columns:1fr;padding:0 16px 16px}#catalog .filters input,#catalog .filters select,#catalog .filters #costFilterWrap{width:100%;min-width:0}#catalog .filters #costFilterWrap select{width:100%}.catalog-updates>summary{padding:14px 16px}#get-started .path-card{padding:20px}main .step{padding:18px}}
 @media(prefers-reduced-motion:reduce){.catalog-updates>summary .updates-chevron{transition:none}#capabilities .feature:hover,#agent-quality .feature:hover,#examples .feature:hover,#catalog .result:hover{transform:none}}
+
+/* Keep primary navigation discoverable on mobile rather than hiding it. */
+@media(max-width:900px){
+.nav{display:flex;flex-wrap:wrap;gap:0;padding-top:10px}
+.nav .brand{flex:1 1 auto}
+.nav .nav-right{margin-inline-start:auto}
+.nav .nav-links{display:flex!important;order:3;flex:1 0 100%;overflow-x:auto;gap:18px;white-space:nowrap;padding:7px 0 10px;scrollbar-width:thin;scrollbar-color:#426b68 transparent}
+.nav .nav-links a{display:inline-block;padding:6px 0;font-size:12px}
+}
