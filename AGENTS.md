@@ -58,3 +58,7 @@
 - Run `python scripts/security_audit.py --root .` before publishing. Archive checks are read-only; external scanners are optional and must never be reported as executed unless actually run.
 - Scope network/file permissions and require explicit approval for destructive edits, code execution from third parties, and outbound transfer of sensitive data. Documentation is not an OS sandbox.
 - Keep the security registry, workflows, tests, README languages, homepage and derived counters synchronized. Mark confirmed high/critical risks as release blockers until mitigated.
+
+## Repository-wide request execution contract
+
+All specialist skills and agent entrypoints must follow [repository-wide orchestration](references/repository-wide-skill-orchestration.md). The intent orchestrator owns normalization and reviewed approval, GIS Development owns specialist routing, shared Security Guardian owns safety gates, specialists own domain execution, and the Development Journal and acceptance report own evidence. Never execute a consequential free-form prompt directly or allow a specialist to bypass host permissions. Documentation cannot itself enforce a host-level gate.
