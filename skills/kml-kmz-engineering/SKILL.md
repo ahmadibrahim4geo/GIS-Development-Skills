@@ -5,6 +5,8 @@ description: Build secure, interoperable KML/KMZ import, export, rendering, conv
 
 # KML & KMZ Engineering
 
+**Free-first policy:** Follow [free-first-policy.md](../../references/free-first-policy.md). Disclose commercial runtime and library dependencies.
+
 Use this skill when a GIS application or toolbox reads, writes, converts, renders or packages KML (OGC KML 2.2) or KMZ (ZIP package containing KML and resources). Load only the sections relevant to the task.
 
 ## Requirements discovery
