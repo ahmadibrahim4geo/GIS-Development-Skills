@@ -45,7 +45,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>15 installable GIS skills</strong> · <strong>138 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>18 installable GIS skills</strong> · <strong>138 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -55,13 +55,24 @@ A practical development skill and curated reference hub for building reliable Ar
   <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website ↗</a>
 </p>
 
-**Free-first audit:** [Cost/licensing and 15 independent skill paths](references/free-first-policy.md). The website now lists all specialists, has incremental project browsing instead of a hard 60-result cut-off, and defaults API discovery to 43 self-hostable or conditionally free entries. Commercial, trial, strictly restricted and unavailable records remain optionally viewable; live provider rights are not guaranteed.
+**Free-first audit:** [Cost/licensing and 18 independent skill paths](references/free-first-policy.md). The website now lists all specialists, has incremental project browsing instead of a hard 60-result cut-off, and defaults API discovery to 43 self-hostable or conditionally free entries. Commercial, trial, strictly restricted and unavailable records remain optionally viewable; live provider rights are not guaranteed.
 
 **Practical free workflow upgrade (2026-10-25):** [Original upstream license-file audit](references/upstream-license-audit.md) (8 inspected / 138 linked projects), [offline license evidence scanner](scripts/audit_license_catalog.py), and two complete dependency-free T2 fixtures: [DEM Horn slope](examples/terrain-slope/README.md) and [STAC metadata selection](examples/stac-offline/README.md). The example scripts output real ASCII elevation-slope or JSON metadata files, but **do not** validate external terrain CRS or live satellite services. Upstream data, models, proprietary GIS host and API terms remain independent.
 
 **Maintainer:** [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). This is an independent community engineering resource, not an official project of Esri, QGIS, GeoRust or other third-party catalog entries. **Documentation v0.3.5** is not a GitHub software release; starter code and GIS host integrations require separate runtime testing.
 
 ---
+
+## Cartography & device context specialists — 2026-10-25
+
+Two new installable skills extend the toolkit to **18 specialists** (including the recently added [KML/KMZ specialist](skills/kml-kmz-engineering/SKILL.md)):
+
+- [GIS Cartography & Symbology](skills/gis-cartography-symbology/SKILL.md) — vector point/line/polygon symbols, raster ramps, labels, accessible layouts, ArcMap/Pro/QGIS/MapLibre/Cesium adapters and verifiable save/reopen.
+- [GIS Device Context](skills/gis-device-context/SKILL.md) — UTC/local date/time, IANA timezone, opt-in device geolocation, scene-vs-device target and live/simulated Sunlight modes.
+- [10-source style directory](references/cartographic-style-sources.json), including the [ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection), QGIS Resources, OS GeoDataViz, CARTOColors and scientific palette references. Upstream individual style/font rights are **not** automatically granted by hosting.
+- Offline [MapLibre point/line/polygon fixture](examples/cartography/README.md) and [Python timezone/context fixture](examples/device-context/README.md) with regression tests; real GIS rendering, GPS permission and sun lighting still require host testing.
+
+The bilingual website adds a searchable **Style sources** catalog tab alongside the existing project, API and data tabs. No third-party style binaries or fonts are bundled.
 
 ## Global Mapper / Blue Marble Geographics research — 2026-10-25
 
