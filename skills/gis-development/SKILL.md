@@ -29,7 +29,7 @@ license: MIT
 | Find source directories, data repositories and STAC indexes | [Geospatial Data Catalogs](../geospatial-data-catalogs/SKILL.md) |
 | Automate PyQGIS / STAC / GeoAI / Earth Engine with an agent | [Geospatial AI Agents](../geospatial-ai-agents/SKILL.md) |
 | DEM, terrain, hydrology, LiDAR / point clouds | [Terrain / Hydrology / LiDAR](../terrain-hydrology-lidar/SKILL.md) |
-| Integrate GIS HTTP APIs safely | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) |
+| Security / untrusted GIS inputs / secrets / Agent Skills / MCP / release checks | [GIS Security Guardian](../gis-security-guardian/SKILL.md) (always applicable as a cross-cutting baseline) |\n| Integrate GIS HTTP APIs safely | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) |
 | Search place names / geocode addresses / autocomplete | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) + [provider selection guide](../../references/geocoding-place-search.md) |
 | WKID, projection, transformation, vertical datum | [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md) |
 | Point/line/polygon/raster symbols, color ramps, map layout | [GIS Cartography & Symbology](../gis-cartography-symbology/SKILL.md) |
@@ -41,7 +41,7 @@ license: MIT
 1. **Do not silently modify sources:** default to new output files, explicit user approval for destructive editing and backups.
 2. **Geospatial correctness:** verify CRS/axis order, true transformations, area/distance units, Z/vertical datum, invalid geometries, NoData, raster alignment and output readback.
 3. **Compatibility:** never mix ArcMap Python 2 with Pro APIs; pin host/runtime and validate third-party licensing/authentication/quotas.
-4. **Security:** apply [geospatial security rules](../../references/geospatial-security.md) to untrusted files, remote services, SQL and credentials.
+4. **Security:** apply [GIS Security Guardian](../gis-security-guardian/SKILL.md) at preflight, runtime and release gates, plus [geospatial input rules](../../references/geospatial-security.md) for files, APIs, SQL and credentials. A policy document does not enforce runtime sandbox permissions.
 5. **Performance:** profile representative inputs with [performance guidance](../../references/geospatial-performance.md) rather than asserting universal package choices.
 6. **Evidence:** complete [the acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and check it with [the evidence validator](../../scripts/validate_evidence.py). Record T0–T4 honestly; generic syntax checks or UI mockups are **not** native GIS execution.
 7. **References:** the curated [project catalog](../../references/project-catalog.json) and [API catalog](../../references/free-geospatial-apis.json) and [data repository catalog](../../references/geospatial-data-repositories.json) are discovery sources, not proof of runtime/entitlement. Read source licenses and verification metadata before reuse.
