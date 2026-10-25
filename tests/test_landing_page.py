@@ -66,7 +66,7 @@ class LandingPageTests(unittest.TestCase):
             "Build GIS tools, plugins and geospatial applications with a verifiable development workflow.",
             self.html,
         )
-        self.assertIn('class="hero-symbol" src="assets/icon.svg"', self.html)
+        self.assertIn('class="scene-logo" src="assets/logo.svg"', self.html)
         self.assertIn('class="hero-wordmark"', self.html)
         self.assertIn('class="word-development"', self.html)
         self.assertIn('href="assets/brand-refresh.css"', self.html)
@@ -111,7 +111,7 @@ class LandingPageTests(unittest.TestCase):
             self.assertTrue(data.startswith(bytes([137, 80, 78, 71, 13, 10, 26, 10])))
             logos.append(data)
         self.assertEqual(logos[0], logos[1])
-        self.assertIn('class="scene-logo" src="assets/icon.svg"', self.html)
+        self.assertIn('class="scene-logo" src="assets/logo.svg"', self.html)
         self.assertNotIn('class="globe-art"', self.html)
 
     def test_public_creator_section_and_contacts(self):
