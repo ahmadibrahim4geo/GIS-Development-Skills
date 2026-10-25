@@ -67,8 +67,8 @@ class LandingPageTests(unittest.TestCase):
             self.html,
         )
         self.assertIn('class="scene-logo" src="assets/logo.svg"', self.html)
-        self.assertIn('class="hero-wordmark"', self.html)
-        self.assertIn('class="word-development"', self.html)
+        self.assertIn('class="scene-identity"', self.html)
+        self.assertIn('class="scene-logo" src="assets/logo.svg"', self.html)
         self.assertIn('href="assets/brand-refresh.css"', self.html)
         self.assertTrue((ROOT / "assets/brand-refresh.css").is_file())
 
