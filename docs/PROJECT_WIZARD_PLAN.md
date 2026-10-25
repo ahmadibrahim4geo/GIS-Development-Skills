@@ -7,7 +7,7 @@
 - Generate an editable Markdown plan and AI-agent instructions, with explicit skill paths, risks, implementation phases and acceptance checks.
 - Recommend a compatible stack, not a universal stack. For dual ArcGIS hosts, keep a Python-2.7-compatible core where feasible and isolate Python 3/ArcGIS Pro adapters; verify real host APIs.
 - Include a mandatory reliability plan: input sizes, memory budget, CPU and I/O measurements, cancellation, progress, logging, crash recovery, corrupt files, stress and regression testing.
-- Include KML/KMZ whenever file interchange is selected. Clearly separate feature conversion from document-fidelity rendering.
+- Add language selection and Arabic-first RTL/BiDi, Unicode attribute, map label and export acceptance checks; see skills/gis-internationalization-arabic/SKILL.md.\n- Include KML/KMZ whenever file interchange is selected. Clearly separate feature conversion from document-fidelity rendering.
 
 ## Delivery gates
 1. Static UI and bilingual workflow, no server required.
