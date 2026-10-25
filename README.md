@@ -55,6 +55,12 @@ A practical development skill and curated reference hub for building reliable Ar
   <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website ↗</a>
 </p>
 
+## Google Earth Pro engineering and historical imagery — 2026-10-25
+
+The [Google Earth Pro engineering reference](references/google-earth-pro-engineering.md) extracts practical, independently implementable features from the historical [Google Earth Blog](https://www.gearthblog.com/): Places drag/drop and bulk actions, NetworkLink/Region/LOD, KML/KMZ fidelity, tours, elevation profiles and raster overlays. The dedicated [Historical Imagery Timeline guide](references/historical-imagery-timeline.md) specifies a compact, non-blocking dock, *actual scene dates* rather than invented years, source attribution, playback, licensed multi-provider retrieval and same-viewport image comparison. Links are integrated with the [Desktop](skills/gis-desktop-application-development/SKILL.md), [Web/3D](skills/geospatial-web-mapping/SKILL.md), [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) and core router skills and shown on the bilingual site.
+
+**Status:** documented engineering and static checks only; not a shipped or tested ZEarth historical-imagery implementation. Google Earth Blog is an independent, largely historical source, and its content does not license Google imagery for third-party use.
+
 ## GIS Security Guardian — cross-cutting protection (25 October 2026)
 
 [**GIS Security Guardian**](skills/gis-security-guardian/SKILL.md) is the 19th installable skill. It accompanies every routed GIS task with permission boundaries, prompt-injection precautions, safe geospatial archive handling, credential and API hygiene, and evidence-based release gates. The [security tool registry](references/security/security-tools.json) links 14 upstream projects, distinguishing local from potentially networked analysis and reporting license status without bundling third-party code. [Offline security audit](scripts/security_audit.py), [archive guard](scripts/security_guardian.py), [unit tests](tests/test_security_guardian.py), [dedicated workflow](.github/workflows/security.yml), [security disclosure policy](SECURITY.md), and the [bilingual homepage](index.html) are included. The stdlib preflight runs without subscriptions or keys; external scanners such as Gitleaks, Bandit, Cisco Skill Scanner, OSV-Scanner and zizmor remain optional and are **not claimed to have run**. Static validation cannot establish full runtime security.
