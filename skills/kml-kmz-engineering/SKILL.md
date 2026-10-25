@@ -1,13 +1,33 @@
 ---
 name: kml-kmz-engineering
-description: Build secure, interoperable KML/KMZ import, export, rendering, conversion and round-trip workflows for desktop GIS, ArcGIS, QGIS and web maps.
+description: Preserve original KML/KMZ styles, icons, hierarchy, assets and Google Earth semantics during secure import, rendering, editing and round-trip export in desktop, web and GIS hosts.
 ---
 
 # KML & KMZ Engineering
 
 **Free-first default:** Follow [GIS free-first and licensing policy](../../references/free-first-policy.md); test open-source parsers where suitable, and disclose licensed host dependencies separately.
 
-Use this skill when a GIS application or toolbox reads, writes, converts, renders or packages KML (OGC KML 2.2) or KMZ (ZIP package containing KML and resources). Load only the sections relevant to the task.
+Use this skill when a GIS application or toolbox reads, writes, converts, renders or packages KML (OGC KML 2.2/2.3) or KMZ (ZIP package containing KML and resources). Load only the sections relevant to the task.
+
+**Mandatory implementation reference:** [Google KML/KMZ document fidelity and compatibility contract](../../references/google-kml-kmz-compatibility.md), grounded in [Google's documentation](https://developers.google.com/kml) and the [OGC standard](https://www.ogc.org/standards/kml/). Use the [self-contained XML fixture](../../examples/kml-kmz/README.md) for offline regression checks. Google Earth `gx:` extensions are not core KML and need independent feature-level support.
+
+## Primary rule: protect the imported author's intent
+
+- **Import must preserve, not restyle.** Never replace original KML/KMZ icons, colors, opacity, line widths, label styles, folder hierarchy, popup descriptions or highlight behavior with program defaults. Do not auto-assign one symbology to every imported placemark.
+- **Display and conversion are separate operations.** Open KML as a source-retaining document, not merely a GeoJSON/FeatureClass table. Keep unrenderable/unknown nodes, style references and local resource bytes available for export. For geometry-only conversion, show a loss report before irreversible steps.
+- **Non-destructive:** original files and immutable bytes remain intact, edits apply to a new copy, and unchanged items retain native `Style` / `StyleMap` / `styleUrl` bindings. Track the source hash and changed nodes.
+- **Declare capabilities:** parsing, on-screen rendering and exporting have separate support matrices. If a feature cannot be rendered in Cesium/MapLibre/ArcGIS/QGIS, warn and retain the source element rather than claiming fidelity.
+- **Acceptance begins with reopen:** imported KML/KMZ -> displayed styles/hierarchy -> copy-on-write edit -> save/export -> reopen, compare geometry, styles, icons, extended data, altitude and assets. Only actual Google Earth and target-host tests prove visual parity.
+
+## Official Google implementation details
+
+- **Colors:** KML hex `aabbggrr`, not CSS `rrggbb`; `ff0000ff` is opaque red. Preserve alpha, `colorMode`, `normal`/`highlight` StyleMap pairs, icon `hotSpot`, label scale and polygon fill/outline.
+- **Resources:** `href` can reference icons, images, overlays, COLLADA models and remote KML. For portable KMZ, prefer a top-level `doc.kml` plus relative asset paths; preserve model texture relative-resolution semantics and include local assets on export.
+- **Temporal/3D:** honor `TimeStamp`, `TimeSpan`, `gx:Track`, `gx:Tour`, `Camera`, `LookAt`, `Region`/`Lod`, extrusion and KML/gx altitude modes; list extensions not supported by the runtime.
+- **Explorer / Places:** preserve `Document`/`Folder` ordering, `visibility`, `open` and feature IDs. Imported Temporary Places and explicitly saved My Places are different state transitions. Keep camera state and persistent scene/project state distinct from standalone exported KML/KMZ.
+- **Security first:** local/remote KML and KMZ are untrusted. Harden XML, archive paths/limits, network link fetch opt-in, HTML descriptions and URL schemes, while keeping original text in nonexecuting storage.
+
+
 
 ## Requirements discovery
 - Identify target runtimes (ArcGIS Pro, legacy ArcMap, QGIS, GDAL/OGR, Cesium, Google Earth, MapLibre), versions and licensing.
@@ -28,7 +48,7 @@ Use this skill when a GIS application or toolbox reads, writes, converts, render
 ## Import and rendering
 - Separate semantic document model (folder hierarchy, styles, resources, times, metadata) from GIS feature layers and renderer. Preserve original KML for features not representable in the target GIS schema.
 - Support icons, labels, line/polygon styles and overlays where the renderer allows; document Google Earth extension gaps rather than silently dropping them.
-- Keep a provenance and conversion-loss report with counts, unsupported nodes and warnings.
+- Keep a provenance and conversion-loss report with counts, unsupported nodes and warnings. A successful geometry import is **not** proof of faithful styling, temporal behavior or portable asset references.
 
 ## Export and round trip
 - Produce valid XML with correct namespaces, escaped text, geometry coordinate order and explicit style/resource references.
@@ -49,6 +69,11 @@ Use this skill when a GIS application or toolbox reads, writes, converts, render
 - Check component licenses, bundled binaries, data rights and runtime availability; prioritize free/open-source paths.
 
 ## Acceptance checklist
+- [ ] Explicit fidelity mode selected: read-only view, document edit or lossy feature conversion
+- [ ] KML color order, StyleMap states, icon anchors and shared style references verified
+- [ ] Import never automatically overrides external source styles or changes original bytes
+- [ ] Google KML official references consulted, gx extension support verified by host version
+- [ ] Explorer folder/visibility state, ExtendedData and Temporary/My Places save semantics preserved
 - [ ] Target host and supported KML constructs documented
 - [ ] Malformed and malicious inputs rejected safely
 - [ ] Coordinate/altitude semantics verified
