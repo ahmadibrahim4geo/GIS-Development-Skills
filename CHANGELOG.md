@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased — Unified Icon Manager for GIS + protected KMZ adapter (2026-10-25)
+
+- Treat icons as a general GIS library used across ArcGIS/QGIS/Cesium/web and desktop hosts, with a specialized new-KML/KMZ authoring/export adapter rather than a duplicated KMZ icon library.
+- Extend catalog from 19 to 21 sources with user-provided Streamline (mixed-license discovery only by default) and Mapular (generator workflow inspiration only), and update CC BY-SA Map Icons Collection with 2026 SVG/PNG/custom colors and no-hotlink guidance.
+- Add an operational Icon Manager design contract and a standalone offline bilingual HTML new-marker generator with SVG/PNG export; add a standard-library new PNG→KMZ exporter with ABGR, relative resources, style, hotspot and license metadata.
+- Link both installable skills, map marker guide, Google/KML preservation requirements, bilingual website and README, while preserving footer and latest security/KML work. Third-party assets not copied; importing an existing KMZ never triggers icon replacement.
+- Add deterministic Python unit tests for PNG validation, new KMZ packaging, KML colors, source permissions and docs/feature links. Demo is not native ZEarth/Google Earth integration.
+
+
 ## Unreleased — Map icon library and imported KMZ style protection (2026-10-25)
 
 - Add eight independently licensed free/open map icon sources plus CesiumJS PinBuilder to the catalog (10 → 19), with KMZ export roles and font/plugin license distinctions.
