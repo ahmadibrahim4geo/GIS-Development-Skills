@@ -37,7 +37,7 @@ for(const [id, values] of Object.entries(selectors)){
   node(id).value=values[0];
 }
 for (const id of ['lang','heading','intro','typeLabel','localeLabel','filesLabel',
-  'licenseLabel','detailsLabel','generate','download','resultLabel','result','status',
+  'licenseLabel','detailsLabel','details','generate','download','resultLabel','result','status',
   'homeLink','roadmapLink','kmlLink','reliabilityLink','wizardPrivacy']) node(id);
 node('download').disabled = true;
 let lastLink=null, lastBlob=null, revoke=null;
@@ -97,7 +97,7 @@ e('files').value='no';
 e('details').value='<img src=x onerror=alert(1)>';
 e('details').fire('input');
 e('generate').onclick();
-assert.match(e('result').textContent,/الترخيص/);
+assert.match(e('result').textContent,/التراخيص/);
 assert.match(e('result').textContent,/<img src=x onerror=alert\(1\)>/);
 assert.doesNotMatch(e('result').textContent,/skills\/gis-internationalization-arabic\/SKILL.md/);
 assert.match(e('result').textContent,/دعم KML\/KMZ غير مطلوب/);
