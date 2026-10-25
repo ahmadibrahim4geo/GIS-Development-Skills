@@ -45,6 +45,12 @@ This is the user-approved **Layered Map** concept, faithfully rebuilt as **nativ
 - Use `logo-dark.svg` on dark backgrounds and `logo-light.svg` on light backgrounds. Use `banner-dark.svg` for repository documentation.
 - Do not rebuild the SVG by embedding raster files. Raster PNG exports can be created as needed from these SVG masters.
 
+## Typography and non-overlap rule
+
+**Do not give `Skills` a hardcoded SVG `x` coordinate.** The two name words now share one `<text id="brand-name">` element with consecutive `<tspan>` children. SVG computes the starting position of `Skills` from the *actual rendered width* of `Development` for the viewer's available font and then applies a positive `dx` gap. The five colored tagline words follow the same rule inside `<text id="brand-tagline">`.
+
+This design prevents the recurring **Development/Skills collision** in large, compact, dark and light outputs and prevents color-word collisions when fonts differ across GitHub, Windows, browsers and image renderers. When editing font family, weight or size, keep this flowed tspan structure. The regression tests in `tests/test_landing_page.py` and `tests/test_readme_layout.py` enforce it. Do not convert consecutive words back to separately hardcoded absolute `x` values.
+
 ## Layout and reuse
 
 - All transparent logo and icon SVGs retain **transparent backgrounds**.
