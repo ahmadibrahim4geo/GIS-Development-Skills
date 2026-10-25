@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 15,
+  "skill_count": 16,
   "skill_ids": [
     "arcgis-toolbox-engineering",
     "coordinate-reference-systems",
@@ -14,6 +14,7 @@
     "gis-desktop-application-development",
     "gis-development",
     "global-mapper-development",
+    "kml-kmz-engineering",
     "qgis-plugin-development",
     "remote-sensing-pipelines",
     "spatial-databases",
