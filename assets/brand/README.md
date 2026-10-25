@@ -31,6 +31,12 @@ This is the user-approved **Layered Map** concept, faithfully rebuilt as **nativ
 
 **Letters**: G blue, I white on dark/navy on light with a green dot, S cyan. Development white on dark/navy on light; Skills green. The tagline uses five independently editable SVG text objects: **The** white/navy, **Heart** green, **of** white/navy, **Geospatial** blue, **Innovation** cyan.
 
+## Visual gallery and PNG raster exports
+
+- [Brand showcase](showcase.html) — side-by-side preview for dark, light, compact and icon-only variants.
+- [Design tokens](tokens.css) — centralized flat-color CSS custom properties.
+- [PNG export utility](export_png.py) — optional local creation of raster assets (favicon 32/64px, icon 128/256/512px, logo and banner widths) using CairoSVG. It writes to `exports/` and **never replaces SVG source files**.
+
 ## Editing & exporting
 
 - Open `logo-dark.svg` / `logo-light.svg` in Inkscape, Illustrator, or an SVG-capable editor. Recolor path fills and individual text nodes, then save as SVG.
