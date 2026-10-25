@@ -6,6 +6,8 @@ license: MIT
 
 # Remote Sensing Pipelines
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 Use for satellite scenes, Earth Engine, STAC/COG collections, cloud masking and climate rasters. Consult [data discovery](../geospatial-data-discovery/SKILL.md), [CRS engineering](../coordinate-reference-systems/SKILL.md), and [GIS development](../gis-development/SKILL.md).
 
 ## Required workflow

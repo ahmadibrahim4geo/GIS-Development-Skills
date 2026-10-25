@@ -6,6 +6,8 @@ license: MIT
 
 # Global Mapper Development (Blue Marble Geographics)
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 Use when developing `.gms` scripts, Global Mapper workspace `.gmw` automation, Python scripts inside Global Mapper, or licensed SDK extensions. Do **not** treat Global Mapper as ArcPy, QGIS, free/open-source engine or public REST API.
 
 Read the [Blue Marble technical and licensing reference](../../references/blue-marble-global-mapper.md) first; combine with [geospatial processing](../geospatial-data-processing/SKILL.md), [terrain/hydrology](../terrain-hydrology-lidar/SKILL.md), [CRS](../coordinate-reference-systems/SKILL.md) or [web/3D](../geospatial-web-mapping/SKILL.md) only as needed.
