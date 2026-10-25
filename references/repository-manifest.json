@@ -1,8 +1,9 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 17,
+  "skill_count": 22,
   "skill_ids": [
+    "agent-development-journal",
     "arcgis-toolbox-engineering",
     "coordinate-reference-systems",
     "geospatial-ai-agents",
@@ -11,17 +12,21 @@
     "geospatial-data-discovery",
     "geospatial-data-processing",
     "geospatial-web-mapping",
+    "gis-cartography-symbology",
     "gis-desktop-application-development",
     "gis-development",
+    "gis-device-context",
     "gis-internationalization-arabic",
+    "gis-security-guardian",
     "global-mapper-development",
     "kml-kmz-engineering",
+    "prompt-intent-orchestrator",
     "qgis-plugin-development",
     "remote-sensing-pipelines",
     "spatial-databases",
     "terrain-hydrology-lidar"
   ],
-  "reference_count": 138,
+  "reference_count": 148,
   "api_count": 52,
   "data_repository_count": 24,
   "generated_from": [

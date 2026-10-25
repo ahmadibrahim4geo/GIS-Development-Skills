@@ -1,22 +1,24 @@
 ---
 name: gis-development
-description: Route GIS engineering, debugging, testing and migration to specialist skills for ArcMap, ArcGIS Pro, QGIS, PostGIS, raster/vector, remote sensing, web/3D, desktop and geospatial APIs; enforce spatial validity, security and truthful evidence.
+description: Route GIS and mapping work to specialist ArcGIS, QGIS, spatial data, remote sensing, desktop, web/3D, KML and API skills with secure, testable outputs.
 license: MIT
 ---
 
-# GIS Development — Lightweight Agent Router
+# GIS Development — Agent Router
 
-**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+**Free-first:** use [no-cost policy](../../references/free-first-policy.md). Disclose commercial host/API limits and offer verified free alternatives; never silently require payment.
 
-**Free proof-of-execution examples:** [DEM slope](../../examples/terrain-slope/README.md) and [STAC offline selection](../../examples/stac-offline/README.md) demonstrate tested, no-cost GIS artifacts. [License evidence audit](../../references/upstream-license-audit.md) separates checked code rights from unknowns; no runtime compatibility follows from a license.
+**Offline examples:** [DEM slope](../../examples/terrain-slope/README.md) and [STAC](../../examples/stac-offline/README.md). [License evidence](../../references/upstream-license-audit.md) is not native-run proof.
 
-**Load references selectively.** Determine task, runtime, format, size and risks first. Read [the decision tree](../../references/agent-decision-tree.md), then only the appropriate specialist and its immediate references. For blended tasks, compose just the necessary specialists; do not mistake a 3D renderer for a spatial-processing engine.
+**Intake:** [Plan and approve free-form requests](../prompt-intent-orchestrator/SKILL.md) before GIS routing.
+
+**Load selectively:** determine target, environment, data and risk; then use [decision tree](../../references/agent-decision-tree.md) and only needed specialists. Rendering does not substitute for spatial analysis.
 
 ## Choose specialists
 
 | Task | Read first |
 | --- | --- |
-| Multilingual UI, Arabic RTL, map labels, Unicode GIS attributes | [GIS Internationalization & Arabic](../gis-internationalization-arabic/SKILL.md) |\n| KML/KMZ import, export, styles, 3D and safe ZIP/XML handling | [KML/KMZ Engineering](../kml-kmz-engineering/SKILL.md) |\n| ArcMap 10.x, Python 2.7, older `arcpy.mapping` | [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md) and [legacy reference](../../references/arcmap-legacy.md) |
+| ArcMap 10.x, Python 2.7, older `arcpy.mapping` | [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md) and [legacy reference](../../references/arcmap-legacy.md) |
 | ArcGIS Pro, ArcPy, `.pyt`, geoprocessing | [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md) |
 | Global Mapper / Blue Marble GMS, Python and licensed SDK | [Global Mapper Development](../global-mapper-development/SKILL.md) |
 | QGIS plugin / Processing algorithm | [QGIS Plugin Development](../qgis-plugin-development/SKILL.md) |
@@ -29,18 +31,26 @@ license: MIT
 | Find source directories, data repositories and STAC indexes | [Geospatial Data Catalogs](../geospatial-data-catalogs/SKILL.md) |
 | Automate PyQGIS / STAC / GeoAI / Earth Engine with an agent | [Geospatial AI Agents](../geospatial-ai-agents/SKILL.md) |
 | DEM, terrain, hydrology, LiDAR / point clouds | [Terrain / Hydrology / LiDAR](../terrain-hydrology-lidar/SKILL.md) |
+| Security / untrusted GIS inputs / secrets / Agent Skills / MCP / release checks | [GIS Security Guardian](../gis-security-guardian/SKILL.md) (always applicable as a cross-cutting baseline) |
 | Integrate GIS HTTP APIs safely | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) |
 | Search place names / geocode addresses / autocomplete | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) + [provider selection guide](../../references/geocoding-place-search.md) |
+| Gazetteer search / scale-aware labels | [World Gazetteer](../../references/world-gazetteer-reference-layer.md) |
 | WKID, projection, transformation, vertical datum | [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md) |
+| Point/line/polygon/raster symbols, color ramps, map layout | [GIS Cartography & Symbology](../gis-cartography-symbology/SKILL.md) |
+| Device time/date/timezone, permission-controlled location, Sunlight simulation | [GIS Device Context](../gis-device-context/SKILL.md) |
+| KML/KMZ, Earth-like viewers and timeline | [KML](../kml-kmz-engineering/SKILL.md) · [Earth Pro](../../references/google-earth-pro-engineering.md) · [Historical imagery](../../references/historical-imagery-timeline.md) |
+
+
+**Interactive planning aid:** [GIS Project Wizard](../../project-wizard.html) (browser-only, no agent execution). For Arabic/English interfaces, map labels, geocoding and exports, also load [GIS Internationalization & Arabic](../gis-internationalization-arabic/SKILL.md). For resilience use the [performance and crash-prevention guide](../../docs/PERFORMANCE_RELIABILITY.md).
 
 ## Global rules (always apply)
 
 1. **Do not silently modify sources:** default to new output files, explicit user approval for destructive editing and backups.
 2. **Geospatial correctness:** verify CRS/axis order, true transformations, area/distance units, Z/vertical datum, invalid geometries, NoData, raster alignment and output readback.
 3. **Compatibility:** never mix ArcMap Python 2 with Pro APIs; pin host/runtime and validate third-party licensing/authentication/quotas.
-4. **Security:** apply [geospatial security rules](../../references/geospatial-security.md) to untrusted files, remote services, SQL and credentials.
+4. **Security:** apply [GIS Security Guardian](../gis-security-guardian/SKILL.md) at preflight, runtime and release gates, plus [geospatial input rules](../../references/geospatial-security.md) for files, APIs, SQL and credentials. A policy document does not enforce runtime sandbox permissions.
 5. **Performance:** profile representative inputs with [performance guidance](../../references/geospatial-performance.md) rather than asserting universal package choices.
 6. **Evidence:** complete [the acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and check it with [the evidence validator](../../scripts/validate_evidence.py). Record T0–T4 honestly; generic syntax checks or UI mockups are **not** native GIS execution.
-7. **References:** the curated [project catalog](../../references/project-catalog.json) and [API catalog](../../references/free-geospatial-apis.json) and [data repository catalog](../../references/geospatial-data-repositories.json) are discovery sources, not proof of runtime/entitlement. Read source licenses and verification metadata before reuse.
+7. **References:** [projects](../../references/project-catalog.json), [APIs](../../references/free-geospatial-apis.json), [data](../../references/geospatial-data-repositories.json) are discovery leads only. Verify licenses, access and provenance before use.
 
-**Historical instructions are preserved, unabridged**, in [the full original core guidance](../../references/gis-development-full-guidance.md). Read a section there only when the routed specialist lacks necessary details. Review [known failure patterns](../../references/gis-antipatterns.md) and [production examples](../../examples/README.md) as needed.
+**More:** [full guide](../../references/gis-development-full-guidance.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).

@@ -1,0 +1,12 @@
+/* Brand reference tokens — GIS Development Skills / Layered Map identity */
+:root{
+  --gis-navy:#0B3D91;
+  --gis-blue:#1467C8;
+  --gis-blue-on-dark:#398CE3;
+  --gis-cyan:#1CC8E8;
+  --gis-green:#82D53E;
+  --gis-white:#FFFFFF;
+  --gis-charcoal:#101B24;
+  --gis-muted:#CAD7E4;
+  --gis-outline:#DCE6EE;
+}

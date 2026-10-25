@@ -50,7 +50,7 @@ class ProductionExamplesTests(unittest.TestCase):
             self.weather.convert(raw, 30, 31)
 
     def test_navigation_paths_are_bilingual(self):
-        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        html = (ROOT / "explorer.html").read_text(encoding="utf-8")
         for md in ("README.md", "README.ar.md"):
             text = (ROOT / md).read_text(encoding="utf-8")
             for target in ("examples/README.md", "docs/QUALITY_BENCHMARK.md",

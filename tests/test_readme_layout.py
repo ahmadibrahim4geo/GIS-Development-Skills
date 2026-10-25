@@ -8,9 +8,9 @@ class ReadmeLayoutTests(unittest.TestCase):
     def test_banner_and_six_real_navigation_cards(self):
         md = (ROOT / "README.md").read_text(encoding="utf-8")
         ar = (ROOT / "README.ar.md").read_text(encoding="utf-8")
-        ET.parse(ROOT / "assets/readme-banner.svg")
-        self.assertIn("assets/readme-banner.svg", md)
-        self.assertIn("assets/readme-banner.svg", ar)
+        ET.parse(ROOT / "assets/brand/banner-dark.svg")
+        self.assertIn("assets/brand/banner-dark.svg", md)
+        self.assertIn("assets/brand/banner-dark.svg", ar)
         self.assertEqual(md.count("<td align=\"center\" valign=\"top\""), 6)
         self.assertNotIn("<strong>The Heart of Geospatial Innovation</strong>", md)
         self.assertIn("Build GIS tools, plugins and geospatial applications with a verifiable development workflow.", md)
@@ -30,30 +30,50 @@ class ReadmeLayoutTests(unittest.TestCase):
         self.assertNotIn("v1.0.0", md.split("## What makes this different")[0])
 
     def test_header_banner_tight_word_spacing_and_no_white_edges(self):
-        """Prevent the huge Development/Skills gap from reappearing in the README SVG."""
-        root = ET.parse(ROOT / "assets/readme-banner.svg").getroot()
-        self.assertEqual(root.attrib.get("viewBox"), "0 0 1600 330")
+        """Protect the new 1600x500 full-bleed vector banner and readable word gaps."""
+        path = ROOT / "assets/brand/banner-dark.svg"
+        root = ET.parse(path).getroot()
+        self.assertEqual(root.attrib.get("viewBox"), "0 0 1600 500")
         self.assertEqual(root.attrib.get("width"), "1600")
-        self.assertEqual(root.attrib.get("height"), "330")
-        svg = "{http://www.w3.org/2000/svg}"
-        labels = {
-            (node.text or "").strip(): node for node in root.iter(svg + "text")
-        }
-        for word in ("GIS", "Development", "Skills"):
-            self.assertIn(word, labels)
-        # Approximate word widths for the declared DejaVu Sans bold sizing
-        # and -3 letter-spacing. Both inter-word gaps are ~30 SVG units.
-        gis_gap = float(labels["Development"].get("x")) - float(labels["GIS"].get("x")) - 174
-        dev_gap = float(labels["Skills"].get("x")) - float(labels["Development"].get("x")) - 532
-        self.assertGreater(gis_gap, 15)
-        self.assertLess(gis_gap, 45)
-        self.assertGreater(dev_gap, 15)
-        self.assertLess(dev_gap, 45)
-        self.assertLessEqual(abs(gis_gap - dev_gap), 12)
-        svg_text = (ROOT / "assets/readme-banner.svg").read_text(encoding="utf-8")
-        self.assertIn('<rect width="1600" height="330" fill="url(#background)"/>', svg_text)
-        self.assertNotIn('fill="#FFFFFF"', svg_text)
-        self.assertNotIn('fill="white"', svg_text)
+        self.assertEqual(root.attrib.get("height"), "500")
+        ns = "{http://www.w3.org/2000/svg}"
+
+        # The banner's solid background covers every edge; the logo itself
+        # has an independently reusable transparent master.
+        backgrounds = [node for node in root.findall(ns + "rect")
+                       if node.get("width") == "1600" and node.get("height") == "500"]
+        self.assertEqual(len(backgrounds), 1)
+        self.assertEqual(backgrounds[0].get("fill"), "#101B24")
+        transparent_logo = (ROOT / "assets/brand/logo-dark.svg").read_text(encoding="utf-8")
+        self.assertNotIn('<rect width="1400"', transparent_logo)
+
+        # SVG lays out adjacent tspans by glyph advance, not hardcoded
+        # absolute word start X values. This prevents overlaps in Inter
+        # and system fallback fonts at every responsive display size.
+        name = root.find(".//*[@id='brand-name']")
+        tagline = root.find(".//*[@id='brand-tagline']")
+        self.assertIsNotNone(name)
+        self.assertIsNotNone(tagline)
+        name_parts = name.findall(ns + "tspan")
+        self.assertEqual(["Development", "Skills"], [p.text for p in name_parts])
+        self.assertIsNone(name_parts[1].get("x"))
+        self.assertGreaterEqual(float(name_parts[1].get("dx")), 16)
+        self.assertLessEqual(float(name_parts[1].get("dx")), 30)
+        tagline_parts = tagline.findall(ns + "tspan")
+        self.assertEqual(["The", "Heart", "of", "Geospatial", "Innovation"],
+                         [p.text for p in tagline_parts])
+        for word in tagline_parts[1:]:
+            self.assertIsNone(word.get("x"))
+            self.assertGreaterEqual(float(word.get("dx")), 8)
+        palette = {p.text: p.get("fill") for p in name_parts + tagline_parts}
+        self.assertEqual(palette["Heart"], "#82D53E")
+        self.assertEqual(palette["Skills"], "#82D53E")
+        self.assertEqual(palette["Innovation"], "#1CC8E8")
+        self.assertEqual(palette["Geospatial"], "#398CE3")
+        banner = path.read_text(encoding="utf-8")
+        self.assertNotIn("<image", banner)
+        self.assertNotIn("data:image/", banner)
+        self.assertIn('id="gis-i-dot"', banner)
 
 
 if __name__ == "__main__":

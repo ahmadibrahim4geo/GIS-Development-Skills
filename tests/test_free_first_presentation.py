@@ -13,7 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class FreeFirstSiteTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.html=(ROOT/"index.html").read_text(encoding="utf-8")
+        cls.html=(ROOT/"explorer.html").read_text(encoding="utf-8")
         cls.api=json.loads((ROOT/"references/free-geospatial-apis.json").read_text(encoding="utf-8"))
         cls.manifest=json.loads((ROOT/"references/repository-manifest.json").read_text(encoding="utf-8"))
         cls.policy=(ROOT/"references/free-first-policy.md").read_text(encoding="utf-8")

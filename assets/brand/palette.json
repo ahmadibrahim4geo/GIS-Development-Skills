@@ -1,0 +1,52 @@
+{
+  "name": "GIS Development Skills",
+  "tagline": "The Heart of Geospatial Innovation",
+  "version": "1.0",
+  "reference": "Approved Layered Map concept (flat, vector-first)",
+  "colors": {
+    "darkBlue": "#0B3D91",
+    "blue": "#1467C8",
+    "cyan": "#1CC8E8",
+    "green": "#82D53E",
+    "white": "#FFFFFF",
+    "charcoal": "#101B24",
+    "muted": "#CAD7E4",
+    "outline": "#DCE6EE",
+    "blueOnDark": "#398CE3"
+  },
+  "identity": {
+    "symbol": "three independent vector map layers with one curved route and one green waypoint",
+    "typography": "Inter with system fallbacks; all text is editable SVG text, not embedded raster",
+    "lettering": {
+      "G": "blue",
+      "I": "white on dark / dark blue on light",
+      "I_dot": "green",
+      "S": "cyan",
+      "Development": "white on dark / dark blue on light",
+      "Skills": "green"
+    },
+    "tagline": {
+      "The": "white/navy",
+      "Heart": "green",
+      "of": "white/navy",
+      "Geospatial": "blue",
+      "Innovation": "cyan"
+    },
+    "accessibility": "Use blueOnDark for small blue text on charcoal so contrast remains readable."
+  },
+  "assets": [
+    "assets/brand/logo-dark.svg",
+    "assets/brand/logo-light.svg",
+    "assets/brand/banner-dark.svg",
+    "assets/brand/banner-light.svg",
+    "assets/brand/icon.svg",
+    "assets/brand/favicon.svg",
+    "assets/brand/logo-compact-dark.svg",
+    "assets/brand/logo-compact-light.svg",
+    "assets/brand/showcase.html",
+    "assets/brand/export_png.py",
+    "assets/brand/tokens.css",
+    "assets/brand/README.md",
+    "assets/brand/palette.json"
+  ]
+}

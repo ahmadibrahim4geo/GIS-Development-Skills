@@ -183,3 +183,162 @@ html[lang="en"] .mirsad-author{direction:ltr}
   .mirsad-author .contact-button{flex-basis:100%}
   .mirsad-author .consult-copy{flex:1 1 100%}
 }
+
+/* Approved original integrated GIS brand: one graphic, no duplicated wordmark */
+:root { font-synthesis: none; }
+html[lang="en"] body {font-family:Inter,"Segoe UI",system-ui,-apple-system,Arial,sans-serif;}
+html[lang="ar"] body {font-family:Cairo,Tahoma,"Segoe UI",Arial,sans-serif;letter-spacing:0;}
+html[lang="ar"] .hero-content,html[lang="ar"] .hero-exact {direction:rtl;}
+html[lang="en"] .hero-content {direction:ltr;}
+.nav .brand {align-items:center;flex:0 0 auto;}
+.nav .brand img {display:block;width:205px!important;height:auto!important;max-height:none!important;border-radius:8px;object-fit:contain!important;flex-shrink:1;}
+.hero {display:block!important;grid-template-columns:none!important;min-height:0!important;padding:34px 0 54px!important;}
+.hero-primary {display:flex;flex-direction:column;align-items:center;gap:22px;width:100%;margin-inline:auto;}
+.hero-lockup {display:block!important;width:min(100%,1080px)!important;max-width:1080px;margin-inline:auto!important;direction:ltr;text-align:center;border-radius:20px;overflow:hidden;background:#14181a;box-shadow:0 15px 48px #0004;line-height:0;}
+.hero-lockup .hero-symbol {display:block!important;width:100%!important;height:auto!important;max-width:none!important;max-height:none!important;aspect-ratio:830/300!important;object-fit:contain!important;filter:none!important;transform:none!important;flex:initial!important;}
+.hero-content {max-width:850px;width:100%;text-align:center;margin:0 auto;}
+.hero .eyebrow {margin:0 auto 12px;letter-spacing:1.1px;}
+.hero .hero-exact {max-width:830px;margin:14px auto 10px;font-size:clamp(18px,2.25vw,26px);line-height:1.45;letter-spacing:-.025em;font-weight:750;text-wrap:balance;}
+.hero .lead {max-width:790px;margin:12px auto 0;font-size:clamp(14px,1.3vw,16px);line-height:1.85;text-wrap:pretty;}
+.hero .buttons {justify-content:center;gap:12px;margin-top:22px;}
+html[lang="ar"] .hero .hero-exact {letter-spacing:0;}
+@media(max-width:900px) {
+  .hero {padding:26px 0 36px!important;}
+  .hero-primary {gap:17px;}
+  .hero-lockup {border-radius:15px;}
+}
+@media(max-width:640px) {
+  .nav .brand img {width:150px!important;}
+  .nav .nav-right {gap:7px;}
+  .hero {padding:20px 0 26px!important;}
+  .hero-primary {gap:12px;}
+  .hero-lockup {border-radius:12px;}
+  .hero .eyebrow {font-size:9px;letter-spacing:.3px;}
+  .hero .hero-exact {font-size:clamp(17px,4.5vw,20px);margin:9px auto;}
+  .hero .lead {font-size:13px;line-height:1.7;}
+  .hero .buttons {margin-top:17px;}
+}
+
+/* Approved GIS Development Skills / Layered Map v1 — 2026-10-25 */
+:root{
+  --brand-dark-blue:#0B3D91;
+  --brand-blue:#1467C8;
+  --brand-cyan:#1CC8E8;
+  --brand-green:#82D53E;
+  --brand-white:#FFFFFF;
+  --brand-charcoal:#101B24;
+  --green:#82D53E;
+  --mint:#1CC8E8;
+}
+html[lang="en"] body{font-family:Inter,"Segoe UI",Arial,sans-serif;}
+html[lang="ar"] body{font-family:Cairo,Tahoma,"Segoe UI",Arial,sans-serif;}
+.nav .brand{flex:0 0 auto;max-width:min(255px,35vw);min-width:0;gap:0;}
+.nav .brand img{display:block;width:min(250px,100%)!important;max-width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:5 / 1!important;object-fit:contain!important;object-position:center!important;border:0!important;border-radius:0!important;flex-shrink:1;}
+.hero{display:block!important;grid-template-columns:none!important;min-height:0!important;padding:20px 0 56px!important;}
+.hero-primary{width:100%;max-width:1150px;gap:14px!important;margin-inline:auto;}
+.hero-lockup{display:block!important;width:min(100%,1150px)!important;max-width:1150px!important;line-height:0!important;overflow:visible!important;background:transparent!important;border:0!important;box-shadow:none!important;filter:none!important;border-radius:0!important;padding:0!important;margin:0 auto!important;}
+.hero-lockup .hero-symbol{display:block!important;width:100%!important;height:auto!important;max-width:none!important;max-height:none!important;aspect-ratio:10 / 3!important;object-fit:contain!important;object-position:center!important;border-radius:0!important;filter:none!important;box-shadow:none!important;transform:none!important;}
+.hero-content{max-width:860px;text-align:center;}
+.hero .eyebrow{margin:0 auto 10px;color:var(--brand-green);}
+.hero .hero-exact{max-width:820px;margin:11px auto;font-size:clamp(18px,2.2vw,26px);line-height:1.48;letter-spacing:-.025em;font-weight:750;}
+.hero .lead{max-width:760px;margin:8px auto 0;font-size:clamp(14px,1.35vw,16px);line-height:1.75;}
+.hero .buttons{justify-content:center;margin-top:20px;}
+html[lang="ar"] .hero-content{direction:rtl;}
+html[lang="ar"] .hero .hero-exact{letter-spacing:normal;}
+@media(max-width:900px){
+  .nav .brand{max-width:210px;}
+  .nav .brand img{width:210px!important;}
+  .hero{padding:17px 0 35px!important;}
+}
+@media(max-width:640px){
+  .nav .brand{max-width:148px;}
+  .nav .brand img{width:148px!important;}
+  .hero{padding:10px 0 30px!important;}
+  .hero-primary{gap:9px!important;}
+  .hero .eyebrow{font-size:10px;letter-spacing:0;}
+  .hero .hero-exact{font-size:clamp(17px,4.5vw,21px);margin:9px auto;}
+  .hero .lead{font-size:13px;line-height:1.7;}
+  .hero .buttons{margin-top:16px;}
+}
+
+/* Interactive Hub visual integration — retain full data explorer and profile */
+:root{
+  --bg:#050912;--panel:#101c33;--panel2:#0b1324;--stroke:#26364c;
+  --text:#f8fafc;--muted:#aebdd2;--green:#82D53E;--mint:#1CC8E8;
+  --gis-blue:#398CE3;--gis-navy:#0B3D91;--gis-cyan:#1CC8E8;
+}
+html{scroll-behavior:smooth}
+body{background-color:#050912!important;color:#f8fafc;background-image:radial-gradient(ellipse at 13% 6%,#38bdf81a,transparent 33%),radial-gradient(ellipse at 85% 23%,#10b98117,transparent 34%),linear-gradient(#94a3b809 1px,transparent 1px),linear-gradient(90deg,#94a3b809 1px,transparent 1px)!important;background-size:100% 100%,100% 100%,44px 44px,44px 44px!important}
+body:before{opacity:.35;pointer-events:none}
+.nav-wrap{background:#050912ed!important;border-bottom:1px solid #26364c!important;backdrop-filter:blur(17px)}
+.nav-links a,.nav-right .lang{color:#cbd5e1}
+.nav-links a:hover{color:#1CC8E8!important}
+.nav-git{background:#163148!important;border:1px solid #316584!important;color:#73d8f3!important;border-radius:11px!important}
+.nav-git:hover{background:#254b66!important}
+.hero{padding-top:22px!important;padding-bottom:42px!important}
+.hero-primary{gap:15px!important}
+.hero-lockup{max-width:1080px!important;width:min(100%,1080px)!important;margin-inline:auto}
+.hero-lockup img{filter:none!important}
+.hero-content{max-width:830px!important;margin:auto!important}
+.hero .eyebrow{border:1px solid #2d6850;border-radius:30px;background:#0f292b;padding:7px 14px;letter-spacing:.8px!important;font-size:11px!important;color:#a6e8b5!important}
+.hero .dot{background:#82D53E}
+.hero .hero-exact{font-size:clamp(21px,2.6vw,31px)!important;line-height:1.35!important;font-weight:800;letter-spacing:-.4px!important;text-wrap:balance}
+.hero .lead{max-width:790px!important;color:#c1cfdd!important}
+.btn.primary{background:linear-gradient(115deg,#1CC8E8,#82D53E)!important;color:#06202b!important;border-color:transparent!important;font-weight:800!important}
+.btn.secondary{background:#152a43!important;border:1px solid #33516b!important;color:#eaf6ff!important}
+.buttons .btn{min-height:46px;border-radius:12px!important}
+.stats{gap:12px!important;padding:16px!important;border:1px solid #26364c;border-radius:20px;background:#0c1528d9!important}
+.stat{background:transparent!important;border:none!important;border-radius:12px!important;text-align:center;padding:15px 10px!important}
+.stat strong{font-size:clamp(23px,2.8vw,36px)!important;color:#38bdf8!important}
+.stat:nth-child(2) strong{color:#82D53E!important}
+.stat:nth-child(3) strong{color:#fbbf24!important}
+.stat:nth-child(4) strong{color:#c4b5fd!important}
+.stat:nth-child(5) strong{color:#93c5fd!important}
+.stat span{color:#cbd5e1!important}
+section:not(#author){scroll-margin-top:108px}
+.section-head h2{letter-spacing:-.7px!important}
+.overline{color:#38bdf8!important}
+.feature,.workflow .step,.skill-directory a,.catalog-card{background:#101c33cc!important;border-color:#2a3a50!important;backdrop-filter:blur(10px);border-radius:17px!important}
+.feature:hover,.skill-directory a:hover,.catalog-card:hover{border-color:#398CE3!important;background:#152944!important;box-shadow:0 12px 34px #38bdf819}
+.glyph{background:#173954!important;color:#1CC8E8!important}
+.feature .learn,.fine-link{color:#7ed6fa!important}
+input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid #1CC8E8!important;outline-offset:3px}
+.author-section{padding-top:54px!important;padding-bottom:60px!important}
+.author-panel.mirsad-author{background:linear-gradient(125deg,#101c33,#0d2935)!important;border:1px solid #334d64!important;border-top:3px solid #82D53E!important;border-radius:23px!important;box-shadow:0 19px 53px #0004!important;gap:32px!important;padding:clamp(20px,3.2vw,38px)!important;isolation:isolate}
+.author-panel.mirsad-author:after{content:none!important}
+.mirsad-author .portrait-frame{background:linear-gradient(135deg,#1CC8E8,#82D53E)!important}
+.mirsad-author .portrait-frame img{border-color:#101c33!important}
+.mirsad-author .author-eyebrow,.mirsad-author .author-badge{color:#79ddf0!important}
+.mirsad-author .author-badge{border:1px solid #35516a!important;background:#172f46!important;border-radius:8px!important}
+.mirsad-author .author-bio,.mirsad-author .portrait-caption{color:#cbd5e1!important}
+.mirsad-author .contact-button{background:#172f47!important;border-color:#38546d!important;border-radius:10px!important}
+.mirsad-author .contact-button:hover{border-color:#1CC8E8!important;background:#254660!important}
+.mirsad-author .contact-button.whatsapp{background:#123a31!important;color:#baf3cc!important;border-color:#2c6852!important}
+.mirsad-author .contact-button.whatsapp:hover{background:#185043!important}
+.mirsad-author .profile-icon{color:#1CC8E8!important}
+.mirsad-author .contact-button.whatsapp .profile-icon{color:#82D53E!important}
+.mirsad-author .consultation{background:#0f3e37a8!important;border:1px solid #3e755b!important;border-radius:15px!important}
+.mirsad-author .consult-copy h3{color:#a2f1bd!important}
+.mirsad-author .consult-copy p{color:#c9e4dc!important}
+.mirsad-author .consult-button{background:#092c32!important;border-radius:10px!important;border-color:#5aca9d!important;color:#b1f5d0!important}
+.mirsad-author .consult-button:hover{background:#194940!important}
+html[lang="ar"] .mirsad-author{direction:rtl}
+html[lang="en"] .mirsad-author{direction:ltr}
+@media(max-width:900px){
+  .nav{flex-wrap:wrap!important;gap:8px!important;padding-block:10px}
+  .nav-links{order:3!important;display:flex!important;gap:18px!important;overflow:auto;width:100%;padding:6px 0 4px;white-space:nowrap;scrollbar-width:thin}
+  .nav-links a{flex-shrink:0}
+  .hero{padding-top:12px!important}
+  .author-panel.mirsad-author{gap:24px!important}
+}
+@media(max-width:640px){
+  .nav-links{gap:16px!important;font-size:12px}
+  .hero .eyebrow{padding:6px 11px;font-size:10px!important}
+  .hero .hero-exact{font-size:19px!important;letter-spacing:0!important}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:8px!important}
+  .stat:last-child{grid-column:1/-1}
+  .author-panel.mirsad-author{padding:20px 16px!important}
+  .mirsad-author .contact-button{flex:1 1 100%}
+  .mirsad-author .consultation{padding:16px!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
