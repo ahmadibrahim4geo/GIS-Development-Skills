@@ -91,6 +91,15 @@ The core skill is now a lightweight router with [the complete previous guidance 
 
 Previous skills, original guidance, project/API references, brand assets and bilingual content are preserved; native and live provider verification remain separate.
 
+## GIS Project Wizard, KML/KMZ and reliability
+
+- [Launch the bilingual GIS Project Wizard](project-wizard.html) — free-first architecture choices and downloadable Markdown implementation plans.
+- [Project Wizard implementation roadmap](docs/PROJECT_WIZARD_PLAN.md).
+- [KML/KMZ Engineering Skill](skills/kml-kmz-engineering/SKILL.md) and [open-source repository review](references/kml-kmz-repository-review.md).
+- [Performance, stability and crash-prevention guide](docs/PERFORMANCE_RELIABILITY.md).
+
+The wizard is a static planning aid; generated plans are not evidence of executed native GIS or stress tests.
+
 ## Production GIS workflows and quality benchmark — 2026-10-24
 
 **Additive upgrade, without deleting any earlier skills, reference sources, templates or site features:** this repository now includes **11 installable GIS agent skills**, **104 curated project references** and **52 public GIS API entries**.
