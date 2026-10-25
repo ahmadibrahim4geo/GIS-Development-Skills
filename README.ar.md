@@ -1,6 +1,10 @@
 <p align="center">
-  <img src="assets/gis-brand-lockup.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
+  <img src="assets/brand/banner-dark.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
 </p>
+
+<p align="center"><sub>الهوية البصرية الرسمية: <a href="assets/brand/README.md">ملفات الهوية ودليل استخدامها</a> · <a href="assets/brand/logo-light.svg">الشعار الشفاف</a> · <a href="assets/brand/icon.svg">الأيقونة المستقلة</a></sub></p>
+
+
 
 <p align="center">
   <a href="README.md">English</a> ·
