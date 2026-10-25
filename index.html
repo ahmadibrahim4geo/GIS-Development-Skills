@@ -180,6 +180,26 @@
     <p><a class="fine-link" href="references/free-first-policy.md" data-i18n="freePolicyLink">No-cost first and paid-host exceptions ↗</a></p>
   </section>
 
+  <section id="kml-interoperability" class="container">
+    <div class="section-head"><div><span class="overline" data-i18n="kmlOverline">GOOGLE KML / KMZ COMPATIBILITY</span>
+      <h2 data-i18n="kmlTitle">Keep every imported map's original identity.</h2>
+      <p data-i18n="kmlDesc">Source-preserving KML/KMZ workflows: shared styles, colors, icons, folders, data, overlays and secure portable exports.</p></div></div>
+    <div class="grid">
+      <a class="feature" href="skills/kml-kmz-engineering/SKILL.md"><span class="glyph">KML</span>
+        <h3 data-i18n="kmlSkillTitle">KML/KMZ engineering skill</h3>
+        <p data-i18n="kmlSkillDesc">Preserve original styling and hierarchy; distinguish full document display from lossy GIS conversion.</p>
+        <span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+      <a class="feature" href="references/google-kml-kmz-compatibility.md"><span class="glyph">OGC</span>
+        <h3 data-i18n="kmlGuideTitle">Google & OGC compatibility guide</h3>
+        <p data-i18n="kmlGuideDesc">StyleMap, KMZ resources, ExtendedData, gx extensions, height, time, safety and feature-level verification.</p>
+        <span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+      <a class="feature" href="examples/kml-kmz/README.md"><span class="glyph">QA</span>
+        <h3 data-i18n="kmlExampleTitle">KML round-trip fixture</h3>
+        <p data-i18n="kmlExampleDesc">Run an offline XML contract test before manually checking actual appearance and reopen behavior.</p>
+        <span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+    </div>
+  </section>
+
   <section id="cartography-and-context" class="container">
   <div class="section-head"><div><span class="overline" data-i18n="cartoOverline">CARTOGRAPHY & DEVICE CONTEXT</span>
     <h2 data-i18n="cartoSectionTitle">Style maps. Understand time and place.</h2>
@@ -351,6 +371,7 @@
   const tr={
     en:{
       guardianOverline:"SECURE-BY-DESIGN",guardianTitle:"GIS Security Guardian protects every development step.",guardianDesc:"A cross-cutting, free-first security skill for agent permissions, untrusted GIS inputs and release checks.",guardianSkill:"Security Guardian skill",guardianSkillDesc:"Risk-based protection alongside all GIS specialists: prompt injection, files, network and secrets.",guardianTools:"Open security tool registry",guardianToolsDesc:"14 upstream tools classified by purpose, license status and privacy requirements.",guardianPolicy:"Security and disclosure policy",guardianPolicyDesc:"Safe vulnerability reporting, non-destructive defaults and honest testing limitations.",
+      kmlOverline:"GOOGLE KML / KMZ COMPATIBILITY",kmlTitle:"Keep every imported map's original identity.",kmlDesc:"Retain imported styles, symbols, folders, data and portable assets.",kmlSkillTitle:"KML/KMZ engineering skill",kmlSkillDesc:"Preserve the original map; distinguish faithful viewing from lossy conversion.",kmlGuideTitle:"Google & OGC compatibility guide",kmlGuideDesc:"StyleMap, KMZ resource references, gx extensions, time and altitude.",kmlExampleTitle:"KML round-trip fixture",kmlExampleDesc:"Offline XML tests; native visual parity requires separate host checks.",
       cartoOverline:"MAP STYLING & DEVICE CONTEXT",cartoSectionTitle:"Style maps. Understand time and place.",cartoSectionDesc:"Two new specialist skills and license-aware style resources.",cartoSkillTitle:"Cartography & Symbology",cartoSkillDesc:"Point, line, polygon and raster symbology, palettes and native QA.",deviceSkillTitle:"Device Time & Location",deviceSkillDesc:"UTC, timezones, consent-based location and simulated Sunlight.",styleSourcesTitle:"Browse 10 style resources",styleSourcesDesc:"Find open-source style libraries, scientific palettes and license notes.",cartoExampleLink:"Offline MapLibre symbol fixture ↗",deviceExampleLink:"Offline device time fixture ↗",cartoGuideLink:"Style selection guide ↗",stylesTab:"Style sources",openStyle:"Visit style source ↗",
       skillsDirectoryLabel:"ALL SKILLS",skillsDirectoryTitle:"Every installable GIS specialty.",skillsDirectoryDesc:"Direct access to every GIS specialist; commercial hosts are optional.",fallbackSkills:"Browse skills on GitHub ↗",freePolicyLink:"Free-first policy and vendor licensing ↗",searchLabel:"Search",categoryLabel:"Category",costLabel:"Cost and access",freeOnly:"Free-compatible only",allTiers:"All tiers",conditional:"Free with conditions",selfHosted:"Self-hosted open source",restricted:"Restricted public",trial:"Trial only",commercial:"Commercial / metered",unavailable:"Unavailable",showMore:"Show more",
       navSkills:"Skills",navExplorer:"Explorer",navExamples:"Examples",navStart:"Get started",navContribute:"Contribute",authorPortraitAlt:"Ahmad Ibrahim — GIS specialist and cartographer",authorGitHubLabel:"Ahmad Ibrahim on GitHub",authorEmailLabel:"Email Ahmad Ibrahim",authorWhatsAppLabel:"Ahmad Ibrahim on WhatsApp",authorContributeLabel:"Suggest a GIS skill or tool",
@@ -382,6 +403,7 @@
     },
     ar:{
       guardianOverline:"الأمان المصاحب للتطوير",guardianTitle:"GIS Security Guardian — حماية من بداية المهمة حتى التسليم.",guardianDesc:"مهارة أمان شاملة ومجانية في أساسها لحماية صلاحيات الوكلاء وملفات GIS والفحص قبل النشر.",guardianSkill:"مهارة حارس الأمان",guardianSkillDesc:"حماية تتكامل مع جميع مهارات GIS: حقن التعليمات والملفات والشبكة والأسرار.",guardianTools:"كتالوج أدوات الأمان المفتوحة",guardianToolsDesc:"14 مشروعًا مصنفًا حسب الاستخدام والتراخيص ومتطلبات الخصوصية.",guardianPolicy:"سياسة الأمان والإبلاغ عن الثغرات",guardianPolicyDesc:"الإبلاغ الآمن والحفاظ على البيانات الأصلية وحدود التحقق الفني.",
+      kmlOverline:"التوافق مع ملفات KML وKMZ",kmlTitle:"احتفظ بالخصائص الأصلية لكل خريطة مستوردة.",kmlDesc:"الحفاظ على الرموز والألوان والمجلدات والبيانات والموارد داخل الملفات.",kmlSkillTitle:"مهارة هندسة KML/KMZ",kmlSkillDesc:"عرض يحافظ على المصدر مع فصل التحويل الذي قد يفقد خصائص.",kmlGuideTitle:"دليل التوافق مع Google وOGC",kmlGuideDesc:"استايلات StyleMap وموارد KMZ وإضافات gx والتوقيت والارتفاع.",kmlExampleTitle:"ملف واختبارات KML تجريبية",kmlExampleDesc:"فحص XML محلي ثم اختبارات مستقلة للعرض وإعادة الفتح داخل البرنامج.",
       cartoOverline:"الرموز وبيانات الجهاز",cartoSectionTitle:"نسّق خرائطك وحدد الزمان والمكان.",cartoSectionDesc:"مهارتان جديدتان ومصادر استايلات مع بيان التراخيص.",cartoSkillTitle:"الرموز والإخراج الخرائطي",cartoSkillDesc:"رموز النقاط والخطوط والمساحات والراستر وتدرجات الألوان والتحقق.",deviceSkillTitle:"وقت الجهاز وموقعه",deviceSkillDesc:"الوقت والتاريخ والمنطقة الزمنية وموقع الجهاز بإذن المستخدم.",styleSourcesTitle:"تصفح 10 مصادر للاستايلات",styleSourcesDesc:"مكتبات رموز وتدرجات علمية مع معلومات التراخيص.",cartoExampleLink:"مثال رموز MapLibre محلي ↗",deviceExampleLink:"مثال الوقت والإحداثيات محلي ↗",cartoGuideLink:"دليل اختيار الاستايلات ↗",stylesTab:"مصادر الاستايلات",openStyle:"فتح مصدر الاستايلات ↗",
       skillsDirectoryLabel:"دليل المهارات",skillsDirectoryTitle:"جميع مهارات GIS المتاحة.",skillsDirectoryDesc:"روابط مباشرة لكل مهارة؛ البرامج التجارية اختيارية وفق الترخيص.",fallbackSkills:"فتح جميع المهارات على GitHub ↗",freePolicyLink:"سياسة المجاني أولًا والتراخيص ↗",searchLabel:"البحث",categoryLabel:"التصنيف",costLabel:"التكلفة والإتاحة",freeOnly:"المتاح مجانًا بشروطه",allTiers:"كل المستويات",conditional:"مجاني بقيود",selfHosted:"استضافة ذاتية مفتوحة المصدر",restricted:"عام بشروط صارمة",trial:"تجربة فقط",commercial:"تجاري / مدفوع",unavailable:"غير متاح",showMore:"عرض المزيد",
       navSkills:"المهارات",navExplorer:"استكشاف المصادر",navExamples:"الأمثلة",navStart:"ابدأ هنا",navContribute:"المساهمة",authorPortraitAlt:"أحمد إبراهيم — أخصائي نظم معلومات جغرافية وكارتوجرافي",authorGitHubLabel:"حساب أحمد إبراهيم على GitHub",authorEmailLabel:"إرسال بريد إلكتروني إلى أحمد إبراهيم",authorWhatsAppLabel:"التواصل مع أحمد إبراهيم عبر واتساب",authorContributeLabel:"اقتراح مهارة أو أداة جديدة",
