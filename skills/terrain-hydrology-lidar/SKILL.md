@@ -8,6 +8,10 @@ license: MIT
 
 **Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
 
+## Free executable validation fixture
+
+[Horn slope for a small projected ESRI ASCII DEM](../../examples/terrain-slope/README.md) runs with Python stdlib and no proprietary engine or paid credits. Its artificial east-rising DEM has 9 interior cells with 45° slope, NoData at edges, and feet-to-meters unit tests. It **requires user confirmation that cellsize is in projected linear units** and **does not validate CRS automatically**; compare with QGIS/GRASS/GDAL on real datasets before relying on scientific results.
+
 When discussing Global Mapper contour/watershed/LiDAR automation, consult [Global Mapper Development](../global-mapper-development/SKILL.md) and the [Blue Marble forks/SDK guide](../../references/blue-marble-global-mapper.md). Do not confuse source-code forks for Cesium terrain/SfM processing with commercially licensed Global Mapper algorithms. Check vertical datum and NoData handling when producing or converting terrain tiles.
 
 Use alongside [data catalogs](../geospatial-data-catalogs/SKILL.md), [geospatial processing](../geospatial-data-processing/SKILL.md), [CRS](../coordinate-reference-systems/SKILL.md) and optional [QGIS](../qgis-plugin-development/SKILL.md) / [ArcGIS](../arcgis-toolbox-engineering/SKILL.md) host.

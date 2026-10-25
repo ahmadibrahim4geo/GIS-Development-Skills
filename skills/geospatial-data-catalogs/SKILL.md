@@ -8,7 +8,9 @@ license: MIT
 
 **Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
 
-Use this specialist when a user needs dataset repositories, downloadable GIS layers, catalogs/portals, archives, STAC discovery or comprehensive domain coverage. It complements, but **does not replace**, [data discovery](../geospatial-data-discovery/SKILL.md) and [API integration](../geospatial-api-integration/SKILL.md).
+**Starter example:** [STAC offline metadata inspector](../../examples/stac-offline/README.md) provides safe deterministic filtering without a remote account; never promote fixture item links to actual downloadable data.
+
+Use this specialistUse this specialist when a user needs dataset repositories, downloadable GIS layers, catalogs/portals, archives, STAC discovery or comprehensive domain coverage. It complements, but **does not replace**, [data discovery](../geospatial-data-discovery/SKILL.md) and [API integration](../geospatial-api-integration/SKILL.md).
 
 1. Define theme, geographic coverage, era, resolution, raster/vector/point-cloud format, usage rights and intended host.
 2. Search the curated [data repository index](../../references/geospatial-data-repositories.json) and [selection guide](../../references/geospatial-data-repositories.md), prioritizing the user's [GIS Data Repositories Professional 2026](https://github.com/ahmadibrahim4geo/gis-data-repositories-professional-2026) for broad exploration. Do not mirror that master index.

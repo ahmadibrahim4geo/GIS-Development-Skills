@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — License evidence and free executable GIS examples (2026-10-25)
+
+- Inspect source license files for 8 core GitHub projects, recording exact original license evidence and separating licensed product/service access from source rights. 130 projects remain unverified; no automatic false verification.
+- Add a deterministic, network-free catalog license coverage reporter and guard rails for verified evidence metadata.
+- Add fully local Horn slope ASCII raster and STAC ItemCollection metadata-filtering reference workflows with synthetic fixtures, unit/NoData/datetime tests and explicit T2-only evidence boundaries.
+- Connect audited license progress, examples, skills, bilingual README/index, source intake process and CI validation.
+
 ## Unreleased — Blue Marble Geographics / Global Mapper specialist (2026-10-25)
 
 - Add dedicated Global Mapper GMS, Python and licensed SDK engineering skill with version-specific runtime/redistribution controls.

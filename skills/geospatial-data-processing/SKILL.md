@@ -10,6 +10,10 @@ license: MIT
 
 Use for open-source independent processing. Complement, do **not replace**, [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md), [QGIS development](../qgis-plugin-development/SKILL.md), and the [core router](../gis-development/SKILL.md).
 
+## Reproducible, no-cost raster test
+
+[Horn's 3×3 DEM slope example](../../examples/terrain-slope/README.md) demonstrates a complete no-key/local raster input → grid calculation → ASCII output and provenance workflow. It is restricted to small projected ASCII grids; for large rasters route to GDAL/GRASS/QGIS and test vertical unit/NoData behavior independently.
+
 ## Required workflow
 1. Identify Python, OS, GDAL/GEOS/PROJ and dependent package versions. Create project-scoped environments; avoid untested pip/Conda binary mixing.
 2. Define input/output formats, known CRS/axis order, Z and vertical datum, field schema, encoding, nodata, raster cell alignment, resolution and precision.
