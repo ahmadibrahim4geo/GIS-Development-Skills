@@ -40,7 +40,8 @@ class LandingPageTests(unittest.TestCase):
 
     def test_local_assets_exist(self):
         self.assertIn("assets/icon.svg", self.parser.links)
-        self.assertIn("assets/readme-banner.svg", (ROOT / "README.md").read_text(encoding="utf-8"))
+        self.assertIn("assets/gis-brand-lockup.svg", (ROOT / "README.md").read_text(encoding="utf-8"))
+        self.assertIn("assets/gis-brand-lockup.svg", self.parser.links)
         for asset in ("assets/logo.svg", "assets/icon.svg"):
             tree = ET.parse(ROOT / asset)
             self.assertTrue(tree.getroot().tag.endswith("svg"))
@@ -66,9 +67,10 @@ class LandingPageTests(unittest.TestCase):
             "Build GIS tools, plugins and geospatial applications with a verifiable development workflow.",
             self.html,
         )
-        self.assertIn('class="scene-logo" src="assets/logo.svg"', self.html)
-        self.assertIn('class="scene-identity"', self.html)
-        self.assertIn('class="scene-logo" src="assets/logo.svg"', self.html)
+        self.assertIn('class="hero-symbol" src="assets/gis-brand-lockup.svg"', self.html)
+        self.assertEqual(1, self.html.count('class="hero-symbol"'))
+        self.assertNotIn('class="scene-logo"', self.html)
+        self.assertNotIn('class="hero-wordmark"', self.html)
         self.assertIn('href="assets/brand-refresh.css"', self.html)
         self.assertTrue((ROOT / "assets/brand-refresh.css").is_file())
 
@@ -88,7 +90,7 @@ class LandingPageTests(unittest.TestCase):
 
         for path in ("README.md", "README.ar.md"):
             readme = (ROOT / path).read_text(encoding="utf-8")
-            self.assertIn('src="assets/readme-banner.svg"', readme)
+            self.assertIn('src="assets/gis-brand-lockup.svg"', readme)
             self.assertNotIn("<strong>The Heart of Geospatial Innovation</strong>", readme)
             self.assertIn("GIS Development Skills", readme)
         english = (ROOT / "README.md").read_text(encoding="utf-8")
@@ -111,8 +113,23 @@ class LandingPageTests(unittest.TestCase):
             self.assertTrue(data.startswith(bytes([137, 80, 78, 71, 13, 10, 26, 10])))
             logos.append(data)
         self.assertEqual(logos[0], logos[1])
-        self.assertIn('class="scene-logo" src="assets/logo.svg"', self.html)
+        self.assertIn('class="hero-symbol" src="assets/gis-brand-lockup.svg"', self.html)
         self.assertNotIn('class="globe-art"', self.html)
+
+    def test_original_brand_artwork_embedded_as_a_single_complete_graphic(self):
+        root = ET.parse(ROOT / "assets/gis-brand-lockup.svg").getroot()
+        self.assertEqual("70 115 830 300", root.attrib.get("viewBox"))
+        image = root.find(".//{http://www.w3.org/2000/svg}image")
+        self.assertIsNotNone(image)
+        source = image.attrib.get("href", "")
+        self.assertTrue(source.startswith("data:image/webp;base64,"))
+        data = base64.b64decode(source.split(",", 1)[1], validate=True)
+        self.assertEqual(data[:4], b"RIFF")
+        self.assertEqual(data[8:12], b"WEBP")
+        self.assertEqual(self.html.count('class="hero-symbol"'), 1)
+        self.assertEqual(self.html.count('class="scene-logo"'), 0)
+        self.assertIn('class="hero-lockup"', self.html)
+        self.assertIn('class="hero-content"', self.html)
 
     def test_public_creator_section_and_contacts(self):
         self.assertIn("author", self.parser.ids)
