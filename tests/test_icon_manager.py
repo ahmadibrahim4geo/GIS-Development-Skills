@@ -120,7 +120,7 @@ class TestNewIconExport(unittest.TestCase):
                          True)
 
     def test_readme_and_specialist_links_and_example(self):
-        for name in ("README.md", "README.ar.md", "index.html",
+        for name in ("README.md", "README.ar.md", "explorer.html",
                      "skills/gis-cartography-symbology/SKILL.md",
                      "skills/kml-kmz-engineering/SKILL.md"):
             body = (ROOT / name).read_text(encoding="utf-8")
