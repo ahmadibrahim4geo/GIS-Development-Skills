@@ -6,7 +6,9 @@ license: MIT
 
 # GIS Security Guardian — security at every step
 
-**Free-first:** follow [the no-cost source and tooling policy](../../references/free-first-policy.md); security checks must not silently require commercial services or API keys.\n\n**Cross-cutting mandatory baseline:** use this skill alongside the routed GIS specialist, not only after implementation. Read [existing geospatial security rules](../../references/geospatial-security.md) and the [agent security playbook](../../references/security/agent-safety.md). This skill is instructions plus local validation tooling, **not** an autonomous OS sandbox, antivirus, secret vault or guarantee that an AI agent obeys every rule.
+**Free-first:** follow [the no-cost source and tooling policy](../../references/free-first-policy.md); security checks must not silently require commercial services or API keys.
+
+**Cross-cutting mandatory baseline:** use this skill alongside the routed GIS specialist, not only after implementation. Read [existing geospatial security rules](../../references/geospatial-security.md) and the [agent security playbook](../../references/security/agent-safety.md). This skill is instructions plus local validation tooling, **not** an autonomous OS sandbox, antivirus, secret vault or guarantee that an AI agent obeys every rule.
 
 ## Before any action (preflight)
 
