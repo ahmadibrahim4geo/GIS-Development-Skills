@@ -45,7 +45,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>14 installable GIS skills</strong> · <strong>129 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>14 installable GIS skills</strong> · <strong>130 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -58,6 +58,10 @@ A practical development skill and curated reference hub for building reliable Ar
 **Maintainer:** [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). This is an independent community engineering resource, not an official project of Esri, QGIS, GeoRust or other third-party catalog entries. **Documentation v0.3.5** is not a GitHub software release; starter code and GIS host integrations require separate runtime testing.
 
 ---
+
+## Earth View satellite globe reference — 2026-10-25
+
+Added [Earth View](https://github.com/colincode0/earth-view) to our [software catalog](references/project-catalog.json), with a [technical architecture review](references/earth-view-architecture.md) linked from the bilingual website, Web Mapping, Desktop, Remote Sensing and API specialists. NASA GIBS and Copernicus Data Space were **already** indexed as APIs, so we did not duplicate them. The [atomic source intake checklist](references/source-intake-workflow.md) helps keep future changes synchronized. **Upstream license not found; architecture reference only, no code copied.**
 
 ## OpenGeoS advanced engineering and GIS data repositories — 2026-10-25
 
@@ -105,7 +109,7 @@ The full source/skill-pack integrity audit introduced:
 - `python scripts/validate_skill_pack.py` — offline checks of all skill frontmatters, local documentation links, website resources, and synchronized project/API/skill counters.
 - [Technical audit and outstanding verification](docs/TECHNICAL_AUDIT_2026-10-24.md), with exact test limits and remaining host-runtime checks.
 
-**Current inventory:** 129 curated software references, 52 API service entries, 24 data repositories and **14 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
+**Current inventory:** 130 curated software references, 52 API service entries, 24 data repositories and **14 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
 
 ```bash
 python scripts/validate_catalog.py

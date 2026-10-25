@@ -4,7 +4,7 @@ Select **the delivery target**, not just the programming language. The general [
 
 1. Is the user building inside ArcGIS? **ArcMap 10.x:** Python 2.7 and `arcpy.mapping` where applicable. **ArcGIS Pro:** supported Python 3 / ArcPy / `arcpy.mp`; distinguish `.pyt`, script tool and Pro SDK add-in.
 2. Inside QGIS? **Processing algorithm:** Processing provider interface. **Plugin:** PyQGIS/Qt with real action wiring. **Independent executable:** Desktop application engineering, not a plugin.
-3. Is the output interactive web mapping? **2D/vector:** MapLibre or Leaflet according to features and licensing. **3D terrain/globe:** CesiumJS or other verified engine. For raster/geometry analysis also load the independent processing specialist.
+3. Is the output interactive web mapping (including time-aware satellite globes)? Read the [Earth View design review](earth-view-architecture.md) only when 3D imagery/temporal regional inspection is relevant.  **2D/vector:** MapLibre or Leaflet according to features and licensing. **3D terrain/globe:** CesiumJS or other verified engine. For raster/geometry analysis also load the independent processing specialist.
 4. Is there a database? **PostGIS/SpatiaLite:** schema, SRID, spatial index, transactional migrations, EXPLAIN plans. Don't transform coordinates by changing their SRID labels.
 5. Raster/vector algorithms, massive features, reprojections? Route to **geospatial data processing**; use windowed raster reads and chunking where measurements justify them.
 6. Satellite imagery/STAC/COG/Earth Engine? Route to **remote sensing pipelines** and data discovery. Verify sensor scales, per-pixel QA and target grid.

@@ -28,6 +28,10 @@ Use when the deliverable is a web GIS map, browser-based spatial tool or mapping
 - [ ] Responsive map, long data performance, time axis accuracy
 - [ ] API terms, CRS, attribution and secrets checked
 
+## Earth View: globe-to-modal architecture
+
+Review [Earth View](../../references/earth-view-architecture.md) for typed base/overlay imagery provider registries, WMS 1.3.0 EPSG:4326 BBOX axis order, temporal images, camera controls and regional zoom/view-state restoration. Avoid copying code without an upstream license; do not infer displayed date is the satellite acquisition date or assume optional AI controls are visible.
+
 ## OpenGeoS deeper integration candidates
 
 - [COG/GeoTIFF client](https://github.com/opengeos/maplibre-gl-raster): inspect bands, NoData, overviews and source pixels; remote access requires CORS/range support.
