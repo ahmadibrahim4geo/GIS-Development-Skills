@@ -25,6 +25,17 @@ Use this skill when a GIS application or toolbox reads, writes, converts, render
 - Do not automatically fetch NetworkLinks, remote icons, models or overlays. Require explicit user consent, restrict schemes to approved protocols, apply timeouts and size limits, and document privacy/network behavior.
 - Resolve relative resource paths within the package without allowing escape. Avoid unbounded in-memory XML trees or decompression; use streaming/chunking where practical.
 
+## Non-negotiable style fidelity on imported KML/KMZ
+
+**PRESERVE FIRST (default):** For external KML/KMZ (received from colleagues, loaded from disk, restored from saved project), the imported author's style is authoritative. **Do not repaint points, lines or polygons; do not replace original pin symbols with your app's default icons; do not assign a new style palette or discard original styles on open/save.** See the [complete mandatory behavior and acceptance checklist](../../references/kml-kmz-symbol-preservation.md).
+
+- Keep **separate representations** of `original_imported_style`, `temporary_presentation_fallback` and `explicit_user_override`. Scene selection glow or temporary missing-image placeholder must never mutate exported KML.
+- Parse and retain nested/shared `Style`, `StyleMap` normal/highlight pairs, `styleUrl`, inline style precedence; `IconStyle` href/color/scale/hotSpot/heading, `LabelStyle`, `LineStyle`, `PolyStyle` fill/outline/opacity, `BalloonStyle`, `ListStyle`, applicable `gx` styling and referenced screen/ground overlays. Do not treat colors as ordinary RGB; KML color hex order is **aabbggrr**.
+- Preserve local KMZ icon PNG/JPEG paths and **identical original bytes** where possible. Preserve original remote href strings but never auto-fetch a network resource. Warn on unresolved/unsupported assets without replacing source styling. Avoid inventing hosted Google Earth icon URLs or bundling another author's copyright-protected icon.
+- On user-chosen edit, apply to the selected feature(s) only, with undo/Reset Original, separate metadata and Save As where possible. Imported style remains accessible for lossless comparison.
+- Source hierarchy, feature names, geometry, altitude, metadata and style groups remain intact; check round-trip **actual resolved styles and asset SHA-256**, not just feature count. If converter/library drops styles, detect and disclose loss; use a preservation-capable model instead of flattening to generic GIS geometry.
+- For **new** user-authored features (not existing imports), consult [marker/icon sources](../../references/map-marker-icon-library.md): Pinhead/Maki/Temaki, Material Symbols, CC BY-SA Map Icons Collection, mixed-license Map Icons, Leaflet marker renderers, or Cesium PinBuilder. Convert allowed icons to packaged PNG assets if exporting KMZ; never apply these to existing imported features without explicit consent.
+
 ## Import and rendering
 - Separate semantic document model (folder hierarchy, styles, resources, times, metadata) from GIS feature layers and renderer. Preserve original KML for features not representable in the target GIS schema.
 - Support icons, labels, line/polygon styles and overlays where the renderer allows; document Google Earth extension gaps rather than silently dropping them.
@@ -52,7 +63,8 @@ Use this skill when a GIS application or toolbox reads, writes, converts, render
 - [ ] Target host and supported KML constructs documented
 - [ ] Malformed and malicious inputs rejected safely
 - [ ] Coordinate/altitude semantics verified
-- [ ] Local KMZ assets and folder/style metadata retained where promised
+- [ ] Original imported colors/icons/line and polygon styles, StyleMaps, label properties and transparency remain unchanged by default
+- [ ] Local KMZ assets (including original image bytes) and folder/style metadata retained
 - [ ] Round-trip and cross-host fixtures executed
 - [ ] Performance/stress/cancellation tests reported with measured limits
 - [ ] Unsupported constructs and conversion losses disclosed
