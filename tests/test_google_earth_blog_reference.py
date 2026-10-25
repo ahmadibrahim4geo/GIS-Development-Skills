@@ -43,7 +43,7 @@ class GoogleEarthBlogReferenceTests(unittest.TestCase):
             self.assertIn("historical-imagery-timeline.md", document, path)
 
     def test_bilingual_website_navigation(self):
-        page = read("index.html")
+        page = read("explorer.html")
         self.assertIn('id="google-earth-reference"', page)
         self.assertIn('href="' + GE + '"', page)
         self.assertIn('href="' + TIME + '"', page)
