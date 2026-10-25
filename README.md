@@ -77,10 +77,12 @@ Two new installable skills extend the toolkit to **18 specialists** (including t
 
 - [GIS Cartography & Symbology](skills/gis-cartography-symbology/SKILL.md) — vector point/line/polygon symbols, raster ramps, labels, accessible layouts, ArcMap/Pro/QGIS/MapLibre/Cesium adapters and verifiable save/reopen.
 - [GIS Device Context](skills/gis-device-context/SKILL.md) — UTC/local date/time, IANA timezone, opt-in device geolocation, scene-vs-device target and live/simulated Sunlight modes.
-- [10-source style directory](references/cartographic-style-sources.json), including the [ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection), QGIS Resources, OS GeoDataViz, CARTOColors and scientific palette references. Upstream individual style/font rights are **not** automatically granted by hosting.
+- [19-source style directory (including 8 icon packs and Cesium PinBuilder)](references/cartographic-style-sources.json), including the [ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection), QGIS Resources, OS GeoDataViz, CARTOColors and scientific palette references. Upstream individual style/font rights are **not** automatically granted by hosting.
 - Offline [MapLibre point/line/polygon fixture](examples/cartography/README.md) and [Python timezone/context fixture](examples/device-context/README.md) with regression tests; real GIS rendering, GPS permission and sun lighting still require host testing.
 
 The bilingual website adds a searchable **Style sources** catalog tab alongside the existing project, API and data tabs. No third-party style binaries or fonts are bundled.
+
+**Free map marker libraries and imported KMZ styles:** The [map marker icon guide](references/map-marker-icon-library.md) covers Pinhead, Maki, Temaki, Map Icons Collection, Scott de Jonge Map Icons, Leaflet ExtraMarkers, Google Material Symbols, Leaflet AwesomeMarkers, and Cesium PinBuilder, including separate icon/font/plugin licenses. These can style **new/user-restyled** placemarks. On imported KML/KMZ, **preserve original icon assets, styles, colors, StyleMap, opacity and line/polygon and label appearances, without automatic replacement**. See the [KML/KMZ preservation contract](references/kml-kmz-symbol-preservation.md) and [offline KMZ comparison fixture](examples/kml-style-preservation/README.md). This strengthens (does not replace) the existing [Google/OGC KML compatibility guide](references/google-kml-kmz-compatibility.md).
 
 ## Global Mapper / Blue Marble Geographics research — 2026-10-25
 

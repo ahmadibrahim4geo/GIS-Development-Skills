@@ -23,6 +23,12 @@ Use data distribution and units to set range/class breaks; include nulls, outlie
 | MapLibre | Style JSON, circle/line/fill/raster/heatmap/color-relief, expressions | Validate spec version, data-driven support, tile/source rules |
 | CesiumJS | Entity and material/imagery styling | Separate 3D terrain/lighting and geometry primitives from 2D style JSON |
 
+## Map placemark icons and KML/KMZ priority
+
+- [8 map-icon libraries and CesiumJS PinBuilder](map-marker-icon-library.md) are recorded in the source catalog with per-library code/font/icon licensing and KMZ export roles. For new user-authored placemarks, prefer CC0 Pinhead/Maki/Temaki and export a PNG in a relative `IconStyle/Icon/href` when writing portable KMZ.
+- **Do not use these icon libraries when importing another person's styled KMZ.** Preserve original author colors, icon resources, hotspot, line width, fill/outline, `StyleMap` states, IDs and `styleUrl` exactly or equivalently. User must explicitly choose a restyle operation. Follow [KML/KMZ style preservation contract](kml-kmz-symbol-preservation.md).
+- Canvas/Leaflet icon fonts and SVGs require adapter/rasterization; KML viewers cannot be assumed to render browser icon classes. Cesium `PinBuilder` is for newly generated pins or explicit overrides, not generic replacement on import.
+
 ## Ingesting style collections without getting lost
 
 1. Select usage platform, geometry, theme, language, required license and accessible visual contrast.

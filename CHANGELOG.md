@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — Map icon library and imported KMZ style protection (2026-10-25)
+
+- Add eight independently licensed free/open map icon sources plus CesiumJS PinBuilder to the catalog (10 → 19), with KMZ export roles and font/plugin license distinctions.
+- Preserve imported KML/KMZ icons, colors, opacity, label, line/polygon styles, StyleMaps, remote references and local asset bytes by default. Keep temporary rendering fallback distinct from explicit user-driven edits.
+- Cross-link the existing Google/OGC KML compatibility work with a new dedicated preservation contract and icon-source selection guide.
+- Add offline synthetic KMZ style/asset regression fixtures; update cartography and KML specialist skills, bilingual README and website without touching security work.
+
+
 ## Unreleased — Cartography styling and privacy-aware device context (2026-10-25)
 
 - Add dedicated vector/raster cartography skill, 10-source license-aware style catalog, native format matrix, offline MapLibre point/line/polygon fixture and tests.
