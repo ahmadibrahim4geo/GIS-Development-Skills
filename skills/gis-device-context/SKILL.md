@@ -6,6 +6,8 @@ license: MIT
 
 # GIS Device Context — Time, Location & Runtime Capabilities
 
+**Free-first default:** Follow [no-cost GIS workflow policy](../../references/free-first-policy.md). Prefer platform permission APIs and offline input; do not require paid geolocation, device telemetry or network lookup.
+
 This is a **development guide**, not a background service or a grant of access to device location. An AI agent must never claim to know precise live coordinates or the running device's clock without a real host-provided value and the required user permission.
 
 ## Context decision: what location?
