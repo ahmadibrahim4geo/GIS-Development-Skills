@@ -63,9 +63,9 @@ def validate_catalog(path=CATALOG):
         access = item.get('access')
         if not isinstance(access, str) or access not in ALLOWED_ACCESS:
             errors.append(f'{tag} unknown access type')
-        if access in ACCESS_TO_TIER and item.get('cost_tier') != ACCESS_TO_TIER[access]:
+        if isinstance(access, str) and access in ACCESS_TO_TIER and item.get('cost_tier') != ACCESS_TO_TIER[access]:
             errors.append(f'{tag} cost_tier incompatible with access')
-        if item.get('cost_tier') not in set(ACCESS_TO_TIER.values()):
+        if not isinstance(item.get('cost_tier'), str) or item.get('cost_tier') not in set(ACCESS_TO_TIER.values()):
             errors.append(f'{tag} unknown cost_tier')
         for field in ('documentation_url', 'service_url', 'example_url'):
             if field in item:
