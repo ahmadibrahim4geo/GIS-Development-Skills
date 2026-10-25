@@ -36,6 +36,10 @@ Use for point, line, polygon, raster, labels, legends, scientific color maps, ma
 - Repository MIT licenses do **not** automatically relicense included Esri/USGS/BGS files, fonts or converted styles; verify per-file rights, attribution and embedding/redistribution rules before shipping.
 - Do not download/run untrusted bundled scripts, font installers, SVG scripts or external QML expressions automatically. Sanitize URLs and validate imports.
 
+## Imported KML/KMZ style exception
+
+When symbols originate in an imported KML/KMZ, user-authored styling wins over application palettes. Apply [KML/KMZ preservation rules](../kml-kmz-engineering/SKILL.md) and [Google styling semantics](../../references/google-kml-kmz-compatibility.md) (KML ABGR color, StyleMap normal/highlight, hotspot, inline/shared styles, KMZ assets). Never replace them with a default cartographic renderer without explicit user action; record unsupported style capabilities separately.
+
 ## Cross-skill routing
 - ArcGIS Pro / ArcMap -> [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md); QGIS -> [QGIS Plugin Development](../qgis-plugin-development/SKILL.md).
 - 2D/3D web -> [Geospatial Web Mapping](../geospatial-web-mapping/SKILL.md); independent GIS UI -> [Desktop GIS](../gis-desktop-application-development/SKILL.md).
