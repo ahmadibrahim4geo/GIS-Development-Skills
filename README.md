@@ -55,7 +55,32 @@ A practical development skill and curated reference hub for building reliable Ar
   <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website ↗</a>
 </p>
 
-**Free-first audit:** [Cost/licensing and 15 independent skill paths](references/free-first-policy.md). The website now lists all specialists, has incremental project browsing instead of a hard 60-result cut-off, and defaults API discovery to 43 self-hostable or conditionally free entries. Commercial, trial, strictly restricted and unavailable records remain optionally viewable; live provider rights are not guaranteed.
+## Start here
+
+Choose the shortest path for what you want to build. The repository is a **free-first GIS engineering toolkit**, not a packaged desktop application; proprietary GIS hosts and third-party services may require separate licenses.
+
+| Your goal | Start with | What you get |
+| :--- | :--- | :--- |
+| **Build a GIS project** | [GIS Project Wizard](project-wizard.html) · [Implementation roadmap](docs/PROJECT_WIZARD_PLAN.md) | Architecture, dependencies, quality gates and a downloadable plan |
+| **Install an agent skill** | [Core GIS router](skills/gis-development/SKILL.md) · [Specialist skills](skills) | Task-specific implementation instructions |
+| **Handle KML / KMZ** | [KML/KMZ engineering](skills/kml-kmz-engineering/SKILL.md) | Interoperability, safe archives and round-trip criteria |
+| **Build Arabic or multilingual GIS** | [Arabic localization skill](skills/gis-internationalization-arabic/SKILL.md) · [Practical guide](references/gis-multilingual-arabic-guide.md) | RTL, Unicode, labels and multilingual data |
+| **Improve performance and reliability** | [Reliability engineering](docs/PERFORMANCE_RELIABILITY.md) · [Quality benchmark](docs/QUALITY_BENCHMARK.md) | Stress tests, crash recovery and evidence levels |
+| **Discover GIS libraries and APIs** | [Interactive catalog](https://ahmadibrahim4geo.github.io/GIS-Development-Skills/) · [Free-first policy](references/free-first-policy.md) | Curated technology and licensing references |
+
+### How the workflow fits together
+
+**Select a project** → **Load the relevant skill** → **Choose compatible free-first components** → **Implement and test** → **Document evidence and limitations**
+
+> **Verification note:** Documentation, fixtures and CI checks do not by themselves certify native ArcGIS/QGIS compatibility, live API access or measured performance. See [quality evidence levels](docs/QUALITY_BENCHMARK.md).
+
+### Explore the repository
+
+[Skills](skills) · [Examples](examples) · [Templates](templates) · [References](references) · [Quality and testing](docs/QUALITY_BENCHMARK.md) · [Contributing](CONTRIBUTING.md) · [Arabic documentation](README.ar.md)
+
+---
+
+**Free-first audit:** [Cost/licensing and skill paths](references/free-first-policy.md). The website now lists all specialists, has incremental project browsing instead of a hard 60-result cut-off, and defaults API discovery to 43 self-hostable or conditionally free entries. Commercial, trial, strictly restricted and unavailable records remain optionally viewable; live provider rights are not guaranteed.
 
 **Practical free workflow upgrade (2026-10-25):** [Original upstream license-file audit](references/upstream-license-audit.md) (8 inspected / 138 linked projects), [offline license evidence scanner](scripts/audit_license_catalog.py), and two complete dependency-free T2 fixtures: [DEM Horn slope](examples/terrain-slope/README.md) and [STAC metadata selection](examples/stac-offline/README.md). The example scripts output real ASCII elevation-slope or JSON metadata files, but **do not** validate external terrain CRS or live satellite services. Upstream data, models, proprietary GIS host and API terms remain independent.
 
@@ -93,7 +118,8 @@ Previous skills, original guidance, project/API references, brand assets and bil
 
 ## GIS Project Wizard, KML/KMZ and reliability
 
-- [Arabic and multilingual GIS practical guide](references/gis-multilingual-arabic-guide.md): Unicode, BiDi, Arabic shaping, localization examples and upstream standards.\n- [Multilingual GIS and Arabic-first localization skill](skills/gis-internationalization-arabic/SKILL.md): RTL/BiDi, Unicode attributes, map labels, localized toolboxes, exports and language-aware search.
+- [Arabic and multilingual GIS practical guide](references/gis-multilingual-arabic-guide.md): Unicode, BiDi, Arabic shaping, localization examples and upstream standards.
+- [Multilingual GIS and Arabic-first localization skill](skills/gis-internationalization-arabic/SKILL.md): RTL/BiDi, Unicode attributes, map labels, localized toolboxes, exports and language-aware search.
 
 - [Launch the bilingual GIS Project Wizard](project-wizard.html) — free-first architecture choices and downloadable Markdown implementation plans.
 - [Project Wizard implementation roadmap](docs/PROJECT_WIZARD_PLAN.md).
@@ -104,7 +130,7 @@ The wizard is a static planning aid; generated plans are not evidence of execute
 
 ## Production GIS workflows and quality benchmark — 2026-10-24
 
-**Additive upgrade, without deleting any earlier skills, reference sources, templates or site features:** this repository now includes **11 installable GIS agent skills**, **104 curated project references** and **52 public GIS API entries**.
+**Historical milestone (2026-10-24):** This upgrade added production workflows and a quality benchmark. Its original counts were **11 skills**, **104 project references** and **52 public API entries**; see the live inventory above for current totals.
 
 - [Spatial Databases](skills/spatial-databases/SKILL.md): PostGIS/SpatiaLite, spatial indexing and measured query plans.
 - [Geospatial Data Processing](skills/geospatial-data-processing/SKILL.md): vector/raster pipelines, safe coordinate transformations and reproducible checks.
