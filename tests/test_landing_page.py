@@ -127,6 +127,32 @@ class LandingPageTests(unittest.TestCase):
         self.assertIn('class="hero-lockup"', self.html)
         self.assertIn('class="hero-content"', self.html)
 
+    def test_all_brand_variants_use_font_independent_word_flow(self):
+        """Prevent word collisions even when browsers substitute SVG fonts."""
+        ns = "{http://www.w3.org/2000/svg}"
+        names = ("logo-dark", "logo-light", "banner-dark", "banner-light",
+                 "logo-compact-dark", "logo-compact-light")
+        for filename in names:
+            svg = ET.parse(ROOT / "assets/brand" / (filename + ".svg")).getroot()
+            name = svg.find(".//*[@id='brand-name']")
+            tagline = svg.find(".//*[@id='brand-tagline']")
+            self.assertIsNotNone(name, filename)
+            self.assertIsNotNone(tagline, filename)
+            main_parts = name.findall(ns + "tspan")
+            self.assertEqual(["Development", "Skills"],
+                             [part.text for part in main_parts], filename)
+            self.assertNotIn("x", main_parts[1].attrib, filename)
+            self.assertGreater(float(main_parts[1].get("dx")), 0, filename)
+            self.assertEqual("#82D53E", main_parts[1].get("fill"))
+            tokens = tagline.findall(ns + "tspan")
+            self.assertEqual(["The", "Heart", "of", "Geospatial", "Innovation"],
+                             [part.text for part in tokens], filename)
+            for token in tokens[1:]:
+                self.assertNotIn("x", token.attrib, filename)
+                self.assertGreater(float(token.get("dx")), 0, filename)
+            svg_content = (ROOT / "assets/brand" / (filename + ".svg")).read_text(encoding="utf-8")
+            self.assertNotIn("<image", svg_content, filename)
+
     def test_public_creator_section_and_contacts(self):
         self.assertIn("author", self.parser.ids)
         self.assertIn("ahmad_ibrahim_original.png", self.html)
