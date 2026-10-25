@@ -9,5 +9,5 @@
     "references/project-catalog.json",
     "references/free-geospatial-apis.json"
   ],
-  "note": "Inventory includes 15 geocoding/gazetteer entries ranked by free, trial and commercial terms. Documentation baseline, not a software release."
+  "note": "Derived source inventory. Documentation version is baseline; unreleased changes remain in CHANGELOG."
 }
