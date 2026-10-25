@@ -126,15 +126,15 @@ def inspect_repository(root=ROOT):
         apis = root / "references" / "free-geospatial-apis.json"
         if sources.is_file():
             expected = len(json.loads(sources.read_text(encoding="utf-8"))["projects"])
-            actual = re.search(r'id="projectsCount"[^>]*>([0-9]+)<', page)
+            actual = re.search(r'id="projectsCount">([0-9]+)<', page)
             if actual is None or int(actual.group(1)) != expected:
                 errors.append("index.html: project counter differs from catalog ({})".format(expected))
         if apis.is_file():
             expected = len(json.loads(apis.read_text(encoding="utf-8"))["services"])
-            actual = re.search(r'id="apisCount"[^>]*>([0-9]+)<', page)
+            actual = re.search(r'id="apisCount">([0-9]+)<', page)
             if actual is None or int(actual.group(1)) != expected:
                 errors.append("index.html: API counter differs from catalog ({})".format(expected))
-        shown = re.search(r'id="skillsCount"[^>]*>([0-9]+)<', page)
+        shown = re.search(r'<div class="stat"><strong>([0-9]+)</strong><span data-i18n="statSkill">', page)
         if shown is None or int(shown.group(1)) != len(skill_files):
             errors.append("index.html: skill counter differs from discoverable skills ({})".format(len(skill_files)))
     return errors
