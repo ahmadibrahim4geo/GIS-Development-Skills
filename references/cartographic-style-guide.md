@@ -1,0 +1,34 @@
+# Cartographic style selection — operational guide
+
+## Scientific/visual decision tree
+
+| Source semantics | Renderer | Palette | Pitfall |
+| --- | --- | --- | --- |
+| Categorical land cover, soils, geology | Unique values or rule-based renderer, optional hatching | Qualitative, discriminable colors | Never order nominal classes by an arbitrary gradient |
+| Elevation, rainfall, temperature | Continuous stretch or classified numeric | Sequential if monotonic, diverging only around a meaningful midpoint | NoData must not appear as a real minimum |
+| Anomalies, positive vs negative changes | Diverging | Clearly marked zero/reference | Do not center on zero if zero has no significance |
+| Flow direction (river/network) | Directional line symbols/arrows | Contrast to basemap | Preserve digitizing direction vs true flow attribute |
+| Station measurements | Point size, classes, or small multiples | Magnitude/ordered color | Distinguish circle radius from area proportionality |
+| DEM/slope/aspect | Stretch/hillshade/aspect cyclic palette | Scientific perceptual palette | Aspect is cyclic; multiband RGB is not a single-band physical ramp |
+
+Use data distribution and units to set range/class breaks; include nulls, outliers, basemap contrast, color-vision accessibility, line widths at export scale, label collisions, Arabic and English legibility and accurate legend metadata. Prevent categorical/continuous mismatch. A heatmap is a smoothing operation: preserve documented kernel, radius and normalization; it does not reveal individual values. For precipitation, do not casually reuse a global diverging palette.
+
+## Host adapter matrix
+
+| Platform | Typical artifact/API | Notes |
+| --- | --- | --- |
+| ArcMap 10.x | .style, .lyr, arcpy.mapping | Python 2.7 legacy; Pro-only .stylx/.lyrx not backward-compatible |
+| ArcGIS Pro | .stylx, .lyrx, arcpy.mp/CIM | Pin major version and save/re-open real layer to verify |
+| QGIS | .qml, .xml, QgsRenderer, QgsStyle | Verify version; SVG/embedded font paths and QGIS expressions may not translate |
+| MapLibre | Style JSON, circle/line/fill/raster/heatmap/color-relief, expressions | Validate spec version, data-driven support, tile/source rules |
+| CesiumJS | Entity and material/imagery styling | Separate 3D terrain/lighting and geometry primitives from 2D style JSON |
+
+## Ingesting style collections without getting lost
+
+1. Select usage platform, geometry, theme, language, required license and accessible visual contrast.
+2. Search [style source catalog](cartographic-style-sources.json) first, then only the chosen upstream collection and its actual file(s). Do not bulk-copy/re-host all styles or fonts.
+3. Record file format, download URL, repository/ref/path, creator, version, preview, palette provenance, required fonts/SVGs, target host compatibility, redistribution rights and last validation status.
+4. Mark `unverified-per-item` and do not redistribute when the exact asset license is missing. The user's ArcMap Style Collection organizes third-party Esri/USGS/BGS/DGGS files under their original rights; its own MIT organizing code cannot relicense them.
+5. Import in isolated/test layer, run sample preview/legend QA, save/reload and record host-version evidence.
+
+Example MapLibre styling fixture: [examples/cartography](../examples/cartography/README.md). Scientific color sources and licenses are inventoried in the JSON catalog; links are external dependencies, not bundled code.
