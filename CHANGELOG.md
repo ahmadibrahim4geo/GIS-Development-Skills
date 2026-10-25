@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — Cartography styling and privacy-aware device context (2026-10-25)
+
+- Add dedicated vector/raster cartography skill, 10-source license-aware style catalog, native format matrix, offline MapLibre point/line/polygon fixture and tests.
+- Add device-context skill for system time/date/IANA timezone and explicit consent-based geolocation; distinguish device vs map scene location and simulated vs live Sunlight.
+- Add offline stdlib Python context/timezone normalization fixture and DST/invalid-coordinates tests (not a GPS or solar position integration).
+- Update router, decision tree, manifest, bilingual READMEs and searchable website style source tab; preserve existing project/API/data catalogs and footer.
+
+
 ## Unreleased — License evidence and free executable GIS examples (2026-10-25)
 
 - Inspect source license files for 8 core GitHub projects, recording exact original license evidence and separating licensed product/service access from source rights. 130 projects remain unverified; no automatic false verification.
