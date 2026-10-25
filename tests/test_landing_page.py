@@ -105,7 +105,7 @@ class LandingPageTests(unittest.TestCase):
         self.assertEqual(paths_logo, paths_icon)
         nodes = {node.text: node.attrib.get("fill") for node in logo.findall(f".//{svg_ns}text")}
         self.assertEqual("#82D53E", nodes["Heart"])
-        self.assertEqual("#1467C8", nodes["Geospatial"])
+        self.assertEqual("#398CE3", nodes["Geospatial"])
         self.assertEqual("#1CC8E8", nodes["Innovation"])
         self.assertEqual("#82D53E", nodes["Skills"])
         self.assertIn('class="hero-symbol" src="assets/brand/logo-dark.svg"', self.html)
