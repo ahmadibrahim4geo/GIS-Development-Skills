@@ -7,39 +7,14 @@
   <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml" />
   
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/interactive-hub.css">
   
   <!-- Google Fonts: Inter, Cairo (Arabic), JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'Cairo', 'system-ui', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            geo: {
-              base: '#050912',
-              surface: '#0b1324',
-              card: '#101c33',
-              cyan: '#38bdf8',
-              emerald: '#10b981',
-              amber: '#f59e0b',
-              purple: '#a855f7'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
+<style>
     /* Language Switching Rules */
     html[lang="en"] [data-lang="ar"] { display: none !important; }
     html[lang="ar"] [data-lang="en"] { display: none !important; }
