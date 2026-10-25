@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — complete homepage redesign with in-page GIS How to Use (2026-10-25)
+
+- Rebuild the homepage hero as a typographic 2-column studio layout with the original approved vector logo, workflow illustration and source-driven metrics.
+- Move all essential install, platform selection, prompt-writing, permission/review, verification and journal guidance into the homepage; selectable eight-topic specialist command and bilingual sample request, clipboard controls, offline/manual route and FAQ.
+- Add scoped responsive `assets/home-redesign.css` with a consistent charcoal/mint palette across sections. Preserve the existing bottom developer portrait, exact biography/contact markup and layout while recoloring backgrounds, accents and borders.
+- Keep complete Explorer and existing GIS catalog/skills/QA functionality, add regression test for page functionality and author section stability.
+
+
 ## Unreleased — bilingual How to Use onboarding (2026-10-25)
 
 - Expand index.html with an accessible English/Arabic onboarding walkthrough, four steps, real sample request with working copy button, coding-agent CLI and manual/self-study paths, FAQ and navigation link.

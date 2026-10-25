@@ -268,6 +268,10 @@ Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-stud
 
 The API guide **does not** treat public endpoints as unlimited or licensed for any use. SoilGrids REST is marked paused; OSMF tiles and Nominatim have restrictive public usage policies.
 
+## Complete homepage redesign — 25 October 2026
+
+The public [homepage](index.html#how-to-use) now features a new charcoal/mint GIS engineering design, clear bilingual hero, verified workflow illustration, integrated four-step How to Use, in-page selectable GIS platform (8 tracks), context-sensitive installation command and Arabic/English sample agent request (copyable), manual without-agent workflow, QA expectations and inline troubleshooting FAQ. Visitors do **not** need to open repository Markdown files for first use. Full docs remain optional reading. Existing creator biography, portrait and contact actions are preserved; only their styling palette changes. All interactive catalog/skills features remain available.
+
 ## How to Use — illustrated bilingual workflow
 
 The website now includes [How to Use](index.html#how-to-use), an accessible English/Arabic onboarding sequence, copyable install command, realistic copyable request for an AI coding agent, and a no-agent/manual route. The existing [Explorer Quick Start](explorer.html#get-started) was expanded rather than replaced. Detailed [English](docs/HOW_TO_USE.md) and [Arabic](docs/HOW_TO_USE.ar.md) guides explain prerequisites, approval, safe execution, testing, journals, rollback limits and third-party licensing.
