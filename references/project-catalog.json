@@ -52,13 +52,17 @@
       ],
       "description": "GIS portal and feature-service Python examples, distinct from ArcPy",
       "reviewed_on": "2026-10-24",
-      "license": "verify-upstream",
+      "license": "Apache-2.0 (examples/repository)",
       "integration": "reference-only",
       "status": "unknown",
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "license_verified": false
+      "license_verified": true,
+      "license_scope": "inspected-repository-license-file-only",
+      "license_evidence_url": "https://github.com/Esri/arcgis-python-api/blob/HEAD/LICENSE",
+      "license_checked_on": "2026-10-25",
+      "license_caveat": "Repository examples/source are Apache-2.0; ArcGIS platform, subscriptions and service rights are separate."
     },
     {
       "name": "GEE ArcGIS Toolbox",
@@ -89,13 +93,17 @@
       ],
       "description": "QGIS application and PyQGIS host implementation",
       "reviewed_on": "2026-10-24",
-      "license": "verify-upstream",
+      "license": "GPL-2.0",
       "integration": "reference-only",
       "status": "unknown",
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "license_verified": false
+      "license_verified": true,
+      "license_scope": "inspected-repository-license-file-only",
+      "license_evidence_url": "https://github.com/qgis/QGIS/blob/HEAD/COPYING",
+      "license_checked_on": "2026-10-25",
+      "license_caveat": "QGIS code is GPL; plugins, dependencies and data have separate licenses."
     },
     {
       "name": "QGIS Documentation",
@@ -129,13 +137,17 @@
       ],
       "description": "Raster/vector format support and geoprocessing",
       "reviewed_on": "2026-10-24",
-      "license": "verify-upstream",
+      "license": "MIT-style; third-party component licenses vary",
       "integration": "reference-only",
       "status": "unknown",
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "license_verified": false
+      "license_verified": true,
+      "license_scope": "inspected-repository-license-file-only",
+      "license_evidence_url": "https://github.com/OSGeo/gdal/blob/HEAD/LICENSE.TXT",
+      "license_checked_on": "2026-10-25",
+      "license_caveat": "GDAL/OGR source contains a comprehensive third-party licensing list; individual drivers/data have separate terms."
     },
     {
       "name": "PROJ",
@@ -150,13 +162,17 @@
       ],
       "description": "Coordinate reference system transformations",
       "reviewed_on": "2026-10-24",
-      "license": "verify-upstream",
+      "license": "MIT-style",
       "integration": "reference-only",
       "status": "unknown",
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "license_verified": false
+      "license_verified": true,
+      "license_scope": "inspected-repository-license-file-only",
+      "license_evidence_url": "https://github.com/OSGeo/PROJ/blob/HEAD/COPYING",
+      "license_checked_on": "2026-10-25",
+      "license_caveat": "PROJ source and included core data are broadly MIT-style; verify independently supplied datum grid packages."
     },
     {
       "name": "GEOS",
@@ -407,13 +423,17 @@
       ],
       "description": "Browser-based 2D/3D globe renderer (data services are separate)",
       "reviewed_on": "2026-10-24",
-      "license": "verify-upstream",
+      "license": "Apache-2.0",
       "integration": "reference-only",
       "status": "unknown",
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "license_verified": false
+      "license_verified": true,
+      "license_scope": "inspected-repository-license-file-only",
+      "license_evidence_url": "https://github.com/CesiumGS/cesium/blob/HEAD/LICENSE.md",
+      "license_checked_on": "2026-10-25",
+      "license_caveat": "CesiumJS source license; Cesium ion, premium terrain and 3D tiles services are separately licensed."
     },
     {
       "name": "EarthMapper segmentation",
@@ -735,7 +755,7 @@
       ],
       "description": "Interactive geospatial visualization and analysis from Python and notebooks.",
       "reviewed_on": "2026-10-24",
-      "license": "verify-upstream",
+      "license": "MIT",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
       "caveat": "Some basemap services and notebooks rely on external provider access.",
@@ -743,7 +763,11 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "license_verified": false
+      "license_verified": true,
+      "license_scope": "inspected-repository-license-file-only",
+      "license_evidence_url": "https://github.com/opengeos/leafmap/blob/HEAD/LICENSE",
+      "license_checked_on": "2026-10-25",
+      "license_caveat": "Library source license; maps, hosted services and data sources separately licensed."
     },
     {
       "name": "GeoAI Python",
@@ -778,7 +802,7 @@
       ],
       "description": "Python GeoDataFrame processing built on pandas/Shapely/PyProj and file IO.",
       "reviewed_on": "2026-10-24",
-      "license": "verify-upstream",
+      "license": "BSD-3-Clause",
       "integration": "library-with-license-review",
       "source_availability": "source-code",
       "caveat": "Use projected coordinates/geodesic operations for physical distances and areas.",
@@ -786,7 +810,11 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "license_verified": false
+      "license_verified": true,
+      "license_scope": "inspected-repository-license-file-only",
+      "license_evidence_url": "https://github.com/geopandas/geopandas/blob/HEAD/LICENSE.txt",
+      "license_checked_on": "2026-10-25",
+      "license_caveat": "GeoPandas library code; underlying packages/datasets separately licensed."
     },
     {
       "name": "PyProj",
@@ -975,7 +1003,7 @@
       ],
       "description": "Python visual analysis, data processing and map widgets with Google Earth Engine; authentication required",
       "reviewed_on": "2026-10-24",
-      "license": "verify-upstream",
+      "license": "MIT",
       "integration": "implementation-reference-with-version-check",
       "source_availability": "public-repository; runtime-not-tested",
       "provenance": "Qiusheng Wu software directory (https://gishub.org/software/); exact GitHub repository verified 2026-10-24",
@@ -983,7 +1011,11 @@
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "license_verified": false
+      "license_verified": true,
+      "license_scope": "inspected-repository-license-file-only",
+      "license_evidence_url": "https://github.com/gee-community/geemap/blob/HEAD/LICENSE",
+      "license_checked_on": "2026-10-25",
+      "license_caveat": "Python library source only; Google Earth Engine and imagery/data provider terms are independent."
     },
     {
       "name": "GeoAgent",
