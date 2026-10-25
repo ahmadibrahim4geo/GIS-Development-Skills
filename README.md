@@ -67,6 +67,10 @@ A practical development skill and curated reference hub for building reliable Ar
 
 ---
 
+## Google KML/KMZ fidelity upgrade — 2026-10-25
+
+The existing [KML/KMZ Engineering skill](skills/kml-kmz-engineering/SKILL.md) now follows an expanded [Google/OGC interoperability guide](references/google-kml-kmz-compatibility.md) and an [offline styled KML fixture](examples/kml-kmz/README.md). Import must respect **the user's original icons, colors, opacity, shared/highlight styles, folders, ExtendedData, altitude, time and bundled assets** rather than imposing app-wide defaults. View, loss-aware conversion, edit and export are separate modes. KML `aabbggrr` colors, KMZ relative paths, `gx:` extensions, security and explicit target-host acceptance gates are documented. This is documentation and XML contract testing, **not** proof that Google Earth, Cesium or ZEarth Desktop has already passed a rendered round-trip.
+
 ## Cartography & device context specialists — 2026-10-25
 
 Two new installable skills extend the toolkit to **18 specialists** (including the recently added [KML/KMZ specialist](skills/kml-kmz-engineering/SKILL.md)):
