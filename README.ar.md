@@ -19,6 +19,10 @@
 
 أضفنا [**GIS Security Guardian**](skills/gis-security-guardian/SKILL.md) بصفتها **المهارة التاسعة عشرة**، وتعمل كسياسة حماية مصاحبة لجميع المسارات: فحص التعليمات الخارجية ومحاولات حقن الأوامر، ضبط الصلاحيات، حماية الملفات والمواقع والبيانات الحساسة، وتأمين التبعيات وواجهات API والمشروعات قبل التسليم. يضم [كتالوج أدوات الأمان](references/security/security-tools.json) 14 مشروعًا، مع بيان التراخيص وحدود التشغيل. تشمل الملفات الجديدة [الفحص المحلي دون مكتبات مدفوعة](scripts/security_audit.py)، و[فاحص أرشيفات ZIP/KMZ](scripts/security_guardian.py)، و[اختبارات الحماية](tests/test_security_guardian.py)، و[Workflow أمني](.github/workflows/security.yml)، و[سياسة الإبلاغ عن الثغرات](SECURITY.md). **هذه فحوصات أولية محلية وليست ضمانًا للأمان أو إثباتًا لتنفيذ الماسحات الخارجية**. تمت إضافة روابطها إلى [الواجهة ثنائية اللغة](index.html).
 
+## تطوير مهارة KML/KMZ بالاستفادة من Google — 25 أكتوبر 2026
+
+حدّثنا [مهارة هندسة KML/KMZ](skills/kml-kmz-engineering/SKILL.md) وربطناها بـ[دليل Google/OGC لتوافق الملفات وحفظ خصائصها](references/google-kml-kmz-compatibility.md) و[مثال KML تجريبي قابل للفحص محليًا](examples/kml-kmz/README.md). عند استيراد ملفات المستخدم لا يجوز للبرنامج فرض رموز أو ألوان جديدة؛ يجب الحفاظ على ألوان KML بصيغة `aabbggrr`، و`StyleMap`، والرموز، والمجلدات، والبيانات الوصفية، والارتفاعات، والأزمنة، وملفات الموارد داخل KMZ. وضع العرض الدقيق يختلف عن التحويل إلى طبقات GIS الذي قد يفقد بعض الخصائص؛ وأُضيفت ضوابط للأمان والحفظ وإعادة الفتح. **نجاح فحص XML لا يعني اكتمال اختبار العرض الفعلي داخل Google Earth أو ZEarth Desktop.**
+
 ## مهارتا الرموز الخرائطية وبيانات الجهاز — 25 أكتوبر 2026
 
 أضفنا [GIS Cartography & Symbology](skills/gis-cartography-symbology/SKILL.md) لتنسيق رموز النقاط والخطوط والمساحات، وتدرجات الراستر، وتصميم الخرائط وتوافق ArcMap/Pro وQGIS وMapLibre وCesium. وأضفنا [GIS Device Context](skills/gis-device-context/SKILL.md) للتحقق من التاريخ والوقت والمنطقة الزمنية، وقراءة موقع الجهاز بعد الموافقة، واستخدام موقع المشهد منفصلًا في أدوات Sunlight والمحاكاة الزمنية. العدد الحالي **18 مهارة** ويشمل أيضًا [هندسة KML/KMZ](skills/kml-kmz-engineering/SKILL.md).
