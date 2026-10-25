@@ -1,6 +1,6 @@
 # Free & public GIS APIs and web services — provider selection
 
-**Reviewed 2026-10-24.** Machine-readable, filterable entries: [`free-geospatial-apis.json`](free-geospatial-apis.json). "Free" is not synonymous with commercial use, unlimited requests, full-resolution scientific data, offline caching, anonymous download, or permission to distribute imagery.
+**Reviewed 2026-10-25.** Machine-readable, filterable entries: [`free-geospatial-apis.json`](free-geospatial-apis.json). "Free" is not synonymous with commercial use, unlimited requests, full-resolution scientific data, offline caching, anonymous download, or permission to distribute imagery.
 
 ## Quick reference by domain
 
@@ -12,7 +12,7 @@
 | Satellite imagery catalog | [Earth Search](https://element84.com/earth-search), [Planetary Computer](https://planetarycomputer.microsoft.com/docs/), [Copernicus Data Space](https://dataspace.copernicus.eu/analyse/apis) | STAC metadata access differs from asset download/auth, COG CORS and redistribution terms |
 | Satellite image tiles | [NASA GIBS](https://www.earthdata.nasa.gov/engage/open-data-services-software/earthdata-developer-portal/gibs-api) | WMS/WMTS visualize imagery; scientific raster analysis requires real source data |
 | Basemaps | [OpenFreeMap](https://openfreemap.org/quick_start/), [OSMF tiles](https://operations.osmfoundation.org/policies/tiles/) | OpenFreeMap hosted maps no key; OSMF tiles are NOT an unlimited production/offline tile service |
-| OSM POIs & geocoding | [Overpass](https://wiki.openstreetmap.org/wiki/Overpass_API), [Nominatim](https://operations.osmfoundation.org/policies/nominatim/) | Volunteer services; restricted usage. Never auto-generate generic Nominatim integration into apps |
+| Geocoding & Gazetteers | [15 providers ranked by entitlement](geocoding-place-search.md), including Pelias, Photon, GeoNames, Esri, Google, Mapbox, HERE, TomTom | Distinguish public restrictions, daily credits, test-only trials, commercial storage and autocomplete terms |\n| OSM POIs & geocoding | [Overpass](https://wiki.openstreetmap.org/wiki/Overpass_API), [Nominatim](https://operations.osmfoundation.org/policies/nominatim/) | Volunteer services; restricted usage. Never auto-generate generic Nominatim integration into apps |
 | Soil | [ISRIC SoilGrids](https://isric.org/explore/soilgrids) | REST service **temporarily paused** in provider notice; prefer data download/WebDAV or WCS |
 | Biodiversity | [GBIF API](https://techdocs.gbif.org/en/openapi/), [iNaturalist](https://www.inaturalist.org/pages/developers) | Different observation licences; avoid API bulk downloading |
 | Boundaries, population and names | [geoBoundaries](https://www.geoboundaries.org/api.html), [WorldPop](https://api.worldpop.org/v2/), [GeoNames](https://www.geonames.org/export/) | Check boundary year, estimated populations and username quota |
@@ -20,7 +20,7 @@
 | Routing/OSM history | [HeiGIT](https://api.heigit.org/), [ohsome v2](https://docs.ohsome.org/ohsome-api/v2/) | Keys, OSM attribution and endpoint migrations |
 | Water, ocean and air | [Open-Meteo Flood](https://open-meteo.com/en/docs/flood-api), [OpenAQ](https://docs.openaq.org/api), [NOAA NCEI](https://www.ncei.noaa.gov/erddap/rest.html) | Validate model-vs-observation, area of coverage and datums |
 
-## GEBCO_2026: free global bathymetry + land elevation
+## Geocoding & Place Search — 2026-10-25\n\n[Compare 15 geocoding and geographic place-search providers](geocoding-place-search.md), ranked self-hosted/open-source → public/restricted → free quota → free trial → commercial. The [API JSON catalog](free-geospatial-apis.json) now has **52 records** and each `category=geocoding` entry has `pricing_group`. OpenCage trial calls may **not** fund ongoing production; public Nominatim prohibits autocomplete. Documentation reviewed, provider availability NOT live-tested in this change.\n\n## GEBCO_2026: free global bathymetry + land elevation
 
 **Latest official GEBCO release: GEBCO_2026, published April 2026.** Its 15 arc-second regular WGS84 grid covers sea-floor and land elevation, approximately 463 m between north/south samples at the equator; longitude spacing in metres varies with latitude. Cells are pixel-centre registered. Heights are in metres: **negative seafloor depth, positive land elevation**. The grid interval is *not* the measured accuracy of seafloor depth.
 
