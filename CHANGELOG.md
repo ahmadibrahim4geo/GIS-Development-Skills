@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — Project Wizard bilingual behavior and stale-export repair (2026-10-25)
+
+- Fix Arabic translations for project types and generated Markdown plans; retain requirements when switching languages.
+- Prevent stale plan downloads following input edits, and use project-specific specialist references in generated plans.
+- Add Node DOM-interaction regression tests for English/Arabic generation, state changes, injection-safe text display and Markdown downloads.
+- Link the wizard from the existing Explorer without altering developer profile/footer design.
+
+
 ## Unreleased — recover Project Wizard PR #12 on current main (2026-10-25)
 
 - Resolved PR #12's stale main divergence without reverting the current bilingual homepage/footer, its GitHub Actions setup, security guardian, core router or KML author-style preservation.

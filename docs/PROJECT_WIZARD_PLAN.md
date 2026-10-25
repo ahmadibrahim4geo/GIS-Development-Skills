@@ -24,6 +24,16 @@
 - No performance or compatibility claim without measured evidence.
 - KMZ processing never extracts untrusted archive members without path/size checks.
 
+## Interactive behavior and language contract (2026-10-25)
+
+- The complete form is local-first: no fetch requests, APIs, user tracking, model calls or server-side state.
+- English and Arabic switch all project-type options, field labels and instructions. Plan headings and the downloadable Markdown match the active interface language.
+- A language change with an existing plan regenerates the same requirements in the selected language without discarding typed text.
+- Edits to project type, application language, KML/KMZ, licensing or project description invalidate prior output and disable download until a fresh plan is generated.
+- Each project type selects its corresponding specialist skill; KML/KMZ and Arabic localization references are included only when the relevant options are selected.
+- Markdown output uses plain text via `textContent`, and quoted user requirements: the wizard never interprets input as HTML or executes it.
+- CI runs Node-backed simulated DOM interaction scenarios for generation, language switching, invalidation and download. **Native GIS runtimes and real visual browser compatibility remain separate acceptance levels.**
+
 ## Implementation status
 - This document is a roadmap, not proof of implementation.
 - Static wizard and linked engineering references are the first implementation increment.
