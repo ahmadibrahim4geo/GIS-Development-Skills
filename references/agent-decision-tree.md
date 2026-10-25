@@ -15,7 +15,7 @@ Select **the delivery target**, not just the programming language. The general [
 9. GIS AI agent or automation? Route to **Geospatial AI Agents** for safe tools, confirmation and evidence. DEM, river networks, terrain or point-cloud work? Add **Terrain / Hydrology / LiDAR**. GIS desktop standalone? Use Desktop skill, with a renderer and spatial computation layer separated.
 10. Coordinate systems, vertical units or datum transformation anywhere? Add CRS skill as **cross-cutting**, not an alternative.
 11. Cartographic symbolization, scientific color ramps, legend or raster styling? Add [GIS Cartography & Symbology](../skills/gis-cartography-symbology/SKILL.md), then compose target ArcGIS, QGIS, web or desktop adapter. Device clock, time-zone, consent-based device location or Sunlight? Add [GIS Device Context](../skills/gis-device-context/SKILL.md); keep scene location independent. KML/KMZ fidelity or interoperability? Add [KML/KMZ Engineering](../skills/kml-kmz-engineering/SKILL.md).
-12. All tasks use Security, Performance (when scale matters), and Evidence Contract regardless of routed skill.
+12. **Always include [GIS Security Guardian](../skills/gis-security-guardian/SKILL.md)**: preflight trust boundaries and permissions; use the offline security audit and release evidence. Risk-gated extra scanners are optional but must be reported as not run when absent. Continue using Performance (when scale matters) and Evidence Contract.
 
 ## Cross-platform requests
 
