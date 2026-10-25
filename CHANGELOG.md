@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — Open map marker icons and imported KMZ style fidelity (2026-10-25)
+
+- Extend the separate cartography style directory from 10 to 19 sources: eight independent map icon libraries and the CesiumJS PinBuilder generator; document CC0, CC BY-SA, Apache-2.0, MIT, OFL and plugin/dependency distinctions.
+- Add a dedicated map icon library guide plus a non-negotiable KML/KMZ preservation-first contract: imported style/StyleMap/styleUrl, original point icons and colors, line/polygon styling, opacity, label, local assets and folder provenance are never auto-overridden on load/save.
+- Add safe, synthetic offline KMZ style/resource comparison fixtures and tests for recoloring, icon replacement, StyleMap mutation and unsafe ZIP paths, with native-rendering limitations clearly marked.
+- Wire the preservation rules into both cartography and KML/KMZ specialist skills, decision tree, bilingual site and README, without changing style licensing or copying third-party icon files.
+
+
 ## Unreleased — Cartography styling and privacy-aware device context (2026-10-25)
 
 - Add dedicated vector/raster cartography skill, 10-source license-aware style catalog, native format matrix, offline MapLibre point/line/polygon fixture and tests.
