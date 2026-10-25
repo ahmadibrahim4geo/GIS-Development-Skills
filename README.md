@@ -315,3 +315,7 @@ Community proposals and verified pull requests are welcome. See [CONTRIBUTING.md
 ## License and third parties
 
 This repository's **original** scripts, templates and written guidance are MIT licensed; each linked project keeps its **own** license. The catalog does not grant rights to re-use upstream code, imagery, hosted services, trademarks, or data.
+
+### World Gazetteer: search and reference labels
+
+The [World Gazetteer implementation guide](references/world-gazetteer-reference-layer.md) adds offline-first GeoNames name search and an **independent, scale-aware Reference Layers overlay** for desktop/web GIS (especially future ZEarth integration). It specifies label priority, zoom/detail categories, Arabic/English names, map collision/3D culling, attribution, and preservation of user KML/KMZ styles. A [Python/SQLite 2D demonstrator with unit tests](examples/gazetteer/README.md) is included; it is **not** a completed native GIS/desktop integration.

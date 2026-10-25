@@ -29,6 +29,10 @@ Read [Earth View architecture](../../references/earth-view-architecture.md) for 
 - GIS backend and I/O: `../../references/geospatial-foundations.md`
 - Imported KML/KMZ exact styles, asset bundles, ExtendedData and hierarchy: [KML/KMZ Engineering](../kml-kmz-engineering/SKILL.md) and [Google interoperability contract](../../references/google-kml-kmz-compatibility.md). In Earth/Explorer-style desktop apps, keep imported user styles and Temporary/My Places separate; geometry-only conversion is not faithful rendering.
 
+## Gazetteer and reference place-name layers
+
+A Google-Earth-style desktop product should offer **Reference Layers > World Gazetteer** as an optional scale-aware place-name overlay **independent of the Search Bar**. Implement the [World Gazetteer label/search contract](../../references/world-gazetteer-reference-layer.md) using local GeoNames data by default, with language-specific Arabic/English names, priority/decluttering, viewport/3D-horizon culling, and persistent user toggle. Never make a remote request on every camera tick; do not overwrite imported KML/KMZ icon styling or save transient labels to My Places. Prototype: [offline viewport labels](../../examples/gazetteer/README.md). Runtime WPF/Cesium integration must be separately verified.
+
 ## Implementation workflow
 
 1. Specify the supported Windows versions, 64-bit process, user profiles, input/output formats, offline constraints, languages, architecture, versioning, installer and actual target test PC.

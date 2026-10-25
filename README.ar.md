@@ -211,3 +211,7 @@ python scripts/search_catalog.py --query rust
 تعليمات النشر: [`PUBLISHING.md`](PUBLISHING.md).
 
 اقرأ: [`SKILL.md`](skills/gis-development/SKILL.md) · [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`README.md`](README.md).
+
+### المعجم الجغرافي العالمي — World Gazetteer
+
+يوثّق [دليل World Gazetteer](references/world-gazetteer-reference-layer.md) البحث عن أسماء المواقع الجغرافية وطبقة **Reference Layers** المستقلة التي تُظهر الأسماء حسب مقياس الخريطة، مع دعم مصادر GeoNames المجانية والعمل دون اتصال، وتنظيم التسميات بحسب الأولوية، وخيارات اللغة العربية والإنجليزية دون تعديل ملفات KML/KMZ الأصلية. يوجد [مثال Python/SQLite قابل للاختبار](examples/gazetteer/README.md) للعرض ثنائي الأبعاد؛ **لم تُنجز بعد عملية الربط أو الاختبار داخل تطبيق ZEarth الفعلي**.

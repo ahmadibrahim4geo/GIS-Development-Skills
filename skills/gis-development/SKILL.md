@@ -29,8 +29,10 @@ license: MIT
 | Find source directories, data repositories and STAC indexes | [Geospatial Data Catalogs](../geospatial-data-catalogs/SKILL.md) |
 | Automate PyQGIS / STAC / GeoAI / Earth Engine with an agent | [Geospatial AI Agents](../geospatial-ai-agents/SKILL.md) |
 | DEM, terrain, hydrology, LiDAR / point clouds | [Terrain / Hydrology / LiDAR](../terrain-hydrology-lidar/SKILL.md) |
-| Security / untrusted GIS inputs / secrets / Agent Skills / MCP / release checks | [GIS Security Guardian](../gis-security-guardian/SKILL.md) (always applicable as a cross-cutting baseline) |\n| Integrate GIS HTTP APIs safely | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) |
+| Security / untrusted GIS inputs / secrets / Agent Skills / MCP / release checks | [GIS Security Guardian](../gis-security-guardian/SKILL.md) (always applicable as a cross-cutting baseline) |
+| Integrate GIS HTTP APIs safely | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) |
 | Search place names / geocode addresses / autocomplete | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) + [provider selection guide](../../references/geocoding-place-search.md) |
+| World Gazetteer / named places overlay / zoom-based reference labels | [Gazetteer implementation guide](../../references/world-gazetteer-reference-layer.md) + [offline example](../../examples/gazetteer/README.md) + [GIS Desktop](../gis-desktop-application-development/SKILL.md) |
 | WKID, projection, transformation, vertical datum | [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md) |
 | Point/line/polygon/raster symbols, color ramps, map layout | [GIS Cartography & Symbology](../gis-cartography-symbology/SKILL.md) |
 | Device time/date/timezone, permission-controlled location, Sunlight simulation | [GIS Device Context](../gis-device-context/SKILL.md) |
