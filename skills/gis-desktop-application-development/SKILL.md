@@ -85,3 +85,50 @@ A Google-Earth-style desktop product should offer **Reference Layers > World Gaz
 - Successful Python imports on a developer PC without clean packaging.
 - Mock ArcPy, static fixture or an existing online tile showing up once.
 - An exported JSON project that cannot reopen with the same CRS, layers and symbology.
+
+
+## GIS-first engine selection (ranked by practical relevance)
+
+Treat these as **capabilities, not interchangeable complete engines**. Select only the minimum verified stack needed for the application; never load every dependency by default.
+
+| Priority | Technology | GIS role | Selection rule |
+| --- | --- | --- | --- |
+| 1 | QGIS Core / PyQGIS | Full GIS processing, data and optional native Qt map canvas | Choose for rich desktop GIS workflows; load [QGIS Engine Integration](../qgis-engine-integration/SKILL.md) and validate GPL, ABI and deployment |
+| 2 | GDAL/OGR | Raster/vector I/O and conversion | Choose for broad format support; verify deployed drivers and round-trip fidelity |
+| 3 | PROJ | CRS/datum transformation | Choose for coordinate operations; verify axis order, grids and vertical datum |
+| 4 | GEOS | Geometry predicates and topology | Choose for geometry analysis; test invalid/empty geometry |
+| 5 | MapLibre | 2D interactive map rendering | Choose for lightweight map-first UI; not a replacement for GIS analysis |
+| 6 | CesiumJS | 3D globe, terrain and camera | Choose only for globe/3D needs; do not confuse tile rendering with geoprocessing |
+| 7 | GRASS GIS | Advanced raster/vector processing | Optional processing adapter with versioned execution and license review |
+| 8 | PostGIS / SpatiaLite | Persistent spatial data | Select server or local storage by offline/multiuser requirements |
+| 9 | SAGA GIS | Specialized terrain and raster analysis | Optional, only when a specific algorithm is required |
+| 10 | PDAL | LiDAR and point clouds | Optional for point-cloud workloads |
+| 11 | RustGIS | Rust-native GIS application architecture reference | Evaluate actual APIs, maturity, test coverage and license before adopting; never assume production readiness |
+| 12 | WhiteboxTools | Specialized terrain/hydrology | Optional; review current edition, licensing and redistribution conditions |
+
+Rust UI choices (Tauri, egui, Iced, Dioxus) are **application shells/frameworks, not GIS engines**. Evaluate only after selecting GIS capabilities. Do not add unrelated desktop frameworks merely to increase catalog size.
+
+## Independent GIS desktop workflow (composes shared standards)
+
+This skill owns **standalone desktop architecture, engine selection, integration, packaging and executable acceptance**. It must not copy the procedures owned by other skills.
+
+1. **Intake and approval:** follow [Prompt Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md) and record milestones with [Agent Development Journal](../agent-development-journal/SKILL.md). Specify OS, application type, data formats, offline/online, 2D/3D, processing, language, distribution and license model.
+2. **Architecture decision:** compare at least two viable GIS stacks by capability, maturity, binary size, platform availability, deployment complexity, licenses and native testability. Record why the chosen engine and shell are appropriate; reject unused dependencies.
+3. **Choose implementation route:** (a) new standalone shell with GIS libraries; (b) fork an existing **GIS application**; (c) embed/bridge a verified GIS engine. A fork is not automatically an embeddable SDK.
+4. **Fork-readiness gate:** inspect upstream LICENSE and dependency licenses, activity/maintenance, build instructions, module boundaries, supported OS, test fixtures, trademark/assets, required services and source provenance. Verify modification/redistribution rights, document changes and preserve required notices. If unknown, stop source reuse and use a clean implementation or reference-only approach.
+5. **Shared GIS specialists:** route CRS to [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md), geodata to [Geospatial Data Processing](../geospatial-data-processing/SKILL.md), mapping to [Geospatial Web Mapping](../geospatial-web-mapping/SKILL.md), KML/KMZ to [KML/KMZ Engineering](../kml-kmz-engineering/SKILL.md), spatial DB to [Spatial Databases](../spatial-databases/SKILL.md), and API providers to [Geospatial API Integration](../geospatial-api-integration/SKILL.md). Do not duplicate their algorithms or policies here.
+6. **Mandatory safety:** apply [GIS Security Guardian](../gis-security-guardian/SKILL.md) to untrusted files, plugins, archives, remote services, credentials, updater and installer. Do not execute third-party build scripts without appropriate permission and inspection.
+7. **Vertical slice before feature expansion:** open real vector and raster data, transform coordinates, display, run a real operation, save/export, close and reopen. Confirm original style/metadata where relevant; no dummy buttons.
+8. **Native acceptance:** follow [desktop engineering acceptance](../../references/desktop-application-engineering.md) and [T0–T4 evidence](../../templates/GIS_ACCEPTANCE_REPORT.md). T0/T1 source/offline checks never imply T2 GIS-native, T3 UI or T4 clean-machine installer success.
+9. **Release and compatibility:** pin and document OS/CPU/Qt/Python/Rust/GDAL/PROJ/GEOS versions and binary interfaces; verify license notices, source/binary provenance, clean install, uninstall, user-data preservation and update rollback. Unsupported platforms/features must be clearly stated.
+
+### Engine decision record (required)
+
+For each desktop project, document: use case; chosen GIS engine and UI shell; alternatives rejected and reasons; data and CRS requirements; exact version/ABI matrix; upstream URLs and license evidence; fork vs library vs worker integration boundary; security review; offline/network behavior; measured performance; T0–T4 results; unresolved gaps. Mark unknown items **not verified**, never passed.
+
+### Compatibility and non-duplication contract
+
+- Keep this as **one independent specialist skill** routed by [GIS Development](../gis-development/SKILL.md); do not create duplicate QGIS, Rust, MapLibre, KML, security or licensing skills.
+- Preserve shared router, security, documentation, bilingual site, Project Wizard and CI validation contracts from [AGENTS.md](../../AGENTS.md).
+- A desktop skill is general-purpose GIS engineering guidance; personal application repositories are not implementation dependencies or mandatory examples.
+- Do not claim a desktop build, QGIS-native operation or installer works without direct evidence on the intended host.
