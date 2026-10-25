@@ -4,6 +4,10 @@
 
 This guide supports the [KML/KMZ Engineering](../skills/kml-kmz-engineering/SKILL.md) and [Cartography/Symbology](../skills/gis-cartography-symbology/SKILL.md) specialists. See the [separate icon library](map-marker-icon-library.md) for creating **new** markers, not overwriting imports.
 
+## Sharing general GIS icons safely
+
+The [Unified GIS Icon Manager](unified-gis-icon-manager.md) is the one general-purpose symbol library for new point markers in any GIS host. Its [standalone example](../examples/icon-manager/README.md) supports creating new SVG/PNG markers and packaging a **new** KMZ. KML/KMZ has its own export adapter, not a duplicate icon library. For imported documents, `Use Original Icon` remains selected by default; `Choose New Icon` is an explicit reversible action. Even app-theme changes, project loading and lazy rendering must not apply a preset style to an imported source feature.
+
 ## Three distinct states, not one style field
 
 | State | Meaning | Persistence |
