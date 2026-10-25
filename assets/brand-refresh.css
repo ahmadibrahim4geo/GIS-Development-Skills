@@ -183,3 +183,38 @@ html[lang="en"] .mirsad-author{direction:ltr}
   .mirsad-author .contact-button{flex-basis:100%}
   .mirsad-author .consult-copy{flex:1 1 100%}
 }
+
+/* Approved original integrated GIS brand: one graphic, no duplicated wordmark */
+:root { font-synthesis: none; }
+html[lang="en"] body {font-family:Inter,"Segoe UI",system-ui,-apple-system,Arial,sans-serif;}
+html[lang="ar"] body {font-family:Cairo,Tahoma,"Segoe UI",Arial,sans-serif;letter-spacing:0;}
+html[lang="ar"] .hero-content,html[lang="ar"] .hero-exact {direction:rtl;}
+html[lang="en"] .hero-content {direction:ltr;}
+.nav .brand {align-items:center;flex:0 0 auto;}
+.nav .brand img {display:block;width:205px!important;height:auto!important;max-height:none!important;border-radius:8px;object-fit:contain!important;flex-shrink:1;}
+.hero {display:block!important;grid-template-columns:none!important;min-height:0!important;padding:34px 0 54px!important;}
+.hero-primary {display:flex;flex-direction:column;align-items:center;gap:22px;width:100%;margin-inline:auto;}
+.hero-lockup {display:block!important;width:min(100%,1080px)!important;max-width:1080px;margin-inline:auto!important;direction:ltr;text-align:center;border-radius:20px;overflow:hidden;background:#14181a;box-shadow:0 15px 48px #0004;line-height:0;}
+.hero-lockup .hero-symbol {display:block!important;width:100%!important;height:auto!important;max-width:none!important;max-height:none!important;aspect-ratio:830/300!important;object-fit:contain!important;filter:none!important;transform:none!important;flex:initial!important;}
+.hero-content {max-width:850px;width:100%;text-align:center;margin:0 auto;}
+.hero .eyebrow {margin:0 auto 12px;letter-spacing:1.1px;}
+.hero .hero-exact {max-width:830px;margin:14px auto 10px;font-size:clamp(18px,2.25vw,26px);line-height:1.45;letter-spacing:-.025em;font-weight:750;text-wrap:balance;}
+.hero .lead {max-width:790px;margin:12px auto 0;font-size:clamp(14px,1.3vw,16px);line-height:1.85;text-wrap:pretty;}
+.hero .buttons {justify-content:center;gap:12px;margin-top:22px;}
+html[lang="ar"] .hero .hero-exact {letter-spacing:0;}
+@media(max-width:900px) {
+  .hero {padding:26px 0 36px!important;}
+  .hero-primary {gap:17px;}
+  .hero-lockup {border-radius:15px;}
+}
+@media(max-width:640px) {
+  .nav .brand img {width:150px!important;}
+  .nav .nav-right {gap:7px;}
+  .hero {padding:20px 0 26px!important;}
+  .hero-primary {gap:12px;}
+  .hero-lockup {border-radius:12px;}
+  .hero .eyebrow {font-size:9px;letter-spacing:.3px;}
+  .hero .hero-exact {font-size:clamp(17px,4.5vw,20px);margin:9px auto;}
+  .hero .lead {font-size:13px;line-height:1.7;}
+  .hero .buttons {margin-top:17px;}
+}
