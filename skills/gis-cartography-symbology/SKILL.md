@@ -37,6 +37,15 @@ Use for point, line, polygon, raster, labels, legends, scientific color maps, ma
 - Repository MIT licenses do **not** automatically relicense included Esri/USGS/BGS files, fonts or converted styles; verify per-file rights, attribution and embedding/redistribution rules before shipping.
 - Do not download/run untrusted bundled scripts, font installers, SVG scripts or external QML expressions automatically. Sanitize URLs and validate imports.
 
+## Unified GIS Icon Manager (general-purpose first)
+
+Treat map/icon asset catalogs as a **single reusable library for all GIS workflows**, not a KML-only library. Load the [Icon Manager architecture, user workflows and acceptance contract](../../references/unified-gis-icon-manager.md) when an application needs icon search, custom icon design, favorites, previews or reuse across ArcMap/ArcGIS Pro, QGIS, MapLibre, Leaflet, Cesium and desktop GIS.
+
+- General core: bilingual Arabic/English searchable icon IDs/categories, user-owned assets, preview, provenance and license; shape/glyph/fill/stroke/opacity/size/anchor controls; SVG/PNG outputs or host-native renderer adapters; accessible contrast and scale.
+- Source intake: [catalog](../../references/cartographic-style-sources.json) includes the new Mapular icon generator (**inspiration/reference only, do not copy site code**) and Streamline tag search (**discovery by default**). Streamline's standard free assets must **not** be made a selectable/reusable/downloadable library inside an icon-manager product; use only separately verified open-source sets with required credits and appropriate rights. Map Icons Collection now offers SVG alongside PNG; credit CC BY-SA 3.0, no hotlinking, check adaptation conditions.
+- Use icon library to style **new** GIS features, new projects, and **user explicitly restyled** selected features. Export to each host's compatible icon format with license evidence; do not promise automatic conversion from CSS/web font to native GIS symbol.
+- KML/KMZ is a **specialized client** of the same library. Imported document icons/styles always win, even across project saves/reopens. The [reference Icon Manager browser prototype](../../examples/icon-manager/README.md) and [new-only PNG→KMZ exporter](../../examples/icon-manager/export_new_kmz.py) demonstrate the authoring side, **not** opening/editing an imported KMZ.
+
 ## Map icons and the KML/KMZ branch
 
 1. **New layers / new user-authored placemarks only:** search [style source catalog](../../references/cartographic-style-sources.json) by map-icon library, license, target platform and KML packaging role. Favor CC0 Pinhead, Maki and Temaki for general maps; optionally Material Symbols, licensed Map Icons Collection, Scott Map Icons or Leaflet marker generators. Cesium PinBuilder is a runtime generator, not an importer.
@@ -61,3 +70,5 @@ When symbols originate in an imported KML/KMZ, user-authored styling wins over a
 - [ ] External assets' exact license/attribution verified; fallback available if not
 - [ ] Preview, apply, save/reopen and real appearance verified (or limitations explicitly recorded)
 - [ ] Imported styled KML/KMZ retained original colors, StyleMaps, local image bytes and labels without automatic icons/palette overrides
+- [ ] General GIS icon library shared across host adapters; all hosted/licensed sources classified; Streamline free non-open assets excluded from reusable icon picker
+- [ ] New-icon SVG/PNG preview/export and new-KMZ packaging demonstrably separate from preservation-first importing
