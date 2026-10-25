@@ -57,3 +57,5 @@ npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill kml-kmz-engineeri
 **إزاي أبلّغ عن خطأ؟** افتح [GitHub Issue](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues) واذكر الإصدار والخطوات والنتيجة المتوقعة والفعلية من غير أسرار شخصية.
 
 هذه الصفحة دليل استخدام، وليست إثباتًا لتشغيل تطبيق GIS أو وكيل ذكاء اصطناعي داخل المتصفح.
+
+لدمج محرك QGIS في **تطبيق مستقل** وليس إضافة داخل QGIS، استخدم `qgis-engine-integration` ودليل [هندسة المحرك](../references/qgis-engine-integration.md) و[مثال PyQGIS الأصلي](../examples/qgis-engine/README.md)، مع مراعاة التراخيص ونسخ المكتبات واختبارات التشغيل.

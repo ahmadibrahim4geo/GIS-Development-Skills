@@ -56,3 +56,5 @@ Ask for the original requirement, approved plan revision and task IDs; changed p
 **Where do I report an issue?** Open an [issue](https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues) with platform, version, reproduction steps, observed behavior and redacted test evidence.
 
 This guide covers **how to use** the materials, not claims of live agent execution inside this website.
+
+For a QGIS-based **standalone engine** rather than a hosted plugin, install `qgis-engine-integration` and read the [architecture guide](../references/qgis-engine-integration.md) and [native runtime example](../examples/qgis-engine/README.md). Pin QGIS/Qt/Python and review upstream licensing.

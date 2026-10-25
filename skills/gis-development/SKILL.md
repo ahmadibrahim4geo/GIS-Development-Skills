@@ -8,11 +8,11 @@ license: MIT
 
 **Free-first:** use [no-cost policy](../../references/free-first-policy.md). Disclose commercial host/API limits and offer verified free alternatives; never silently require payment.
 
-**Offline examples:** [DEM slope](../../examples/terrain-slope/README.md) and [STAC](../../examples/stac-offline/README.md). [License evidence](../../references/upstream-license-audit.md) is not native-run proof.
+**Offline examples:** [DEM slope](../../examples/terrain-slope/README.md), [STAC](../../examples/stac-offline/README.md). [License audit](../../references/upstream-license-audit.md) is not native proof.
 
 **Intake:** [Plan and approve free-form requests](../prompt-intent-orchestrator/SKILL.md) before GIS routing.
 
-**Load selectively:** determine target, environment, data and risk; then use [decision tree](../../references/agent-decision-tree.md) and only needed specialists. Rendering does not substitute for spatial analysis.
+**Load selectively:** use the [decision tree](../../references/agent-decision-tree.md) to select specialists; rendering is not spatial analysis.
 
 ## Choose specialists
 
@@ -22,6 +22,7 @@ license: MIT
 | ArcGIS Pro, ArcPy, `.pyt`, geoprocessing | [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md) |
 | Global Mapper / Blue Marble GMS, Python and licensed SDK | [Global Mapper Development](../global-mapper-development/SKILL.md) |
 | QGIS plugin / Processing algorithm | [QGIS Plugin Development](../qgis-plugin-development/SKILL.md) |
+| QGIS libraries, PyQGIS worker, Server or Cesium sidecar | [QGIS Engine Integration](../qgis-engine-integration/SKILL.md) |
 | PostGIS, SpatiaLite, schema/indexes | [Spatial Databases](../spatial-databases/SKILL.md) |
 | Raster/vector, GDAL, GeoPandas, spatial batch | [Geospatial Data Processing](../geospatial-data-processing/SKILL.md) |
 | Landsat, Sentinel, Earth Engine, STAC, COG | [Remote Sensing Pipelines](../remote-sensing-pipelines/SKILL.md) |
@@ -41,7 +42,7 @@ license: MIT
 | KML/KMZ, Earth-like viewers and timeline | [KML](../kml-kmz-engineering/SKILL.md) · [Earth Pro](../../references/google-earth-pro-engineering.md) · [Historical imagery](../../references/historical-imagery-timeline.md) |
 
 
-**Wizard:** [project planner](../../project-wizard.html) (browser-only). **Arabic/RTL:** [i18n skill](../gis-internationalization-arabic/SKILL.md). **Reliability:** [guide](../../docs/PERFORMANCE_RELIABILITY.md).
+**Wizard:** [planner](../../project-wizard.html). **Arabic:** [i18n](../gis-internationalization-arabic/SKILL.md). **QA:** [guide](../../docs/PERFORMANCE_RELIABILITY.md).
 
 ## Global rules (always apply)
 

@@ -11,7 +11,7 @@
 5. A model-running agent must have deterministic local actions without purchasing a hosted LLM. Local/GPU computation and data transfer can still incur practical expenses. Earth Engine and hosted cloud datasets may require eligible accounts or quotas.
 6. If a free solution is not equivalent in accuracy/outputs to a paid GIS feature, state the limitation; do not invent feature parity.
 
-## All 22 specialists
+## All 23 specialists
 
 | Specialist | Free independent path | Optional dependency or limitation |
 | --- | --- | --- |
@@ -21,6 +21,7 @@
 | `arcgis-toolbox-engineering` | Review toolbox source; reimplement analogous operations with QGIS/PyQGIS/GDAL | ArcPy execution requires suitably licensed ArcGIS Pro/ArcMap |
 | `global-mapper-development` | Use QGIS/GDAL/Whitebox for similar raster/vector tasks | Global Mapper and SDK/DLL require commercial licenses |
 | `qgis-plugin-development` | QGIS/PyQGIS and Processing with open-source licensing | Optional third-party plugins and providers may charge |
+| `qgis-engine-integration` | Native QGIS Core/GUI/Processing in a compatible Qt app or headless PyQGIS worker; WPF/Cesium can use an isolated GIS worker | QGIS GPL-2.0-or-later and separate Qt/provider/asset rights require review; install/test actual matching QGIS runtime |
 | `coordinate-reference-systems` | PROJ/pyproj and QGIS CRS metadata | Esri factory metadata does not distribute its projection engine |
 | `geospatial-data-processing` | GDAL, Rasterio, Shapely, GeoPandas | External data/formats have independent terms |
 | `terrain-hydrology-lidar` | GRASS GIS, PDAL, GDAL, license-permitted Whitebox | ArcGIS/Global Mapper extensions are optional |

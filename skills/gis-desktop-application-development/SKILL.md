@@ -11,6 +11,10 @@ compatibility: Requires the target desktop build toolchain and GIS runtime to ru
 
 Use this for **independent executable applications**, not ArcGIS Pro SDK add-ins or a QGIS plugin. Select host OS, packaging model, renderer and processing engine separately. A working toolbar mockup is not a completed GIS app.
 
+## Free QGIS Engine integration option
+
+For a new Qt GIS app or an isolated WPF/Cesium GIS worker, route to [QGIS Engine Integration](../qgis-engine-integration/SKILL.md) and [the official architecture guide](../../references/qgis-engine-integration.md). Retain CesiumJS as the globe renderer in existing WPF apps, isolate Processing and GeoPackage I/O, and review QGIS GPL/ABI/deployment obligations before release. Do not confuse a QGIS plugin or Qt widget with a standalone WPF engine.
+
 ## Global Mapper SDK is a licensed engine, not a free backend
 
 The [Blue Marble Global Mapper guide](../../references/blue-marble-global-mapper.md) explains why proprietary Global Mapper DLLs and Pro tools cannot be embedded in our open-source GIS desktop app without explicit SDK and redistribution rights. For a stand-alone alternative, use independently licensed engines and test equivalent features instead of assuming source availability from Blue Marble's public GitHub forks.
