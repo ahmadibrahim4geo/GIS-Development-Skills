@@ -1,6 +1,4 @@
 import json
-import base64
-import re
 import unittest
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
@@ -39,12 +37,16 @@ class LandingPageTests(unittest.TestCase):
             self.assertIn(element, self.parser.ids)
 
     def test_local_assets_exist(self):
-        self.assertIn("assets/icon.svg", self.parser.links)
-        self.assertIn("assets/gis-brand-lockup.svg", (ROOT / "README.md").read_text(encoding="utf-8"))
-        self.assertIn("assets/gis-brand-lockup.svg", self.parser.links)
-        for asset in ("assets/logo.svg", "assets/icon.svg"):
-            tree = ET.parse(ROOT / asset)
-            self.assertTrue(tree.getroot().tag.endswith("svg"))
+        self.assertIn("assets/brand/favicon.svg", self.parser.links)
+        self.assertIn("assets/brand/logo-dark.svg", self.parser.links)
+        self.assertIn("assets/brand/logo-compact-dark.svg", self.parser.links)
+        self.assertIn("assets/brand/banner-dark.svg", (ROOT / "README.md").read_text(encoding="utf-8"))
+        for name in ("icon", "favicon", "logo-dark", "logo-light",
+                     "logo-compact-dark", "logo-compact-light", "banner-dark", "banner-light"):
+            asset = ROOT / "assets" / "brand" / (name + ".svg")
+            self.assertTrue(asset.is_file(), str(asset))
+            root = ET.parse(asset).getroot()
+            self.assertTrue(root.tag.endswith("svg"))
 
     def test_api_expansion_and_skill_path(self):
         catalog=json.loads((ROOT/'references/free-geospatial-apis.json').read_text(encoding='utf-8'))
@@ -67,7 +69,8 @@ class LandingPageTests(unittest.TestCase):
             "Build GIS tools, plugins and geospatial applications with a verifiable development workflow.",
             self.html,
         )
-        self.assertIn('class="hero-symbol" src="assets/gis-brand-lockup.svg"', self.html)
+        self.assertIn('class="hero-symbol" src="assets/brand/logo-dark.svg"', self.html)
+        self.assertIn('src="assets/brand/logo-compact-dark.svg"', self.html)
         self.assertEqual(1, self.html.count('class="hero-symbol"'))
         self.assertNotIn('class="scene-logo"', self.html)
         self.assertNotIn('class="hero-wordmark"', self.html)
@@ -75,24 +78,15 @@ class LandingPageTests(unittest.TestCase):
         self.assertTrue((ROOT / "assets/brand-refresh.css").is_file())
 
     def test_readme_header_has_only_one_slogan_and_balanced_wordmark(self):
-        logo = ET.parse(ROOT / "assets/logo.svg").getroot()
-        svg_ns = "{http://www.w3.org/2000/svg}"
-        text_elements = logo.findall(f".//{svg_ns}text")
-        wordmark = [
-            element for element in text_elements
-            if (element.text or "").startswith("Development")
-        ]
-        self.assertEqual(len(wordmark), 1)
-        skills = wordmark[0].find(f"{svg_ns}tspan")
-        self.assertIsNotNone(skills)
-        self.assertEqual(skills.text, "Skills")
-        self.assertEqual(skills.attrib.get("dx"), "17")
-
         for path in ("README.md", "README.ar.md"):
             readme = (ROOT / path).read_text(encoding="utf-8")
-            self.assertIn('src="assets/gis-brand-lockup.svg"', readme)
+            self.assertIn('src="assets/brand/banner-dark.svg"', readme)
+            self.assertIn('href="assets/brand/README.md"', readme)
             self.assertNotIn("<strong>The Heart of Geospatial Innovation</strong>", readme)
-            self.assertIn("GIS Development Skills", readme)
+        palette = json.loads((ROOT / "assets/brand/palette.json").read_text(encoding="utf-8"))
+        self.assertEqual("The Heart of Geospatial Innovation", palette["tagline"])
+        self.assertEqual("#1CC8E8", palette["colors"]["cyan"])
+        self.assertEqual("#82D53E", palette["colors"]["green"])
         english = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn(
             "Build GIS tools, plugins and geospatial applications with a verifiable development workflow.",
@@ -100,34 +94,36 @@ class LandingPageTests(unittest.TestCase):
         )
 
     def test_approved_layered_g_brand_used_consistently(self):
-        full_logo = (ROOT / "assets/logo.svg").read_text(encoding="utf-8")
-        icon_logo = (ROOT / "assets/icon.svg").read_text(encoding="utf-8")
-        self.assertIn("The Heart of Geospatial Innovation", full_logo)
-        # Both assets embed the same scaled approved G photographically, avoiding
-        # a structurally different hand-redrawn symbol that distorted the G.
-        logos = []
-        for asset in (full_logo, icon_logo):
-            match = re.search(r'data:image/png;base64,([A-Za-z0-9+/=]+)', asset)
-            self.assertIsNotNone(match)
-            data = base64.b64decode(match.group(1), validate=True)
-            self.assertTrue(data.startswith(bytes([137, 80, 78, 71, 13, 10, 26, 10])))
-            logos.append(data)
-        self.assertEqual(logos[0], logos[1])
-        self.assertIn('class="hero-symbol" src="assets/gis-brand-lockup.svg"', self.html)
+        svg_ns = "{http://www.w3.org/2000/svg}"
+        logo = ET.parse(ROOT / "assets/brand/logo-dark.svg").getroot()
+        icon = ET.parse(ROOT / "assets/brand/icon.svg").getroot()
+        paths_logo = {node.attrib.get("id") for node in logo.findall(f".//{svg_ns}path")}
+        paths_icon = {node.attrib.get("id") for node in icon.findall(f".//{svg_ns}path")}
+        for element in ("top-map", "map-route", "middle-layer", "bottom-layer"):
+            self.assertIn(element, paths_logo)
+            self.assertIn(element, paths_icon)
+        self.assertEqual(paths_logo, paths_icon)
+        nodes = {node.text: node.attrib.get("fill") for node in logo.findall(f".//{svg_ns}text")}
+        self.assertEqual("#82D53E", nodes["Heart"])
+        self.assertEqual("#1467C8", nodes["Geospatial"])
+        self.assertEqual("#1CC8E8", nodes["Innovation"])
+        self.assertEqual("#82D53E", nodes["Skills"])
+        self.assertIn('class="hero-symbol" src="assets/brand/logo-dark.svg"', self.html)
         self.assertNotIn('class="globe-art"', self.html)
 
-    def test_original_brand_artwork_embedded_as_a_single_complete_graphic(self):
-        root = ET.parse(ROOT / "assets/gis-brand-lockup.svg").getroot()
-        self.assertEqual("70 115 830 300", root.attrib.get("viewBox"))
-        image = root.find(".//{http://www.w3.org/2000/svg}image")
-        self.assertIsNotNone(image)
-        source = image.attrib.get("href", "")
-        self.assertTrue(source.startswith("data:image/webp;base64,"))
-        data = base64.b64decode(source.split(",", 1)[1], validate=True)
-        self.assertEqual(data[:4], b"RIFF")
-        self.assertEqual(data[8:12], b"WEBP")
+    def test_brand_artwork_is_real_editable_vector_not_raster_wrapped_svg(self):
+        svg_ns = "{http://www.w3.org/2000/svg}"
+        for asset in (ROOT / "assets" / "brand").glob("*.svg"):
+            content = asset.read_text(encoding="utf-8")
+            root = ET.fromstring(content)
+            self.assertEqual([], root.findall(f".//{svg_ns}image"), asset.name)
+            self.assertNotIn("data:image/", content, asset.name)
+            self.assertTrue(root.findall(f".//{svg_ns}path"), asset.name)
+            self.assertFalse("filter=" in content, asset.name)
+        logo = ET.parse(ROOT / "assets/brand/logo-dark.svg").getroot()
+        self.assertIsNotNone(logo.find(".//*[@id='gis-i-dot']"))
+        self.assertIsNotNone(logo.find(".//*[@id='gis-i-stem']"))
         self.assertEqual(self.html.count('class="hero-symbol"'), 1)
-        self.assertEqual(self.html.count('class="scene-logo"'), 0)
         self.assertIn('class="hero-lockup"', self.html)
         self.assertIn('class="hero-content"', self.html)
 
