@@ -1,9 +1,21 @@
 # Esri open-source integration matrix — GIS Development Skills
 
-Audit date: 2026-10-24. All listed GitHub repository **paths** were confirmed to exist; presence on public GitHub does not itself grant code redistribution, mapping-service or commercial-product rights. Unless an actual project license is specifically documented below, status is **verify-upstream**. Integrate as workflow and architecture *references first*, then pin tested versions and check notices before importing code.
+Audit expanded: 2026-10-25. All listed GitHub repository **paths** were confirmed to exist; presence on public GitHub does not itself grant code redistribution, mapping-service or commercial-product rights. Unless an actual project license is specifically documented below, status is **verify-upstream**. Integrate as workflow and architecture *references first*, then pin tested versions and check notices before importing code.
 
 | Official repository | Specific use in this skills project | Routing | Adoption boundary |
 |---|---|---|---|
+| [Esri/arcgis-pro-sdk-snippets](https://github.com/Esri/arcgis-pro-sdk-snippets) | AI-assisted Pro SDK C# Editing, Geodatabase, Map Exploration and Layout examples | ArcGIS Pro add-in | Apache-2.0 source; Pro 3.7 and .NET 10 required for current samples |
+| [Esri/arcpy](https://github.com/Esri/arcpy) | ArcPy debugging and release-indexed Python package matrix | ArcGIS Toolbox Engineering | Use the [offline compatibility guide](esri-python-environment-compatibility.md); not a replacement for ArcGIS Pro |
+| [Esri/arcade-expressions](https://github.com/Esri/arcade-expressions) | Profile-specific labeling, popup, renderer and attribute rules | GIS Cartography | Apache-2.0 examples; match Arcade profile and host version |
+| [Esri/developer-support](https://github.com/Esri/developer-support) | Proof-of-concept Python, .NET and JS debugging | GIS development | Apache-2.0 code; inspect sample-specific runtime |
+| [Esri/cad-bim-scripts](https://github.com/Esri/cad-bim-scripts) | CAD/BIM and Civil 3D ArcGIS scene processing | ArcGIS Toolbox Engineering | Apache-2.0 code; requires Pro 3.4+ and relevant tools |
+| [Esri/large-network-analysis-tools](https://github.com/Esri/large-network-analysis-tools) | Parallel chunked OD/network analysis Python tools | ArcGIS Toolbox Engineering | Apache-2.0 code; licensed network and possible credits required |
+| [Esri/geoportal-server-catalog](https://github.com/Esri/geoportal-server-catalog) | STAC/MCP metadata catalog discovery | Geospatial Data Catalogs | Apache-2.0 source; Geoportal v4 server breaking changes, external asset rights |
+| [Esri/jsapi-resources](https://github.com/Esri/jsapi-resources) | JavaScript ArcGIS SDK templates and OAuth callback | Web Mapping | Apache-2.0 source; SDK and online service terms separate |
+| [Esri/esri-leaflet-geocoder](https://github.com/Esri/esri-leaflet-geocoder) | Leaflet geocoder control | API Integration | Apache-2.0 code; ArcGIS geocoder service account and terms separate |
+| [Esri/elevation-gp-python](https://github.com/Esri/elevation-gp-python) | Elevation viewshed/profile GP tools and services | Terrain / ArcGIS Toolboxes | Apache-2.0 code; Spatial Analyst and Enterprise required |
+| [Esri/raster-deep-learning](https://github.com/Esri/raster-deep-learning) | Python raster function inference | Remote Sensing | Apache-2.0 code; Image Analyst, models and data rights separate |
+
 | [Esri/projection-engine-db-doc](https://github.com/Esri/projection-engine-db-doc) | WKIDs/latestWKIDs, geographic/projected/vertical CRS, datums, extents, transformations | `coordinate-reference-systems` | Apache-2.0 data/docs; not Esri PE engine |
 | [OSGeo/spatialreference.org](https://github.com/OSGeo/spatialreference.org) | Authority definitions, interoperable WKT and PROJJSON export | `coordinate-reference-systems` | MIT website source; PROJ-derived registry is versioned |
 | [Esri/arcgis-pro-sdk-community-samples](https://github.com/Esri/arcgis-pro-sdk-community-samples) | ArcGIS Pro ribbon, dockpanes, editing, map events and async operations | `gis-development` / ArcGIS Pro | Requires target ArcGIS Pro SDK/application; examples are not universal plugins |
@@ -33,6 +45,15 @@ Audit date: 2026-10-24. All listed GitHub repository **paths** were confirmed to
 | Standalone 2D/3D GIS | MapLibre, esri-leaflet, dotnet-toolkit patterns, I3S | Tiles/services/license; missing terrain and offline fallback; 2D/3D integration |
 | CRS dialog and geodesy | PE database, SpatialReference.org, PROJ | Official folder labels, WKID aliases, area, axis, datum shifts/grids, round-trip |
 | Map symbols and layouts | cim-spec | Exact versioned schema, parser round-trip, supported symbol types |
+
+## Adoption rules for AI GIS agents
+
+- Before repairing ArcPy installations, compare the intended Pro Python release with local package versions using [the offline compatibility checker](esri-python-environment-compatibility.md); do not silently modify the managed Python environment.
+- ArcGIS Pro SDK C# snippets only target Pro-hosted add-ins; do not treat them as Python toolboxes or independent WPF/Cesium application code. Check Pro/.NET version, edit scopes and QueuedTask.
+- Select Arcade profiles explicitly; apply [profile-specific validation](arcgis-arcade-profiles.md) for labeling, popup, attribute rules and visualization.
+- Network analysis, CAD/BIM, elevation and raster inference examples require relevant licenses, services, data and sometimes model access. Offer an independent free alternative when applicable.
+- Geoportal metadata can be untrusted: verify the original host, access, actual STAC assets and CRS; discovery does not grant redistribution.
+- Original root source licenses of the ten new official Esri repositories were inspected as Apache-2.0 on 2026-10-25. This does not include ArcGIS product or service licenses.
 
 ## Deliberate non-claims
 

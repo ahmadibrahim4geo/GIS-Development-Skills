@@ -28,3 +28,7 @@ For DXF, https://github.com/haplokuon/netDxf is a **currently archived** referen
 ## Functional delivery gate
 
 Implement **one command at a time** and record: command name, input, handler location, expected observable state, errors, unit/integration/manual test evidence, and project file roundtrip. Never count a visible ribbon button as a completed implementation.
+
+## Esri Pro SDK versus standalone GIS
+
+The official [ArcGIS Pro SDK snippets](https://github.com/Esri/arcgis-pro-sdk-snippets) offer C# patterns only for add-ins running **inside ArcGIS Pro**. Independent WPF/Cesium or MapLibre applications must not silently take ArcGIS.Desktop libraries, ribbon DAML, edit sessions or QueuedTask as standalone dependencies. Study UX ideas separately and choose independently licensable GIS engines, or explicitly declare an optional commercial ArcGIS Maps SDK integration.

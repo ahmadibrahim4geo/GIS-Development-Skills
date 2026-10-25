@@ -33,6 +33,10 @@ Read [Earth View architecture](../../references/earth-view-architecture.md) for 
 
 A Google-Earth-style desktop product should offer **Reference Layers > World Gazetteer** as an optional scale-aware place-name overlay **independent of the Search Bar**. Implement the [World Gazetteer label/search contract](../../references/world-gazetteer-reference-layer.md) using local GeoNames data by default, with language-specific Arabic/English names, priority/decluttering, viewport/3D-horizon culling, and persistent user toggle. Never make a remote request on every camera tick; do not overwrite imported KML/KMZ icon styling or save transient labels to My Places. Prototype: [offline viewport labels](../../examples/gazetteer/README.md). Runtime WPF/Cesium integration must be separately verified.
 
+## Esri samples: reference, not a hidden standalone engine
+
+[Esri .NET mapping samples](https://github.com/Esri/arcgis-maps-sdk-dotnet-samples) and [Pro SDK snippets](https://github.com/Esri/arcgis-pro-sdk-snippets) can inform UI patterns. First decide whether the host is ArcGIS Pro, separately licensed ArcGIS Maps SDK, or an independent WPF/Cesium app. Pro SDK add-ins cannot be transplanted into standalone Desktop executables. Keep optional Esri REST/services adapters isolated with explicit rights; see [license matrix](../../references/esri-open-source-integration.md).
+
 ## Implementation workflow
 
 1. Specify the supported Windows versions, 64-bit process, user profiles, input/output formats, offline constraints, languages, architecture, versioning, installer and actual target test PC.

@@ -4,7 +4,7 @@ For general tasks start with the [free-first policy](free-first-policy.md). For 
 
 Select **the delivery target**, not just the programming language. The general [router](../skills/gis-development/SKILL.md) stays small; this file holds details.
 
-1. Is the user building inside ArcGIS? **ArcMap 10.x:** Python 2.7 and `arcpy.mapping` where applicable. **ArcGIS Pro:** supported Python 3 / ArcPy / `arcpy.mp`; distinguish `.pyt`, script tool and Pro SDK add-in.
+1. Is the user building inside ArcGIS? **ArcMap 10.x:** Python 2.7 and `arcpy.mapping` where applicable. **ArcGIS Pro:** supported Python 3 / ArcPy / `arcpy.mp`; distinguish `.pyt`, script tool and Pro SDK add-in. Consult the [official Esri Python distribution checker](esri-python-environment-compatibility.md) for package compatibility, and use C# SDK snippets only for Pro-hosted add-ins.
 2. Global Mapper from Blue Marble Geographics? Route to [Global Mapper Development](../skills/global-mapper-development/SKILL.md): distinguish `.gms`, embedded Python and commercially licensed SDK/DLL; check edition and feature entitlements. Source forks on GitHub are not the Global Mapper engine.
 3. Inside QGIS? **Processing algorithm:** Processing provider interface. **Plugin:** PyQGIS/Qt with real action wiring. **Independent executable:** Desktop application engineering, not a plugin.
 4. Is the output interactive web mapping (including time-aware satellite globes)? Read the [Earth View design review](earth-view-architecture.md) only when 3D imagery/temporal regional inspection is relevant.  **2D/vector:** MapLibre or Leaflet according to features and licensing. **3D terrain/globe:** CesiumJS or other verified engine. For raster/geometry analysis also load the independent processing specialist.

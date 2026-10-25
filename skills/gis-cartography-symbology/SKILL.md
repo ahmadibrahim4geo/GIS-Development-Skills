@@ -16,6 +16,10 @@ Use for point, line, polygon, raster, labels, legends, scientific color maps, ma
 - [Cartography example](../../examples/cartography/README.md) is a testable MapLibre vector fixture, **not** proof of ArcGIS/QGIS renderer parity.
 - [Open map marker/icon libraries](../../references/map-marker-icon-library.md) cover eight icon packs plus Cesium PinBuilder, distinguishing CC0, Apache, CC BY-SA, MIT plugin, SIL OFL font and other asset rights; [mandatory imported KMZ fidelity](../../references/kml-kmz-symbol-preservation.md) takes precedence on external files.
 
+## Arcade profile-aware expressions
+
+For ArcGIS labeling, popup, visualization, attribute rules, dashboards and form calculation, use the [official Arcade repository](https://github.com/Esri/arcade-expressions) and [profile guide](../../references/arcgis-arcade-profiles.md). First choose the target Arcade execution profile, then validate supported globals/functions, return type, nulls, locale, field availability and native save/reopen. Arcade expressions are not interchangeable with ArcPy, SQL, MapLibre styles or imported KML/KMZ symbology.
+
 ## Action contract
 1. Inspect actual geometry (Point/MultiPoint, LineString/MultiLineString, Polygon/MultiPolygon, raster bands/pixel type), coordinate system, scale, field semantics, nulls and category/numeric distribution; verify raster NoData, statistics and band definitions. Distinguish geographic units from graphic symbol units.
 2. Ask for, or infer from known evidence, purpose, target map type, expected audience, background/basemap, print vs screen, software + version, language and accessibility requirements. Never mistake category labels for a continuous numerical scale.
