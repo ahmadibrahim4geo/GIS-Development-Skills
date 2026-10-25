@@ -91,6 +91,7 @@
   html[lang='ar'] .api-expansion{direction:rtl;text-align:right}
 </style>
   <link rel="stylesheet" href="assets/brand-refresh.css">
+  <link rel="stylesheet" href="assets/premium-layout.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -215,7 +216,8 @@
   <section id="catalog" class="container">
     <div class="section-head"><div><span class="overline" data-i18n="overlineCatalog">SOURCE DIRECTORY</span><h2 data-i18n="catalogTitle">Explore the geospatial ecosystem.</h2><p data-i18n="catalogDesc">Search the repository's real source catalogs. Each entry is an attributed reference, not a claim of guaranteed functionality, free commercial use, or bundled code.</p></div></div>
     <div class="explorer">
-      <p class="api-expansion"><a class="fine-link" href="references/upstream-license-audit.md"><span id="licenseAuditProgress" data-i18n="licenseAuditLoading">Reviewing upstream repository license evidence…</span></a></p>
+      <details class="catalog-updates"><summary><span class="lang-en">Source updates, licensing notes &amp; research highlights</span><span class="lang-ar">تحديثات المصادر وملاحظات التراخيص والأبحاث</span><span class="updates-chevron" aria-hidden="true">⌄</span></summary><div class="catalog-updates-body">
+<p class="api-expansion"><a class="fine-link" href="references/upstream-license-audit.md"><span id="licenseAuditProgress" data-i18n="licenseAuditLoading">Reviewing upstream repository license evidence…</span></a></p>
       <p class="api-expansion"><a class="fine-link" href="examples/README.md"><span class="lang-en">New free GIS workflows: DEM slope calculation and offline STAC satellite metadata QA ↗</span><span class="lang-ar">أمثلة GIS مجانية جديدة: حساب انحدار DEM وتصفية بيانات STAC المحلية ↗</span></a></p>
       <p class="api-expansion"><a class="fine-link" href="references/blue-marble-global-mapper.md"><span class="lang-en">New: Blue Marble Geographics / Global Mapper — official GitHub forks, GMS/Python scripting, commercial SDK and 3D terrain guidance ↗</span><span class="lang-ar">جديد: Blue Marble وGlobal Mapper — مشاريع GitHub، سكربتات GMS وPython، SDK التجاري والتضاريس ثلاثية الأبعاد ↗</span></a></p>
       <p class="api-expansion"><a class="fine-link" href="references/earth-view-architecture.md"><span class="lang-en">New Earth View architecture review: NASA GIBS 3D globe, Sentinel imagery, time-lapse and Electron. Upstream license not observed ↗</span><span class="lang-ar">جديد: دراسة مشروع Earth View — الكرة الأرضية ثلاثية الأبعاد وSentinel والتتابع الزمني وElectron. لم يُعثر على ترخيص المصدر ↗</span></a></p>
@@ -223,7 +225,8 @@
       <p class="api-expansion" data-i18n="apiExpansion">52 curated GIS APIs including GEBCO_2026 seabed/land terrain, boundaries, population, hazards, air quality, routing and biodiversity; check all provider limits and licences.</p>
       <p class="api-expansion"><a class="fine-link" href="references/geospatial-data-repositories.md"><span class="lang-en">New: 24 curated GIS data directories and provider portals · connected to the GIS Data Repositories Professional 2026 master directory ↗</span><span class="lang-ar">جديد: 24 فهرسًا وبوابةً للبيانات الجغرافية · مرتبطة بدليل GIS Data Repositories Professional 2026 الشامل ↗</span></a></p>
       <p class="api-expansion"><a class="fine-link" href="references/geocoding-place-search.md"><span class="lang-en">Geocoding / place search: 15 providers ranked from free to commercial ↗</span><span class="lang-ar">البحث عن الأماكن والمعالم: ١٥ مزودًا من المجاني إلى التجاري ↗</span></a></p>
-      <div class="explorer-top"><div class="tabs" role="tablist" aria-label="Catalog type"><button class="tab" id="projectsTab" type="button" role="tab" aria-selected="true" aria-controls="catalogResults" data-i18n="projectsTab">Projects & libraries</button><button class="tab" id="apisTab" type="button" role="tab" aria-selected="false" aria-controls="catalogResults" data-i18n="apisTab">GIS APIs & data</button><button class="tab" id="repositoriesTab" type="button" role="tab" aria-selected="false" aria-controls="catalogResults" data-i18n="repositoriesTab">Data repositories</button></div><span class="chip" id="shownCount" aria-live="polite">Loading…</span></div>
+      </div></details>
+<div class="explorer-top"><div class="tabs" role="tablist" aria-label="Catalog type"><button class="tab" id="projectsTab" type="button" role="tab" aria-selected="true" aria-controls="catalogResults" data-i18n="projectsTab">Projects & libraries</button><button class="tab" id="apisTab" type="button" role="tab" aria-selected="false" aria-controls="catalogResults" data-i18n="apisTab">GIS APIs & data</button><button class="tab" id="repositoriesTab" type="button" role="tab" aria-selected="false" aria-controls="catalogResults" data-i18n="repositoriesTab">Data repositories</button></div><span class="chip" id="shownCount" aria-live="polite">Loading…</span></div>
       <div class="filters">
       <label class="sr-only" for="searchInput" data-i18n="searchLabel">Search sources</label><input id="searchInput" type="search" autocomplete="off" placeholder="Search names, platforms or descriptions…">
       <label class="sr-only" for="categoryFilter" data-i18n="categoryLabel">Category</label><select id="categoryFilter"><option value="all">All categories</option></select>
