@@ -18,3 +18,7 @@ Use for satellite scenes, Earth Engine, STAC/COG collections, cloud masking and 
 7. Report independent computational evidence and failures; do not assert native Earth Engine/GDAL correctness from documentation-only checks.
 
 Read [STAC/COG workflow](../../examples/remote-sensing/STAC_COG_WORKFLOW.md), [production workflows](../../references/production-workflows.md) and [quality benchmark](../../docs/QUALITY_BENCHMARK.md).
+
+## Agent-assisted source search, not invented Earth observations
+
+Use [agentic-stac](https://github.com/opengeos/agentic-stac), [gee-agents](https://github.com/opengeos/gee-agents) and [geoai-skills](https://github.com/opengeos/geoai-skills) as independent implementation candidates only after host/auth/license checks. Query the [data catalog specialist](../geospatial-data-catalogs/SKILL.md) to find verified sources; ask [Geospatial AI Agents](../geospatial-ai-agents/SKILL.md) for schema validation, cost confirmations and reproducible provenance. Do not trust an LLM generated STAC asset URL without independently reading real item metadata.

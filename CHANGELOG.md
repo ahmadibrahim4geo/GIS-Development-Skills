@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — OpenGeoS agents and standalone GIS data source directory (2026-10-25)
+
+- Add three installable specialists for dataset catalogs, typed geospatial agents and terrain/hydrology/LiDAR workflows.
+- Add 25 distinct OpenGeoS software candidates to the project catalog (129 references) and a separate 24-entry geographic data source directory linking the owner-maintained larger database without mirroring it.
+- Add a searchable bilingual data repository tab on the website, synchronize four source counts and document upstream licenses/access distinctions.
+- Provide a deterministic offline search example, catalog validator and unit regression checks. Native GIS and upstream data endpoints remain unverified.
+
 ## Unreleased — agent routing, evidence and operational validation (2026-10-24)
 
 - Preserve the entire former core instruction text verbatim in `skills/gis-development/LEGACY_FULL_SKILL.md` and an archived reference with corrected links; shorten the active Core Skill to a task router and specialist decision tree.

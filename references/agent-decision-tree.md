@@ -8,8 +8,8 @@ Select **the delivery target**, not just the programming language. The general [
 4. Is there a database? **PostGIS/SpatiaLite:** schema, SRID, spatial index, transactional migrations, EXPLAIN plans. Don't transform coordinates by changing their SRID labels.
 5. Raster/vector algorithms, massive features, reprojections? Route to **geospatial data processing**; use windowed raster reads and chunking where measurements justify them.
 6. Satellite imagery/STAC/COG/Earth Engine? Route to **remote sensing pipelines** and data discovery. Verify sensor scales, per-pixel QA and target grid.
-7. GIS data or live services? **Find provider:** data discovery. **Use HTTP endpoints:** API integration, quotas, auth and provenance. Hosted WMS map tiles aren't necessarily analysis rasters.
-8. GIS desktop standalone? Use Desktop skill, with a renderer and spatial computation layer separated.
+7. GIS data repositories, catalogs or provider directories? **Find source index:** data catalogs; **find individual provider:** data discovery. For STAC natural-language search add GeoAI agent engineering only when needed. GIS data or live services? **Find provider:** data discovery. **Use HTTP endpoints:** API integration, quotas, auth and provenance. Hosted WMS map tiles aren't necessarily analysis rasters.
+8. GIS AI agent or automation? Route to **Geospatial AI Agents** for safe tools, confirmation and evidence. DEM, river networks, terrain or point-cloud work? Add **Terrain / Hydrology / LiDAR**. GIS desktop standalone? Use Desktop skill, with a renderer and spatial computation layer separated.
 9. Coordinate systems, vertical units or datum transformation anywhere? Add CRS skill as **cross-cutting**, not an alternative.
 10. All tasks use Security, Performance (when scale matters), and Evidence Contract regardless of routed skill.
 

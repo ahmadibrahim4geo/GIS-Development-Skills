@@ -79,3 +79,9 @@ The MapLibre ecosystem offers composable controls, but no single plugin guarante
 - https://github.com/opengeos/Awesome-GEE — Earth Engine references; Earth Engine access may require authentication.
 
 **Source and attribution:** https://gishub.org/software/ and linked original repositories. This guide is independently authored.
+
+## 2026-10-25 expansion: agent automation and separated data directories
+
+- [OpenGeoS advanced engineering integration](opengeos-advanced-integration.md) compares 25 additional OpenGeoS implementation candidates including QGIS CLI, STAC agents, raster rendering, DuckDB/GeoParquet and agent safety.
+- [Geospatial data repositories](geospatial-data-repositories.md) provides a **separate 24-entry searchable source directory**, linked to the user's [GIS Data Repositories Professional 2026](https://github.com/ahmadibrahim4geo/gis-data-repositories-professional-2026) rather than duplicating thousands of third-party links.
+- The [software catalog](project-catalog.json), [API providers catalog](free-geospatial-apis.json), and [data repository catalog](geospatial-data-repositories.json) have different purposes: code selection, tested-or-untested service discovery, and broad datasets/portals. No directory establishes API entitlements.

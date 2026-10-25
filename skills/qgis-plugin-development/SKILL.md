@@ -34,3 +34,7 @@ Choose this when building QGIS Processing providers or installable interface plu
 - https://github.com/opengeos/qgis-plugin-template
 - https://github.com/opengeos/qgis-stac-plugin
 - https://github.com/opengeos/qgis-nasa-opera-plugin
+
+## Agent-aware QGIS patterns
+
+Study [cli-anything-qgis](https://github.com/opengeos/cli-anything-qgis) for machine-readable QGIS operations, [qgis-whitebox-agent](https://github.com/opengeos/qgis-whitebox-agent) for Processing schema discovery and [qgis-nasa-earthdata-plugin](https://github.com/opengeos/qgis-nasa-earthdata-plugin) for collection search/download queues. Route tool-safety policy to [Geospatial AI Agents](../geospatial-ai-agents/SKILL.md). Require exact QGIS/Python/Qt version, optional plugins, manual project open/save, data validation and observable output: no command is 'working' merely because its toolbar button is drawn.

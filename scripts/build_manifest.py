@@ -13,6 +13,7 @@ def derived(root=ROOT):
     root = Path(root)
     projects = json.loads((root / "references/project-catalog.json").read_text(encoding="utf-8"))["projects"]
     apis = json.loads((root / "references/free-geospatial-apis.json").read_text(encoding="utf-8"))["services"]
+    repositories = json.loads((root / "references/geospatial-data-repositories.json").read_text(encoding="utf-8"))["repositories"]
     changelog = (root / "CHANGELOG.md").read_text(encoding="utf-8")
     match = re.search(r"(?m)^## (\d+\.\d+\.\d+)\s", changelog)
     if not match:
@@ -23,8 +24,10 @@ def derived(root=ROOT):
         "skill_count": len(list((root / "skills").glob("*/SKILL.md"))),
         "reference_count": len(projects),
         "api_count": len(apis),
+        "data_repository_count": len(repositories),
         "generated_from": ["skills/*/SKILL.md", "references/project-catalog.json",
-                           "references/free-geospatial-apis.json"],
+                           "references/free-geospatial-apis.json",
+                           "references/geospatial-data-repositories.json"],
         "note": "Derived source inventory. Documentation version is baseline; unreleased changes remain in CHANGELOG."
     }
 
@@ -40,6 +43,7 @@ def synchronize_text(root, data, write=False):
         (index, r'(<div class="stat"><strong>)(\d+)(</strong><span data-i18n="statSkill">)', data["skill_count"]),
         (index, r'(<strong id="projectsCount">)(\d+)(</strong>)', data["reference_count"]),
         (index, r'(<strong id="apisCount">)(\d+)(</strong>)', data["api_count"]),
+        (index, r'(<strong id="dataCount">)(\d+)(</strong>)', data["data_repository_count"]),
     ]
     changes = {}
     for path, pattern, number in replacements:
@@ -75,8 +79,8 @@ def main(argv=None):
         print("ERROR:", item)
     if problems:
         return 1
-    print("Manifest valid: {} skills / {} references / {} APIs".format(
-        data["skill_count"], data["reference_count"], data["api_count"]))
+    print("Manifest valid: {} skills / {} references / {} APIs / {} data repositories".format(
+        data["skill_count"], data["reference_count"], data["api_count"], data["data_repository_count"]))
     return 0
 
 
