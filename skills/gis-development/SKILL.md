@@ -10,7 +10,7 @@ license: MIT
 
 **Free proof-of-execution examples:** [DEM slope](../../examples/terrain-slope/README.md) and [STAC offline selection](../../examples/stac-offline/README.md) demonstrate tested, no-cost GIS artifacts. [License evidence audit](../../references/upstream-license-audit.md) separates checked code rights from unknowns; no runtime compatibility follows from a license.
 
-**Do not load every reference by default.****Do not load every reference by default.** Determine task, product, runtime, format, data size, risk and intended result first. Read [the decision tree](../../references/agent-decision-tree.md), then only the appropriate specialist and its immediate references. For blended tasks, compose just the necessary specialists; do not mistake a 3D renderer for a spatial-processing engine.
+**Do not load every reference by default.** Determine task, product, runtime, format, data size, risk and intended result first. Read [the decision tree](../../references/agent-decision-tree.md), then only the appropriate specialist and its immediate references. For blended tasks, compose just the necessary specialists; do not mistake a 3D renderer for a spatial-processing engine.
 
 ## Choose specialists
 
