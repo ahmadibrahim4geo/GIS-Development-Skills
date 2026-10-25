@@ -32,7 +32,7 @@ class EarthViewIntegrationTests(unittest.TestCase):
                      "skills/remote-sensing-pipelines/SKILL.md",
                      "skills/geospatial-api-integration/SKILL.md"):
             self.assertIn("earth-view-architecture.md", (ROOT / path).read_text(encoding="utf-8"))
-        self.assertIn('id="projectsCount">130<', self.page)
+        self.assertIn('id="projectsCount">{}<'.format(len(self.project["projects"])), self.page)
         self.assertIn("lang-ar", self.page)
         self.assertIn("lang-en", self.page)
 
