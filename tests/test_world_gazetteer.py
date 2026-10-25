@@ -66,7 +66,8 @@ class WorldGazetteerTests(unittest.TestCase):
             self.assertEqual(1, g.import_tsv(self.db, name, batch_size=1))
             self.assertEqual("سوهاج", g.search_places(self.db, "سوهاج")[0]["name"])
             visible = g.viewport_labels(self.db, (30, 25, 33, 28), 3000000)
-            self.assertEqual(1, len(visible))
+            self.assertIn("سوهاج", [item["name"] for item in visible])
+            self.assertEqual(2, len(visible))
 
 
 if __name__ == "__main__":
