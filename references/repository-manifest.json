@@ -2,16 +2,6 @@
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
   "skill_count": 15,
-  "reference_count": 138,
-  "api_count": 52,
-  "data_repository_count": 24,
-  "generated_from": [
-    "skills/*/SKILL.md",
-    "references/project-catalog.json",
-    "references/free-geospatial-apis.json",
-    "references/geospatial-data-repositories.json"
-  ],
-  "note": "Derived source inventory. Documentation version is baseline; unreleased changes remain in CHANGELOG.",
   "skill_ids": [
     "arcgis-toolbox-engineering",
     "coordinate-reference-systems",
@@ -28,5 +18,15 @@
     "remote-sensing-pipelines",
     "spatial-databases",
     "terrain-hydrology-lidar"
-  ]
+  ],
+  "reference_count": 138,
+  "api_count": 52,
+  "data_repository_count": 24,
+  "generated_from": [
+    "skills/*/SKILL.md",
+    "references/project-catalog.json",
+    "references/free-geospatial-apis.json",
+    "references/geospatial-data-repositories.json"
+  ],
+  "note": "Derived source inventory. Documentation version is baseline; unreleased changes remain in CHANGELOG."
 }
