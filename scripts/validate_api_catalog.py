@@ -43,12 +43,21 @@ def validate_catalog(path=CATALOG):
                     errors.append(f'{tag} invalid list {field}')
             elif not isinstance(item.get(field), str) or not item[field].strip():
                 errors.append(f'{tag} invalid {field}')
-        if item.get('access') not in ALLOWED_ACCESS:
+        access = item.get('access')
+        if not isinstance(access, str) or access not in ALLOWED_ACCESS:
             errors.append(f'{tag} unknown access type')
         for field in ('documentation_url', 'service_url', 'example_url'):
             if field in item:
                 value = item[field]
-                if not isinstance(value, str) or not value.startswith('https://') or ' ' in value or not urlsplit(value).hostname:
+                try:
+                    valid_url = (isinstance(value, str)
+                                 and value.startswith('https://')
+                                 and not any(char.isspace() for char in value)
+                                 and bool(urlsplit(value).hostname))
+                except ValueError:
+                    # Malformed bracketed hosts must be reported, not crash CI.
+                    valid_url = False
+                if not valid_url:
                     errors.append(f'{tag} {field} must be a valid HTTPS URL')
         ident = item.get('id')
         if not isinstance(ident, str) or not ident.strip():

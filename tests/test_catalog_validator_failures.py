@@ -54,6 +54,33 @@ class DefensiveCatalogValidationTests(unittest.TestCase):
         fixture = self.fixture(dict(schema_version="1.0", services=[record]))
         self.assertTrue(any("HTTPS URL" in e for e in self.apis.validate_catalog(fixture)))
 
+    def test_api_access_wrong_type_is_reported(self):
+        for access in ([], {}, None, 42):
+            with self.subTest(access=access):
+                record = dict(self.original_apis["services"][0], access=access)
+                fixture = self.fixture(dict(schema_version="1.0", services=[record]))
+                errors = self.apis.validate_catalog(fixture)
+                self.assertTrue(any("invalid access" in e for e in errors))
+                self.assertTrue(any("unknown access type" in e for e in errors))
+
+    def test_api_malformed_urls_are_reported(self):
+        for field in ("documentation_url", "service_url", "example_url"):
+            for url in ("https://[broken", "https://[not-an-ip]"):
+                with self.subTest(field=field, url=url):
+                    record = dict(self.original_apis["services"][0], **{field: url})
+                    fixture = self.fixture(dict(schema_version="1.0", services=[record]))
+                    errors = self.apis.validate_catalog(fixture)
+                    self.assertTrue(any(field + " must be a valid HTTPS URL" in e for e in errors))
+
+    def test_api_url_whitespace_is_reported(self):
+        for field in ("documentation_url", "service_url", "example_url"):
+            for url in ("https://example.com/\n", "https://example.com/\t"):
+                with self.subTest(field=field, url=url):
+                    record = dict(self.original_apis["services"][0], **{field: url})
+                    fixture = self.fixture(dict(schema_version="1.0", services=[record]))
+                    errors = self.apis.validate_catalog(fixture)
+                    self.assertTrue(any(field + " must be a valid HTTPS URL" in e for e in errors))
+
     def test_bad_api_catalog_root(self):
         self.assertTrue(any("root" in e for e in self.apis.validate_catalog(self.fixture([]))))
 
