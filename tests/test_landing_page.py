@@ -103,7 +103,7 @@ class LandingPageTests(unittest.TestCase):
             self.assertIn(element, paths_logo)
             self.assertIn(element, paths_icon)
         self.assertEqual(paths_logo, paths_icon)
-        nodes = {node.text: node.attrib.get("fill") for node in logo.findall(f".//{svg_ns}text")}
+        nodes = {node.text: node.attrib.get("fill") for node in logo.iter() if node.tag in (f"{svg_ns}text", f"{svg_ns}tspan") and node.text}
         self.assertEqual("#82D53E", nodes["Heart"])
         self.assertEqual("#398CE3", nodes["Geospatial"])
         self.assertEqual("#1CC8E8", nodes["Innovation"])
