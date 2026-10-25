@@ -2,6 +2,10 @@
 
 A GIS application needs more than a map view: data loading, CRS handling, layer state, style, selection, query, analysis, export, error recovery, tests, packaging and licensing.
 
+## Design study: Earth View's imagery globe
+
+The [Earth View review](earth-view-architecture.md) describes a NASA GIBS 3D globe, Copernicus Sentinel regional imagery/time-lapses, React/Three.js state and Electron packaging. It is a **source-architecture reference only** because no upstream LICENSE was observed. Its renderer and OS shell are not drop-in equivalents for CesiumJS/WPF/WebView2.
+
 ## Stack options
 
 | Need | Relevant project | Important boundary |

@@ -19,6 +19,10 @@ Use for satellite scenes, Earth Engine, STAC/COG collections, cloud masking and 
 
 Read [STAC/COG workflow](../../examples/remote-sensing/STAC_COG_WORKFLOW.md), [production workflows](../../references/production-workflows.md) and [quality benchmark](../../docs/QUALITY_BENCHMARK.md).
 
+## NASA GIBS and Copernicus globe reference
+
+[Earth View architecture](../../references/earth-view-architecture.md) separates public NASA GIBS image **visualizations** from authenticated Sentinel Process/Catalog products, dated layer previews and time-lapse mosaics. Preserve real acquisition dates and scientific band/cloud QA instead of treating screen pixels as calibrated source data.
+
 ## Agent-assisted source search, not invented Earth observations
 
 Use [agentic-stac](https://github.com/opengeos/agentic-stac), [gee-agents](https://github.com/opengeos/gee-agents) and [geoai-skills](https://github.com/opengeos/geoai-skills) as independent implementation candidates only after host/auth/license checks. Query the [data catalog specialist](../geospatial-data-catalogs/SKILL.md) to find verified sources; ask [Geospatial AI Agents](../geospatial-ai-agents/SKILL.md) for schema validation, cost confirmations and reproducible provenance. Do not trust an LLM generated STAC asset URL without independently reading real item metadata.

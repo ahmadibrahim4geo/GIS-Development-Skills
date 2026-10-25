@@ -2,6 +2,10 @@
 
 We welcome improvements to platform workflows, vetted libraries, examples, tests, translations and documentation.
 
+## Source intake must update all surfaces
+
+Follow the [atomic source intake workflow](references/source-intake-workflow.md) for every new tool, API, dataset directory or project. Update the relevant JSON, specialist instructions, references, bilingual README/index, changelog, derived counts and tests together. A public repository without an explicit license is **reference-only**, not safe to copy.
+
 ## Proposing a library
 
 1. Open an issue with the **exact GitHub owner/repo URL** (names like EarthMapper or GeoLibra are ambiguous).

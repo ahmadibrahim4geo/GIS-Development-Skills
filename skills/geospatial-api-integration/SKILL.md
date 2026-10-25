@@ -6,6 +6,8 @@ license: MIT
 
 # Geospatial API Integration
 
+Read [Earth View's external imagery API review](../../references/earth-view-architecture.md) when implementing a globe: reuse the existing NASA GIBS and Copernicus API records, validate WMS axis order and keep OAuth/API tokens server-side.
+
 Use this distinct integration skill when the goal is to **implement working GIS data consumers**, not merely discover a source. First consult [data discovery](../geospatial-data-discovery/SKILL.md), [provider catalog](../../references/free-geospatial-apis.md) and [52-entry JSON](../../references/free-geospatial-apis.json).
 
 For **place names, geocoding, autocomplete, and reverse lookup**, first read the ordered [Geocoding & Place Search provider guide](../../references/geocoding-place-search.md). It separates open-source engines, restricted public APIs, genuinely free quotas, test-only trials and metered commercial services. The [provider JSON catalog](../../references/free-geospatial-apis.json) uses `category=geocoding` and `pricing_group`. Do not assume an autocomplete request is equivalent to a user search or that a trial is a production allowance.

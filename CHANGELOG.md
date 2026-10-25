@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — Earth View and synchronized source intake (2026-10-25)
+
+- Review Earth View's Three.js globe, NASA GIBS/Sentinel imagery, time-lapse, Electron and optional AI architecture, documenting upstream missing license and T0-only evidence.
+- Add as 130th project; update web/desktop/remote-sensing/API skills and the bilingual index/READMEs without duplicating existing NASA/Copernicus APIs.
+- Introduce atomic catalog/skill/README/index/manifest update checklist and additional count-drift regression validation.
+
 ## Unreleased — OpenGeoS agents and standalone GIS data source directory (2026-10-25)
 
 - Add three installable specialists for dataset catalogs, typed geospatial agents and terrain/hydrology/LiDAR workflows.

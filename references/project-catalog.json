@@ -2698,6 +2698,31 @@
       "tested_by_repository": false,
       "native_runtime_verified": false,
       "license_verified": false
+    },
+    {
+      "name": "Earth View (colincode0)",
+      "url": "https://github.com/colincode0/earth-view",
+      "category": "web-mapping",
+      "role": "reference-satellite-globe-application",
+      "platforms": [
+        "web",
+        "desktop",
+        "react",
+        "threejs",
+        "electron",
+        "remote-sensing"
+      ],
+      "description": "React/Three.js NASA GIBS globe, Copernicus Sentinel regional viewing, temporal imagery, and Electron desktop app; source architecture reference only.",
+      "reviewed_on": "2026-10-25",
+      "license": "no-license-file-observed-as-of-2026-10-25",
+      "integration": "architecture-reference-only-no-code-copy",
+      "source_availability": "public-code-readmes-and-four-codex-skills",
+      "provenance": "README, extended README, package.json, desktop README, provider modules and .codex/skills inspected 2026-10-25; GitHub license null; runtime untested.",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "license_verified": false
     }
   ]
 }

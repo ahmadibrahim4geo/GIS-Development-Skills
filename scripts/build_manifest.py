@@ -39,6 +39,8 @@ def synchronize_text(root, data, write=False):
     index = root / "index.html"
     replacements = [
         (en, r"(<strong>)(\d+)( installable GIS skills</strong>)", data["skill_count"]),
+        (en, r"(<strong>)(\d+)( curated geospatial references</strong>)", data["reference_count"]),
+        (ar, r"(و\*\*)(\d+)( مرجعًا جغرافيًا\*\*)", data["reference_count"]),
         (ar, r"(تشمل \*\*)(\d+)( مهارة قابلة للتثبيت\*\*)", data["skill_count"]),
         (index, r'(<div class="stat"><strong>)(\d+)(</strong><span data-i18n="statSkill">)', data["skill_count"]),
         (index, r'(<strong id="projectsCount">)(\d+)(</strong>)', data["reference_count"]),

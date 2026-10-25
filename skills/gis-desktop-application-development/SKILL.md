@@ -9,6 +9,10 @@ compatibility: Requires the target desktop build toolchain and GIS runtime to ru
 
 Use this for **independent executable applications**, not ArcGIS Pro SDK add-ins or a QGIS plugin. Select host OS, packaging model, renderer and processing engine separately. A working toolbar mockup is not a completed GIS app.
 
+## External Earth View desktop reference
+
+Read [Earth View architecture](../../references/earth-view-architecture.md) for an Electron web-shell + loopback API pattern, **not** a WPF/Cesium drop-in. Upstream license not observed: no source reuse. Do not copy its plaintext desktop key storage: use OS-protected secrets, validate localhost origin/CORS and installer integrity.
+
 ## Read only what the task needs
 
 - Engineering and release acceptance: `../../references/desktop-application-engineering.md`
