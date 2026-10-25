@@ -268,6 +268,10 @@ Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-stud
 
 The API guide **does not** treat public endpoints as unlimited or licensed for any use. SoilGrids REST is marked paused; OSMF tiles and Nominatim have restrictive public usage policies.
 
+## Project Wizard — tested bilingual interaction update (25 October 2026)
+
+The [GIS Project Wizard](project-wizard.html) now produces **fully Arabic or English plans** (including platform names) and invalidates stale exports when project inputs change. It includes context-specific specialist and localization references, with a Node-backed offline interaction test covering language changes, plan generation and downloads. It remains a **browser-only planning tool**, not an agent executor or evidence of native GIS runtime tests.
+
 ## Project Wizard + Arabic GIS i18n — 25 October 2026
 
 [Launch the bilingual GIS Project Wizard](project-wizard.html) to select your target GIS platform, languages, KML/KMZ and licensing preferences, then generate and download a Markdown implementation plan. The wizard runs locally in the browser; it does **not** build software or execute a coding agent. Its suggestions must be validated in the real GIS host. Explore the [Wizard roadmap](docs/PROJECT_WIZARD_PLAN.md), [Arabic/international GIS skill](skills/gis-internationalization-arabic/SKILL.md), [KML library review](references/kml-kmz-repository-review.md) and [performance/reliability guide](docs/PERFORMANCE_RELIABILITY.md). This release incorporates the useful parts of PR #12 without replacing the newer homepage, branding, tests or core skill.
