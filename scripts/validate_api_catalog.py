@@ -9,7 +9,20 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / 'references' / 'free-geospatial-apis.json'
 REQUIRED = ('id', 'name', 'category', 'documentation_url', 'service_url',
             'access', 'authentication', 'coverage', 'formats', 'limits',
-            'attribution', 'use_cases', 'caveat', 'verified_on')
+            'attribution', 'use_cases', 'caveat', 'verified_on', 'cost_tier')
+ACCESS_TO_TIER = {
+    'self-hosted-open-source': 'free-self-hosted',
+    'free-noncommercial': 'free-conditional',
+    'free-key-required': 'free-conditional',
+    'free-registration': 'free-conditional',
+    'free-limited': 'free-conditional',
+    'public-fair-use': 'free-conditional',
+    'public-with-asset-restrictions': 'free-conditional',
+    'restricted-public': 'restricted',
+    'temporarily-unavailable': 'unavailable',
+    'commercial-metered': 'commercial',
+    'free-trial': 'trial',
+}
 ALLOWED_ACCESS = {'free-noncommercial', 'free-key-required', 'free-registration',
                   'free-limited', 'public-fair-use', 'public-with-asset-restrictions',
                   'restricted-public', 'temporarily-unavailable', 'self-hosted-open-source',
@@ -50,6 +63,10 @@ def validate_catalog(path=CATALOG):
         access = item.get('access')
         if not isinstance(access, str) or access not in ALLOWED_ACCESS:
             errors.append(f'{tag} unknown access type')
+        if isinstance(access, str) and access in ACCESS_TO_TIER and item.get('cost_tier') != ACCESS_TO_TIER[access]:
+            errors.append(f'{tag} cost_tier incompatible with access')
+        if not isinstance(item.get('cost_tier'), str) or item.get('cost_tier') not in set(ACCESS_TO_TIER.values()):
+            errors.append(f'{tag} unknown cost_tier')
         for field in ('documentation_url', 'service_url', 'example_url'):
             if field in item:
                 value = item[field]

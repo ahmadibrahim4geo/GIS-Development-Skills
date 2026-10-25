@@ -2,6 +2,7 @@
 
 A new GIS project, dataset directory, API or specialist must update all relevant files **in the same pull request**, not just one source list.
 
+0. **Free-first gate:** identify free execution, paid host, trial, academic/noncommercial or cloud credit requirements using [free-first policy](free-first-policy.md), and keep structured API cost_tier aligned with access.
 1. **Identify the resource:** add new code only to [project-catalog.json](project-catalog.json), data portals to [geospatial-data-repositories.json](geospatial-data-repositories.json), and distinct web APIs to [free-geospatial-apis.json](free-geospatial-apis.json). Check existing canonical IDs to prevent duplicates.
 2. **Verify provenance and license:** owner/repo and original service, recent README/source, supported platforms, rights, dependencies, authentication, imagery/API terms and whether actual execution occurred. Public code without a LICENSE does not authorize copying it.
 3. **Update skills and tools:** amend the relevant domain `skills/*/SKILL.md`, reference guide, safety/QA rules and example only when appropriate. Keep lightweight core router short.

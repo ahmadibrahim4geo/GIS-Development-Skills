@@ -81,6 +81,12 @@
     @media(max-width:900px){.nav-links{display:none}.hero{grid-template-columns:1fr;gap:40px;padding-top:63px;min-height:auto}.hero-visual{max-width:570px;width:100%;margin:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:640px){.container{width:calc(100% - 30px)}.nav{min-height:68px}.brand img{width:165px}.nav-git{display:none}.hero{padding:52px 0 34px}.hero-visual{min-height:300px;padding:18px}.globe-art{max-height:198px}h1{font-size:40px;letter-spacing:-1.5px}.stats{grid-template-columns:repeat(2,1fr);gap:9px;padding-bottom:28px}.stat{padding:15px}.stat strong{font-size:28px}.grid,.results,.paths{grid-template-columns:1fr}.results{padding:0 14px 14px}.explorer-top{padding:15px}.filters{padding:15px}.filters select{width:100%}.section-head{display:block}.workflow{gap:10px}.cta{padding:24px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.feature{transition:none}}
+.skill-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.skill-link{padding:15px;border:1px solid var(--stroke);border-radius:12px;background:var(--panel);color:var(--text);text-decoration:none;font-size:14px;font-weight:700}.skill-link:hover{border-color:var(--mint)}
+.more-wrap{display:flex;justify-content:center;padding:0 22px 20px}.more-btn{padding:10px 19px;background:var(--panel2);border:1px solid var(--stroke);border-radius:10px;color:var(--text);cursor:pointer;font-weight:700}
+.more-btn[hidden],#costFilterWrap[hidden]{display:none}
+.limit-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+@media(max-width:900px){.skill-directory{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.skill-directory{grid-template-columns:1fr}}
     .api-expansion{margin:0;padding:12px 21px;border-bottom:1px solid var(--stroke);background:rgba(92,208,186,.07);color:var(--muted);font-size:13px;line-height:1.7}
   html[lang='ar'] .api-expansion{direction:rtl;text-align:right}
 </style>
@@ -167,6 +173,13 @@
   </section>
 
 
+  <section id="all-skills" class="container">
+    <div class="section-head"><div><span class="overline" data-i18n="skillsDirectoryLabel">ALL INSTALLABLE SKILLS</span>
+    <h2 data-i18n="skillsDirectoryTitle">Browse all 15 specialties.</h2><p data-i18n="skillsDirectoryDesc">Every actual specialist, with its own source and free-use terms.</p></div></div>
+    <div class="skill-directory" id="skillDirectory" aria-live="polite"><a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills" data-i18n="fallbackSkills">Open full skills directory ↗</a></div>
+    <p><a class="fine-link" href="references/free-first-policy.md" data-i18n="freePolicyLink">No-cost first and paid-host exceptions ↗</a></p>
+  </section>
+
   <section id="examples" class="container">
     <div class="section-head"><div>
       <span class="overline" data-i18n="examplesOverline">REPRODUCIBLE WORKFLOWS</span>
@@ -201,12 +214,26 @@
     <div class="explorer">
       <p class="api-expansion"><a class="fine-link" href="references/blue-marble-global-mapper.md"><span class="lang-en">New: Blue Marble Geographics / Global Mapper — official GitHub forks, GMS/Python scripting, commercial SDK and 3D terrain guidance ↗</span><span class="lang-ar">جديد: Blue Marble وGlobal Mapper — مشاريع GitHub، سكربتات GMS وPython، SDK التجاري والتضاريس ثلاثية الأبعاد ↗</span></a></p>
       <p class="api-expansion"><a class="fine-link" href="references/earth-view-architecture.md"><span class="lang-en">New Earth View architecture review: NASA GIBS 3D globe, Sentinel imagery, time-lapse and Electron. Upstream license not observed ↗</span><span class="lang-ar">جديد: دراسة مشروع Earth View — الكرة الأرضية ثلاثية الأبعاد وSentinel والتتابع الزمني وElectron. لم يُعثر على ترخيص المصدر ↗</span></a></p>
+      <p class="api-expansion"><a class="fine-link" href="references/free-first-policy.md"><span class="lang-en">Free-first: local GIS tools and free-tier services before optional commercial vendors ↗</span><span class="lang-ar">المجاني أولًا: أدوات GIS المحلية والخدمات المجانية بشروطها قبل الخيارات التجارية ↗</span></a></p>
       <p class="api-expansion" data-i18n="apiExpansion">52 curated GIS APIs including GEBCO_2026 seabed/land terrain, boundaries, population, hazards, air quality, routing and biodiversity; check all provider limits and licences.</p>
       <p class="api-expansion"><a class="fine-link" href="references/geospatial-data-repositories.md"><span class="lang-en">New: 24 curated GIS data directories and provider portals · connected to the GIS Data Repositories Professional 2026 master directory ↗</span><span class="lang-ar">جديد: 24 فهرسًا وبوابةً للبيانات الجغرافية · مرتبطة بدليل GIS Data Repositories Professional 2026 الشامل ↗</span></a></p>
       <p class="api-expansion"><a class="fine-link" href="references/geocoding-place-search.md"><span class="lang-en">Geocoding / place search: 15 providers ranked from free to commercial ↗</span><span class="lang-ar">البحث عن الأماكن والمعالم: ١٥ مزودًا من المجاني إلى التجاري ↗</span></a></p>
       <div class="explorer-top"><div class="tabs" role="tablist" aria-label="Catalog type"><button class="tab" id="projectsTab" type="button" role="tab" aria-selected="true" aria-controls="catalogResults" data-i18n="projectsTab">Projects & libraries</button><button class="tab" id="apisTab" type="button" role="tab" aria-selected="false" aria-controls="catalogResults" data-i18n="apisTab">GIS APIs & data</button><button class="tab" id="repositoriesTab" type="button" role="tab" aria-selected="false" aria-controls="catalogResults" data-i18n="repositoriesTab">Data repositories</button></div><span class="chip" id="shownCount" aria-live="polite">Loading…</span></div>
-      <div class="filters"><label class="sr-only" for="searchInput">Search</label><input id="searchInput" type="search" autocomplete="off" placeholder="Search names, platforms or descriptions…"><label class="sr-only" for="categoryFilter">Category</label><select id="categoryFilter"><option value="all">All categories</option></select></div>
+      <div class="filters">
+      <label class="sr-only" for="searchInput" data-i18n="searchLabel">Search sources</label><input id="searchInput" type="search" autocomplete="off" placeholder="Search names, platforms or descriptions…">
+      <label class="sr-only" for="categoryFilter" data-i18n="categoryLabel">Category</label><select id="categoryFilter"><option value="all">All categories</option></select>
+      <div id="costFilterWrap" hidden><label class="sr-only" for="costFilter" data-i18n="costLabel">Cost and access</label><select id="costFilter" aria-label="Cost and access">
+      <option value="free-only" data-i18n="freeOnly">Free-compatible only</option>
+      <option value="all" data-i18n="allTiers">All access levels</option>
+      <option value="free-conditional" data-i18n="conditional">Free with limits</option>
+      <option value="free-self-hosted" data-i18n="selfHosted">Self-hosted open source</option>
+      <option value="restricted" data-i18n="restricted">Restricted public</option>
+      <option value="trial" data-i18n="trial">Trial only</option>
+      <option value="commercial" data-i18n="commercial">Commercial / metered</option>
+      <option value="unavailable" data-i18n="unavailable">Unavailable</option>
+      </select></div></div>
       <div class="results" id="catalogResults" role="region" aria-live="polite" aria-label="Filtered catalog results"></div>
+      <div class="more-wrap"><button type="button" id="loadMoreBtn" class="more-btn" hidden>Show more</button></div>
       <div class="explorer-note"><span data-i18n="catalogDisclaimer">Live directory from versioned repository JSON · upstream terms must be checked.</span><a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/references" target="_blank" rel="noopener noreferrer" data-i18n="allRefs">View all reference files ↗</a></div>
     </div>
   </section>
@@ -282,15 +309,18 @@
   "use strict";
   const REPO="https://github.com/ahmadibrahim4geo/GIS-Development-Skills";
   const data={projects:[],apis:[],repositories:[]};
-  const state={lang:"en",tab:"projects",query:"",category:"all",ready:{projects:false,apis:false,repositories:false},failed:{projects:false,apis:false,repositories:false}};
+  let installedSkills=[];
+  const skillNames={"en":{"arcgis-toolbox-engineering":"ArcGIS toolboxes","coordinate-reference-systems":"CRS & projections","geospatial-ai-agents":"GIS AI agents","geospatial-api-integration":"GIS API integration","geospatial-data-catalogs":"Data catalogs","geospatial-data-discovery":"Data discovery","geospatial-data-processing":"Vector/raster processing","geospatial-web-mapping":"Web mapping & 3D","gis-desktop-application-development":"GIS desktop apps","gis-development":"Core skill router","global-mapper-development":"Global Mapper · licensed host","qgis-plugin-development":"QGIS plugin development","remote-sensing-pipelines":"Remote sensing","spatial-databases":"Spatial databases","terrain-hydrology-lidar":"Terrain, hydrology & LiDAR"},"ar":{"arcgis-toolbox-engineering":"أدوات ArcGIS","coordinate-reference-systems":"المساقط والإحداثيات","geospatial-ai-agents":"وكلاء الذكاء الجغرافي","geospatial-api-integration":"دمج خدمات GIS API","geospatial-data-catalogs":"فهارس البيانات الجغرافية","geospatial-data-discovery":"اكتشاف مصادر البيانات","geospatial-data-processing":"معالجة الراستر والفيكتور","geospatial-web-mapping":"خرائط الويب وثلاثية الأبعاد","gis-desktop-application-development":"تطبيقات GIS المكتبية","gis-development":"المهارة الأساسية","global-mapper-development":"Global Mapper · برنامج تجاري","qgis-plugin-development":"تطوير إضافات QGIS","remote-sensing-pipelines":"الاستشعار عن بُعد","spatial-databases":"قواعد البيانات المكانية","terrain-hydrology-lidar":"التضاريس والهيدرولوجيا وLiDAR"}};
+  const state={lang:"en",tab:"projects",query:"",category:"all",cost:"free-only",visibleLimit:24,ready:{projects:false,apis:false,repositories:false},failed:{projects:false,apis:false,repositories:false}};
   const tr={
     en:{
+      skillsDirectoryLabel:"ALL SKILLS",skillsDirectoryTitle:"Every installable GIS specialty.",skillsDirectoryDesc:"Direct access to every GIS specialist; commercial hosts are optional.",fallbackSkills:"Browse skills on GitHub ↗",freePolicyLink:"Free-first policy and vendor licensing ↗",searchLabel:"Search",categoryLabel:"Category",costLabel:"Cost and access",freeOnly:"Free-compatible only",allTiers:"All tiers",conditional:"Free with conditions",selfHosted:"Self-hosted open source",restricted:"Restricted public",trial:"Trial only",commercial:"Commercial / metered",unavailable:"Unavailable",showMore:"Show more",
       navSkills:"Skills",navExplorer:"Explorer",navExamples:"Examples",navStart:"Get started",navContribute:"Contribute",authorPortraitAlt:"Ahmad Ibrahim — GIS specialist and cartographer",authorGitHubLabel:"Ahmad Ibrahim on GitHub",authorEmailLabel:"Email Ahmad Ibrahim",authorWhatsAppLabel:"Ahmad Ibrahim on WhatsApp",authorContributeLabel:"Suggest a GIS skill or tool",
       eyebrow:"Open-source • Agent-ready • GIS engineering",heroTitle:"Develop GIS.<br><em>Build with confidence.</em>",
       heroText:"A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.",
       exploreSkills:"Explore skills ↓",browseCatalog:"Browse catalog →",statSkill:"Installable agent skills",statProjects:"Curated project references",statApis:"Public GIS API entries",statTemplates:"Developer starter templates",statRepositories:"GIS data repositories",
       overlineSkills:"DEVELOPMENT PATHWAYS",skillsTitle:"One skill. Multiple GIS stacks.",skillsDesc:"Choose the right architecture for the platform instead of forcing one GIS runtime onto another.",
-      arcPro:"ArcPy, Python toolboxes, geoprocessing and application-aware testing.",arcMap:"Legacy Python and compatibility-safe script tool development.",
+      arcPro:"ArcPy toolboxes and QA (licensed ArcGIS Pro host required); see free QGIS/GDAL alternatives.",arcMap:"ArcMap legacy Python engineering (licensed host); free workflows use independent QGIS/GDAL equivalents.",
       qgis:"Processing providers, QGIS plugins and cross-version considerations.",desktop:"Qt, MapLibre, CesiumJS, and dependable geospatial desktop architecture.",
       remote:"Satellite processing, raster pipelines, reproducibility and AI research checks.",rust:"Rust GIS architecture and interactive geospatial mapping for R.",dataSkillTitle:"GIS Data Discovery",apiSkillTitle:"GIS API Integration",dataSkill:"Find appropriate geospatial providers, boundaries, population and scientific products.",apiSkill:"Connect 52 curated services with secure keys, validated data and reliable error handling.",readGuide:"Read development guide ↗",
       gmTitle:"Global Mapper Development",gmDesc:"Licensed GMS/Python/SDK automation and Blue Marble 3D/photogrammetry forks.",
@@ -312,12 +342,13 @@
       error:"The live catalog could not be loaded. Open this site through GitHub Pages or browse the source JSON on GitHub.",openSource:"Open source / docs ↗",openAPI:"Provider documentation ↗",openRepository:"Visit data catalog ↗"
     },
     ar:{
+      skillsDirectoryLabel:"دليل المهارات",skillsDirectoryTitle:"جميع مهارات GIS المتاحة.",skillsDirectoryDesc:"روابط مباشرة لكل مهارة؛ البرامج التجارية اختيارية وفق الترخيص.",fallbackSkills:"فتح جميع المهارات على GitHub ↗",freePolicyLink:"سياسة المجاني أولًا والتراخيص ↗",searchLabel:"البحث",categoryLabel:"التصنيف",costLabel:"التكلفة والإتاحة",freeOnly:"المتاح مجانًا بشروطه",allTiers:"كل المستويات",conditional:"مجاني بقيود",selfHosted:"استضافة ذاتية مفتوحة المصدر",restricted:"عام بشروط صارمة",trial:"تجربة فقط",commercial:"تجاري / مدفوع",unavailable:"غير متاح",showMore:"عرض المزيد",
       navSkills:"المهارات",navExplorer:"استكشاف المصادر",navExamples:"الأمثلة",navStart:"ابدأ هنا",navContribute:"المساهمة",authorPortraitAlt:"أحمد إبراهيم — أخصائي نظم معلومات جغرافية وكارتوجرافي",authorGitHubLabel:"حساب أحمد إبراهيم على GitHub",authorEmailLabel:"إرسال بريد إلكتروني إلى أحمد إبراهيم",authorWhatsAppLabel:"التواصل مع أحمد إبراهيم عبر واتساب",authorContributeLabel:"اقتراح مهارة أو أداة جديدة",
       eyebrow:"مفتوح المصدر • مخصص للوكلاء البرمجيين • تطوير GIS",heroTitle:"طوّر أدوات GIS.<br><em>على أسس هندسية موثوقة.</em>",
       heroText:"مهارة برمجية ودليل مصادر مُنظّم لتطوير أدوات ArcGIS وإضافات QGIS والخرائط ثنائية وثلاثية الأبعاد وتطبيقات سطح المكتب ومعالجة البيانات الجغرافية.",
       exploreSkills:"استكشف المهارات ↓",browseCatalog:"تصفح الدليل ←",statSkill:"مهارات قابلة للتثبيت",statProjects:"مرجع ومشروع جغرافي",statApis:"مصدر GIS API",statTemplates:"قوالب برمجية مبدئية",statRepositories:"دليل وبوابة بيانات جغرافية",
       overlineSkills:"مسارات التطوير",skillsTitle:"مهارة واحدة، ومسارات GIS متعددة.",skillsDesc:"اختر البنية المناسبة لكل برنامج بدلًا من افتراض أن بيئات نظم المعلومات الجغرافية متطابقة.",
-      arcPro:"برمجة ArcPy وملفات Python Toolbox وأدوات المعالجة والاختبارات داخل التطبيق.",arcMap:"تطوير أدوات متوافقة مع بيئات ArcMap وإصدارات Python القديمة.",
+      arcPro:"تطوير ArcPy وPython Toolbox داخل ArcGIS Pro المرخص، مع بدائل مجانية باستخدام QGIS وGDAL.",arcMap:"تطوير ArcMap بإصدار Python القديم داخل البرنامج المرخص، مع مسارات QGIS/GDAL مجانية مستقلة.",
       qgis:"إضافات QGIS وخوارزميات Processing وفروق الإصدارات.",desktop:"تطبيقات سطح المكتب والخرائط عبر Qt وMapLibre وCesiumJS.",
       remote:"معالجة المرئيات والأرصاد وتدفقات البيانات النقطية والتحقق من نماذج الذكاء الاصطناعي.",rust:"بنية برامج GIS بلغة Rust والخرائط التفاعلية باستخدام R.",dataSkillTitle:"اكتشاف البيانات الجغرافية",apiSkillTitle:"دمج خدمات GIS API",dataSkill:"اختيار مصادر الحدود والسكان والبيانات الجغرافية والعلمية المناسبة.",apiSkill:"ربط 52 خدمة API بإدارة آمنة للمفاتيح والتحقق من البيانات والأخطاء.",readGuide:"عرض الدليل البرمجي ↗",
       gmTitle:"تطوير Global Mapper",gmDesc:"أتمتة GMS وPython وSDK التجاري ومراجع Blue Marble ثلاثية الأبعاد والمسح التصويري.",
@@ -339,7 +370,7 @@
       error:"تعذر تحميل الفهرس. افتح الموقع عبر GitHub Pages أو تصفّح ملفات JSON داخل GitHub.",openSource:"المصدر أو التوثيق ↗",openAPI:"توثيق مقدم الخدمة ↗",openRepository:"فتح فهرس البيانات ↗"
     }
   };
-  const els={results:document.getElementById("catalogResults"),search:document.getElementById("searchInput"),category:document.getElementById("categoryFilter"),count:document.getElementById("shownCount"),lang:document.getElementById("langBtn")};
+  const els={results:document.getElementById("catalogResults"),search:document.getElementById("searchInput"),category:document.getElementById("categoryFilter"),cost:document.getElementById("costFilter"),more:document.getElementById("loadMoreBtn"),count:document.getElementById("shownCount"),lang:document.getElementById("langBtn")};
   function T(k){return tr[state.lang][k]||k;}
   function setLanguage(lang){
     state.lang=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
@@ -349,9 +380,21 @@
     document.querySelectorAll("[data-i18n-aria]").forEach(e=>e.setAttribute("aria-label",T(e.dataset.i18nAria)));
     document.querySelectorAll("[data-i18n-html]").forEach(e=>{if(e.dataset.i18nHtml==="heroTitle")e.innerHTML=T("heroTitle");});
     els.search.placeholder=T("search");
-    render();
+    els.cost.setAttribute("aria-label",T("costLabel"));
+    renderSkills();render();
   }
   function build(tag,className,txt){const el=document.createElement(tag);if(className)el.className=className;if(txt!==undefined)el.textContent=txt;return el;}
+  function renderSkills(){
+    const target=document.getElementById("skillDirectory");
+    if(!installedSkills.length)return;
+    target.replaceChildren();
+    installedSkills.forEach(id=>{
+      if(typeof id!=="string"||!/^[a-z0-9-]+$/.test(id))return;
+      const a=build("a","skill-link",skillNames[state.lang][id]||id.replace(/-/g," "));
+      a.href=REPO+"/blob/main/skills/"+id+"/SKILL.md";
+      a.target="_blank";a.rel="noopener noreferrer";target.appendChild(a);
+    });
+  }
   function categories(){
     const rows=data[state.tab]||[];
     const previous=state.category;
@@ -365,11 +408,13 @@
     categories();
     const needle=state.query.toLocaleLowerCase();
     const filtered=rows.filter(x=>(state.category==="all"||x.category===state.category)&&
+      (state.tab!=="apis"||state.cost==="all"||(state.cost==="free-only"?["free-self-hosted","free-conditional"].includes(x.cost_tier):x.cost_tier===state.cost))&&
       [x.name,x.description,x.notes,x.category,x.type,x.coverage,x.origin,(x.platforms||[]).join(" "),x.use_cases?x.use_cases.join(" "):"",(x.access||""),(x.pricing_group||"")].join(" ").toLocaleLowerCase().includes(needle));
      // For a geocoding-only filter, show open-source / free entries before paid services.
      const rank={"self-hosted-open-source":0,"public-fair-use":1,"free-with-quota":2,"trial-only":3,"commercial":4};
      if(state.tab==="apis"&&state.category==="geocoding")filtered.sort((a,b)=>(rank[a.pricing_group]??99)-(rank[b.pricing_group]??99));
     els.count.textContent=state.ready[state.tab]?filtered.length+" "+T("results"):T("loading");
+    els.more.hidden=true;
     els.results.replaceChildren();
     if(state.failed[state.tab]){
       const error=build("div","error",T("error")+" ");
@@ -380,17 +425,17 @@
     }
     if(!state.ready[state.tab]){els.results.appendChild(build("div","error",T("loading")));return;}
     if(!filtered.length){els.results.appendChild(build("div","error",T("none")));return;}
-    filtered.slice(0,60).forEach(entry=>{
+    filtered.slice(0,state.visibleLimit).forEach(entry=>{
       const box=build("article","result"),head=build("div","result-head");
       head.appendChild(build("h3","",entry.name||"Unnamed source"));
       head.appendChild(build("span","chip",(state.tab==="repositories"?(entry.type||"directory"):(entry.category||"GIS")).replace(/-/g," ")));
       box.appendChild(head);
       box.appendChild(build("p","",entry.description||entry.notes||entry.use_cases?.join(" • ")||entry.coverage||""));
       if(state.tab==="apis"&&entry.access){
-         const g=entry.pricing_group;
-         const labels={en:{"self-hosted-open-source":"Open-source · self-host","public-fair-use":"Free · restricted","free-with-quota":"Free · quota","trial-only":"Free · testing only","commercial":"Commercial / metered"},ar:{"self-hosted-open-source":"مفتوح المصدر · استضافة ذاتية","public-fair-use":"مجاني · بشروط","free-with-quota":"مجاني · برصيد","trial-only":"تجربة مجانية فقط","commercial":"تجاري · مدفوع"}};
+         const g=entry.cost_tier;
+         const labels={en:{"free-self-hosted":"Open-source · self-host","free-conditional":"Free · conditions","restricted":"Strict restrictions","trial":"Trial only","commercial":"Commercial / metered","unavailable":"Unavailable"},ar:{"free-self-hosted":"مفتوح المصدر · ذاتي","free-conditional":"مجاني · بشروط","restricted":"شروط صارمة","trial":"تجريبي","commercial":"تجاري · مدفوع","unavailable":"غير متاح"}};
          box.appendChild(build("span","chip",g?(labels[state.lang][g]||g):entry.access.replace(/-/g," ")));
-         if(entry.category==="geocoding"&&entry.limits)box.appendChild(build("p","",entry.limits));
+         if(entry.limits){const limit=build("p","limit-text",entry.limits);limit.title=entry.limits;box.appendChild(limit);}
        }
       if(state.tab==="repositories"){box.appendChild(build("span","chip",entry.category+" · "+entry.coverage));}
       const link=build("a","",T(state.tab==="projects"?"openSource":state.tab==="apis"?"openAPI":"openRepository"));
@@ -398,9 +443,11 @@
       if(typeof href==="string"&&/^https:\/\/[a-z0-9.-]+\//i.test(href)){link.href=href;link.target="_blank";link.rel="noopener noreferrer";box.appendChild(link);}
       els.results.appendChild(box);
     });
+    if(filtered.length>state.visibleLimit){els.more.hidden=false;els.more.textContent=T("showMore")+" ("+(filtered.length-state.visibleLimit)+")";}
   }
   function setTab(tab){
-    state.tab=tab;state.category="all";
+    state.tab=tab;state.category="all";state.visibleLimit=24;
+    document.getElementById("costFilterWrap").hidden=tab!=="apis";
     document.getElementById("projectsTab").setAttribute("aria-selected",String(tab==="projects"));
     document.getElementById("apisTab").setAttribute("aria-selected",String(tab==="apis"));
     document.getElementById("repositoriesTab").setAttribute("aria-selected",String(tab==="repositories"));
@@ -417,8 +464,10 @@
   document.getElementById("projectsTab").addEventListener("click",()=>setTab("projects"));
   document.getElementById("apisTab").addEventListener("click",()=>setTab("apis"));
   document.getElementById("repositoriesTab").addEventListener("click",()=>setTab("repositories"));
-  els.search.addEventListener("input",e=>{state.query=e.target.value;render();});
-  els.category.addEventListener("change",e=>{state.category=e.target.value;render();});
+  els.search.addEventListener("input",e=>{state.query=e.target.value;state.visibleLimit=24;render();});
+  els.category.addEventListener("change",e=>{state.category=e.target.value;state.visibleLimit=24;render();});
+  els.cost.addEventListener("change",e=>{state.cost=e.target.value;state.visibleLimit=24;render();});
+  els.more.addEventListener("click",()=>{state.visibleLimit+=24;render();});
   els.lang.addEventListener("click",()=>setLanguage(state.lang==="en"?"ar":"en"));
   document.getElementById("copyBtn").addEventListener("click",async()=>{
     const btn=document.getElementById("copyBtn");
@@ -428,6 +477,7 @@
   setLanguage("en");
   fetch("references/repository-manifest.json",{cache:"no-store"}).then(response=>{if(!response.ok)throw new Error("Inventory unavailable");return response.json();}).then(m=>{
     if(Number.isInteger(m.skill_count))document.querySelector(".stats .stat strong").textContent=m.skill_count;
+    if(Array.isArray(m.skill_ids)){installedSkills=m.skill_ids;renderSkills();}
     if(Number.isInteger(m.reference_count))document.getElementById("projectsCount").textContent=m.reference_count;
     if(Number.isInteger(m.api_count))document.getElementById("apisCount").textContent=m.api_count;
     if(Number.isInteger(m.data_repository_count))document.getElementById("dataCount").textContent=m.data_repository_count;

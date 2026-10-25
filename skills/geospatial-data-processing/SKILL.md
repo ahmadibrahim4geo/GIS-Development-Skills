@@ -6,6 +6,8 @@ license: MIT
 
 # Geospatial Data Processing
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 Use for open-source independent processing. Complement, do **not replace**, [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md), [QGIS development](../qgis-plugin-development/SKILL.md), and the [core router](../gis-development/SKILL.md).
 
 ## Required workflow

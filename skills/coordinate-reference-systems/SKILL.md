@@ -6,6 +6,8 @@ license: MIT
 
 # Coordinate Reference Systems & Projection Intelligence
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 Use for CRS catalogs, spatial reference dialogs, projection suggestions, ArcPy/PyQGIS transformations, WKT/.prj interoperability, vertical datums, map design and standalone GIS development.
 
 ## Mandatory sources (distinct responsibilities)

@@ -6,6 +6,8 @@ license: MIT
 
 # GIS Development — Lightweight Agent Router
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 **Do not load every reference by default.** Determine task, product, runtime, format, data size, risk and intended result first. Read [the decision tree](../../references/agent-decision-tree.md), then only the appropriate specialist and its immediate references. For blended tasks, compose just the necessary specialists; do not mistake a 3D renderer for a spatial-processing engine.
 
 ## Choose specialists

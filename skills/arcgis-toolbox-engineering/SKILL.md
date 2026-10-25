@@ -6,6 +6,8 @@ license: MIT
 
 # ArcGIS Toolbox Engineering
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 Apply when creating ArcGIS Pro/ArcMap geoprocessing tools, migrating ArcPy functionality into a standalone app, or verifying claims that a toolbox "works." This guidance is informed by real, separately maintained examples from Ahmad Ibrahim. **Do not edit those examples unless asked; do not silently clone their code into this skill.**
 
 ## Entry points and evidence

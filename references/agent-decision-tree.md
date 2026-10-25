@@ -1,5 +1,7 @@
 # GIS Agent Decision Tree
 
+For general tasks start with the [free-first policy](free-first-policy.md). For a request explicitly tied to ArcGIS or Global Mapper, keep its intended host but disclose commercial licensing and independently suitable free alternatives.
+
 Select **the delivery target**, not just the programming language. The general [router](../skills/gis-development/SKILL.md) stays small; this file holds details.
 
 1. Is the user building inside ArcGIS? **ArcMap 10.x:** Python 2.7 and `arcpy.mapping` where applicable. **ArcGIS Pro:** supported Python 3 / ArcPy / `arcpy.mp`; distinguish `.pyt`, script tool and Pro SDK add-in.

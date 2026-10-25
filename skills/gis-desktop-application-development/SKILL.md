@@ -7,6 +7,8 @@ compatibility: Requires the target desktop build toolchain and GIS runtime to ru
 
 # GIS Desktop Application Development
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 Use this for **independent executable applications**, not ArcGIS Pro SDK add-ins or a QGIS plugin. Select host OS, packaging model, renderer and processing engine separately. A working toolbar mockup is not a completed GIS app.
 
 ## Global Mapper SDK is a licensed engine, not a free backend

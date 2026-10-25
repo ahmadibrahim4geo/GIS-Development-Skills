@@ -18,10 +18,12 @@ def derived(root=ROOT):
     match = re.search(r"(?m)^## (\d+\.\d+\.\d+)\s", changelog)
     if not match:
         raise ValueError("No documentation revision heading in CHANGELOG")
+    skill_ids = sorted(path.parent.name for path in (root / "skills").glob("*/SKILL.md"))
     return {
         "schema_version": "1.0",
         "documentation_version": match.group(1),
-        "skill_count": len(list((root / "skills").glob("*/SKILL.md"))),
+        "skill_count": len(skill_ids),
+        "skill_ids": skill_ids,
         "reference_count": len(projects),
         "api_count": len(apis),
         "data_repository_count": len(repositories),

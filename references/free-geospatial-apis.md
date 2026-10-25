@@ -2,6 +2,8 @@
 
 **Reviewed 2026-10-25.** Machine-readable, filterable entries: [`free-geospatial-apis.json`](free-geospatial-apis.json). "Free" is not synonymous with commercial use, unlimited requests, full-resolution scientific data, offline caching, anonymous download, or permission to distribute imagery.
 
+**Free-first policy:** see [cost tiers and the no-cost default](free-first-policy.md). Records have a structured `cost_tier`; **42** are conditionally free, **1** is self-hosted open-source, **3** are restricted-public, **1** is trial-only, **4** are commercial/metered and **1** is unavailable. These are not live entitlement guarantees. Use `python scripts/search_api_catalog.py --free-only` to exclude trial/paid/restricted/unavailable. Never confuse no-key access with unlimited use.
+
 ## Quick reference by domain
 
 | Domain | Primary providers | Access caveat |

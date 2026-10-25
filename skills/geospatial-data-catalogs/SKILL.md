@@ -6,6 +6,8 @@ license: MIT
 
 # Geospatial Data Catalogs & Source Discovery
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 Use this specialist when a user needs dataset repositories, downloadable GIS layers, catalogs/portals, archives, STAC discovery or comprehensive domain coverage. It complements, but **does not replace**, [data discovery](../geospatial-data-discovery/SKILL.md) and [API integration](../geospatial-api-integration/SKILL.md).
 
 1. Define theme, geographic coverage, era, resolution, raster/vector/point-cloud format, usage rights and intended host.

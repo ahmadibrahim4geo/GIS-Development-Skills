@@ -6,6 +6,8 @@ license: MIT
 
 # Geospatial API Integration
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 Read [Earth View's external imagery API review](../../references/earth-view-architecture.md) when implementing a globe: reuse the existing NASA GIBS and Copernicus API records, validate WMS axis order and keep OAuth/API tokens server-side.
 
 Use this distinct integration skill when the goal is to **implement working GIS data consumers**, not merely discover a source. First consult [data discovery](../geospatial-data-discovery/SKILL.md), [provider catalog](../../references/free-geospatial-apis.md) and [52-entry JSON](../../references/free-geospatial-apis.json).

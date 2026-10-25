@@ -6,6 +6,8 @@ license: MIT
 
 # Geospatial Web Mapping
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 Use when the deliverable is a web GIS map, browser-based spatial tool or mapping UI in a desktop application.
 
 ## Procedure

@@ -30,6 +30,10 @@ If the installer does not discover the skill, verify the folder `skills/gis-deve
 4. Tag the tested commit with the appropriate next semantic version (for example `vX.Y.Z` after accepting that exact commit) and publish a GitHub Release when ready.
 5. State clearly that templates are reference implementations, not GIS-app integration-tested binaries.
 
+## Free-first website QA
+
+The index should show **every specialist from manifest skill_ids**, allow paging past 60 catalog results, and default API results to free-compatible tiers while preserving optional access to paid/trial records. Run static validators and the JavaScript syntax check, then verify the published URL in a real browser for EN/AR, mobile layout, cost selector, paging, external links and network fallback. Static code/CI does not prove browser deployment. Read [free-first policy](references/free-first-policy.md).
+
 ## Publish the static homepage with GitHub Pages
 
 The complete copy-ready description, topics and Pages settings are maintained in [docs/REPOSITORY_SETTINGS.md](docs/REPOSITORY_SETTINGS.md). **Committing these files does not change GitHub About or Pages admin settings.**

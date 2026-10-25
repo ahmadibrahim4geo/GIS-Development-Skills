@@ -6,6 +6,8 @@ license: MIT
 
 # Spatial Databases
 
+**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+
 **Use for:** geodatabase schemas, SQL spatial joins, PostGIS/SpatiaLite indexes, spatial performance, and data integrity. Consult [the main skill](../gis-development/SKILL.md) for runtime routing and [CRS engineering](../coordinate-reference-systems/SKILL.md) for coordinate transformations.
 
 ## Required workflow
