@@ -16,7 +16,7 @@
 
 ## مهارة جديدة: محرك QGIS للتطبيقات المستقلة
 
-أضفنا [QGIS Engine Integration](skills/qgis-engine-integration/SKILL.md) لاستخدام QGIS Core وGUI وProcessing وServer في بناء برامج GIS مستقلة، وربط PyQGIS مع WPF وCesiumJS دون المساس بمحرك الكرة الأرضية. اقرأ [مستودعات QGIS الرسمية وهندسة التكامل](references/qgis-engine-integration.md) و[مثال الاختبار الأصلي](examples/qgis-engine/README.md). اختبارات CI وحدها لا تثبت تشغيل البرنامج، ويجب مراجعة GPL وتبعياته قبل التوزيع.
+أضفنا [QGIS Engine Integration](skills/qgis-engine-integration/SKILL.md) لاستخدام QGIS Core وGUI وProcessing وServer في بناء برامج GIS مستقلة، وربط PyQGIS بأي تطبيق مكتبي أو ويب عند الحاجة، دون فرض محرك عرض أو تغيير واجهة المشروع. اقرأ [مستودعات QGIS الرسمية وهندسة التكامل](references/qgis-engine-integration.md) و[مثال الاختبار الأصلي](examples/qgis-engine/README.md). اختبارات CI وحدها لا تثبت تشغيل البرنامج، ويجب مراجعة GPL وتبعياته قبل التوزيع.
 
 ## مهارة سجل التطوير المرقّم وذاكرة المشروع — 25 أكتوبر 2026
 

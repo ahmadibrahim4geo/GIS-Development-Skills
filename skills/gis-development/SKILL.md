@@ -22,7 +22,7 @@ license: MIT
 | ArcGIS Pro, ArcPy, `.pyt`, geoprocessing | [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md) |
 | Global Mapper / Blue Marble GMS, Python and licensed SDK | [Global Mapper Development](../global-mapper-development/SKILL.md) |
 | QGIS plugin / Processing algorithm | [QGIS Plugin Development](../qgis-plugin-development/SKILL.md) |
-| QGIS libraries, PyQGIS worker, Server or Cesium sidecar | [QGIS Engine Integration](../qgis-engine-integration/SKILL.md) |
+| Independent QGIS libraries, PyQGIS workers, Server | [QGIS Engine Integration](../qgis-engine-integration/SKILL.md) |
 | PostGIS, SpatiaLite, schema/indexes | [Spatial Databases](../spatial-databases/SKILL.md) |
 | Raster/vector, GDAL, GeoPandas, spatial batch | [Geospatial Data Processing](../geospatial-data-processing/SKILL.md) |
 | Landsat, Sentinel, Earth Engine, STAC, COG | [Remote Sensing Pipelines](../remote-sensing-pipelines/SKILL.md) |

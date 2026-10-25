@@ -1,3 +1,10 @@
+# Unreleased — QGIS engine cross-skill compatibility and HTML routing (2026-10-25)
+
+- Remove accidental single-application assumptions from generic QGIS Engine skill, references and agent prompts; retain existing project renderers and route to other specialists only when relevant.
+- Separate QGIS Plugin and QGIS Engine pathways on bilingual homepage and Explorer. Add engine-aware Project Wizard selection, synchronized source-driven pathway counters and keyboard-accessible pathway cards.
+- Extend offline regression tests for wizard English/Arabic generation, platform selection and QGIS engine link/compatibility contracts. Native QGIS execution remains an explicit separate acceptance level.
+- Preserve every previous skill, catalog, author/footer contact, CSS brand and installer/host boundary.
+
 # Unreleased — QGIS Engine Integration specialist (2026-10-25)
 
 - Add a QGIS Core/GUI/Processing/Server standalone-engine skill, upstream source/license guide and native-only PyQGIS GeoPackage readback sample.

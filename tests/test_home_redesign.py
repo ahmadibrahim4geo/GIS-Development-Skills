@@ -45,7 +45,7 @@ class StudioHomepageTests(unittest.TestCase):
                   "studioSpecialistCommand","howToExampleEn","howToExampleAr",
                   "studioChoiceEn","studioChoiceAr","cliText","copyCliBtn"):
             self.assertIn(i,self.parser.ids)
-        for slug in ("gis-development","arcgis-toolbox-engineering","qgis-plugin-development",
+        for slug in ("gis-development","arcgis-toolbox-engineering","qgis-plugin-development","qgis-engine-integration",
                      "kml-kmz-engineering","gis-desktop-application-development",
                      "geospatial-web-mapping","remote-sensing-pipelines",
                      "geospatial-data-processing"):
