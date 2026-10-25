@@ -6,6 +6,8 @@ license: MIT
 
 # Terrain, Hydrology & LiDAR
 
+When discussing Global Mapper contour/watershed/LiDAR automation, consult [Global Mapper Development](../global-mapper-development/SKILL.md) and the [Blue Marble forks/SDK guide](../../references/blue-marble-global-mapper.md). Do not confuse source-code forks for Cesium terrain/SfM processing with commercially licensed Global Mapper algorithms. Check vertical datum and NoData handling when producing or converting terrain tiles.# Terrain, Hydrology & LiDAR
+
 Use alongside [data catalogs](../geospatial-data-catalogs/SKILL.md), [geospatial processing](../geospatial-data-processing/SKILL.md), [CRS](../coordinate-reference-systems/SKILL.md) and optional [QGIS](../qgis-plugin-development/SKILL.md) / [ArcGIS](../arcgis-toolbox-engineering/SKILL.md) host.
 
 1. Confirm AOI, task (DEM/HAND/streams/crest lines, slope/contours, coastal bathymetry, LiDAR classification), cell spacing, true spatial accuracy, horizontal/vertical CRS and geoid height reference. Do not treat geographic degrees as metres.

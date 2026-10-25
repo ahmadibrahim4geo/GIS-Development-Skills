@@ -2,6 +2,10 @@
 
 A GIS application needs more than a map view: data loading, CRS handling, layer state, style, selection, query, analysis, export, error recovery, tests, packaging and licensing.
 
+## Commercial Global Mapper SDK vs open-source alternatives
+
+The [Blue Marble reference](blue-marble-global-mapper.md) distinguishes licensed Global Mapper SDK/DLL use from independently licensed Cesium Terrain Builder, 3D Tiles Tools, openMVG/OpenMVS, CGAL and model I/O forks. They are **not** a free implementation of Global Mapper or proof of engine source access.
+
 ## Design study: Earth View's imagery globe
 
 The [Earth View review](earth-view-architecture.md) describes a NASA GIBS 3D globe, Copernicus Sentinel regional imagery/time-lapses, React/Three.js state and Electron packaging. It is a **source-architecture reference only** because no upstream LICENSE was observed. Its renderer and OS shell are not drop-in equivalents for CesiumJS/WPF/WebView2.

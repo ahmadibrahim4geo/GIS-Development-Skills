@@ -9,6 +9,10 @@ compatibility: Requires the target desktop build toolchain and GIS runtime to ru
 
 Use this for **independent executable applications**, not ArcGIS Pro SDK add-ins or a QGIS plugin. Select host OS, packaging model, renderer and processing engine separately. A working toolbar mockup is not a completed GIS app.
 
+## Global Mapper SDK is a licensed engine, not a free backend
+
+The [Blue Marble Global Mapper guide](../../references/blue-marble-global-mapper.md) explains why proprietary Global Mapper DLLs and Pro tools cannot be embedded in our open-source GIS desktop app without explicit SDK and redistribution rights. For a stand-alone alternative, use independently licensed engines and test equivalent features instead of assuming source availability from Blue Marble's public GitHub forks.
+
 ## External Earth View desktop reference
 
 Read [Earth View architecture](../../references/earth-view-architecture.md) for an Electron web-shell + loopback API pattern, **not** a WPF/Cesium drop-in. Upstream license not observed: no source reuse. Do not copy its plaintext desktop key storage: use OS-protected secrets, validate localhost origin/CORS and installer integrity.
