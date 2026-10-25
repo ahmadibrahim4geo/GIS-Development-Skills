@@ -22,7 +22,8 @@ This is the user-approved **Layered Map** concept, faithfully rebuilt as **nativ
 ## Exact palette (flat fills only)
 
 - **Dark blue:** `#0B3D91` — mapping, base layer, dark typography.
-- **Blue:** `#1467C8` — GIS G and Geospatial.
+- **Blue:** `#1467C8` — primary brand blue on light backgrounds.
+- **Readable blue on dark:** `#398CE3` — the same blue family at higher contrast for G and Geospatial on charcoal.
 - **Cyan:** `#1CC8E8` — map route, GIS S, Innovation and middle layer.
 - **Green:** `#82D53E` — waypoint, I dot, Skills and Heart.
 - **White:** `#FFFFFF` — top map tile, white main text on dark mode.
