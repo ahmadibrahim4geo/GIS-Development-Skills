@@ -339,7 +339,7 @@
       contributeTitle:"Help build a better GIS developer ecosystem.",contributeDesc:"Suggest a source, report a broken link or contribute a tested improvement.",
       suggest:"Suggest an improvement ↗",guide:"Contribution guide ↗",footerNote:"Independent open-source resource. Third-party licenses and service terms remain in effect.",
       allCategories:"All categories",search:"Search names, platforms or descriptions…",results:"results",loading:"Loading catalog…",none:"No matching entries. Try another keyword or category.",
-      error:"The live catalog could not be loaded. Open this site through GitHub Pages or browse the source JSON on GitHub.",openSource:"Open source / docs ↗",openAPI:"Provider documentation ↗",openRepository:"Visit data catalog ↗"
+      error:"The live catalog could not be loaded. Open this site through GitHub Pages or browse the source JSON on GitHub.",openSource:"View project / documentation ↗",licenseUnverified:"License not independently verified",openAPI:"Provider documentation ↗",openRepository:"Visit data catalog ↗"
     },
     ar:{
       skillsDirectoryLabel:"دليل المهارات",skillsDirectoryTitle:"جميع مهارات GIS المتاحة.",skillsDirectoryDesc:"روابط مباشرة لكل مهارة؛ البرامج التجارية اختيارية وفق الترخيص.",fallbackSkills:"فتح جميع المهارات على GitHub ↗",freePolicyLink:"سياسة المجاني أولًا والتراخيص ↗",searchLabel:"البحث",categoryLabel:"التصنيف",costLabel:"التكلفة والإتاحة",freeOnly:"المتاح مجانًا بشروطه",allTiers:"كل المستويات",conditional:"مجاني بقيود",selfHosted:"استضافة ذاتية مفتوحة المصدر",restricted:"عام بشروط صارمة",trial:"تجربة فقط",commercial:"تجاري / مدفوع",unavailable:"غير متاح",showMore:"عرض المزيد",
@@ -367,7 +367,7 @@
       contributeTitle:"ساهم في بناء بيئة أفضل لمطوري GIS.",contributeDesc:"اقترح مصدرًا جديدًا أو أبلغ عن رابط معطل أو قدم تحسينًا اختبرته.",
       suggest:"اقترح تحسينًا ↗",guide:"دليل المساهمة ↗",footerNote:"مشروع مستقل مفتوح المصدر. تراخيص المشروعات والخدمات الخارجية سارية كما هي.",
       allCategories:"جميع التصنيفات",search:"ابحث بالاسم أو المجال أو الوصف…",results:"نتيجة",loading:"جارٍ تحميل الفهرس…",none:"لا توجد نتائج مطابقة. جرّب كلمة أو تصنيفًا آخر.",
-      error:"تعذر تحميل الفهرس. افتح الموقع عبر GitHub Pages أو تصفّح ملفات JSON داخل GitHub.",openSource:"المصدر أو التوثيق ↗",openAPI:"توثيق مقدم الخدمة ↗",openRepository:"فتح فهرس البيانات ↗"
+      error:"تعذر تحميل الفهرس. افتح الموقع عبر GitHub Pages أو تصفّح ملفات JSON داخل GitHub.",openSource:"عرض المشروع أو التوثيق ↗",licenseUnverified:"ترخيص الكود لم يُتحقق منه",openAPI:"توثيق مقدم الخدمة ↗",openRepository:"فتح فهرس البيانات ↗"
     }
   };
   const els={results:document.getElementById("catalogResults"),search:document.getElementById("searchInput"),category:document.getElementById("categoryFilter"),cost:document.getElementById("costFilter"),more:document.getElementById("loadMoreBtn"),count:document.getElementById("shownCount"),lang:document.getElementById("langBtn")};
@@ -437,6 +437,10 @@
          box.appendChild(build("span","chip",g?(labels[state.lang][g]||g):entry.access.replace(/-/g," ")));
          if(entry.limits){const limit=build("p","limit-text",entry.limits);limit.title=entry.limits;box.appendChild(limit);}
        }
+      if(state.tab==="projects"&&typeof entry.license==="string"){
+        const status=entry.license;
+        if(/verify|not.declared|no.license|varies|multi.license/i.test(status))box.appendChild(build("span","chip",T("licenseUnverified")));
+      }
       if(state.tab==="repositories"){box.appendChild(build("span","chip",entry.category+" · "+entry.coverage));}
       const link=build("a","",T(state.tab==="projects"?"openSource":state.tab==="apis"?"openAPI":"openRepository"));
       const href=state.tab==="apis"?entry.documentation_url:entry.url;

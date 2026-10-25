@@ -46,6 +46,12 @@ class FreeFirstSiteTests(unittest.TestCase):
             self.assertIn(token,self.html)
         self.assertNotIn("filtered.slice(0,60)",self.html)
 
+    def test_unverified_project_licenses_are_not_advertised_as_open_source(self):
+        catalog=json.loads((ROOT/"references/project-catalog.json").read_text(encoding="utf-8"))
+        self.assertGreaterEqual(sum("verify-upstream" in x.get("license","") for x in catalog["projects"]),100)
+        self.assertNotIn('openSource:"Open source / docs',self.html)
+        self.assertIn('licenseUnverified:"ترخيص الكود لم يُتحقق منه"',self.html)
+
     def test_terrain_skill_heading_repaired(self):
         text=(ROOT/"skills/terrain-hydrology-lidar/SKILL.md").read_text(encoding="utf-8")
         self.assertEqual(1,text.count("# Terrain, Hydrology & LiDAR"))
