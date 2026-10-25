@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "reviewed_on": "2026-10-24",
-  "description": "Curated GIS and Earth science service directory. The free tier refers to provider access, not unrestricted reuse of data or hosting.",
+  "reviewed_on": "2026-10-25",
+  "description": "Curated GIS, Earth-science and place-search service directory; free quotas, evaluation, production rights and hosted/self-hosted use are distinct.",
   "policy": "Verify live docs, quotas, keys, data licenses, geographic/temporal coverage and uptime before production use; never hardcode credentials; obey caching and attribution rules.",
   "access_vocabulary": {
     "free-noncommercial": "Free only within noncommercial fair-use quota; commercial use requires a separate plan or permission.",
@@ -11,7 +11,10 @@
     "public-fair-use": "Open public entry point without unlimited traffic, availability or asset redistribution promise.",
     "public-with-asset-restrictions": "Open catalog; asset access or volumes may require signing, auth or throttling.",
     "restricted-public": "Public endpoint with explicit strict usage policy, unsuitable for bulk/generic integrations.",
-    "temporarily-unavailable": "Provider reports service unavailable; use alternatives."
+    "temporarily-unavailable": "Provider reports service unavailable; use alternatives.",
+    "self-hosted-open-source": "Open-source deployable engine, not a guaranteed public hosted API.",
+    "commercial-metered": "Commercial platform requiring billing and/or paid entitlements; any free allowance is conditional.",
+    "free-trial": "Provider explicitly limits the free entitlement to testing or evaluation."
   },
   "services": [
     {
@@ -427,24 +430,28 @@
       "policy_changed": null
     },
     {
-      "id": "nominatim",
-      "name": "OSM Foundation Nominatim Public API",
+      "id": "pelias-self-hosted",
+      "name": "Pelias Open-Source Geocoder",
       "category": "geocoding",
-      "documentation_url": "https://operations.osmfoundation.org/policies/nominatim/",
-      "service_url": "https://nominatim.openstreetmap.org",
-      "access": "restricted-public",
-      "authentication": "none",
-      "coverage": "global OSM data",
+      "documentation_url": "https://pelias.github.io/pelias/",
+      "service_url": "https://github.com/pelias/pelias",
+      "access": "self-hosted-open-source",
+      "authentication": "none for self-hosted deployment",
+      "coverage": "Global depending on imported datasets",
       "formats": [
-        "JSON"
+        "JSON",
+        "GeoJSON"
       ],
-      "limits": "Absolute maximum 1 request/second per application; identifying User-Agent/Referer; no autocomplete; no systematic scraping.",
-      "attribution": "OSM contributors / ODbL.",
+      "limits": "MIT open-source geocoder; self-hosting requires compute, storage and data imports; there is NO official unlimited free hosted Pelias API.",
+      "attribution": "Pelias MIT code license; each imported dataset keeps its own terms/attribution.",
       "use_cases": [
-        "occasional manually triggered geocoding"
+        "forward/reverse geocoding",
+        "autocomplete",
+        "self-hosted multilingual POI and gazetteer search"
       ],
-      "caveat": "Public endpoint must not be embedded as a generic geocoder in code-generation/no-code/vibe coding platforms; choose self-hosted or permissioned alternatives for software products.",
-      "verified_on": "2026-10-24",
+      "caveat": "service_url is source code, not a live geocoding API endpoint. Do not equate free software with free hosting; optional hosted Geocode Earth is a separate commercial provider.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "self-hosted-open-source",
       "status": "unknown",
       "last_checked": null,
       "tested_by_repository": false,
@@ -558,26 +565,26 @@
       "policy_changed": null
     },
     {
-      "id": "geonames",
-      "name": "GeoNames Web Services",
+      "id": "open-meteo-geocoding",
+      "name": "Open-Meteo Geocoding API",
       "category": "geocoding",
-      "documentation_url": "https://www.geonames.org/export/",
-      "service_url": "https://secure.geonames.org/searchJSON",
-      "access": "free-registration",
-      "authentication": "username",
-      "coverage": "Global gazetteer",
+      "documentation_url": "https://open-meteo.com/en/docs/geocoding-api",
+      "service_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "access": "free-noncommercial",
+      "authentication": "none for noncommercial",
+      "coverage": "Worldwide location and postcode search; not a complete address/POI directory",
       "formats": [
-        "JSON",
-        "XML"
+        "JSON"
       ],
-      "limits": "Free username: 10,000 credits per day and 1,000 per hour",
-      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "limits": "Free no-key for non-commercial use; shared Open-Meteo fair-use caps (around 10,000 calls/day); commercial licensing/plan differs.",
+      "attribution": "Open-Meteo attribution/CC BY 4.0 where applicable.",
       "use_cases": [
-        "geocoding",
-        "GeoNames Web Services"
+        "city and postcode name search"
       ],
-      "caveat": "Validate transliteration and administrative names; GeoNames data CC BY",
-      "verified_on": "2026-10-24",
+      "caveat": "Use as city/location finder, not a rooftop street-address geocoder; localized labels and coverage may differ.",
+      "verified_on": "2026-10-25",
+      "example_url": "https://geocoding-api.open-meteo.com/v1/search?name=Cairo&count=5&language=ar&countryCode=EG",
+      "pricing_group": "public-fair-use",
       "status": "unknown",
       "last_checked": null,
       "tested_by_repository": false,
@@ -1082,6 +1089,376 @@
       "tested_by_repository": false,
       "native_runtime_verified": false,
       "policy_changed": null
+    },
+    {
+      "id": "nominatim",
+      "name": "OSM Foundation Nominatim Public API",
+      "category": "geocoding",
+      "documentation_url": "https://operations.osmfoundation.org/policies/nominatim/",
+      "service_url": "https://nominatim.openstreetmap.org",
+      "access": "restricted-public",
+      "authentication": "none",
+      "coverage": "global OSM data",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Absolute maximum 1 request/second per application; identifying User-Agent/Referer; no autocomplete; no systematic scraping.",
+      "attribution": "OSM contributors / ODbL.",
+      "use_cases": [
+        "manual name and address searches",
+        "reverse geocoding"
+      ],
+      "caveat": "OSMF-hosted server is NOT for autocomplete, systematic/bulk extraction, generic geocoding backends, or white-label geocoding services. Do not embed as automatic fallback in agent-generated apps; use permissioned or self-hosted alternatives.",
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null,
+      "pricing_group": "public-fair-use"
+    },
+    {
+      "id": "photon-komoot",
+      "name": "Photon OSM Geocoder (public demo / self-host)",
+      "category": "geocoding",
+      "documentation_url": "https://github.com/komoot/photon",
+      "service_url": "https://photon.komoot.io/api",
+      "access": "public-fair-use",
+      "authentication": "none on public demo",
+      "coverage": "Global OpenStreetMap-derived locations",
+      "formats": [
+        "GeoJSON"
+      ],
+      "limits": "Public demonstration is best-effort; undocumented reasonable-use threshold, throttling or bans; self-host for production volume.",
+      "attribution": "© OpenStreetMap contributors / ODbL; Photon software license separately.",
+      "use_cases": [
+        "search-as-you-type",
+        "multilingual names",
+        "reverse geocoding"
+      ],
+      "caveat": "The demo is NOT a guaranteed commercial production backend; no fixed daily allowance is published. Self-hosting requires OSM import and server resources.",
+      "verified_on": "2026-10-25",
+      "example_url": "https://photon.komoot.io/api?q=Cairo&limit=3",
+      "pricing_group": "public-fair-use",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
+    },
+    {
+      "id": "arcgis-world-geocoding",
+      "name": "Esri ArcGIS World Geocoding Service",
+      "category": "geocoding",
+      "documentation_url": "https://developers.arcgis.com/rest/geocode/",
+      "service_url": "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates",
+      "access": "free-key-required",
+      "authentication": "ArcGIS Location Platform API key / account",
+      "coverage": "Global country-dependent addresses and places",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "ArcGIS Location Platform: 20,000 free *non-stored geocodes* per month according to pricing; stored/batch stored geocodes are billed. Suggestions currently shown at $0 in platform pricing.",
+      "attribution": "Esri and licensed source attribution per service terms.",
+      "use_cases": [
+        "address/POI search",
+        "suggestions",
+        "reverse geocoding"
+      ],
+      "caveat": "Charges may be per result returned rather than per request; 'forStorage=true' changes billing. Do not cache stored geocodes on non-stored entitlement.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "free-with-quota",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
+    },
+    {
+      "id": "geoapify-geocoding",
+      "name": "Geoapify Geocoding & Autocomplete",
+      "category": "geocoding",
+      "documentation_url": "https://apidocs.geoapify.com/docs/geocoding/",
+      "service_url": "https://api.geoapify.com/v1/geocode/search",
+      "access": "free-key-required",
+      "authentication": "individual API key",
+      "coverage": "Global addresses, cities and OSM POIs",
+      "formats": [
+        "JSON",
+        "GeoJSON"
+      ],
+      "limits": "Free 3,000 credits/day, up to 5 requests/second; a typical forward/reverse/autocomplete request costs one credit. Free plan can serve commercial production with required attribution.",
+      "attribution": "Geoapify and underlying OSM contributors attribution.",
+      "use_cases": [
+        "address geocoding",
+        "autocomplete",
+        "POI text search"
+      ],
+      "caveat": "Keep API keys private; check feature-specific costs, result storage and applicable third-party dataset licenses.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "free-with-quota",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
+    },
+    {
+      "id": "geocode-maps-co",
+      "name": "geocode.maps.co Geocoding",
+      "category": "geocoding",
+      "documentation_url": "https://geocode.maps.co/plans/",
+      "service_url": "https://geocode.maps.co/search",
+      "access": "free-limited",
+      "authentication": "personal API key / demo account",
+      "coverage": "Global OSM-derived address search",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Free Demo Account advertises 25,000 requests at up to 5 requests/second, then throttling to 1 request/second; plan page says no daily limit. Verify current policy and applicability.",
+      "attribution": "Credit data suppliers and site as contract requires; OSM attribution where applicable.",
+      "use_cases": [
+        "forward/reverse geocoding",
+        "simple place search"
+      ],
+      "caveat": "Demo/free allowance is not 25,000 requests per day; do not interpret it as a daily reset, or assume commercial production permissions.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "free-with-quota",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
+    },
+    {
+      "id": "geonames",
+      "name": "GeoNames Web Services",
+      "category": "geocoding",
+      "documentation_url": "https://www.geonames.org/export/",
+      "service_url": "https://secure.geonames.org/searchJSON",
+      "access": "free-registration",
+      "authentication": "username",
+      "coverage": "Global gazetteer",
+      "formats": [
+        "JSON",
+        "XML"
+      ],
+      "limits": "10,000 credits/day and 1,000 credits/hour per username (typically one search request = one credit); attribution and CC BY apply.",
+      "attribution": "Cite named provider, original underlying dataset and applicable per-product license.",
+      "use_cases": [
+        "gazetteer of cities, villages, mountains, rivers and geographic names",
+        "alternate names and multilingual search"
+      ],
+      "caveat": "Validate transliteration and administrative names; GeoNames data CC BY",
+      "verified_on": "2026-10-24",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null,
+      "pricing_group": "free-with-quota"
+    },
+    {
+      "id": "locationiq-geocoding",
+      "name": "LocationIQ Geocoding & Autocomplete",
+      "category": "geocoding",
+      "documentation_url": "https://locationiq.com/geocoding",
+      "service_url": "https://us1.locationiq.com/v1/search",
+      "access": "free-key-required",
+      "authentication": "individual access token",
+      "coverage": "Global address and POI search",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Free 5,000 requests/day with 2 requests/second; limited commercial use requires a prominent powered-by LocationIQ link and compliance with their terms.",
+      "attribution": "LocationIQ attribution; OSM contributors where used.",
+      "use_cases": [
+        "address name search",
+        "reverse geocoding",
+        "autocomplete"
+      ],
+      "caveat": "Free terms require attribution; rate ceilings and data storage rights must be reviewed before embedding.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "free-with-quota",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
+    },
+    {
+      "id": "maptiler-geocoding",
+      "name": "MapTiler Geocoding",
+      "category": "geocoding",
+      "documentation_url": "https://docs.maptiler.com/cloud/api/geocoding/",
+      "service_url": "https://api.maptiler.com/geocoding/Cairo.json",
+      "access": "free-key-required",
+      "authentication": "individual MapTiler Cloud key",
+      "coverage": "Global OSM-derived search coverage",
+      "formats": [
+        "JSON",
+        "GeoJSON"
+      ],
+      "limits": "Free Cloud plan currently lists 1,000 search sessions/month and 100,000 total API requests/month across product use; verify free-vs-commercial plan terms and search session accounting.",
+      "attribution": "MapTiler and OSM/data source attribution.",
+      "use_cases": [
+        "forward geocoding",
+        "autocomplete",
+        "MapLibre place search"
+      ],
+      "caveat": "Search sessions and general API request quota are distinct; hosted free plan conditions may restrict commercial deployment; do not promise unrestricted production use.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "free-with-quota",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
+    },
+    {
+      "id": "opencage-geocoding",
+      "name": "OpenCage Geocoding Trial",
+      "category": "geocoding",
+      "documentation_url": "https://opencagedata.com/api",
+      "service_url": "https://api.opencagedata.com/geocode/v1/json",
+      "access": "free-trial",
+      "authentication": "personal API key",
+      "coverage": "Global addresses and named locations",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Free trial: 2,500 requests/day at 1 request/second, explicitly TESTING ONLY; ongoing production use requires a paid plan.",
+      "attribution": "OpenCage and constituent open-data attribution.",
+      "use_cases": [
+        "forward/reverse geocoding",
+        "evaluation of place names"
+      ],
+      "caveat": "Do not deploy ongoing production workloads under trial; must upgrade for sustained service use despite seemingly ample daily credits.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "trial-only",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
+    },
+    {
+      "id": "google-places-new",
+      "name": "Google Places API (New) Text Search",
+      "category": "geocoding",
+      "documentation_url": "https://developers.google.com/maps/documentation/places/web-service/text-search",
+      "service_url": "https://places.googleapis.com/v1/places:searchText",
+      "access": "commercial-metered",
+      "authentication": "Google Maps Platform project with billing + key",
+      "coverage": "Global place/business search depending on region",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Commercial SKU pricing and monthly free usage caps vary by operation/field mask; account billing must be enabled. Do not infer 2,500 daily free geocodes.",
+      "attribution": "Google Maps Platform Places policies, attribution and display restrictions.",
+      "use_cases": [
+        "named POI and establishment searches",
+        "text search",
+        "autocomplete"
+      ],
+      "caveat": "Text search is POST and requires field mask; returned data storage/caching and map usage are license-constrained; choose minimal billable fields.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "commercial",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
+    },
+    {
+      "id": "here-search",
+      "name": "HERE Geocoding & Search",
+      "category": "geocoding",
+      "documentation_url": "https://docs.here.com/geocoding-and-search/docs",
+      "service_url": "https://geocode.search.hereapi.com/v1/geocode",
+      "access": "commercial-metered",
+      "authentication": "HERE platform key and plan",
+      "coverage": "Global addresses, POIs, administrative areas",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Commercial/account-plan allowances may include a free tier; verify current plan, billable transactions and rates before use.",
+      "attribution": "HERE and relevant data-owner attribution terms.",
+      "use_cases": [
+        "address geocoding",
+        "autosuggest",
+        "POI search"
+      ],
+      "caveat": "Autosuggest uses a separate HERE endpoint and location context; enterprise features and caching rights are plan-dependent.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "commercial",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
+    },
+    {
+      "id": "mapbox-search-box",
+      "name": "Mapbox Search Box API",
+      "category": "geocoding",
+      "documentation_url": "https://docs.mapbox.com/api/search/search-box/",
+      "service_url": "https://api.mapbox.com/search/searchbox/v1/suggest",
+      "access": "commercial-metered",
+      "authentication": "Mapbox access token + billing account",
+      "coverage": "Regional/global POI and address coverage varies",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Commercial metering: /suggest + /retrieve billed by search sessions (free monthly allowance varies by pricing tier); /category and /reverse per request.",
+      "attribution": "Mapbox attribution and search data terms.",
+      "use_cases": [
+        "interactive POI autocomplete",
+        "address and place search"
+      ],
+      "caveat": "Search Box coordinates are temporary-use only without separate agreement; session_token required for suggest/retrieve; do not archive results in GIS datasets as permanent coordinates.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "commercial",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
+    },
+    {
+      "id": "tomtom-search",
+      "name": "TomTom Search / Places Search",
+      "category": "geocoding",
+      "documentation_url": "https://docs.tomtom.com/search-api/documentation/product-information/introduction",
+      "service_url": "https://api.tomtom.com/search/2/search/Cairo.json",
+      "access": "commercial-metered",
+      "authentication": "TomTom developer key and plan",
+      "coverage": "Global POIs, roads and addresses; regional differences",
+      "formats": [
+        "JSON"
+      ],
+      "limits": "Free developer allowances and commercial overage depend on the plan; verify current Search/Places pricing and per-second caps.",
+      "attribution": "TomTom Maps data attribution and license.",
+      "use_cases": [
+        "single-line fuzzy geosearch",
+        "POI search",
+        "autocomplete"
+      ],
+      "caveat": "TomTom recommends Places Search API for new applications; legacy Search v2 remains documented. Do not assume new and old API endpoints share quotas.",
+      "verified_on": "2026-10-25",
+      "pricing_group": "commercial",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null
     }
-  ]
+  ],
+  "pricing_groups": {
+    "self-hosted-open-source": "Open-source software hosted by the developer; no third-party hosted quota is implied.",
+    "public-fair-use": "Public or no-key service with specific restrictions, rate limits or non-commercial conditions.",
+    "free-with-quota": "Free service allowance under provider-specific account/key, daily/monthly limits and licensing.",
+    "trial-only": "Free for evaluation only; not an ongoing free production entitlement.",
+    "commercial": "Commercial/metered service; some billable SKUs may have free monthly allowances."
+  }
 }

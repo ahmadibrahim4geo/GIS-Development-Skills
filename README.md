@@ -45,7 +45,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>11 installable GIS skills</strong> · <strong>104 curated geospatial references</strong> · <strong>39 public API sources</strong></p>
+<p align="center"><strong>11 installable GIS skills</strong> · <strong>104 curated geospatial references</strong> · <strong>52 public API sources</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -59,6 +59,14 @@ A practical development skill and curated reference hub for building reliable Ar
 
 ---
 
+## Geocoding & place search — 2026-10-25
+
+The **52-service API directory** now includes **15 cost-ranked geocoding and geographic place-name providers**: Pelias, Photon, Open-Meteo, Nominatim, GeoNames, Geoapify, LocationIQ, geocode.maps.co, Esri, MapTiler, OpenCage, Google Places, Mapbox, HERE and TomTom.
+
+Read the [free-to-commercial selection guide](references/geocoding-place-search.md), with Arabic usage notes and sample requests; or browse [the live bilingual catalog](https://ahmadibrahim4geo.github.io/GIS-Development-Skills/). Production use rights are independent of daily free credits: OpenCage's 2,500/day tier is **for testing only**; Nominatim's OSMF server **prohibits autocomplete**.
+
+This is a source/skill improvement, not a claim of a tested live API or a completed application integration.
+
 ## GIS Agent Operating System
 
 The core skill is now a lightweight router with [the complete previous guidance preserved](references/gis-development-full-guidance.md) and a [decision tree](references/agent-decision-tree.md). New resources: [evidence form](templates/GIS_ACCEPTANCE_REPORT.md), [evidence validation](scripts/validate_evidence.py), [test fixtures](fixtures/README.md), [native GIS harness](native_tests/README.md), [security](references/geospatial-security.md), [performance](references/geospatial-performance.md), [before/after examples](references/gis-antipatterns.md), [generated manifest](references/repository-manifest.json) and [weekly provider checks](docs/SERVICE_MONITORING.md).
@@ -67,7 +75,7 @@ Previous skills, original guidance, project/API references, brand assets and bil
 
 ## Production GIS workflows and quality benchmark — 2026-10-24
 
-**Additive upgrade, without deleting any earlier skills, reference sources, templates or site features:** this repository now includes **11 installable GIS agent skills**, **104 curated project references** and **39 public GIS API entries**.
+**Additive upgrade, without deleting any earlier skills, reference sources, templates or site features:** this repository now includes **11 installable GIS agent skills**, **104 curated project references** and **52 public GIS API entries**.
 
 - [Spatial Databases](skills/spatial-databases/SKILL.md): PostGIS/SpatiaLite, spatial indexing and measured query plans.
 - [Geospatial Data Processing](skills/geospatial-data-processing/SKILL.md): vector/raster pipelines, safe coordinate transformations and reproducible checks.
@@ -91,7 +99,7 @@ The full source/skill-pack integrity audit introduced:
 - `python scripts/validate_skill_pack.py` — offline checks of all skill frontmatters, local documentation links, website resources, and synchronized project/API/skill counters.
 - [Technical audit and outstanding verification](docs/TECHNICAL_AUDIT_2026-10-24.md), with exact test limits and remaining host-runtime checks.
 
-**Current inventory:** 104 curated code/data references, 39 API service entries and **11 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
+**Current inventory:** 104 curated code/data references, 52 API service entries and **11 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
 
 ```bash
 python scripts/validate_catalog.py
@@ -185,7 +193,7 @@ Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-stud
 
 - **[GeoLibre R](https://github.com/opengeos/geolibre-r)** — MIT R `htmlwidgets` binding for interactive GIS maps in RStudio, Shiny and Quarto.
 - **[RustGIS](https://github.com/opengeos/RustGIS)** — Apache-2.0 Rust-native GIS application architecture, command bus, crates and WASM/plugin system; distinct from GeoRust.
-- **[Free/public API guide](references/free-geospatial-apis.md)** — 39 curated climate, elevation, DEM, STAC, imagery, basemap, boundaries, population, hazards, routing, ocean and biodiversity service entries, with credentials, free-tier constraints and caveats.
+- **[Free/public API guide](references/free-geospatial-apis.md)** — 52 curated climate, elevation, DEM, STAC, imagery, basemap, boundaries, population, hazards, routing, ocean and biodiversity service entries, with credentials, free-tier constraints and caveats.
 
 The API guide **does not** treat public endpoints as unlimited or licensed for any use. SoilGrids REST is marked paused; OSMF tiles and Nominatim have restrictive public usage policies.
 

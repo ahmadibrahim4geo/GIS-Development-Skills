@@ -12,7 +12,8 @@ REQUIRED = ('id', 'name', 'category', 'documentation_url', 'service_url',
             'attribution', 'use_cases', 'caveat', 'verified_on')
 ALLOWED_ACCESS = {'free-noncommercial', 'free-key-required', 'free-registration',
                   'free-limited', 'public-fair-use', 'public-with-asset-restrictions',
-                  'restricted-public', 'temporarily-unavailable'}
+                  'restricted-public', 'temporarily-unavailable', 'self-hosted-open-source',
+                  'commercial-metered', 'free-trial'}
 
 
 def validate_catalog(path=CATALOG):
@@ -28,6 +29,7 @@ def validate_catalog(path=CATALOG):
     items = data.get('services')
     if not isinstance(items, list):
         return ['services must be an array']
+    pricing_groups = set(data.get('pricing_groups', {}))
     ids = set()
     for i, item in enumerate(items):
         tag = f'services[{i}]'
@@ -43,6 +45,8 @@ def validate_catalog(path=CATALOG):
                     errors.append(f'{tag} invalid list {field}')
             elif not isinstance(item.get(field), str) or not item[field].strip():
                 errors.append(f'{tag} invalid {field}')
+        if item.get('category') == 'geocoding' and item.get('pricing_group') not in pricing_groups:
+            errors.append(f'{tag} invalid geocoding pricing_group')
         access = item.get('access')
         if not isinstance(access, str) or access not in ALLOWED_ACCESS:
             errors.append(f'{tag} unknown access type')

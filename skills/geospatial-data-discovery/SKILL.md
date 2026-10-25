@@ -8,10 +8,12 @@ license: MIT
 
 Use for DEM, climate, satellite images, environmental rasters, OSM/POIs and geospatial downloads.
 
+**Geocoding / Gazetteers:** open [the cost-ranked provider guide](../../references/geocoding-place-search.md) for forward/reverse search, POI, Arabic place names, suggestions and allowed fallbacks. Never equate OpenCage's trial quota with a production plan.
+
 ## Procedure
 
 1. Ask for or infer domain, area, period, resolution, coordinate system, output type and intended commercial/noncommercial use.
-2. Read `../../references/free-geospatial-apis.md` and its JSON catalog (39 service entries across bathymetry and boundaries, demographic, climate, water, routing, hazards, satellite and more). For supplementary discovery, read `../../references/gishub-software.md` and `../../references/project-catalog.json`.
+2. Read `../../references/free-geospatial-apis.md` and its JSON catalog (52 service entries across bathymetry and boundaries, demographic, climate, water, routing, hazards, satellite and more). For supplementary discovery, read `../../references/gishub-software.md` and `../../references/project-catalog.json`.
 3. Browse catalogs like `opengeos/geospatial-data-catalogs`, `opengeos/stac-index-catalogs`, `opengeos/NASA-CMR-STAC` as **indexes**, never assume an indexed API is available.
 4. Verify the *underlying* provider's official page for current access, key requirements, geographic/time coverage, quotas, TOS, attribution and CORS.
 5. Try a small legally accessible sample if tools/environment permit. Confirm CRS, pixel size, date, DEM vertical datum, NoData and geolocation.

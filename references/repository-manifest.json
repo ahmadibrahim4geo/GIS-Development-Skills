@@ -3,7 +3,7 @@
   "documentation_version": "0.3.5",
   "skill_count": 11,
   "reference_count": 104,
-  "api_count": 39,
+  "api_count": 52,
   "generated_from": [
     "skills/*/SKILL.md",
     "references/project-catalog.json",

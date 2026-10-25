@@ -6,7 +6,9 @@ license: MIT
 
 # Geospatial API Integration
 
-Use this distinct integration skill when the goal is to **implement working GIS data consumers**, not merely discover a source. First consult [data discovery](../geospatial-data-discovery/SKILL.md), [provider catalog](../../references/free-geospatial-apis.md) and [39-entry JSON](../../references/free-geospatial-apis.json).
+Use this distinct integration skill when the goal is to **implement working GIS data consumers**, not merely discover a source. First consult [data discovery](../geospatial-data-discovery/SKILL.md), [provider catalog](../../references/free-geospatial-apis.md) and [52-entry JSON](../../references/free-geospatial-apis.json).
+
+For **place names, geocoding, autocomplete, and reverse lookup**, first read the ordered [Geocoding & Place Search provider guide](../../references/geocoding-place-search.md). It separates open-source engines, restricted public APIs, genuinely free quotas, test-only trials and metered commercial services. The [provider JSON catalog](../../references/free-geospatial-apis.json) uses `category=geocoding` and `pricing_group`. Do not assume an autocomplete request is equivalent to a user search or that a trial is a production allowance.
 
 ## Mandatory adapter implementation workflow
 
@@ -24,6 +26,7 @@ Use this distinct integration skill when the goal is to **implement working GIS 
 
 | Category | Preferred example | Main rule |
 |---|---|---|
+| Named locations / geocoding | Pelias self-host, GeoNames, Geoapify, Open-Meteo | Respect provider usage, autocomplete bans, storage/attribution rules, and language variants; do not silently chain prohibited public servers |
 | Global bathymetry + land terrain | GEBCO_2026 WMS / CEDA OPeNDAP | WMS displays imagery only; OPeNDAP numeric grid for analysis; preserve TID source type, MSL caveats and no-marine-navigation restriction |
 | Boundaries | geoBoundaries gbOpen | Respect each source boundary edition/underlying licence |
 | Population | WorldPop v2, World Bank v2 | Modeled gridded estimate != census/national indicator |

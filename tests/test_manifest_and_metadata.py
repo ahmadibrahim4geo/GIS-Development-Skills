@@ -13,7 +13,12 @@ spec.loader.exec_module(mod)
 class InventoryMetadataTests(unittest.TestCase):
     def test_single_source_counts(self):
         data = mod.derived()
-        self.assertEqual((data["skill_count"], data["reference_count"], data["api_count"]), (11, 104, 39))
+        api_catalog = json.loads((ROOT / "references/free-geospatial-apis.json").read_text(encoding="utf-8"))
+        project_catalog = json.loads((ROOT / "references/project-catalog.json").read_text(encoding="utf-8"))
+        self.assertEqual(data["skill_count"], len(list((ROOT / "skills").glob("*/SKILL.md"))))
+        self.assertEqual(data["reference_count"], len(project_catalog["projects"]))
+        self.assertEqual(data["api_count"], len(api_catalog["services"]))
+        self.assertGreaterEqual(data["api_count"], 39)
         saved = json.loads((ROOT / "references/repository-manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(data, saved)
 

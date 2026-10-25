@@ -29,6 +29,6 @@ class ServiceMonitorTests(unittest.TestCase):
     def test_offline_report_never_calls_service(self):
         catalog = json.loads((ROOT / "references/free-geospatial-apis.json").read_text(encoding="utf-8"))
         records = mod.inspect(catalog["services"], {"open-meteo.com"}, network=False)
-        self.assertEqual(len(records), 39)
+        self.assertEqual(len(records), len(catalog["services"]))
         self.assertTrue(all(x["status"] == "unknown" for x in records))
         self.assertTrue(all("offline-only" in x["reason"] for x in records))

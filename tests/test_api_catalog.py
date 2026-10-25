@@ -62,6 +62,22 @@ class APICatalogTests(unittest.TestCase):
         self.assertIn('navigation',wms['caveat'])
         self.assertNotEqual(wms['service_url'],grid['service_url'])
 
+    def test_geocoding_pricing_groups_order_and_safety(self):
+        services=[s for s in self.catalog['services'] if s['category']=='geocoding']
+        self.assertEqual(15,len(services))
+        self.assertEqual(52,len(self.catalog['services']))
+        groups=['self-hosted-open-source','public-fair-use','free-with-quota','trial-only','commercial']
+        self.assertEqual(sorted(services,key=lambda s:groups.index(s['pricing_group'])),services)
+        by_id={s['id']:s for s in services}
+        self.assertTrue({'nominatim','geonames','pelias-self-hosted','photon-komoot',
+                         'open-meteo-geocoding','geoapify-geocoding','locationiq-geocoding',
+                         'geocode-maps-co','arcgis-world-geocoding','maptiler-geocoding',
+                         'opencage-geocoding','google-places-new','mapbox-search-box',
+                         'here-search','tomtom-search'}.issubset(by_id))
+        self.assertIn('no autocomplete',by_id['nominatim']['limits'].lower())
+        self.assertIn('TESTING ONLY',by_id['opencage-geocoding']['limits'])
+        self.assertEqual('commercial',by_id['google-places-new']['pricing_group'])
+
     def test_filter(self):
         hits=self.searcher.search(self.catalog['services'],category='terrain-elevation')
         self.assertGreaterEqual(len(hits),3)
