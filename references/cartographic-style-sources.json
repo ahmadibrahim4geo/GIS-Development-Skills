@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "last_reviewed": "2026-10-25",
-  "purpose": "Reference-only GIS style libraries, palettes and official renderer specifications. Not a bundle of redistributed assets. Imported KML/KMZ styling is preserve-first; icon catalogs only affect new or user-restyled features.",
+  "purpose": "Reference-only GIS style and icon catalog for general GIS workflows; KML/KMZ is a specialized consumer. User-owned or source-authored imported KMZ styling is authoritative. External assets are not bundled or silently recolored.",
   "sources": [
     {
       "id": "ahmad-arcmap-styles",
@@ -295,8 +295,10 @@
         "KML/KMZ authoring"
       ],
       "assets": [
+        "svg",
         "png",
-        "placemark-icons"
+        "placemark-icons",
+        "custom-color"
       ],
       "license": "CC BY-SA 3.0",
       "license_status": "upstream-declared",
@@ -305,7 +307,8 @@
       "cost": "free-with-attribution-and-sharealike",
       "kmz_use": "new-feature-only: embed asset and preserve attribution obligations",
       "recommended_for_new_kmz": false,
-      "notes": "Traditional colorful point markers; not the original copyrighted Google Earth icon collection."
+      "notes": "Since 2026-10-14, site offers customizable SVG and PNG; verify per-icon derivative/trademark conditions. CC BY-SA 3.0 credit/adapted-artwork ShareAlike; do not hotlink images. For new/user-edited features only; never overwrite imported KMZ icons.",
+      "no_hotlinking": true
     },
     {
       "id": "scott-map-icons",
@@ -427,6 +430,61 @@
       "kmz_use": "only for new/user-restyled features; PNG export and pack with relative href",
       "recommended_for_new_kmz": true,
       "notes": "Canvas pin builder is NOT an importer and must never override existing KML Style/StyleMap."
+    },
+    {
+      "id": "streamline-google-earth-placemarks",
+      "name": "Streamline — Google Earth Placemark search",
+      "url": "https://www.streamlinehq.com/icons/tag/google-earth-placemark",
+      "kind": "mixed-license-icon-discovery",
+      "platforms": [
+        "General GIS design",
+        "Desktop UI design",
+        "Web GIS",
+        "KML/KMZ new feature (approved per-asset only)"
+      ],
+      "assets": [
+        "svg",
+        "png",
+        "icon-library-search"
+      ],
+      "license": "Mixed: certain named Open Source sets CC BY 4.0; other free sets are restricted; premium requires separate license",
+      "license_status": "review-per-exact-set-and-asset",
+      "license_evidence_url": "https://help.streamlinehq.com/en/articles/5354376-streamline-free-license",
+      "redistribution": "DO NOT include default free/premium Streamline assets in selectable/reusable/icon-download manager; select explicitly licensed open-source sets and review exact terms/attribution",
+      "cost": "mixed-open-source-restricted-free-premium",
+      "kmz_use": "new-feature-only if selected source set independently permits bundling/reuse; otherwise external design inspiration only",
+      "recommended_for_new_kmz": false,
+      "icon_manager_role": "discovery-only-by-default",
+      "catalog_origin": "user-requested-three-sites",
+      "notes": "Search/category page aggregates unrelated families with different licensing; generic 'free' Streamline asset license expressly bars use as an in-app selectable, customizable or downloadable asset library. Open Source sets need own CC BY 4.0 attribution and verification; no copying gallery wholesale."
+    },
+    {
+      "id": "mapular-map-icon-creator",
+      "name": "Mapular — Map Icon Creator",
+      "url": "https://mapular.com/tools/map-icon-creator",
+      "kind": "map-marker-generator-reference",
+      "platforms": [
+        "General GIS design",
+        "Web GIS",
+        "Desktop GIS",
+        "KML/KMZ newly authored placemarks"
+      ],
+      "assets": [
+        "generated-svg",
+        "generated-png",
+        "pin-generator",
+        "icon-upload"
+      ],
+      "license": "Website says user-created outputs may be used commercially; original site/app source code is NOT offered under an identified open-source license",
+      "license_status": "output-use-declared-source-code-not-licensed",
+      "license_evidence_url": "https://mapular.com/tools/map-icon-creator",
+      "redistribution": "Use own independently implemented generator; do not copy site source/code/interface artwork; uploaded third-party logos retain their original rights",
+      "cost": "free-online-tool",
+      "kmz_use": "new-feature-only: generated PNG may be packaged inside user-authored KMZ; existing imported KML icon stays unchanged",
+      "recommended_for_new_kmz": true,
+      "icon_manager_role": "design-reference-no-source-code-reuse",
+      "catalog_origin": "user-requested-three-sites",
+      "notes": "Four pin shapes, 80+ selectable Lucide icons, color/border/logo and PNG/SVG exports; source says browser-local. Use as functional inspiration for independently implemented icon manager; no licensing assumption on platform code."
     }
   ]
 }
