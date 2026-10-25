@@ -95,7 +95,9 @@
 .hero-symbol{width:min(100%,620px)!important;height:auto!important;max-height:none!important;object-fit:contain}
 .scene-logo{width:min(100%,440px)!important;height:auto!important;object-fit:contain}
 @media(max-width:640px){.brand img{width:165px}.hero-symbol{width:100%!important}}
-</style>
+    html[lang="en"] .lang-ar, html[lang="ar"] .lang-en{display:none!important}
+    html[lang="en"] .lang-en, html[lang="ar"] .lang-ar{display:inline}
+  </style>
   <link rel="stylesheet" href="assets/brand-refresh.css">
 </head>
 <body>
@@ -199,6 +201,35 @@
         <h3 data-i18n="kmlExampleTitle">KML round-trip fixture</h3>
         <p data-i18n="kmlExampleDesc">Run an offline XML contract test before manually checking actual appearance and reopen behavior.</p>
         <span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
+    </div>
+  </section>
+
+
+  <section id="google-earth-reference" class="container" aria-labelledby="googleEarthGuideTitle">
+    <div class="section-head"><div>
+      <span class="overline"><span class="lang-en" lang="en">EARTH &amp; HISTORICAL IMAGERY</span><span class="lang-ar" lang="ar">جوجل إيرث والصور التاريخية</span></span>
+      <h2 id="googleEarthGuideTitle"><span class="lang-en" lang="en">Build better Earth explorers, grounded in real behavior.</span><span class="lang-ar" lang="ar">طوّر مستعرضًا للأرض بوظائف حقيقية قابلة للاختبار.</span></h2>
+      <p><span class="lang-en" lang="en">Engineering lessons from Google Earth Blog: accurate imagery timelines, faithful Places/KML behavior, and dynamic geospatial layers.</span><span class="lang-ar" lang="ar">دروس هندسية من مدونة Google Earth: شريط زمني يعرض تواريخ الصور الحقيقية، وإدارة Places وKML بأمانة، وطبقات مكانية ديناميكية.</span></p>
+    </div></div>
+    <div class="grid">
+      <a class="feature" href="references/google-earth-pro-engineering.md">
+        <span class="glyph">3D</span>
+        <h3><span class="lang-en" lang="en">Google Earth Pro patterns</span><span class="lang-ar" lang="ar">دليل وظائف Google Earth Pro</span></h3>
+        <p><span class="lang-en" lang="en">Places and folders, NetworkLink / Region / LOD, tours, overlays and terrain profiles with concrete acceptance checks.</span><span class="lang-ar" lang="ar">المجلدات وPlaces وروابط NetworkLink والجولات والطبقات والقطاعات التضاريسية مع اختبارات واضحة.</span></p>
+        <span class="learn"><span class="lang-en" lang="en">Read engineering reference ↗</span><span class="lang-ar" lang="ar">اقرأ المرجع الهندسي ↗</span></span>
+      </a>
+      <a class="feature" href="references/historical-imagery-timeline.md">
+        <span class="glyph">⏱</span>
+        <h3><span class="lang-en" lang="en">Historical Imagery Timeline</span><span class="lang-ar" lang="ar">شريط الصور التاريخية</span></h3>
+        <p><span class="lang-en" lang="en">Nonblocking date bar, discovered acquisitions, scene credits, play/pause, camera preservation and two-date comparison.</span><span class="lang-ar" lang="ar">شريط غير حاجب للخريطة، تواريخ التقاط مؤكدة، بيانات المصدر، تشغيل زمني ومقارنة بين تاريخين.</span></p>
+        <span class="learn"><span class="lang-en" lang="en">Explore timeline contract ↗</span><span class="lang-ar" lang="ar">اقرأ مواصفات الشريط ↗</span></span>
+      </a>
+      <a class="feature" href="skills/gis-desktop-application-development/SKILL.md">
+        <span class="glyph">APP</span>
+        <h3><span class="lang-en" lang="en">Independent desktop implementation</span><span class="lang-ar" lang="ar">تطوير مستقل لبرامج سطح المكتب</span></h3>
+        <p><span class="lang-en" lang="en">Connect WPF/CesiumJS and KML/KMZ skills; test the real installed app before claiming feature parity. No Google imagery redistribution rights implied.</span><span class="lang-ar" lang="ar">اربط WPF/CesiumJS ومهارات KML/KMZ، واختبر البرنامج المثبت فعليًا. المرجع لا يمنح حقوق استخدام صور Google.</span></p>
+        <span class="learn"><span class="lang-en" lang="en">Read desktop skill ↗</span><span class="lang-ar" lang="ar">افتح مهارة الديسكتوب ↗</span></span>
+      </a>
     </div>
   </section>
 

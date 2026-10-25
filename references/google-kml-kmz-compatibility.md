@@ -2,6 +2,10 @@
 
 Reviewed: 2026-10-25. Source of truth: [Google KML documentation](https://developers.google.com/kml), [KML Reference](https://developers.google.com/kml/documentation/kmlreference), [KMZ files](https://developers.google.com/kml/documentation/kmzarchives), [OGC KML standards 2.2 and 2.3](https://www.ogc.org/standards/kml/). This is an **engineering guide**, not a Google endorsement or evidence of a native application test. Google `gx:` extensions must be negotiated separately from core OGC KML.
 
+## Earth explorer feature integration
+
+For imported Earth documents in a native globe, use the [Google Earth Pro engineering reference](google-earth-pro-engineering.md) to implement Places bulk selection/undo, lazy NetworkLink Region/LOD, overlays and camera tours. Use the [Historical Imagery Timeline contract](historical-imagery-timeline.md) **only for separately sourced, properly dated imagery**; it must not rewrite a KML document's own TimeStamp/TimeSpan or gx:Track timeline. Links with external resources require safety limits and opt-in; no provider metadata or imagery date may be fabricated.
+
 ## Non-negotiable import behavior
 
 **Import is not re-styling.** A foreign KML/KMZ remains user-authored content. On open/reopen, preserve original style, hierarchy, geometry, labels, visibility, metadata, time, elevation semantics, camera and resources **as far as the runtime supports them**. Never force the application's default marker/color/line width on features that already specify KML styling. A new style is applied only when requested by the user, and never destructively to the source file.
