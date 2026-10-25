@@ -6,13 +6,13 @@ license: MIT
 
 # GIS Development — Agent Router
 
-**Free-first:** use [no-cost policy](../../references/free-first-policy.md). Disclose commercial host/API limits and offer verified free alternatives; never silently require payment.
+**Free-first:** use [no-cost policy](../../references/free-first-policy.md). Disclose paid limits; prefer verified free alternatives.
 
 **Offline examples:** [DEM slope](../../examples/terrain-slope/README.md), [STAC](../../examples/stac-offline/README.md). [License audit](../../references/upstream-license-audit.md) is not native proof.
 
-**Intake:** [Plan and approve free-form requests](../prompt-intent-orchestrator/SKILL.md) before GIS routing.
+**Intake:** [Global contract](../../references/repository-wide-skill-orchestration.md) → [Intent review](../prompt-intent-orchestrator/SKILL.md) → Router.
 
-**Load selectively:** use the [decision tree](../../references/agent-decision-tree.md) to select specialists; rendering is not spatial analysis.
+**Load selectively:** use the [decision tree](../../references/agent-decision-tree.md) to select specialists; rendering ≠ analysis.
 
 ## Choose specialists
 
@@ -55,7 +55,3 @@ license: MIT
 7. **References:** [projects](../../references/project-catalog.json), [APIs](../../references/free-geospatial-apis.json), [data](../../references/geospatial-data-repositories.json) require source/license verification.
 
 **More:** [full guide](../../references/gis-development-full-guidance.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
-
-## Required cross-skill orchestration
-
-Read the [repository-wide prompt, data and command flow contract](../../references/repository-wide-skill-orchestration.md). This router is invoked after the Intent Orchestrator has normalized and reviewed consequential requests. Route by delivery target, assign one owner per output, load only necessary specialists plus Security Guardian, check dependencies and conflicts, and return verified outcomes to the Development Journal. Do not allow a specialist to execute directly from an unreviewed user prompt; read-only questions need no unnecessary approval ceremony.
