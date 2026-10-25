@@ -27,3 +27,10 @@ Use when the deliverable is a web GIS map, browser-based spatial tool or mapping
 - [ ] Export, save, reopen and undo functional
 - [ ] Responsive map, long data performance, time axis accuracy
 - [ ] API terms, CRS, attribution and secrets checked
+
+## OpenGeoS deeper integration candidates
+
+- [COG/GeoTIFF client](https://github.com/opengeos/maplibre-gl-raster): inspect bands, NoData, overviews and source pixels; remote access requires CORS/range support.
+- [GeoParquet](https://github.com/opengeos/maplibre-gl-geoparquet) and [DuckDB spatial](https://github.com/opengeos/maplibre-gl-duckdb): verify spatial extension, security of SQL input, CRS and memory usage.
+- [3D Tiles](https://github.com/opengeos/maplibre-gl-3d-tiles), [historical Esri Wayback imagery releases](https://github.com/opengeos/maplibre-gl-esri-wayback), [layer controls](https://github.com/opengeos/maplibre-gl-layer-control): all need pinned compatible MapLibre versions, genuine live click tests, and upstream service rights. Wayback release date is not automatically acquisition date.
+- [OpenGeoS advanced guide](../../references/opengeos-advanced-integration.md): MapLibre plugins are not drop-in CesiumJS adapters.
