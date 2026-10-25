@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme-banner.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
+  <img src="assets/gis-brand-lockup.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
 </p>
 
 <p align="center">
