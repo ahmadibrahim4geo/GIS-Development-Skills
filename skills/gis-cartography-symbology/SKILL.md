@@ -6,6 +6,8 @@ license: MIT
 
 # GIS Cartography, Symbology & Styling
 
+**Free-first default:** Follow [no-cost GIS and upstream licensing policy](../../references/free-first-policy.md); proprietary ArcGIS hosts are optional, while individual styles/fonts retain their own rights.
+
 Use for point, line, polygon, raster, labels, legends, scientific color maps, map layouts and reusable cartographic style libraries. Load only this skill and the target host's specialist; do not load every GIS skill.
 
 ## Read first
