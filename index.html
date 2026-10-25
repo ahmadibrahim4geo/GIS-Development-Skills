@@ -888,7 +888,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       });
 
       container.innerHTML = filtered.map(item => `
-        <div role="button" tabindex="0" aria-label="${item.title}" onclick="openSkillModal('${item.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSkillModal('${item.id}')}" class="glass-card rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
+        <div role="button" tabindex="0" aria-label="${document.documentElement.getAttribute('lang') === 'ar' ? (item.titleAr || item.title) : item.title}" onclick="openSkillModal('${item.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSkillModal('${item.id}')}" class="glass-card rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-md border ${getTagBadgeClasses(item.tagColor)}">${item.tag}</span>
@@ -907,6 +907,9 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
           </div>
         </div>
       `).join('');
+      if (!filtered.length) {
+        container.innerHTML = '<p role="status" class="col-span-full rounded-2xl border border-slate-700 p-6 text-slate-300"><span data-lang="en">No matching development pathways. Try another search or category.</span><span data-lang="ar">لا توجد مسارات تطوير مطابقة. جرّب بحثًا أو تصنيفًا آخر.</span></p>';
+      }
     }
 
     function filterPathways(cat, btnEl) {
@@ -953,6 +956,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       document.querySelectorAll('[data-i18n-aria]').forEach(el=>el.setAttribute('aria-label',accessLabels[el.dataset.i18nAria]||el.getAttribute('aria-label')));
       document.getElementById('mobileMenuBtn').setAttribute('aria-label',isEn?'فتح القائمة':'Open navigation');
       closeMobileMenu();
+      renderPathways(); // refresh localized card accessibility labels and empty states
     }
 
     function setCliCommand(mode, btn) {
