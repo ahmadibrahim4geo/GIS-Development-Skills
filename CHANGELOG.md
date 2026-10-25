@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — Esri official references and Python environment audit (2026-10-25)
+
+- Review original Apache-2.0 root license files of ten additional Esri official repositories. Record evidence and host/service caveats, with no new native-runtime validation claims (138 → 148 curated project links).
+- Add offline, read-only ArcGIS Pro Python package version checker using a locally downloaded official Esri release matrix, synthetic unit tests, and a profile-aware Arcade authoring guide.
+- Expand Esri integration, ArcGIS/desktop/cartography/catalog routing, and synchronize the English/Arabic README, index homepage and derived reference manifest. No proprietary Esri runtime, imagery or credentials included.
+
 ## Unreleased — Unified Icon Manager for GIS + protected KMZ adapter (2026-10-25)
 
 - Treat icons as a general GIS library used across ArcGIS/QGIS/Cesium/web and desktop hosts, with a specialized new-KML/KMZ authoring/export adapter rather than a duplicated KMZ icon library.

@@ -45,7 +45,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>19 installable GIS skills</strong> · <strong>138 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>19 installable GIS skills</strong> · <strong>148 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -54,6 +54,14 @@ A practical development skill and curated reference hub for building reliable Ar
   <a href="CONTRIBUTING.md">Contribute</a> ·
   <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website ↗</a>
 </p>
+
+## Official Esri developer references — 25 October 2026
+
+Ten additional official Esri repositories have been reviewed and linked without duplicate entries in the [Esri integration matrix](references/esri-open-source-integration.md): ArcGIS Pro SDK AI snippets, Arcade profiles, developer troubleshooting, CAD/BIM, network analysis, Geoportal STAC/MCP, JavaScript, geocoding, elevation and raster deep learning.
+
+**Practical additions:** the [offline ArcGIS Pro Python package compatibility checker](references/esri-python-environment-compatibility.md) compares locally observed packages with the original Esri version matrix without modifying the environment. The [Arcade profile guide](references/arcgis-arcade-profiles.md) routes labeling, popup, visualization, attribute rules, dashboard and form expressions safely.
+
+Apache-2.0 sample-code licenses do not grant rights to proprietary ArcGIS products, extensions, SDK runtimes, hosted services, map imagery, third-party models or personal credentials. No Esri proprietary binaries were copied and no ArcGIS-native execution is claimed.
 
 ## GIS Security Guardian — cross-cutting protection (25 October 2026)
 
