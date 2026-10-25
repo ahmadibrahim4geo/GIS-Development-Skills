@@ -23,6 +23,10 @@ Use data distribution and units to set range/class breaks; include nulls, outlie
 | MapLibre | Style JSON, circle/line/fill/raster/heatmap/color-relief, expressions | Validate spec version, data-driven support, tile/source rules |
 | CesiumJS | Entity and material/imagery styling | Separate 3D terrain/lighting and geometry primitives from 2D style JSON |
 
+## General GIS Icon Manager and KML/KMZ adapter
+
+A single [Unified GIS Icon Manager](unified-gis-icon-manager.md) serves general GIS point markers and host-specific adapters. Search Arabic/English categories and licenses, create custom SVG/PNG markers, preview and reuse them only when rights allow. Include [Map Icons Collection SVG/PNG, Streamline mixed-license discovery, and the Mapular generator workflow](map-marker-icon-library.md); do not embed Streamline's non-open-source free assets as a reusable download/picker catalog, or copy Mapular site code. **Imported** KML/KMZ remains preservation-first; the library is for new or explicitly user-restyled features. A [standalone bilingual offline generator example](../examples/icon-manager/README.md) illustrates a working slice, not native ZEarth integration.
+
 ## Map placemark icons and KML/KMZ priority
 
 - [8 map-icon libraries and CesiumJS PinBuilder](map-marker-icon-library.md) are recorded in the source catalog with per-library code/font/icon licensing and KMZ export roles. For new user-authored placemarks, prefer CC0 Pinhead/Maki/Temaki and export a PNG in a relative `IconStyle/Icon/href` when writing portable KMZ.

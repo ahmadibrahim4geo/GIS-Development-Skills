@@ -45,6 +45,14 @@ Use this skill when a GIS application or toolbox reads, writes, converts, render
 - Do not automatically fetch NetworkLinks, remote icons, models or overlays. Require explicit user consent, restrict schemes to approved protocols, apply timeouts and size limits, and document privacy/network behavior.
 - Resolve relative resource paths within the package without allowing escape. Avoid unbounded in-memory XML trees or decompression; use streaming/chunking where practical.
 
+## Shared Icon Manager integration — KML/KMZ-specific adapter
+
+The [Unified GIS Icon Manager](../../references/unified-gis-icon-manager.md) is the shared icon library for **all GIS hosts**; KML/KMZ is a specialized consumer, not an independent library. Expose `Use Original Icon` (import default), `Preview New Icon`, `Choose New Icon` (explicit), and `Reset to Original` in a host-specific UI; selected edits should be reversible and saved to a new output unless user authorizes overwrite. Keep source document/style data separate from icon-catalog choices.
+
+For newly created placemarks only, the [offline SVG/PNG icon demo](../../examples/icon-manager/README.md) and [PNG→new KMZ example](../../examples/icon-manager/export_new_kmz.py) demonstrate generating a portable PNG and embedding a relative `IconStyle/Icon/href`, preserving source bytes and optional attribution. Default tint **white `ffffffff`** to avoid accidentally multiplying/darkening a colored PNG; apply explicit tint only when asked. If icon shape has a non-bottom hotspot, export its correct `hotSpot` rather than assuming all shapes use a pin-tip anchor. Export does not automatically change earlier imported KML/KMZ. Color values use KML aabbggrr.
+
+External candidates include CC0 Pinhead/Maki/Temaki, CC BY-SA Map Icons Collection, selective *actually open-source* Streamline sets (not standard free asset library), and independently built Mapular-inspired generator. See [license/source catalog](../../references/cartographic-style-sources.json). Never copy Mapular's site code or Streamline's non-open-source free icon inventory.
+
 ## Icon-library separation: imported source vs new placemark
 
 Treat these separately (see [preservation-first KML/KMZ contract](../../references/kml-kmz-symbol-preservation.md)):
@@ -84,6 +92,8 @@ Treat these separately (see [preservation-first KML/KMZ contract](../../referenc
 - [ ] Import never automatically overrides external source styles or changes original bytes
 - [ ] Maki/Pinhead/other open icons offered **only for new/user-restyled** objects; imported original assets persist
 - [ ] Save/reopen compares style XML/StyleMap and original icon resource hash; temporary fallback not persisted
+- [ ] KML/KMZ adapter reuses general GIS Icon Manager; `Use Original Icon` is default for imports
+- [ ] New PNG→KMZ generated with safe relative href, alpha/ABGR, hotspot and license provenance, without touching existing imported KMZ
 - [ ] Google KML official references consulted, gx extension support verified by host version
 - [ ] Explorer folder/visibility state, ExtendedData and Temporary/My Places save semantics preserved
 - [ ] Target host and supported KML constructs documented
