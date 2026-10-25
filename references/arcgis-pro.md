@@ -13,3 +13,10 @@ Official reference: https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing
 **Safe starter:** `templates/arcgis-pro-toolbox.pyt` copies feature geometries/attributes to a new destination without mutating the source.
 
 **Official resources:** https://github.com/Esri/arcpy ; https://github.com/Esri/arcgis-python-api
+
+## Additional official Esri implementation examples
+
+- [Esri ArcPy](https://github.com/Esri/arcpy) contains debugging guidance and official Python package versions per ArcGIS Pro release. Compare a local release JSON with installed packages via [the read-only checker](esri-python-environment-compatibility.md).
+- [Pro SDK code snippets](https://github.com/Esri/arcgis-pro-sdk-snippets) provide C# add-in patterns targeting Pro 3.7/.NET 10; they are distinct from ArcPy Python toolbox APIs. Inspect actual SDK, QueuedTask and editing requirements.
+- [Arcade examples](https://github.com/Esri/arcade-expressions) use their own [profile semantics](arcgis-arcade-profiles.md), not Python.
+- [Parallel network analysis](https://github.com/Esri/large-network-analysis-tools), [CAD/BIM](https://github.com/Esri/cad-bim-scripts) and [elevation GP](https://github.com/Esri/elevation-gp-python) demonstrate useful algorithms but require ArcGIS host licenses and native validation.

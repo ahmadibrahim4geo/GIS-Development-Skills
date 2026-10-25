@@ -20,7 +20,7 @@ class LicenseAuditTests(unittest.TestCase):
 
     def test_evidence_coverage_is_explicit(self):
         summary=self.audit.classify(self.catalog["projects"])
-        self.assertEqual(138,summary["total"])
+        self.assertEqual(len(self.catalog["projects"]),summary["total"])
         self.assertGreaterEqual(summary["verified_source_licenses"],8)
         self.assertEqual(summary["verified_source_licenses"]+summary["unverified_source_licenses"],summary["total"])
         self.assertEqual([],self.audit.scan(self.catalog["projects"]))

@@ -45,7 +45,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>19 installable GIS skills</strong> · <strong>138 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>19 installable GIS skills</strong> · <strong>148 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -60,6 +60,14 @@ A practical development skill and curated reference hub for building reliable Ar
 The [Google Earth Pro engineering reference](references/google-earth-pro-engineering.md) extracts practical, independently implementable features from the historical [Google Earth Blog](https://www.gearthblog.com/): Places drag/drop and bulk actions, NetworkLink/Region/LOD, KML/KMZ fidelity, tours, elevation profiles and raster overlays. The dedicated [Historical Imagery Timeline guide](references/historical-imagery-timeline.md) specifies a compact, non-blocking dock, *actual scene dates* rather than invented years, source attribution, playback, licensed multi-provider retrieval and same-viewport image comparison. Links are integrated with the [Desktop](skills/gis-desktop-application-development/SKILL.md), [Web/3D](skills/geospatial-web-mapping/SKILL.md), [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) and core router skills and shown on the bilingual site.
 
 **Status:** documented engineering and static checks only; not a shipped or tested ZEarth historical-imagery implementation. Google Earth Blog is an independent, largely historical source, and its content does not license Google imagery for third-party use.
+
+## Official Esri developer references — 25 October 2026
+
+Ten additional official Esri repositories have been reviewed and linked without duplicate entries in the [Esri integration matrix](references/esri-open-source-integration.md): ArcGIS Pro SDK AI snippets, Arcade profiles, developer troubleshooting, CAD/BIM, network analysis, Geoportal STAC/MCP, JavaScript, geocoding, elevation and raster deep learning.
+
+**Practical additions:** the [offline ArcGIS Pro Python package compatibility checker](references/esri-python-environment-compatibility.md) compares locally observed packages with the original Esri version matrix without modifying the environment. The [Arcade profile guide](references/arcgis-arcade-profiles.md) routes labeling, popup, visualization, attribute rules, dashboard and form expressions safely.
+
+Apache-2.0 sample-code licenses do not grant rights to proprietary ArcGIS products, extensions, SDK runtimes, hosted services, map imagery, third-party models or personal credentials. No Esri proprietary binaries were copied and no ArcGIS-native execution is claimed.
 
 ## GIS Security Guardian — cross-cutting protection (25 October 2026)
 
