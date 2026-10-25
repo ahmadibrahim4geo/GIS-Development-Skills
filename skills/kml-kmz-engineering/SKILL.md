@@ -55,3 +55,11 @@ Use this skill when a GIS application or toolbox reads, writes, converts, render
 - [ ] Performance/stress/cancellation tests reported with measured limits
 - [ ] Unsupported constructs and conversion losses disclosed
 - [ ] Tests distinguished from unverified recommendations
+
+## Upstream implementation references
+
+See [reviewed repository candidates](../../references/kml-kmz-repository-review.md), including Google's libkml, GDAL/OGR, fastkml, Cesium and QGIS. Recheck maintenance, licenses and exact feature coverage before adoption.
+
+## Shared quality gate
+
+Follow [GIS performance and reliability](../../docs/PERFORMANCE_RELIABILITY.md) and the [quality benchmark](../../docs/QUALITY_BENCHMARK.md). Native host interoperability is not yet verified.
