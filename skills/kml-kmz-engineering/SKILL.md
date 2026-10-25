@@ -45,6 +45,16 @@ Use this skill when a GIS application or toolbox reads, writes, converts, render
 - Do not automatically fetch NetworkLinks, remote icons, models or overlays. Require explicit user consent, restrict schemes to approved protocols, apply timeouts and size limits, and document privacy/network behavior.
 - Resolve relative resource paths within the package without allowing escape. Avoid unbounded in-memory XML trees or decompression; use streaming/chunking where practical.
 
+## Icon-library separation: imported source vs new placemark
+
+Treat these separately (see [preservation-first KML/KMZ contract](../../references/kml-kmz-symbol-preservation.md)):
+
+- `imported_source_style`: immutable original `Style` / `StyleMap` / `styleUrl`, colors `aabbggrr`, icon href/hotSpot/scale, label, line/poly styling, media bytes and hierarchy from KMZ. The original style takes priority on every import, scene restoration and no-edit export.
+- `presentation_fallback`: *temporary*, clearly warned, and never written to source or KMZ if the renderer cannot show an external/unsupported icon.
+- `explicit_user_override`: user opts into selecting an alternate symbol, color or line pattern, with original saved for Undo/Reset; export only after chosen edit.
+- For **new, user-authored** features, [8 open/free icon libraries and Cesium PinBuilder](../../references/map-marker-icon-library.md) may be used after license review; include portable PNG icons and safe relative hrefs when exporting new KMZ. **Never replace imported icons with these packs by default.**
+- Use [offline KMZ style/assets checker](../../examples/kml-style-preservation/README.md) to detect unintended color, icon bytes and StyleMap reference changes; separately validate full KML/OGC semantics, renderer output, Google Earth and target GIS host compatibility. Do not claim pixel-perfect rendering from ZIP integrity tests.
+
 ## Import and rendering
 - Separate semantic document model (folder hierarchy, styles, resources, times, metadata) from GIS feature layers and renderer. Preserve original KML for features not representable in the target GIS schema.
 - Support icons, labels, line/polygon styles and overlays where the renderer allows; document Google Earth extension gaps rather than silently dropping them.
@@ -72,6 +82,8 @@ Use this skill when a GIS application or toolbox reads, writes, converts, render
 - [ ] Explicit fidelity mode selected: read-only view, document edit or lossy feature conversion
 - [ ] KML color order, StyleMap states, icon anchors and shared style references verified
 - [ ] Import never automatically overrides external source styles or changes original bytes
+- [ ] Maki/Pinhead/other open icons offered **only for new/user-restyled** objects; imported original assets persist
+- [ ] Save/reopen compares style XML/StyleMap and original icon resource hash; temporary fallback not persisted
 - [ ] Google KML official references consulted, gx extension support verified by host version
 - [ ] Explorer folder/visibility state, ExtendedData and Temporary/My Places save semantics preserved
 - [ ] Target host and supported KML constructs documented
