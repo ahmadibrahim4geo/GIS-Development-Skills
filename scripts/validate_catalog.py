@@ -45,6 +45,16 @@ def validate_catalog(path=CATALOG):
         for field in ('name','category','description','role','license','integration','reviewed_on'):
             if not isinstance(entry.get(field), str) or not entry[field].strip():
                 errors.append('{} invalid {}'.format(tag,field))
+        flag=entry.get('license_verified')
+        if flag is not None and not isinstance(flag,bool):
+            errors.append('{} invalid license_verified boolean'.format(tag))
+        if flag is True:
+            for attr in ('license_scope','license_checked_on','license_evidence_url','license_caveat'):
+                if not isinstance(entry.get(attr),str) or not entry[attr].strip():
+                    errors.append('{} verified license requires {}'.format(tag,attr))
+            evidence=entry.get('license_evidence_url')
+            if not isinstance(evidence,str) or not evidence.startswith('https://github.com/'):
+                errors.append('{} invalid upstream license evidence URL'.format(tag))
     return errors
 
 

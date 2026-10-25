@@ -10,6 +10,10 @@ license: MIT
 
 Use for satellite scenes, Earth Engine, STAC/COG collections, cloud masking and climate rasters. Consult [data discovery](../geospatial-data-discovery/SKILL.md), [CRS engineering](../coordinate-reference-systems/SKILL.md), and [GIS development](../gis-development/SKILL.md).
 
+## Offline STAC discovery fixture
+
+The [free STAC ItemCollection metadata test](../../examples/stac-offline/README.md) filters synthetic items by UTC acquisition date, approximate bbox and cloud fraction, without contacting or downloading assets. A bbox intersection is not a polygon intersection and sample fixture URLs are deliberately invalid. Real satellite imagery requires an authenticated/authorized source STAC API, pagination and asset-level verification.
+
 ## Required workflow
 1. Confirm product/sensor/collection/processing level, acquisition dates, AOI, coverage, spatial resolution, data license, access and expected data semantics.
 2. Verify reflectance scaling, offsets, band order, radiometric processing, sun angle, saturation, nodata and **per-pixel** cloud/shadow QA; scene `CLOUD_COVER` alone is insufficient.
