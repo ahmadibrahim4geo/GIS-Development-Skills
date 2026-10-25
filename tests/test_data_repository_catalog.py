@@ -61,7 +61,7 @@ class RepositoryDirectoryTests(unittest.TestCase):
         self.assertTrue(any("HTTPS url" in x for x in failures))
 
     def test_website_separate_bilingual_repository_tab(self):
-        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        html = (ROOT / "explorer.html").read_text(encoding="utf-8")
         self.assertIn('id="repositoriesTab"', html)
         self.assertIn('id="dataCount">{}'.format(len(self.entries)), html)
         self.assertIn('loadCatalog("repositories","references/geospatial-data-repositories.json"', html)
