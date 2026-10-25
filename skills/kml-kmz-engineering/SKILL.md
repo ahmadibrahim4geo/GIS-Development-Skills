@@ -11,6 +11,15 @@ Use this skill when a GIS application or toolbox reads, writes, converts, render
 
 **Mandatory implementation reference:** [Google KML/KMZ document fidelity and compatibility contract](../../references/google-kml-kmz-compatibility.md), grounded in [Google's documentation](https://developers.google.com/kml) and the [OGC standard](https://www.ogc.org/standards/kml/). Use the [self-contained XML fixture](../../examples/kml-kmz/README.md) for offline regression checks. Google Earth `gx:` extensions are not core KML and need independent feature-level support.
 
+## Earth explorer compatibility and dynamic KML
+
+For a Google-Earth-like globe UI, apply the [Google Earth Pro feature reference](../../references/google-earth-pro-engineering.md) alongside the [dated imagery UI contract](../../references/historical-imagery-timeline.md). Imported KML `TimeStamp` / `TimeSpan` / `gx:Track` control document content time; imagery-provider acquisition dates are **not** KML feature time and must not be overwritten by the application's timeline selection.
+
+- For `NetworkLink`, `Link` and `Region/Lod`, preserve source XML, refresh policy, visibility overrides and regions; only fetch within an explicit trust/allowlist, time/size limits and user opt-in.
+- Keep `gx:Tour`, `gx:FlyTo`, `gx:Wait`, camera and source document nodes for round-trip export even if the renderer does not support tour playback.
+- Show remote link health and stale/offline state without erasing imported folders or defaulting unsupported icons to a destructive new style.
+- Test **KML import -> displayed hierarchy/time and styles -> user edit -> exported KMZ -> reopen** independently from date-aware imagery loading.
+
 ## Primary rule: protect the imported author's intent
 
 - **Import must preserve, not restyle.** Never replace original KML/KMZ icons, colors, opacity, line widths, label styles, folder hierarchy, popup descriptions or highlight behavior with program defaults. Do not auto-assign one symbology to every imported placemark.
