@@ -59,7 +59,7 @@ class HowToUseTests(unittest.TestCase):
         self.assertIn("التراجع",(ROOT/"docs/HOW_TO_USE.ar.md").read_text(encoding="utf-8"))
 
     def test_no_native_execution_claims(self):
-        for value in ("site is a guide and catalog","not an AI runner"):
+        for value in ("site is a guide and catalog","does not run ai agents"):
             combined=(self.home+" "+self.explorer+" "+
                       (ROOT/"docs/HOW_TO_USE.md").read_text(encoding="utf-8")).lower()
             self.assertIn(value,combined)
