@@ -1,6 +1,6 @@
 ---
 name: gis-development
-description: Route GIS engineering, debugging, testing and migration to specialist skills for ArcMap, ArcGIS Pro, QGIS, PostGIS, raster/vector, remote sensing, web/3D, desktop, cartography, KML/KMZ, device context and geospatial APIs; enforce spatial validity, security and truthful evidence.
+description: Route GIS and mapping work to specialist ArcGIS, QGIS, spatial data, remote sensing, desktop, web/3D, KML and API skills with secure, testable outputs.
 license: MIT
 ---
 
@@ -36,9 +36,8 @@ license: MIT
 | WKID, projection, transformation, vertical datum | [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md) |
 | Point/line/polygon/raster symbols, color ramps, map layout | [GIS Cartography & Symbology](../gis-cartography-symbology/SKILL.md) |
 | Device time/date/timezone, permission-controlled location, Sunlight simulation | [GIS Device Context](../gis-device-context/SKILL.md) |
-| KML/KMZ fidelity | [KML/KMZ skill](../kml-kmz-engineering/SKILL.md) · [Google guide](../../references/google-kml-kmz-compatibility.md) |
-| Google Earth Pro-like globe, Places/Tours/overlays | [Google Earth Pro engineering](../../references/google-earth-pro-engineering.md) + [GIS Desktop](../gis-desktop-application-development/SKILL.md) |
-| Dated satellite images, time slider, swipe comparison | [Historical Imagery Timeline](../../references/historical-imagery-timeline.md) + [Remote Sensing](../remote-sensing-pipelines/SKILL.md) |
+| KML/KMZ, Earth-like viewers and timeline | [KML](../kml-kmz-engineering/SKILL.md) · [Earth Pro](../../references/google-earth-pro-engineering.md) · [Historical imagery](../../references/historical-imagery-timeline.md) |
+
 
 ## Global rules (always apply)
 
