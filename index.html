@@ -1,357 +1,556 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="dark scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GIS Development Skills — The Heart of Geospatial Innovation. Agent-ready GIS development skills, curated GIS software, geographic data repositories, APIs and developer templates.">
-  <meta name="theme-color" content="#0d1519">
-  <meta property="og:title" content="GIS Development Skills | The Heart of Geospatial Innovation">
-  <meta property="og:description" content="Build GIS tools, plugins and geospatial applications with a verifiable development workflow.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/assets/brand/banner-dark.svg">
-  <title>GIS Development Skills | The Heart of Geospatial Innovation</title>
-  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <style>
-    :root{--bg:#0b1418;--panel:#121f24;--panel2:#19292e;--stroke:#2d4144;--text:#edf6f1;--muted:#a9bab7;--green:#b4eb91;--mint:#5cd0ba;--white:#fff;--radius:19px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{margin:0;color:var(--text);background:var(--bg);font-family:Inter,"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;line-height:1.65}
-    body:before{content:"";position:absolute;inset:0 0 auto;height:770px;pointer-events:none;background:radial-gradient(ellipse at 73% 7%,#214c3d70 0,transparent 49%),radial-gradient(ellipse at 8% 36%,#193d4e43 0,transparent 46%)}
-    a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,input,select{outline-offset:3px}
-    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--green)}
-    .container{width:min(1170px,calc(100% - 40px));margin-inline:auto;position:relative}
-    .skip{position:absolute;left:12px;top:-60px;background:var(--green);color:#0d1619;padding:9px;z-index:50}.skip:focus{top:10px}
-    .nav-wrap{position:sticky;top:0;z-index:10;background:#0b1418e8;border-bottom:1px solid #29403c;backdrop-filter:blur(16px)}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:22px;min-height:80px}
-    .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}.brand img{width:216px;height:50px;object-fit:contain;object-position:left center}
-    .nav-links{display:flex;gap:28px;align-items:center;color:#cbdad6;font-size:13px;font-weight:700}.nav-links a:hover{color:var(--green)}
-    .nav-right{display:flex;gap:9px;align-items:center}
-    .lang,.nav-git{border:1px solid var(--stroke);border-radius:999px;background:var(--panel);padding:8px 14px;color:var(--text);cursor:pointer;font-weight:700;font-size:13px}
-    .lang:hover,.nav-git:hover{border-color:var(--mint)}
-    .hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px;padding-block:92px 70px;min-height:570px}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--green);letter-spacing:2px;text-transform:uppercase;font-size:11px;font-weight:800}
-    .dot{display:inline-block;border-radius:50%;width:7px;height:7px;background:var(--green);box-shadow:0 0 16px var(--green)}
-    h1{margin:21px 0;font-size:clamp(38px,5.25vw,67px);font-weight:850;letter-spacing:-2.6px;line-height:1.12}
-    h1 em{font-style:normal;color:var(--green)}.lead{font-size:17px;color:var(--muted);max-width:600px;line-height:1.8}
-    .buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-    .btn{border:1px solid var(--stroke);border-radius:11px;padding:12px 19px;font-size:14px;font-weight:800;display:inline-flex;align-items:center;gap:10px;justify-content:center;cursor:pointer;transition:transform .16s,background .16s}
-    .btn:hover{transform:translateY(-2px)}.btn.primary{background:var(--green);color:#0b1715;border-color:var(--green)}
-    .btn.secondary{background:#193029bd;color:var(--text)}
-    .hero-visual{position:relative;padding:25px;border:1px solid #3a5950;border-radius:27px;background:linear-gradient(145deg,#19302c,#0f1d23 70%);box-shadow:0 38px 100px #0008;min-height:388px;overflow:hidden}
-    .hero-visual:after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(#99edcb0e 1px,transparent 1px),linear-gradient(90deg,#99edcb0e 1px,transparent 1px);background-size:27px 27px}
-    .visual-top{display:flex;justify-content:space-between;align-items:center;color:#a2c1b5;font-family:monospace;font-size:11px;letter-spacing:2px}
-    .lights{display:flex;gap:6px}.lights i{width:7px;height:7px;background:#5aa08e;border-radius:50%}
-    .globe-art{display:block;width:100%;max-height:245px;margin:15px auto 0;filter:drop-shadow(0 0 30px #5ed1ba2e)}
-    .visual-foot{display:flex;position:relative;z-index:1;gap:9px;flex-wrap:wrap;justify-content:center}.tech{border-radius:8px;background:#162b2d;border:1px solid #396057;padding:7px 11px;color:#c7eee1;font-size:11px;font-weight:700}
-    .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:0 0 74px}
-    .stat{padding:21px 24px;background:#152227;border:1px solid var(--stroke);border-radius:14px}.stat strong{display:block;color:var(--green);font-size:35px;line-height:1.2;letter-spacing:-1px}.stat span{font-size:13px;color:var(--muted)}
-    section{padding-block:52px;scroll-margin-top:80px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:24px}.section-head h2{margin:5px 0;font-size:clamp(27px,3.5vw,39px);letter-spacing:-1.1px;line-height:1.2}.section-head p{max-width:620px;color:var(--muted);margin:10px 0 0}
-    .overline{color:var(--mint);font-size:11px;letter-spacing:2.5px;font-weight:900}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-    .feature{padding:24px;background:linear-gradient(150deg,#17282a,#111e24);border:1px solid var(--stroke);border-radius:var(--radius);transition:border-color .2s,transform .2s;display:flex;flex-direction:column;min-height:210px}
-    .feature:hover{border-color:#619e80;transform:translateY(-3px)}.feature .glyph{display:inline-flex;align-items:center;justify-content:center;width:43px;height:43px;border-radius:11px;background:#2a443e;color:var(--green);font-size:16px;font-weight:800;font-family:monospace}
-    .feature h3{margin:20px 0 6px;font-size:18px;line-height:1.3}.feature p{margin:0 0 18px;color:var(--muted);font-size:13px;flex:1}
-    .learn{color:var(--green);font-size:13px;font-weight:800}
-    .explorer{margin-top:20px;border:1px solid var(--stroke);border-radius:24px;background:#122025;overflow:hidden}
-    .explorer-top{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:21px 22px;border-bottom:1px solid var(--stroke);flex-wrap:wrap}
-    .tabs{display:flex;gap:5px;flex-wrap:wrap;padding:5px;border:1px solid var(--stroke);border-radius:12px;background:#0e1b1e}
-    .tab{border:none;border-radius:8px;padding:9px 15px;cursor:pointer;color:#a9bdba;background:transparent;font-size:13px;font-weight:700}.tab[aria-selected=true]{background:var(--green);color:#0a1716}
-    .filters{display:flex;gap:10px;flex-wrap:wrap;padding:18px 22px}
-    .filters input,.filters select{background:#0e1b1e;color:var(--text);border:1px solid #3a5553;border-radius:10px;padding:11px 12px;font-size:13px;min-height:43px}
-    .filters input{flex:1;min-width:190px}.filters select{width:190px;max-width:100%}
-    .results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 22px 22px}
-    .result{display:flex;flex-direction:column;gap:9px;padding:19px;border:1px solid #31484a;background:#18272c;border-radius:13px;min-width:0}
-    .result-head{display:flex;gap:14px;justify-content:space-between;align-items:start}.result h3{font-size:15px;line-height:1.45;margin:0}.result p{font-size:12px;color:var(--muted);margin:0;flex:1}
-    .chip{font-size:10px;letter-spacing:.2px;white-space:nowrap;color:#c0dfd8;border:1px solid #41645b;background:#203632;border-radius:99px;padding:4px 8px;text-transform:capitalize}
-    .result a{font-weight:800;color:var(--green);font-size:12px;align-self:flex-start;overflow-wrap:anywhere}
-    .explorer-note{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:13px 22px;border-top:1px solid var(--stroke);font-size:12px;color:var(--muted)}
-    .explorer-note a,.fine-link{color:var(--green);font-weight:700}
-    .paths{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .path-card{border-radius:19px;border:1px solid var(--stroke);background:#142428;padding:25px}
-    .path-card h3{margin:0 0 8px;font-size:20px}.path-card p{color:var(--muted);font-size:13px}
-    .code-bar{display:flex;gap:14px;align-items:center;justify-content:space-between;border:1px solid #37594f;background:#091a1d;border-radius:11px;margin-top:20px;padding:15px 13px 15px 18px}
-    .code-bar code{font-size:12px;color:#c8f7c1;overflow-wrap:anywhere}
-    .copy{background:#21463c;border:1px solid #42725a;color:#e6f9d6;font-size:12px;font-weight:750;border-radius:9px;padding:7px 12px;cursor:pointer;flex-shrink:0}
-    .template-list{display:grid;gap:9px;margin-top:14px}.template-list a{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-radius:9px;background:#203137;color:#d9efea;font-size:12px;gap:10px}.template-list a:hover{background:#2e4b43}
-    .workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{border-top:2px solid #669e79;padding:20px 12px 12px 0}.step b{color:var(--green);font-family:monospace;font-size:12px}.step h3{font-size:17px;margin:8px 0}.step p{font-size:12px;margin:0;color:var(--muted)}
-    .cta{padding:36px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border:1px solid #567c63;border-radius:23px;background:linear-gradient(130deg,#203a30,#152b2c)}.cta h2{margin:0 0 4px;font-size:25px}.cta p{margin:0;color:#bdcfc8}
-    footer{margin-top:75px;border-top:1px solid var(--stroke);padding:30px 0 42px;color:var(--muted);font-size:12px}.foot{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap}.foot a:hover{color:var(--green)}
-    .error{grid-column:1/-1;border:1px dashed #7e8c67;border-radius:11px;padding:20px;color:#ccd8b5}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    [dir=rtl] .brand img{object-position:right center}[dir=rtl] h1{letter-spacing:-.5px}[dir=rtl] .step{padding:20px 0 12px 12px}
-    @media(max-width:900px){.nav-links{display:none}.hero{grid-template-columns:1fr;gap:40px;padding-top:63px;min-height:auto}.hero-visual{max-width:570px;width:100%;margin:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:640px){.container{width:calc(100% - 30px)}.nav{min-height:68px}.brand img{width:165px}.nav-git{display:none}.hero{padding:52px 0 34px}.hero-visual{min-height:300px;padding:18px}.globe-art{max-height:198px}h1{font-size:40px;letter-spacing:-1.5px}.stats{grid-template-columns:repeat(2,1fr);gap:9px;padding-bottom:28px}.stat{padding:15px}.stat strong{font-size:28px}.grid,.results,.paths{grid-template-columns:1fr}.results{padding:0 14px 14px}.explorer-top{padding:15px}.filters{padding:15px}.filters select{width:100%}.section-head{display:block}.workflow{gap:10px}.cta{padding:24px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.feature{transition:none}}
-.skill-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.skill-link{padding:15px;border:1px solid var(--stroke);border-radius:12px;background:var(--panel);color:var(--text);text-decoration:none;font-size:14px;font-weight:700}.skill-link:hover{border-color:var(--mint)}
-.more-wrap{display:flex;justify-content:center;padding:0 22px 20px}.more-btn{padding:10px 19px;background:var(--panel2);border:1px solid var(--stroke);border-radius:10px;color:var(--text);cursor:pointer;font-weight:700}
-.more-btn[hidden],#costFilterWrap[hidden]{display:none}
-.limit-text{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
-@media(max-width:900px){.skill-directory{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.skill-directory{grid-template-columns:1fr}}
-    .api-expansion{margin:0;padding:12px 21px;border-bottom:1px solid var(--stroke);background:rgba(92,208,186,.07);color:var(--muted);font-size:13px;line-height:1.7}
-  html[lang='ar'] .api-expansion{direction:rtl;text-align:right}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIS Development Skills — Agent-Ready Geospatial Engineering Hub</title>
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter, Cairo (Arabic), JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-/* Brand logo: a single complete graphic; no duplicated HTML wordmark */
-.brand img{width:220px;height:auto;max-height:55px;object-fit:contain}
-.hero-symbol{width:min(100%,620px)!important;height:auto!important;max-height:none!important;object-fit:contain}
-.scene-logo{width:min(100%,440px)!important;height:auto!important;object-fit:contain}
-@media(max-width:640px){.brand img{width:165px}.hero-symbol{width:100%!important}}
-    html[lang="en"] .lang-ar, html[lang="ar"] .lang-en{display:none!important}
-    html[lang="en"] .lang-en, html[lang="ar"] .lang-ar{display:inline}
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Cairo', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            geo: {
+              base: '#050912',
+              surface: '#0b1324',
+              card: '#101c33',
+              cyan: '#38bdf8',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+              purple: '#a855f7'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Language Switching Rules */
+    html[lang="en"] [data-lang="ar"] { display: none !important; }
+    html[lang="ar"] [data-lang="en"] { display: none !important; }
+    html[lang="ar"] { font-family: 'Cairo', 'Inter', sans-serif; }
+
+    /* Geospatial Topological Background Grid */
+    body {
+      background-color: #050912;
+      color: #f8fafc;
+      background-image: 
+        radial-gradient(circle at 15% 8%, rgba(56, 189, 248, 0.12), transparent 32%),
+        radial-gradient(circle at 85% 22%, rgba(16, 185, 129, 0.09), transparent 34%),
+        radial-gradient(circle at 50% 75%, rgba(168, 85, 247, 0.06), transparent 40%),
+        linear-gradient(rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.035) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+    }
+
+    .glass-card {
+      background: rgba(16, 28, 51, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+      background: rgba(22, 38, 68, 0.88);
+      border-color: rgba(56, 189, 248, 0.45);
+      box-shadow: 0 14px 38px -12px rgba(56, 189, 248, 0.22);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #050912; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
   </style>
-  <link rel="stylesheet" href="assets/brand-refresh.css">
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="nav-wrap"><nav class="nav container" aria-label="Main navigation">
-  <a class="brand" href="#home" aria-label="GIS Development Skills home"><img src="assets/brand/logo-compact-dark.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="250" height="50"></a>
-  <div class="nav-links">
-    <a href="#capabilities" data-i18n="navSkills">Skills</a>
-    <a href="#catalog" data-i18n="navExplorer">Explorer</a><a href="#examples" data-i18n="navExamples">Examples</a>
-    <a href="#get-started" data-i18n="navStart">Get started</a>
-    <a href="#contribute" data-i18n="navContribute">Contribute</a><a href="#author"><span class="lang-en">Creator</span><span class="lang-ar">المطور</span></a>
-  </div>
-  <div class="nav-right">
-    <button class="lang" id="langBtn" type="button" aria-label="Switch language">العربية</button>
-    <a class="nav-git" target="_blank" rel="noopener noreferrer" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills">GitHub ↗</a>
-  </div>
-</nav></header>
-<main id="main">
-  <div class="container" id="home">
-    <div class="hero">
-      <div class="hero-primary">
-        <div class="hero-lockup" lang="en" dir="ltr">
-          <img class="hero-symbol" src="assets/brand/logo-dark.svg" width="1400" height="420" alt="GIS Development Skills — The Heart of Geospatial Innovation" fetchpriority="high" decoding="async">
-        </div>
-        <h1 class="sr-only">GIS Development Skills</h1>
-        <div class="hero-content">
-          <div class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Open-source • Agent-ready • GIS engineering</span></div>
-          <p class="hero-exact">Build GIS tools, plugins and geospatial applications with a verifiable development workflow.</p>
-          <p class="lead" data-i18n="heroText">A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.</p>
-          <div class="buttons">
-            <a class="btn primary" href="#capabilities" data-i18n="exploreSkills">Explore skills ↓</a>
-            <a class="btn secondary" href="#catalog" data-i18n="browseCatalog">Browse catalog →</a>
+<body class="min-h-screen antialiased selection:bg-sky-500/30 selection:text-sky-200">
+
+  <!-- Sticky Glassmorphic Navigation Bar -->
+  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-[#050912]/85 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-3 group focus:outline-none">
+        <img 
+          src="assets/brand/logo-compact-dark.svg" 
+          alt="GIS Development Skills" 
+          class="h-10 w-auto transition-transform group-hover:scale-105"
+          onerror="this.onerror=null; this.src='assets/brand/icon.svg';"
+        />
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#capabilities" class="hover:text-sky-400 transition-colors">
+          <span data-lang="en">Skills &amp; Pathways</span>
+          <span data-lang="ar">المهارات والمسارات</span>
+        </a>
+        <a href="#earth-kml" class="hover:text-sky-400 transition-colors">
+          <span data-lang="en">Earth &amp; KML</span>
+          <span data-lang="ar">جوجل إيرث و KML</span>
+        </a>
+        <a href="#cartography" class="hover:text-sky-400 transition-colors">
+          <span data-lang="en">Cartography</span>
+          <span data-lang="ar">الكارتوجرافيا والرموز</span>
+        </a>
+        <a href="#security" class="hover:text-sky-400 transition-colors">
+          <span data-lang="en">Security &amp; QA</span>
+          <span data-lang="ar">الأمان والاختبارات</span>
+        </a>
+        <a href="#author" class="hover:text-sky-400 transition-colors">
+          <span data-lang="en">Creator</span>
+          <span data-lang="ar">المطور</span>
+        </a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5">
+        <button 
+          id="langToggleBtn"
+          onclick="toggleLanguage()" 
+          class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/70 hover:bg-sky-500/15 border border-slate-700 hover:border-sky-400/50 text-xs sm:text-sm font-semibold text-slate-100 transition-all"
+          title="Switch Language / تبديل اللغة"
+        >
+          <span>🌐</span>
+          <span data-lang="en">العربية</span>
+          <span data-lang="ar">English</span>
+        </button>
+
+        <a 
+          href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-500/15 hover:bg-sky-400 text-sky-300 hover:text-slate-950 border border-sky-400/40 text-xs sm:text-sm font-bold transition-all"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub ↗</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- HERO SECTION -->
+    <section class="pt-10 pb-16 text-center">
+      <!-- Official Full Hero Logo Banner -->
+      <div class="max-w-3xl mx-auto mb-6">
+        <img 
+          src="assets/brand/logo-dark.svg" 
+          alt="GIS Development Skills — The Heart of Geospatial Innovation" 
+          class="w-full h-auto max-h-56 object-contain mx-auto drop-shadow-[0_12px_30px_rgba(56,189,248,0.22)]"
+          onerror="this.onerror=null; this.src='assets/brand/logo-light.svg';"
+        />
+      </div>
+
+      <!-- Status Pill -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span data-lang="en">Open-Source • Agent-Ready • Verifiable GIS Engineering</span>
+        <span data-lang="ar">مفتوح المصدر • جاهز للـ Agents • هندسة نظم معلومات جغرافية موثقة</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="sr-only">GIS Development Skills — The Heart of Geospatial Innovation</h1>
+
+      <!-- Subtitle / Lead -->
+      <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+        <span data-lang="en">
+          Build reliable ArcGIS Pro &amp; ArcMap toolboxes, PyQGIS plugins, 2D/3D Earth explorers, KML/KMZ engines, and Remote Sensing pipelines with an agent-ready development workflow.
+        </span>
+        <span data-lang="ar">
+          طوّر أدوات ArcGIS Pro و ArcMap، وإضافات QGIS، ومستعرضات الأرض ثلاثية الأبعاد، ومحركات KML/KMZ، وخطوط معالجة الاستشعار عن بعد بمنهجية هندسية قابلة للتحقق والاختبار.
+        </span>
+      </p>
+
+      <!-- Interactive Agent CLI Quick-Install Box -->
+      <div class="max-w-2xl mx-auto mb-9 bg-[#03060c] border border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xl text-left" dir="ltr">
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-2.5 mb-3 text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+            <span class="ml-2 font-mono text-slate-400">agent-cli-quickstart</span>
+          </div>
+          <div class="flex gap-1.5">
+            <button onclick="setCliCommand('clone', this)" class="cli-tab px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono font-semibold">Clone Repo</button>
+            <button onclick="setCliCommand('verify', this)" class="cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono">Run QA Tests</button>
+            <button onclick="setCliCommand('skills', this)" class="cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono">List 19 Skills</button>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="stats" aria-label="Project scope">
-      <div class="stat"><strong>19</strong><span data-i18n="statSkill">Installable agent skill</span></div>
-      <div class="stat"><strong id="projectsCount">148</strong><span data-i18n="statProjects">Curated project references</span></div>
-      <div class="stat"><strong id="apisCount">52</strong><span data-i18n="statApis">Public GIS API entries</span></div>
-      <div class="stat"><strong id="dataCount">24</strong><span data-i18n="statRepositories">GIS data repositories</span></div>
-      <div class="stat"><strong>04</strong><span data-i18n="statTemplates">Developer starter templates</span></div>
-    </div>
-  </div>
-
-  <section id="capabilities" class="container">
-    <div class="section-head"><div><span class="overline" data-i18n="overlineSkills">DEVELOPMENT PATHWAYS</span><h2 data-i18n="skillsTitle">One skill. Multiple GIS stacks.</h2><p data-i18n="skillsDesc">Choose the right architecture for the platform instead of forcing one GIS runtime onto another.</p></div></div>
-    <div class="grid">
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/arcgis-pro.md"><span class="glyph">PRO</span><h3>ArcGIS Pro</h3><p data-i18n="arcPro">ArcPy, Python toolboxes, geoprocessing and application-aware testing.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/arcmap-legacy.md"><span class="glyph">10.x</span><h3>ArcMap / ArcCatalog</h3><p data-i18n="arcMap">Legacy Python and compatibility-safe script tool development.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/qgis.md"><span class="glyph">Q</span><h3>QGIS & PyQGIS</h3><p data-i18n="qgis">Processing providers, QGIS plugins and cross-version considerations.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/global-mapper-development/SKILL.md"><span class="glyph">GM</span><h3 data-i18n="gmTitle">Global Mapper Development</h3><p data-i18n="gmDesc">GMS, Python and commercially licensed SDK workflows; Blue Marble 3D and photogrammetry forks.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/desktop-and-web.md"><span class="glyph">2D/3D</span><h3>Desktop, Web & 3D</h3><p data-i18n="desktop">Qt, MapLibre, CesiumJS, and dependable geospatial desktop architecture.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/remote-sensing.md"><span class="glyph">RS</span><h3>Remote Sensing & GeoAI</h3><p data-i18n="remote">Satellite processing, raster pipelines, reproducibility and AI research checks.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/rustgis-and-geolibre-r.md"><span class="glyph">R/Rs</span><h3>RustGIS & GeoLibre R</h3><p data-i18n="rust">Rust GIS architecture and interactive geospatial mapping for R.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/geospatial-data-discovery/SKILL.md"><span class="glyph">DATA</span><h3 data-i18n="dataSkillTitle">GIS Data Discovery</h3><p data-i18n="dataSkill">Find appropriate geospatial providers, boundaries, population and scientific products.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/geospatial-api-integration/SKILL.md"><span class="glyph">API</span><h3 data-i18n="apiSkillTitle">GIS API Integration</h3><p data-i18n="apiSkill">Connect 52 curated services with secure keys, validated data and reliable error handling.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/spatial-databases/SKILL.md"><span class="glyph">SQL</span><h3 data-i18n="dbTitle">Spatial Databases</h3><p data-i18n="dbDesc">PostGIS and SpatiaLite queries, indexes and QA.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/geospatial-data-processing/SKILL.md"><span class="glyph">GDAL</span><h3 data-i18n="processingTitle">Geospatial Processing</h3><p data-i18n="processingDesc">Independent raster/vector workflows and repeatable tests.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/remote-sensing-pipelines/SKILL.md"><span class="glyph">EO</span><h3 data-i18n="rsTitle">Remote Sensing Pipelines</h3><p data-i18n="rsDesc">STAC, COG, Earth Engine, QA and grid alignment.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-    </div>
-  </section>
-
-
-  <section id="all-skills" class="container">
-    <div class="section-head"><div><span class="overline" data-i18n="skillsDirectoryLabel">ALL INSTALLABLE SKILLS</span>
-    <h2 data-i18n="skillsDirectoryTitle">Browse all 19 specialties.</h2><p data-i18n="skillsDirectoryDesc">Every actual specialist, with its own source and free-use terms.</p></div></div>
-    <div class="skill-directory" id="skillDirectory" aria-live="polite"><a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills" data-i18n="fallbackSkills">Open full skills directory ↗</a></div>
-    <p><a class="fine-link" href="references/free-first-policy.md" data-i18n="freePolicyLink">No-cost first and paid-host exceptions ↗</a></p>
-  </section>
-
-  <section id="kml-interoperability" class="container">
-    <div class="section-head"><div><span class="overline" data-i18n="kmlOverline">GOOGLE KML / KMZ COMPATIBILITY</span>
-      <h2 data-i18n="kmlTitle">Keep every imported map's original identity.</h2>
-      <p data-i18n="kmlDesc">Source-preserving KML/KMZ workflows: shared styles, colors, icons, folders, data, overlays and secure portable exports.</p></div></div>
-    <div class="grid">
-      <a class="feature" href="skills/kml-kmz-engineering/SKILL.md"><span class="glyph">KML</span>
-        <h3 data-i18n="kmlSkillTitle">KML/KMZ engineering skill</h3>
-        <p data-i18n="kmlSkillDesc">Preserve original styling and hierarchy; distinguish full document display from lossy GIS conversion.</p>
-        <span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="references/google-kml-kmz-compatibility.md"><span class="glyph">OGC</span>
-        <h3 data-i18n="kmlGuideTitle">Google & OGC compatibility guide</h3>
-        <p data-i18n="kmlGuideDesc">StyleMap, KMZ resources, ExtendedData, gx extensions, height, time, safety and feature-level verification.</p>
-        <span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="examples/kml-kmz/README.md"><span class="glyph">QA</span>
-        <h3 data-i18n="kmlExampleTitle">KML round-trip fixture</h3>
-        <p data-i18n="kmlExampleDesc">Run an offline XML contract test before manually checking actual appearance and reopen behavior.</p>
-        <span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-    </div>
-  </section>
-
-
-  <section id="google-earth-reference" class="container" aria-labelledby="googleEarthGuideTitle">
-    <div class="section-head"><div>
-      <span class="overline"><span class="lang-en" lang="en">EARTH &amp; HISTORICAL IMAGERY</span><span class="lang-ar" lang="ar">جوجل إيرث والصور التاريخية</span></span>
-      <h2 id="googleEarthGuideTitle"><span class="lang-en" lang="en">Build better Earth explorers, grounded in real behavior.</span><span class="lang-ar" lang="ar">طوّر مستعرضًا للأرض بوظائف حقيقية قابلة للاختبار.</span></h2>
-      <p><span class="lang-en" lang="en">Engineering lessons from Google Earth Blog: accurate imagery timelines, faithful Places/KML behavior, and dynamic geospatial layers.</span><span class="lang-ar" lang="ar">دروس هندسية من مدونة Google Earth: شريط زمني يعرض تواريخ الصور الحقيقية، وإدارة Places وKML بأمانة، وطبقات مكانية ديناميكية.</span></p>
-    </div></div>
-    <div class="grid">
-      <a class="feature" href="references/google-earth-pro-engineering.md">
-        <span class="glyph">3D</span>
-        <h3><span class="lang-en" lang="en">Google Earth Pro patterns</span><span class="lang-ar" lang="ar">دليل وظائف Google Earth Pro</span></h3>
-        <p><span class="lang-en" lang="en">Places and folders, NetworkLink / Region / LOD, tours, overlays and terrain profiles with concrete acceptance checks.</span><span class="lang-ar" lang="ar">المجلدات وPlaces وروابط NetworkLink والجولات والطبقات والقطاعات التضاريسية مع اختبارات واضحة.</span></p>
-        <span class="learn"><span class="lang-en" lang="en">Read engineering reference ↗</span><span class="lang-ar" lang="ar">اقرأ المرجع الهندسي ↗</span></span>
-      </a>
-      <a class="feature" href="references/historical-imagery-timeline.md">
-        <span class="glyph">⏱</span>
-        <h3><span class="lang-en" lang="en">Historical Imagery Timeline</span><span class="lang-ar" lang="ar">شريط الصور التاريخية</span></h3>
-        <p><span class="lang-en" lang="en">Nonblocking date bar, discovered acquisitions, scene credits, play/pause, camera preservation and two-date comparison.</span><span class="lang-ar" lang="ar">شريط غير حاجب للخريطة، تواريخ التقاط مؤكدة، بيانات المصدر، تشغيل زمني ومقارنة بين تاريخين.</span></p>
-        <span class="learn"><span class="lang-en" lang="en">Explore timeline contract ↗</span><span class="lang-ar" lang="ar">اقرأ مواصفات الشريط ↗</span></span>
-      </a>
-      <a class="feature" href="skills/gis-desktop-application-development/SKILL.md">
-        <span class="glyph">APP</span>
-        <h3><span class="lang-en" lang="en">Independent desktop implementation</span><span class="lang-ar" lang="ar">تطوير مستقل لبرامج سطح المكتب</span></h3>
-        <p><span class="lang-en" lang="en">Connect WPF/CesiumJS and KML/KMZ skills; test the real installed app before claiming feature parity. No Google imagery redistribution rights implied.</span><span class="lang-ar" lang="ar">اربط WPF/CesiumJS ومهارات KML/KMZ، واختبر البرنامج المثبت فعليًا. المرجع لا يمنح حقوق استخدام صور Google.</span></p>
-        <span class="learn"><span class="lang-en" lang="en">Read desktop skill ↗</span><span class="lang-ar" lang="ar">افتح مهارة الديسكتوب ↗</span></span>
-      </a>
-    </div>
-  </section>
-
-  <section id="cartography-and-context" class="container">
-  <div class="section-head"><div><span class="overline" data-i18n="cartoOverline">CARTOGRAPHY & DEVICE CONTEXT</span>
-    <h2 data-i18n="cartoSectionTitle">Style maps. Understand time and place.</h2>
-    <p data-i18n="cartoSectionDesc">Two new specialist skills and license-aware style resources.</p></div></div>
-  <div class="grid">
-    <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/gis-cartography-symbology/SKILL.md"><span class="glyph">SYM</span>
-      <h3 data-i18n="cartoSkillTitle">Cartography & Symbology</h3><p data-i18n="cartoSkillDesc">Point, line, polygon and raster symbols, ramps, labels, accessibility and native save/reopen.</p>
-      <span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-    <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/gis-device-context/SKILL.md"><span class="glyph">TIME</span>
-      <h3 data-i18n="deviceSkillTitle">Device Time & Location</h3><p data-i18n="deviceSkillDesc">UTC, time zones, consent-based location, scene independence and simulated Sunlight.</p>
-      <span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-    <a class="feature" href="#catalog"><span class="glyph">LIB</span>
-      <h3 data-i18n="styleSourcesTitle">Browse 21 style sources</h3><p data-i18n="styleSourcesDesc">Search symbol libraries, scientific palettes and open style specifications in the new directory tab.</p>
-      <span class="learn" data-i18n="browseCatalog">Browse catalog →</span></a>
-  </div>
-  <p><a class="fine-link" href="examples/cartography/README.md" data-i18n="cartoExampleLink">Offline symbol fixture ↗</a> · <a class="fine-link" href="examples/device-context/README.md" data-i18n="deviceExampleLink">Offline device-context fixture ↗</a> · <a class="fine-link" href="references/cartographic-style-guide.md" data-i18n="cartoGuideLink">Style decision guide ↗</a> · <a class="fine-link" href="references/map-marker-icon-library.md" data-i18n="markerIconsLink">Map marker libraries ↗</a> · <a class="fine-link" href="references/unified-gis-icon-manager.md" data-i18n="iconManagerGuideLink">Unified GIS Icon Manager ↗</a> · <a class="fine-link" href="examples/icon-manager/index.html" data-i18n="iconManagerDemoLink">Live icon creator demo ↗</a> · <a class="fine-link" href="references/kml-kmz-symbol-preservation.md" data-i18n="kmzPreserveLink">Preserve imported KMZ styles ↗</a></p>
-</section>
-
-<section id="security-guardian" class="container">
-  <div class="section-head"><div><span class="overline" data-i18n="guardianOverline">SECURE-BY-DESIGN</span>
-    <h2 data-i18n="guardianTitle">GIS Security Guardian protects every development step.</h2>
-    <p data-i18n="guardianDesc">A cross-cutting, free-first security skill for agent permissions, untrusted GIS inputs and release checks.</p></div></div>
-  <div class="grid">
-    <a class="feature" href="skills/gis-security-guardian/SKILL.md"><span class="glyph">SAFE</span>
-      <h3 data-i18n="guardianSkill">Security Guardian skill</h3><p data-i18n="guardianSkillDesc">Risk-based protection alongside all GIS specialists: prompt injection, files, network and secrets.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-    <a class="feature" href="references/security/security-tools.json"><span class="glyph">SCAN</span>
-      <h3 data-i18n="guardianTools">Open security tool registry</h3><p data-i18n="guardianToolsDesc">14 upstream tools classified by purpose, license status and privacy requirements.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-    <a class="feature" href="SECURITY.md"><span class="glyph">POLICY</span>
-      <h3 data-i18n="guardianPolicy">Security and disclosure policy</h3><p data-i18n="guardianPolicyDesc">Safe vulnerability reporting, non-destructive defaults and honest testing limitations.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-  </div>
-</section>
-
-<section id="examples" class="container">
-    <div class="section-head"><div>
-      <span class="overline" data-i18n="examplesOverline">REPRODUCIBLE WORKFLOWS</span>
-      <h2 data-i18n="examplesTitle">Production GIS engineering examples.</h2>
-      <p data-i18n="examplesDesc">Synthetic fixtures, verified output expectations and honest native GIS test limitations.</p>
-    </div></div>
-    <div class="grid">
-      <a class="feature" href="examples/terrain-slope/README.md"><span class="glyph">DEM</span><h3 data-i18n="slopeExampleTitle">Free DEM slope tool</h3><p data-i18n="slopeExampleDesc">Real ASCII grid Horn slope output with synthetic 45°/NoData fixture and provenance.</p><span class="learn" data-i18n="exampleLink">View example and test ↗</span></a>
-      <a class="feature" href="examples/stac-offline/README.md"><span class="glyph">STAC</span><h3 data-i18n="stacExampleTitle">Offline STAC source QA</h3><p data-i18n="stacExampleDesc">Filter synthetic satellite item metadata with no paid service or key.</p><span class="learn" data-i18n="exampleLink">View example and test ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/examples/network-topology"><span class="glyph">NET</span><h3 data-i18n="networkExampleTitle">Network endpoint audit</h3><p data-i18n="networkExampleDesc">Read-only duplicate and dangling-line screening.</p><span class="learn" data-i18n="exampleLink">View example and test ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/examples/api-ingestion"><span class="glyph">API</span><h3 data-i18n="weatherExampleTitle">Weather API to GeoJSON</h3><p data-i18n="weatherExampleDesc">UTC weather response converted into GIS features.</p><span class="learn" data-i18n="exampleLink">View example and test ↗</span></a>
-      <a class="feature" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/examples/batch-export"><span class="glyph">PDF</span><h3 data-i18n="batchExampleTitle">Batch layout PDF export</h3><p data-i18n="batchExampleDesc">ArcGIS Pro layout exports awaiting host-native tests.</p><span class="learn" data-i18n="exampleLink">View example and test ↗</span></a>
-    </div>
-    <p><a class="fine-link" href="examples/README.md" data-i18n="allExamples">All examples, including PostGIS and STAC/COG ↗</a> · <a class="fine-link" href="docs/QUALITY_BENCHMARK.md" data-i18n="benchmarkLink">Read the quality benchmark ↗</a></p>
-  </section>
-
-  <section id="agent-quality" class="container">
-    <div class="section-head"><div><span class="overline" data-i18n="qualityOverline">GIS AGENT QUALITY</span>
-      <h2 data-i18n="qualityTitle">Build GIS tools with verified engineering evidence.</h2>
-      <p data-i18n="qualityDesc">Route tasks precisely, inspect tests, and distinguish offline checks from real native GIS execution.</p></div></div>
-    <div class="grid">
-      <a class="feature" href="references/agent-decision-tree.md"><span class="glyph">ROUTE</span><h3 data-i18n="routeCard">GIS decision tree</h3><p data-i18n="routeDesc">Choose the specialist for ArcGIS, QGIS, Web, Desktop, data, SQL or remote sensing.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="templates/GIS_ACCEPTANCE_REPORT.md"><span class="glyph">T0–T4</span><h3 data-i18n="evidenceCard">Acceptance evidence</h3><p data-i18n="evidenceDesc">Record commands, fixtures, expected/observed results and native-test limits.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="fixtures/README.md"><span class="glyph">TEST</span><h3 data-i18n="fixtureCard">Reproducible fixtures</h3><p data-i18n="fixtureDesc">Polygons, distances, Shapefile, GeoPackage and GeoTIFF test cases.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="skills/gis-security-guardian/SKILL.md"><span class="glyph">SAFE</span><h3 data-i18n="secureCard">GIS security</h3><p data-i18n="secureDesc">Protect uploads, archives, SQL, remote services and credentials.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="references/geospatial-performance.md"><span class="glyph">PERF</span><h3 data-i18n="perfCard">GIS performance</h3><p data-i18n="perfDesc">Spatial indexes, chunking, GeoParquet, memory and raster windows.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-      <a class="feature" href="docs/SERVICE_MONITORING.md"><span class="glyph">API</span><h3 data-i18n="monitorCard">Service health</h3><p data-i18n="monitorDesc">Separate non-blocking weekly documentation link reports.</p><span class="learn" data-i18n="readGuide">Read development guide ↗</span></a>
-    </div>
-    <p><a class="fine-link" href="native_tests/README.md" data-i18n="nativeLink">Run native GIS acceptance tests ↗</a> · <a class="fine-link" href="references/gis-antipatterns.md" data-i18n="mistakesLink">Common GIS failures: before and after ↗</a> · <a class="fine-link" href="references/repository-manifest.json" data-i18n="manifestLink">Source-derived inventory ↗</a></p>
-  </section>
-
-  <section id="catalog" class="container">
-    <div class="section-head"><div><span class="overline" data-i18n="overlineCatalog">SOURCE DIRECTORY</span><h2 data-i18n="catalogTitle">Explore the geospatial ecosystem.</h2><p data-i18n="catalogDesc">Search the repository's real source catalogs. Each entry is an attributed reference, not a claim of guaranteed functionality, free commercial use, or bundled code.</p></div></div>
-    <div class="explorer">
-      <p class="api-expansion"><a class="fine-link" href="references/upstream-license-audit.md"><span id="licenseAuditProgress" data-i18n="licenseAuditLoading">Reviewing upstream repository license evidence…</span></a></p>
-      <p class="api-expansion"><a class="fine-link" href="examples/README.md"><span class="lang-en">New free GIS workflows: DEM slope calculation and offline STAC satellite metadata QA ↗</span><span class="lang-ar">أمثلة GIS مجانية جديدة: حساب انحدار DEM وتصفية بيانات STAC المحلية ↗</span></a></p>
-      <p class="api-expansion"><a class="fine-link" href="references/blue-marble-global-mapper.md"><span class="lang-en">New: Blue Marble Geographics / Global Mapper — official GitHub forks, GMS/Python scripting, commercial SDK and 3D terrain guidance ↗</span><span class="lang-ar">جديد: Blue Marble وGlobal Mapper — مشاريع GitHub، سكربتات GMS وPython، SDK التجاري والتضاريس ثلاثية الأبعاد ↗</span></a></p>
-      <p class="api-expansion"><a class="fine-link" href="references/esri-open-source-integration.md"><span class="lang-en">New: 10 audited Esri developer sources — Pro SDK snippets for AI, Arcade profiles, Python compatibility and Geoportal STAC/MCP ↗</span><span class="lang-ar">جديد: 10 مصادر Esri رسمية — أمثلة Pro SDK للوكلاء، وArcade، وفحص توافق Python، وفهرسة Geoportal وSTAC ↗</span></a></p>
-      <p class="api-expansion"><a class="fine-link" href="references/earth-view-architecture.md"><span class="lang-en">New Earth View architecture review: NASA GIBS 3D globe, Sentinel imagery, time-lapse and Electron. Upstream license not observed ↗</span><span class="lang-ar">جديد: دراسة مشروع Earth View — الكرة الأرضية ثلاثية الأبعاد وSentinel والتتابع الزمني وElectron. لم يُعثر على ترخيص المصدر ↗</span></a></p>
-      <p class="api-expansion"><a class="fine-link" href="references/free-first-policy.md"><span class="lang-en">Free-first: local GIS tools and free-tier services before optional commercial vendors ↗</span><span class="lang-ar">المجاني أولًا: أدوات GIS المحلية والخدمات المجانية بشروطها قبل الخيارات التجارية ↗</span></a></p>
-      <p class="api-expansion" data-i18n="apiExpansion">52 curated GIS APIs including GEBCO_2026 seabed/land terrain, boundaries, population, hazards, air quality, routing and biodiversity; check all provider limits and licences.</p>
-      <p class="api-expansion"><a class="fine-link" href="references/geospatial-data-repositories.md"><span class="lang-en">New: 24 curated GIS data directories and provider portals · connected to the GIS Data Repositories Professional 2026 master directory ↗</span><span class="lang-ar">جديد: 24 فهرسًا وبوابةً للبيانات الجغرافية · مرتبطة بدليل GIS Data Repositories Professional 2026 الشامل ↗</span></a></p>
-      <p class="api-expansion"><a class="fine-link" href="references/world-gazetteer-reference-layer.md"><span class="lang-en">World Gazetteer: search + scale-aware geographic reference labels (offline-first) ↗</span><span class="lang-ar">المعجم الجغرافي العالمي: بحث وطبقة أسماء تتفاعل مع مقياس الخريطة (بدون إنترنت) ↗</span></a></p>
-      <p class="api-expansion"><a class="fine-link" href="references/geocoding-place-search.md"><span class="lang-en">Geocoding / place search: 15 providers ranked from free to commercial ↗</span><span class="lang-ar">البحث عن الأماكن والمعالم: ١٥ مزودًا من المجاني إلى التجاري ↗</span></a></p>
-      <div class="explorer-top"><div class="tabs" role="tablist" aria-label="Catalog type"><button class="tab" id="projectsTab" type="button" role="tab" aria-selected="true" aria-controls="catalogResults" data-i18n="projectsTab">Projects & libraries</button><button class="tab" id="apisTab" type="button" role="tab" aria-selected="false" aria-controls="catalogResults" data-i18n="apisTab">GIS APIs & data</button><button class="tab" id="repositoriesTab" type="button" role="tab" aria-selected="false" aria-controls="catalogResults" data-i18n="repositoriesTab">Data repositories</button><button class="tab" id="stylesTab" type="button" role="tab" aria-selected="false" aria-controls="catalogResults" data-i18n="stylesTab">Style sources</button></div><span class="chip" id="shownCount" aria-live="polite">Loading…</span></div>
-      <div class="filters">
-      <label class="sr-only" for="searchInput" data-i18n="searchLabel">Search sources</label><input id="searchInput" type="search" autocomplete="off" placeholder="Search names, platforms or descriptions…">
-      <label class="sr-only" for="categoryFilter" data-i18n="categoryLabel">Category</label><select id="categoryFilter"><option value="all">All categories</option></select>
-      <div id="costFilterWrap" hidden><label class="sr-only" for="costFilter" data-i18n="costLabel">Cost and access</label><select id="costFilter" aria-label="Cost and access">
-      <option value="free-only" data-i18n="freeOnly">Free-compatible only</option>
-      <option value="all" data-i18n="allTiers">All access levels</option>
-      <option value="free-conditional" data-i18n="conditional">Free with limits</option>
-      <option value="free-self-hosted" data-i18n="selfHosted">Self-hosted open source</option>
-      <option value="restricted" data-i18n="restricted">Restricted public</option>
-      <option value="trial" data-i18n="trial">Trial only</option>
-      <option value="commercial" data-i18n="commercial">Commercial / metered</option>
-      <option value="unavailable" data-i18n="unavailable">Unavailable</option>
-      </select></div></div>
-      <div class="results" id="catalogResults" role="region" aria-live="polite" aria-label="Filtered catalog results"></div>
-      <div class="more-wrap"><button type="button" id="loadMoreBtn" class="more-btn" hidden>Show more</button></div>
-      <div class="explorer-note"><span data-i18n="catalogDisclaimer">Live directory from versioned repository JSON · upstream terms must be checked.</span><a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/references" target="_blank" rel="noopener noreferrer" data-i18n="allRefs">View all reference files ↗</a></div>
-    </div>
-  </section>
-
-  <section id="get-started" class="container">
-    <div class="section-head"><div><span class="overline" data-i18n="overlineStart">QUICK START</span><h2 data-i18n="startTitle">From reference to real implementation.</h2><p data-i18n="startDesc">Install the skill into a compatible coding agent or inspect the documented templates before building your own tool.</p></div></div>
-    <div class="paths">
-      <div class="path-card"><h3 data-i18n="installTitle">Install the agent skill</h3><p data-i18n="installDesc">Requires Node.js and a compatible skills CLI/agent. Verify your environment before running.</p>
-        <div class="code-bar"><code id="command">npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development</code><button class="copy" id="copyBtn" type="button" data-i18n="copy">Copy</button></div>
-        <p><a class="fine-link" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/gis-development/SKILL.md" target="_blank" rel="noopener noreferrer" data-i18n="inspectSkill">Inspect SKILL.md ↗</a></p>
-        <p class="fine-link"><a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills/geospatial-data-catalogs">Data Catalogs</a> · <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills/geospatial-ai-agents">GeoAI Agents</a> · <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills/terrain-hydrology-lidar">Terrain / LiDAR</a> · <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills/geospatial-data-discovery">Data Discovery</a> · <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills/qgis-plugin-development">QGIS Plugins</a> · <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills/geospatial-web-mapping">Web Mapping</a> · <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills/coordinate-reference-systems">CRS & Projections</a> · <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills/arcgis-toolbox-engineering">ArcGIS Toolbox QA</a> · <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills/gis-desktop-application-development">GIS Desktop Apps</a></p>
-      </div>
-      <div class="path-card"><h3 data-i18n="templatesTitle">Starter templates</h3><p data-i18n="templatesDesc">Reference examples to adapt and validate in the target GIS installation.</p>
-        <div class="template-list">
-          <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/templates/arcgis-pro-toolbox.pyt"><span>ArcGIS Pro · .pyt</span><span>↗</span></a>
-          <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/templates/arcmap-script-tool.py"><span>ArcMap · Python</span><span>↗</span></a>
-          <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/templates/qgis-processing-algorithm.py"><span>QGIS · Processing</span><span>↗</span></a>
-          <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/templates/standalone-geojson-summary.py"><span>Standalone · GeoJSON</span><span>↗</span></a>
+        <div class="flex items-center justify-between gap-3">
+          <div class="font-mono text-xs sm:text-sm text-slate-200 overflow-x-auto whitespace-nowrap py-1">
+            <span class="text-emerald-400 select-none mr-2">$</span>
+            <span id="cliText">git clone https://github.com/ahmadibrahim4geo/GIS-Development-Skills.git</span>
+          </div>
+          <button 
+            id="copyCliBtn"
+            onclick="copyCli()" 
+            class="shrink-0 px-3.5 py-1.5 rounded-lg bg-sky-500/15 hover:bg-sky-400 text-sky-300 hover:text-slate-950 border border-sky-400/30 font-mono text-xs font-bold transition-all"
+          >
+            Copy CLI
+          </button>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="container">
-    <div class="section-head"><div><span class="overline" data-i18n="overlineWorkflow">ENGINEERING PRINCIPLES</span><h2 data-i18n="workflowTitle">A practical validation workflow.</h2></div></div>
-    <div class="workflow">
-      <div class="step"><b>01 / SCOPE</b><h3 data-i18n="step1Title">Specify the target</h3><p data-i18n="step1Desc">Version, operating system, formats, UI, runtime and licenses.</p></div>
-      <div class="step"><b>02 / SELECT</b><h3 data-i18n="step2Title">Choose proven building blocks</h3><p data-i18n="step2Desc">Check APIs, source code availability, compatibility and attribution.</p></div>
-      <div class="step"><b>03 / BUILD</b><h3 data-i18n="step3Title">Implement an end-to-end slice</h3><p data-i18n="step3Desc">Build actual working commands before expanding the interface.</p></div>
-      <div class="step"><b>04 / VERIFY</b><h3 data-i18n="step4Title">Test GIS correctness</h3><p data-i18n="step4Desc">CRS, units, geometry, nodata, output repeatability and GUI actions.</p></div>
-    </div>
-  </section>
+      <!-- Hero CTA Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-12">
+        <a 
+          href="#capabilities" 
+          class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-400 to-emerald-400 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-sky-500/20 hover:brightness-110 transition-all"
+        >
+          <span data-lang="en">Explore 19 Specialist Skills ↓</span>
+          <span data-lang="ar">استكشف الـ 19 مهارة تخصصية ↓</span>
+        </a>
+        <a 
+          href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/tree/main/skills" 
+          target="_blank" 
+          rel="noopener"
+          class="px-6 py-3.5 rounded-xl glass-card text-slate-100 font-semibold text-sm sm:text-base hover:border-sky-400/60"
+        >
+          <span data-lang="en">Open Full Skills Directory ↗</span>
+          <span data-lang="ar">افتح دليل المهارات الكامل ↗</span>
+        </a>
+      </div>
 
-  <section class="container" id="contribute">
-    <div class="cta"><div><h2 data-i18n="contributeTitle">Help build a better GIS developer ecosystem.</h2><p data-i18n="contributeDesc">Suggest a source, report a broken link or contribute a tested improvement.</p></div>
-      <div class="buttons"><a class="btn primary" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/issues/new" target="_blank" rel="noopener noreferrer" data-i18n="suggest">Suggest an improvement ↗</a><a class="btn secondary" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" data-i18n="guide">Contribution guide ↗</a></div></div>
-  </section>
-  <section id="author" class="container author-section" aria-labelledby="author-title">
+      <!-- 5-Metric Scope Counter Bar -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-slate-900/75 border border-slate-800/90 backdrop-blur-md">
+        <div class="p-2 text-center">
+          <strong class="block text-2xl sm:text-3xl font-extrabold text-sky-400">19</strong>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Installable Agent Skills</span>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مهارة برمجية قابلة للتثبيت</span>
+        </div>
+        <div class="p-2 text-center">
+          <strong class="block text-2xl sm:text-3xl font-extrabold text-emerald-400">148</strong>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Curated Project References</span>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مرجع ومشروع هندسي موثق</span>
+        </div>
+        <div class="p-2 text-center">
+          <strong class="block text-2xl sm:text-3xl font-extrabold text-amber-400">52</strong>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Public GIS API Entries</span>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">واجهة برمجة مكانية (API)</span>
+        </div>
+        <div class="p-2 text-center">
+          <strong class="block text-2xl sm:text-3xl font-extrabold text-purple-400">24</strong>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">GIS Data Repositories</span>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مستودع بيانات جغرافية</span>
+        </div>
+        <div class="col-span-2 md:col-span-1 p-2 text-center">
+          <strong class="block text-2xl sm:text-3xl font-extrabold text-sky-300">04</strong>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Starter Templates</span>
+          <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">قوالب انطلاق جاهزة للمطورين</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE DEVELOPMENT PATHWAYS & SKILLS EXPLORER -->
+    <section id="capabilities" class="py-14 border-t border-slate-800/70">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-400 block mb-2">
+            <span data-lang="en">DEVELOPMENT PATHWAYS &amp; SPECIALIST CATALOG</span>
+            <span data-lang="ar">مسارات التطوير المكانية ودليل المهارات</span>
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+            <span data-lang="en">One skill hub. Multiple GIS stacks.</span>
+            <span data-lang="ar">منظومة موحدة لمختلف بيئات ومكتبات GIS.</span>
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-1 max-w-2xl">
+            <span data-lang="en">Choose the right architecture for the platform instead of forcing one GIS runtime onto another. Click any card to inspect its Agent Spec.</span>
+            <span data-lang="ar">اختر البنية الهندسية المناسبة لكل منصة بدلاً من فرض بيئة تشغيل واحدة. اضغط على أي بطاقة لمعاينة مواصفات المهارة.</span>
+          </p>
+        </div>
+        <div class="text-xs font-mono text-slate-400">
+          <span id="visibleCount">12</span> / 12 <span data-lang="en">Pathways Shown</span><span data-lang="ar">مسار معروض</span>
+        </div>
+      </div>
+
+      <!-- Filter Tabs & Instant Search -->
+      <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800 mb-8">
+        <div class="flex flex-wrap gap-2" role="tablist">
+          <button onclick="filterPathways('all', this)" class="pathway-tab active px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/40 transition-all">
+            <span data-lang="en">All Stacks (12)</span>
+            <span data-lang="ar">جميع المسارات (12)</span>
+          </button>
+          <button onclick="filterPathways('desktop', this)" class="pathway-tab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 border border-transparent transition-all">
+            <span data-lang="en">Desktop GIS (4)</span>
+            <span data-lang="ar">برامج سطح المكتب (4)</span>
+          </button>
+          <button onclick="filterPathways('eo', this)" class="pathway-tab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 border border-transparent transition-all">
+            <span data-lang="en">Remote Sensing &amp; Data (4)</span>
+            <span data-lang="ar">الاستشعار والبيانات (4)</span>
+          </button>
+          <button onclick="filterPathways('dev', this)" class="pathway-tab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 border border-transparent transition-all">
+            <span data-lang="en">Web, 3D, APIs &amp; SQL (4)</span>
+            <span data-lang="ar">الويب وقواعد البيانات (4)</span>
+          </button>
+        </div>
+
+        <div class="relative min-w-[260px] sm:min-w-[320px]">
+          <input 
+            type="search" 
+            id="pathwaySearch"
+            oninput="searchPathways(this.value)"
+            placeholder="Search ArcGIS, PyQGIS, GDAL, GEE, PostGIS..." 
+            class="w-full pl-9 pr-4 py-2 rounded-xl bg-[#050912] border border-slate-700/80 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-400"
+          />
+          <svg class="w-4 h-4 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+      </div>
+
+      <!-- 12 Pathways Cards Grid (Rendered Dynamically for Clean Modal & Filtering) -->
+      <div id="pathwaysContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
+    <!-- GOOGLE EARTH PRO, HISTORICAL IMAGERY TIMELINE & KML/KMZ ENGINEERING -->
+    <section id="earth-kml" class="py-14 border-t border-slate-800/70">
+      <div class="mb-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-2">
+          <span data-lang="en">GOOGLE KML / KMZ COMPATIBILITY &amp; 3D EARTH EXPLORERS</span>
+          <span data-lang="ar">توافق KML / KMZ ومستعرضات الأرض ثلاثية الأبعاد</span>
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          <span data-lang="en">Keep every imported map's identity &amp; build verifiable 3D Earth workflows.</span>
+          <span data-lang="ar">حافظ على الهوية الكارتوجرافية لكل خريطة مستوردة وطوّر مستعرضات أرض موثقة.</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-1 max-w-3xl">
+          <span data-lang="en">Source-preserving KML/KMZ styling, shared StyleMaps, nonblocking historical imagery timeline bar, and terrain elevation profile verification.</span>
+          <span data-lang="ar">الحفاظ الكامل على أنماط وأيقونات ومجلدات KML/KMZ الأصلية، مع شريط زمني للصور التاريخية والقطاعات التضاريسية.</span>
+        </p>
+      </div>
+
+      <!-- Interactive Historical Imagery Timeline Mini-Simulator -->
+      <div class="mb-8 p-5 rounded-2xl bg-gradient-to-r from-slate-900/95 via-[#0c1930] to-slate-900/95 border border-sky-500/30 shadow-lg">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <div class="flex items-center gap-3">
+            <span class="px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 border border-amber-400/30 font-mono text-xs font-bold">ILLUSTRATIVE DEMO</span>
+            <h3 class="text-base sm:text-lg font-bold text-white">
+              <span data-lang="en">Nonblocking Historical Imagery Timeline Bar</span>
+              <span data-lang="ar">نموذج شريط الصور التاريخية الزمني غير الحاجب للخريطة</span>
+            </h3>
+          </div>
+          <div class="text-xs font-mono text-sky-300" id="timelineSceneMeta">
+            Demo: Sentinel-2 L2A • Sample date: 2026-10-25 • Sample cloud: 0.4% • Camera Locked ✓
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 bg-[#050912]/90 p-3.5 rounded-xl border border-slate-800" dir="ltr">
+          <button onclick="stepTimeline(-1)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200">◀ Prev Date</button>
+          <input 
+            type="range" 
+            min="0" 
+            max="4" 
+            value="4" 
+            id="timelineSlider"
+            oninput="updateTimelineDemo(this.value)"
+            class="w-full accent-sky-400 cursor-pointer"
+          />
+          <button onclick="stepTimeline(1)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200">Next Date ▶</button>
+          <a 
+            href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/historical-imagery-timeline.md" 
+            target="_blank"
+            class="shrink-0 px-3.5 py-1.5 rounded-lg bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-slate-950 text-xs font-bold transition-all"
+          >
+            Spec ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- 4 Earth & KML Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/kml-kmz-engineering/SKILL.md" target="_blank" class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 mb-3">KML / KMZ</span>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <span data-lang="en">KML/KMZ Engineering Skill</span>
+              <span data-lang="ar">مهارة هندسة KML / KMZ</span>
+            </h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">Preserve original styling, shared StyleMaps, icons, folders and ExtendedData without lossy conversion.</span>
+              <span data-lang="ar">الحفاظ على التنسيقات الأصلية والرموز والمجلدات والبيانات الممتدة دون فقدان أثناء التحويل.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-sky-400">Read skill spec ↗</span>
+        </a>
+
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/google-earth-pro-engineering.md" target="_blank" class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-sky-500/15 text-sky-300 border border-sky-500/30 mb-3">3D EARTH</span>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <span data-lang="en">Google Earth Pro Patterns</span>
+              <span data-lang="ar">أنماط Google Earth Pro</span>
+            </h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">Places hierarchy, NetworkLink / Region / LOD, camera tours, overlays and terrain elevation profiles.</span>
+              <span data-lang="ar">المجلدات وروابط NetworkLink والجولات الكاميرية والقطاعات التضاريسية مع اختبارات قبول واضحة.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-sky-400">Read engineering reference ↗</span>
+        </a>
+
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/historical-imagery-timeline.md" target="_blank" class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30 mb-3">TIMELINE ⏱</span>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <span data-lang="en">Historical Imagery Timeline</span>
+              <span data-lang="ar">شريط الصور التاريخية الزمني</span>
+            </h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">Nonblocking date bar, discovered acquisitions, scene credits, play/pause, camera lock and split comparison.</span>
+              <span data-lang="ar">شريط زمني غير حاجب للخريطة، تواريخ التقاط مؤكدة، وتشغيل زمني ومقارنة بصرية بين تاريخين.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-sky-400">Explore timeline contract ↗</span>
+        </a>
+
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/desktop-and-web.md" target="_blank" class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-purple-500/15 text-purple-300 border border-purple-500/30 mb-3">OPEN STACK</span>
+            <h3 class="text-lg font-bold text-white mb-2">
+              <span data-lang="en">Independent Desktop Runtime</span>
+              <span data-lang="ar">تنفيذ مستقل بـ C++ / Qt / Python</span>
+            </h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">Build clean-room Earth explorers with Cesium Native, Qt, Python, libkml, GDAL, PROJ and SQLite.</span>
+              <span data-lang="ar">بناء مستعرضات أرض مستقلة بمكتبات مفتوحة مثل libkml و GDAL و PROJ و Cesium دون نسخ الكود المغلق.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-sky-400">View runtime stack ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CARTOGRAPHY, SYMBOLOGY & DEVICE CONTEXT -->
+    <section id="cartography" class="py-14 border-t border-slate-800/70">
+      <div class="mb-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-400 block mb-2">
+          <span data-lang="en">CARTOGRAPHY, SYMBOLOGY &amp; DEVICE CONTEXT</span>
+          <span data-lang="ar">الكارتوجرافيا والترميز وسياق الجهاز</span>
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          <span data-lang="en">Style maps with high visual contrast. Understand time, sun and place.</span>
+          <span data-lang="ar">تصميم كارتوجرافي عالي التباين مع محاكاة إضاءة الشمس والموقع والزمن.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/gis-cartography-symbology/SKILL.md" target="_blank" class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-purple-500/15 text-purple-300 border border-purple-500/30 mb-3">SYM</span>
+            <h3 class="text-xl font-bold text-white mb-2">Cartography &amp; Symbology</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">Point, line, polygon and raster symbols, scientific color ramps, label contrast, accessibility and native project save/reopen.</span>
+              <span data-lang="ar">ترميز النقاط والخطوط والمضلعات والمرئيات، وتدرجات الألوان العلمية، وتباين النصوص وحفظ المشاريع.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-sky-400">Read development guide ↗</span>
+        </a>
+
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/gis-device-context/SKILL.md" target="_blank" class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 mb-3">TIME / SUN</span>
+            <h3 class="text-xl font-bold text-white mb-2">Device Time &amp; Location</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">UTC, time zones, consent-based location, scene independence and simulated 3D Sunlight illumination across terrain.</span>
+              <span data-lang="ar">إدارة التوقيت العالمي والمناطق الزمنية والموقع الجغرافي ومحاكاة إضاءة الشمس ثلاثية الأبعاد على التضاريس.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-sky-400">Read development guide ↗</span>
+        </a>
+
+        <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/examples/icon-manager/index.html" target="_blank" class="glass-card rounded-2xl p-6 flex flex-col justify-between border-amber-500/30">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40 mb-3">LIVE APP DEMO</span>
+            <h3 class="text-xl font-bold text-white mb-2">Unified GIS Icon Manager</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">Interactive icon creator demo and 21 license-aware symbol libraries and scientific color palettes.</span>
+              <span data-lang="ar">مولد أيقونات تفاعلي مباشر مع 21 مكتبة رموز قياسية وتدرجات لونية علمية مفتوحة المصدر.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-amber-400">Launch interactive Icon Creator ↗</span>
+        </a>
+      </div>
+
+      <!-- Quick Reference Chips -->
+      <div class="flex flex-wrap gap-2.5">
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/cartographic-style-guide.md" target="_blank" class="px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-sky-500/15 border border-slate-800 hover:border-sky-400/40 text-xs text-slate-300 transition-all">Style decision guide ↗</a>
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/map-marker-icon-library.md" target="_blank" class="px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-sky-500/15 border border-slate-800 hover:border-sky-400/40 text-xs text-slate-300 transition-all">21 Map marker libraries ↗</a>
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/kml-kmz-symbol-preservation.md" target="_blank" class="px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-sky-500/15 border border-slate-800 hover:border-sky-400/40 text-xs text-slate-300 transition-all">Preserve imported KMZ styles ↗</a>
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/device-time-location-context.md" target="_blank" class="px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-sky-500/15 border border-slate-800 hover:border-sky-400/40 text-xs text-slate-300 transition-all">Time, location &amp; sunlight rules ↗</a>
+      </div>
+    </section>
+
+    <!-- SECURITY & REPRODUCIBLE EXAMPLES -->
+    <section id="security" class="py-14 border-t border-slate-800/70">
+      <div class="mb-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-2">
+          <span data-lang="en">SECURE-BY-DESIGN &amp; REPRODUCIBLE WORKFLOWS</span>
+          <span data-lang="ar">الأمان الهندسي والاختبارات القياسية القابلة للتكرار</span>
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          <span data-lang="en">Protect GIS tools, KML parsers, API keys &amp; verify DEM/STAC outputs.</span>
+          <span data-lang="ar">حماية مدمجة ضد الملفات غير الموثوقة وأمثلة عملية مختبرة بدون خدمات مدفوعة.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/gis-security-guardian/SKILL.md" target="_blank" class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 mb-3">SAFE GUARDIAN</span>
+            <h3 class="text-xl font-bold text-white mb-2">GIS Security Guardian</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">Risk-based protection alongside all GIS specialists: XML/KML entity safety, KMZ zip traversal checks, and API secret hygiene.</span>
+              <span data-lang="ar">حماية شاملة ضد ثغرات ملفات XML/KML وفحص أرشيفات KMZ ومنع تسريب مفاتيح الواجهات البرمجية.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-sky-400">Read security skill ↗</span>
+        </a>
+
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/examples/terrain-slope/README.md" target="_blank" class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-sky-500/15 text-sky-300 border border-sky-500/30 mb-3">DEM HORN SLOPE</span>
+            <h3 class="text-xl font-bold text-white mb-2">Free DEM Slope Tool</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">Real ASCII grid Horn slope output with synthetic 45°/NoData fixture and verifiable provenance.</span>
+              <span data-lang="ar">أداة حساب انحدار التضاريس (Horn Slope) مع نموذج اختبار معياري للتعامل مع قيم NoData.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-sky-400">Inspect DEM fixture ↗</span>
+        </a>
+
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/examples/stac-offline/README.md" target="_blank" class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30 mb-3">OFFLINE STAC QA</span>
+            <h3 class="text-xl font-bold text-white mb-2">Offline STAC Metadata QA</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">Filter synthetic satellite item metadata offline with zero paid service dependencies or API keys.</span>
+              <span data-lang="ar">فحص وفلترة بيانات STAC الفضائية محلياً بدون الحاجة لمفاتيح اتصال أو خدمات مدفوعة.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-sky-400">Inspect STAC fixture ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Preserved developer information and contact section -->
+    <section id="author" class="container author-section" aria-labelledby="author-title">
     <div class="author-panel mirsad-author">
       <div class="author-portrait">
         <div class="portrait-frame"><img src="https://ahmadibrahim4geo.github.io/MIRSAD/assets/ahmad_ibrahim_original.png" alt="Ahmad Ibrahim — GIS specialist and cartographer" data-i18n-alt="authorPortraitAlt" width="180" height="180" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://github.com/ahmadibrahim4geo.png';"></div>
@@ -382,220 +581,299 @@
       </div>
     </div>
   </section>
-</main>
+
+  </main>
+
 <footer><div class="container foot"><span>© <span id="year">2026</span> <span class="lang-ar" lang="ar">مهارات تطوير نظم المعلومات الجغرافية · تطوير <a href="#author">أحمد إبراهيم</a></span><span class="lang-en" lang="en">GIS Development Skills · Developed by <a href="#author">Ahmad Ibrahim</a></span> · MIT</span><span data-i18n="footerNote">Independent open-source resource. Third-party licenses and service terms remain in effect.</span></div></footer>
-<script>
-(function(){
-  "use strict";
-  const REPO="https://github.com/ahmadibrahim4geo/GIS-Development-Skills";
-  const data={projects:[],apis:[],repositories:[],styles:[]};
-  let installedSkills=[];
-  const skillNames={"en":{"gis-cartography-symbology":"Cartography & symbology","gis-device-context":"Device time & location","gis-security-guardian":"GIS Security Guardian","kml-kmz-engineering":"KML/KMZ engineering","arcgis-toolbox-engineering":"ArcGIS toolboxes","coordinate-reference-systems":"CRS & projections","geospatial-ai-agents":"GIS AI agents","geospatial-api-integration":"GIS API integration","geospatial-data-catalogs":"Data catalogs","geospatial-data-discovery":"Data discovery","geospatial-data-processing":"Vector/raster processing","geospatial-web-mapping":"Web mapping & 3D","gis-desktop-application-development":"GIS desktop apps","gis-development":"Core skill router","global-mapper-development":"Global Mapper · licensed host","qgis-plugin-development":"QGIS plugin development","remote-sensing-pipelines":"Remote sensing","spatial-databases":"Spatial databases","terrain-hydrology-lidar":"Terrain, hydrology & LiDAR"},"ar":{"gis-cartography-symbology":"الرموز والإخراج الخرائطي","gis-device-context":"موقع الجهاز والتوقيت","gis-security-guardian":"حارس الأمان لتطوير GIS","kml-kmz-engineering":"هندسة KML/KMZ","arcgis-toolbox-engineering":"أدوات ArcGIS","coordinate-reference-systems":"المساقط والإحداثيات","geospatial-ai-agents":"وكلاء الذكاء الجغرافي","geospatial-api-integration":"دمج خدمات GIS API","geospatial-data-catalogs":"فهارس البيانات الجغرافية","geospatial-data-discovery":"اكتشاف مصادر البيانات","geospatial-data-processing":"معالجة الراستر والفيكتور","geospatial-web-mapping":"خرائط الويب وثلاثية الأبعاد","gis-desktop-application-development":"تطبيقات GIS المكتبية","gis-development":"المهارة الأساسية","global-mapper-development":"Global Mapper · برنامج تجاري","qgis-plugin-development":"تطوير إضافات QGIS","remote-sensing-pipelines":"الاستشعار عن بُعد","spatial-databases":"قواعد البيانات المكانية","terrain-hydrology-lidar":"التضاريس والهيدرولوجيا وLiDAR"}};
-  const state={lang:"en",tab:"projects",query:"",category:"all",cost:"free-only",visibleLimit:24,ready:{projects:false,apis:false,repositories:false,styles:false},failed:{projects:false,apis:false,repositories:false,styles:false}};
-  const tr={
-    en:{
-      guardianOverline:"SECURE-BY-DESIGN",guardianTitle:"GIS Security Guardian protects every development step.",guardianDesc:"A cross-cutting, free-first security skill for agent permissions, untrusted GIS inputs and release checks.",guardianSkill:"Security Guardian skill",guardianSkillDesc:"Risk-based protection alongside all GIS specialists: prompt injection, files, network and secrets.",guardianTools:"Open security tool registry",guardianToolsDesc:"14 upstream tools classified by purpose, license status and privacy requirements.",guardianPolicy:"Security and disclosure policy",guardianPolicyDesc:"Safe vulnerability reporting, non-destructive defaults and honest testing limitations.",
-      kmlOverline:"GOOGLE KML / KMZ COMPATIBILITY",kmlTitle:"Keep every imported map's original identity.",kmlDesc:"Retain imported styles, symbols, folders, data and portable assets.",kmlSkillTitle:"KML/KMZ engineering skill",kmlSkillDesc:"Preserve the original map; distinguish faithful viewing from lossy conversion.",kmlGuideTitle:"Google & OGC compatibility guide",kmlGuideDesc:"StyleMap, KMZ resource references, gx extensions, time and altitude.",kmlExampleTitle:"KML round-trip fixture",kmlExampleDesc:"Offline XML tests; native visual parity requires separate host checks.",
-      cartoOverline:"MAP STYLING & DEVICE CONTEXT",cartoSectionTitle:"Style maps. Understand time and place.",cartoSectionDesc:"Two new specialist skills and license-aware style resources.",cartoSkillTitle:"Cartography & Symbology",cartoSkillDesc:"General GIS Icon Manager, point/line/polygon/raster symbology, palettes and KMZ preservation.",deviceSkillTitle:"Device Time & Location",deviceSkillDesc:"UTC, timezones, consent-based location and simulated Sunlight.",styleSourcesTitle:"Browse 21 style resources",styleSourcesDesc:"Find 21 GIS icon/style references, including Mapular, Streamline and license-aware map symbol libraries.",cartoExampleLink:"Offline MapLibre symbol fixture ↗",deviceExampleLink:"Offline device time fixture ↗",cartoGuideLink:"Style selection guide ↗",markerIconsLink:"Map marker icon libraries ↗",kmzPreserveLink:"Preserve imported KML/KMZ styles ↗",iconManagerGuideLink:"Unified GIS Icon Manager ↗",iconManagerDemoLink:"Try offline SVG/PNG creator ↗",stylesTab:"Style sources",kmzUseLabel:"KMZ role for new icons",openStyle:"Visit style source ↗",
-      skillsDirectoryLabel:"ALL SKILLS",skillsDirectoryTitle:"Every installable GIS specialty.",skillsDirectoryDesc:"Direct access to every GIS specialist; commercial hosts are optional.",fallbackSkills:"Browse skills on GitHub ↗",freePolicyLink:"Free-first policy and vendor licensing ↗",searchLabel:"Search",categoryLabel:"Category",costLabel:"Cost and access",freeOnly:"Free-compatible only",allTiers:"All tiers",conditional:"Free with conditions",selfHosted:"Self-hosted open source",restricted:"Restricted public",trial:"Trial only",commercial:"Commercial / metered",unavailable:"Unavailable",showMore:"Show more",
-      navSkills:"Skills",navExplorer:"Explorer",navExamples:"Examples",navStart:"Get started",navContribute:"Contribute",authorPortraitAlt:"Ahmad Ibrahim — GIS specialist and cartographer",authorGitHubLabel:"Ahmad Ibrahim on GitHub",authorEmailLabel:"Email Ahmad Ibrahim",authorWhatsAppLabel:"Ahmad Ibrahim on WhatsApp",authorContributeLabel:"Suggest a GIS skill or tool",
-      eyebrow:"Open-source • Agent-ready • GIS engineering",heroTitle:"Develop GIS.<br><em>Build with confidence.</em>",
-      heroText:"A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.",
-      exploreSkills:"Explore skills ↓",browseCatalog:"Browse catalog →",statSkill:"Installable agent skills",statProjects:"Curated project references",statApis:"Public GIS API entries",statTemplates:"Developer starter templates",statRepositories:"GIS data repositories",
-      overlineSkills:"DEVELOPMENT PATHWAYS",skillsTitle:"One skill. Multiple GIS stacks.",skillsDesc:"Choose the right architecture for the platform instead of forcing one GIS runtime onto another.",
-      arcPro:"ArcPy toolboxes and QA (licensed ArcGIS Pro host required); see free QGIS/GDAL alternatives.",arcMap:"ArcMap legacy Python engineering (licensed host); free workflows use independent QGIS/GDAL equivalents.",
-      qgis:"Processing providers, QGIS plugins and cross-version considerations.",desktop:"Qt, MapLibre, CesiumJS, and dependable geospatial desktop architecture.",
-      remote:"Satellite processing, raster pipelines, reproducibility and AI research checks.",rust:"Rust GIS architecture and interactive geospatial mapping for R.",dataSkillTitle:"GIS Data Discovery",apiSkillTitle:"GIS API Integration",dataSkill:"Find appropriate geospatial providers, boundaries, population and scientific products.",apiSkill:"Connect 52 curated services with secure keys, validated data and reliable error handling.",readGuide:"Read development guide ↗",
-      slopeExampleTitle:"Free DEM slope tool",slopeExampleDesc:"Offline Horn slope calculation with 45-degree/NoData raster QA and provenance.",stacExampleTitle:"Offline STAC metadata filtering",stacExampleDesc:"Query artificial satellite item metadata by date, bbox and clouds without API keys.",licenseAuditLoading:"Upstream code license audit loading…",licenseAuditLabel:"Upstream license files verified",licenseAuditSeparator:"out of",
-      gmTitle:"Global Mapper Development",gmDesc:"Licensed GMS/Python/SDK automation and Blue Marble 3D/photogrammetry forks.",
-      dbTitle:"Spatial Databases",dbDesc:"PostGIS, SpatiaLite, query plans and spatial indexes.",processingTitle:"Geospatial Processing",processingDesc:"Portable vector and raster pipelines with geometric QA.",rsTitle:"Remote Sensing Pipelines",rsDesc:"STAC/COG and Earth Engine sensor-aware processing.",examplesOverline:"REPRODUCIBLE WORKFLOWS",examplesTitle:"Production GIS engineering examples.",examplesDesc:"Synthetic fixtures and transparent native acceptance limits for each example.",networkExampleTitle:"Network endpoint audit",networkExampleDesc:"Non-destructive duplicate/dangle screening on synthetic lines.",weatherExampleTitle:"Weather API to GeoJSON",weatherExampleDesc:"An offline UTC modeled-weather fixture converted to GIS points.",batchExampleTitle:"Batch layout PDF export",batchExampleDesc:"ArcGIS Pro PDF export; native testing remains required.",exampleLink:"View example and test ↗",allExamples:"All examples, including PostGIS and STAC/COG ↗",benchmarkLink:"Read the quality benchmark ↗",
-      qualityOverline:"GIS AGENT QUALITY",qualityTitle:"Build GIS tools with verified engineering evidence.",qualityDesc:"Route tasks precisely, inspect tests and distinguish offline checks from native execution.",routeCard:"GIS decision tree",routeDesc:"Choose the correct GIS specialty for each task.",evidenceCard:"Acceptance evidence",evidenceDesc:"Commands, fixtures, expected and observed outputs with T0–T4 status.",fixtureCard:"Reproducible fixtures",fixtureDesc:"GeoJSON, Shapefile, GPKG, GeoTIFF and spatial edge cases.",secureCard:"GIS Security Guardian",secureDesc:"Cross-cutting agent safety, GIS file controls, secrets and release checks.",perfCard:"GIS performance",perfDesc:"Spatial indexes, GeoParquet, memory, chunking and raster windows.",monitorCard:"Service health",monitorDesc:"Weekly non-blocking availability reports with manual policy review.",nativeLink:"Run native GIS acceptance tests ↗",mistakesLink:"Common GIS failures: before and after ↗",manifestLink:"Source-derived inventory ↗",overlineCatalog:"SOURCE DIRECTORY",catalogTitle:"Explore the geospatial ecosystem.",catalogDesc:"Search the repository's real source catalogs. Each entry is an attributed reference, not a claim of guaranteed functionality, free commercial use, or bundled code.",
-      apiExpansion:"52 documented GIS APIs including GEBCO_2026 seabed and land elevation, boundaries, population, hazards, water, air quality, routing and Earth observation. Free access is not unlimited or automatically commercial-safe.",
-      projectsTab:"Projects & libraries",apisTab:"GIS APIs & data",repositoriesTab:"Data repositories",catalogDisclaimer:"Live directory from versioned repository JSON · upstream terms must be checked.",allRefs:"View all reference files ↗",
-      overlineStart:"QUICK START",startTitle:"From reference to real implementation.",startDesc:"Install the skill into a compatible coding agent or inspect the documented templates before building your own tool.",
-      installTitle:"Install the agent skill",installDesc:"Requires Node.js and a compatible skills CLI/agent. Verify your environment before running.",inspectSkill:"Inspect SKILL.md ↗",copy:"Copy",copied:"Copied!",
-      templatesTitle:"Starter templates",templatesDesc:"Reference examples to adapt and validate in the target GIS installation.",
-      overlineWorkflow:"ENGINEERING PRINCIPLES",workflowTitle:"A practical validation workflow.",
-      step1Title:"Specify the target",step1Desc:"Version, operating system, formats, UI, runtime and licenses.",
-      step2Title:"Choose proven building blocks",step2Desc:"Check APIs, source code availability, compatibility and attribution.",
-      step3Title:"Implement an end-to-end slice",step3Desc:"Build actual working commands before expanding the interface.",
-      step4Title:"Test GIS correctness",step4Desc:"CRS, units, geometry, nodata, output repeatability and GUI actions.",
-      contributeTitle:"Help build a better GIS developer ecosystem.",contributeDesc:"Suggest a source, report a broken link or contribute a tested improvement.",
-      suggest:"Suggest an improvement ↗",guide:"Contribution guide ↗",footerNote:"Independent open-source resource. Third-party licenses and service terms remain in effect.",
-      allCategories:"All categories",search:"Search names, platforms or descriptions…",results:"results",loading:"Loading catalog…",none:"No matching entries. Try another keyword or category.",
-      error:"The live catalog could not be loaded. Open this site through GitHub Pages or browse the source JSON on GitHub.",openSource:"View project / documentation ↗",licenseUnverified:"License not independently verified",openAPI:"Provider documentation ↗",openRepository:"Visit data catalog ↗"
-    },
-    ar:{
-      guardianOverline:"الأمان المصاحب للتطوير",guardianTitle:"GIS Security Guardian — حماية من بداية المهمة حتى التسليم.",guardianDesc:"مهارة أمان شاملة ومجانية في أساسها لحماية صلاحيات الوكلاء وملفات GIS والفحص قبل النشر.",guardianSkill:"مهارة حارس الأمان",guardianSkillDesc:"حماية تتكامل مع جميع مهارات GIS: حقن التعليمات والملفات والشبكة والأسرار.",guardianTools:"كتالوج أدوات الأمان المفتوحة",guardianToolsDesc:"14 مشروعًا مصنفًا حسب الاستخدام والتراخيص ومتطلبات الخصوصية.",guardianPolicy:"سياسة الأمان والإبلاغ عن الثغرات",guardianPolicyDesc:"الإبلاغ الآمن والحفاظ على البيانات الأصلية وحدود التحقق الفني.",
-      kmlOverline:"التوافق مع ملفات KML وKMZ",kmlTitle:"احتفظ بالخصائص الأصلية لكل خريطة مستوردة.",kmlDesc:"الحفاظ على الرموز والألوان والمجلدات والبيانات والموارد داخل الملفات.",kmlSkillTitle:"مهارة هندسة KML/KMZ",kmlSkillDesc:"عرض يحافظ على المصدر مع فصل التحويل الذي قد يفقد خصائص.",kmlGuideTitle:"دليل التوافق مع Google وOGC",kmlGuideDesc:"استايلات StyleMap وموارد KMZ وإضافات gx والتوقيت والارتفاع.",kmlExampleTitle:"ملف واختبارات KML تجريبية",kmlExampleDesc:"فحص XML محلي ثم اختبارات مستقلة للعرض وإعادة الفتح داخل البرنامج.",
-      cartoOverline:"الرموز وبيانات الجهاز",cartoSectionTitle:"نسّق خرائطك وحدد الزمان والمكان.",cartoSectionDesc:"مهارتان جديدتان ومصادر استايلات مع بيان التراخيص.",cartoSkillTitle:"الرموز والإخراج الخرائطي",cartoSkillDesc:"مدير أيقونات موحد لتطبيقات GIS، ورموز وخرائط وراستر مع الحفاظ على ملفات KMZ الأصلية.",deviceSkillTitle:"وقت الجهاز وموقعه",deviceSkillDesc:"الوقت والتاريخ والمنطقة الزمنية وموقع الجهاز بإذن المستخدم.",styleSourcesTitle:"تصفح 21 مصدرًا للاستايلات",styleSourcesDesc:"21 مصدرًا للرموز والأيقونات، منها Mapular وStreamline، مع بيان شروط الترخيص.",cartoExampleLink:"مثال رموز MapLibre محلي ↗",deviceExampleLink:"مثال الوقت والإحداثيات محلي ↗",cartoGuideLink:"دليل اختيار الاستايلات ↗",markerIconsLink:"مكتبات أيقونات الخرائط ↗",kmzPreserveLink:"حفظ استايلات KML/KMZ المستوردة ↗",iconManagerGuideLink:"دليل مدير أيقونات GIS الموحد ↗",iconManagerDemoLink:"جرب تصميم أيقونة SVG/PNG ↗",stylesTab:"مصادر الاستايلات",kmzUseLabel:"استخدام الأيقونة الجديدة في KMZ",openStyle:"فتح مصدر الاستايلات ↗",
-      skillsDirectoryLabel:"دليل المهارات",skillsDirectoryTitle:"جميع مهارات GIS المتاحة.",skillsDirectoryDesc:"روابط مباشرة لكل مهارة؛ البرامج التجارية اختيارية وفق الترخيص.",fallbackSkills:"فتح جميع المهارات على GitHub ↗",freePolicyLink:"سياسة المجاني أولًا والتراخيص ↗",searchLabel:"البحث",categoryLabel:"التصنيف",costLabel:"التكلفة والإتاحة",freeOnly:"المتاح مجانًا بشروطه",allTiers:"كل المستويات",conditional:"مجاني بقيود",selfHosted:"استضافة ذاتية مفتوحة المصدر",restricted:"عام بشروط صارمة",trial:"تجربة فقط",commercial:"تجاري / مدفوع",unavailable:"غير متاح",showMore:"عرض المزيد",
-      navSkills:"المهارات",navExplorer:"استكشاف المصادر",navExamples:"الأمثلة",navStart:"ابدأ هنا",navContribute:"المساهمة",authorPortraitAlt:"أحمد إبراهيم — أخصائي نظم معلومات جغرافية وكارتوجرافي",authorGitHubLabel:"حساب أحمد إبراهيم على GitHub",authorEmailLabel:"إرسال بريد إلكتروني إلى أحمد إبراهيم",authorWhatsAppLabel:"التواصل مع أحمد إبراهيم عبر واتساب",authorContributeLabel:"اقتراح مهارة أو أداة جديدة",
-      eyebrow:"مفتوح المصدر • مخصص للوكلاء البرمجيين • تطوير GIS",heroTitle:"طوّر أدوات GIS.<br><em>على أسس هندسية موثوقة.</em>",
-      heroText:"مهارة برمجية ودليل مصادر مُنظّم لتطوير أدوات ArcGIS وإضافات QGIS والخرائط ثنائية وثلاثية الأبعاد وتطبيقات سطح المكتب ومعالجة البيانات الجغرافية.",
-      exploreSkills:"استكشف المهارات ↓",browseCatalog:"تصفح الدليل ←",statSkill:"مهارات قابلة للتثبيت",statProjects:"مرجع ومشروع جغرافي",statApis:"مصدر GIS API",statTemplates:"قوالب برمجية مبدئية",statRepositories:"دليل وبوابة بيانات جغرافية",
-      overlineSkills:"مسارات التطوير",skillsTitle:"مهارة واحدة، ومسارات GIS متعددة.",skillsDesc:"اختر البنية المناسبة لكل برنامج بدلًا من افتراض أن بيئات نظم المعلومات الجغرافية متطابقة.",
-      arcPro:"تطوير ArcPy وPython Toolbox داخل ArcGIS Pro المرخص، مع بدائل مجانية باستخدام QGIS وGDAL.",arcMap:"تطوير ArcMap بإصدار Python القديم داخل البرنامج المرخص، مع مسارات QGIS/GDAL مجانية مستقلة.",
-      qgis:"إضافات QGIS وخوارزميات Processing وفروق الإصدارات.",desktop:"تطبيقات سطح المكتب والخرائط عبر Qt وMapLibre وCesiumJS.",
-      remote:"معالجة المرئيات والأرصاد وتدفقات البيانات النقطية والتحقق من نماذج الذكاء الاصطناعي.",rust:"بنية برامج GIS بلغة Rust والخرائط التفاعلية باستخدام R.",dataSkillTitle:"اكتشاف البيانات الجغرافية",apiSkillTitle:"دمج خدمات GIS API",dataSkill:"اختيار مصادر الحدود والسكان والبيانات الجغرافية والعلمية المناسبة.",apiSkill:"ربط 52 خدمة API بإدارة آمنة للمفاتيح والتحقق من البيانات والأخطاء.",readGuide:"عرض الدليل البرمجي ↗",
-      slopeExampleTitle:"حساب الانحدار من DEM مجانًا",slopeExampleDesc:"مثال Horn بدون إنترنت ببيانات اختبار وNoData وتوثيق المخرجات.",stacExampleTitle:"فحص عناصر STAC دون إنترنت",stacExampleDesc:"فلترة بيانات أقمار صناعية اصطناعية حسب التاريخ والموقع ونسبة السحب دون مفتاح API.",licenseAuditLoading:"جارٍ قراءة حالة تراخيص المشروعات…",licenseAuditLabel:"تم التحقق من ملفات تراخيص",licenseAuditSeparator:"من أصل",
-      gmTitle:"تطوير Global Mapper",gmDesc:"أتمتة GMS وPython وSDK التجاري ومراجع Blue Marble ثلاثية الأبعاد والمسح التصويري.",
-      dbTitle:"قواعد البيانات المكانية",dbDesc:"PostGIS وSpatiaLite والفهارس وخطط تنفيذ الاستعلامات.",processingTitle:"معالجة البيانات الجغرافية",processingDesc:"الراستر والفيكتور مع اختبار النتائج وصحة الهندسة.",rsTitle:"تدفقات الاستشعار عن بُعد",rsDesc:"STAC وCOG وEarth Engine وفحص جودة المرئيات.",examplesOverline:"سير عمل قابل لإعادة التشغيل",examplesTitle:"أمثلة عملية لهندسة GIS.",examplesDesc:"بيانات اصطناعية واختبارات موثقة وحدود واضحة لتشغيل برامج GIS الفعلي.",networkExampleTitle:"تدقيق نهايات الشبكات",networkExampleDesc:"اكتشاف التكرار والنهايات المعلقة دون تغيير البيانات الأصلية.",weatherExampleTitle:"تحويل الطقس إلى GeoJSON",weatherExampleDesc:"تحويل بيانات تجريبية بتوقيت UTC إلى عناصر جغرافية.",batchExampleTitle:"تصدير PDF دفعة واحدة",batchExampleDesc:"تصدير تخطيطات ArcGIS Pro ويستلزم اختبارًا داخل البرنامج.",exampleLink:"عرض المثال والاختبار ↗",allExamples:"استكشف الأمثلة بما فيها PostGIS وSTAC/COG ↗",benchmarkLink:"قراءة معيار الجودة ↗",
-      qualityOverline:"جودة وكلاء GIS",qualityTitle:"طوّر أدوات GIS مع دليل موثق على صحة التنفيذ.",qualityDesc:"اختر المهارة المناسبة واختبر النتائج مع التمييز بين فحوص الكود والتشغيل داخل البرامج.",routeCard:"شجرة قرارات GIS",routeDesc:"اختيار مهارة ArcGIS أو QGIS أو Web أو Desktop أو SQL أو الاستشعار عن بعد.",evidenceCard:"تقارير إثبات التنفيذ",evidenceDesc:"تسجيل الأوامر والبيانات والنتائج المتوقعة والفعلية ومستويات T0–T4.",fixtureCard:"بيانات اختبار قابلة للتكرار",fixtureDesc:"أمثلة GeoJSON وShapefile وGeoPackage وGeoTIFF وأخطاء مكانية.",secureCard:"حارس أمان GIS",secureDesc:"حماية الملفات والأرشيفات وSQL والخدمات والمفاتيح.",perfCard:"أداء GIS",perfDesc:"الفهارس وGeoParquet والذاكرة والمعالجة الدفعية وقراءة الراستر.",monitorCard:"حالة الخدمات",monitorDesc:"تقارير أسبوعية مستقلة عن إتاحة الخدمات مع مراجعة بشرية للتراخيص.",nativeLink:"اختبارات GIS داخل البرامج الأصلية ↗",mistakesLink:"أخطاء GIS الشائعة قبل وبعد الإصلاح ↗",manifestLink:"البيان المركزي للمستودع ↗",overlineCatalog:"دليل المصادر",catalogTitle:"استكشف منظومة البرمجيات والبيانات الجغرافية.",catalogDesc:"ابحث مباشرة في كتالوجات المستودع. إدراج المصادر لا يعني ضمان عملها أو إتاحة استخدامها التجاري دون قيود أو توفير أكوادها داخل المشروع.",
-      apiExpansion:"52 خدمة GIS API موثقة تشمل GEBCO_2026 لأعماق البحار وتضاريس اليابسة، والحدود والسكان والأخطار والمياه وجودة الهواء والمسارات والاستشعار عن بُعد. المجانية لا تعني استخدامًا غير محدود أو تجاريًا بلا شروط.",
-      projectsTab:"المشروعات والمكتبات",apisTab:"مصادر GIS API",repositoriesTab:"مستودعات البيانات",catalogDisclaimer:"الفهرس يُقرأ من ملفات JSON بالمستودع · يُرجى مراجعة شروط الجهات الأصلية.",allRefs:"عرض ملفات المراجع ↗",
-      overlineStart:"البداية السريعة",startTitle:"من المراجع إلى تطوير أداة حقيقية.",startDesc:"ثبّت المهارة في وكيل برمجي متوافق، أو راجع القوالب البرمجية قبل البدء.",
-      installTitle:"تثبيت المهارة البرمجية",installDesc:"يتطلب Node.js وواجهة skills ووكيلًا برمجيًا متوافقًا. تحقّق من بيئة التشغيل أولًا.",inspectSkill:"عرض ملف SKILL.md ↗",copy:"نسخ",copied:"تم النسخ",
-      templatesTitle:"القوالب البرمجية",templatesDesc:"أمثلة مبدئية تُعدَّل وتُختبر داخل بيئة GIS المناسبة.",
-      overlineWorkflow:"قواعد التطوير",workflowTitle:"منهجية عملية للتحقق والجودة.",
-      step1Title:"تحديد بيئة التشغيل",step1Desc:"الإصدار ونظام التشغيل والصيغ والواجهة والترخيص.",
-      step2Title:"اختيار المكونات المناسبة",step2Desc:"فحص الواجهات البرمجية والمصدر والترخيص والتوافق.",
-      step3Title:"تنفيذ وظيفة مكتملة",step3Desc:"اختبار وظيفة حقيقية قبل التوسع في الواجهة والأوامر.",
-      step4Title:"اختبار صحة النتائج",step4Desc:"الأنظمة الإحداثية والوحدات والهندسة والبيانات المفقودة وسلوك الواجهة.",
-      contributeTitle:"ساهم في بناء بيئة أفضل لمطوري GIS.",contributeDesc:"اقترح مصدرًا جديدًا أو أبلغ عن رابط معطل أو قدم تحسينًا اختبرته.",
-      suggest:"اقترح تحسينًا ↗",guide:"دليل المساهمة ↗",footerNote:"مشروع مستقل مفتوح المصدر. تراخيص المشروعات والخدمات الخارجية سارية كما هي.",
-      allCategories:"جميع التصنيفات",search:"ابحث بالاسم أو المجال أو الوصف…",results:"نتيجة",loading:"جارٍ تحميل الفهرس…",none:"لا توجد نتائج مطابقة. جرّب كلمة أو تصنيفًا آخر.",
-      error:"تعذر تحميل الفهرس. افتح الموقع عبر GitHub Pages أو تصفّح ملفات JSON داخل GitHub.",openSource:"عرض المشروع أو التوثيق ↗",licenseUnverified:"ترخيص الكود لم يُتحقق منه",openAPI:"توثيق مقدم الخدمة ↗",openRepository:"فتح فهرس البيانات ↗"
-    }
-  };
-  const els={results:document.getElementById("catalogResults"),search:document.getElementById("searchInput"),category:document.getElementById("categoryFilter"),cost:document.getElementById("costFilter"),more:document.getElementById("loadMoreBtn"),count:document.getElementById("shownCount"),lang:document.getElementById("langBtn")};
-  function T(k){return tr[state.lang][k]||k;}
-  function setLanguage(lang){
-    state.lang=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
-    els.lang.textContent=lang==="en"?"العربية":"English";
-    document.querySelectorAll("[data-i18n]").forEach(e=>e.textContent=T(e.dataset.i18n));
-    document.querySelectorAll("[data-i18n-alt]").forEach(e=>e.setAttribute("alt",T(e.dataset.i18nAlt)));
-    document.querySelectorAll("[data-i18n-aria]").forEach(e=>e.setAttribute("aria-label",T(e.dataset.i18nAria)));
-    document.querySelectorAll("[data-i18n-html]").forEach(e=>{if(e.dataset.i18nHtml==="heroTitle")e.innerHTML=T("heroTitle");});
-    els.search.placeholder=T("search");
-    renderLicenseAudit();
-    els.cost.setAttribute("aria-label",T("costLabel"));
-    renderSkills();render();
-  }
-  function build(tag,className,txt){const el=document.createElement(tag);if(className)el.className=className;if(txt!==undefined)el.textContent=txt;return el;}
-  function renderLicenseAudit(){
-    if(!data.projects.length)return;
-    const total=data.projects.length,checked=data.projects.filter(x=>x.license_verified===true).length;
-    document.getElementById("licenseAuditProgress").textContent=T("licenseAuditLabel")+" "+checked+" "+T("licenseAuditSeparator")+" "+total;
-  }
-  function renderSkills(){
-    const target=document.getElementById("skillDirectory");
-    if(!installedSkills.length)return;
-    target.replaceChildren();
-    installedSkills.forEach(id=>{
-      if(typeof id!=="string"||!/^[a-z0-9-]+$/.test(id))return;
-      const a=build("a","skill-link",skillNames[state.lang][id]||id.replace(/-/g," "));
-      a.href=REPO+"/blob/main/skills/"+id+"/SKILL.md";
-      a.target="_blank";a.rel="noopener noreferrer";target.appendChild(a);
-    });
-  }
-  function categories(){
-    const rows=data[state.tab]||[];
-    const previous=state.category;
-    els.category.replaceChildren();
-    const all=build("option","",T("allCategories"));all.value="all";els.category.appendChild(all);
-    [...new Set(rows.map(x=>x.category).filter(Boolean))].sort().forEach(cat=>{const opt=build("option","",cat.replace(/-/g," "));opt.value=cat;els.category.appendChild(opt);});
-    els.category.value=previous;if(els.category.value!==previous){state.category="all";els.category.value="all";}
-  }
-  function render(){
-    const rows=data[state.tab]||[];
-    categories();
-    const needle=state.query.toLocaleLowerCase();
-    const filtered=rows.filter(x=>(state.category==="all"||x.category===state.category)&&
-      (state.tab!=="apis"||state.cost==="all"||(state.cost==="free-only"?["free-self-hosted","free-conditional"].includes(x.cost_tier):x.cost_tier===state.cost))&&
-      [x.name,x.description,x.notes,x.category,x.type,x.kind,x.license_status,x.coverage,x.origin,(x.platforms||[]).join(" "),x.use_cases?x.use_cases.join(" "):"",(x.access||""),(x.pricing_group||"")].join(" ").toLocaleLowerCase().includes(needle));
-     // For a geocoding-only filter, show open-source / free entries before paid services.
-     const rank={"self-hosted-open-source":0,"public-fair-use":1,"free-with-quota":2,"trial-only":3,"commercial":4};
-     if(state.tab==="apis"&&state.category==="geocoding")filtered.sort((a,b)=>(rank[a.pricing_group]??99)-(rank[b.pricing_group]??99));
-    els.count.textContent=state.ready[state.tab]?filtered.length+" "+T("results"):T("loading");
-    els.more.hidden=true;
-    els.results.replaceChildren();
-    if(state.failed[state.tab]){
-      const error=build("div","error",T("error")+" ");
-      const fallback=state.tab==="styles"?"cartographic-style-sources.json":state.tab==="projects"?"project-catalog.json":state.tab==="apis"?"free-geospatial-apis.json":"geospatial-data-repositories.json";
-      const link=build("a","fine-link",fallback+" ↗");
-      link.href=REPO+"/blob/main/references/"+fallback;
-      error.appendChild(link);els.results.appendChild(error);return;
-    }
-    if(!state.ready[state.tab]){els.results.appendChild(build("div","error",T("loading")));return;}
-    if(!filtered.length){els.results.appendChild(build("div","error",T("none")));return;}
-    filtered.slice(0,state.visibleLimit).forEach(entry=>{
-      const box=build("article","result"),head=build("div","result-head");
-      head.appendChild(build("h3","",entry.name||"Unnamed source"));
-      head.appendChild(build("span","chip",(state.tab==="repositories"?(entry.type||"directory"):(entry.category||"GIS")).replace(/-/g," ")));
-      box.appendChild(head);
-      box.appendChild(build("p","",entry.description||entry.notes||entry.use_cases?.join(" • ")||entry.coverage||""));
-      if(state.tab==="apis"&&entry.access){
-         const g=entry.cost_tier;
-         const labels={en:{"free-self-hosted":"Open-source · self-host","free-conditional":"Free · conditions","restricted":"Strict restrictions","trial":"Trial only","commercial":"Commercial / metered","unavailable":"Unavailable"},ar:{"free-self-hosted":"مفتوح المصدر · ذاتي","free-conditional":"مجاني · بشروط","restricted":"شروط صارمة","trial":"تجريبي","commercial":"تجاري · مدفوع","unavailable":"غير متاح"}};
-         box.appendChild(build("span","chip",g?(labels[state.lang][g]||g):entry.access.replace(/-/g," ")));
-         if(entry.limits){const limit=build("p","limit-text",entry.limits);limit.title=entry.limits;box.appendChild(limit);}
-       }
-      if(state.tab==="projects"&&typeof entry.license==="string"){
-        const status=entry.license;
-        if(entry.license_verified===true){
-          box.appendChild(build("span","chip",status));
-        }else{
-          box.appendChild(build("span","chip",T("licenseUnverified")));
-        }
+
+  <!-- SKILL SPEC MODAL -->
+  <div id="skillModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-[#0b1324] border border-sky-500/40 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+      <button onclick="closeSkillModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl font-bold px-2">&times;</button>
+      <span id="modalTag" class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 mb-3">STACK</span>
+      <h3 id="modalTitle" class="text-2xl font-extrabold text-white mb-2">Skill Title</h3>
+      <p id="modalDesc" class="text-sm text-slate-300 mb-4 leading-relaxed"></p>
+      <div class="p-3.5 rounded-xl bg-[#050912] border border-slate-800 font-mono text-xs text-emerald-300 mb-5" dir="ltr" id="modalChecks"></div>
+      <div class="flex justify-end gap-3">
+        <button onclick="closeSkillModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold">Close</button>
+        <a id="modalLink" href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 text-xs font-bold">Open Full Markdown on GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    const pathwaysData = [
+      {
+        id: 'arcgis-pro',
+        tag: 'PRO',
+        tagColor: 'sky',
+        category: 'desktop',
+        title: 'ArcGIS Pro',
+        en: 'ArcPy, Python toolboxes (.pyt), geoprocessing and application-aware testing.',
+        ar: 'تطوير صناديق أدوات بايثون (.pyt) ومكتبة ArcPy والمعالجة الجغرافية واختبارات البيئة.',
+        checks: '✓ Python 3 conda env • ✓ .pyt parameter validation • ✓ SpatialReference & Scratch GDB safety',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/arcgis-pro.md'
+      },
+      {
+        id: 'arcmap',
+        tag: '10.x',
+        tagColor: 'amber',
+        category: 'desktop',
+        title: 'ArcMap / ArcCatalog',
+        en: 'Legacy Python 2.7/ArcPy and compatibility-safe script tool development for 10.8 workflows.',
+        ar: 'تطوير أدوات ArcMap 10.x المتوافقة وضمان استقرار الإخراج الكارتوجرافي والأدوات النصية.',
+        checks: '✓ Python 2.7 unicode safety • ✓ arcpy.mapping layer locks • ✓ Toolbox backwards compatibility',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/arcmap-legacy.md'
+      },
+      {
+        id: 'qgis',
+        tag: 'QGIS',
+        tagColor: 'emerald',
+        category: 'desktop',
+        title: 'QGIS & PyQGIS',
+        en: 'Processing providers, QGIS plugins, Qt UI patterns and cross-version considerations.',
+        ar: 'بناء إضافات QGIS ومزودي المعالجة (Processing Providers) مع مراعاة توافق الإصدارات.',
+        checks: '✓ QgsProcessingAlgorithm • ✓ Background QgsTask thread safety • ✓ Qt5/Qt6 compatibility',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/qgis.md'
+      },
+      {
+        id: 'global-mapper',
+        tag: 'GM',
+        tagColor: 'sky',
+        category: 'desktop',
+        title: 'Global Mapper Development',
+        en: 'GMS scripting, Python and commercially licensed SDK workflows; Blue Marble 3D and photogrammetry.',
+        ar: 'أتمتة سكربتات GMS وبايثون وحزم تطوير Global Mapper للتضاريس والمسح التصويري.',
+        checks: '✓ GLOBAL_MAPPER_SCRIPT (.gms) • ✓ Terrain & LiDAR batching • ✓ Explicit SDK license check',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/global-mapper-development/SKILL.md'
+      },
+      {
+        id: 'desktop-web-3d',
+        tag: '2D/3D',
+        tagColor: 'purple',
+        category: 'dev',
+        title: 'Desktop, Web & 3D',
+        en: 'Qt, WPF, MapLibre, CesiumJS, and dependable geospatial desktop & web architecture.',
+        ar: 'تطوير تطبيقات سطح المكتب والويب ثلاثية الأبعاد باستخدام CesiumJS و MapLibre و Qt/WPF.',
+        checks: '✓ 3D Tiles & terrain streaming • ✓ Non-blocking UI threads • ✓ Offline tile cache support',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/desktop-and-web.md'
+      },
+      {
+        id: 'remote-sensing',
+        tag: 'RS / GeoAI',
+        tagColor: 'emerald',
+        category: 'eo',
+        title: 'Remote Sensing & GeoAI',
+        en: 'Satellite processing, raster pipelines, reproducibility and AI research verification checks.',
+        ar: 'معالجة المرئيات الفضائية ونماذج الارتفاعات وتطبيقات الذكاء الاصطناعي الجغرافي القابلة للتكرار.',
+        checks: '✓ Radiometric & NoData masks • ✓ Spatial train/test split • ✓ Reproducible seed & metrics',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/remote-sensing.md'
+      },
+      {
+        id: 'eo-pipelines',
+        tag: 'EO / GEE',
+        tagColor: 'emerald',
+        category: 'eo',
+        title: 'Remote Sensing Pipelines',
+        en: 'STAC, Cloud-Optimized GeoTIFF (COG), Google Earth Engine, QA and pixel grid alignment.',
+        ar: 'خطوط إنتاج بيانات STAC وملفات COG ومحرك Google Earth Engine ومطابقة الشبكات المكانية.',
+        checks: '✓ GEE GEM-15 / Copernicus DEM • ✓ COG overview tiling • ✓ Pixel grid snap & CRS check',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/remote-sensing-pipelines/SKILL.md'
+      },
+      {
+        id: 'gdal-processing',
+        tag: 'GDAL',
+        tagColor: 'sky',
+        category: 'eo',
+        title: 'Geospatial Data Processing',
+        en: 'Independent raster/vector workflows, CRS transformations and repeatable automated tests.',
+        ar: 'معالجة مستقلة للبيانات الخطية والشبكية وتحويلات المساقط مع اختبارات آلية.',
+        checks: '✓ GDAL / Rasterio / GeoPandas • ✓ PROJ datum transformations • ✓ Deterministic fixture QA',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/geospatial-data-processing/SKILL.md'
+      },
+      {
+        id: 'data-discovery',
+        tag: 'DATA',
+        tagColor: 'amber',
+        category: 'eo',
+        title: 'GIS Data Discovery',
+        en: 'Find appropriate geospatial providers, DEMs, administrative boundaries, climate and scientific datasets.',
+        ar: 'اكتشاف مصادر البيانات المكانية المفتوحة ونماذج الارتفاعات والحدود الإدارية والبيانات المناخية.',
+        checks: '✓ 24 Curated free repositories • ✓ License & attribution check • ✓ Resolution & vertical datum QA',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/geospatial-data-discovery/SKILL.md'
+      },
+      {
+        id: 'api-integration',
+        tag: '52 APIs',
+        tagColor: 'sky',
+        category: 'dev',
+        title: 'GIS API Integration',
+        en: 'Connect 52 curated geospatial services with secure keys, validated payloads and reliable fallbacks.',
+        ar: 'ربط 52 خدمة وواجهة برمجة مكانية مع إدارة آمنة للمفاتيح والتحقق من صحة البيانات.',
+        checks: '✓ Free-First fallback routing • ✓ Rate-limit & retry backoff • ✓ Zero hardcoded API keys',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/geospatial-api-integration/SKILL.md'
+      },
+      {
+        id: 'spatial-db',
+        tag: 'SQL',
+        tagColor: 'purple',
+        category: 'dev',
+        title: 'Spatial Databases',
+        en: 'PostGIS and SpatiaLite spatial queries, R-Tree indexing, topology repair and geometry QA.',
+        ar: 'قواعد بيانات PostGIS و SpatiaLite والفهرسة المكانية وإصلاح الطوبولوجيا واستعلامات الأداء.',
+        checks: '✓ GiST / R-Tree spatial index • ✓ ST_MakeValid topology QA • ✓ Parameterized SQL queries',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/spatial-databases/SKILL.md'
+      },
+      {
+        id: 'rust-r',
+        tag: 'R / Rust',
+        tagColor: 'amber',
+        category: 'dev',
+        title: 'RustGIS & GeoLibre R',
+        en: 'High-performance Rust GIS architecture and interactive geospatial mapping workflows for R.',
+        ar: 'معمارية Rust عالية الأداء للتطبيقات المكانية ورسم الخرائط التفاعلية بلغة R.',
+        checks: '✓ GeoRust / Whitebox workflows • ✓ sf / terra R spatial stack • ✓ Memory-safe parallel geoprocessing',
+        url: 'https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/rustgis-and-geolibre-r.md'
       }
-      if(state.tab==="repositories"){box.appendChild(build("span","chip",entry.category+" · "+entry.coverage));}
-       if(state.tab==="styles"){
-         box.appendChild(build("span","chip",(entry.license||entry.license_status)+" · "+entry.cost));
-         if(entry.kmz_use)box.appendChild(build("p","limit-text",T("kmzUseLabel")+": "+entry.kmz_use));
-       }
-      const link=build("a","",T(state.tab==="styles"?"openStyle":state.tab==="projects"?"openSource":state.tab==="apis"?"openAPI":"openRepository"));
-      const href=state.tab==="apis"?entry.documentation_url:entry.url;
-      if(typeof href==="string"&&/^https:\/\/[a-z0-9.-]+\//i.test(href)){link.href=href;link.target="_blank";link.rel="noopener noreferrer";box.appendChild(link);}
-      els.results.appendChild(box);
-    });
-    if(filtered.length>state.visibleLimit){els.more.hidden=false;els.more.textContent=T("showMore")+" ("+(filtered.length-state.visibleLimit)+")";}
-  }
-  function setTab(tab){
-    state.tab=tab;state.category="all";state.visibleLimit=24;
-    document.getElementById("costFilterWrap").hidden=tab!=="apis";
-    document.getElementById("projectsTab").setAttribute("aria-selected",String(tab==="projects"));
-    document.getElementById("apisTab").setAttribute("aria-selected",String(tab==="apis"));
-    document.getElementById("repositoriesTab").setAttribute("aria-selected",String(tab==="repositories"));
-     document.getElementById("stylesTab").setAttribute("aria-selected",String(tab==="styles"));
-    render();
-  }
-  async function loadCatalog(tab,path,key,countId){
-    try{const response=await fetch(path,{cache:"no-store"});if(!response.ok)throw new Error("HTTP "+response.status);
-      const json=await response.json();if(!Array.isArray(json[key]))throw new Error("Unexpected format");
-      data[tab]=tab==="styles"?json[key].map(x=>({...x,category:x.kind,description:x.notes})):json[key];state.ready[tab]=true;if(countId)document.getElementById(countId).textContent=data[tab].length;
-      if(tab==="projects")renderLicenseAudit();
-    }catch(e){state.failed[tab]=true;console.warn("Catalog unavailable:",path,e.message);}
-    if(state.tab===tab)render();
-  }
-  document.getElementById("year").textContent=new Date().getFullYear();
-  document.getElementById("projectsTab").addEventListener("click",()=>setTab("projects"));
-  document.getElementById("apisTab").addEventListener("click",()=>setTab("apis"));
-  document.getElementById("repositoriesTab").addEventListener("click",()=>setTab("repositories"));
-   document.getElementById("stylesTab").addEventListener("click",()=>setTab("styles"));
-  els.search.addEventListener("input",e=>{state.query=e.target.value;state.visibleLimit=24;render();});
-  els.category.addEventListener("change",e=>{state.category=e.target.value;state.visibleLimit=24;render();});
-  els.cost.addEventListener("change",e=>{state.cost=e.target.value;state.visibleLimit=24;render();});
-  els.more.addEventListener("click",()=>{state.visibleLimit+=24;render();});
-  els.lang.addEventListener("click",()=>setLanguage(state.lang==="en"?"ar":"en"));
-  document.getElementById("copyBtn").addEventListener("click",async()=>{
-    const btn=document.getElementById("copyBtn");
-    try{await navigator.clipboard.writeText(document.getElementById("command").textContent);btn.textContent=T("copied");}
-    catch(e){const code=document.getElementById("command");const range=document.createRange();range.selectNodeContents(code);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);btn.textContent=T("copy");}
-  });
-  setLanguage("en");
-  fetch("references/repository-manifest.json",{cache:"no-store"}).then(response=>{if(!response.ok)throw new Error("Inventory unavailable");return response.json();}).then(m=>{
-    if(Number.isInteger(m.skill_count))document.querySelector(".stats .stat strong").textContent=m.skill_count;
-    if(Array.isArray(m.skill_ids)){installedSkills=m.skill_ids;renderSkills();}
-    if(Number.isInteger(m.reference_count))document.getElementById("projectsCount").textContent=m.reference_count;
-    if(Number.isInteger(m.api_count))document.getElementById("apisCount").textContent=m.api_count;
-    if(Number.isInteger(m.data_repository_count))document.getElementById("dataCount").textContent=m.data_repository_count;
-  }).catch(e=>console.warn("Inventory fallback in use:",e.message));
-  loadCatalog("projects","references/project-catalog.json","projects","projectsCount");
-  loadCatalog("apis","references/free-geospatial-apis.json","services","apisCount");
-  loadCatalog("repositories","references/geospatial-data-repositories.json","repositories","dataCount");
-   loadCatalog("styles","references/cartographic-style-sources.json","sources",null);
-})();
-</script>
+    ];
+
+    let activeCategory = 'all';
+    let currentSearch = '';
+
+    function getTagBadgeClasses(color) {
+      const map = {
+        sky: 'bg-sky-500/15 text-sky-300 border-sky-500/30',
+        emerald: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
+        amber: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
+        purple: 'bg-purple-500/15 text-purple-300 border-purple-500/30'
+      };
+      return map[color] || map.sky;
+    }
+
+    function renderPathways() {
+      const container = document.getElementById('pathwaysContainer');
+      const filtered = pathwaysData.filter(item => {
+        const matchesCat = activeCategory === 'all' || item.category === activeCategory;
+        const haystack = (item.title + ' ' + item.en + ' ' + item.ar + ' ' + item.tag).toLowerCase();
+        const matchesSearch = haystack.includes(currentSearch.toLowerCase());
+        return matchesCat && matchesSearch;
+      });
+
+      document.getElementById('visibleCount').innerText = filtered.length;
+
+      container.innerHTML = filtered.map(item => `
+        <div onclick="openSkillModal('${item.id}')" class="glass-card rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-md border ${getTagBadgeClasses(item.tagColor)}">${item.tag}</span>
+              <span class="text-xs text-slate-400 group-hover:text-sky-300 transition-colors">Inspect Spec ↗</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">${item.title}</h3>
+            <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+              <span data-lang="en">${item.en}</span>
+              <span data-lang="ar">${item.ar}</span>
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-sky-400">
+            <span data-lang="en">Preview Agent Checklist</span>
+            <span data-lang="ar">معاينة فحوصات الـ Agent</span>
+            <span>→</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterPathways(cat, btnEl) {
+      activeCategory = cat;
+      document.querySelectorAll('.pathway-tab').forEach(b => {
+        b.className = 'pathway-tab px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-800 border border-transparent transition-all';
+      });
+      btnEl.className = 'pathway-tab active px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-sky-500/20 text-sky-300 border border-sky-400/40 transition-all';
+      renderPathways();
+    }
+
+    function searchPathways(val) {
+      currentSearch = val.trim();
+      renderPathways();
+    }
+
+    function openSkillModal(id) {
+      const item = pathwaysData.find(x => x.id === id);
+      if (!item) return;
+      const isAr = document.documentElement.getAttribute('lang') === 'ar';
+      document.getElementById('modalTag').innerText = item.tag;
+      document.getElementById('modalTitle').innerText = item.title;
+      document.getElementById('modalDesc').innerText = isAr ? item.ar : item.en;
+      document.getElementById('modalChecks').innerText = item.checks;
+      document.getElementById('modalLink').href = item.url;
+      const modal = document.getElementById('skillModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeSkillModal() {
+      const modal = document.getElementById('skillModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function toggleLanguage() {
+      const htmlEl = document.documentElement;
+      const isEn = htmlEl.getAttribute('lang') === 'en';
+      htmlEl.setAttribute('lang', isEn ? 'ar' : 'en');
+      htmlEl.setAttribute('dir', isEn ? 'rtl' : 'ltr');
+    }
+
+    function setCliCommand(mode, btn) {
+      const commands = {
+        clone: 'git clone https://github.com/ahmadibrahim4geo/GIS-Development-Skills.git',
+        verify: 'python -m unittest discover -s tests -p "test_*.py"',
+        skills: 'ls -1 skills/ # 19 installable geospatial specialist skills'
+      };
+      document.getElementById('cliText').innerText = commands[mode];
+      document.querySelectorAll('.cli-tab').forEach(b => {
+        b.className = 'cli-tab px-2.5 py-1 rounded hover:bg-slate-800 text-slate-400 font-mono';
+      });
+      btn.className = 'cli-tab px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 font-mono font-semibold';
+    }
+
+    function copyCli() {
+      const text = document.getElementById('cliText').innerText;
+      const btn = document.getElementById('copyCliBtn');
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+      btn.innerText = 'Copied ✓';
+      setTimeout(() => { btn.innerText = 'Copy CLI'; }, 1800);
+    }
+
+    const timelineScenes = [
+      'Demo: Landsat-5 TM • Sample date: 1998-06-14 • Sample cloud: 0.0% • Camera Locked ✓',
+      'Demo: Landsat-7 ETM+ • Sample date: 2006-09-21 • Sample cloud: 1.2% • Camera Locked ✓',
+      'Demo: Landsat-8 OLI • Sample date: 2015-03-11 • Sample cloud: 0.8% • Camera Locked ✓',
+      'Demo: Sentinel-2 L2A • Sample date: 2021-11-04 • Sample cloud: 0.2% • Camera Locked ✓',
+      'Demo: Sentinel-2 L2A • Sample date: 2026-10-25 • Sample cloud: 0.4% • Camera Locked ✓'
+    ];
+
+    function updateTimelineDemo(idx) {
+      document.getElementById('timelineSceneMeta').innerText = timelineScenes[idx];
+    }
+
+    function stepTimeline(delta) {
+      const slider = document.getElementById('timelineSlider');
+      let nextVal = parseInt(slider.value, 10) + delta;
+      if (nextVal < 0) nextVal = 0;
+      if (nextVal > 4) nextVal = 4;
+      slider.value = nextVal;
+      updateTimelineDemo(nextVal);
+    }
+
+    // Initialize Pathways Grid on Load
+    window.addEventListener('DOMContentLoaded', renderPathways);
+  </script>
 </body>
 </html>
