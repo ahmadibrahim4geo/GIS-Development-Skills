@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 19,
+  "skill_count": 20,
   "skill_ids": [
     "arcgis-toolbox-engineering",
     "coordinate-reference-systems",
@@ -18,6 +18,7 @@
     "gis-security-guardian",
     "global-mapper-development",
     "kml-kmz-engineering",
+    "prompt-intent-orchestrator",
     "qgis-plugin-development",
     "remote-sensing-pipelines",
     "spatial-databases",

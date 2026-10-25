@@ -59,6 +59,12 @@ A practical development skill and curated reference hub for building reliable Ar
   <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website ↗</a>
 </p>
 
+## Prompt Intent & Execution Orchestrator — 25 October 2026
+
+The new [installable orchestration skill](skills/prompt-intent-orchestrator/SKILL.md) converts informal Arabic/English requests into explicit, testable requirements and task dependencies. Users review, edit and approve each plan revision before implementation. The agent then selects [existing GIS specialists](skills/gis-development/SKILL.md), actual available tools, [GIS Security Guardian](skills/gis-security-guardian/SKILL.md), and T0–T4 acceptance tests.
+
+Read the [workflow contract](references/intent-orchestration-workflow.md), [ZEarth example plan](examples/intent-orchestrator/README.md) and [offline JSON validator / keyword hints](scripts/intent_router.py). The helper is **not** an AI model, does not authenticate user approval and does not execute GIS software; native behavior still requires host tests.
+
 ## Google Earth Pro engineering and historical imagery — 2026-10-25
 
 The [Google Earth Pro engineering reference](references/google-earth-pro-engineering.md) extracts practical, independently implementable features from the historical [Google Earth Blog](https://www.gearthblog.com/): Places drag/drop and bulk actions, NetworkLink/Region/LOD, KML/KMZ fidelity, tours, elevation profiles and raster overlays. The dedicated [Historical Imagery Timeline guide](references/historical-imagery-timeline.md) specifies a compact, non-blocking dock, *actual scene dates* rather than invented years, source attribution, playback, licensed multi-provider retrieval and same-viewport image comparison. Links are integrated with the [Desktop](skills/gis-desktop-application-development/SKILL.md), [Web/3D](skills/geospatial-web-mapping/SKILL.md), [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) and core router skills and shown on the bilingual site.

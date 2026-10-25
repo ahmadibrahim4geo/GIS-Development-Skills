@@ -1,5 +1,6 @@
 # Agent rules for this repository
 
+- For complex/free-form prompts start with [Prompt Intent Orchestrator](skills/prompt-intent-orchestrator/SKILL.md): normalize and present a reviewable task plan, obtain revision-scoped user approval, then select specialists; JSON approval fields are not authenticated consent.
 - Maintain `skills/gis-development/SKILL.md` as the **general routing skill** and use domain-specific `skills/*/SKILL.md` for distinctly scoped engineering disciplines. Do not duplicate the same instructions across skills for minor changes.
 - Maintain concise progressive-disclosure reference guides under `references/`.
 - Keep platform compatibility, migration, licenses, CRS/measurement and source provenance prominent.

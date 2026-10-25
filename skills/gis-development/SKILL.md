@@ -10,12 +10,15 @@ license: MIT
 
 **Free examples:** [DEM slope](../../examples/terrain-slope/README.md) and [STAC selection](../../examples/stac-offline/README.md) run offline. [License evidence](../../references/upstream-license-audit.md) is not proof of native GIS compatibility.
 
+**Natural-language intake:** for complex or informal requests start with [Prompt Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md). Present plan and obtain review before nontrivial changes; then route to GIS specialists and separately authorize high-impact operations.
+
 **Load selectively:** determine target, environment, data and risk; then use [decision tree](../../references/agent-decision-tree.md) and only needed specialists. Rendering does not substitute for spatial analysis.
 
 ## Choose specialists
 
 | Task | Read first |
 | --- | --- |
+| Free-form requests, task planning, revision approval, cross-skill execution | [Prompt Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md) before this router |
 | ArcMap 10.x, Python 2.7, older `arcpy.mapping` | [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md) and [legacy reference](../../references/arcmap-legacy.md) |
 | ArcGIS Pro, ArcPy, `.pyt`, geoprocessing | [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md) |
 | Global Mapper / Blue Marble GMS, Python and licensed SDK | [Global Mapper Development](../global-mapper-development/SKILL.md) |

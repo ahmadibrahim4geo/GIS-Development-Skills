@@ -38,7 +38,7 @@ class IntentOrchestrationTests(unittest.TestCase):
         p["approval"]["approved_revision"] = "r1"
         self.assertEqual([], module.validate_plan(p, require_approved=True))
         p["revision"] = "r2"
-        self.assertTrue(any("revision mismatch" in x for x in module.validate_plan(p, True)))
+        self.assertTrue(any("revision mismatch" in x for x in module.validate_plan(p, require_approved=True)))
 
     def test_cycle_and_missing_dependency_fail(self):
         p = deepcopy(self.plan)

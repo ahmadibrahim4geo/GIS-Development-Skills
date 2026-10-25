@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — Prompt Intent & Execution Orchestrator (2026-10-25)
+
+- Add a review-first Arabic/English natural-language intent skill, dependency-aware plan format, skill routing and cross-cutting security requirements.
+- Add offline standard-library keyword hints (not LLM inference), structured JSON validation, revision and risk approval assertions, ZEarth draft example and unit tests. The helper does not authenticate approval or execute GIS.
+- Integrate router, decision tree, bilingual READMEs, bilingual website and derived inventory without replacing existing resources.
+
+
 ## Unreleased — Esri official references and Python environment audit (2026-10-25)
 
 - Review original Apache-2.0 root license files of ten additional Esri official repositories. Record evidence and host/service caveats, with no new native-runtime validation claims (138 → 148 curated project links).
