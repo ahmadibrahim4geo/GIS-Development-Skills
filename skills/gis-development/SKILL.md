@@ -1,6 +1,6 @@
 ---
 name: gis-development
-description: Route GIS and mapping work to specialist ArcGIS, QGIS, spatial data, remote sensing, desktop, web/3D, KML and API skills with secure, testable outputs.
+description: Route GIS tasks to ArcGIS, QGIS, raster, remote sensing, KML, desktop, web and API specialists with verifiable tests.
 license: MIT
 ---
 
@@ -31,7 +31,7 @@ license: MIT
 | Find source directories, data repositories and STAC indexes | [Geospatial Data Catalogs](../geospatial-data-catalogs/SKILL.md) |
 | Automate PyQGIS / STAC / GeoAI / Earth Engine with an agent | [Geospatial AI Agents](../geospatial-ai-agents/SKILL.md) |
 | DEM, terrain, hydrology, LiDAR / point clouds | [Terrain / Hydrology / LiDAR](../terrain-hydrology-lidar/SKILL.md) |
-| Security / untrusted GIS inputs / secrets / Agent Skills / MCP / release checks | [GIS Security Guardian](../gis-security-guardian/SKILL.md) (always applicable as a cross-cutting baseline) |
+| Untrusted GIS inputs, secrets and security | [GIS Security Guardian](../gis-security-guardian/SKILL.md) (cross-cutting) |
 | Integrate GIS HTTP APIs safely | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) |
 | Search place names / geocode addresses / autocomplete | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) + [provider selection guide](../../references/geocoding-place-search.md) |
 | Gazetteer search / scale-aware labels | [World Gazetteer](../../references/world-gazetteer-reference-layer.md) |
@@ -41,7 +41,7 @@ license: MIT
 | KML/KMZ, Earth-like viewers and timeline | [KML](../kml-kmz-engineering/SKILL.md) · [Earth Pro](../../references/google-earth-pro-engineering.md) · [Historical imagery](../../references/historical-imagery-timeline.md) |
 
 
-**Interactive planning aid:** [GIS Project Wizard](../../project-wizard.html) (browser-only, no agent execution). For Arabic/English interfaces, map labels, geocoding and exports, also load [GIS Internationalization & Arabic](../gis-internationalization-arabic/SKILL.md). For resilience use the [performance and crash-prevention guide](../../docs/PERFORMANCE_RELIABILITY.md).
+**Wizard:** [project planner](../../project-wizard.html) (browser-only). **Arabic/RTL:** [i18n skill](../gis-internationalization-arabic/SKILL.md). **Reliability:** [guide](../../docs/PERFORMANCE_RELIABILITY.md).
 
 ## Global rules (always apply)
 
@@ -49,8 +49,8 @@ license: MIT
 2. **Geospatial correctness:** verify CRS/axis order, true transformations, area/distance units, Z/vertical datum, invalid geometries, NoData, raster alignment and output readback.
 3. **Compatibility:** never mix ArcMap Python 2 with Pro APIs; pin host/runtime and validate third-party licensing/authentication/quotas.
 4. **Security:** apply [GIS Security Guardian](../gis-security-guardian/SKILL.md) at preflight, runtime and release gates, plus [geospatial input rules](../../references/geospatial-security.md) for files, APIs, SQL and credentials. A policy document does not enforce runtime sandbox permissions.
-5. **Performance:** profile representative inputs with [performance guidance](../../references/geospatial-performance.md) rather than asserting universal package choices.
+5. **Performance:** measure real inputs using [performance guidance](../../references/geospatial-performance.md).
 6. **Evidence:** complete [the acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and check it with [the evidence validator](../../scripts/validate_evidence.py). Record T0–T4 honestly; generic syntax checks or UI mockups are **not** native GIS execution.
-7. **References:** [projects](../../references/project-catalog.json), [APIs](../../references/free-geospatial-apis.json), [data](../../references/geospatial-data-repositories.json) are discovery leads only. Verify licenses, access and provenance before use.
+7. **References:** [projects](../../references/project-catalog.json), [APIs](../../references/free-geospatial-apis.json), [data](../../references/geospatial-data-repositories.json) require source/license verification.
 
 **More:** [full guide](../../references/gis-development-full-guidance.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
