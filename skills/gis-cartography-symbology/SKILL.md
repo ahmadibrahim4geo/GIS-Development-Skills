@@ -14,6 +14,7 @@ Use for point, line, polygon, raster, labels, legends, scientific color maps, ma
 - [Curated, license-aware catalog](../../references/cartographic-style-sources.json) and [selection guide](../../references/cartographic-style-guide.md).
 - [Own ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection) is the primary external discovery source. It contains third-party assets with *independent* licenses. Reference assets by URL and exact path, not by copying or automatically installing.
 - [Cartography example](../../examples/cartography/README.md) is a testable MapLibre vector fixture, **not** proof of ArcGIS/QGIS renderer parity.
+- [Map marker/icon library (8 sources + Cesium PinBuilder)](../../references/map-marker-icon-library.md) lists SVG, PNG and icon fonts, exact code-vs-asset licenses and KML/KMZ compatibility; [preservation-first KML/KMZ contract](../../references/kml-kmz-symbol-preservation.md) is mandatory for imported content.
 
 ## Action contract
 1. Inspect actual geometry (Point/MultiPoint, LineString/MultiLineString, Polygon/MultiPolygon, raster bands/pixel type), coordinate system, scale, field semantics, nulls and category/numeric distribution; verify raster NoData, statistics and band definitions. Distinguish geographic units from graphic symbol units.
@@ -31,6 +32,14 @@ Use for point, line, polygon, raster, labels, legends, scientific color maps, ma
 7. Apply on a copy or reversible in-memory layer where feasible. Save explicitly in host-native format; reload and compare renderer type, fields, stops, colors, opacity, labels and artwork references. Do not modify source geometry, raster pixel values or overwrite project files without user approval.
 8. Capture evidence: source license, name/version, target GIS runtime, renderer, attribute/classification method, color stops, symbology JSON/native layer file, screenshot/export if available, readback and failures. Test in the actual licensed target before claiming native success.
 
+## Icon and KMZ-specific branch — preserve before styling
+
+1. For **new points**, browse [source catalog](../../references/cartographic-style-sources.json) by `kind=map-marker-icon-library`, intended platform, selected icon's source, version, license, and required attribution. Prefer CC0 Pinhead, Maki and Temaki when appropriate; also include Map Icons Collection, Map Icons (mixed rights), Material Symbols, Leaflet ExtraMarkers/AwesomeMarkers and Cesium PinBuilder as *distinct* renderer/library options.
+2. For *new* KML/KMZ placemarks, render a licensed SVG or canvas pin to a transparent PNG for broad KML viewer compatibility; include it as a safe local file and `IconStyle/Icon/href` relative reference. Keep `scale`, `hotSpot`, heading, alpha and label properties intentional. Record any mandatory credits. Do not promise native KML support for SVG, Leaflet icon fonts or CSS.
+3. **Existing imported KML/KMZ is exempt from all palette/marker defaults.** Its embedded point/line/polygon symbols, `StyleMap` normal/highlight, `styleUrl`, `IconStyle`, `LabelStyle`, `LineStyle`, `PolyStyle`, colors and packed image bytes have precedence. Never run a restyling pass during import, save or opening a project. Read [mandatory fidelity guide](../../references/kml-kmz-symbol-preservation.md) and [KMZ Engineering](../kml-kmz-engineering/SKILL.md).
+4. Fallback if an imported icon fails to display is **temporary visual-only**: preserve source href/bytes and warn; never export a temporary blue-pin fallback as if it were the original. Replacing an imported style needs explicit user action with Reset to original and preferably Save As. The source document and user-authored edits must be stored separately.
+5. Validate imported file → rendered scene → exported copy → re-import **without any style drift**. Use the [offline style/resource checker](../../examples/kml-style-preservation/README.md) for narrow structural regression and native engine screenshots separately. If renderer cannot reproduce something, report it rather than silently substituting a preset.
+
 ## Source and permission policy
 - **Free-first:** prefer independently licensed QGIS, MapLibre, OS GeoDataViz, CARTOColor and scientific palettes where use terms permit; rank cost and host dependency distinctly.
 - Repository MIT licenses do **not** automatically relicense included Esri/USGS/BGS files, fonts or converted styles; verify per-file rights, attribution and embedding/redistribution rules before shipping.
@@ -47,3 +56,4 @@ Use for point, line, polygon, raster, labels, legends, scientific color maps, ma
 - [ ] Tested native format and target version; original geometry/pixels unchanged
 - [ ] External assets' exact license/attribution verified; fallback available if not
 - [ ] Preview, apply, save/reopen and real appearance verified (or limitations explicitly recorded)
+- [ ] Imported KML/KMZ original symbology/assets remain unchanged unless user explicitly opts to restyle
