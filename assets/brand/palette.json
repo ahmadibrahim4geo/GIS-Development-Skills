@@ -11,7 +11,8 @@
     "white": "#FFFFFF",
     "charcoal": "#101B24",
     "muted": "#CAD7E4",
-    "outline": "#DCE6EE"
+    "outline": "#DCE6EE",
+    "blueOnDark": "#398CE3"
   },
   "identity": {
     "symbol": "three independent vector map layers with one curved route and one green waypoint",
@@ -30,7 +31,8 @@
       "of": "white/navy",
       "Geospatial": "blue",
       "Innovation": "cyan"
-    }
+    },
+    "accessibility": "Use blueOnDark for small blue text on charcoal so contrast remains readable."
   },
   "assets": [
     "assets/brand/logo-dark.svg",
