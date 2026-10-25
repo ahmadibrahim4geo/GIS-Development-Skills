@@ -38,7 +38,8 @@ def synchronize_text(root, data, write=False):
     checks = []
     en = root / "README.md"
     ar = root / "README.ar.md"
-    index = root / "index.html"
+    index = root / "explorer.html"
+    home = root / "index.html"
     replacements = [
         (en, r"(<strong>)(\d+)( installable GIS skills</strong>)", data["skill_count"]),
         (en, r"(<strong>)(\d+)( curated geospatial references</strong>)", data["reference_count"]),
@@ -48,6 +49,10 @@ def synchronize_text(root, data, write=False):
         (index, r'(<strong id="projectsCount">)(\d+)(</strong>)', data["reference_count"]),
         (index, r'(<strong id="apisCount">)(\d+)(</strong>)', data["api_count"]),
         (index, r'(<strong id="dataCount">)(\d+)(</strong>)', data["data_repository_count"]),
+        (home, r'(<strong id="skillsCount" class="[^"]*">)(\d+)(</strong>)', data["skill_count"]),
+        (home, r'(<strong id="projectsCount" class="[^"]*">)(\d+)(</strong>)', data["reference_count"]),
+        (home, r'(<strong id="apisCount" class="[^"]*">)(\d+)(</strong>)', data["api_count"]),
+        (home, r'(<strong id="dataCount" class="[^"]*">)(\d+)(</strong>)', data["data_repository_count"]),
     ]
     changes = {}
     for path, pattern, number in replacements:
