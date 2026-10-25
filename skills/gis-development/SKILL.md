@@ -16,7 +16,7 @@ license: MIT
 
 | Task | Read first |
 | --- | --- |
-| ArcMap 10.x, Python 2.7, older `arcpy.mapping` | [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md) and [legacy reference](../../references/arcmap-legacy.md) |
+| KML/KMZ import, export, styles, 3D and safe ZIP/XML handling | [KML/KMZ Engineering](../kml-kmz-engineering/SKILL.md) |\n| ArcMap 10.x, Python 2.7, older `arcpy.mapping` | [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md) and [legacy reference](../../references/arcmap-legacy.md) |
 | ArcGIS Pro, ArcPy, `.pyt`, geoprocessing | [ArcGIS Toolbox Engineering](../arcgis-toolbox-engineering/SKILL.md) |
 | Global Mapper / Blue Marble GMS, Python and licensed SDK | [Global Mapper Development](../global-mapper-development/SKILL.md) |
 | QGIS plugin / Processing algorithm | [QGIS Plugin Development](../qgis-plugin-development/SKILL.md) |
