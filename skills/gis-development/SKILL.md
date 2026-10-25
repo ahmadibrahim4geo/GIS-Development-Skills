@@ -6,11 +6,11 @@ license: MIT
 
 # GIS Development — Lightweight Agent Router
 
-**Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
+**Free-first:** use [no-cost policy](../../references/free-first-policy.md). Disclose commercial host/API limits and offer verified free alternatives; never silently require payment.
 
 **Free examples:** [DEM slope](../../examples/terrain-slope/README.md) and [STAC selection](../../examples/stac-offline/README.md) run offline. [License evidence](../../references/upstream-license-audit.md) is not proof of native GIS compatibility.
 
-**Do not load every reference by default.** Determine task, product, runtime, format, data size, risk and intended result first. Read [the decision tree](../../references/agent-decision-tree.md), then only the appropriate specialist and its immediate references. Compose only the needed specialists; rendering is not spatial processing.
+**Load selectively:** determine target, environment, data and risk; then use [decision tree](../../references/agent-decision-tree.md) and only needed specialists. Rendering does not substitute for spatial analysis.
 
 ## Choose specialists
 
@@ -44,6 +44,6 @@ license: MIT
 4. **Security:** apply [GIS Security Guardian](../gis-security-guardian/SKILL.md) at preflight, runtime and release gates, plus [geospatial input rules](../../references/geospatial-security.md) for files, APIs, SQL and credentials. A policy document does not enforce runtime sandbox permissions.
 5. **Performance:** profile representative inputs with [performance guidance](../../references/geospatial-performance.md) rather than asserting universal package choices.
 6. **Evidence:** complete [the acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and check it with [the evidence validator](../../scripts/validate_evidence.py). Record T0–T4 honestly; generic syntax checks or UI mockups are **not** native GIS execution.
-7. **References:** the curated [project catalog](../../references/project-catalog.json) and [API catalog](../../references/free-geospatial-apis.json) and [data repository catalog](../../references/geospatial-data-repositories.json) are discovery sources, not proof of runtime/entitlement. Read source licenses and verification metadata before reuse.
+7. **References:** [projects](../../references/project-catalog.json), [APIs](../../references/free-geospatial-apis.json), [data](../../references/geospatial-data-repositories.json) are discovery leads only. Verify licenses, access and provenance before use.
 
-**Historical instructions are preserved, unabridged**, in [the full original core guidance](../../references/gis-development-full-guidance.md). Read a section there only when the routed specialist lacks necessary details. Review [known failure patterns](../../references/gis-antipatterns.md) and [production examples](../../examples/README.md) as needed.
+**Archived full guidance:** [original core](../../references/gis-development-full-guidance.md); consult [antipatterns](../../references/gis-antipatterns.md) and [examples](../../examples/README.md) only as needed.
