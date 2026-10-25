@@ -26,7 +26,7 @@ class LinkCollector(HTMLParser):
 class LandingPageTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.html = (ROOT / "index.html").read_text(encoding="utf-8")
+        cls.html = (ROOT / "explorer.html").read_text(encoding="utf-8")
         cls.parser = LinkCollector()
         cls.parser.feed(cls.html)
 
