@@ -8,6 +8,7 @@ These **additive** examples supplement the existing `templates/` and installed s
 | Hourly weather response → GeoJSON | [API README](api-ingestion/README.md) | Python 3.11+ standard library | Offline fixture test (T1); live API untested |
 | Multiple layout PDFs | [ArcGIS Pro README](batch-export/README.md) | ArcGIS Pro/ArcPy | Source only; native execution not verified |
 | Spatial index and SQL | [PostGIS SQL](spatial-sql/postgis_network_index.sql) | PostgreSQL/PostGIS | Sandbox illustration, not executed |
+| Local GIS data source search | [Source search example](data-catalogs/README.md) | Python 3.11+ stdlib | Offline metadata only; no endpoint availability verified |
 | Satellite STAC/COG processing | [Workflow checklist](remote-sensing/STAC_COG_WORKFLOW.md) | Depends on source | Documentation only |
 
 See [quality benchmark](../docs/QUALITY_BENCHMARK.md). All commands should write to **new output locations** and never silently modify input datasets.

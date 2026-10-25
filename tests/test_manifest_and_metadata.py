@@ -18,6 +18,8 @@ class InventoryMetadataTests(unittest.TestCase):
         self.assertEqual(data["skill_count"], len(list((ROOT / "skills").glob("*/SKILL.md"))))
         self.assertEqual(data["reference_count"], len(project_catalog["projects"]))
         self.assertEqual(data["api_count"], len(api_catalog["services"]))
+        new_catalog = json.loads((ROOT / "references/geospatial-data-repositories.json").read_text(encoding="utf-8"))
+        self.assertEqual(data["data_repository_count"], len(new_catalog["repositories"]))
         self.assertGreaterEqual(data["api_count"], 39)
         saved = json.loads((ROOT / "references/repository-manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(data, saved)

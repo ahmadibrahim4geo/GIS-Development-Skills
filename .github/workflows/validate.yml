@@ -15,6 +15,8 @@ jobs:
         run: python scripts/validate_catalog.py
       - name: Validate API catalog
         run: python scripts/validate_api_catalog.py
+      - name: Validate GIS data repositories index
+        run: python scripts/validate_data_repositories.py
       - name: Validate skill pack and local links
         run: python scripts/validate_skill_pack.py
       - name: Check generated manifest and counters
@@ -28,7 +30,7 @@ jobs:
           python -m py_compile templates/arcmap-script-tool.py templates/arcgis-pro-toolbox.pyt templates/qgis-processing-algorithm.py templates/standalone-geojson-summary.py
       - name: Syntax check production examples
         run: |
-          python -m py_compile examples/network-topology/audit_network.py examples/api-ingestion/weather_to_geojson.py examples/batch-export/export_layouts_arcgis_pro.py
+          python -m py_compile examples/network-topology/audit_network.py examples/data-catalogs/search_sources.py examples/api-ingestion/weather_to_geojson.py examples/batch-export/export_layouts_arcgis_pro.py
       - name: Syntax check helpers and native acceptance scripts
         run: |
-          python -m py_compile scripts/build_manifest.py scripts/validate_evidence.py scripts/monitor_public_services.py scripts/benchmark_gis_examples.py fixtures/generate_binary_fixtures.py native_tests/arcgis_pro_acceptance.py native_tests/qgis_acceptance.py
+          python -m py_compile scripts/build_manifest.py scripts/validate_data_repositories.py scripts/validate_evidence.py scripts/monitor_public_services.py scripts/benchmark_gis_examples.py fixtures/generate_binary_fixtures.py native_tests/arcgis_pro_acceptance.py native_tests/qgis_acceptance.py

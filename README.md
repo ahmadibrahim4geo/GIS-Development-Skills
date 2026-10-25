@@ -105,7 +105,7 @@ The full source/skill-pack integrity audit introduced:
 - `python scripts/validate_skill_pack.py` — offline checks of all skill frontmatters, local documentation links, website resources, and synchronized project/API/skill counters.
 - [Technical audit and outstanding verification](docs/TECHNICAL_AUDIT_2026-10-24.md), with exact test limits and remaining host-runtime checks.
 
-**Current inventory:** 104 curated code/data references, 52 API service entries and **11 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
+**Current inventory:** 129 curated software references, 52 API service entries, 24 data repositories and **14 installable skills**. The GitHub CI checks this repository's structure, not licensed ArcGIS execution, installed QGIS behavior, or a real Windows installer.
 
 ```bash
 python scripts/validate_catalog.py
