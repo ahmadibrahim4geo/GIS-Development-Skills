@@ -38,7 +38,7 @@ class HowToUseTests(unittest.TestCase):
                     "id=\"author\"","id=\"capabilities\""):
             self.assertIn(key,self.home)
         self.assertIn("npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development",self.home)
-        self.assertIn("The CLI installs skill instructions",self.home)
+        self.assertIn("It installs instructions, not GIS software or an AI model.",self.home)
 
     def test_explorer_quick_start_preserved_and_enhanced(self):
         for key in ('id="get-started"','id="command"','id="copyBtn"',
@@ -59,7 +59,7 @@ class HowToUseTests(unittest.TestCase):
         self.assertIn("التراجع",(ROOT/"docs/HOW_TO_USE.ar.md").read_text(encoding="utf-8"))
 
     def test_no_native_execution_claims(self):
-        for value in ("site is a guide and catalog","does not run ai agents"):
+        for value in ("not a hosted ai executor","it installs instructions, not gis software"):
             combined=(self.home+" "+self.explorer+" "+
                       (ROOT/"docs/HOW_TO_USE.md").read_text(encoding="utf-8")).lower()
             self.assertIn(value,combined)
