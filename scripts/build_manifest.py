@@ -44,10 +44,10 @@ def synchronize_text(root, data, write=False):
         (en, r"(<strong>)(\d+)( curated geospatial references</strong>)", data["reference_count"]),
         (ar, r"(و\*\*)(\d+)( مرجعًا جغرافيًا\*\*)", data["reference_count"]),
         (ar, r"(تشمل \*\*)(\d+)( مهارة قابلة للتثبيت\*\*)", data["skill_count"]),
-        (index, r'(<strong id="skillsCount" class="[^"]*">)(\d+)(</strong>)', data["skill_count"]),
-        (index, r'(<strong id="projectsCount" class="[^"]*">)(\d+)(</strong>)', data["reference_count"]),
-        (index, r'(<strong id="apisCount" class="[^"]*">)(\d+)(</strong>)', data["api_count"]),
-        (index, r'(<strong id="dataCount" class="[^"]*">)(\d+)(</strong>)', data["data_repository_count"]),
+        (index, r'(<div class="stat"><strong>)(\d+)(</strong><span data-i18n="statSkill">)', data["skill_count"]),
+        (index, r'(<strong id="projectsCount">)(\d+)(</strong>)', data["reference_count"]),
+        (index, r'(<strong id="apisCount">)(\d+)(</strong>)', data["api_count"]),
+        (index, r'(<strong id="dataCount">)(\d+)(</strong>)', data["data_repository_count"]),
     ]
     changes = {}
     for path, pattern, number in replacements:
