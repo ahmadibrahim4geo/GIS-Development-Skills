@@ -93,7 +93,7 @@ Previous skills, original guidance, project/API references, brand assets and bil
 
 ## GIS Project Wizard, KML/KMZ and reliability
 
-- [Multilingual GIS and Arabic-first localization skill](skills/gis-internationalization-arabic/SKILL.md): RTL/BiDi, Unicode attributes, map labels, localized toolboxes, exports and language-aware search.
+- [Arabic and multilingual GIS practical guide](references/gis-multilingual-arabic-guide.md): Unicode, BiDi, Arabic shaping, localization examples and upstream standards.\n- [Multilingual GIS and Arabic-first localization skill](skills/gis-internationalization-arabic/SKILL.md): RTL/BiDi, Unicode attributes, map labels, localized toolboxes, exports and language-aware search.
 
 - [Launch the bilingual GIS Project Wizard](project-wizard.html) — free-first architecture choices and downloadable Markdown implementation plans.
 - [Project Wizard implementation roadmap](docs/PROJECT_WIZARD_PLAN.md).
