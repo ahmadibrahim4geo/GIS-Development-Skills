@@ -187,7 +187,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         </a>
       </div>
     </div>
-<nav id="mobileMenu" class="lg:hidden hidden p-4 border-t border-slate-800 bg-[#050912]" aria-label="Mobile navigation"><a href="#capabilities">Skills &amp; Pathways</a><a href="#earth-kml">Earth &amp; KML</a><a href="#cartography">Cartography</a><a href="#security">Security &amp; QA</a><a href="#author">Creator</a></nav>
+<nav id="mobileMenu" class="lg:hidden hidden p-4 border-t border-slate-800 bg-[#050912]" aria-label="Mobile navigation"><a href="#capabilities"><span data-lang="en">Skills &amp; Pathways</span><span data-lang="ar">المهارات والمسارات</span></a><a href="#earth-kml"><span data-lang="en">Earth &amp; KML</span><span data-lang="ar">الأرض وKML</span></a><a href="#cartography"><span data-lang="en">Cartography</span><span data-lang="ar">الكارتوجرافيا</span></a><a href="#security"><span data-lang="en">Security &amp; QA</span><span data-lang="ar">الأمان والاختبارات</span></a><a href="#author"><span data-lang="en">Creator</span><span data-lang="ar">المطور</span></a></nav>
   </header>
 
   <!-- Main Content Container -->
@@ -868,6 +868,11 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       const isEn = htmlEl.getAttribute('lang') === 'en';
       htmlEl.setAttribute('lang', isEn ? 'ar' : 'en');
       htmlEl.setAttribute('dir', isEn ? 'rtl' : 'ltr');
+      document.querySelectorAll('[data-i18n-alt]').forEach(el=>el.setAttribute('alt',isEn?'أحمد إبراهيم — أخصائي GIS وكارتوجرافي':'Ahmad Ibrahim — GIS specialist and cartographer'));
+      const accessLabels=isEn?{'authorGitHubLabel':'حساب أحمد إبراهيم على GitHub','authorEmailLabel':'البريد الإلكتروني لأحمد إبراهيم','authorWhatsAppLabel':'أحمد إبراهيم على واتساب','authorContributeLabel':'اقترح تطوير أداة أو مهارة'}:{'authorGitHubLabel':'Ahmad Ibrahim on GitHub','authorEmailLabel':'Email Ahmad Ibrahim','authorWhatsAppLabel':'Ahmad Ibrahim on WhatsApp','authorContributeLabel':'Suggest a GIS skill or tool'};
+      document.querySelectorAll('[data-i18n-aria]').forEach(el=>el.setAttribute('aria-label',accessLabels[el.dataset.i18nAria]||el.getAttribute('aria-label')));
+      document.getElementById('mobileMenuBtn').setAttribute('aria-label',isEn?'فتح القائمة':'Open navigation');
+      closeMobileMenu();
     }
 
     function setCliCommand(mode, btn) {
