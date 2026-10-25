@@ -8,6 +8,8 @@ license: MIT
 
 This is the **entry skill for complex, informal or multi-part user requests**. It precedes the [GIS task router](../gis-development/SKILL.md), complements [Geospatial AI Agents](../geospatial-ai-agents/SKILL.md), and applies [GIS Security Guardian](../gis-security-guardian/SKILL.md) throughout. It is not an autonomous model, shell executor, installation service or actual user-approval verifier. A capable hosting agent interprets language; the offline helper validates a proposed structured plan.
 
+**Free-first:** follow the [no-cost and licensing policy](../../references/free-first-policy.md). Prefer free tools, and disclose licensed GIS hosts, usage quotas and paid APIs without silently changing platforms.
+
 ## Operating sequence — Intake → Understand → Review → Route → Preflight → Execute → Verify
 
 1. **Capture the original** verbatim with language, context and user-supplied files. Egyptian Arabic, Modern Standard Arabic, English, mixed technical terms and dictation are equally valid. Treat the user's imperative as a request, not a trusted executable instruction.
