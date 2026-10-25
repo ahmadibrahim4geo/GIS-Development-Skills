@@ -10,7 +10,7 @@ A two-date compare mode offers swipe, split or opacity blend with one registered
 
 ## Data model and provider contract
 
-\`\`\`text
+```text
 ImageryProvider
   id, name, accessPolicy, attribution, termsUrl, coverageHints
   discoverScenes(aoi, timeWindow, filters, abortSignal) -> SceneSummary[]
@@ -20,7 +20,7 @@ SceneSummary
   stableId, providerId, productOrCollection, acquisitionStartUtc, acquisitionEndUtc?
   isMosaic, mosaicTimeWindow?, cloudCover?, footprint?, spatialResolutionMeters?
   crs, bandsOrComposite, qualityFlags[], licenseRef, attribution, previewCapabilities
-\`\`\`
+```
 
 Do **not** conflate: actual sensor acquisition date, date a mosaic was compiled, service processing date, the UI clock and device time. A mosaic can contain pixels from multiple dates; show collection date/range and date uncertainty. Historical imagery is **not universally available for any selected day**: show only discovered scenes; if a day is absent say "no imagery for this date" instead of displaying a newer image with the old date label.
 
@@ -28,12 +28,12 @@ Provider availability changes by AOI, resolution, orbit and date. Recompute vali
 
 ## Timeline state machine
 
-\`\`\`text
+```text
 closed -> opening -> discovering -> ready
 ready -> selecting -> loading -> ready | missing | error
 ready -> playing -> loading -> playing | paused | stopped
 any -> offline | provider-auth-required | rate-limited
-\`\`\`
+```
 
 - Selecting a date snaps to a **discovered acquisition**, not an interpolated calendar year. Show ISO local display with UTC storage; no implicit timezone conversion of satellite acquisition.
 - Play advances among discovered scenes and can use per-frame dwell time; stop/abort in-flight requests when user drags the timeline or closes it. Disable unavailable navigation rather than cycling to phantom dates.
@@ -55,10 +55,10 @@ any -> offline | provider-auth-required | rate-limited
 
 ## ZEarth integration seam
 
-- \`WPF TimelineViewModel\` owns button events, selected time interval, accessibility and progress; it never opens a blocking full-map dialog.
-- \`GlobeBridge\` passes typed messages to CesiumJS: \`timeline.open\`, \`timeline.setScene\`, \`timeline.compare\`, \`timeline.close\` and cancel requests. An acknowledgment includes success/error and last rendered scene ID; UI must not announce success on command dispatch alone.
-- \`ImageryRegistry\` owns provider metadata/licensing/auth and date-aware sources independently of basemap and terrain.
-- \`ProjectState\` persists scene IDs/source metadata, provider and camera while respecting saved My Places/Temporary Places boundaries.
+- `WPF TimelineViewModel` owns button events, selected time interval, accessibility and progress; it never opens a blocking full-map dialog.
+- `GlobeBridge` passes typed messages to CesiumJS: `timeline.open`, `timeline.setScene`, `timeline.compare`, `timeline.close` and cancel requests. An acknowledgment includes success/error and last rendered scene ID; UI must not announce success on command dispatch alone.
+- `ImageryRegistry` owns provider metadata/licensing/auth and date-aware sources independently of basemap and terrain.
+- `ProjectState` persists scene IDs/source metadata, provider and camera while respecting saved My Places/Temporary Places boundaries.
 - Keep current user camera unless explicitly choosing "fly to coverage"; no automatic zoom, pitch reset or globe blanking.
 
 ## Runnable acceptance scenarios (T2/T3/T4)
