@@ -2,6 +2,23 @@
 
 **Scope:** every installed GIS Development Skills specialist, shared reference, tool adapter, project wizard and agent entrypoint. This document governs workflow and handoffs; it does not replace each specialist's scientific or technical procedures.
 
+## Responsibility and handoff ledger (single accountable owner)
+
+| Stage | Accountable skill | Receives | Must hand off | Boundaries |
+| --- | --- | --- | --- | --- |
+| Intake / approval planning | [Prompt Intent Orchestrator](../skills/prompt-intent-orchestrator/SKILL.md) | Exact user prompt and protected requirements | Reviewable goal, revision, task IDs, acceptance criteria, candidate tools | Draft JSON never authenticates approval |
+| Domain routing | [GIS Development Router](../skills/gis-development/SKILL.md) | Reviewed plan | One domain `owner_skill` per task, dependencies, delegated helpers | Neither router nor lexical hints execute |
+| Security / preflight | [GIS Security Guardian](../skills/gis-security-guardian/SKILL.md) | Planned side effects, sources, user/host permissions | Allowed/rejected actions, runtime and license gaps | Host consent remains authoritative |
+| Execution and artifact changes | Selected domain specialist (see [router](../skills/gis-development/SKILL.md)) | Task ID, inputs, authorization, dependencies | Actual output paths, observed tool results, rollback notes | Only host-authorized tools can act |
+| Conditional command/data diagnostics | [UI Command Audit](../skills/gis-ui-command-audit/SKILL.md) + [Data Flow Diagnostics](../skills/gis-data-flow-diagnostics/SKILL.md) | `command_id`, `trace_id`, input/output identity | Command binding and import→render→save→readback trace, independently checked | Static/synthetic trace is not native proof |
+| Native acceptance (when applicable) | [Desktop E2E Testing](../skills/gis-desktop-e2e-testing/SKILL.md) and target host specialist | Built application and fixtures | Real UI/runtime results or NOT RUN | GIS desktop, mobile and proprietary hosts require access |
+| Completion gate | [DoneProof](../skills/completion-evidence/SKILL.md) | Reviewed plan, exact acceptance criteria and current evidence | Plan-bound status for each criterion, limitations and remaining actions | Offline checker cannot authenticate logs |
+| State and handoff | [Agent Development Journal](../skills/agent-development-journal/SKILL.md) | Real action/evidence references | Append-only records, resume state and handoff | Journal cannot be its own success evidence |
+
+Ownership invariants: a task cannot assign itself to the security, journal, router, intake or completion-only shared skill. A missing `owner_skill` is a blocking error in a compiled workflow, rather than silently guessing from the first list item. The offline [skill graph audit](../scripts/audit_skill_graph.py) verifies discoverability, router reachability, free-first coverage and lexical domain hints; it does **not** validate live host behavior.
+
+**Command/data ID handoff:** carry `request_id`, `revision`, `task_id`, `owner_skill`, `command_id`, `trace_id`, `input_artifact_id` and `output_artifact_id` when applicable. Only target specialists can assert execution; diagnostics can check trace structure; DoneProof must map reported observations back to the plan. See [quality coordination](gis-ui-quality-coordination.md) and [strict completion protocol](doneproof-verification-protocol.md).
+
 ## Proven upstream references
 
 Use the [GIS-first upstream repositories guide](repository-orchestration-upstream-sources.md) for tool registries, QGIS interoperability, skill specification, optional runtime graphs and adversarial evaluation. Sources are curated examples, not automatically installed packages. Verify a reference and its license before borrowing implementation details.
