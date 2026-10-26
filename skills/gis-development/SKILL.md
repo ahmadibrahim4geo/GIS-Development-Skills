@@ -12,6 +12,8 @@ license: MIT
 
 **Intake:** [Global contract](../../references/repository-wide-skill-orchestration.md) → [Intent review](../prompt-intent-orchestrator/SKILL.md) → Router.
 
+**Goal-first handoff:** the [Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md) establishes the user's desired outcome and testable success criteria before this router selects skills. [Workflow contract](../../references/repository-wide-skill-orchestration.md); no direct prompt-to-execution shortcut.
+
 **Route:** [decision tree](../../references/agent-decision-tree.md); rendering ≠ analysis.
 
 ## Choose specialists
