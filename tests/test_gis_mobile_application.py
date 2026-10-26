@@ -115,7 +115,7 @@ class MobileSkillIntegrationTests(unittest.TestCase):
     def test_manifest_and_catalog_mobile_entries(self):
         data = json.loads((ROOT / "references/repository-manifest.json").read_text(encoding="utf-8"))
         self.assertIn("gis-mobile-application-development", data["skill_ids"])
-        self.assertEqual(29, data["skill_count"])
+        self.assertEqual(len(list((ROOT / "skills").glob("*/SKILL.md"))), data["skill_count"])
         catalog = json.loads((ROOT / "references/project-catalog.json").read_text(encoding="utf-8"))
         for name in ("QField", "Mergin Maps Mobile", "MapLibre Native", "Mapsui"):
             entries = [item for item in catalog["projects"] if item["name"] == name]

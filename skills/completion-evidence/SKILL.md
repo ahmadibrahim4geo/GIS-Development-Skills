@@ -6,7 +6,7 @@ license: MIT
 
 # DoneProof — evidence before completion
 
-**Cross-cutting:** use after the [Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md) sets observable criteria and with the [GIS Router](../gis-development/SKILL.md), [Security Guardian](../gis-security-guardian/SKILL.md) and [Development Journal](../agent-development-journal/SKILL.md). Useful for non-GIS work too.
+**Cross-cutting:** use after the [Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md) sets observable criteria and with the [GIS Router](../gis-development/SKILL.md), [Security Guardian](../gis-security-guardian/SKILL.md) and [Development Journal](../agent-development-journal/SKILL.md). Useful for non-GIS work too. Follow the [free-first policy](../../references/free-first-policy.md); do not assume paid services are available.
 
 1. Recover **all required acceptance criteria** and the current revision. Do not drop inconvenient requirements.
 2. Decide what would actually prove each claim: fresh command + exit status, saved artifact readback, provider receipt, or real host/UI operation.
