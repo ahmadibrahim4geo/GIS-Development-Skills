@@ -45,6 +45,22 @@ def validate_catalog(path=CATALOG):
         for field in ('name','category','description','role','license','integration','reviewed_on'):
             if not isinstance(entry.get(field), str) or not entry[field].strip():
                 errors.append('{} invalid {}'.format(tag,field))
+        # Newly curated source-code entries are links, not build/license certification.
+        checked = entry.get('repository_access_checked_on')
+        if checked is not None:
+            if not isinstance(checked, str) or not re.fullmatch(r'\\d{4}-\\d{2}-\\d{2}', checked):
+                errors.append('{} invalid repository_access_checked_on date'.format(tag))
+            skill = entry.get('primary_skill')
+            if not isinstance(skill, str) or not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', skill):
+                errors.append('{} invalid primary_skill'.format(tag))
+            elif not (ROOT / 'skills' / skill / 'SKILL.md').is_file():
+                errors.append('{} missing primary_skill specialist'.format(tag))
+            if not isinstance(entry.get('license_metadata_unverified'), str) or not entry['license_metadata_unverified'].strip():
+                errors.append('{} missing preliminary license metadata'.format(tag))
+            if entry.get('integration') == 'reference-only' and entry.get('native_runtime_verified') is True:
+                errors.append('{} reference-only cannot claim native runtime verified'.format(tag))
+            if entry.get('tested_by_repository') is not False:
+                errors.append('{} source link cannot claim tested_by_repository'.format(tag))
         flag=entry.get('license_verified')
         if flag is not None and not isinstance(flag,bool):
             errors.append('{} invalid license_verified boolean'.format(tag))
