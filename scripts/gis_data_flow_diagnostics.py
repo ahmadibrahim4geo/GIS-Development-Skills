@@ -112,6 +112,17 @@ def validate_trace(trace):
         if phase not in seen:
             issues.append("Missing required phase: " + phase)
     if operation == "lossless":
+        # A lossless claim must include actual input and output readback spans;
+        # an emitter must not make an incomplete trace pass by omitting them
+        # from its self-declared required_phases.
+        for mandatory in ("IMPORT", "READBACK"):
+            if mandatory not in required:
+                issues.append("Lossless trace must require " + mandatory)
+        exported = next((v for v in events if isinstance(v, dict) and v.get("phase") == "EXPORT"), None)
+        reopened = next((v for v in events if isinstance(v, dict) and v.get("phase") == "READBACK"), None)
+        if exported and reopened and exported.get("artifact_id") and reopened.get("artifact_id"):
+            if exported["artifact_id"] != reopened["artifact_id"]:
+                issues.append("EXPORT and READBACK artifact_id disagree")
         count_phases = [p for p in ("IMPORT", "PARSE", "ENGINE", "READBACK")
                         if p in seen]
         if "IMPORT" in seen and "READBACK" in seen:
