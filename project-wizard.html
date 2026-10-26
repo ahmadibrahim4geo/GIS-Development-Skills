@@ -10,12 +10,12 @@
 <label for="details" id="detailsLabel">What should your project do?</label><textarea id="details" rows="4" maxlength="4000" placeholder="Describe the desired features"></textarea>
 <label for="goal" id="goalLabel">What user outcome should this project achieve?</label><textarea id="goal" rows="2" maxlength="1500" placeholder="Describe the end result you need; the AI agent will review it"></textarea>
 <label for="success" id="successLabel">How will you know it works?</label><textarea id="success" rows="2" maxlength="1500" placeholder="Visible behavior, output files or tests you expect"></textarea>
-<button id="generate" type="button">Generate plan</button><button id="download" type="button" disabled>Download Markdown</button>
+<button id="generate" type="button">Generate plan</button><button id="download" type="button" disabled>Download Markdown</button><button id="downloadJson" type="button" disabled>Download workflow JSON</button>
 <p id="status" role="status" aria-live="polite">Choose a project type and generate a plan.</p><h2 id="resultLabel">Project plan</h2><pre id="result" aria-live="polite"></pre>
 <p class="resources"><a id="workflowLink" href="references/repository-wide-skill-orchestration.md">Prompt-to-workflow guide</a> · <a id="roadmapLink" href="docs/PROJECT_WIZARD_PLAN.md">Implementation roadmap</a> · <a id="kmlLink" href="skills/kml-kmz-engineering/SKILL.md">KML/KMZ skill</a> · <a id="reliabilityLink" href="docs/PERFORMANCE_RELIABILITY.md">Reliability guide</a></p><p id="wizardPrivacy" class="privacy-note">Plans are generated locally. No AI is executed and no project text is uploaded.</p></main>
 <script>
-const $=id=>document.getElementById(id);let ar=false,output='';
-const dict={en:{heading:'GIS Project Wizard',intro:'Build a free-first, testable GIS project plan.',typeLabel:'Project type',localeLabel:'Application languages',filesLabel:'KML/KMZ support',licenseLabel:'Licensing preference',detailsLabel:'What should your project do?',goalLabel:'Intended user outcome',successLabel:'Success criteria',goalPlaceholder:'Describe the final result you need',successPlaceholder:'Describe the observable tests or results',generate:'Generate plan',download:'Download Markdown',resultLabel:'Project plan',lang:'العربية',placeholder:'Describe the desired features',yes:'Required',no:'Not required',free:'Free/open-source components first',host:'Existing commercial GIS host allowed'},ar:{heading:'معالج مشاريع نظم المعلومات الجغرافية',intro:'أنشئ خطة مشروع قابلة للاختبار مع إعطاء الأولوية للمكونات المجانية.',typeLabel:'نوع المشروع',localeLabel:'لغات التطبيق',filesLabel:'دعم KML وKMZ',licenseLabel:'تفضيل الترخيص',detailsLabel:'ما الوظائف المطلوبة في المشروع؟',goalLabel:'الهدف النهائي الذي تريد تحقيقه',successLabel:'كيف نتحقق من نجاح العمل؟',goalPlaceholder:'صف النتيجة النهائية المطلوبة',successPlaceholder:'اكتب الاختبارات أو المخرجات التي تثبت النجاح',generate:'إنشاء الخطة',download:'تنزيل Markdown',resultLabel:'خطة المشروع',lang:'English',placeholder:'اكتب الوظائف المطلوبة',yes:'مطلوب',no:'غير مطلوب',free:'المكونات المجانية ومفتوحة المصدر أولاً',host:'السماح ببرنامج GIS تجاري متوفر'}};
+const $=id=>document.getElementById(id);let ar=false,output='',structuredPlan=null;
+const dict={en:{heading:'GIS Project Wizard',intro:'Build a free-first, testable GIS project plan.',typeLabel:'Project type',localeLabel:'Application languages',filesLabel:'KML/KMZ support',licenseLabel:'Licensing preference',detailsLabel:'What should your project do?',goalLabel:'Intended user outcome',successLabel:'Success criteria',goalPlaceholder:'Describe the final result you need',successPlaceholder:'Describe the observable tests or results',generate:'Generate plan',download:'Download Markdown',downloadJson:'Download workflow JSON',resultLabel:'Project plan',lang:'العربية',placeholder:'Describe the desired features',yes:'Required',no:'Not required',free:'Free/open-source components first',host:'Existing commercial GIS host allowed'},ar:{heading:'معالج مشاريع نظم المعلومات الجغرافية',intro:'أنشئ خطة مشروع قابلة للاختبار مع إعطاء الأولوية للمكونات المجانية.',typeLabel:'نوع المشروع',localeLabel:'لغات التطبيق',filesLabel:'دعم KML وKMZ',licenseLabel:'تفضيل الترخيص',detailsLabel:'ما الوظائف المطلوبة في المشروع؟',goalLabel:'الهدف النهائي الذي تريد تحقيقه',successLabel:'كيف نتحقق من نجاح العمل؟',goalPlaceholder:'صف النتيجة النهائية المطلوبة',successPlaceholder:'اكتب الاختبارات أو المخرجات التي تثبت النجاح',generate:'إنشاء الخطة',download:'تنزيل Markdown',downloadJson:'تنزيل خطة Workflow بصيغة JSON',resultLabel:'خطة المشروع',lang:'English',placeholder:'اكتب الوظائف المطلوبة',yes:'مطلوب',no:'غير مطلوب',free:'المكونات المجانية ومفتوحة المصدر أولاً',host:'السماح ببرنامج GIS تجاري متوفر'}};
 const localeLabels={en:{'ar-en':'Arabic + English',en:'English only',multi:'Multilingual (Arabic, English, French and others)'},ar:{'ar-en':'العربية والإنجليزية',en:'الإنجليزية فقط',multi:'متعدد اللغات (العربية والإنجليزية والفرنسية وغيرها)'}};
 const stacks={desktop:'Qt/PySide or .NET/WPF; GDAL, PROJ; optional Cesium for 3D',pro:'ArcGIS Pro Python 3, ArcPy, .pyt/.atbx',arcmap:'Legacy ArcMap Python 2.7, ArcPy, .pyt/.tbx',dual:'Isolated ArcMap Python 2.7 and ArcGIS Pro Python 3 adapters; shared compatible logic only',qgis:'PyQGIS and Qt; plugin metadata and packaging','qgis-engine':'Version-matched QGIS Core/GUI/Analysis/Processing or QGIS Server, optional isolated PyQGIS; independent UI renderer; GDAL/PROJ when sufficient',web:'MapLibre GL JS, optional Cesium, standards-based geospatial services',remote:'GDAL, rasterio, xarray and documented data provenance',database:'PostGIS, spatial indexes and migration scripts',geoai:'Python geospatial ML stack with reproducible data and model validation'};
 
@@ -41,8 +41,10 @@ function translate(){
 }
 function invalidate(){
   output='';
+  structuredPlan=null;
   $('result').textContent='';
   $('download').disabled=true;
+  $('downloadJson').disabled=true;
   $('status').textContent=dict[ar?'ar':'en'].statusDirty;
 }
 function generatePlan(){
@@ -104,6 +106,49 @@ function generatePlan(){
     '## Agent instructions','Interpret and review the user goal, then route through the GIS skills to a dependency-ordered workflow. Never execute directly from the prompt; this plan is not authenticated approval or host authorization:',...list,
     '','## Verification status','This is a proposed plan, not evidence of project completion.'
   ];
+  // Machine-readable handoff uses the exact offline Intent Router v1 schema.
+  // No browser-side language model, authorization, network access or tool dispatch.
+  // Missing goals/criteria are NOT guessed; Markdown still supports exploration.
+  const outcomes=success.split(/\\r?\\n/).map(item=>item.trim()).filter(Boolean);
+  structuredPlan=null;
+  if(goal && outcomes.length){
+    const owner=skills[type];
+    const selected=[owner,'gis-security-guardian'];
+    if(type==='qgis-engine')selected.push('gis-desktop-application-development','coordinate-reference-systems','geospatial-data-processing');
+    if(kml)selected.push('kml-kmz-engineering');
+    if(locale!=='en')selected.push('gis-internationalization-arabic');
+    const specialisms=[...new Set(selected)];
+    const userLanguage=/[\\u0600-\\u06FF]/.test(goal+' '+requirement+' '+success)?'ar':(ar?'ar':'en');
+    structuredPlan={
+      schema_version:'1.0',
+      request_id:'GIS-WIZARD-UNASSIGNED',
+      revision:'r1',
+      original_request:requirement||goal,
+      language:userLanguage,
+      status:'draft',
+      approval:{approved_by_user:false,approved_revision:null,high_risk_approved:false},
+      goal:goal,
+      target:typeNames.en[type],
+      desired_outcomes:[goal],
+      success_criteria:outcomes,
+      constraints:[license,local,fileSpec],
+      non_goals:[],
+      assumptions:['Draft, not AI-verified: suggested technologies, GIS host version and dependencies need actual validation.','Assign a unique request ID and confirm the entire goal with the user before approval.'],
+      open_questions:requirement?['Confirm GIS runtime versions, original data, CRS/units and project scope before execution.']:['Describe project features, input/output GIS data, target GIS runtime and CRS before implementation.'],
+      tasks:[
+        {id:'T1',title:'Review goal and architecture',description:'Confirm the user goal, requirements, platform, GIS engine, data contracts and licensing.',
+         priority:'must',kind:'planning',owner_skill:owner,skills:specialisms,depends_on:[],risk:'low',
+         acceptance_criteria:['Host and user confirm the objective, intended deliverable, constraints and success criteria.'],tools:[]},
+        {id:'T2',title:'Implement reviewed GIS deliverable',description:requirement||goal,
+         priority:'must',kind:type,owner_skill:owner,skills:specialisms,depends_on:['T1'],risk:'medium',
+         acceptance_criteria:outcomes,tools:[]},
+        {id:'T3',title:'Verify results and record evidence',description:'Check the user-visible GIS outcome, output files, native runtime when available, and documented limits.',
+         priority:'must',kind:'qa',owner_skill:owner,skills:specialisms,depends_on:['T2'],risk:'low',
+         acceptance_criteria:['Provide observed test evidence for the agreed success criteria.','Report blocked and NOT RUN native checks, change history and rollback information.'],tools:[]}
+      ]
+    };
+  }
+  $('downloadJson').disabled=!structuredPlan;
   output=sections.join('\n');$('result').textContent=output;$('download').disabled=false;
   $('status').textContent=dict[ar?'ar':'en'].statusReady;
 }
@@ -116,6 +161,13 @@ $('download').onclick=()=>{
   if(!output)return;
   const url=URL.createObjectURL(new Blob([output],{type:'text/markdown;charset=utf-8'}));
   const a=document.createElement('a');a.href=url;a.download=ar?'gis-project-plan-ar.md':'gis-project-plan-en.md';a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+$('downloadJson').onclick=()=>{
+  if(!structuredPlan)return;
+  const data=JSON.stringify(structuredPlan,null,2)+'\\n';
+  const url=URL.createObjectURL(new Blob([data],{type:'application/json;charset=utf-8'}));
+  const a=document.createElement('a');a.href=url;a.download='gis-workflow-draft.json';a.click();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
 };
 translate();
