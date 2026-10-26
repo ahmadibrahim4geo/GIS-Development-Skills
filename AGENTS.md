@@ -67,3 +67,5 @@ For GIS user-interface tasks, select only relevant [UI Command Audit](skills/gis
 ## Repository-wide request execution contract
 
 All specialist skills and agent entrypoints must follow [repository-wide orchestration](references/repository-wide-skill-orchestration.md). The intent orchestrator owns normalization and reviewed approval, GIS Development owns specialist routing, shared Security Guardian owns safety gates, specialists own domain execution, and the Development Journal and acceptance report own evidence. Never execute a consequential free-form prompt directly or allow a specialist to bypass host permissions. Documentation cannot itself enforce a host-level gate.
+
+- [System Capabilities & Permissions](skills/system-capabilities-and-permissions/SKILL.md) is a conditional cross-platform shared specialist, not an automatically privileged runtime. Preserve Device Context's GIS semantics, Security Guardian's OS/tool authorization and native T2–T4 NOT RUN declarations when evidence is absent.
