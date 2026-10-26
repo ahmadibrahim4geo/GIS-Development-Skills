@@ -546,7 +546,7 @@
     const needle=state.query.toLocaleLowerCase();
     const filtered=rows.filter(x=>(state.category==="all"||x.category===state.category)&&
       (state.tab!=="apis"||state.cost==="all"||(state.cost==="free-only"?["free-self-hosted","free-conditional"].includes(x.cost_tier):x.cost_tier===state.cost))&&
-      [x.name,x.description,x.notes,x.category,x.type,x.kind,x.license_status,x.coverage,x.origin,(x.platforms||[]).join(" "),x.use_cases?x.use_cases.join(" "):"",(x.access||""),(x.pricing_group||"")].join(" ").toLocaleLowerCase().includes(needle));
+      [x.name,x.description,x.notes,x.category,x.type,x.kind,x.role,x.primary_skill,x.programming_language,x.license_status,x.coverage,x.origin,(x.platforms||[]).join(" "),x.use_cases?x.use_cases.join(" "):"",(x.access||""),(x.pricing_group||"")].join(" ").toLocaleLowerCase().includes(needle));
      // For a geocoding-only filter, show open-source / free entries before paid services.
      const rank={"self-hosted-open-source":0,"public-fair-use":1,"free-with-quota":2,"trial-only":3,"commercial":4};
      if(state.tab==="apis"&&state.category==="geocoding")filtered.sort((a,b)=>(rank[a.pricing_group]??99)-(rank[b.pricing_group]??99));
@@ -574,6 +574,19 @@
          box.appendChild(build("span","chip",g?(labels[state.lang][g]||g):entry.access.replace(/-/g," ")));
          if(entry.limits){const limit=build("p","limit-text",entry.limits);limit.title=entry.limits;box.appendChild(limit);}
        }
+      if(state.tab==="projects"){
+        if(typeof entry.role==="string")box.appendChild(build("span","chip",(state.lang==="ar"?"النوع: ":"Role: ")+entry.role.replace(/-/g," ")));
+        if(Array.isArray(entry.platforms)&&entry.platforms.length){
+          box.appendChild(build("p","limit-text",(state.lang==="ar"?"المنصات: ":"Platforms: ")+entry.platforms.join(" · ")));
+        }
+        if(typeof entry.primary_skill==="string"&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.primary_skill)){
+          const skill=build("a","fine-link",state.lang==="ar"?"افتح مهارة التطوير المناسبة ↗":"Open recommended development skill ↗");
+          skill.href="skills/"+entry.primary_skill+"/SKILL.md";box.appendChild(skill);
+        }
+        if(typeof entry.repository_access_checked_on==="string"){
+          box.appendChild(build("p","limit-text",state.lang==="ar"?"رابط المستودع متاح؛ تشغيل البرنامج وترخيص إعادة الاستخدام لم يُتحقق منهما بعد.":"Repository available; builds and reuse rights still unverified."));
+        }
+      }
       if(state.tab==="projects"&&typeof entry.license==="string"){
         const status=entry.license;
         if(entry.license_verified===true){
