@@ -1,3 +1,11 @@
+# Unreleased — Goal-first GIS skill workflow and Project Wizard integration (2026-10-26)
+
+- Compile a user/AI-reviewed goal, desired outcomes, success criteria, owners and dependency graph into a read-only ordered workflow using `scripts/intent_router.py --workflow`; no autonomous execution or authenticated permissions claimed.
+- Require explicit goal/outcome information for workflow compilation, reject unknown owners, cycles, missing dependencies, stale approval declarations, destructive operations without additional approval fields.
+- Add bilingual goal and success-criteria fields, eight-stage execution preview, and invalidation for edits in the existing client-only Project Wizard. Preserve other wizard fields and the author's identity.
+- Synchronize the cross-skill contract, Intent Orchestrator, core router, agent rules, EN/AR user guides, sample plans and regression tests.
+- Keep source inspection read-only by default and distinguish host-level approval, T0/T1 offline checks and GIS-native T2/T4 verification.
+
 # Unreleased — QGIS engine cross-skill compatibility and HTML routing (2026-10-25)
 
 - Remove accidental single-application assumptions from generic QGIS Engine skill, references and agent prompts; retain existing project renderers and route to other specialists only when relevant.
