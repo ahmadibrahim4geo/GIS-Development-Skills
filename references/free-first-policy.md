@@ -11,11 +11,12 @@
 5. A model-running agent must have deterministic local actions without purchasing a hosted LLM. Local/GPU computation and data transfer can still incur practical expenses. Earth Engine and hosted cloud datasets may require eligible accounts or quotas.
 6. If a free solution is not equivalent in accuracy/outputs to a paid GIS feature, state the limitation; do not invent feature parity.
 
-## All 31 specialists
+## All 32 specialists
 
 | Specialist | Free independent path | Optional dependency or limitation |
 | --- | --- | --- |
 | `gis-development` | Free decision router, offline fixtures and Python examples | Optional commercial hosts only by explicit request |
+| `clean-room-reference-implementation` | Free read-only reference-file metadata observation, independently authored open-source implementations, deterministic local audit scripts and public KML/OGC standards | Proprietary program binaries/shaders/imagery remain restricted; native Windows tests, authorized agents and external services require separate verification; no mandatory paid provider |
 | `completion-evidence` | Free Python standard-library report consistency checker; no API key or hosted AI required | Host permissions, real command execution, provider receipts and native T2–T4 checks are not performed by this offline validator |
 | `agent-development-journal` | Free local Python 3 standard-library numbered project logs, hash checks, repair and test suite | Requires only project file permissions; host/GIS runtime and secure storage remain separate |
 | `prompt-intent-orchestrator` | Offline structured-task planning, standard-library JSON validation and user-review workflow; optional locally hosted language model | Actual AI model, agent tool access, authenticated approvals and proprietary GIS execution depend on the host and may require separate permissions or costs |
