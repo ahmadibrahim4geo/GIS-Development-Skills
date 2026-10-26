@@ -48,7 +48,7 @@ def validate_catalog(path=CATALOG):
         # Newly curated source-code entries are links, not build/license certification.
         checked = entry.get('repository_access_checked_on')
         if checked is not None:
-            if not isinstance(checked, str) or not re.fullmatch(r'\\d{4}-\\d{2}-\\d{2}', checked):
+            if not isinstance(checked, str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', checked):
                 errors.append('{} invalid repository_access_checked_on date'.format(tag))
             skill = entry.get('primary_skill')
             if not isinstance(skill, str) or not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', skill):
