@@ -9,6 +9,8 @@ compatibility: Windows UI Automation and WebView2 acceptance require an interact
 
 **Purpose:** observe what a *real user* can do in an installed/running GIS application, not what code or a green CI status suggests. Use for UI regressions, unresponsive commands, save/reopen failures, 2D/3D navigation, WebView2 and deployment QA.
 
+**Free-first source and testing policy:** follow the [repository free-first and licensing policy](../../references/free-first-policy.md). Reuse free/offline tools where feasible, disclose any paid GIS host/OS dependencies, and verify each upstream license before copying code. Never silently require a commercial service.
+
 ## Route and preflight
 
 1. Start after [Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md) and the [GIS Router](../gis-development/SKILL.md) have identified the user's goal and reviewed scope. Respect [Security Guardian](../gis-security-guardian/SKILL.md). For new desktop architecture also read [Desktop Development](../gis-desktop-application-development/SKILL.md).
