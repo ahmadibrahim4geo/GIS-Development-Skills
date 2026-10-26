@@ -24,6 +24,19 @@ npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill kml-kmz-engineeri
 
 The source repo is [GIS-Development-Skills](https://github.com/ahmadibrahim4geo/GIS-Development-Skills). The install command points to the **published main** branch; additions in an unmerged Pull Request may not yet be installed. Your AI host may have another installation method; consult its own documentation. Running `npx` does not automatically install ArcGIS, QGIS, a model or licenses.
 
+### Prompt → goal → skill workflow (whole repository)
+
+A compatible AI hosting agent should **understand the objective before picking libraries**: summarize the user's intended outcome, target application, testable success criteria, requirements, constraints and known unknowns. For substantial work, propose numbered tasks and receive scope-specific approval; the [Intent Orchestrator](../skills/prompt-intent-orchestrator/SKILL.md) hands the reviewed task graph to the [GIS Router](../skills/gis-development/SKILL.md). Then domain specialists perform preflight, actual implementation and verification, accompanied by Security Guardian and journal evidence. [Workflow protocol](../references/repository-wide-skill-orchestration.md).
+
+The [Project Wizard](../project-wizard.html) offers **local, bilingual goal and success-criteria inputs** and a Markdown plan preview; it is *not* an AI runtime. The offline tool can turn a reviewed JSON plan into an ordered, **nonexecuting** preview:
+
+```sh
+python scripts/intent_router.py --text "Create a GIS desktop map that opens KMZ" --format json
+python scripts/intent_router.py --plan examples/intent-orchestrator/example-plan.json --workflow --format json
+```
+
+The first command does not determine a semantic goal. The second consumes one explicitly authored by the host. No command authenticates the user or executes a task.
+
 ### 3. Ask in natural language — review before editing
 Example for a geospatial desktop application:
 
