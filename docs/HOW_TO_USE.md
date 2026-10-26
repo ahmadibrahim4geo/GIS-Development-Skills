@@ -37,6 +37,17 @@ python scripts/intent_router.py --plan examples/intent-orchestrator/example-plan
 
 The first command does not determine a semantic goal. The second consumes one explicitly authored by the host. No command authenticates the user or executes a task.
 
+### Optional GIS UI quality specialists
+
+When the goal is checking GIS software itself, select only the needed skills: [UI Command Audit](../skills/gis-ui-command-audit/SKILL.md) (buttons/handlers/icons), [Desktop E2E](../skills/gis-desktop-e2e-testing/SKILL.md) (real Windows/Qt/WebView2 behavior), [Data Flow Diagnostics](../skills/gis-data-flow-diagnostics/SKILL.md) (import→engine→export integrity), and [UI/UX Design & Testing](../skills/gis-ui-ux-design-testing/SKILL.md) (accessibility/visual/usability). They share [the common evidence contract](../references/gis-ui-quality-coordination.md). The [Project Wizard](../project-wizard.html) has an optional quality-focus choice and exports a draft; do not treat that choice as a native runtime test.
+
+```sh
+python scripts/gis_ui_command_audit.py --root examples/ui-command-audit/fixture
+python scripts/gis_data_flow_diagnostics.py --trace examples/data-flow-diagnostics/trace.example.json
+```
+
+These two tools are **read-only, deterministic, standard-library T0/T1 checks** of synthetic fixtures. Real Windows UI Automation, app WebView2 bridge, GIS engine and installer evidence require suitable hosts, permissions, fixtures and T2–T4 checks.
+
 ### 3. Ask in natural language — review before editing
 Example for a geospatial desktop application:
 
