@@ -230,12 +230,12 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     <!-- Preserve manifest-backed IDs and semantic counters exactly -->
     <div class="studio-metrics">
         <div class="p-2 text-center">
-          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">23</strong>
+          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">28</strong>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Installable Agent Skills</span>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مهارة برمجية قابلة للتثبيت</span>
         </div>
         <div class="p-2 text-center">
-          <strong id="projectsCount" class="block text-2xl sm:text-3xl font-extrabold text-emerald-400">148</strong>
+          <strong id="projectsCount" class="block text-2xl sm:text-3xl font-extrabold text-emerald-400">188</strong>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Curated Project References</span>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مرجع ومشروع هندسي موثق</span>
         </div>
@@ -315,6 +315,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
           <div class="studio-use-links">
             <a href="#capabilities"><span data-lang="en">Browse skill categories ↓</span><span data-lang="ar">استعرض تخصصات GIS ↓</span></a>
             <a href="explorer.html#all-skills"><span data-lang="en">Full searchable catalog</span><span data-lang="ar">دليل المهارات الكامل</span></a>
+            <a href="explorer.html#catalog"><span data-lang="en">GIS source-code catalog</span><span data-lang="ar">كتالوج الكود الجغرافي</span></a>
             <a href="#security"><span data-lang="en">Security &amp; QA ↓</span><span data-lang="ar">الأمان والاختبارات ↓</span></a>
           </div>
           <div style="border-top:1px solid #365648;margin:21px 0"></div>
@@ -366,6 +367,27 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         <a class="text-sky-300 underline" href="references/agent-memory-skill-references.md"><span data-lang="en">Related skills</span><span data-lang="ar">المهارات المرجعية</span></a>
       </div>
       <p class="mt-3 text-xs text-slate-400"><span data-lang="en">An agent must invoke the logger; this page does not run processes.</span><span data-lang="ar">لا بد أن يستدعي الوكيل التسجيل؛ هذه الصفحة لا تنفذ العمليات.</span></p>
+    </section>
+
+    <!-- Goal-first agent workflow (informational; no AI executed in browser) -->
+    <section id="prompt-workflow" class="py-14 border-t border-slate-800/70" aria-labelledby="promptWorkflowTitle">
+      <div class="mb-7">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-2"><span data-lang="en">USER PROMPT → VERIFIED GIS OUTCOME</span><span data-lang="ar">من طلب المستخدم إلى نتائج GIS يمكن التحقق منها</span></span>
+        <h2 id="promptWorkflowTitle" class="text-2xl sm:text-3xl font-extrabold text-white"><span data-lang="en">Understand the goal. Plan the work. Then choose skills.</span><span data-lang="ar">افهم الهدف، نظم خطة العمل، ثم اختر المهارات المناسبة.</span></h2>
+        <p class="text-sm sm:text-base text-slate-300 mt-3 max-w-3xl"><span data-lang="en">A compatible AI agent reviews the user's intended result, success criteria and constraints before routing to GIS specialists. This website displays the workflow; it does not run a model or grant permissions.</span><span data-lang="ar">الوكيل البرمجي المتوافق يحدد الهدف النهائي ومعايير النجاح والقيود، ثم يوجه الخطة للمهارات الجغرافية المتخصصة. الصفحة تعرض سير العمل فقط ولا تشغّل الذكاء الاصطناعي أو تمنح الصلاحيات.</span></p>
+      </div>
+      <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" aria-label="Goal-first development sequence">
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-emerald-300 text-sm">01 · INTAKE</span><p class="font-bold text-white mt-2"><span data-lang="en">Read the original prompt</span><span data-lang="ar">استقبل البرومبت كما كتبه المستخدم</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Preserve requirements and the intended project.</span><span data-lang="ar">حافظ على المتطلبات والمشروع المقصود.</span></p></li>
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-emerald-300 text-sm">02 · GOAL</span><p class="font-bold text-white mt-2"><span data-lang="en">Identify the desired outcome</span><span data-lang="ar">حدد الهدف والمخرجات المطلوبة</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Separate explicit needs, inferred suggestions and unknowns.</span><span data-lang="ar">افصل الاحتياجات المؤكدة عن الاقتراحات والمجهول.</span></p></li>
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-emerald-300 text-sm">03 · REVIEW</span><p class="font-bold text-white mt-2"><span data-lang="en">Define success and review the plan</span><span data-lang="ar">حدد معايير النجاح وراجع الخطة</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Approve the revision and scope before consequential changes.</span><span data-lang="ar">اعتمد النسخة والنطاق قبل التعديلات المؤثرة.</span></p></li>
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-sky-300 text-sm">04 · ROUTE</span><p class="font-bold text-white mt-2"><span data-lang="en">Assign GIS specialist skills</span><span data-lang="ar">وجه المهام إلى مهارات GIS المتخصصة</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Order dependencies and assign one accountable owner.</span><span data-lang="ar">رتب الاعتماديات وحدد مسؤول كل مهمة.</span></p></li>
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-sky-300 text-sm">05 · SECURITY</span><p class="font-bold text-white mt-2"><span data-lang="en">Preflight before real execution</span><span data-lang="ar">افحص الأمان والتوافق قبل التنفيذ</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Validate host tools, permission, GIS versions and rollback.</span><span data-lang="ar">راجع الأدوات والصلاحيات والإصدارات وخطة التراجع.</span></p></li>
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-sky-300 text-sm">06 · VERIFY</span><p class="font-bold text-white mt-2"><span data-lang="en">Implement, test and report</span><span data-lang="ar">نفذ واختبر ووثق النتائج</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Run observable tests; mark unavailable native checks NOT RUN.</span><span data-lang="ar">اختبر مخرجات حقيقية وميز الاختبارات التي لم تُنفذ.</span></p></li>
+      </ol>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <a class="inline-flex items-center rounded-lg px-4 py-3 text-sm font-bold border border-emerald-500/50 text-emerald-200 hover:bg-emerald-500/10" href="project-wizard.html"><span data-lang="en">Draft a goal-first GIS plan ↗</span><span data-lang="ar">أنشئ خطة GIS تبدأ بالهدف ↗</span></a>
+        <a class="inline-flex items-center rounded-lg px-4 py-3 text-sm font-bold border border-sky-500/50 text-sky-200 hover:bg-sky-500/10" href="references/repository-wide-skill-orchestration.md"><span data-lang="en">Read execution &amp; safety contract ↗</span><span data-lang="ar">اقرأ قواعد سير العمل والأمان ↗</span></a>
+      </div>
     </section>
 
     <!-- INTERACTIVE DEVELOPMENT PATHWAYS & SKILLS EXPLORER -->
@@ -425,6 +447,65 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
 
       <!-- Source-driven Pathways Cards Grid (Rendered for filtering and modal) -->
       <div id="pathwaysContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
+    <!-- Four optional GIS software UI quality specialists: all real links and no inert controls -->
+    <section id="gis-ui-quality" class="py-14 border-t border-slate-800/70" aria-labelledby="gisUiQualityTitle">
+      <div class="mb-7">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-2"><span data-lang="en">DESIGN · AUDIT · TRACE · TEST</span><span data-lang="ar">التصميم · التدقيق · التتبع · الاختبار</span></span>
+        <h2 id="gisUiQualityTitle" class="text-2xl sm:text-3xl font-extrabold text-white"><span data-lang="en">Four practical GIS application quality skills</span><span data-lang="ar">أربع مهارات لفحص جودة تطبيقات نظم المعلومات الجغرافية</span></h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-3 max-w-3xl"><span data-lang="en">Inspect real command wiring, follow geospatial data through the engine, test a native user journey, and build accessible UI/UX. These specialists are optional and work with the shared GIS Router and security rules.</span><span data-lang="ar">افحص ربط الأوامر بوظائفها، وتتبّع البيانات داخل المحرك، واختبر رحلة المستخدم فعليًا، وصمّم واجهة مريحة وقابلة للوصول. تعمل المهارات حسب حاجة المشروع تحت إشراف موجّه GIS وقواعد الأمان.</span></p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a class="glass-card rounded-2xl p-5 flex flex-col gap-2" href="skills/gis-ui-command-audit/SKILL.md">
+          <span class="text-xs font-mono text-emerald-300">01 · UI COMMAND AUDIT</span>
+          <h3 class="text-lg font-bold text-white"><span data-lang="en">Audit commands and icons</span><span data-lang="ar">جرد الأوامر والأيقونات</span></h3>
+          <p class="text-sm text-slate-300"><span data-lang="en">Map UI controls to declared handlers, engine effects and native verification—not just visible buttons.</span><span data-lang="ar">اربط عناصر الواجهة بتعريفات الأوامر ونتائج المحرك والاختبارات الفعلية، بدل الاكتفاء بوجود الأزرار.</span></p>
+        </a>
+        <a class="glass-card rounded-2xl p-5 flex flex-col gap-2" href="skills/gis-desktop-e2e-testing/SKILL.md">
+          <span class="text-xs font-mono text-sky-300">02 · DESKTOP E2E</span>
+          <h3 class="text-lg font-bold text-white"><span data-lang="en">Test the real desktop program</span><span data-lang="ar">اختبر البرنامج المكتبي الحقيقي</span></h3>
+          <p class="text-sm text-slate-300"><span data-lang="en">Windows UI Automation, WebView2, GIS import, scene changes, save/reopen and installer acceptance.</span><span data-lang="ar">اختبارات Windows وWebView2 واستيراد البيانات والمشهد والحفظ وإعادة الفتح والتثبيت.</span></p>
+        </a>
+        <a class="glass-card rounded-2xl p-5 flex flex-col gap-2" href="skills/gis-data-flow-diagnostics/SKILL.md">
+          <span class="text-xs font-mono text-emerald-300">03 · GIS DATA FLOW</span>
+          <h3 class="text-lg font-bold text-white"><span data-lang="en">Trace GIS data fidelity</span><span data-lang="ar">تتبّع سلامة تدفق بيانات GIS</span></h3>
+          <p class="text-sm text-slate-300"><span data-lang="en">Follow import, CRS, parsing, engine, rendering, save/export and independently verified readback.</span><span data-lang="ar">تتبّع الاستيراد والإحداثيات والمعالجة والمحرك والعرض والحفظ والتصدير وإعادة قراءة الناتج.</span></p>
+        </a>
+        <a class="glass-card rounded-2xl p-5 flex flex-col gap-2" href="skills/gis-ui-ux-design-testing/SKILL.md">
+          <span class="text-xs font-mono text-sky-300">04 · UI/UX QUALITY</span>
+          <h3 class="text-lg font-bold text-white"><span data-lang="en">Design and verify usable interfaces</span><span data-lang="ar">صمّم واختبر تجربة المستخدم</span></h3>
+          <p class="text-sm text-slate-300"><span data-lang="en">Accessible controls, keyboard navigation, layout, responsive panels, bilingual RTL/LTR and visual regression.</span><span data-lang="ar">إمكانية الوصول والتنقل بلوحة المفاتيح وتنظيم العناصر والواجهات العربية والإنجليزية واختبارات الشكل.</span></p>
+        </a>
+      </div>
+      <p class="text-xs text-amber-200 mt-5"><span data-lang="en">Offline fixture checks do not prove native Windows, QGIS, ArcGIS or WebView2 functionality; record T2–T4 as NOT RUN unless observed.</span><span data-lang="ar">اختبارات الملفات الصناعية لا تثبت تشغيل Windows أو QGIS أو ArcGIS أو WebView2؛ تُسجَّل اختبارات T2–T4 غير المنفذة بوضوح.</span></p>
+    </section>
+
+    <!-- Curated GIS source code entrypoint: source of truth remains project-catalog.json -->
+    <section id="software-registry" class="py-14 border-t border-slate-800/70" aria-labelledby="softwareRegistryTitle">
+      <div class="mb-7">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-2"><span data-lang="en">GIS SOFTWARE &amp; SOURCE CODE REGISTRY</span><span data-lang="ar">دليل البرامج والتطبيقات والكود الجغرافي</span></span>
+        <h2 id="softwareRegistryTitle" class="text-2xl sm:text-3xl font-extrabold text-white"><span data-lang="en">Find real GIS applications and the engines behind them.</span><span data-lang="ar">اكتشف برامج GIS الحقيقية والمحركات والمكتبات المستخدمة في تطويرها.</span></h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-3xl"><span data-lang="en">Browse the existing source-driven catalog by platform and role. Study desktop, web and mobile GIS apps, mapping frameworks, analysis engines, servers and their licensing before choosing a stack.</span><span data-lang="ar">تصفح فهرس المصادر الحالي حسب نوع التطبيق والتقنية؛ برامج سطح المكتب والويب والموبايل، ومحركات الخرائط والتحليل والخوادم، مع مراجعة التراخيص قبل اعتماد أي مصدر.</span></p>
+        <p class="mt-3 text-xs text-amber-200"><span data-lang="en">Source links are reviewed references, not proof of build success, license clearance or GIS-runtime verification.</span><span data-lang="ar">روابط المستودعات مصادر للبحث فقط، وليست إثباتًا لنجاح البناء أو الترخيص أو الاختبار داخل GIS.</span></p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <a class="glass-card rounded-2xl p-6 flex flex-col gap-3" href="explorer.html#catalog">
+          <span class="text-xs font-bold text-emerald-300">01 · APPLICATIONS</span>
+          <h3 class="text-lg font-bold text-white"><span data-lang="en">Explore the full catalog</span><span data-lang="ar">استكشف كتالوج المشاريع</span></h3>
+          <p class="text-sm text-slate-300"><span data-lang="en">Search and filter the live project inventory, including newly added GIS software repositories.</span><span data-lang="ar">ابحث وفلتر فهرس المشاريع الذي يقرأ من ملف البيانات الأصلي، ويشمل المستودعات الجديدة.</span></p>
+        </a>
+        <a class="glass-card rounded-2xl p-6 flex flex-col gap-3" href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/references/gis-software-source-registry.md" rel="noopener noreferrer">
+          <span class="text-xs font-bold text-sky-300">02 · DEVELOPER GUIDE</span>
+          <h3 class="text-lg font-bold text-white"><span data-lang="en">Choose the right source code</span><span data-lang="ar">اختر الكود المناسب لمشروعك</span></h3>
+          <p class="text-sm text-slate-300"><span data-lang="en">Compare complete applications, reusable engines, UI shells, data services, licensing and adoption gates.</span><span data-lang="ar">قارن بين التطبيقات الكاملة والمحركات والواجهات والخدمات ومتطلبات الدمج والتراخيص.</span></p>
+        </a>
+        <a class="glass-card rounded-2xl p-6 flex flex-col gap-3" href="skills/gis-development/SKILL.md">
+          <span class="text-xs font-bold text-emerald-300">03 · AGENT SKILLS</span>
+          <h3 class="text-lg font-bold text-white"><span data-lang="en">Use the skill router first</span><span data-lang="ar">ابدأ بتوجيه المهارات</span></h3>
+          <p class="text-sm text-slate-300"><span data-lang="en">Interpret the prompt, review the plan and route to the right GIS specialist before implementation.</span><span data-lang="ar">افهم البرومبت واعتمد الخطة ثم وجهها للمهارة المتخصصة المناسبة قبل التنفيذ.</span></p>
+        </a>
+      </div>
     </section>
 
     <!-- GOOGLE EARTH PRO, HISTORICAL IMAGERY TIMELINE & KML/KMZ ENGINEERING -->
@@ -566,6 +647,18 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
             <p class="text-sm text-slate-300 mb-4">
               <span data-lang="en">Point, line, polygon and raster symbols, scientific color ramps, label contrast, accessibility and native project save/reopen.</span>
               <span data-lang="ar">ترميز النقاط والخطوط والمضلعات والمرئيات، وتدرجات الألوان العلمية، وتباين النصوص وحفظ المشاريع.</span>
+            </p>
+          </div>
+          <span class="text-xs font-bold text-sky-400">Read development guide ↗</span>
+        </a>
+
+        <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/blob/main/skills/system-capabilities-and-permissions/SKILL.md" target="_blank" class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="inline-block font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 mb-3">SYSTEM / DEVICE</span>
+            <h3 class="text-xl font-bold text-white mb-2">System Capabilities &amp; Permissions</h3>
+            <p class="text-sm text-slate-300 mb-4">
+              <span data-lang="en">Secure OS and device integration, optional adapter skills, native permissions and offline fallback testing.</span>
+              <span data-lang="ar">تكامل البرامج مع إمكانيات النظام والأجهزة وصلاحياتها، وربط المهارات الاختيارية واختبار البدائل.</span>
             </p>
           </div>
           <span class="text-xs font-bold text-sky-400">Read development guide ↗</span>

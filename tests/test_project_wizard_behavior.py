@@ -3,6 +3,8 @@
 No network, package manager or paid browser services are required. This checks
 generating a plan, bilingual switching, dirty-state invalidation and download.
 """
+import importlib.util
+import json
 import re
 import shutil
 import subprocess
@@ -20,7 +22,7 @@ const fs = require('node:fs');
 const code = fs.readFileSync(process.argv[2], 'utf8');
 const selectors = {
   type: ['desktop','pro','arcmap','dual','qgis','qgis-engine','web','remote','database','geoai'],
-  locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host']
+  locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host'], qualityFocus:['standard','audit','e2e','flow','ux','all'], deviceNeeds:['none','time','location','hardware','all']
 };
 const elements = Object.create(null);
 function node(id) {
@@ -37,9 +39,10 @@ for(const [id, values] of Object.entries(selectors)){
   node(id).value=values[0];
 }
 for (const id of ['lang','heading','intro','typeLabel','localeLabel','filesLabel',
-  'licenseLabel','detailsLabel','details','generate','download','resultLabel','result','status',
-  'homeLink','roadmapLink','kmlLink','reliabilityLink','wizardPrivacy']) node(id);
+  'licenseLabel','qualityLabel','deviceLabel','jsonHint','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','downloadJson','resultLabel','result','status',
+  'homeLink','roadmapLink','kmlLink','reliabilityLink','workflowLink','wizardPrivacy']) node(id);
 node('download').disabled = true;
+node('downloadJson').disabled = true;
 let lastLink=null, lastBlob=null, revoke=null;
 const document = {
   documentElement:{lang:'en',dir:'ltr'},
@@ -61,17 +64,80 @@ vm.runInNewContext(code,{document,Blob,URL,setTimeout:fn=>fn()});
 const e=id=>elements[id];
 assert.equal(document.documentElement.lang,'en');
 assert.equal(e('download').disabled,true);
+assert.equal(e('downloadJson').disabled,true);
 e('details').value='Preserve icons, folders and styles.';
+e('goal').value='Reliable KMZ import without losing custom icons.';
+e('success').value='Round-trip styles and folders are identical.';
 e('generate').onclick();
 assert.equal(e('download').disabled,false);
+assert.equal(e('downloadJson').disabled,false);
 assert.match(e('result').textContent,/GIS Project Implementation Plan/);
 assert.match(e('result').textContent,/KML\/KMZ/);
 assert.match(e('result').textContent,/Preserve icons/);
+assert.match(e('result').textContent,/Reliable KMZ import/);
+assert.match(e('result').textContent,/Round-trip styles/);
+assert.match(e('result').textContent,/skills\/prompt-intent-orchestrator\/SKILL\.md/);
+assert.match(e('result').textContent,/repository-wide-skill-orchestration.md/);
 e('download').onclick();
 assert.equal(lastLink.download,'gis-project-plan-en.md');
 assert.equal(lastLink.clicked,true);
 assert.match(lastBlob.parts[0],/Project Implementation Plan/);
 assert.equal(revoke,'blob:plan');
+e('downloadJson').onclick();
+assert.equal(lastLink.download,'gis-workflow-draft.json');
+assert.equal(lastBlob.type,'application/json;charset=utf-8');
+const firstJSON=JSON.parse(lastBlob.parts[0]);
+assert.equal(firstJSON.status,'draft');
+assert.equal(firstJSON.approval.approved_by_user,false);
+assert.equal(firstJSON.goal,'Reliable KMZ import without losing custom icons.');
+assert.equal(firstJSON.success_criteria[0],'Round-trip styles and folders are identical.');
+assert.equal(firstJSON.tasks.length,3);
+assert.equal(firstJSON.tasks[0].owner_skill,'gis-desktop-application-development');
+assert.deepEqual(firstJSON.tasks[2].depends_on,['T2']);
+console.log('STRUCTURED_WIZARD:'+JSON.stringify(firstJSON));
+assert.ok(!e('result').textContent.includes('skills/gis-ui-command-audit/SKILL.md'));
+e('qualityFocus').value='all';
+e('qualityFocus').fire('change');
+assert.equal(e('downloadJson').disabled,true);
+e('generate').onclick();
+const qualityList=['gis-ui-command-audit','gis-desktop-e2e-testing','gis-data-flow-diagnostics','gis-ui-ux-design-testing'];
+for (const slug of qualityList) {
+  assert.ok(e('result').textContent.includes('skills/'+slug+'/SKILL.md'));
+}
+e('downloadJson').onclick();
+const qaPlan=JSON.parse(lastBlob.parts[0]);
+for (const slug of qualityList) {
+  assert.ok(qaPlan.tasks[1].skills.includes(slug));
+}
+assert.equal(qaPlan.status,'draft');
+console.log('QUALITY_WIZARD:'+JSON.stringify(qaPlan));
+e('deviceNeeds').value='location';
+e('deviceNeeds').fire('change');
+assert.equal(e('downloadJson').disabled,true);
+e('generate').onclick();
+assert.match(e('result').textContent,/OS\/device capability and permission scope/);
+e('downloadJson').onclick();
+const devicePlan=JSON.parse(lastBlob.parts[0]);
+assert.ok(devicePlan.tasks[1].skills.includes('system-capabilities-and-permissions'));
+assert.ok(devicePlan.tasks[1].skills.includes('gis-device-context'));
+e('deviceNeeds').value='none';
+e('deviceNeeds').fire('change');
+e('qualityFocus').value='standard';
+e('qualityFocus').fire('change');
+assert.equal(e('downloadJson').disabled,true);
+e('generate').onclick();
+e('goal').value='Different expected outcome';
+e('goal').fire('input');
+assert.equal(e('download').disabled,true);
+assert.equal(e('downloadJson').disabled,true);
+e('generate').onclick();
+assert.match(e('result').textContent,/Different expected outcome/);
+e('success').value='Observed real-output check';
+e('success').fire('input');
+assert.equal(e('download').disabled,true);
+assert.equal(e('downloadJson').disabled,true);
+e('generate').onclick();
+assert.match(e('result').textContent,/Observed real-output check/);
 e('type').value='qgis';
 e('type').fire('change');
 assert.equal(e('download').disabled,true);
@@ -134,6 +200,31 @@ class WizardBehaviorTests(unittest.TestCase):
                                   capture_output=True, text=True, timeout=20)
             self.assertEqual(test.returncode, 0,
                              test.stdout + "\n" + test.stderr)
+            structured = [line.split('STRUCTURED_WIZARD:', 1)[1]
+                          for line in test.stdout.splitlines()
+                          if line.startswith('STRUCTURED_WIZARD:')]
+            self.assertEqual(len(structured), 1, test.stdout)
+            blueprint = json.loads(structured[0])
+            source = ROOT / 'scripts' / 'intent_router.py'
+            spec = importlib.util.spec_from_file_location('wizard_intent_router', source)
+            validator = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(validator)
+            self.assertEqual([], validator.validate_plan(blueprint))
+            compiled = validator.compile_workflow(blueprint)
+            self.assertTrue(compiled['valid'], compiled['errors'])
+            self.assertEqual('AWAITING_REVIEW', compiled['status'])
+            self.assertFalse(compiled['can_execute'])
+            self.assertEqual(['T1', 'T2', 'T3'], [t['task_id'] for t in compiled['steps']])
+            qa_structured = [line.split('QUALITY_WIZARD:', 1)[1]
+                             for line in test.stdout.splitlines()
+                             if line.startswith('QUALITY_WIZARD:')]
+            self.assertEqual(1, len(qa_structured), test.stdout)
+            qa = json.loads(qa_structured[0])
+            qa_compiled = validator.compile_workflow(qa)
+            self.assertTrue(qa_compiled['valid'], qa_compiled['errors'])
+            self.assertEqual('AWAITING_REVIEW', qa_compiled['status'])
+            self.assertEqual(8, len(qa_compiled['steps'][1]['skills']))
+            self.assertFalse(qa_compiled['can_execute'])
 
 
 if __name__ == "__main__":

@@ -20,7 +20,8 @@ DOMAINS = (
     ("coordinate-reference-systems", ("crs", "epsg", "projection", "grid", "graticule", "خطوط الطول", "دوائر العرض", "الإحداثي", "مسقط")),
     ("gis-cartography-symbology", ("symbol", "style", "icon", "symbology", "أيقون", "الرموز", "ألوان", "ملصق")),
     ("arcgis-toolbox-engineering", ("arcgis", "arcpy", "arcmap", "pyt", "أرك جي", "بايثون تول")),
-    ("qgis-plugin-development", ("qgis", "pyqgis", "كيو جي")),
+    ("qgis-plugin-development", ("qgis plugin", "qgis processing", "processing provider", "qgis extension", "إضافة qgis", "بلجن كيو جي")),
+    ("qgis-engine-integration", ("qgis engine", "qgis core", "qgis libraries", "qgis standalone", "qgis runtime", "محرك qgis", "مكتبات qgis", "محرك كيو جي")),
     ("geospatial-web-mapping", ("cesium", "maplibre", "web map", "globe", "ثلاثية الأبعاد", "كرة أرضية")),
     ("remote-sensing-pipelines", ("sentinel", "landsat", "gee", "satellite", "الاستشعار", "مرئيات")),
     ("geospatial-data-processing", ("gdal", "geopandas", "raster", "vector", "راستر", "فيكتور")),
@@ -28,6 +29,14 @@ DOMAINS = (
     ("geospatial-api-integration", ("api", "geocod", "gazetteer", "أسماء الأماكن", "بحث عن الأماكن")),
     ("geospatial-data-discovery", ("download data", "stac", "مصادر البيانات", "تنزيل بيانات")),
     ("geospatial-ai-agents", ("agent", "geoai", "automation", "وكيل", "الذكاء الاصطناعي")),
+    ("geospatial-data-catalogs", ("data catalog", "data repository", "gis catalog", "stac catalog", "كتالوج البيانات", "فهرس البيانات", "مستودعات البيانات")),
+    ("gis-internationalization-arabic", ("i18n", "localization", "arabic ui", "bilingual", "تعريب", "ثنائي اللغة", "تعدد اللغات")),
+    ("gis-device-context", ("sunlight", "device location", "device time", "time zone", "solar position", "ضوء الشمس", "موقع الجهاز", "المنطقة الزمنية")),
+    ("gis-ui-command-audit", ("command audit", "unwired command", "dead button", "ribbon audit", "audit icons", "فحص الأوامر", "جرد الأوامر", "أيقونات غير مربوطة", "الأزرار مش شغالة")),
+    ("gis-desktop-e2e-testing", ("end-to-end desktop", "desktop e2e", "ui automation", "uiautomation", "flaUI", "webview2 testing", "اختبارات التفاعل", "اختبار تشغيل الواجهة", "اختبار تطبيق ويندوز")),
+    ("gis-data-flow-diagnostics", ("data flow", "data lineage", "gis diagnostics", "trace id", "تدفق البيانات", "تتبع البيانات", "رحلة البيانات", "تشخيص تدفق")),
+    ("gis-ui-ux-design-testing", ("ui/ux", "ui ux", "ux design", "usability testing", "accessibility audit", "تصميم واجهة", "تصميم الواجهة", "تجربة المستخدم", "اختبار قابلية الاستخدام")),
+    ("global-mapper-development", ("global mapper", "جلوبال مابر", "جلوبال مابَر")),
 )
 RISKS = {"low", "medium", "high", "critical"}
 SIDE_EFFECTS = {"read", "write", "network", "destructive"}
@@ -51,6 +60,10 @@ def route_hints(request, known=None):
         "schema_version": "1.0",
         "stage": "draft_hints_only",
         "original_request": request,
+        "goal": None,
+        "target": None,
+        "desired_outcomes": [],
+        "next_step": "Hosting AI must infer and show the user goal, deliverables, constraints and measurable success criteria; no execution from keywords.",
         "language_hint": "ar" if re.search(r"[\u0600-\u06ff]", request) else "en",
         "suggested_skills": list(dict.fromkeys(hits)),
         "requires_semantic_review": True,
@@ -176,6 +189,123 @@ def validate_plan(plan, known=None, require_approved=False):
     return errors
 
 
+
+# A deterministic plan compiler: it organizes an agent-reviewed goal and its
+# specialist tasks; it does NOT interpret natural language or execute tools.
+WORKFLOW_PHASES = (
+    "RECEIVED", "INTERPRETED", "DRAFTED", "AWAITING_REVIEW",
+    "APPROVED", "ROUTED", "PREFLIGHT", "EXECUTING",
+    "VERIFYING", "REPORTED",
+)
+
+
+def validate_goal_brief(plan):
+    """Require a human/AI-authored and reviewable user outcome before routing."""
+    if not isinstance(plan, dict):
+        return ["Goal brief must be a JSON object"]
+    errors = []
+    if not _text(plan.get("goal")):
+        errors.append("goal must describe the intended user outcome")
+    if not _text(plan.get("target")):
+        errors.append("target must describe the deliverable or project")
+    for key in ("desired_outcomes", "success_criteria"):
+        values = plan.get(key)
+        if not isinstance(values, list) or not values or any(not _text(v) for v in values):
+            errors.append(key + " must be a nonempty string array")
+    # Existing plan v1 fields remain compatible; the goal-first workflow
+    # requires these additional fields only when compiling a workflow.
+    return errors
+
+
+def ordered_tasks(tasks):
+    """Stable topological ordering for a plan already validated against cycles."""
+    tasks_by_id = {task["id"]: task for task in tasks}
+    resolved, order = set(), []
+    while len(resolved) < len(tasks):
+        ready = [task for task in tasks
+                 if task["id"] not in resolved
+                 and all(dep in resolved for dep in task["depends_on"])]
+        if not ready:
+            raise ValueError("No valid task order (cycle or missing dependency)")
+        for task in ready:
+            order.append(tasks_by_id[task["id"]])
+            resolved.add(task["id"])
+    return order
+
+
+def compile_workflow(plan, known=None, require_approved=False):
+    """Emit an execution *blueprint* only. No shell, I/O writes or auth check.
+
+    An AI hosting agent must semantically review the goal, verify the user's
+    actual authorization, check installed tools and enforce side-effect limits.
+    """
+    errors = validate_plan(plan, known=known, require_approved=require_approved)
+    errors.extend(validate_goal_brief(plan))
+    if isinstance(plan, dict):
+        for i, task in enumerate(plan.get("tasks", []) if isinstance(plan.get("tasks"), list) else []):
+            if not isinstance(task, dict):
+                continue
+            selected = task.get("skills")
+            owner = task.get("owner_skill")
+            if owner is not None and (not isinstance(selected, list) or owner not in selected
+                                      or owner == "gis-security-guardian"):
+                errors.append("tasks[{}].owner_skill must be a selected non-security specialist".format(i))
+            if isinstance(selected, list) and selected and all(
+                    skill in ("gis-security-guardian", "agent-development-journal",
+                              "prompt-intent-orchestrator", "gis-development") for skill in selected):
+                errors.append("tasks[{}] has no accountable domain specialist".format(i))
+    result = {
+        "schema_version": "1.0",
+        "kind": "workflow_preview_only",
+        "valid": not errors,
+        "request_id": plan.get("request_id") if isinstance(plan, dict) else None,
+        "revision": plan.get("revision") if isinstance(plan, dict) else None,
+        "original_request": plan.get("original_request") if isinstance(plan, dict) else None,
+        "goal": plan.get("goal") if isinstance(plan, dict) else None,
+        "target": plan.get("target") if isinstance(plan, dict) else None,
+        "desired_outcomes": plan.get("desired_outcomes") if isinstance(plan, dict) else None,
+        "success_criteria": plan.get("success_criteria") if isinstance(plan, dict) else None,
+        "phases": list(WORKFLOW_PHASES),
+        "status": "BLOCKED" if errors else "AWAITING_HOST_AUTHORIZATION" if require_approved else "AWAITING_REVIEW",
+        "approval_declarations_checked": bool(require_approved and not errors),
+        "authenticated_user_approval": False,
+        "host_permissions_verified": False,
+        "can_execute": False,
+        "note": "Reviewable, ordered blueprint only. An authenticated host must check approval, tool availability, repository scope and security at dispatch.",
+        "errors": errors,
+        "steps": [],
+        "handoffs": [],
+    }
+    if errors:
+        return result
+    task_order = ordered_tasks(plan["tasks"])
+    for step_number, task in enumerate(task_order, start=1):
+        owner = task.get("owner_skill") or next(
+            (x for x in task["skills"] if x not in (
+                "gis-security-guardian", "agent-development-journal",
+                "prompt-intent-orchestrator", "gis-development")), None)
+        step = {
+            "step": step_number,
+            "task_id": task["id"],
+            "title": task["title"],
+            "owner_skill": owner,
+            "skills": task["skills"],
+            "depends_on": task["depends_on"],
+            "risk": task["risk"],
+            "candidate_tools": task.get("tools", []),
+            "acceptance_criteria": task["acceptance_criteria"],
+            "status": "NOT_STARTED",
+            "preflight": ["host tool availability", "host authorization", "GIS/data/license compatibility",
+                          "security guardian", "data preservation and rollback"],
+            "verification": "T0/T1 where possible; T2-T4 only on real target runtimes",
+        }
+        result["steps"].append(step)
+        result["handoffs"].extend(
+            {"from_task": dep, "to_task": task["id"], "data_contract": "approved_plan_task_dependency"}
+            for dep in task["depends_on"])
+    return result
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     action = p.add_mutually_exclusive_group(required=True)
@@ -183,10 +313,13 @@ def main(argv=None):
     action.add_argument("--plan", type=Path, help="Structured JSON plan drafted by an agent or human")
     p.add_argument("--format", choices=("text", "json"), default="text")
     p.add_argument("--gate", action="store_true", help="Check declared revision-scoped approval; never execute")
+    p.add_argument("--workflow", action="store_true", help="Compile a goal-first dependency-ordered workflow preview; requires --plan, never executes")
     args = p.parse_args(argv)
     if args.text is not None:
         if args.gate:
             p.error("--gate requires --plan")
+        if args.workflow:
+            p.error("--workflow requires --plan")
         out = route_hints(args.text)
         if args.format == "json":
             print(json.dumps(out, ensure_ascii=False, indent=2))
@@ -199,6 +332,20 @@ def main(argv=None):
     except (OSError, ValueError) as exc:
         print("Invalid plan file: " + str(exc), file=sys.stderr)
         return 2
+    if args.workflow:
+        blueprint = compile_workflow(plan, require_approved=args.gate)
+        if args.format == "json":
+            print(json.dumps(blueprint, ensure_ascii=False, indent=2))
+        else:
+            print("Goal:", blueprint["goal"])
+            print("Target:", blueprint["target"])
+            print("Status:", blueprint["status"])
+            for item in blueprint["steps"]:
+                print("{step}. {task_id} [{owner_skill}] after {depends_on} - {title}".format(**item))
+            for issue in blueprint["errors"]:
+                print("ERROR:", issue)
+            print(blueprint["note"])
+        return 0 if blueprint["valid"] else 1
     errors = validate_plan(plan, require_approved=args.gate)
     if args.format == "json":
         print(json.dumps({"valid": not errors, "approved_gate_declared": bool(args.gate and not errors),

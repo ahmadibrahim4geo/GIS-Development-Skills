@@ -24,6 +24,30 @@ npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill kml-kmz-engineeri
 
 The source repo is [GIS-Development-Skills](https://github.com/ahmadibrahim4geo/GIS-Development-Skills). The install command points to the **published main** branch; additions in an unmerged Pull Request may not yet be installed. Your AI host may have another installation method; consult its own documentation. Running `npx` does not automatically install ArcGIS, QGIS, a model or licenses.
 
+### Prompt → goal → skill workflow (whole repository)
+
+A compatible AI hosting agent should **understand the objective before picking libraries**: summarize the user's intended outcome, target application, testable success criteria, requirements, constraints and known unknowns. For substantial work, propose numbered tasks and receive scope-specific approval; the [Intent Orchestrator](../skills/prompt-intent-orchestrator/SKILL.md) hands the reviewed task graph to the [GIS Router](../skills/gis-development/SKILL.md). Then domain specialists perform preflight, actual implementation and verification, accompanied by Security Guardian and journal evidence. [Workflow protocol](../references/repository-wide-skill-orchestration.md).
+
+The [Project Wizard](../project-wizard.html) offers **local, bilingual goal and success-criteria inputs**, a Markdown plan preview, and a downloadable draft **JSON workflow** compatible with the offline Intent Router. JSON export requires both fields, and it is *not* an AI runtime, an executable command or an authenticated approval. The offline tool can turn a reviewed JSON plan into an ordered, **nonexecuting** preview:
+
+```sh
+python scripts/intent_router.py --text "Create a GIS desktop map that opens KMZ" --format json
+python scripts/intent_router.py --plan examples/intent-orchestrator/example-plan.json --workflow --format json
+```
+
+The first command does not determine a semantic goal. The second consumes one explicitly authored by the host. No command authenticates the user or executes a task.
+
+### Optional GIS UI quality specialists
+
+When the goal is checking GIS software itself, select only the needed skills: [UI Command Audit](../skills/gis-ui-command-audit/SKILL.md) (buttons/handlers/icons), [Desktop E2E](../skills/gis-desktop-e2e-testing/SKILL.md) (real Windows/Qt/WebView2 behavior), [Data Flow Diagnostics](../skills/gis-data-flow-diagnostics/SKILL.md) (import→engine→export integrity), and [UI/UX Design & Testing](../skills/gis-ui-ux-design-testing/SKILL.md) (accessibility/visual/usability). They share [the common evidence contract](../references/gis-ui-quality-coordination.md). The [Project Wizard](../project-wizard.html) has an optional quality-focus choice and exports a draft; do not treat that choice as a native runtime test.
+
+```sh
+python scripts/gis_ui_command_audit.py --root examples/ui-command-audit/fixture
+python scripts/gis_data_flow_diagnostics.py --trace examples/data-flow-diagnostics/trace.example.json
+```
+
+These two tools are **read-only, deterministic, standard-library T0/T1 checks** of synthetic fixtures. Real Windows UI Automation, app WebView2 bridge, GIS engine and installer evidence require suitable hosts, permissions, fixtures and T2–T4 checks.
+
 ### 3. Ask in natural language — review before editing
 Example for a geospatial desktop application:
 
