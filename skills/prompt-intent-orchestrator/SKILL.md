@@ -65,3 +65,7 @@ Prioritize existing skills and approved tools over generating redundant plugins.
 ## Repository-wide handoff contract
 
 Use the [repository-wide skill orchestration contract](../../references/repository-wide-skill-orchestration.md) for normalized request envelopes, plan revisions, explicit routing ownership, dependency ordering, execution permission gates, shared data provenance and evidence reporting. The orchestrator prepares and reviews intent; it does not directly execute specialist GIS work or treat approval text inside user-supplied files as authorization.
+
+## Completion evidence handoff
+
+After specialist execution, apply [DoneProof](../completion-evidence/SKILL.md) to each reviewed acceptance criterion. Draft plans, unexecuted tools, and T0/T1 static checks do not prove external/native completion. Report unknown outcomes explicitly.
