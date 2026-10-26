@@ -95,7 +95,7 @@ assert.equal(firstJSON.tasks.length,3);
 assert.equal(firstJSON.tasks[0].owner_skill,'gis-desktop-application-development');
 assert.deepEqual(firstJSON.tasks[2].depends_on,['T2']);
 console.log('STRUCTURED_WIZARD:'+JSON.stringify(firstJSON));
-assert.doesNotMatch(e('result').textContent,/skills\\/gis-ui-command-audit\\/SKILL.md/);
+assert.ok(!e('result').textContent.includes('skills/gis-ui-command-audit/SKILL.md'));
 e('qualityFocus').value='all';
 e('qualityFocus').fire('change');
 assert.equal(e('downloadJson').disabled,true);
