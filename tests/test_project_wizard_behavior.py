@@ -22,7 +22,7 @@ const fs = require('node:fs');
 const code = fs.readFileSync(process.argv[2], 'utf8');
 const selectors = {
   type: ['desktop','pro','arcmap','dual','qgis','qgis-engine','web','remote','database','geoai'],
-  locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host']
+  locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host'], qualityFocus:['standard','audit','e2e','flow','ux','all']
 };
 const elements = Object.create(null);
 function node(id) {
@@ -39,7 +39,7 @@ for(const [id, values] of Object.entries(selectors)){
   node(id).value=values[0];
 }
 for (const id of ['lang','heading','intro','typeLabel','localeLabel','filesLabel',
-  'licenseLabel','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','downloadJson','resultLabel','result','status',
+  'licenseLabel','qualityLabel','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','downloadJson','resultLabel','result','status',
   'homeLink','roadmapLink','kmlLink','reliabilityLink','workflowLink','wizardPrivacy']) node(id);
 node('download').disabled = true;
 node('downloadJson').disabled = true;
@@ -95,6 +95,26 @@ assert.equal(firstJSON.tasks.length,3);
 assert.equal(firstJSON.tasks[0].owner_skill,'gis-desktop-application-development');
 assert.deepEqual(firstJSON.tasks[2].depends_on,['T2']);
 console.log('STRUCTURED_WIZARD:'+JSON.stringify(firstJSON));
+assert.doesNotMatch(e('result').textContent,/skills\\/gis-ui-command-audit\\/SKILL.md/);
+e('qualityFocus').value='all';
+e('qualityFocus').fire('change');
+assert.equal(e('downloadJson').disabled,true);
+e('generate').onclick();
+const qualityList=['gis-ui-command-audit','gis-desktop-e2e-testing','gis-data-flow-diagnostics','gis-ui-ux-design-testing'];
+for (const slug of qualityList) {
+  assert.ok(e('result').textContent.includes('skills/'+slug+'/SKILL.md'));
+}
+e('downloadJson').onclick();
+const qaPlan=JSON.parse(lastBlob.parts[0]);
+for (const slug of qualityList) {
+  assert.ok(qaPlan.tasks[1].skills.includes(slug));
+}
+assert.equal(qaPlan.status,'draft');
+console.log('QUALITY_WIZARD:'+JSON.stringify(qaPlan));
+e('qualityFocus').value='standard';
+e('qualityFocus').fire('change');
+assert.equal(e('downloadJson').disabled,true);
+e('generate').onclick();
 e('goal').value='Different expected outcome';
 e('goal').fire('input');
 assert.equal(e('download').disabled,true);
@@ -184,6 +204,16 @@ class WizardBehaviorTests(unittest.TestCase):
             self.assertEqual('AWAITING_REVIEW', compiled['status'])
             self.assertFalse(compiled['can_execute'])
             self.assertEqual(['T1', 'T2', 'T3'], [t['task_id'] for t in compiled['steps']])
+            qa_structured = [line.split('QUALITY_WIZARD:', 1)[1]
+                             for line in test.stdout.splitlines()
+                             if line.startswith('QUALITY_WIZARD:')]
+            self.assertEqual(1, len(qa_structured), test.stdout)
+            qa = json.loads(qa_structured[0])
+            qa_compiled = validator.compile_workflow(qa)
+            self.assertTrue(qa_compiled['valid'], qa_compiled['errors'])
+            self.assertEqual('AWAITING_REVIEW', qa_compiled['status'])
+            self.assertEqual(7, len(qa_compiled['steps'][1]['skills']))
+            self.assertFalse(qa_compiled['can_execute'])
 
 
 if __name__ == "__main__":
