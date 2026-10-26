@@ -109,7 +109,7 @@ function generatePlan(){
   // Machine-readable handoff uses the exact offline Intent Router v1 schema.
   // No browser-side language model, authorization, network access or tool dispatch.
   // Missing goals/criteria are NOT guessed; Markdown still supports exploration.
-  const outcomes=success.split(/\\r?\\n/).map(item=>item.trim()).filter(Boolean);
+  const outcomes=success.split(/\r?\n/).map(item=>item.trim()).filter(Boolean);
   structuredPlan=null;
   if(goal && outcomes.length){
     const owner=skills[type];
@@ -118,7 +118,7 @@ function generatePlan(){
     if(kml)selected.push('kml-kmz-engineering');
     if(locale!=='en')selected.push('gis-internationalization-arabic');
     const specialisms=[...new Set(selected)];
-    const userLanguage=/[\\u0600-\\u06FF]/.test(goal+' '+requirement+' '+success)?'ar':(ar?'ar':'en');
+    const userLanguage=/[\u0600-\u06FF]/.test(goal+' '+requirement+' '+success)?'ar':(ar?'ar':'en');
     structuredPlan={
       schema_version:'1.0',
       request_id:'GIS-WIZARD-UNASSIGNED',
@@ -165,7 +165,7 @@ $('download').onclick=()=>{
 };
 $('downloadJson').onclick=()=>{
   if(!structuredPlan)return;
-  const data=JSON.stringify(structuredPlan,null,2)+'\\n';
+  const data=JSON.stringify(structuredPlan,null,2)+'\n';
   const url=URL.createObjectURL(new Blob([data],{type:'application/json;charset=utf-8'}));
   const a=document.createElement('a');a.href=url;a.download='gis-workflow-draft.json';a.click();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
