@@ -3,6 +3,8 @@
 No network, package manager or paid browser services are required. This checks
 generating a plan, bilingual switching, dirty-state invalidation and download.
 """
+import importlib.util
+import json
 import re
 import shutil
 import subprocess
@@ -37,7 +39,7 @@ for(const [id, values] of Object.entries(selectors)){
   node(id).value=values[0];
 }
 for (const id of ['lang','heading','intro','typeLabel','localeLabel','filesLabel',
-  'licenseLabel','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','resultLabel','result','status',
+  'licenseLabel','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','downloadJson','resultLabel','result','status',
   'homeLink','roadmapLink','kmlLink','reliabilityLink','workflowLink','wizardPrivacy']) node(id);
 node('download').disabled = true;
 let lastLink=null, lastBlob=null, revoke=null;
@@ -61,11 +63,13 @@ vm.runInNewContext(code,{document,Blob,URL,setTimeout:fn=>fn()});
 const e=id=>elements[id];
 assert.equal(document.documentElement.lang,'en');
 assert.equal(e('download').disabled,true);
+assert.equal(e('downloadJson').disabled,true);
 e('details').value='Preserve icons, folders and styles.';
 e('goal').value='Reliable KMZ import without losing custom icons.';
 e('success').value='Round-trip styles and folders are identical.';
 e('generate').onclick();
 assert.equal(e('download').disabled,false);
+assert.equal(e('downloadJson').disabled,false);
 assert.match(e('result').textContent,/GIS Project Implementation Plan/);
 assert.match(e('result').textContent,/KML\/KMZ/);
 assert.match(e('result').textContent,/Preserve icons/);
@@ -78,14 +82,28 @@ assert.equal(lastLink.download,'gis-project-plan-en.md');
 assert.equal(lastLink.clicked,true);
 assert.match(lastBlob.parts[0],/Project Implementation Plan/);
 assert.equal(revoke,'blob:plan');
+e('downloadJson').onclick();
+assert.equal(lastLink.download,'gis-workflow-draft.json');
+assert.equal(lastBlob.type,'application/json;charset=utf-8');
+const firstJSON=JSON.parse(lastBlob.parts[0]);
+assert.equal(firstJSON.status,'draft');
+assert.equal(firstJSON.approval.approved_by_user,false);
+assert.equal(firstJSON.goal,'Reliable KMZ import without losing custom icons.');
+assert.equal(firstJSON.success_criteria[0],'Round-trip styles and folders are identical.');
+assert.equal(firstJSON.tasks.length,3);
+assert.equal(firstJSON.tasks[0].owner_skill,'gis-desktop-application-development');
+assert.deepEqual(firstJSON.tasks[2].depends_on,['T2']);
+console.log('STRUCTURED_WIZARD:'+JSON.stringify(firstJSON));
 e('goal').value='Different expected outcome';
 e('goal').fire('input');
 assert.equal(e('download').disabled,true);
+assert.equal(e('downloadJson').disabled,true);
 e('generate').onclick();
 assert.match(e('result').textContent,/Different expected outcome/);
 e('success').value='Observed real-output check';
 e('success').fire('input');
 assert.equal(e('download').disabled,true);
+assert.equal(e('downloadJson').disabled,true);
 e('generate').onclick();
 assert.match(e('result').textContent,/Observed real-output check/);
 e('type').value='qgis';
@@ -150,6 +168,21 @@ class WizardBehaviorTests(unittest.TestCase):
                                   capture_output=True, text=True, timeout=20)
             self.assertEqual(test.returncode, 0,
                              test.stdout + "\n" + test.stderr)
+            structured = [line.split('STRUCTURED_WIZARD:', 1)[1]
+                          for line in test.stdout.splitlines()
+                          if line.startswith('STRUCTURED_WIZARD:')]
+            self.assertEqual(len(structured), 1, test.stdout)
+            blueprint = json.loads(structured[0])
+            source = ROOT / 'scripts' / 'intent_router.py'
+            spec = importlib.util.spec_from_file_location('wizard_intent_router', source)
+            validator = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(validator)
+            self.assertEqual([], validator.validate_plan(blueprint))
+            compiled = validator.compile_workflow(blueprint)
+            self.assertTrue(compiled['valid'], compiled['errors'])
+            self.assertEqual('AWAITING_REVIEW', compiled['status'])
+            self.assertFalse(compiled['can_execute'])
+            self.assertEqual(['T1', 'T2', 'T3'], [t['task_id'] for t in compiled['steps']])
 
 
 if __name__ == "__main__":
