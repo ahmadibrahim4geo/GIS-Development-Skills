@@ -1,3 +1,13 @@
+# Unreleased — full skill workflow and release-readiness hardening (2026-10-26)
+
+- Audit all **30 installed skills** for router reachability, documented handoffs, free-first coverage and lexical-domain routing, with a read-only standard-library auditor enforced by GitHub CI.
+- Fix mobile and OS/device permission keyword routing; reject malformed plan fields safely and require one explicit accountable domain `owner_skill` for each compiled task.
+- Strengthen DoneProof with a plan-bound release gate (`--plan --require-verified`) matching original request, task, revision and complete acceptance criteria. Reject duplicate/unsafe JSON and unsupported aggregate success claims. Logs remain host-observed, not authenticated by this offline tool.
+- Require IMPORT and READBACK in lossless trace declarations; check consistent EXPORT/READBACK artifact identifiers when present, and add regression tests for gaps.
+- Publish an engineering audit and responsibility ledger covering prompt → security → specialist → command/data diagnostics → native tests → DoneProof → journal, with explicit T0–T4 limits.
+- Refresh bilingual READMEs, How to Use, publishing guide, Explorer and public `index.html` into an eight-stage workflow while leaving brand/author/footer data intact.
+- GitHub Actions structural/static/offline checks cannot certify a live target GIS engine, a packaged desktop/mobile app, user approval or an external provider receipt.
+
 # Unreleased — dedicated GIS Mobile Application Development (2026-10-26)
 
 - Add independent Android/iOS mobile GIS skill with architecture, local geodata, GNSS, secure sign-in, offline-first synchronization and native release/test guidelines.
