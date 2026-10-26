@@ -95,7 +95,13 @@ function generatePlan(){
   if(type==='mobile')references.push('references/mobile-gis-architecture.md','references/mobile-gis-offline-sync.md','references/mobile-gis-authentication.md','references/mobile-gis-device-test-matrix.md','skills/system-capabilities-and-permissions/SKILL.md','skills/gis-device-context/SKILL.md','skills/coordinate-reference-systems/SKILL.md','skills/gis-ui-ux-design-testing/SKILL.md');
   if(type==='qgis-engine')references.push('references/qgis-engine-integration.md','skills/coordinate-reference-systems/SKILL.md','skills/geospatial-data-processing/SKILL.md','skills/gis-security-guardian/SKILL.md');
   const mobileAuthConflict=type==='mobile'&&mobileNetwork==='local'&&mobileSignIn==='required';
-  const mobileSpec=type==='mobile' ? ((ar?'المنصات: ':'Platforms: ')+mobileOptions.platform[ar?'ar':'en'][mobilePlatform]+'; '+mobileOptions.network[ar?'ar':'en'][mobileNetwork]+'; '+mobileOptions.signIn[ar?'ar':'en'][mobileSignIn]+(ar?'. لا تعتبر اختبارات الأجهزة أو تسجيل الدخول ناجحة دون التحقق الفعلي.':'. Never claim device test or server sign-in success without real evidence.'))+(mobileAuthConflict?(ar?' تعارض: المزامنة المحلية فقط لا تتوافق مع اشتراط تسجيل دخول للخادم.':' Conflict: local-only mode cannot require verified remote sign-in.'):'')) : '';
+  const mobileSpec=type!=='mobile'?'':[
+    (ar?'المنصات: ':'Platforms: ')+mobileOptions.platform[ar?'ar':'en'][mobilePlatform],
+    mobileOptions.network[ar?'ar':'en'][mobileNetwork],
+    mobileOptions.signIn[ar?'ar':'en'][mobileSignIn],
+    ar?'لا تعتبر اختبارات الأجهزة أو تسجيل الدخول ناجحة دون التحقق الفعلي.':'Device tests and remote sign-in remain NOT RUN until verified.',
+    ...(mobileAuthConflict?[ar?'تعارض: العمل المحلي فقط لا يتوافق مع اشتراط تسجيل دخول الخادم.':'Conflict: local-only mode cannot require remote verified sign-in.']:[])
+  ].join('; ');
   const deviceSpec=deviceNeeds==='none'?(ar?'لا يحتاج المشروع إلى تكامل إضافي مع الجهاز.':'No special device integration requested.'):(ar?'القدرات المطلوبة: '+deviceNames.ar[deviceNeeds]+'. هذه مسودة؛ يجب فحص دعم الجهاز والحصول على إذن نظام التشغيل وتوفير بديل عند الرفض.':'Requested capabilities: '+deviceNames.en[deviceNeeds]+'. Draft only: verify hardware, obtain OS permission and provide a denied/unavailable fallback.');
   const list=references.map(x=>'- '+x);
   const phases=ar?[
