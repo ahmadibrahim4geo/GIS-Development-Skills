@@ -51,3 +51,7 @@ The eight distinct repositories named above were checked through GitHub reposito
 | Geo MCP Servers Directory | MIT | Discovery index; each linked server requires its own review |
 
 The license values are upstream **repository-level GitHub metadata**, not a transitive dependency license audit. No upstream code was copied and no package was installed as part of this reference review.
+
+## Skill authoring and completion research — 2026-10-26
+
+[OpenAI Skill Creator and Superpowers](skill-creator-superpowers-review.md) inform the [DoneProof](../skills/completion-evidence/SKILL.md) shared completion gate. These are **reference-only** resources: neither library is bundled, required at runtime or implicitly authorized to access the user's environment.

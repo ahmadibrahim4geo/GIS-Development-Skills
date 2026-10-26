@@ -55,7 +55,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>28 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>29 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -65,6 +65,10 @@ A practical development skill and curated reference hub for building reliable Ar
   <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website ↗</a>
 </p>
 
+## DoneProof — Evidence Before Completion (26 October 2026)
+
+[DoneProof](skills/completion-evidence/SKILL.md) is a cross-cutting skill for **every completion claim**. It compares each acceptance criterion to current-revision observed evidence, or reports partial, failed, blocked and not-run status. The [offline report checker](scripts/verify_completion.py) checks JSON consistency, **not actual remote execution**. See the [protocol](references/doneproof-verification-protocol.md), [illustrative report](templates/doneproof.example.json) and [OpenAI Skill Creator / Superpowers adoption review](references/skill-creator-superpowers-review.md). Existing GIS T0–T4 rules are unchanged.
+
 ## Agent Development Journal & Project Memory — 25 October 2026
 
 The new [Agent Development Journal skill](skills/agent-development-journal/SKILL.md) adds project-local **numbered reports** for every user requirement, implementation milestone, revision, cancellation and verification. Its [offline Python journal tool](scripts/development_journal.py) creates immutable linked JSON records and generated Markdown reports/INDEX.md/STATE.md in each target project's `.agent-development-log/`. See [recovery and lifecycle](references/agent-development-journal-guide.md), [external skills comparison](references/agent-memory-skill-references.md) and [offline example](examples/development-journal/README.md).
@@ -73,7 +77,7 @@ Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planni
 
 ## Four GIS UI quality engineering skills — 26 October 2026
 
-The repository now includes **28 installable GIS specialist skills**, including four independent but interoperable quality workflows:
+The repository now includes **29 installable GIS specialist skills**, including four independent but interoperable quality workflows:
 
 - [GIS UI Command Audit](skills/gis-ui-command-audit/SKILL.md): inspect menu/Ribbon/icon declarations and command bindings with a [read-only offline scanner](scripts/gis_ui_command_audit.py).
 - [GIS Desktop E2E Testing](skills/gis-desktop-e2e-testing/SKILL.md): native Windows UI Automation and WebView2 acceptance workflow, with real-host T3/T4 evidence required.

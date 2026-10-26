@@ -1,10 +1,11 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 28,
+  "skill_count": 29,
   "skill_ids": [
     "agent-development-journal",
     "arcgis-toolbox-engineering",
+    "completion-evidence",
     "coordinate-reference-systems",
     "geospatial-ai-agents",
     "geospatial-api-integration",
