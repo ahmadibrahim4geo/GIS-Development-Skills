@@ -72,7 +72,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>31 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>32 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -84,7 +84,7 @@ A practical development skill and curated reference hub for building reliable Ar
 
 ## End-to-end ownership and publication checks — 26 October 2026
 
-**31 installable skills; one accountable specialist per task.** The complete handoff is: **original prompt → reviewed goal/criteria → GIS Router + domain owner → Security preflight → authorized execution → command/data/native tests → DoneProof evidence vs original plan → Development Journal → user delivery**. [Responsibility matrix](references/repository-wide-skill-orchestration.md), [release readiness audit](docs/RELEASE_READINESS_AUDIT_2026-10-26.md) and [publishing checklist](PUBLISHING.md) explain what each component actually does.
+**32 installable skills; one accountable specialist per task.** The complete handoff is: **original prompt → reviewed goal/criteria → GIS Router + domain owner → Security preflight → authorized execution → command/data/native tests → DoneProof evidence vs original plan → Development Journal → user delivery**. [Responsibility matrix](references/repository-wide-skill-orchestration.md), [release readiness audit](docs/RELEASE_READINESS_AUDIT_2026-10-26.md) and [publishing checklist](PUBLISHING.md) explain what each component actually does.
 
 For control handlers use [UI Command Audit](skills/gis-ui-command-audit/SKILL.md); for import → engine → render → save/export → readback use [GIS Data Flow Diagnostics](skills/gis-data-flow-diagnostics/SKILL.md). Native desktop/mobile tests are separate. Skill instructions do **not** grant OS permissions, run agents or make unobserved work real.
 
@@ -110,7 +110,7 @@ Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planni
 
 ## Four GIS UI quality engineering skills — 26 October 2026
 
-The repository now includes **31 installable GIS specialist skills**, including four independent but interoperable quality workflows:
+The repository now includes **32 installable GIS specialist skills**, including four independent but interoperable quality workflows:
 
 - [GIS UI Command Audit](skills/gis-ui-command-audit/SKILL.md): inspect menu/Ribbon/icon declarations and command bindings with a [read-only offline scanner](scripts/gis_ui_command_audit.py).
 - [GIS Desktop E2E Testing](skills/gis-desktop-e2e-testing/SKILL.md): native Windows UI Automation and WebView2 acceptance workflow, with real-host T3/T4 evidence required.
