@@ -368,6 +368,27 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       <p class="mt-3 text-xs text-slate-400"><span data-lang="en">An agent must invoke the logger; this page does not run processes.</span><span data-lang="ar">لا بد أن يستدعي الوكيل التسجيل؛ هذه الصفحة لا تنفذ العمليات.</span></p>
     </section>
 
+    <!-- Goal-first agent workflow (informational; no AI executed in browser) -->
+    <section id="prompt-workflow" class="py-14 border-t border-slate-800/70" aria-labelledby="promptWorkflowTitle">
+      <div class="mb-7">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-2"><span data-lang="en">USER PROMPT → VERIFIED GIS OUTCOME</span><span data-lang="ar">من طلب المستخدم إلى نتائج GIS يمكن التحقق منها</span></span>
+        <h2 id="promptWorkflowTitle" class="text-2xl sm:text-3xl font-extrabold text-white"><span data-lang="en">Understand the goal. Plan the work. Then choose skills.</span><span data-lang="ar">افهم الهدف، نظم خطة العمل، ثم اختر المهارات المناسبة.</span></h2>
+        <p class="text-sm sm:text-base text-slate-300 mt-3 max-w-3xl"><span data-lang="en">A compatible AI agent reviews the user's intended result, success criteria and constraints before routing to GIS specialists. This website displays the workflow; it does not run a model or grant permissions.</span><span data-lang="ar">الوكيل البرمجي المتوافق يحدد الهدف النهائي ومعايير النجاح والقيود، ثم يوجه الخطة للمهارات الجغرافية المتخصصة. الصفحة تعرض سير العمل فقط ولا تشغّل الذكاء الاصطناعي أو تمنح الصلاحيات.</span></p>
+      </div>
+      <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" aria-label="Goal-first development sequence">
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-emerald-300 text-sm">01 · INTAKE</span><p class="font-bold text-white mt-2"><span data-lang="en">Read the original prompt</span><span data-lang="ar">استقبل البرومبت كما كتبه المستخدم</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Preserve requirements and the intended project.</span><span data-lang="ar">حافظ على المتطلبات والمشروع المقصود.</span></p></li>
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-emerald-300 text-sm">02 · GOAL</span><p class="font-bold text-white mt-2"><span data-lang="en">Identify the desired outcome</span><span data-lang="ar">حدد الهدف والمخرجات المطلوبة</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Separate explicit needs, inferred suggestions and unknowns.</span><span data-lang="ar">افصل الاحتياجات المؤكدة عن الاقتراحات والمجهول.</span></p></li>
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-emerald-300 text-sm">03 · REVIEW</span><p class="font-bold text-white mt-2"><span data-lang="en">Define success and review the plan</span><span data-lang="ar">حدد معايير النجاح وراجع الخطة</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Approve the revision and scope before consequential changes.</span><span data-lang="ar">اعتمد النسخة والنطاق قبل التعديلات المؤثرة.</span></p></li>
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-sky-300 text-sm">04 · ROUTE</span><p class="font-bold text-white mt-2"><span data-lang="en">Assign GIS specialist skills</span><span data-lang="ar">وجه المهام إلى مهارات GIS المتخصصة</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Order dependencies and assign one accountable owner.</span><span data-lang="ar">رتب الاعتماديات وحدد مسؤول كل مهمة.</span></p></li>
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-sky-300 text-sm">05 · SECURITY</span><p class="font-bold text-white mt-2"><span data-lang="en">Preflight before real execution</span><span data-lang="ar">افحص الأمان والتوافق قبل التنفيذ</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Validate host tools, permission, GIS versions and rollback.</span><span data-lang="ar">راجع الأدوات والصلاحيات والإصدارات وخطة التراجع.</span></p></li>
+        <li class="glass-card rounded-xl p-5"><span class="font-mono text-sky-300 text-sm">06 · VERIFY</span><p class="font-bold text-white mt-2"><span data-lang="en">Implement, test and report</span><span data-lang="ar">نفذ واختبر ووثق النتائج</span></p><p class="text-xs text-slate-400 mt-2"><span data-lang="en">Run observable tests; mark unavailable native checks NOT RUN.</span><span data-lang="ar">اختبر مخرجات حقيقية وميز الاختبارات التي لم تُنفذ.</span></p></li>
+      </ol>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <a class="inline-flex items-center rounded-lg px-4 py-3 text-sm font-bold border border-emerald-500/50 text-emerald-200 hover:bg-emerald-500/10" href="project-wizard.html"><span data-lang="en">Draft a goal-first GIS plan ↗</span><span data-lang="ar">أنشئ خطة GIS تبدأ بالهدف ↗</span></a>
+        <a class="inline-flex items-center rounded-lg px-4 py-3 text-sm font-bold border border-sky-500/50 text-sky-200 hover:bg-sky-500/10" href="references/repository-wide-skill-orchestration.md"><span data-lang="en">Read execution &amp; safety contract ↗</span><span data-lang="ar">اقرأ قواعد سير العمل والأمان ↗</span></a>
+      </div>
+    </section>
+
     <!-- INTERACTIVE DEVELOPMENT PATHWAYS & SKILLS EXPLORER -->
     <section id="capabilities" class="py-14 border-t border-slate-800/70">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
