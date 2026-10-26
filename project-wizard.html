@@ -8,12 +8,14 @@
 <label for="files" id="filesLabel">KML/KMZ support</label><select id="files"><option value="yes">Required</option><option value="no">Not required</option></select>
 <label for="license" id="licenseLabel">Licensing preference</label><select id="license"><option value="free">Free/open-source components first</option><option value="host">Existing commercial GIS host allowed</option></select>
 <label for="details" id="detailsLabel">What should your project do?</label><textarea id="details" rows="4" maxlength="4000" placeholder="Describe the desired features"></textarea>
+<label for="goal" id="goalLabel">What user outcome should this project achieve?</label><textarea id="goal" rows="2" maxlength="1500" placeholder="Describe the end result you need; the AI agent will review it"></textarea>
+<label for="success" id="successLabel">How will you know it works?</label><textarea id="success" rows="2" maxlength="1500" placeholder="Visible behavior, output files or tests you expect"></textarea>
 <button id="generate" type="button">Generate plan</button><button id="download" type="button" disabled>Download Markdown</button>
 <p id="status" role="status" aria-live="polite">Choose a project type and generate a plan.</p><h2 id="resultLabel">Project plan</h2><pre id="result" aria-live="polite"></pre>
-<p class="resources"><a id="roadmapLink" href="docs/PROJECT_WIZARD_PLAN.md">Implementation roadmap</a> · <a id="kmlLink" href="skills/kml-kmz-engineering/SKILL.md">KML/KMZ skill</a> · <a id="reliabilityLink" href="docs/PERFORMANCE_RELIABILITY.md">Reliability guide</a></p><p id="wizardPrivacy" class="privacy-note">Plans are generated locally. No AI is executed and no project text is uploaded.</p></main>
+<p class="resources"><a id="workflowLink" href="references/repository-wide-skill-orchestration.md">Prompt-to-workflow guide</a> · <a id="roadmapLink" href="docs/PROJECT_WIZARD_PLAN.md">Implementation roadmap</a> · <a id="kmlLink" href="skills/kml-kmz-engineering/SKILL.md">KML/KMZ skill</a> · <a id="reliabilityLink" href="docs/PERFORMANCE_RELIABILITY.md">Reliability guide</a></p><p id="wizardPrivacy" class="privacy-note">Plans are generated locally. No AI is executed and no project text is uploaded.</p></main>
 <script>
 const $=id=>document.getElementById(id);let ar=false,output='';
-const dict={en:{heading:'GIS Project Wizard',intro:'Build a free-first, testable GIS project plan.',typeLabel:'Project type',localeLabel:'Application languages',filesLabel:'KML/KMZ support',licenseLabel:'Licensing preference',detailsLabel:'What should your project do?',generate:'Generate plan',download:'Download Markdown',resultLabel:'Project plan',lang:'العربية',placeholder:'Describe the desired features',yes:'Required',no:'Not required',free:'Free/open-source components first',host:'Existing commercial GIS host allowed'},ar:{heading:'معالج مشاريع نظم المعلومات الجغرافية',intro:'أنشئ خطة مشروع قابلة للاختبار مع إعطاء الأولوية للمكونات المجانية.',typeLabel:'نوع المشروع',localeLabel:'لغات التطبيق',filesLabel:'دعم KML وKMZ',licenseLabel:'تفضيل الترخيص',detailsLabel:'ما الوظائف المطلوبة في المشروع؟',generate:'إنشاء الخطة',download:'تنزيل Markdown',resultLabel:'خطة المشروع',lang:'English',placeholder:'اكتب الوظائف المطلوبة',yes:'مطلوب',no:'غير مطلوب',free:'المكونات المجانية ومفتوحة المصدر أولاً',host:'السماح ببرنامج GIS تجاري متوفر'}};
+const dict={en:{heading:'GIS Project Wizard',intro:'Build a free-first, testable GIS project plan.',typeLabel:'Project type',localeLabel:'Application languages',filesLabel:'KML/KMZ support',licenseLabel:'Licensing preference',detailsLabel:'What should your project do?',goalLabel:'Intended user outcome',successLabel:'Success criteria',goalPlaceholder:'Describe the final result you need',successPlaceholder:'Describe the observable tests or results',generate:'Generate plan',download:'Download Markdown',resultLabel:'Project plan',lang:'العربية',placeholder:'Describe the desired features',yes:'Required',no:'Not required',free:'Free/open-source components first',host:'Existing commercial GIS host allowed'},ar:{heading:'معالج مشاريع نظم المعلومات الجغرافية',intro:'أنشئ خطة مشروع قابلة للاختبار مع إعطاء الأولوية للمكونات المجانية.',typeLabel:'نوع المشروع',localeLabel:'لغات التطبيق',filesLabel:'دعم KML وKMZ',licenseLabel:'تفضيل الترخيص',detailsLabel:'ما الوظائف المطلوبة في المشروع؟',goalLabel:'الهدف النهائي الذي تريد تحقيقه',successLabel:'كيف نتحقق من نجاح العمل؟',goalPlaceholder:'صف النتيجة النهائية المطلوبة',successPlaceholder:'اكتب الاختبارات أو المخرجات التي تثبت النجاح',generate:'إنشاء الخطة',download:'تنزيل Markdown',resultLabel:'خطة المشروع',lang:'English',placeholder:'اكتب الوظائف المطلوبة',yes:'مطلوب',no:'غير مطلوب',free:'المكونات المجانية ومفتوحة المصدر أولاً',host:'السماح ببرنامج GIS تجاري متوفر'}};
 const localeLabels={en:{'ar-en':'Arabic + English',en:'English only',multi:'Multilingual (Arabic, English, French and others)'},ar:{'ar-en':'العربية والإنجليزية',en:'الإنجليزية فقط',multi:'متعدد اللغات (العربية والإنجليزية والفرنسية وغيرها)'}};
 const stacks={desktop:'Qt/PySide or .NET/WPF; GDAL, PROJ; optional Cesium for 3D',pro:'ArcGIS Pro Python 3, ArcPy, .pyt/.atbx',arcmap:'Legacy ArcMap Python 2.7, ArcPy, .pyt/.tbx',dual:'Isolated ArcMap Python 2.7 and ArcGIS Pro Python 3 adapters; shared compatible logic only',qgis:'PyQGIS and Qt; plugin metadata and packaging','qgis-engine':'Version-matched QGIS Core/GUI/Analysis/Processing or QGIS Server, optional isolated PyQGIS; independent UI renderer; GDAL/PROJ when sufficient',web:'MapLibre GL JS, optional Cesium, standards-based geospatial services',remote:'GDAL, rasterio, xarray and documented data provenance',database:'PostGIS, spatial indexes and migration scripts',geoai:'Python geospatial ML stack with reproducible data and model validation'};
 
@@ -21,14 +23,16 @@ const typeNames={
 en:{desktop:'Desktop GIS',pro:'ArcGIS Pro Toolbox',arcmap:'ArcMap Toolbox',dual:'ArcGIS Pro + ArcMap Toolbox',qgis:'QGIS Plugin','qgis-engine':'QGIS Engine / Standalone GIS',web:'Web GIS',remote:'Remote Sensing',database:'Spatial Database',geoai:'GeoAI'},
 ar:{desktop:'تطبيق GIS مكتبي',pro:'أدوات ArcGIS Pro',arcmap:'أدوات ArcMap',dual:'أداة لـ ArcGIS Pro وArcMap',qgis:'إضافة QGIS','qgis-engine':'محرك QGIS لتطبيق مستقل',web:'تطبيق خرائط ويب',remote:'الاستشعار عن بعد',database:'قاعدة بيانات مكانية',geoai:'الذكاء الاصطناعي الجغرافي'}};
 const skills={desktop:'gis-desktop-application-development',pro:'arcgis-toolbox-engineering',arcmap:'arcgis-toolbox-engineering',dual:'arcgis-toolbox-engineering',qgis:'qgis-plugin-development','qgis-engine':'qgis-engine-integration',web:'geospatial-web-mapping',remote:'remote-sensing-pipelines',database:'spatial-databases',geoai:'geospatial-ai-agents'};
-Object.assign(dict.en,{homeLink:'Back to GIS Skills homepage',roadmapLink:'Implementation roadmap',kmlLink:'KML/KMZ skill',reliabilityLink:'Reliability guide',wizardPrivacy:'Plans are generated locally. No AI is executed and no project text is uploaded.',statusInitial:'Choose a project type and generate a plan.',statusDirty:'Inputs changed. Regenerate the plan before downloading.',statusReady:'Plan generated. Review it before implementation.'});
-Object.assign(dict.ar,{homeLink:'العودة إلى الصفحة الرئيسية',roadmapLink:'دليل تطوير المشروع',kmlLink:'مهارة KML/KMZ',reliabilityLink:'دليل الأداء والثبات',wizardPrivacy:'إنشاء الخطة محليًا دون إرسال المدخلات إلى خادم أو تشغيل وكيل ذكاء اصطناعي.',statusInitial:'اختر نوع المشروع ثم أنشئ الخطة.',statusDirty:'تغيرت المدخلات. أنشئ الخطة من جديد قبل تنزيلها.',statusReady:'تم إنشاء الخطة. راجعها قبل التنفيذ.'});
+Object.assign(dict.en,{homeLink:'Back to GIS Skills homepage',workflowLink:'Prompt-to-workflow guide',roadmapLink:'Implementation roadmap',kmlLink:'KML/KMZ skill',reliabilityLink:'Reliability guide',wizardPrivacy:'Plans are generated locally. No AI is executed and no project text is uploaded.',statusInitial:'Choose a project type and generate a plan.',statusDirty:'Inputs changed. Regenerate the plan before downloading.',statusReady:'Plan generated. Review it before implementation.'});
+Object.assign(dict.ar,{homeLink:'العودة إلى الصفحة الرئيسية',workflowLink:'دليل تدفق الطلب إلى التنفيذ',roadmapLink:'دليل تطوير المشروع',kmlLink:'مهارة KML/KMZ',reliabilityLink:'دليل الأداء والثبات',wizardPrivacy:'إنشاء الخطة محليًا دون إرسال المدخلات إلى خادم أو تشغيل وكيل ذكاء اصطناعي.',statusInitial:'اختر نوع المشروع ثم أنشئ الخطة.',statusDirty:'تغيرت المدخلات. أنشئ الخطة من جديد قبل تنزيلها.',statusReady:'تم إنشاء الخطة. راجعها قبل التنفيذ.'});
 function translate(){
   document.documentElement.lang=ar?'ar':'en';
   document.documentElement.dir=ar?'rtl':'ltr';
   const lang=ar?'ar':'en',t=dict[lang];
   Object.keys(t).forEach(k=>{if(k!=='placeholder'&&!k.startsWith('status')&&$(k))$(k).textContent=t[k]});
   $('details').placeholder=t.placeholder;
+  $('goal').placeholder=t.goalPlaceholder;
+  $('success').placeholder=t.successPlaceholder;
   for(const id of ['type','locale','files','license']){
     const data=id==='type'?typeNames[lang]:id==='locale'?localeLabels[lang]:t;
     for(const option of $(id).options)option.textContent=data[option.value];
@@ -44,26 +48,34 @@ function invalidate(){
 function generatePlan(){
   const type=$('type').value,locale=$('locale').value,kml=$('files').value==='yes',commercial=$('license').value==='host';
   const requirement=$('details').value.trim();
+  const goal=$('goal').value.trim();
+  const success=$('success').value.trim();
+  const goalSpec='> '+(goal||(ar?'لم يحدد الهدف بعد؛ يجب على الوكيل استنتاج الهدف وطلب مراجعته قبل التنفيذ.':'Goal not specified. Hosting AI must propose and review the goal before implementation.')).replace(/\r?\n/g,'\n> ');
+  const successSpec='> '+(success||(ar?'معايير النجاح غير محددة؛ يجب إعداد نتائج واختبارات قابلة للملاحظة.':'Success criteria not specified. Define observable output and tests before execution.')).replace(/\r?\n/g,'\n> ');
   const requirements='> '+(requirement||(ar?'التفاصيل لم تحدد بعد.':'Requirements not specified yet.')).replace(/\r?\n/g,'\n> ');
-  const references=['skills/gis-development/SKILL.md','skills/'+skills[type]+'/SKILL.md','references/agent-decision-tree.md','docs/PERFORMANCE_RELIABILITY.md'];
+  const references=['skills/prompt-intent-orchestrator/SKILL.md','references/repository-wide-skill-orchestration.md','skills/gis-development/SKILL.md','skills/'+skills[type]+'/SKILL.md','skills/gis-security-guardian/SKILL.md','references/agent-decision-tree.md','docs/PERFORMANCE_RELIABILITY.md'];
   if(locale!=='en')references.push('skills/gis-internationalization-arabic/SKILL.md');
   if(kml)references.push('skills/kml-kmz-engineering/SKILL.md');
   if(type==='qgis-engine')references.push('references/qgis-engine-integration.md','skills/coordinate-reference-systems/SKILL.md','skills/geospatial-data-processing/SKILL.md','skills/gis-security-guardian/SKILL.md');
   const list=references.map(x=>'- '+x);
   const phases=ar?[
-    '1. جمع المتطلبات وصيغ البيانات ونظام الإحداثيات ومعايير القبول.',
-    '2. مراجعة التراخيص وبناء تصميم البيانات والمشروع.',
-    '3. تقديم خطة مهام مرقمة واعتمادها قبل التعديل.',
-    '4. التنفيذ التدريجي للمهام المعتمدة وتسجيل الأخطاء.',
-    '5. اختبار الوظائف والمدخلات والتصدير والحفظ والاستعادة.',
-    '6. إعداد تقرير بنتائج الاختبارات والقيود وسجل التطوير.'
+    '1. استلام البرومبت الأصلي واستخلاص هدف المستخدم والنتيجة المطلوبة.',
+    '2. فصل المتطلبات الصريحة عن الافتراضات والنواقص وشروط البيانات والترخيص.',
+    '3. بناء خطة مهام مرقمة بمعايير نجاح واعتماد النسخة والنطاق قبل التعديل.',
+    '4. توجيه المهام من الموجّه العام إلى المهارات المتخصصة وتحديد مسؤول كل ناتج.',
+    '5. فحص الأمان والإصدارات والأدوات المتاحة والبيانات وخطة التراجع.',
+    '6. تنفيذ المعتمد فقط بالترتيب مع تسجيل النتائج وسلامة الملفات.',
+    '7. اختبار المخرجات وإعادة الفتح وواجهات GIS الفعلية عند توفرها.',
+    '8. تقديم تقرير التنفيذ والاختبارات الموثقة والقيود والسجل.'
   ]:[
-    '1. Identify requirements, data formats, CRS and acceptance criteria.',
-    '2. Check licenses; design data model and project structure.',
-    '3. Present numbered tasks for approval before modifying files.',
-    '4. Implement only approved changes, preserving a change log.',
-    '5. Test outputs, error paths, import/export and save/reopen.',
-    '6. Report observed tests, limitations and numbered project history.'
+    '1. Capture the original prompt and identify the user goal and desired outcome.',
+    '2. Separate explicit requirements from assumptions, gaps, licenses and data constraints.',
+    '3. Show numbered tasks, measurable success criteria and scope for review and approval.',
+    '4. Route reviewed tasks to accountable specialist skills in dependency order.',
+    '5. Preflight security, versions, real host tools, data, licenses and rollback.',
+    '6. Execute approved changes only and record every observable result.',
+    '7. Verify output readback, GIS correctness and native UI behavior where available.',
+    '8. Report completed, failed, blocked and not-run checks with project journal.'
   ];
   const local=locale==='en'?(ar?'واجهة إنجليزية LTR مع موارد قابلة للتعريب.':'English LTR; keep resources localization-ready.'):(ar?'اختبار واجهة RTL/Unicode وملصقات الخرائط العربية والتنسيق المختلط.':'Test Arabic RTL/BiDi, Unicode attributes and map labels, including mixed scripts.');
   const license=commercial?(ar?'استخدام البرامج التجارية المتوفرة يتطلب التحقق من الترخيص، مع عرض بديل مجاني عند الإمكان.':'Commercial host allowed with verified license; suggest free alternatives when feasible.'):(ar?'ابدأ بالمكتبات والبيانات المجانية والمفتوحة، وراجع تراخيص كل مصدر.':'Prioritize free/open-source libraries and permitted data; check each license.');
@@ -80,16 +92,16 @@ function generatePlan(){
     '- Include real output evidence and numbered development records.'
   ];
   const sections=ar?[
-    '# خطة تنفيذ مشروع GIS','','## نوع المشروع',typeNames.ar[type],'','## متطلبات المستخدم',requirements,'','## التقنيات المقترحة',stacks[type],
+    '# خطة تنفيذ مشروع GIS','','## نوع المشروع',typeNames.ar[type],'','## الهدف المطلوب تحقيقه',goalSpec,'','## معايير النجاح',successSpec,'','## متطلبات المستخدم',requirements,'','## التقنيات المقترحة',stacks[type],
     '','## اللغات والتعريب',local,'','## التراخيص',license,'','## مراحل التنفيذ',...phases,'',
     '## اختبارات الجودة والثبات',...checks,'','## دعم KML/KMZ',fileSpec,'',
-    '## تعليمات الوكيل البرمجي','راجع المراجع التالية واعرض خطة للاعتماد قبل تعديل الملفات:',...list,
+    '## تعليمات الوكيل البرمجي','استنتج الهدف من طلب المستخدم وراجعه ثم استخدم موجّه المهارات لإنشاء Workflow بمهام مرتبة واختبارات قابلة للتحقق. لا تنفذ بمجرد استلام البرومبت، ولا تعتبر هذه الخطة موافقة أو إذنًا بتنفيذ الأوامر:',...list,
     '','## مستوى التحقق','هذه خطة مقترحة وليست إثباتًا بنجاح تنفيذ المشروع.'
   ]:[
-    '# GIS Project Implementation Plan','','## Project type',typeNames.en[type],'','## User requirements',requirements,'','## Suggested stack',stacks[type],
+    '# GIS Project Implementation Plan','','## Project type',typeNames.en[type],'','## Intended user goal',goalSpec,'','## Observable success criteria',successSpec,'','## User requirements',requirements,'','## Suggested stack',stacks[type],
     '','## Application languages',local,'','## Licensing',license,'','## Implementation phases',...phases,'',
     '## Reliability and acceptance',...checks,'','## KML/KMZ',fileSpec,'',
-    '## Agent instructions','Read these references; seek approval before editing and document actual tests:',...list,
+    '## Agent instructions','Interpret and review the user goal, then route through the GIS skills to a dependency-ordered workflow. Never execute directly from the prompt; this plan is not authenticated approval or host authorization:',...list,
     '','## Verification status','This is a proposed plan, not evidence of project completion.'
   ];
   output=sections.join('\n');$('result').textContent=output;$('download').disabled=false;
@@ -97,6 +109,7 @@ function generatePlan(){
 }
 $('lang').onclick=()=>{const previous=Boolean(output);ar=!ar;translate();if(previous)generatePlan()};
 for(const id of ['type','locale','files','license'])$(id).addEventListener('change',invalidate);
+for(const id of ['goal','success'])$(id).addEventListener('input',invalidate);
 $('details').addEventListener('input',invalidate);
 $('generate').onclick=generatePlan;
 $('download').onclick=()=>{
