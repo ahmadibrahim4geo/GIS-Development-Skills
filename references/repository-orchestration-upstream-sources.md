@@ -35,3 +35,19 @@ This is a **curated reference list** for repository-wide skill routing, tool int
 Before code reuse or installation, verify exact upstream source and release, license and transitive dependencies, maintenance activity, platform/runtime requirements, target user permissions, security audit, API stability, automated tests and clean-machine behavior. Record whether each item is **reference only**, **experimental adapter**, or **verified integration**. Source popularity alone is not evidence of compatibility.
 
 See [the shared repository orchestration contract](repository-wide-skill-orchestration.md), [the GIS router](../skills/gis-development/SKILL.md), [the Agent Skills specialist](../skills/prompt-intent-orchestrator/SKILL.md) and [Geospatial AI Agents](../skills/geospatial-ai-agents/SKILL.md).
+
+## Source verification snapshot — 2026-10-26
+
+The eight distinct repositories named above were checked through GitHub repository metadata: all were publicly accessible and none was archived at review time. This is **availability verification only**, not a test of their tool execution, security posture, binary compatibility or integration with our skill pack.
+
+| Source | Repository license metadata | Adoption status |
+| --- | --- | --- |
+| GeoAgent | MIT | Reference only; already linked by the GeoAI specialist |
+| QGIS MCP | GPL-2.0 | Reference only; check redistribution and derived-work obligations before code reuse |
+| Agent Skills | Apache-2.0 | Reference specification only |
+| MCP specification and reference servers | NOASSERTION; upstream LICENSE documents a transition from MIT to Apache-2.0, plus CC-BY-4.0 documentation terms | Reference only; inspect exact file and contribution history before reusing code or specification text |
+| LangGraph | MIT | Optional runtime architecture reference; not installed |
+| Promptfoo | MIT | Optional testing framework; not installed |
+| Geo MCP Servers Directory | MIT | Discovery index; each linked server requires its own review |
+
+The license values are upstream **repository-level GitHub metadata**, not a transitive dependency license audit. No upstream code was copied and no package was installed as part of this reference review.
