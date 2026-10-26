@@ -37,8 +37,8 @@ for(const [id, values] of Object.entries(selectors)){
   node(id).value=values[0];
 }
 for (const id of ['lang','heading','intro','typeLabel','localeLabel','filesLabel',
-  'licenseLabel','detailsLabel','details','generate','download','resultLabel','result','status',
-  'homeLink','roadmapLink','kmlLink','reliabilityLink','wizardPrivacy']) node(id);
+  'licenseLabel','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','resultLabel','result','status',
+  'homeLink','roadmapLink','kmlLink','reliabilityLink','workflowLink','wizardPrivacy']) node(id);
 node('download').disabled = true;
 let lastLink=null, lastBlob=null, revoke=null;
 const document = {
@@ -62,16 +62,32 @@ const e=id=>elements[id];
 assert.equal(document.documentElement.lang,'en');
 assert.equal(e('download').disabled,true);
 e('details').value='Preserve icons, folders and styles.';
+e('goal').value='Reliable KMZ import without losing custom icons.';
+e('success').value='Round-trip styles and folders are identical.';
 e('generate').onclick();
 assert.equal(e('download').disabled,false);
 assert.match(e('result').textContent,/GIS Project Implementation Plan/);
 assert.match(e('result').textContent,/KML\/KMZ/);
 assert.match(e('result').textContent,/Preserve icons/);
+assert.match(e('result').textContent,/Reliable KMZ import/);
+assert.match(e('result').textContent,/Round-trip styles/);
+assert.match(e('result').textContent,/Prompt Intent/);
+assert.match(e('result').textContent,/repository-wide-skill-orchestration.md/);
 e('download').onclick();
 assert.equal(lastLink.download,'gis-project-plan-en.md');
 assert.equal(lastLink.clicked,true);
 assert.match(lastBlob.parts[0],/Project Implementation Plan/);
 assert.equal(revoke,'blob:plan');
+e('goal').value='Different expected outcome';
+e('goal').fire('input');
+assert.equal(e('download').disabled,true);
+e('generate').onclick();
+assert.match(e('result').textContent,/Different expected outcome/);
+e('success').value='Observed real-output check';
+e('success').fire('input');
+assert.equal(e('download').disabled,true);
+e('generate').onclick();
+assert.match(e('result').textContent,/Observed real-output check/);
 e('type').value='qgis';
 e('type').fire('change');
 assert.equal(e('download').disabled,true);
