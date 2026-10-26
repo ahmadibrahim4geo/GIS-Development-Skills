@@ -137,6 +137,7 @@ function generatePlan(){
     '- Do not infer ArcGIS/QGIS/desktop UI success from static checks.',
     '- Include real output evidence and numbered development records.'
   ];
+  const mobileQualityLabel=type==='mobile'&&qualityFocus==='e2e'?(ar?'اختبارات Android/iOS الفعلية':'Native Android/iOS device testing'):qualityLabels[ar?'ar':'en'][qualityFocus];
   const sections=ar?[
     '# خطة تنفيذ مشروع GIS','','## نوع المشروع',typeNames.ar[type],'','## الهدف المطلوب تحقيقه',goalSpec,'','## معايير النجاح',successSpec,'','## متطلبات المستخدم',requirements,'','## التقنيات المقترحة',stacks[type],
     '','## اللغات والتعريب',local,'','## التراخيص',license,'','## مراحل التنفيذ',...phases,'',
@@ -152,7 +153,6 @@ function generatePlan(){
     '## OS/device capability and permission scope',deviceSpec,'','## Agent instructions','Interpret and review the user goal, then route through the GIS skills to a dependency-ordered workflow. Never execute directly from the prompt; this plan is not authenticated approval or host authorization:',...list,
     '','## Verification status','This is a proposed plan, not evidence of project completion.'
   ];
-  const mobileQualityLabel=type==='mobile'&&qualityFocus==='e2e'?(ar?'اختبارات Android/iOS الفعلية':'Native Android/iOS device testing'):qualityLabels[ar?'ar':'en'][qualityFocus];
   if(type==='mobile')sections.push('',ar?'## تنفيذ واختبارات GIS Mobile':'## Mobile GIS implementation and native testing',mobileSpec,ar?'اختبارات Android وiOS وGPS وتسجيل الدخول والمزامنة على الأجهزة الفعلية لا يمكن إثباتها من المتصفح.':'Native Android/iOS, GNSS, sign-in and sync checks are NOT RUN without matching device, app build and server evidence.');
   // Machine-readable handoff uses the exact offline Intent Router v1 schema.
   // No browser-side language model, authorization, network access or tool dispatch.
