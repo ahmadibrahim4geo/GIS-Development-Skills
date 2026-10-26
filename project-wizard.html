@@ -16,6 +16,8 @@
   <option value="ux">UI/UX Design &amp; Testing</option>
   <option value="all">All four quality specialists</option>
 </select>
+<label for="deviceNeeds" id="deviceLabel">System and device capabilities</label>
+<select id="deviceNeeds"><option value="none">No OS/device integration</option><option value="time">Clock and time zone</option><option value="location">Location and GPS permission</option><option value="hardware">Files, sensors and hardware</option><option value="all">Multiple device capabilities</option></select>
 <label for="details" id="detailsLabel">What should your project do?</label><textarea id="details" rows="4" maxlength="4000" placeholder="Describe the desired features"></textarea>
 <label for="goal" id="goalLabel">What user outcome should this project achieve?</label><textarea id="goal" rows="2" maxlength="1500" placeholder="Describe the end result you need; the AI agent will review it"></textarea>
 <label for="success" id="successLabel">How will you know it works?</label><textarea id="success" rows="2" maxlength="1500" placeholder="Visible behavior, output files or tests you expect"></textarea>
@@ -36,14 +38,15 @@ const qualityLabels={
 en:{standard:'General GIS verification (default)',audit:'UI Command Audit',e2e:'Desktop E2E / WebView2 Testing',flow:'GIS Data Flow Diagnostics',ux:'UI/UX Design & Testing',all:'All four quality specialists'},
 ar:{standard:'الفحوص الجغرافية العامة (افتراضي)',audit:'جرد أوامر وأيقونات الواجهة',e2e:'اختبار سطح المكتب وWebView2',flow:'تشخيص تدفق البيانات الجغرافية',ux:'تصميم واختبار تجربة المستخدم',all:'المهارات الأربع معًا'}
 };
+const deviceNames={en:{none:'No OS/device integration',time:'Clock and time zone',location:'Location and GPS permission',hardware:'Files, sensors and hardware',all:'Multiple device capabilities'},ar:{none:'دون تكامل خاص بالجهاز',time:'التاريخ والساعة والمنطقة الزمنية',location:'الموقع الجغرافي بموافقة المستخدم',hardware:'الملفات والمستشعرات والأجهزة',all:'قدرات متعددة للنظام'}};
 const qualityRoutes={
  standard:[],audit:['gis-ui-command-audit'],e2e:['gis-desktop-e2e-testing'],
  flow:['gis-data-flow-diagnostics'],ux:['gis-ui-ux-design-testing'],
  all:['gis-ui-command-audit','gis-desktop-e2e-testing','gis-data-flow-diagnostics','gis-ui-ux-design-testing']
 };
 const skills={desktop:'gis-desktop-application-development',pro:'arcgis-toolbox-engineering',arcmap:'arcgis-toolbox-engineering',dual:'arcgis-toolbox-engineering',qgis:'qgis-plugin-development','qgis-engine':'qgis-engine-integration',web:'geospatial-web-mapping',remote:'remote-sensing-pipelines',database:'spatial-databases',geoai:'geospatial-ai-agents'};
-Object.assign(dict.en,{homeLink:'Back to GIS Skills homepage',workflowLink:'Prompt-to-workflow guide',roadmapLink:'Implementation roadmap',kmlLink:'KML/KMZ skill',reliabilityLink:'Reliability guide',wizardPrivacy:'Plans are generated locally. No AI is executed and no project text is uploaded.',statusInitial:'Choose a project type and generate a plan.',statusDirty:'Inputs changed. Regenerate the plan before downloading.',statusReady:'Plan generated. Review it before implementation.'});
-Object.assign(dict.ar,{homeLink:'العودة إلى الصفحة الرئيسية',workflowLink:'دليل تدفق الطلب إلى التنفيذ',roadmapLink:'دليل تطوير المشروع',kmlLink:'مهارة KML/KMZ',reliabilityLink:'دليل الأداء والثبات',wizardPrivacy:'إنشاء الخطة محليًا دون إرسال المدخلات إلى خادم أو تشغيل وكيل ذكاء اصطناعي.',statusInitial:'اختر نوع المشروع ثم أنشئ الخطة.',statusDirty:'تغيرت المدخلات. أنشئ الخطة من جديد قبل تنزيلها.',statusReady:'تم إنشاء الخطة. راجعها قبل التنفيذ.'});
+Object.assign(dict.en,{deviceLabel:'System and device capabilities',homeLink:'Back to GIS Skills homepage',workflowLink:'Prompt-to-workflow guide',roadmapLink:'Implementation roadmap',kmlLink:'KML/KMZ skill',reliabilityLink:'Reliability guide',wizardPrivacy:'Plans are generated locally. No AI is executed and no project text is uploaded.',statusInitial:'Choose a project type and generate a plan.',statusDirty:'Inputs changed. Regenerate the plan before downloading.',statusReady:'Plan generated. Review it before implementation.'});
+Object.assign(dict.ar,{deviceLabel:'قدرات الجهاز وصلاحيات النظام',homeLink:'العودة إلى الصفحة الرئيسية',workflowLink:'دليل تدفق الطلب إلى التنفيذ',roadmapLink:'دليل تطوير المشروع',kmlLink:'مهارة KML/KMZ',reliabilityLink:'دليل الأداء والثبات',wizardPrivacy:'إنشاء الخطة محليًا دون إرسال المدخلات إلى خادم أو تشغيل وكيل ذكاء اصطناعي.',statusInitial:'اختر نوع المشروع ثم أنشئ الخطة.',statusDirty:'تغيرت المدخلات. أنشئ الخطة من جديد قبل تنزيلها.',statusReady:'تم إنشاء الخطة. راجعها قبل التنفيذ.'});
 function translate(){
   document.documentElement.lang=ar?'ar':'en';
   document.documentElement.dir=ar?'rtl':'ltr';
@@ -52,8 +55,8 @@ function translate(){
   $('details').placeholder=t.placeholder;
   $('goal').placeholder=t.goalPlaceholder;
   $('success').placeholder=t.successPlaceholder;
-  for(const id of ['type','locale','files','license','qualityFocus']){
-    const data=id==='type'?typeNames[lang]:id==='locale'?localeLabels[lang]:id==='qualityFocus'?qualityLabels[lang]:t;
+  for(const id of ['type','locale','files','license','qualityFocus','deviceNeeds']){
+    const data=id==='type'?typeNames[lang]:id==='locale'?localeLabels[lang]:id==='qualityFocus'?qualityLabels[lang]:id==='deviceNeeds'?deviceNames[lang]:t;
     for(const option of $(id).options)option.textContent=data[option.value];
   }
   $('status').textContent=output?t.statusReady:t.statusInitial;
@@ -68,6 +71,7 @@ function invalidate(){
 }
 function generatePlan(){
   const type=$('type').value,locale=$('locale').value,kml=$('files').value==='yes',commercial=$('license').value==='host';
+  const deviceNeeds=$('deviceNeeds').value;
   const qualityFocus=$('qualityFocus').value;
   const qualitySkills=qualityRoutes[qualityFocus]||[];
   const requirement=$('details').value.trim();
@@ -77,10 +81,13 @@ function generatePlan(){
   const successSpec='> '+(success||(ar?'معايير النجاح غير محددة؛ يجب إعداد نتائج واختبارات قابلة للملاحظة.':'Success criteria not specified. Define observable output and tests before execution.')).replace(/\r?\n/g,'\n> ');
   const requirements='> '+(requirement||(ar?'التفاصيل لم تحدد بعد.':'Requirements not specified yet.')).replace(/\r?\n/g,'\n> ');
   const references=['skills/prompt-intent-orchestrator/SKILL.md','references/repository-wide-skill-orchestration.md','skills/gis-development/SKILL.md','skills/'+skills[type]+'/SKILL.md','skills/gis-security-guardian/SKILL.md','references/agent-decision-tree.md','docs/PERFORMANCE_RELIABILITY.md'];
+  if(deviceNeeds!=='none')references.push('skills/system-capabilities-and-permissions/SKILL.md','references/system-capabilities-permissions.md','references/system-skill-interop.md');
+  if(deviceNeeds==='location'||deviceNeeds==='all')references.push('skills/gis-device-context/SKILL.md');
   if(locale!=='en')references.push('skills/gis-internationalization-arabic/SKILL.md');
   if(kml)references.push('skills/kml-kmz-engineering/SKILL.md');
   if(qualitySkills.length)references.push('references/gis-ui-quality-coordination.md','references/gis-ui-quality-upstream-sources.md',...qualitySkills.map(x=>'skills/'+x+'/SKILL.md'));
   if(type==='qgis-engine')references.push('references/qgis-engine-integration.md','skills/coordinate-reference-systems/SKILL.md','skills/geospatial-data-processing/SKILL.md','skills/gis-security-guardian/SKILL.md');
+  const deviceSpec=deviceNeeds==='none'?(ar?'لا يحتاج المشروع إلى تكامل إضافي مع الجهاز.':'No special device integration requested.'):(ar?'القدرات المطلوبة: '+deviceNames.ar[deviceNeeds]+'. هذه مسودة؛ يجب فحص دعم الجهاز والحصول على إذن نظام التشغيل وتوفير بديل عند الرفض.':'Requested capabilities: '+deviceNames.en[deviceNeeds]+'. Draft only: verify hardware, obtain OS permission and provide a denied/unavailable fallback.');
   const list=references.map(x=>'- '+x);
   const phases=ar?[
     '1. استلام البرومبت الأصلي واستخلاص هدف المستخدم والنتيجة المطلوبة.',
@@ -120,14 +127,14 @@ function generatePlan(){
     '','## اللغات والتعريب',local,'','## التراخيص',license,'','## مراحل التنفيذ',...phases,'',
     '## اختبارات الجودة والثبات',...checks,'','## دعم KML/KMZ',fileSpec,'',
     '## جودة الواجهة ومسار التحقق',qualityLabels.ar[qualityFocus],qualitySkills.length?'راجع جاهزية بيئة التشغيل واحتياج كل مهارة؛ لا تعتبر اختبارات Windows ناجحة دون تشغيل Windows فعلي.':'اختر مهارة جودة إضافية فقط إذا كانت مهمة المستخدم تتطلبها.','',
-    '## تعليمات الوكيل البرمجي','استنتج الهدف من طلب المستخدم وراجعه ثم استخدم موجّه المهارات لإنشاء Workflow بمهام مرتبة واختبارات قابلة للتحقق. لا تنفذ بمجرد استلام البرومبت، ولا تعتبر هذه الخطة موافقة أو إذنًا بتنفيذ الأوامر:',...list,
+    '## تكامل الجهاز والصلاحيات',deviceSpec,'','## تعليمات الوكيل البرمجي','استنتج الهدف من طلب المستخدم وراجعه ثم استخدم موجّه المهارات لإنشاء Workflow بمهام مرتبة واختبارات قابلة للتحقق. لا تنفذ بمجرد استلام البرومبت، ولا تعتبر هذه الخطة موافقة أو إذنًا بتنفيذ الأوامر:',...list,
     '','## مستوى التحقق','هذه خطة مقترحة وليست إثباتًا بنجاح تنفيذ المشروع.'
   ]:[
     '# GIS Project Implementation Plan','','## Project type',typeNames.en[type],'','## Intended user goal',goalSpec,'','## Observable success criteria',successSpec,'','## User requirements',requirements,'','## Suggested stack',stacks[type],
     '','## Application languages',local,'','## Licensing',license,'','## Implementation phases',...phases,'',
     '## Reliability and acceptance',...checks,'','## KML/KMZ',fileSpec,'',
     '## UI quality and verification scope',qualityLabels.en[qualityFocus],qualitySkills.length?'Verify each selected specialist applies to the host; Windows E2E needs a real Windows GUI.':'Add specialist checks only when the user goal requires them.','',
-    '## Agent instructions','Interpret and review the user goal, then route through the GIS skills to a dependency-ordered workflow. Never execute directly from the prompt; this plan is not authenticated approval or host authorization:',...list,
+    '## OS/device capability and permission scope',deviceSpec,'','## Agent instructions','Interpret and review the user goal, then route through the GIS skills to a dependency-ordered workflow. Never execute directly from the prompt; this plan is not authenticated approval or host authorization:',...list,
     '','## Verification status','This is a proposed plan, not evidence of project completion.'
   ];
   // Machine-readable handoff uses the exact offline Intent Router v1 schema.
@@ -139,6 +146,8 @@ function generatePlan(){
     const owner=skills[type];
     const selected=[owner,'gis-security-guardian'];
     if(qualitySkills.length)selected.push(...qualitySkills);
+    if(deviceNeeds!=='none')selected.push('system-capabilities-and-permissions');
+    if(deviceNeeds==='location'||deviceNeeds==='all')selected.push('gis-device-context');
     if(type==='qgis-engine')selected.push('gis-desktop-application-development','coordinate-reference-systems','geospatial-data-processing');
     if(kml)selected.push('kml-kmz-engineering');
     if(locale!=='en')selected.push('gis-internationalization-arabic');
@@ -156,7 +165,7 @@ function generatePlan(){
       target:typeNames.en[type],
       desired_outcomes:[goal],
       success_criteria:outcomes,
-      constraints:[license,local,fileSpec],
+      constraints:[license,local,fileSpec,deviceSpec],
       non_goals:[],
       assumptions:['Draft, not AI-verified: suggested technologies, GIS host version and dependencies need actual validation.','Assign a unique request ID and confirm the entire goal with the user before approval.'],
       open_questions:requirement?['Confirm GIS runtime versions, original data, CRS/units and project scope before execution.']:['Describe project features, input/output GIS data, target GIS runtime and CRS before implementation.'],
@@ -178,7 +187,7 @@ function generatePlan(){
   $('status').textContent=dict[ar?'ar':'en'].statusReady;
 }
 $('lang').onclick=()=>{const previous=Boolean(output);ar=!ar;translate();if(previous)generatePlan()};
-for(const id of ['type','locale','files','license','qualityFocus'])$(id).addEventListener('change',invalidate);
+for(const id of ['type','locale','files','license','qualityFocus','deviceNeeds'])$(id).addEventListener('change',invalidate);
 for(const id of ['goal','success'])$(id).addEventListener('input',invalidate);
 $('details').addEventListener('input',invalidate);
 $('generate').onclick=generatePlan;
