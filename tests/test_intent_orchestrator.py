@@ -26,6 +26,32 @@ class IntentOrchestrationTests(unittest.TestCase):
         en = module.route_hints("ArcGIS Pro toolbar and grid")
         self.assertIn("arcgis-toolbox-engineering", en["suggested_skills"])
 
+    def test_specialist_routing_hints_across_repository(self):
+        cases = (
+            ("Integrate QGIS Core in a standalone app", "qgis-engine-integration"),
+            ("Build a QGIS plugin for Processing", "qgis-plugin-development"),
+            ("Use Global Mapper script automation", "global-mapper-development"),
+            ("Build a GIS data catalog", "geospatial-data-catalogs"),
+            ("تعريب الواجهة وجعلها ثنائي اللغة", "gis-internationalization-arabic"),
+            ("Solar position and device time zone", "gis-device-context"),
+            ("فهرس البيانات الجغرافية", "geospatial-data-catalogs"),
+        )
+        for prompt, expected_skill in cases:
+            with self.subTest(prompt=prompt):
+                hints = module.route_hints(prompt)
+                self.assertIn(expected_skill, hints["suggested_skills"])
+                self.assertIn("gis-security-guardian", hints["suggested_skills"])
+                self.assertTrue(hints["requires_semantic_review"])
+                self.assertEqual("draft_hints_only", hints["stage"])
+
+    def test_qgis_engine_is_not_silently_classified_as_plugin(self):
+        hints = module.route_hints("Use QGIS engine libraries")
+        self.assertIn("qgis-engine-integration", hints["suggested_skills"])
+        self.assertNotIn("qgis-plugin-development", hints["suggested_skills"])
+        generic = module.route_hints("I need QGIS help")
+        self.assertTrue(generic["requires_semantic_review"])
+        self.assertNotIn("qgis-plugin-development", generic["suggested_skills"])
+
     def test_unapproved_example_is_valid_draft_but_fails_gate(self):
         self.assertEqual([], module.validate_plan(self.plan))
         self.assertTrue(any("user-approved" in error for error in
