@@ -1,10 +1,11 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 31,
+  "skill_count": 32,
   "skill_ids": [
     "agent-development-journal",
     "arcgis-toolbox-engineering",
+    "clean-room-reference-implementation",
     "completion-evidence",
     "coordinate-reference-systems",
     "geospatial-ai-agents",
