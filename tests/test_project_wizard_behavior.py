@@ -71,7 +71,7 @@ assert.match(e('result').textContent,/KML\/KMZ/);
 assert.match(e('result').textContent,/Preserve icons/);
 assert.match(e('result').textContent,/Reliable KMZ import/);
 assert.match(e('result').textContent,/Round-trip styles/);
-assert.match(e('result').textContent,/Prompt Intent/);
+assert.match(e('result').textContent,/skills\/prompt-intent-orchestrator\/SKILL\.md/);
 assert.match(e('result').textContent,/repository-wide-skill-orchestration.md/);
 e('download').onclick();
 assert.equal(lastLink.download,'gis-project-plan-en.md');
