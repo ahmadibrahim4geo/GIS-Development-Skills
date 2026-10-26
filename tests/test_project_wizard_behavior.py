@@ -212,7 +212,7 @@ class WizardBehaviorTests(unittest.TestCase):
             qa_compiled = validator.compile_workflow(qa)
             self.assertTrue(qa_compiled['valid'], qa_compiled['errors'])
             self.assertEqual('AWAITING_REVIEW', qa_compiled['status'])
-            self.assertEqual(7, len(qa_compiled['steps'][1]['skills']))
+            self.assertEqual(8, len(qa_compiled['steps'][1]['skills']))
             self.assertFalse(qa_compiled['can_execute'])
 
 
