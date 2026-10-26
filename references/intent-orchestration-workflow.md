@@ -79,6 +79,12 @@ For all tasks, specify observable acceptance criteria **before** execution, then
 
 If the source is missing, a plugin is unavailable or a security gate rejects an operation, mark that task BLOCKED; preserve unaffected work and report next steps. Dependency failure blocks dependent tasks, not unrelated tasks. Avoid auto-retry of destructive actions. Reassess both plan revision and permission on modification. Do not claim completed execution from a generated plan or a passing structural validator.
 
+## Browser Project Wizard → machine-readable workflow
+
+The [Project Wizard](../project-wizard.html) has explicit **goal** and **success criteria** inputs. It can produce Markdown for review or `gis-workflow-draft.json` conforming to the v1 plan schema used by the offline compiler. JSON export stays disabled until those two fields are populated. The draft contains `status: draft`, unapproved revision, no executable tool bindings, placeholder request ID, and a three-stage architecture/implementation/QA task graph with specialist ownership. The browser neither interprets natural language with an AI model nor authorizes external actions.
+
+The host must replace the placeholder ID, verify and refine the user's goal, update GIS-specific requirements, map actual authorized tools, and obtain real revision-scoped approval. `--workflow --gate` rejects an unapproved draft, and a *passing* declared approval check is still not authenticated consent.
+
 ## CLI and examples
 
 [Offline plan helper](../scripts/intent_router.py), [scenario and usage](../examples/intent-orchestrator/README.md), [unapproved example plan](../examples/intent-orchestrator/example-plan.json). No third-party dependencies or network access.
