@@ -77,7 +77,7 @@ def validate(data):
             errors.append(prefix + ": unsupported verified claim")
         if status == "failed" and failed < 1:
             errors.append(prefix + ": failed claim lacks failure observation")
-    if len(statuses) == len(items) and overall in STATES:
+    if len(statuses) == len(items) and isinstance(overall, str) and overall in STATES:
         expected = ("failed" if "failed" in statuses else
                     "verified" if all(v == "verified" for v in statuses) else
                     "not_run" if all(v == "not_run" for v in statuses) else
