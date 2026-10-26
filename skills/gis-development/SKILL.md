@@ -6,7 +6,7 @@ license: MIT
 
 # GIS Development — Agent Router
 
-**Free-first:** [no-cost policy](../../references/free-first-policy.md); disclose paid limitations.
+**Free-first:** [policy](../../references/free-first-policy.md); disclose costs.
 
 **Examples:** [DEM](../../examples/terrain-slope/README.md), [STAC](../../examples/stac-offline/README.md).
 
