@@ -1,3 +1,11 @@
+# Unreleased — four GIS UI quality specialist skills (2026-10-26)
+
+- Add independent GIS UI Command Audit, Desktop E2E Testing, GIS Data Flow Diagnostics, and UI/UX Design & Testing skills, linked to the intent gateway, GIS Router, native Desktop Development, Security Guardian and shared evidence journal.
+- Add responsibility/command/trace handoff contract and upstream source references; keep Windows UI Automation optional and disclose unverified upstream licenses.
+- Add read-only Python stdlib HTML/XAML declaration inventory and synthetic GIS flow trace checker, with examples and regression tests. Offline classifications **do not** prove working GIS controls, real rendering, semantic CRS accuracy or native installers.
+- Integrate bilingual GIS Explorer, homepage and Project Wizard quality-focus option with machine-readable draft plan; increase installable skill inventory from 23 to 27, preserve developer identity and user approval boundaries.
+- Native Windows/QGIS/ArcGIS T2–T4 checks remain NOT RUN unless a real suitable application environment is observed.
+
 # Unreleased — cross-PR integration and real workflow handoffs (2026-10-26)
 
 - Integrate proposed Desktop GIS engineering (#25), repository-wide intent orchestration (#26), and the 188-source GIS catalog (#27) into one compatible PR, with combined CI regression tests.
