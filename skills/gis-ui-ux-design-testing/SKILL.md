@@ -9,6 +9,8 @@ compatibility: Design reviews and static checks are cross-platform; visual and n
 
 **Purpose:** create professional, consistent, discoverable GIS interfaces with **working behavior and verifiable usability**, rather than decorative mockups or inert buttons. Applies to standalone GIS, ArcGIS/QGIS plugins, map websites and field/mobile clients.
 
+**Free-first source and testing policy:** follow the [repository free-first and licensing policy](../../references/free-first-policy.md). Reuse free/offline tools where feasible, disclose any paid GIS host/OS dependencies, and verify each upstream license before copying code. Never silently require a commercial service.
+
 ## Design-to-verification route
 
 1. Receive the reviewed user goal and target audience from [Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md) through the [GIS Router](../gis-development/SKILL.md); consult [Security Guardian](../gis-security-guardian/SKILL.md). Preserve the user's approved theme, identity, branding, language, platform and protected footer/author content.
