@@ -27,3 +27,7 @@ compatibility: Windows UI Automation and WebView2 acceptance require an interact
 Do not turn on remote debugging on public interfaces or leave DevTools endpoints running after tests. Prefer loopback-only, short-lived, host-authorized test sessions. Prevent credential capture and disclosure of user map extents or private GIS datasets in screenshots/logs. Use deterministic local fixtures and an isolated test user. Never silently mutate production GIS projects. Test RTL and keyboard access via [UI/UX skill](../gis-ui-ux-design-testing/SKILL.md).
 
 **Acceptance:** T0 manifests/tests specified; T1 deterministic mocks/parsers; T2 native GIS engine; T3 actual GUI interaction on target OS; T4 clean-machine installer/recovery. Report the exact tier observed and NOT RUN for every unavailable tier. The [Windows executable test matrix](../../examples/desktop-e2e/README.md) is a specification and can be adopted into a target app's actual test harness.
+
+## Native device and permission acceptance
+
+For features routed through [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md), verify real user gesture, OS/browser prompt, allow/deny, revocation, absent GPS/serial/BLE, timeout, resume and package manifest on the target host. Offline planner output is NOT T3/T4 evidence of any device access. Mark real-platform checks NOT RUN when unavailable.
