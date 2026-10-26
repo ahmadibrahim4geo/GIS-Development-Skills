@@ -1,6 +1,10 @@
 <p align="center">
-  <img src="assets/readme-banner.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
+  <img src="assets/brand/banner-dark.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
 </p>
+
+<p align="center"><sub>Official vector identity: <a href="assets/brand/README.md">brand assets and usage guide</a> · <a href="assets/brand/logo-light.svg">transparent logo</a> · <a href="assets/brand/icon.svg">standalone icon</a></sub></p>
+
+
 
 <p align="center">
   <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills"><img alt="Open source" src="https://img.shields.io/badge/Open%20Source-GitHub-172B3C?style=for-the-badge&amp;logo=github&amp;logoColor=white"></a>
@@ -12,9 +16,15 @@
   <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml"><img alt="Validation workflow status" src="https://img.shields.io/github/actions/workflow/status/ahmadibrahim4geo/GIS-Development-Skills/validate.yml?style=for-the-badge&amp;label=Tests&amp;labelColor=172B3C"></a>
 </p>
 
+## GIS Software & Source Code Registry — 26 October 2026
+
+The [GIS source code selection guide](references/gis-software-source-registry.md) routes developers to complete **desktop, web and mobile GIS applications**, reusable rendering/processing engines, spatial servers and scientific libraries. The existing [searchable project catalog](references/project-catalog.json) is the **single machine-readable source of truth** (188 unique GitHub repositories after adding 40 nonduplicate public sources); browse its live entries via the [bilingual Explorer](explorer.html#catalog). A public URL or preliminary license metadata is not a build, deployment or license audit: confirm upstream source permissions, exact versions and native tests before reuse.
+
 ## Build GIS tools, plugins and geospatial applications with a verifiable development workflow.
 
 A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.
+
+**New QGIS Engine Integration:** [specialist skill](skills/qgis-engine-integration/SKILL.md) · [official QGIS architecture and upstream repositories](references/qgis-engine-integration.md) · [native PyQGIS GeoPackage smoke test](examples/qgis-engine/README.md). Covers Core/GUI/Processing/3D/Server and optional cross-platform processing adapters without imposing a renderer; native execution and distribution require separate tests and license review.
 
 <table width="100%">
   <tr>
@@ -45,7 +55,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>18 installable GIS skills</strong> · <strong>138 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>28 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -55,7 +65,52 @@ A practical development skill and curated reference hub for building reliable Ar
   <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website ↗</a>
 </p>
 
-**Free-first audit:** [Cost/licensing and 18 independent skill paths](references/free-first-policy.md). The website now lists all specialists, has incremental project browsing instead of a hard 60-result cut-off, and defaults API discovery to 43 self-hostable or conditionally free entries. Commercial, trial, strictly restricted and unavailable records remain optionally viewable; live provider rights are not guaranteed.
+## Agent Development Journal & Project Memory — 25 October 2026
+
+The new [Agent Development Journal skill](skills/agent-development-journal/SKILL.md) adds project-local **numbered reports** for every user requirement, implementation milestone, revision, cancellation and verification. Its [offline Python journal tool](scripts/development_journal.py) creates immutable linked JSON records and generated Markdown reports/INDEX.md/STATE.md in each target project's `.agent-development-log/`. See [recovery and lifecycle](references/agent-development-journal-guide.md), [external skills comparison](references/agent-memory-skill-references.md) and [offline example](examples/development-journal/README.md).
+
+Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planning-with-files), [Superpowers](https://github.com/obra/superpowers), [GitHub Spec Kit](https://github.com/github/spec-kit), without copying their hooks or tools. The **hosting agent must invoke the logger** at action checkpoints; it does not automatically monitor processes, execute code or reverse Git commits.
+
+## Four GIS UI quality engineering skills — 26 October 2026
+
+The repository now includes **28 installable GIS specialist skills**, including four independent but interoperable quality workflows:
+
+- [GIS UI Command Audit](skills/gis-ui-command-audit/SKILL.md): inspect menu/Ribbon/icon declarations and command bindings with a [read-only offline scanner](scripts/gis_ui_command_audit.py).
+- [GIS Desktop E2E Testing](skills/gis-desktop-e2e-testing/SKILL.md): native Windows UI Automation and WebView2 acceptance workflow, with real-host T3/T4 evidence required.
+- [GIS Data Flow Diagnostics](skills/gis-data-flow-diagnostics/SKILL.md): track import → CRS → engine → scene → save/export/readback using an [offline synthetic trace checker](scripts/gis_data_flow_diagnostics.py).
+- [GIS UI/UX Design & Testing](skills/gis-ui-ux-design-testing/SKILL.md): accessible layouts, RTL/LTR, real functional controls, high DPI and visual/usability tests.
+
+The [shared ownership and data contract](references/gis-ui-quality-coordination.md) carries stable command and trace IDs across specialists. The [upstream tools guide](references/gis-ui-quality-upstream-sources.md) identifies actual open-source source repositories; no upstream software is bundled or claimed native-tested. [Project Wizard](project-wizard.html) can optionally route a draft plan through one/all four without bypassing security.
+
+## Goal-first prompt → GIS workflow (26 October 2026)
+
+A GIS development prompt now has a dedicated **goal → outcomes → acceptance → specialist routing → security preflight → ordered execution → verification** path. The [offline workflow compiler](scripts/intent_router.py) converts an AI-reviewed JSON plan into a deterministic **nonexecuting** blueprint, and the [bilingual Project Wizard](project-wizard.html) can capture the intended user goal and observable success criteria and export a **draft JSON plan** that the offline compiler can validate (without executing it). Read the [shared contract](references/repository-wide-skill-orchestration.md) and [intent guide](references/intent-orchestration-workflow.md). The AI host must still interpret the request, obtain actual permission, invoke real tools and report real results.
+
+## Prompt Intent & Execution Orchestrator — 25 October 2026
+
+The new [installable orchestration skill](skills/prompt-intent-orchestrator/SKILL.md) converts informal Arabic/English requests into explicit, testable requirements and task dependencies. Users review, edit and approve each plan revision before implementation. The agent then selects [existing GIS specialists](skills/gis-development/SKILL.md), actual available tools, [GIS Security Guardian](skills/gis-security-guardian/SKILL.md), and T0–T4 acceptance tests.
+
+Read the [workflow contract](references/intent-orchestration-workflow.md), [ZEarth example plan](examples/intent-orchestrator/README.md) and [offline JSON validator / keyword hints](scripts/intent_router.py). The helper is **not** an AI model, does not authenticate user approval and does not execute GIS software; native behavior still requires host tests.
+
+## Google Earth Pro engineering and historical imagery — 2026-10-25
+
+The [Google Earth Pro engineering reference](references/google-earth-pro-engineering.md) extracts practical, independently implementable features from the historical [Google Earth Blog](https://www.gearthblog.com/): Places drag/drop and bulk actions, NetworkLink/Region/LOD, KML/KMZ fidelity, tours, elevation profiles and raster overlays. The dedicated [Historical Imagery Timeline guide](references/historical-imagery-timeline.md) specifies a compact, non-blocking dock, *actual scene dates* rather than invented years, source attribution, playback, licensed multi-provider retrieval and same-viewport image comparison. Links are integrated with the [Desktop](skills/gis-desktop-application-development/SKILL.md), [Web/3D](skills/geospatial-web-mapping/SKILL.md), [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) and core router skills and shown on the bilingual site.
+
+**Status:** documented engineering and static checks only; not a shipped or tested ZEarth historical-imagery implementation. Google Earth Blog is an independent, largely historical source, and its content does not license Google imagery for third-party use.
+
+## Official Esri developer references — 25 October 2026
+
+Ten additional official Esri repositories have been reviewed and linked without duplicate entries in the [Esri integration matrix](references/esri-open-source-integration.md): ArcGIS Pro SDK AI snippets, Arcade profiles, developer troubleshooting, CAD/BIM, network analysis, Geoportal STAC/MCP, JavaScript, geocoding, elevation and raster deep learning.
+
+**Practical additions:** the [offline ArcGIS Pro Python package compatibility checker](references/esri-python-environment-compatibility.md) compares locally observed packages with the original Esri version matrix without modifying the environment. The [Arcade profile guide](references/arcgis-arcade-profiles.md) routes labeling, popup, visualization, attribute rules, dashboard and form expressions safely.
+
+Apache-2.0 sample-code licenses do not grant rights to proprietary ArcGIS products, extensions, SDK runtimes, hosted services, map imagery, third-party models or personal credentials. No Esri proprietary binaries were copied and no ArcGIS-native execution is claimed.
+
+## GIS Security Guardian — cross-cutting protection (25 October 2026)
+
+[**GIS Security Guardian**](skills/gis-security-guardian/SKILL.md) is the 19th installable skill. It accompanies every routed GIS task with permission boundaries, prompt-injection precautions, safe geospatial archive handling, credential and API hygiene, and evidence-based release gates. The [security tool registry](references/security/security-tools.json) links 14 upstream projects, distinguishing local from potentially networked analysis and reporting license status without bundling third-party code. [Offline security audit](scripts/security_audit.py), [archive guard](scripts/security_guardian.py), [unit tests](tests/test_security_guardian.py), [dedicated workflow](.github/workflows/security.yml), [security disclosure policy](SECURITY.md), and the [bilingual homepage](index.html) are included. The stdlib preflight runs without subscriptions or keys; external scanners such as Gitleaks, Bandit, Cisco Skill Scanner, OSV-Scanner and zizmor remain optional and are **not claimed to have run**. Static validation cannot establish full runtime security.
+
+**Free-first audit:** [Cost/licensing and 19 independent skill paths](references/free-first-policy.md). The website now lists all specialists, has incremental project browsing instead of a hard 60-result cut-off, and defaults API discovery to 43 self-hostable or conditionally free entries. Commercial, trial, strictly restricted and unavailable records remain optionally viewable; live provider rights are not guaranteed.
 
 **Practical free workflow upgrade (2026-10-25):** [Original upstream license-file audit](references/upstream-license-audit.md) (8 inspected / 138 linked projects), [offline license evidence scanner](scripts/audit_license_catalog.py), and two complete dependency-free T2 fixtures: [DEM Horn slope](examples/terrain-slope/README.md) and [STAC metadata selection](examples/stac-offline/README.md). The example scripts output real ASCII elevation-slope or JSON metadata files, but **do not** validate external terrain CRS or live satellite services. Upstream data, models, proprietary GIS host and API terms remain independent.
 
@@ -63,18 +118,25 @@ A practical development skill and curated reference hub for building reliable Ar
 
 ---
 
+## Google KML/KMZ fidelity upgrade — 2026-10-25
+
+The existing [KML/KMZ Engineering skill](skills/kml-kmz-engineering/SKILL.md) now follows an expanded [Google/OGC interoperability guide](references/google-kml-kmz-compatibility.md) and an [offline styled KML fixture](examples/kml-kmz/README.md). Import must respect **the user's original icons, colors, opacity, shared/highlight styles, folders, ExtendedData, altitude, time and bundled assets** rather than imposing app-wide defaults. View, loss-aware conversion, edit and export are separate modes. KML `aabbggrr` colors, KMZ relative paths, `gx:` extensions, security and explicit target-host acceptance gates are documented. This is documentation and XML contract testing, **not** proof that Google Earth, Cesium or ZEarth Desktop has already passed a rendered round-trip.
+
 ## Cartography & device context specialists — 2026-10-25
 
 Two new installable skills extend the toolkit to **18 specialists** (including the recently added [KML/KMZ specialist](skills/kml-kmz-engineering/SKILL.md)):
 
 - [GIS Cartography & Symbology](skills/gis-cartography-symbology/SKILL.md) — vector point/line/polygon symbols, raster ramps, labels, accessible layouts, ArcMap/Pro/QGIS/MapLibre/Cesium adapters and verifiable save/reopen.
+- [System Capabilities & Permissions](skills/system-capabilities-and-permissions/SKILL.md) — general OS/device access and permission workflows with optional trusted adapters, privacy and native test contracts.
 - [GIS Device Context](skills/gis-device-context/SKILL.md) — UTC/local date/time, IANA timezone, opt-in device geolocation, scene-vs-device target and live/simulated Sunlight modes.
 - [19-source style directory (including 8 icon packs and Cesium PinBuilder)](references/cartographic-style-sources.json), including the [ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection), QGIS Resources, OS GeoDataViz, CARTOColors and scientific palette references. Upstream individual style/font rights are **not** automatically granted by hosting.
 - Offline [MapLibre point/line/polygon fixture](examples/cartography/README.md) and [Python timezone/context fixture](examples/device-context/README.md) with regression tests; real GIS rendering, GPS permission and sun lighting still require host testing.
 
 The bilingual website adds a searchable **Style sources** catalog tab alongside the existing project, API and data tabs. No third-party style binaries or fonts are bundled.
 
-**Map markers and KMZ preservation (2026-10-25):** [Marker icon library guide](references/map-marker-icon-library.md) now covers Pinhead, Maki, Temaki, Nicolas Mollet's Map Icons Collection, Scott de Jonge Map Icons, Leaflet ExtraMarkers, Google Material Symbols, Leaflet AwesomeMarkers and CesiumJS PinBuilder, with separate licenses/font dependencies and KMZ packaging guidance. **Imported KML/KMZ styles must be preserved exactly or equivalently by default**; no automatic recolor or default-icon replacement. Read the [KML/KMZ style fidelity contract](references/kml-kmz-symbol-preservation.md) and [synthetic regression checker](examples/kml-style-preservation/README.md). New markers can use licensed packs; imported icons, StyleMap and embedded assets remain authoritative.
+**Unified GIS Icon Manager (2026-10-25):** [General-use symbol library specification](references/unified-gis-icon-manager.md) covers ArcGIS/QGIS/Cesium/MapLibre/desktop GIS with a **dedicated KML/KMZ new-feature adapter**, not a separate icon library. Try the [offline bilingual SVG/PNG creator](examples/icon-manager/index.html) and [Python new-only KMZ packager](examples/icon-manager/export_new_kmz.py). Source catalog grows to **21** by adding [Streamline](https://www.streamlinehq.com/icons/tag/google-earth-placemark) as mixed-license discovery (not a redistributable standard free-icon picker), [Mapular](https://mapular.com/tools/map-icon-creator) as generator-design reference (site code unlicensed for reuse) and 2026 SVG/PNG support in CC BY-SA Map Icons Collection. **Imported KMZ originals never receive automatic restyling.** The working example is **not installed in ZEarth**.
+
+**Free map marker libraries and imported KMZ styles:** The [map marker icon guide](references/map-marker-icon-library.md) covers Pinhead, Maki, Temaki, Map Icons Collection, Scott de Jonge Map Icons, Leaflet ExtraMarkers, Google Material Symbols, Leaflet AwesomeMarkers, and Cesium PinBuilder, including separate icon/font/plugin licenses. These can style **new/user-restyled** placemarks. On imported KML/KMZ, **preserve original icon assets, styles, colors, StyleMap, opacity and line/polygon and label appearances, without automatic replacement**. See the [KML/KMZ preservation contract](references/kml-kmz-symbol-preservation.md) and [offline KMZ comparison fixture](examples/kml-style-preservation/README.md). This strengthens (does not replace) the existing [Google/OGC KML compatibility guide](references/google-kml-kmz-compatibility.md).
 
 ## Global Mapper / Blue Marble Geographics research — 2026-10-25
 
@@ -228,6 +290,22 @@ Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-stud
 
 The API guide **does not** treat public endpoints as unlimited or licensed for any use. SoilGrids REST is marked paused; OSMF tiles and Nominatim have restrictive public usage policies.
 
+## Project Wizard — tested bilingual interaction update (25 October 2026)
+
+The [GIS Project Wizard](project-wizard.html) now produces **fully Arabic or English plans** (including platform names) and invalidates stale exports when project inputs change. It includes context-specific specialist and localization references, with a Node-backed offline interaction test covering language changes, plan generation and downloads. It remains a **browser-only planning tool**, not an agent executor or evidence of native GIS runtime tests.
+
+## Project Wizard + Arabic GIS i18n — 25 October 2026
+
+[Launch the bilingual GIS Project Wizard](project-wizard.html) to select your target GIS platform, languages, KML/KMZ and licensing preferences, then generate and download a Markdown implementation plan. The wizard runs locally in the browser; it does **not** build software or execute a coding agent. Its suggestions must be validated in the real GIS host. Explore the [Wizard roadmap](docs/PROJECT_WIZARD_PLAN.md), [Arabic/international GIS skill](skills/gis-internationalization-arabic/SKILL.md), [KML library review](references/kml-kmz-repository-review.md) and [performance/reliability guide](docs/PERFORMANCE_RELIABILITY.md). This release incorporates the useful parts of PR #12 without replacing the newer homepage, branding, tests or core skill.
+
+## Complete homepage redesign — 25 October 2026
+
+The public [homepage](index.html#how-to-use) now features a new charcoal/mint GIS engineering design, clear bilingual hero, verified workflow illustration, integrated four-step How to Use, in-page selectable GIS platform (8 tracks), context-sensitive installation command and Arabic/English sample agent request (copyable), manual without-agent workflow, QA expectations and inline troubleshooting FAQ. Visitors do **not** need to open repository Markdown files for first use. Full docs remain optional reading. Existing creator biography, portrait and contact actions are preserved; only their styling palette changes. All interactive catalog/skills features remain available.
+
+## How to Use — illustrated bilingual workflow
+
+The website now includes [How to Use](index.html#how-to-use), an accessible English/Arabic onboarding sequence, copyable install command, realistic copyable request for an AI coding agent, and a no-agent/manual route. The existing [Explorer Quick Start](explorer.html#get-started) was expanded rather than replaced. Detailed [English](docs/HOW_TO_USE.md) and [Arabic](docs/HOW_TO_USE.ar.md) guides explain prerequisites, approval, safe execution, testing, journals, rollback limits and third-party licensing.
+
 ## Installation for coding agents
 
 Install from the public repository `ahmadibrahim4geo/GIS-Development-Skills`:
@@ -307,3 +385,7 @@ Community proposals and verified pull requests are welcome. See [CONTRIBUTING.md
 ## License and third parties
 
 This repository's **original** scripts, templates and written guidance are MIT licensed; each linked project keeps its **own** license. The catalog does not grant rights to re-use upstream code, imagery, hosted services, trademarks, or data.
+
+### World Gazetteer: search and reference labels
+
+The [World Gazetteer implementation guide](references/world-gazetteer-reference-layer.md) adds offline-first GeoNames name search and an **independent, scale-aware Reference Layers overlay** for desktop/web GIS (especially future ZEarth integration). It specifies label priority, zoom/detail categories, Arabic/English names, map collision/3D culling, attribution, and preservation of user KML/KMZ styles. A [Python/SQLite 2D demonstrator with unit tests](examples/gazetteer/README.md) is included; it is **not** a completed native GIS/desktop integration.

@@ -20,7 +20,7 @@ class LicenseAuditTests(unittest.TestCase):
 
     def test_evidence_coverage_is_explicit(self):
         summary=self.audit.classify(self.catalog["projects"])
-        self.assertEqual(138,summary["total"])
+        self.assertEqual(len(self.catalog["projects"]),summary["total"])
         self.assertGreaterEqual(summary["verified_source_licenses"],8)
         self.assertEqual(summary["verified_source_licenses"]+summary["unverified_source_licenses"],summary["total"])
         self.assertEqual([],self.audit.scan(self.catalog["projects"]))
@@ -39,7 +39,7 @@ class LicenseAuditTests(unittest.TestCase):
         self.assertIn("free-first", (ROOT/"references/free-first-policy.md").read_text(encoding="utf-8").lower())
 
     def test_bilingual_site_displays_license_coverage_from_json(self):
-        page=(ROOT/"index.html").read_text(encoding="utf-8")
+        page=(ROOT/"explorer.html").read_text(encoding="utf-8")
         for s in ('id="licenseAuditProgress"','renderLicenseAudit()','entry.license_verified===true','licenseAuditLabel:"تم التحقق'):
             self.assertIn(s,page)
         guide=(ROOT/"references/upstream-license-audit.md").read_text(encoding="utf-8")

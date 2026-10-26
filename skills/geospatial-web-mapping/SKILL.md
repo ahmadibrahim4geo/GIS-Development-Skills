@@ -10,6 +10,8 @@ license: MIT
 
 Use when the deliverable is a web GIS map, browser-based spatial tool or mapping UI in a desktop application.
 
+For verified upstream *repository availability* (not runtime readiness), choose a web application, 2D/3D renderer, native map SDK or tile server from the [GIS software source registry](../../references/gis-software-source-registry.md). The existing project catalog is the single source of truth; avoid creating a second inventory.
+
 ## Procedure
 
 1. Clarify if it is a standalone web app, Tauri/WebView2 desktop shell or GeoLibre project.
@@ -34,6 +36,10 @@ Use when the deliverable is a web GIS map, browser-based spatial tool or mapping
 
 See the [Global Mapper / Blue Marble reference](../../references/blue-marble-global-mapper.md) for forked Cesium 3D Tiles Tools and an older Cesium Terrain Builder. They are independent utilities, not the proprietary Global Mapper renderer. Check terrain tiling scheme, NoData, dataset licensing, 3D Tiles metadata/transform and server support before using in CesiumJS or MapLibre.
 
+## Earth timeline and Google Earth Pro behavior
+
+For browser or embedded-Cesium globe UIs, consult [Google Earth Pro patterns](../../references/google-earth-pro-engineering.md) and [Historical Imagery Timeline](../../references/historical-imagery-timeline.md). Keep imagery timeline controls docked/nonblocking; query scene availability per AOI; display actual acquisition/mosaic dates and provider licensing; cancel stale requests and never blank the globe on missing imagery. Compare mode shares camera/bounds, not two independently drifting map viewpoints. This is a design reference only, not a claim of live implementation.
+
 ## Earth View: globe-to-modal architecture
 
 Review [Earth View](../../references/earth-view-architecture.md) for typed base/overlay imagery provider registries, WMS 1.3.0 EPSG:4326 BBOX axis order, temporal images, camera controls and regional zoom/view-state restoration. Avoid copying code without an upstream license; do not infer displayed date is the satellite acquisition date or assume optional AI controls are visible.
@@ -44,3 +50,7 @@ Review [Earth View](../../references/earth-view-architecture.md) for typed base/
 - [GeoParquet](https://github.com/opengeos/maplibre-gl-geoparquet) and [DuckDB spatial](https://github.com/opengeos/maplibre-gl-duckdb): verify spatial extension, security of SQL input, CRS and memory usage.
 - [3D Tiles](https://github.com/opengeos/maplibre-gl-3d-tiles), [historical Esri Wayback imagery releases](https://github.com/opengeos/maplibre-gl-esri-wayback), [layer controls](https://github.com/opengeos/maplibre-gl-layer-control): all need pinned compatible MapLibre versions, genuine live click tests, and upstream service rights. Wayback release date is not automatically acquisition date.
 - [OpenGeoS advanced guide](../../references/opengeos-advanced-integration.md): MapLibre plugins are not drop-in CesiumJS adapters.
+
+## Browser and WebView device permissions
+
+For browser geolocation, notifications, file picking, camera/microphone, WebUSB/serial/BLE or embedded host access, consult [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) and Security Guardian. Enforce HTTPS/secure contexts, origin and Permissions Policy, real user gestures and restricted WebView/Electron/Tauri bridges. Keep map scene/camera position distinct from user's physical GPS location via [GIS Device Context](../gis-device-context/SKILL.md).

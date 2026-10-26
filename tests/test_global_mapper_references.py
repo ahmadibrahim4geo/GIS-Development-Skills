@@ -13,7 +13,7 @@ class GlobalMapperReferenceTests(unittest.TestCase):
         cls.project = json.loads((ROOT / "references/project-catalog.json").read_text(encoding="utf-8"))
         cls.entries = cls.project["projects"]
         cls.apis = json.loads((ROOT / "references/free-geospatial-apis.json").read_text(encoding="utf-8"))
-        cls.html = (ROOT / "index.html").read_text(encoding="utf-8")
+        cls.html = (ROOT / "explorer.html").read_text(encoding="utf-8")
 
     def test_official_forks_and_nonofficial_community_separated(self):
         forks = [x for x in self.entries if x["url"].startswith(ORG)]

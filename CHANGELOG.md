@@ -1,11 +1,121 @@
+# Unreleased — cross-platform system capability and permission skill (2026-10-26)
+
+- Add platform-wide System Capabilities & Permissions Agent Skill, external skill/library candidate registry, native permission/driver acceptance contract and offline standard-library planner with tests.
+- Integrate Device Context, GIS Router, Security, Desktop, Web, UX/E2E, bilingual Explorer/homepage and Project Wizard; preserve protected author details and existing runtime engines.
+- Native permission prompts, hardware, Bluetooth/GPS and Windows installations have NOT been tested by these offline additions.
+
+# Unreleased — four GIS UI quality specialist skills (2026-10-26)
+
+- Add independent GIS UI Command Audit, Desktop E2E Testing, GIS Data Flow Diagnostics, and UI/UX Design & Testing skills, linked to the intent gateway, GIS Router, native Desktop Development, Security Guardian and shared evidence journal.
+- Add responsibility/command/trace handoff contract and upstream source references; keep Windows UI Automation optional and disclose unverified upstream licenses.
+- Add read-only Python stdlib HTML/XAML declaration inventory and synthetic GIS flow trace checker, with examples and regression tests. Offline classifications **do not** prove working GIS controls, real rendering, semantic CRS accuracy or native installers.
+- Integrate bilingual GIS Explorer, homepage and Project Wizard quality-focus option with machine-readable draft plan; increase installable skill inventory from 23 to 27, preserve developer identity and user approval boundaries.
+- Native Windows/QGIS/ArcGIS T2–T4 checks remain NOT RUN unless a real suitable application environment is observed.
+
+# Unreleased — cross-PR integration and real workflow handoffs (2026-10-26)
+
+- Integrate proposed Desktop GIS engineering (#25), repository-wide intent orchestration (#26), and the 188-source GIS catalog (#27) into one compatible PR, with combined CI regression tests.
+- Fix 39 broken local Markdown links previously present in `docs/ENGINEERING_UPDATES_2026-10.md`, and add repository-wide link verification.
+- Make the bilingual Project Wizard export a draft `gis-workflow-draft.json` plan matching the offline Intent Router schema; block export until the user goal and success criteria are explicit. Test actual Node DOM → Python workflow compiler handoff.
+- Upgrade GitHub Actions checkout and setup-python to verified SHA-pinned Node.js 24 releases; eliminate the deprecated Node.js 20 actions warning.
+- No native GIS runtime or authenticated hosting-agent approval has been tested; keep those acceptance tiers NOT RUN.
+
+# Unreleased — GIS Software & Source Code Registry (2026-10-26)
+
+- Extend the existing canonical project catalog from 148 to 188 **unique public repository links** (40 new, none copied) covering desktop, web, mobile, engines, spatial servers, .NET and remote sensing.
+- Add a developer-facing decision guide and bilingual website entrypoint, plus router/Desktop/Web specialist links; preserve the author section and existing catalog rather than creating a second data store.
+- Record preliminary GitHub availability/license metadata as **unverified for reuse**; no native builds, source imports or implied GIS engine/runtime compatibility.
+- Add catalog field validation and regression tests for repository source categories, primary-skill routing, unique URLs, synchronized counters and disclaimers.
+
+# Unreleased — Goal-first GIS skill workflow and Project Wizard integration (2026-10-26)
+
+- Compile a user/AI-reviewed goal, desired outcomes, success criteria, owners and dependency graph into a read-only ordered workflow using `scripts/intent_router.py --workflow`; no autonomous execution or authenticated permissions claimed.
+- Require explicit goal/outcome information for workflow compilation, reject unknown owners, cycles, missing dependencies, stale approval declarations, destructive operations without additional approval fields.
+- Add bilingual goal and success-criteria fields, eight-stage execution preview, and invalidation for edits in the existing client-only Project Wizard. Preserve other wizard fields and the author's identity.
+- Synchronize the cross-skill contract, Intent Orchestrator, core router, agent rules, EN/AR user guides, sample plans and regression tests.
+- Keep source inspection read-only by default and distinguish host-level approval, T0/T1 offline checks and GIS-native T2/T4 verification.
+
+# Unreleased — QGIS engine cross-skill compatibility and HTML routing (2026-10-25)
+
+- Remove accidental single-application assumptions from generic QGIS Engine skill, references and agent prompts; retain existing project renderers and route to other specialists only when relevant.
+- Separate QGIS Plugin and QGIS Engine pathways on bilingual homepage and Explorer. Add engine-aware Project Wizard selection, synchronized source-driven pathway counters and keyboard-accessible pathway cards.
+- Extend offline regression tests for wizard English/Arabic generation, platform selection and QGIS engine link/compatibility contracts. Native QGIS execution remains an explicit separate acceptance level.
+- Preserve every previous skill, catalog, author/footer contact, CSS brand and installer/host boundary.
+
+# Unreleased — QGIS Engine Integration specialist (2026-10-25)
+
+- Add a QGIS Core/GUI/Processing/Server standalone-engine skill, upstream source/license guide and native-only PyQGIS GeoPackage readback sample.
+- Integrate new QGIS engine option with bilingual README, index, Explorer, desktop/plugin routing and decision tree; synchronize 23-skill inventory and offline tests.
+- No claim of native QGIS/WPF runtime testing or packaged application validation.
+
 # Changelog
 
-## Unreleased — Open map marker icons and imported KMZ style fidelity (2026-10-25)
+## Unreleased — Project Wizard bilingual behavior and stale-export repair (2026-10-25)
 
-- Extend the separate cartography style directory from 10 to 19 sources: eight independent map icon libraries and the CesiumJS PinBuilder generator; document CC0, CC BY-SA, Apache-2.0, MIT, OFL and plugin/dependency distinctions.
-- Add a dedicated map icon library guide plus a non-negotiable KML/KMZ preservation-first contract: imported style/StyleMap/styleUrl, original point icons and colors, line/polygon styling, opacity, label, local assets and folder provenance are never auto-overridden on load/save.
-- Add safe, synthetic offline KMZ style/resource comparison fixtures and tests for recoloring, icon replacement, StyleMap mutation and unsafe ZIP paths, with native-rendering limitations clearly marked.
-- Wire the preservation rules into both cartography and KML/KMZ specialist skills, decision tree, bilingual site and README, without changing style licensing or copying third-party icon files.
+- Fix Arabic translations for project types and generated Markdown plans; retain requirements when switching languages.
+- Prevent stale plan downloads following input edits, and use project-specific specialist references in generated plans.
+- Add Node DOM-interaction regression tests for English/Arabic generation, state changes, injection-safe text display and Markdown downloads.
+- Link the wizard from the existing Explorer without altering developer profile/footer design.
+
+
+## Unreleased — recover Project Wizard PR #12 on current main (2026-10-25)
+
+- Resolved PR #12's stale main divergence without reverting the current bilingual homepage/footer, its GitHub Actions setup, security guardian, core router or KML author-style preservation.
+- Published client-side bilingual GIS Project Wizard; Arabic and multilingual GIS specialist (22 skills), source review, reliability guides and KMZ fixture unit tests.
+- Fixed invalid literal escaped newlines in the Wizard JS, synchronized manifest, README, homepage count, Explorer and free-first policy. Kept commercial host and native test limitations explicit.
+
+
+## Unreleased — complete homepage redesign with in-page GIS How to Use (2026-10-25)
+
+- Rebuild the homepage hero as a typographic 2-column studio layout with the original approved vector logo, workflow illustration and source-driven metrics.
+- Move all essential install, platform selection, prompt-writing, permission/review, verification and journal guidance into the homepage; selectable eight-topic specialist command and bilingual sample request, clipboard controls, offline/manual route and FAQ.
+- Add scoped responsive `assets/home-redesign.css` with a consistent charcoal/mint palette across sections. Preserve the existing bottom developer portrait, exact biography/contact markup and layout while recoloring backgrounds, accents and borders.
+- Keep complete Explorer and existing GIS catalog/skills/QA functionality, add regression test for page functionality and author section stability.
+
+
+## Unreleased — bilingual How to Use onboarding (2026-10-25)
+
+- Expand index.html with an accessible English/Arabic onboarding walkthrough, four steps, real sample request with working copy button, coding-agent CLI and manual/self-study paths, FAQ and navigation link.
+- Enhance Explorer's existing Quick Start rather than duplicating core functionality; add detailed English and Arabic usage guides, source/lifecycle caveats and regression tests.
+- Preserve existing brand, footer/contact details, complete Explorer, GIS security/agent distinctions, dynamic skill catalog and release-gate CI checks.
+
+# Changelog
+
+## Unreleased — Agent Development Journal & Project Memory (2026-10-25)
+
+- Add numbered append-only project-local request/action/revision/cancellation/rollback-intent/verification/handoff records with resumed context, hash-chain integrity and safe derived Markdown repair.
+- Add standard-library offline CLI and tests, reference guide and a review of Planning with Files, Superpowers and Spec Kit (design inspiration only; no third-party tools installed).
+- Update agent router integration, bilingual README/site, free-first matrix, manifest, security and CI. No automatic process monitoring, GIS host execution or Git rollback is claimed.
+
+
+## Unreleased — Prompt Intent & Execution Orchestrator (2026-10-25)
+
+- Add a review-first Arabic/English natural-language intent skill, dependency-aware plan format, skill routing and cross-cutting security requirements.
+- Add offline standard-library keyword hints (not LLM inference), structured JSON validation, revision and risk approval assertions, ZEarth draft example and unit tests. The helper does not authenticate approval or execute GIS.
+- Integrate router, decision tree, bilingual READMEs, bilingual website and derived inventory without replacing existing resources.
+
+
+## Unreleased — Esri official references and Python environment audit (2026-10-25)
+
+- Review original Apache-2.0 root license files of ten additional Esri official repositories. Record evidence and host/service caveats, with no new native-runtime validation claims (138 → 148 curated project links).
+- Add offline, read-only ArcGIS Pro Python package version checker using a locally downloaded official Esri release matrix, synthetic unit tests, and a profile-aware Arcade authoring guide.
+- Expand Esri integration, ArcGIS/desktop/cartography/catalog routing, and synchronize the English/Arabic README, index homepage and derived reference manifest. No proprietary Esri runtime, imagery or credentials included.
+
+## Unreleased — Unified Icon Manager for GIS + protected KMZ adapter (2026-10-25)
+
+- Treat icons as a general GIS library used across ArcGIS/QGIS/Cesium/web and desktop hosts, with a specialized new-KML/KMZ authoring/export adapter rather than a duplicated KMZ icon library.
+- Extend catalog from 19 to 21 sources with user-provided Streamline (mixed-license discovery only by default) and Mapular (generator workflow inspiration only), and update CC BY-SA Map Icons Collection with 2026 SVG/PNG/custom colors and no-hotlink guidance.
+- Add an operational Icon Manager design contract and a standalone offline bilingual HTML new-marker generator with SVG/PNG export; add a standard-library new PNG→KMZ exporter with ABGR, relative resources, style, hotspot and license metadata.
+- Link both installable skills, map marker guide, Google/KML preservation requirements, bilingual website and README, while preserving footer and latest security/KML work. Third-party assets not copied; importing an existing KMZ never triggers icon replacement.
+- Add deterministic Python unit tests for PNG validation, new KMZ packaging, KML colors, source permissions and docs/feature links. Demo is not native ZEarth/Google Earth integration.
+
+
+## Unreleased — Map icon library and imported KMZ style protection (2026-10-25)
+
+- Add eight independently licensed free/open map icon sources plus CesiumJS PinBuilder to the catalog (10 → 19), with KMZ export roles and font/plugin license distinctions.
+- Preserve imported KML/KMZ icons, colors, opacity, label, line/polygon styles, StyleMaps, remote references and local asset bytes by default. Keep temporary rendering fallback distinct from explicit user-driven edits.
+- Cross-link the existing Google/OGC KML compatibility work with a new dedicated preservation contract and icon-source selection guide.
+- Add offline synthetic KMZ style/asset regression fixtures; update cartography and KML specialist skills, bilingual README and website without touching security work.
 
 
 ## Unreleased — Cartography styling and privacy-aware device context (2026-10-25)

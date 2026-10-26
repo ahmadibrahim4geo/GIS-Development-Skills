@@ -18,6 +18,14 @@ This reference extends the [cartographic style source catalog](cartographic-styl
 
 For license evidence and machine-filtering see each record's `license_evidence_url`, `kmz_use`, `compatibility` and `notes` in [JSON catalog](cartographic-style-sources.json).
 
+## Three-site update (2026-10-25) and unified manager
+
+- **Map Icons Collection** now supports SVG alongside PNG (2026-10-14) and user-defined colors; continue treating its assets as CC BY-SA 3.0 with attribution, adaptation conditions and no hotlinking.
+- **Streamline — Google Earth Placemark** is a mixed-license search/discovery entry. Never bulk-import its standard free assets into an in-app selectable/reusable/downloadable icon library: [Streamline Free License](https://help.streamlinehq.com/en/articles/5354376-streamline-free-license) forbids that. Verify explicitly named open-source sets and CC BY 4.0 credits separately; premium packs require their own license.
+- **Mapular Icon Creator** is a reference for designing a **new** generator (shape, brand/icon, fill/border, SVG/PNG); its own site source code is not shown to be open source, and any uploaded logo has independent rights. Use the independent [general GIS Icon Manager plan](unified-gis-icon-manager.md) and [offline working reference](../examples/icon-manager/README.md) instead of copying the website.
+
+The library is **for general GIS symbolization**, and KMZ exporting is only a dedicated adapter. Imported KML/KMZ never receives these replacement icons automatically: [style preservation](kml-kmz-symbol-preservation.md).
+
 ## Decision procedure (agent-ready)
 
 1. **Importing existing KML/KMZ?** Do **not** choose anything from this catalog. Start with the original document and bundled icon resources, preserve its Style / StyleMap / styleUrl, color, scale and assets. See [preservation contract](kml-kmz-symbol-preservation.md).

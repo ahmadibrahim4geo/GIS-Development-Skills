@@ -9,7 +9,7 @@ class EarthViewIntegrationTests(unittest.TestCase):
     def setUpClass(cls):
         cls.project = json.loads((ROOT / "references/project-catalog.json").read_text(encoding="utf-8"))
         cls.apis = json.loads((ROOT / "references/free-geospatial-apis.json").read_text(encoding="utf-8"))
-        cls.page = (ROOT / "index.html").read_text(encoding="utf-8")
+        cls.page = (ROOT / "explorer.html").read_text(encoding="utf-8")
 
     def test_single_reference_no_unlicensed_code_copy(self):
         rows = [x for x in self.project["projects"] if x["url"] == "https://github.com/colincode0/earth-view"]
@@ -25,7 +25,7 @@ class EarthViewIntegrationTests(unittest.TestCase):
         self.assertEqual(ids.count("copernicus-dataspace"), 1)
 
     def test_all_synchronized_surfaces_reference_guide(self):
-        for path in ("index.html", "README.md", "README.ar.md",
+        for path in ("explorer.html", "README.md", "README.ar.md",
                      "references/desktop-and-web.md",
                      "skills/geospatial-web-mapping/SKILL.md",
                      "skills/gis-desktop-application-development/SKILL.md",

@@ -47,7 +47,7 @@ class SkillPackValidationTests(unittest.TestCase):
             skill = root / "skills" / "demo" / "SKILL.md"
             skill.parent.mkdir(parents=True)
             skill.write_text("---\nname: demo\ndescription: A GIS demo.\n---\n\nHello\n", encoding="utf-8")
-            index = root / "index.html"
+            index = root / "explorer.html"
             index.write_text('<div class="stat"><strong>09</strong><span data-i18n="statSkill">Skills</span></div>',
                              encoding="utf-8")
             self.assertTrue(any("skill counter" in x for x in validator.inspect_repository(root)))
