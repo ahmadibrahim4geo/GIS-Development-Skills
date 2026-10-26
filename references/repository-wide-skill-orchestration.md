@@ -6,6 +6,14 @@
 
 Use the [GIS-first upstream repositories guide](repository-orchestration-upstream-sources.md) for tool registries, QGIS interoperability, skill specification, optional runtime graphs and adversarial evaluation. Sources are curated examples, not automatically installed packages. Verify a reference and its license before borrowing implementation details.
 
+## Goal-first user intent and outcomes
+
+Before picking GIS libraries or writing code, the hosting AI must answer in the user's language: **What is the user trying to achieve? What deliverable will satisfy the goal? How can success be observed? What must remain unchanged?** Separate requirements expressly supplied by the user from tentative recommendations. Preserve all original user wording and GIS data provenance; do not change repositories, output formats, CRS, versions, licenses or technology without review.
+
+For multi-step work, a plan must identify `goal`, `target`, `desired_outcomes`, `success_criteria`, and per-task acceptance criteria. The [intent guide](intent-orchestration-workflow.md) and [offline compiler](../scripts/intent_router.py) define the reviewable prompt → goal → ordered workflow handoff. Compilation determines deterministic dependency order and task ownership, **not AI semantic understanding or permission to execute**.
+
+**Operating loop:** interpret → propose goal/criteria → user review → route → inspect tools and permissions → execute ordered tasks → test actual outcomes → report. Any material change in the goal, affected repository or requested side effects creates a new plan revision; do not silently resume under prior consent.
+
 ## One entrypoint, multiple specialists
 
 User prompt -> Prompt Intent Orchestrator -> reviewed plan -> GIS Development Router -> specialist task graph -> Security and preflight -> available host tools -> independent verification -> Development Journal and user report.
