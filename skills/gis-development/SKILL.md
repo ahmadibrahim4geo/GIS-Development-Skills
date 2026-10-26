@@ -6,9 +6,9 @@ license: MIT
 
 # GIS Development — Agent Router
 
-**Free-first:** use [no-cost policy](../../references/free-first-policy.md). Disclose commercial host/API limits and offer verified free alternatives; never silently require payment.
+**Free-first:** [policy](../../references/free-first-policy.md); disclose paid limits and verify free alternatives.
 
-**Offline examples:** [DEM slope](../../examples/terrain-slope/README.md), [STAC](../../examples/stac-offline/README.md). [License audit](../../references/upstream-license-audit.md) is not native proof.
+**Offline fixtures:** [DEM](../../examples/terrain-slope/README.md) · [STAC](../../examples/stac-offline/README.md). [License audit](../../references/upstream-license-audit.md) is not runtime proof.
 
 **Intake:** [Plan and approve free-form requests](../prompt-intent-orchestrator/SKILL.md) before GIS routing.
 
@@ -54,6 +54,4 @@ license: MIT
 6. **Evidence:** complete [the acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and check it with [the evidence validator](../../scripts/validate_evidence.py). Record T0–T4 honestly; generic syntax checks or UI mockups are **not** native GIS execution.
 7. **References:** [projects](../../references/project-catalog.json), [APIs](../../references/free-geospatial-apis.json), [data](../../references/geospatial-data-repositories.json) require source/license verification.
 
-**GIS source selection:** [GIS Software & Source Code Registry](../../references/gis-software-source-registry.md) is the guided entrypoint to the [canonical project catalog](../../references/project-catalog.json). Choose complete applications versus libraries, renderers or servers before loading Desktop, Web Mapping, Processing, Remote Sensing, Mobile or API specialist skills. Source listings do not authorize code execution or imply license compatibility.
-
-**More:** [full guide](../../references/gis-development-full-guidance.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
+**More:** [software sources](../../references/gis-software-source-registry.md) · [full guide](../../references/gis-development-full-guidance.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
