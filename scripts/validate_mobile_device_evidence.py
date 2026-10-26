@@ -42,9 +42,10 @@ def validate_report(report):
             errors.append(prefix + " invalid status")
         if not isinstance(ident, str) or not ident.startswith("MOB-"):
             errors.append(prefix + " invalid case_id")
-        elif (platform, ident) in seen:
+        elif isinstance(platform, str) and (platform, ident) in seen:
             errors.append(prefix + " duplicate platform/case_id")
-        seen.add((platform, ident))
+        if isinstance(platform, str) and isinstance(ident, str):
+            seen.add((platform, ident))
         if status == "NOT_RUN":
             if not isinstance(row.get("reason"), str) or not row["reason"].strip():
                 errors.append(prefix + " NOT_RUN requires honest reason")
