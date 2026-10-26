@@ -1,3 +1,9 @@
+# Unreleased — cross-platform system capability and permission skill (2026-10-26)
+
+- Add platform-wide System Capabilities & Permissions Agent Skill, external skill/library candidate registry, native permission/driver acceptance contract and offline standard-library planner with tests.
+- Integrate Device Context, GIS Router, Security, Desktop, Web, UX/E2E, bilingual Explorer/homepage and Project Wizard; preserve protected author details and existing runtime engines.
+- Native permission prompts, hardware, Bluetooth/GPS and Windows installations have NOT been tested by these offline additions.
+
 # Unreleased — four GIS UI quality specialist skills (2026-10-26)
 
 - Add independent GIS UI Command Audit, Desktop E2E Testing, GIS Data Flow Diagnostics, and UI/UX Design & Testing skills, linked to the intent gateway, GIS Router, native Desktop Development, Security Guardian and shared evidence journal.
