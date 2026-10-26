@@ -8,6 +8,7 @@
 | --- | --- | --- | --- | --- |
 | Intake / approval planning | [Prompt Intent Orchestrator](../skills/prompt-intent-orchestrator/SKILL.md) | Exact user prompt and protected requirements | Reviewable goal, revision, task IDs, acceptance criteria, candidate tools | Draft JSON never authenticates approval |
 | Domain routing | [GIS Development Router](../skills/gis-development/SKILL.md) | Reviewed plan | One domain `owner_skill` per task, dependencies, delegated helpers | Neither router nor lexical hints execute |
+| Optional tool capability selection | [MCP Tool Orchestration](../skills/mcp-integration-and-tool-orchestration/SKILL.md) | Reviewed task, selected owner, host-declared MCP/native inventory | Candidate tool IDs, requested effects, fallbacks, missing capabilities | Tool inventories do not authenticate connection, grant consent or execute |
 | Security / preflight | [GIS Security Guardian](../skills/gis-security-guardian/SKILL.md) | Planned side effects, sources, user/host permissions | Allowed/rejected actions, runtime and license gaps | Host consent remains authoritative |
 | Execution and artifact changes | Selected domain specialist (see [router](../skills/gis-development/SKILL.md)) | Task ID, inputs, authorization, dependencies | Actual output paths, observed tool results, rollback notes | Only host-authorized tools can act |
 | Conditional command/data diagnostics | [UI Command Audit](../skills/gis-ui-command-audit/SKILL.md) + [Data Flow Diagnostics](../skills/gis-data-flow-diagnostics/SKILL.md) | `command_id`, `trace_id`, input/output identity | Command binding and import→render→save→readback trace, independently checked | Static/synthetic trace is not native proof |
@@ -82,6 +83,8 @@ For user-facing application tasks, route only needed [GIS UI quality specialists
 These are **orthogonal owners**. A single tested import workflow may invoke all four, but simple GIS calculations need not load them. Share `command_id` and `trace_id` without duplicating processing engines. Linux CI tests T0/T1 static/fixture contracts; real Windows UI Automation and host GIS T2–T4 remain separate evidence.
 
 ## Shared command lifecycle
+
+For MCP or native adapters, first apply [candidate tool routing and fallback policy](mcp-integration-workflow.md): original plan → one GIS specialist owner → host-advertised capability/effect match → Security Guardian / host-granted permission → actual execution → fresh evidence. Missing tools or revoked privileges block that operation; a local planner never verifies an MCP connection. Preserve task_id, command_id, trace_id and artifacts across adapters.
 
 For every executable action: define trigger, responsible specialist, host tool and permission, input validation, expected side effects, outputs, error handling, cancellation, rollback and verification. UI controls must have working handlers or be explicitly disabled. For file conversions require output readback and preservation checks. For network services require consent, credentials handling, attribution, limits and offline behavior.
 

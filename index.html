@@ -230,7 +230,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     <!-- Preserve manifest-backed IDs and semantic counters exactly -->
     <div class="studio-metrics">
         <div class="p-2 text-center">
-          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">30</strong>
+          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">31</strong>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Installable Agent Skills</span>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مهارة برمجية قابلة للتثبيت</span>
         </div>
@@ -285,7 +285,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
               <option value="qgis-plugin-development">QGIS Plugins</option>
               <option value="qgis-engine-integration">QGIS Engine · Core / Desktop / Server</option>
               <option value="kml-kmz-engineering">Google Earth · KML/KMZ</option>
-              <option value="gis-desktop-application-development">Desktop GIS · WPF / Qt / Cesium</option><option value="gis-mobile-application-development">Mobile GIS · Android / iOS / Offline</option>
+              <option value="gis-desktop-application-development">Desktop GIS · WPF / Qt / Cesium</option><option value="mcp-integration-and-tool-orchestration">MCP · Agent Tool Integration</option><option value="gis-mobile-application-development">Mobile GIS · Android / iOS / Offline</option>
               <option value="geospatial-web-mapping">Web GIS · 2D / 3D</option>
               <option value="remote-sensing-pipelines">Remote Sensing</option>
               <option value="geospatial-data-processing">GDAL · Vector / Raster</option>
@@ -339,6 +339,31 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         <details><summary><span data-lang="en">Are the skills free and do they require internet?</span><span data-lang="ar">هل المهارات مجانية أو تحتاج إنترنت؟</span></summary><p><span data-lang="en">The skills are free open documentation. Installation and some APIs use the internet. Many GIS test examples run offline; some vendor runtimes and services have separate terms.</span><span data-lang="ar">الوثائق والمهارات مفتوحة ومجانية، لكن التثبيت وبعض APIs يحتاجان الإنترنت؛ أمثلة كثيرة تعمل محليًا وبعض البرامج والخدمات لها شروط مستقلة.</span></p></details>
       </div>
       <p class="studio-qa-note"><span data-lang="en">More optional detail:</span><span data-lang="ar">مزيد من التفاصيل الاختيارية:</span> <a href="docs/HOW_TO_USE.md" style="color:var(--ui-lime);text-decoration:underline">English guide</a> · <a href="docs/HOW_TO_USE.ar.md" style="color:var(--ui-lime);text-decoration:underline">الدليل العربي</a> · <a href="references/free-first-policy.md" style="color:var(--ui-lime);text-decoration:underline"><span data-lang="en">Licensing terms</span><span data-lang="ar">التراخيص</span></a>. <span data-lang="en">Everything needed for a first successful use is explained above on this page.</span><span data-lang="ar">طريقة الاستخدام الأساسية كاملة موجودة هنا في الصفحة نفسها.</span></p>
+    </section>
+
+    <!-- Optional MCP integration: documentation only, not a live connector -->
+    <section id="mcp-integration" class="py-14 border-t border-slate-800/70" aria-labelledby="mcpTitle">
+      <div class="flex flex-col lg:flex-row gap-8 lg:items-start">
+        <div class="lg:w-2/5">
+          <span class="text-xs font-bold text-emerald-300 tracking-widest"><span data-lang="en">OPTIONAL · AI TOOL INTEGRATION</span><span data-lang="ar">اختياري · تكامل أدوات الذكاء الاصطناعي</span></span>
+          <h2 id="mcpTitle" class="mt-3 text-3xl font-bold text-white">MCP <span data-lang="en">Tool Orchestration</span><span data-lang="ar">وتوجيه الأدوات</span></h2>
+          <p class="mt-4 text-slate-300 leading-relaxed"><span data-lang="en">Connect a reviewed GIS plan with MCP servers or native tools actually offered by your coding agent. Keep specialist ownership, least privilege, test evidence and a safe fallback when an MCP server is unavailable.</span><span data-lang="ar">اربط خطة GIS المعتمدة بخوادم MCP أو الأدوات المحلية التي يوفرها الوكيل بالفعل، مع الحفاظ على مسؤول المهارة والصلاحيات المحدودة والاختبارات والبدائل الآمنة.</span></p>
+          <p class="text-xs text-amber-200 mt-3"><span data-lang="en">No connected server or OS permission is included. Offline routing previews do not execute code or prove a native test.</span><span data-lang="ar">لا يتضمن تثبيت سيرفر أو صلاحيات جهاز. مخطط التوجيه المحلي لا يشغّل البرامج ولا يثبت نجاح اختبار فعلي.</span></p>
+        </div>
+        <div class="lg:w-3/5">
+          <ol class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <li class="glass-card rounded-xl p-4"><b class="text-sky-300">01 · PLAN</b><p class="text-sm text-slate-300 mt-2"><span data-lang="en">Review outcome, domain owner and acceptance tests.</span><span data-lang="ar">راجع الهدف ومسؤول المهمة ومعايير النجاح.</span></p></li>
+            <li class="glass-card rounded-xl p-4"><b class="text-sky-300">02 · DISCOVER</b><p class="text-sm text-slate-300 mt-2"><span data-lang="en">Identify actual host tool capabilities and fallback.</span><span data-lang="ar">تحقق من قدرات الأدوات الفعلية والبديل المتاح.</span></p></li>
+            <li class="glass-card rounded-xl p-4"><b class="text-sky-300">03 · AUTHORIZE</b><p class="text-sm text-slate-300 mt-2"><span data-lang="en">Check server origin, consent, paths and side effects.</span><span data-lang="ar">افحص مصدر السيرفر والصلاحيات والملفات والآثار.</span></p></li>
+            <li class="glass-card rounded-xl p-4"><b class="text-sky-300">04 · VERIFY</b><p class="text-sm text-slate-300 mt-2"><span data-lang="en">Execute only via the real host; validate outputs and log evidence.</span><span data-lang="ar">نفذ فقط عبر المضيف الحقيقي واختبر النتائج ووثق الأدلة.</span></p></li>
+          </ol>
+          <div class="flex flex-wrap gap-4 mt-5 text-sm">
+            <a class="text-sky-300 underline" href="skills/mcp-integration-and-tool-orchestration/SKILL.md"><span data-lang="en">MCP skill</span><span data-lang="ar">مهارة MCP</span></a>
+            <a class="text-sky-300 underline" href="references/mcp-integration-workflow.md"><span data-lang="en">Command &amp; data flow</span><span data-lang="ar">تدفق الأوامر والبيانات</span></a>
+            <a class="text-sky-300 underline" href="examples/mcp-tool-routing/README.md"><span data-lang="en">Offline example</span><span data-lang="ar">مثال محلي</span></a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ORCHESTRATION — Documentation; no live AI execution -->
@@ -1141,6 +1166,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',closeMobileMenu));
     document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMobileMenu();closeSkillModal();}});
     const studioTopics={
+      'mcp-integration-and-tool-orchestration':{en:'Route optional MCP/native tools only after discovering real host capabilities and confirming per-action permissions.',ar:'وجّه أدوات MCP أو الأدوات المحلية بعد التحقق من قدرات الوكيل والصلاحيات لكل أمر.',enTask:'Review my approved GIS development plan and actual host tool inventory. Map capability IDs to available MCP or native tools with fallback, least-privilege checks, and verifiable tests. Do not claim a connected server, OS permission or native test unless observed.',arTask:'راجع خطة GIS المعتمدة وجرد الأدوات الفعلي داخل الوكيل. حدد قدرات MCP والأدوات المحلية والبدائل والصلاحيات والاختبارات، ولا تدّعِ وجود سيرفر أو اختبار فعلي دون دليل.'},
       'gis-internationalization-arabic':{en:'Test UTF-8 text, Arabic RTL/BiDi UI and map labels without changing geometry or GIS field identifiers.',ar:'اختبر عرض العربية واتجاه RTL والنص المختلط وملصقات الخرائط دون تعديل الإحداثيات أو أسماء الحقول.',enTask:'Inspect my GIS application localization architecture. Preserve stable field identifiers and geometry while adding tested Arabic RTL/BiDi strings, Unicode attributes and map-label rendering. Propose a numbered plan before edits, implement approved changes, and verify exports in the actual GIS host when available.',arTask:'افحص دعم العربية واللغات في تطبيق GIS، وحافظ على أسماء الحقول والمعرّفات والإحداثيات، وطوّر عرض العربية واتجاه RTL/BiDi وملصقات الخرائط والسمات النصية. اعرض خطة مرقمة قبل التعديل ثم نفذ ما اعتمدته واختبر النواتج داخل البرنامج عند توفره.'},
       'gis-development':{en:'For mixed GIS projects, start with the core router.',ar:'للمشروعات التي تضم عدة تخصصات ابدأ بالـ GIS Router.',enTask:'Inspect my existing GIS project. Identify its runtime, CRS, data formats and key risks. Propose a numbered plan for my approval; execute approved tasks using suitable GIS skills; provide real test evidence and a numbered development journal, stating any tests not run.',arTask:'افحص مشروع GIS الموجود وحدد بيئة التشغيل ونظام الإحداثيات والصيغ والمخاطر. اعرض خطة مرقمة لاعتمادها، ونفّذ المهام المعتمدة بالمهارات المناسبة، واختبر النتائج الفعلية وسجّل كل خطوة، ووضح ما لم تختبره.'},
       'arcgis-toolbox-engineering':{en:'ArcGIS Pro and ArcMap require the correct licensed host, version and ArcPy environment.',ar:'أدوات ArcGIS Pro أو ArcMap تحتاج الإصدار والترخيص وبيئة ArcPy المناسبة.',enTask:'Inspect my ArcGIS toolbox (.pyt / script tool) and identify the ArcGIS version and parameter requirements. Propose a reviewed plan. Implement approved changes; test validation, CRS, outputs and ArcPy in the actual host if available. Record evidence, failures and numbered progress.',arTask:'افحص أداة ArcGIS وملف .pyt أو script tool، وحدد الإصدار والبارامترات. اعرض خطة للاعتماد، ثم نفّذ المعتمد واختبر المدخلات ونظام الإحداثيات والنواتج داخل ArcGIS إن توفر، وسجّل الاختبارات والتعديلات بالترتيب.'},

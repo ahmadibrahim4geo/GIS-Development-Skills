@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 30,
+  "skill_count": 31,
   "skill_ids": [
     "agent-development-journal",
     "arcgis-toolbox-engineering",
@@ -26,6 +26,7 @@
     "gis-ui-ux-design-testing",
     "global-mapper-development",
     "kml-kmz-engineering",
+    "mcp-integration-and-tool-orchestration",
     "prompt-intent-orchestrator",
     "qgis-engine-integration",
     "qgis-plugin-development",

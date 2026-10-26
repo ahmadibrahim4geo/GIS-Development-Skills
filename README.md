@@ -16,6 +16,15 @@
   <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml"><img alt="Validation workflow status" src="https://img.shields.io/github/actions/workflow/status/ahmadibrahim4geo/GIS-Development-Skills/validate.yml?style=for-the-badge&amp;label=Tests&amp;labelColor=172B3C"></a>
 </p>
 
+## MCP Tool Orchestration — optional AI agent execution adapters (26 October 2026)
+
+The new [MCP Integration & Tool Orchestration skill](skills/mcp-integration-and-tool-orchestration/SKILL.md) lets the reviewed GIS plan route **declared capabilities** to host-discovered MCP servers or authorized native tools, with least-privilege side-effect scopes, explicit fallback and blocked states. [Architecture and command/data flow](references/mcp-integration-workflow.md) · [capability taxonomy](references/mcp-capability-registry.json) · [offline candidate router](scripts/mcp_tool_router.py) · [fictional example](examples/mcp-tool-routing/README.md). Integrates with Intent → GIS Router → MCP candidates → Security/host permissions → domain execution → native readback/DoneProof → Journal. **No MCP server or GIS runtime is installed or tested by this skill; a JSON candidate is not permission or execution evidence.**
+
+```bash
+python scripts/mcp_tool_router.py --plan examples/mcp-tool-routing/plan.example.json --inventory examples/mcp-tool-routing/inventory.example.json
+python scripts/intent_router.py --plan examples/mcp-tool-routing/plan.example.json --workflow --mcp-inventory examples/mcp-tool-routing/inventory.example.json --format json
+```
+
 ## GIS Mobile Application Development
 
 Use the [standalone Android/iOS Mobile GIS skill](skills/gis-mobile-application-development/SKILL.md) with [architecture](references/mobile-gis-architecture.md), [offline edit and conflict-safe synchronization](references/mobile-gis-offline-sync.md), [secure sign-in/session handling](references/mobile-gis-authentication.md), and the [device testing matrix](references/mobile-gis-device-test-matrix.md). The [Project Wizard](project-wizard.html) now routes mobile workflows and captures Android/iOS, offline and authentication choices. The deterministic [offline T1 fixture](examples/mobile-gis/README.md) is not a tested mobile binary or successful hardware GNSS/login flow.
@@ -59,7 +68,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>30 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>31 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -71,7 +80,7 @@ A practical development skill and curated reference hub for building reliable Ar
 
 ## End-to-end ownership and publication checks — 26 October 2026
 
-**30 installable skills; one accountable specialist per task.** The complete handoff is: **original prompt → reviewed goal/criteria → GIS Router + domain owner → Security preflight → authorized execution → command/data/native tests → DoneProof evidence vs original plan → Development Journal → user delivery**. [Responsibility matrix](references/repository-wide-skill-orchestration.md), [release readiness audit](docs/RELEASE_READINESS_AUDIT_2026-10-26.md) and [publishing checklist](PUBLISHING.md) explain what each component actually does.
+**31 installable skills; one accountable specialist per task.** The complete handoff is: **original prompt → reviewed goal/criteria → GIS Router + domain owner → Security preflight → authorized execution → command/data/native tests → DoneProof evidence vs original plan → Development Journal → user delivery**. [Responsibility matrix](references/repository-wide-skill-orchestration.md), [release readiness audit](docs/RELEASE_READINESS_AUDIT_2026-10-26.md) and [publishing checklist](PUBLISHING.md) explain what each component actually does.
 
 For control handlers use [UI Command Audit](skills/gis-ui-command-audit/SKILL.md); for import → engine → render → save/export → readback use [GIS Data Flow Diagnostics](skills/gis-data-flow-diagnostics/SKILL.md). Native desktop/mobile tests are separate. Skill instructions do **not** grant OS permissions, run agents or make unobserved work real.
 
@@ -97,7 +106,7 @@ Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planni
 
 ## Four GIS UI quality engineering skills — 26 October 2026
 
-The repository now includes **30 installable GIS specialist skills**, including four independent but interoperable quality workflows:
+The repository now includes **31 installable GIS specialist skills**, including four independent but interoperable quality workflows:
 
 - [GIS UI Command Audit](skills/gis-ui-command-audit/SKILL.md): inspect menu/Ribbon/icon declarations and command bindings with a [read-only offline scanner](scripts/gis_ui_command_audit.py).
 - [GIS Desktop E2E Testing](skills/gis-desktop-e2e-testing/SKILL.md): native Windows UI Automation and WebView2 acceptance workflow, with real-host T3/T4 evidence required.
