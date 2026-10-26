@@ -54,8 +54,8 @@ license: MIT
 
 ## Global rules (always apply)
 
-Use the [repository-wide execution contract](../../references/repository-wide-skill-orchestration.md), [full guidance](../../references/gis-development-full-guidance.md), and [Security Guardian](../gis-security-guardian/SKILL.md). Protect source data, verify CRS/units/NoData, preserve provenance, check licenses/versions, measure performance and test output readback. Obtain required approval before consequential writes; host permissions remain authoritative. Record T0–T4 evidence using the [acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py). Never treat static checks as native GIS or GUI proof.
+Use the [repository-wide execution contract](../../references/repository-wide-skill-orchestration.md), [full guidance](../../references/gis-development-full-guidance.md), and [Security Guardian](../gis-security-guardian/SKILL.md). Protect source data, verify CRS/units/NoData, preserve provenance, check licenses/versions, measure performance and test output readback. Obtain required approval before consequential writes; host permissions remain authoritative. Use [DoneProof](../completion-evidence/SKILL.md). Record T0–T4 evidence using the [acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py). Never treat static checks as native GIS or GUI proof.
 
 **Shared checks:** [security](../../references/geospatial-security.md) · [performance](../../references/geospatial-performance.md).
 
-**More:** [GIS software registry](../../references/gis-software-source-registry.md) · [full guide](../../references/gis-development-full-guidance.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
+**More:** [GIS software registry](../../references/gis-software-source-registry.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
