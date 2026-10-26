@@ -22,9 +22,22 @@ npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development
 
 If the installer does not discover the skill, verify the folder `skills/gis-development/SKILL.md` and the installed version of the skills CLI.
 
+## Ownership and DoneProof release preflight
+
+Run the [read-only ownership auditor](scripts/audit_skill_graph.py) and see the [release readiness report](docs/RELEASE_READINESS_AUDIT_2026-10-26.md). The example DoneProof report below is structural-only and explicitly **not** native evidence.
+
+```bash
+python scripts/audit_skill_graph.py
+python scripts/verify_completion.py templates/doneproof.example.json
+# For a completed real task and independently inspected test output:
+python scripts/verify_completion.py report.json --plan reviewed-plan.json --require-verified
+```
+
+The last command fails closed without a matching original reviewed plan. Passing checks never authenticates the user's authorization or remote/native behavior.
+
 ## Release checklist
 
-1. Run `python scripts/validate_catalog.py`, `python scripts/validate_api_catalog.py`, `python scripts/validate_skill_pack.py`, and `python -m unittest discover -s tests -v`.
+1. Run `python scripts/audit_skill_graph.py`, `python scripts/build_manifest.py --check`, `python scripts/validate_catalog.py`, `python scripts/validate_api_catalog.py`, `python scripts/validate_skill_pack.py`, and `python -m unittest discover -s tests -v`.
 2. Ensure every new source has license and source-availability notes.
 3. Wait for the GitHub Actions checks to pass on the commit being released.
 4. Tag the tested commit with the appropriate next semantic version (for example `vX.Y.Z` after accepting that exact commit) and publish a GitHub Release when ready.

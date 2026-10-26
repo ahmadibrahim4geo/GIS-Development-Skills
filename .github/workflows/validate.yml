@@ -40,6 +40,10 @@ jobs:
         run: python scripts/validate_skill_pack.py
       - name: Check generated manifest and counters
         run: python scripts/build_manifest.py --check
+      - name: Audit skill routing and ownership coverage
+        run: python scripts/audit_skill_graph.py
+      - name: Validate DoneProof illustrative report structure
+        run: python scripts/verify_completion.py templates/doneproof.example.json
       - name: Validate acceptance evidence example
         run: python scripts/validate_evidence.py templates/gis-acceptance.example.json
       - name: Validate inline website JavaScript syntax
@@ -57,4 +61,4 @@ jobs:
           python -m py_compile examples/network-topology/audit_network.py examples/data-catalogs/search_sources.py examples/stac-offline/inspect_items.py examples/terrain-slope/slope_ascii.py examples/api-ingestion/weather_to_geojson.py examples/batch-export/export_layouts_arcgis_pro.py
       - name: Syntax check helpers and native acceptance scripts
         run: |
-          python -m py_compile scripts/development_journal.py scripts/build_manifest.py scripts/audit_license_catalog.py scripts/validate_data_repositories.py scripts/validate_evidence.py scripts/monitor_public_services.py scripts/benchmark_gis_examples.py fixtures/generate_binary_fixtures.py native_tests/arcgis_pro_acceptance.py native_tests/qgis_acceptance.py
+          python -m py_compile scripts/intent_router.py scripts/verify_completion.py scripts/audit_skill_graph.py scripts/development_journal.py scripts/build_manifest.py scripts/audit_license_catalog.py scripts/validate_data_repositories.py scripts/validate_evidence.py scripts/monitor_public_services.py scripts/benchmark_gis_examples.py fixtures/generate_binary_fixtures.py native_tests/arcgis_pro_acceptance.py native_tests/qgis_acceptance.py

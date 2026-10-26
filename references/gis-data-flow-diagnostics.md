@@ -46,7 +46,7 @@ Events allow an optional `crs` (e.g. EPSG:4326), `artifact_id`, `error_code` and
 python scripts/gis_data_flow_diagnostics.py --trace examples/data-flow-diagnostics/trace.example.json --format json
 ```
 
-The standard-library checker identifies: invalid schema, duplicate/out-of-order phases, missing required phases, failures, nonnumeric counts and lossless feature-count mismatch; it does **not** read GIS files or prove geometry/CRS correctness. A phase may be intentionally omitted only when not required in the declared workflow. Real GIS output checks need a host/provider reader.
+The standard-library checker identifies: invalid schema, duplicate/out-of-order phases, missing required phases, failures, nonnumeric counts, lossless feature-count mismatch, missing mandatory IMPORT/READBACK spans for lossless operations, and mismatched declared EXPORT/READBACK artifact identities; it does **not** read GIS files or prove geometry/CRS correctness. A phase may be intentionally omitted only when not required in the declared workflow. Real GIS output checks need a host/provider reader.
 
 **Comparable invariant depends on operation:** for lossless copy, feature count and compatible structure should be conserved; for clipping, aggregation or generalization, changes can be correct. Reprojection preserves feature semantics but can alter coordinate bytes and tolerances; a raw hash mismatch alone is not corruption. KML/KMZ style fidelity requires icons/folders/StyleMaps/relative assets and independent roundtrip tests. Raster parity must account for NoData, resampling and georeferencing.
 

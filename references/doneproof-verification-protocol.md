@@ -10,7 +10,7 @@ Native GIS and desktop tests: T0/T1 unit/static work does not prove T2 engine ex
 
 ## JSON report v1 (optional for complex tasks)
 
-Top-level: `schema_version: "1.0"`, nonempty `task_id`, current nonempty `revision`, `overall_status`, and a nonempty `criteria` list.
+Top-level: `schema_version: "1.0"`, nonempty `task_id`, reviewed plan `request_id`, current `revision`, `overall_status`, and a nonempty `criteria` list. For plan-bound release verification, `request_id` is required; older structure-only reports without it remain readable.
 
 Each criterion: unique `id`, clear `statement`, `status` (`verified|partial|failed|blocked|not_run`), and `evidence` list. For `partial|blocked|not_run`, `reason` is required. For `verified`, passing evidence is required without failed observations; for `failed`, failing evidence is required; `not_run` cannot include observed evidence.
 
@@ -27,4 +27,4 @@ Each observation: `type` (`command_output|artifact_readback|provider_receipt|nat
 
 The [stdlib offline consistency checker](../scripts/verify_completion.py) cannot prove that a claimed command ran or a log is genuine. Host tools must independently verify sources and authorization. No fabricated evidence; never put private credentials in public reports. A simple read-only answer does not need a JSON file.
 
-The [sample report](../templates/doneproof.example.json) is **illustrative**; its passing observation is not a real run. Use `--require-verified` as a claim/release consistency gate only after corroborating sources.
+The [sample report](../templates/doneproof.example.json) is **illustrative**; its passing observation is not a real run. Run `python scripts/verify_completion.py report.json --plan reviewed-plan.json --require-verified` for the release-claim consistency gate. The checker rejects an omitted/reworded/extra criterion or mismatched request/task/revision. Passing the checker is not permission or genuine external evidence. The host must inspect referenced observations.

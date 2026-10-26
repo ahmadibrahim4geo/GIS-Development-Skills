@@ -16,6 +16,7 @@ SKILLS = ROOT / "skills"
 DOMAINS = (
     ("kml-kmz-engineering", ("kml", "kmz", "placemark", "كي ام ال", "كى ام ال", "ستايل km", "ملفات الكي")),
     ("gis-desktop-application-development", ("desktop", "exe", "wpf", "زيرث", "zearth", "سطح المكتب", "برنامج مستقل")),
+    ("gis-mobile-application-development", ("android", "ios app", "iphone", "gnss", "offline sync", "mobile gis", "موبايل", "هاتف", "تطبيق جوال", "تطبيق أندرويد", "تطبيق اندرويد")),
     ("terrain-hydrology-lidar", ("terrain", "dem", "elevation", "lidar", "تضاريس", "ارتفاع", "المبالغة", "الترين")),
     ("coordinate-reference-systems", ("crs", "epsg", "projection", "grid", "graticule", "خطوط الطول", "دوائر العرض", "الإحداثي", "مسقط")),
     ("gis-cartography-symbology", ("symbol", "style", "icon", "symbology", "أيقون", "الرموز", "ألوان", "ملصق")),
@@ -31,6 +32,7 @@ DOMAINS = (
     ("geospatial-ai-agents", ("agent", "geoai", "automation", "وكيل", "الذكاء الاصطناعي")),
     ("geospatial-data-catalogs", ("data catalog", "data repository", "gis catalog", "stac catalog", "كتالوج البيانات", "فهرس البيانات", "مستودعات البيانات")),
     ("gis-internationalization-arabic", ("i18n", "localization", "arabic ui", "bilingual", "تعريب", "ثنائي اللغة", "تعدد اللغات")),
+    ("system-capabilities-and-permissions", ("device permissions", "system permissions", "camera permission", "microphone permission", "bluetooth permission", "صلاحيات الجهاز", "أذونات الجهاز", "إذن الكاميرا")),
     ("gis-device-context", ("sunlight", "device location", "device time", "time zone", "solar position", "ضوء الشمس", "موقع الجهاز", "المنطقة الزمنية")),
     ("gis-ui-command-audit", ("command audit", "unwired command", "dead button", "ribbon audit", "audit icons", "فحص الأوامر", "جرد الأوامر", "أيقونات غير مربوطة", "الأزرار مش شغالة")),
     ("gis-desktop-e2e-testing", ("end-to-end desktop", "desktop e2e", "ui automation", "uiautomation", "flaUI", "webview2 testing", "اختبارات التفاعل", "اختبار تشغيل الواجهة", "اختبار تطبيق ويندوز")),
@@ -91,7 +93,7 @@ def validate_plan(plan, known=None, require_approved=False):
     if plan.get("language") not in ("ar", "en"):
         errors.append("language must be ar or en")
     status = plan.get("status")
-    if status not in STATUSES:
+    if not isinstance(status, str) or status not in STATUSES:
         errors.append("status must be draft or approved")
     for field in ("assumptions", "open_questions"):
         val = plan.get(field)
@@ -130,7 +132,7 @@ def validate_plan(plan, known=None, require_approved=False):
         if task.get("priority") not in ("must", "should", "could"):
             errors.append(pref + ".priority invalid")
         risk = task.get("risk")
-        if risk not in RISKS:
+        if not isinstance(risk, str) or risk not in RISKS:
             errors.append(pref + ".risk invalid")
         if risk in ("high", "critical"):
             high_risk = True
@@ -156,7 +158,7 @@ def validate_plan(plan, known=None, require_approved=False):
             errors.append(pref + ".tools must be array")
             continue
         for item in tools:
-            if not isinstance(item, dict) or not _text(item.get("tool_id")) or item.get("side_effect") not in SIDE_EFFECTS:
+            if not isinstance(item, dict) or not _text(item.get("tool_id")) or not isinstance(item.get("side_effect"), str) or item["side_effect"] not in SIDE_EFFECTS:
                 errors.append(pref + ".tools entries need tool_id and valid side_effect")
             elif item["side_effect"] == "destructive":
                 high_risk = True
@@ -247,12 +249,13 @@ def compile_workflow(plan, known=None, require_approved=False):
                 continue
             selected = task.get("skills")
             owner = task.get("owner_skill")
-            if owner is not None and (not isinstance(selected, list) or owner not in selected
-                                      or owner == "gis-security-guardian"):
-                errors.append("tasks[{}].owner_skill must be a selected non-security specialist".format(i))
+            if not isinstance(owner, str) or not isinstance(selected, list) or owner not in selected or owner in (
+                    "gis-security-guardian", "completion-evidence", "agent-development-journal",
+                    "prompt-intent-orchestrator", "gis-development"):
+                errors.append("tasks[{}].owner_skill must be a selected accountable domain specialist".format(i))
             if isinstance(selected, list) and selected and all(
                     skill in ("gis-security-guardian", "agent-development-journal",
-                              "prompt-intent-orchestrator", "gis-development") for skill in selected):
+                              "completion-evidence", "prompt-intent-orchestrator", "gis-development") for skill in selected):
                 errors.append("tasks[{}] has no accountable domain specialist".format(i))
     result = {
         "schema_version": "1.0",
@@ -280,10 +283,7 @@ def compile_workflow(plan, known=None, require_approved=False):
         return result
     task_order = ordered_tasks(plan["tasks"])
     for step_number, task in enumerate(task_order, start=1):
-        owner = task.get("owner_skill") or next(
-            (x for x in task["skills"] if x not in (
-                "gis-security-guardian", "agent-development-journal",
-                "prompt-intent-orchestrator", "gis-development")), None)
+        owner = task["owner_skill"]
         step = {
             "step": step_number,
             "task_id": task["id"],
@@ -298,6 +298,8 @@ def compile_workflow(plan, known=None, require_approved=False):
             "preflight": ["host tool availability", "host authorization", "GIS/data/license compatibility",
                           "security guardian", "data preservation and rollback"],
             "verification": "T0/T1 where possible; T2-T4 only on real target runtimes",
+            "completion_gate": "completion-evidence (DoneProof); validate each acceptance criterion against fresh results",
+            "journal_owner": "agent-development-journal",
         }
         result["steps"].append(step)
         result["handoffs"].extend(

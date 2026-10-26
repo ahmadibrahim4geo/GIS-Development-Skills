@@ -18,7 +18,9 @@ Optional structured report: [DoneProof JSON example](../../templates/doneproof.e
 
 ```bash
 python scripts/verify_completion.py path/to/report.json
-python scripts/verify_completion.py path/to/report.json --require-verified
+python scripts/verify_completion.py path/to/report.json --plan path/to/reviewed-plan.json --require-verified
 ```
+
+Final release claims must use `--plan` to compare all required criteria with the original reviewed plan (matching request ID, task ID and revision). Include `request_id` in the report. Without a plan this is a structural diagnostic only, not release verification.
 
 The checker validates **structure and claim consistency only**. It cannot run tests, authenticate a provider receipt or enforce agent tool dispatch. Follow the [full verification protocol](../../references/doneproof-verification-protocol.md) and [OpenAI Skill Creator / Superpowers evaluation](../../references/skill-creator-superpowers-review.md). Upstream tools are reference-only, not installed or copied.

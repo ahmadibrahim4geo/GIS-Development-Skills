@@ -69,6 +69,22 @@ A practical development skill and curated reference hub for building reliable Ar
   <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website ↗</a>
 </p>
 
+## End-to-end ownership and publication checks — 26 October 2026
+
+**30 installable skills; one accountable specialist per task.** The complete handoff is: **original prompt → reviewed goal/criteria → GIS Router + domain owner → Security preflight → authorized execution → command/data/native tests → DoneProof evidence vs original plan → Development Journal → user delivery**. [Responsibility matrix](references/repository-wide-skill-orchestration.md), [release readiness audit](docs/RELEASE_READINESS_AUDIT_2026-10-26.md) and [publishing checklist](PUBLISHING.md) explain what each component actually does.
+
+For control handlers use [UI Command Audit](skills/gis-ui-command-audit/SKILL.md); for import → engine → render → save/export → readback use [GIS Data Flow Diagnostics](skills/gis-data-flow-diagnostics/SKILL.md). Native desktop/mobile tests are separate. Skill instructions do **not** grant OS permissions, run agents or make unobserved work real.
+
+```bash
+python scripts/audit_skill_graph.py
+python scripts/build_manifest.py --check
+python -m unittest discover -s tests -v
+# Only after real tests and an original reviewed plan:
+python scripts/verify_completion.py report.json --plan reviewed-plan.json --require-verified
+```
+
+The final checker confirms report/plan **consistency**, not that logs or external side effects are genuine. T2–T4 remain NOT RUN unless real host/runtime evidence exists.
+
 ## DoneProof — Evidence Before Completion (26 October 2026)
 
 [DoneProof](skills/completion-evidence/SKILL.md) is a cross-cutting skill that maps **each acceptance criterion** to fresh, current-revision observed evidence before claiming work done, fixed, merged or sent. Its [stdlib report checker](scripts/verify_completion.py) validates JSON consistency **not genuine tool execution**. See the [protocol](references/doneproof-verification-protocol.md), [example](templates/doneproof.example.json) and [OpenAI Skill Creator / Superpowers review](references/skill-creator-superpowers-review.md). GIS T0–T4 evidence requirements remain unchanged.

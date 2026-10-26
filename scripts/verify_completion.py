@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 STATES = {"verified", "partial", "failed", "blocked", "not_run"}
+MAX_REPORT_BYTES = 262_144
 KINDS = {"command_output", "artifact_readback", "provider_receipt", "native_interaction", "manual_review"}
 
 
@@ -76,26 +77,82 @@ def validate(data):
             errors.append(prefix + ": unsupported verified claim")
         if status == "failed" and failed < 1:
             errors.append(prefix + ": failed claim lacks failure observation")
-    if overall == "verified" and (len(statuses) != len(items) or any(s != "verified" for s in statuses)):
-        errors.append("Overall verified requires every criterion verified")
-    if overall == "not_run" and any(s != "not_run" for s in statuses):
-        errors.append("Overall not_run requires all criteria not_run")
-    if overall == "failed" and "failed" not in statuses:
-        errors.append("Overall failed requires a failed criterion")
+    if len(statuses) == len(items) and isinstance(overall, str) and overall in STATES:
+        expected = ("failed" if "failed" in statuses else
+                    "verified" if all(v == "verified" for v in statuses) else
+                    "not_run" if all(v == "not_run" for v in statuses) else
+                    "blocked" if all(v == "blocked" for v in statuses) else "partial")
+        if overall != expected:
+            errors.append("overall_status must be " + expected + " for the criteria provided")
     return errors
+
+def validate_against_plan(report, plan):
+    """Bind report to original plan criteria; does not verify external execution."""
+    errors = []
+    if not isinstance(report, dict) or not isinstance(plan, dict):
+        return ["Report and plan must be JSON objects"]
+    for field in ("request_id", "revision"):
+        if not nonempty(report.get(field)) or report.get(field) != plan.get(field):
+            errors.append("Plan binding: " + field + " missing or mismatched")
+    tasks = plan.get("tasks")
+    if not isinstance(tasks, list):
+        return errors + ["Plan binding: tasks must be a list"]
+    matches = [t for t in tasks if isinstance(t, dict) and t.get("id") == report.get("task_id")]
+    if len(matches) != 1:
+        return errors + ["Plan binding: task_id must select exactly one plan task"]
+    expected = matches[0].get("acceptance_criteria")
+    if not isinstance(expected, list) or not expected or any(not nonempty(v) for v in expected):
+        return errors + ["Plan binding: task acceptance_criteria must be nonempty strings"]
+    if len(set(expected)) != len(expected):
+        errors.append("Plan binding: duplicate acceptance criteria in plan")
+    criteria = report.get("criteria")
+    if not isinstance(criteria, list) or any(not isinstance(c, dict) for c in criteria):
+        return errors + ["Plan binding: report criteria invalid"]
+    observed = [c.get("statement") for c in criteria]
+    if any(not nonempty(v) for v in observed):
+        return errors + ["Plan binding: report has invalid criterion statements"]
+    if len(observed) != len(expected) or set(observed) != set(expected):
+        errors.append("Plan binding: report omits, adds, or changes acceptance criteria")
+    return errors
+
+
+def unique_pairs(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("Duplicate JSON key: " + key)
+        result[key] = value
+    return result
+
+
+def reject_constant(value):
+    raise ValueError("Non-finite JSON value: " + value)
+
+
+def read_json(path):
+    if not path.is_file() or path.stat().st_size > MAX_REPORT_BYTES:
+        raise ValueError("Missing or oversized JSON input")
+    return json.loads(path.read_text(encoding="utf-8-sig"),
+                      object_pairs_hook=unique_pairs, parse_constant=reject_constant)
 
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("report", type=Path)
     p.add_argument("--require-verified", action="store_true")
+    p.add_argument("--plan", type=Path, help="Original reviewed intent plan: detect omitted criteria")
     args = p.parse_args(argv)
     try:
-        data = json.loads(args.report.read_text(encoding="utf-8"))
+        data = read_json(args.report)
+        plan = read_json(args.plan) if args.plan else None
     except (OSError, ValueError) as exc:
         print("ERROR:", exc)
         return 1
     errors = validate(data)
+    if args.plan:
+        errors.extend(validate_against_plan(data, plan))
+    if args.require_verified and not args.plan:
+        errors.append("Release gate requires --plan to prevent omitted acceptance criteria")
     if args.require_verified and data.get("overall_status") != "verified":
         errors.append("Release gate: overall_status is not verified")
     if errors:

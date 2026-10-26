@@ -85,3 +85,13 @@ python scripts/gis_data_flow_diagnostics.py --trace examples/data-flow-diagnosti
 هذه الصفحة دليل استخدام، وليست إثباتًا لتشغيل تطبيق GIS أو وكيل ذكاء اصطناعي داخل المتصفح.
 
 لدمج محرك QGIS في **تطبيق مستقل** وليس إضافة داخل QGIS، استخدم `qgis-engine-integration` ودليل [هندسة المحرك](../references/qgis-engine-integration.md) و[مثال PyQGIS الأصلي](../examples/qgis-engine/README.md)، مع مراعاة التراخيص ونسخ المكتبات واختبارات التشغيل.
+
+## إثبات الإنجاز ومطابقة التقرير مع الخطة
+
+يوضح [عقد المسؤوليات](../references/repository-wide-skill-orchestration.md) مَن يفهم الطلب ومَن يوجّهه ومَن ينفّذ ومَن يتحقق ومَن يوثّق. افحص وصول المهارات بالأمر `python scripts/audit_skill_graph.py`. وعند تسليم مهمة فعلية يجب الحفاظ على `request_id` و`revision` ومعايير القبول كاملة ومطابقتها مع تقرير DoneProof:
+
+```bash
+python scripts/verify_completion.py report.json --plan reviewed-plan.json --require-verified
+```
+
+نتيجة PASS تعني أن **التقرير متوافق بنيويًا مع الخطة**، لا أن البرنامج اشتغل فعليًا أو أن السجلات الخارجية سليمة دون فحصها. تُسجّل الاختبارات الأصلية غير المنفذة NOT RUN.
