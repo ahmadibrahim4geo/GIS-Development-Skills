@@ -44,6 +44,7 @@ license: MIT
 | Gazetteer search / scale-aware labels | [World Gazetteer](../../references/world-gazetteer-reference-layer.md) |
 | WKID, projection, transformation, vertical datum | [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md) |
 | Symbology / map layout | [Cartography](../gis-cartography-symbology/SKILL.md) |
+| OS/device permissions, GPS/USB/serial/BLE, time, scoped files, sensors, external adapters | [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) (platform-wide) |
 | Device time/location/sunlight | [Device Context](../gis-device-context/SKILL.md) |
 | KML/KMZ / Earth viewers | [KML](../kml-kmz-engineering/SKILL.md) · [Earth](../../references/google-earth-pro-engineering.md) · [Timeline](../../references/historical-imagery-timeline.md) |
 
