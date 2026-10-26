@@ -12,8 +12,6 @@ license: MIT
 
 **Intake:** [Global contract](../../references/repository-wide-skill-orchestration.md) → [Intent review](../prompt-intent-orchestrator/SKILL.md) → Router.
 
-**Goal-first handoff:** the [Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md) establishes the user's desired outcome and testable success criteria before this router selects skills. [Workflow contract](../../references/repository-wide-skill-orchestration.md); no direct prompt-to-execution shortcut.
-
 **Route:** [decision tree](../../references/agent-decision-tree.md); rendering ≠ analysis.
 
 ## Choose specialists
@@ -55,7 +53,7 @@ license: MIT
 
 ## Global rules (always apply)
 
-Use the [optional MCP/native tool lifecycle](../../references/mcp-integration-workflow.md) when an agent requests external tools; it never grants permissions or replaces domain ownership. Use the [repository-wide execution contract](../../references/repository-wide-skill-orchestration.md), [full guidance](../../references/gis-development-full-guidance.md), and [Security Guardian](../gis-security-guardian/SKILL.md). Protect source data, verify CRS/units/NoData, preserve provenance, check licenses/versions, measure performance and test output readback. Obtain required approval before consequential writes; host permissions remain authoritative. Use [DoneProof](../completion-evidence/SKILL.md). Record T0–T4 evidence using the [acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py). Never treat static checks as native GIS or GUI proof.
+Use [optional MCP/native routing](../../references/mcp-integration-workflow.md) after domain ownership and host permission checks. Use the [repository-wide execution contract](../../references/repository-wide-skill-orchestration.md), [full guidance](../../references/gis-development-full-guidance.md), and [Security Guardian](../gis-security-guardian/SKILL.md). Protect source data, verify CRS/units/NoData, preserve provenance, check licenses/versions, measure performance and test output readback. Obtain required approval before consequential writes; host permissions remain authoritative. Use [DoneProof](../completion-evidence/SKILL.md). Record T0–T4 evidence using the [acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py). Never treat static checks as native GIS or GUI proof.
 
 **Shared checks:** [security](../../references/geospatial-security.md) · [performance](../../references/geospatial-performance.md).
 
