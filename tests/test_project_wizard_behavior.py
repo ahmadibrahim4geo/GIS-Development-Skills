@@ -21,8 +21,8 @@ const vm = require('node:vm');
 const fs = require('node:fs');
 const code = fs.readFileSync(process.argv[2], 'utf8');
 const selectors = {
-  type: ['desktop','pro','arcmap','dual','qgis','qgis-engine','web','remote','database','geoai'],
-  locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host'], qualityFocus:['standard','audit','e2e','flow','ux','all'], deviceNeeds:['none','time','location','hardware','all']
+  type: ['desktop','mobile','pro','arcmap','dual','qgis','qgis-engine','web','remote','database','geoai'],
+  locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host'], qualityFocus:['standard','audit','e2e','flow','ux','all'], deviceNeeds:['none','time','location','hardware','all'], mobilePlatform:['android','ios','both'], mobileNetwork:['local','offline-sync','online'], mobileSignIn:['guest','optional','required']
 };
 const elements = Object.create(null);
 function node(id) {
@@ -39,7 +39,7 @@ for(const [id, values] of Object.entries(selectors)){
   node(id).value=values[0];
 }
 for (const id of ['lang','heading','intro','typeLabel','localeLabel','filesLabel',
-  'licenseLabel','qualityLabel','deviceLabel','jsonHint','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','downloadJson','resultLabel','result','status',
+  'licenseLabel','qualityLabel','deviceLabel','mobileSettings','mobilePlatformLabel','mobileNetworkLabel','mobileSignInLabel','jsonHint','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','downloadJson','resultLabel','result','status',
   'homeLink','roadmapLink','kmlLink','reliabilityLink','workflowLink','wizardPrivacy']) node(id);
 node('download').disabled = true;
 node('downloadJson').disabled = true;
@@ -145,6 +145,27 @@ assert.equal(e('result').textContent,'');
 e('generate').onclick();
 assert.match(e('result').textContent,/PyQGIS/);
 assert.match(e('result').textContent,/skills\/qgis-plugin-development\/SKILL.md/);
+e('type').value='mobile';e('type').fire('change');
+assert.equal(e('mobileSettings').hidden,false);
+assert.match(e('qualityFocus').options.find(x=>x.value==='e2e').textContent,/Android\/iOS/);
+e('mobilePlatform').value='both';e('mobilePlatform').fire('change');
+e('mobileNetwork').value='offline-sync';e('mobileNetwork').fire('change');
+e('mobileSignIn').value='required';e('mobileSignIn').fire('change');
+e('qualityFocus').value='e2e';e('qualityFocus').fire('change');
+e('generate').onclick();
+assert.match(e('result').textContent,/Mobile GIS implementation and native testing/);
+assert.match(e('result').textContent,/Android \+ iOS/);
+assert.match(e('result').textContent,/mobile-gis-offline-sync.md/);
+e('downloadJson').onclick();
+const mobilePlan=JSON.parse(lastBlob.parts[0]);
+assert.equal(mobilePlan.tasks[1].owner_skill,'gis-mobile-application-development');
+assert.ok(mobilePlan.tasks[1].skills.includes('system-capabilities-and-permissions'));
+assert.ok(mobilePlan.tasks[1].skills.includes('gis-device-context'));
+assert.ok(!mobilePlan.tasks[1].skills.includes('gis-desktop-e2e-testing'));
+assert.ok(mobilePlan.constraints.some(x=>x.includes('Android + iOS')));
+console.log('MOBILE_WIZARD:'+JSON.stringify(mobilePlan));
+e('qualityFocus').value='standard';e('qualityFocus').fire('change');
+e('type').value='qgis';e('type').fire('change');e('generate').onclick();
 e('lang').onclick();
 assert.equal(document.documentElement.lang,'ar');
 assert.equal(document.documentElement.dir,'rtl');

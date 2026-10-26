@@ -1,3 +1,10 @@
+# Unreleased — dedicated GIS Mobile Application Development (2026-10-26)
+
+- Add independent Android/iOS mobile GIS skill with architecture, local geodata, GNSS, secure sign-in, offline-first synchronization and native release/test guidelines.
+- Route mobile projects through the general GIS router and bilingual Project Wizard; keep Android/iOS device verification separate from Windows Desktop E2E.
+- Introduce offline edit/idempotency/conflict regression fixture plus mobile device-evidence schema validator; do not claim an APK/IPA, a GNSS reading or live OAuth test from repository CI.
+- Update the 29-skill inventory, free-first policies and mobile sources in the canonical 188-entry catalog, without overriding the existing author footer or desktop workflows.
+
 # Unreleased — cross-platform system capability and permission skill (2026-10-26)
 
 - Add platform-wide System Capabilities & Permissions Agent Skill, external skill/library candidate registry, native permission/driver acceptance contract and offline standard-library planner with tests.

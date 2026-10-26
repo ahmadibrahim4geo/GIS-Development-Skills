@@ -3248,7 +3248,7 @@
       "repository_access_checked_on": "2026-10-26",
       "license_metadata_unverified": "GPL-2.0",
       "programming_language": "C++",
-      "primary_skill": "qgis-engine-integration",
+      "primary_skill": "gis-mobile-application-development",
       "source_availability": "public-repository;build-not-verified"
     },
     {
@@ -3272,7 +3272,7 @@
       "repository_access_checked_on": "2026-10-26",
       "license_metadata_unverified": "GPL-2.0",
       "programming_language": "C++",
-      "primary_skill": "qgis-engine-integration",
+      "primary_skill": "gis-mobile-application-development",
       "source_availability": "public-repository;build-not-verified"
     },
     {
@@ -3459,7 +3459,7 @@
       "repository_access_checked_on": "2026-10-26",
       "license_metadata_unverified": "BSD-2-Clause",
       "programming_language": "C++",
-      "primary_skill": "gis-desktop-application-development",
+      "primary_skill": "gis-mobile-application-development",
       "source_availability": "public-repository;build-not-verified"
     },
     {
@@ -3746,7 +3746,7 @@
       "repository_access_checked_on": "2026-10-26",
       "license_metadata_unverified": "MIT",
       "programming_language": "C#",
-      "primary_skill": "gis-desktop-application-development",
+      "primary_skill": "gis-mobile-application-development",
       "source_availability": "public-repository;build-not-verified"
     },
     {
