@@ -30,3 +30,7 @@ compatibility: Design reviews and static checks are cross-platform; visual and n
 - Prefer host-native Qt/WPF/WinUI component systems or accessible web controls as appropriate. Do not require a Windows-only or commercial design toolkit for all users.
 
 **Deliverables:** UI map/wireflow, design tokens/component contract, keyboard/accessibility matrix, RTL/LTR and DPI screenshots, semantic test scenarios, defect prioritization and verified vs NOT RUN test tier outcomes. Use the [UI/UX checklist](../../examples/ui-ux/README.md) for acceptance examples.
+
+## OS/device consent and failure UX
+
+For [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md), design accessible, bilingual permission rationale, allow/deny/revoke/timeout/missing-hardware states, user-invoked retry and manual/offline alternatives. Never fake a native OS permission prompt with a site dialog. Verify keyboard and RTL behavior; pass native proof to Desktop E2E.
