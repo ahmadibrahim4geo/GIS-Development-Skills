@@ -71,3 +71,5 @@ Do not duplicate processing algorithms in UI. Any failed handoff identifies its 
 ## Conflict handling and reporting
 
 If UX wants to relocate a button while Command Audit/E2E refer to an ID, preserve stable command ID and update UI locator mapping. If Data Flow detects a lossless feature-count mismatch, stop claiming successful import even when the UI looks correct. If one test fails, identify root ownership, make minimal reviewed repair and rerun that path plus regressions. Report affected files, target build, actual test logs and untested platforms.
+
+**System integration ownership:** [System Capabilities & Permissions](../skills/system-capabilities-and-permissions/SKILL.md) defines API/permission/fallback contracts; Security owns authorization, UX designs consent, Desktop E2E tests real allow/deny/revoke. A static candidate registry does not prove OS consent.
