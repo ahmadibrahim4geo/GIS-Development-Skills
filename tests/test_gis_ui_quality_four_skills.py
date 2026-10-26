@@ -91,6 +91,10 @@ class StaticUIAuditTests(unittest.TestCase):
         self.assertEqual({"DECLARED_BINDING": 6, "NO_BINDING": 1, "UNINSPECTED": 1},
                          report["status_counts"])
         self.assertEqual([], report["duplicate_declared_ids"])
+        self.assertEqual([], report["missing_icon_assets"])
+        save = next(item for item in report["entries"] if item["ui_element_id"] == "save-project")
+        self.assertEqual("icon.svg", save["icon_ref"])
+
         self.assertEqual([], report["errors"])
         self.assertTrue(all(i["runtime_status"] == "NOT RUN" for i in report["entries"]))
         statuses = {i["ui_element_id"]: i["static_status"] for i in report["entries"]}
@@ -113,6 +117,22 @@ class StaticUIAuditTests(unittest.TestCase):
             for name in ("one.html", "two.html"):
                 (Path(tmp) / name).write_text("<button id='open'>Open</button>", encoding="utf-8")
             self.assertEqual([], ui.audit_tree(tmp)["duplicate_declared_ids"])
+
+    def test_missing_relative_icon_is_detected_without_fetching(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            (Path(tmp) / "panel.html").write_text(
+                "<button id='save' data-command='save' data-icon='missing.svg'>Save</button>",
+                encoding="utf-8")
+            result = ui.audit_tree(tmp)
+            self.assertEqual(1, len(result["missing_icon_assets"]))
+            self.assertEqual("icon asset missing", result["missing_icon_assets"][0]["reason"])
+        # A remotely referenced icon is not downloaded or treated as a broken local file.
+        with tempfile.TemporaryDirectory() as tmp:
+            (Path(tmp) / "panel.html").write_text(
+                '<button id="save" data-icon="https://example.com/icon.svg">Save</button>',
+                encoding="utf-8")
+            result = ui.audit_tree(tmp)
+            self.assertEqual([], result["missing_icon_assets"])
 
     def test_broken_or_dtd_xaml_is_reported_and_not_executed(self):
         with tempfile.TemporaryDirectory() as tmp:
