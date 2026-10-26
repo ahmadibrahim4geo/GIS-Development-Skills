@@ -56,11 +56,11 @@ class WebsiteRuntimeIntegrityTests(unittest.TestCase):
             for page in PAGES:
                 data = (ROOT / page).read_text(encoding="utf-8")
                 for index, (attributes, source) in enumerate(
-                    re.findall(r"<script\\b([^>]*)>(.*?)</script>", data, flags=re.I | re.S)
+                    re.findall(r"<script\b([^>]*)>(.*?)</script>", data, flags=re.I | re.S)
                 ):
-                    if re.search(r"\\bsrc\\s*=", attributes, flags=re.I):
+                    if "src=" in attributes.lower():
                         continue
-                    if re.search(r"type=['\\\"](?:application/json|application/ld\\+json)['\\\"]", attributes, flags=re.I):
+                    if "application/json" in attributes.lower() or "application/ld+json" in attributes.lower():
                         continue
                     if not source.strip():
                         continue
