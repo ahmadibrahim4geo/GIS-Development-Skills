@@ -7,6 +7,8 @@ license: MIT
 # Clean-Room Reference Implementation — GIS Development Skills
 
 
+**Free-first licensing:** [policy and commercial exceptions](../../references/free-first-policy.md).
+
 ## Purpose
 Reproduce observable functionality and interoperable data behavior of reference software using independently authored code, without copying protected source, assets, credentials, or restricted services.
 
