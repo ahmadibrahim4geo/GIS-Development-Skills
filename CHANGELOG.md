@@ -1,3 +1,10 @@
+# Unreleased — GIS Software & Source Code Registry (2026-10-26)
+
+- Extend the existing canonical project catalog from 148 to 188 **unique public repository links** (40 new, none copied) covering desktop, web, mobile, engines, spatial servers, .NET and remote sensing.
+- Add a developer-facing decision guide and bilingual website entrypoint, plus router/Desktop/Web specialist links; preserve the author section and existing catalog rather than creating a second data store.
+- Record preliminary GitHub availability/license metadata as **unverified for reuse**; no native builds, source imports or implied GIS engine/runtime compatibility.
+- Add catalog field validation and regression tests for repository source categories, primary-skill routing, unique URLs, synchronized counters and disclaimers.
+
 # Unreleased — Goal-first GIS skill workflow and Project Wizard integration (2026-10-26)
 
 - Compile a user/AI-reviewed goal, desired outcomes, success criteria, owners and dependency graph into a read-only ordered workflow using `scripts/intent_router.py --workflow`; no autonomous execution or authenticated permissions claimed.
