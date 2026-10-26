@@ -115,6 +115,10 @@ def scan_xaml(text, path):
         attributes = element.attrib
         ident = attr(attributes, "AutomationId") or attr(attributes, "Name")
         handler = attr(attributes, "Command") or attr(attributes, "Click")
+        # A submenu container with no action is structural UI, not a command.
+        if tag == "MenuItem" and not handler and any(
+                local_name(child.tag) == "MenuItem" for child in element):
+            continue
         binding_kind = "Command" if attr(attributes, "Command") else "Click" if attr(attributes, "Click") else ""
         label = attr(attributes, "Name") if tag in {"CheckBox", "RadioButton"} else ""
         label = attr(attributes, "Content") or attr(attributes, "Header") or attr(attributes, "ToolTip") or label
