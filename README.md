@@ -73,7 +73,7 @@ Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planni
 
 ## Goal-first prompt → GIS workflow (26 October 2026)
 
-A GIS development prompt now has a dedicated **goal → outcomes → acceptance → specialist routing → security preflight → ordered execution → verification** path. The [offline workflow compiler](scripts/intent_router.py) converts an AI-reviewed JSON plan into a deterministic **nonexecuting** blueprint, and the [bilingual Project Wizard](project-wizard.html) can capture the intended user goal and observable success criteria. Read the [shared contract](references/repository-wide-skill-orchestration.md) and [intent guide](references/intent-orchestration-workflow.md). The AI host must still interpret the request, obtain actual permission, invoke real tools and report real results.
+A GIS development prompt now has a dedicated **goal → outcomes → acceptance → specialist routing → security preflight → ordered execution → verification** path. The [offline workflow compiler](scripts/intent_router.py) converts an AI-reviewed JSON plan into a deterministic **nonexecuting** blueprint, and the [bilingual Project Wizard](project-wizard.html) can capture the intended user goal and observable success criteria and export a **draft JSON plan** that the offline compiler can validate (without executing it). Read the [shared contract](references/repository-wide-skill-orchestration.md) and [intent guide](references/intent-orchestration-workflow.md). The AI host must still interpret the request, obtain actual permission, invoke real tools and report real results.
 
 ## Prompt Intent & Execution Orchestrator — 25 October 2026
 
