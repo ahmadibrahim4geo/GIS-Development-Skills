@@ -41,6 +41,8 @@ If two specialists propose competing implementations, pause and produce one arch
 
 **Cross-platform GIS app sources:** use the [GIS Software & Source Code Registry](../../references/gis-software-source-registry.md) for actual desktop/web/mobile upstream applications and libraries. Use the desktop [Technology Directory](../../references/desktop-gis-technology-directory.md) for focused engine and UI decisions. Public repositories are references, not proof of runtime compatibility.
 
+**Desktop quality gates:** for source command mapping read [UI Command Audit](../gis-ui-command-audit/SKILL.md); for actual Windows/Qt/WebView2 interactions use [Desktop E2E Testing](../gis-desktop-e2e-testing/SKILL.md); for import→engine→render→save/export tracing use [GIS Data Flow Diagnostics](../gis-data-flow-diagnostics/SKILL.md); for accessible layouts and bilingual flows use [UI/UX Design & Testing](../gis-ui-ux-design-testing/SKILL.md). Share [one command/trace evidence contract](../../references/gis-ui-quality-coordination.md); never substitute mock tests for native outcomes. Do not invoke every specialist unless the approved task needs it.
+
 ## Start here: guided navigation
 
 For a complete step-by-step implementation, use the [Desktop GIS Engineering Playbook](../../references/desktop-application-engineering.md). It contains concrete component contracts, architecture recipes, file-format acceptance matrices, UI requirements, security controls, and T0-T4 release gates.
