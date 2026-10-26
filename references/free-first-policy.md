@@ -11,7 +11,7 @@
 5. A model-running agent must have deterministic local actions without purchasing a hosted LLM. Local/GPU computation and data transfer can still incur practical expenses. Earth Engine and hosted cloud datasets may require eligible accounts or quotas.
 6. If a free solution is not equivalent in accuracy/outputs to a paid GIS feature, state the limitation; do not invent feature parity.
 
-## All 23 specialists
+## All 27 specialists
 
 | Specialist | Free independent path | Optional dependency or limitation |
 | --- | --- | --- |
@@ -37,6 +37,10 @@
 | `gis-device-context` | Offline UTC/IANA timezone parsing with explicit coordinates; consented native/browser location API if supported | Precise geolocation needs permissions and hardware/services; Sunlight rendering needs real engine |
 | `gis-internationalization-arabic` | UTF-8/RTL/BiDi localization, open-source Unicode/ICU tooling, native GIS Arabic-label fixtures | Verify Arabic fonts, shaping and host-specific GeoPackage/ArcGIS/QGIS exports; commercial host licensing remains independent |
 | `kml-kmz-engineering` | Open-source ZIP/XML safety checks, KML parsing and GDAL/OGR/QGIS where supported | ArcGIS/Google Earth native runtime proprietary; source conversion may lose unsupported KML features |
+| `gis-ui-command-audit` | Free read-only Python standard-library source inventory for HTML/XAML GIS controls and command IDs | Native handler verification needs the target app and optionally free UIA/Qt tools; GitHub code access is not a runtime license |
+| `gis-desktop-e2e-testing` | Open-source FlaUI/pywinauto and eligible Playwright/Qt UI tests with synthetic data | Native Windows UI Automation requires Windows interactive session and permitted app; ArcGIS/Global Mapper host licenses stay separate |
+| `gis-data-flow-diagnostics` | Free local JSON trace validation and GDAL/QGIS-capable independent readback where licensed | Real GIS engines, data service permissions and optional remote telemetry require separate authorization |
+| `gis-ui-ux-design-testing` | Free design documentation, keyboard/manual checks, open-source Penpot/axe and reusable CSS/Qt/WPF patterns | Native assistive technology and proprietary UI frameworks or design services may have platform/license requirements |
 | `gis-security-guardian` | Offline Python 3 standard-library security audits and ZIP/KMZ archive guards; optional open-source scanners by risk | Third-party scanning services may require network/API keys; policy text does not enforce OS sandbox |
 
 ## API classification (catalog review, not live verification)

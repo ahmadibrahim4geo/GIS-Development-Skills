@@ -53,6 +53,17 @@ Each task node declares its input/output schema, side effects, idempotency, prec
 6. Order the task graph by dependency; independent read-only checks may run in parallel, but dependent writes are sequential and verify source SHA to prevent overwrites.
 7. Never infer a capability from a name. A renderer is not a processing engine, a GUI shell is not a GIS library, and a passing static test is not proof of native GUI operation.
 
+## Shared GIS UI quality specialists
+
+For user-facing application tasks, route only needed [GIS UI quality specialists](gis-ui-quality-coordination.md) and use their [public tool references](gis-ui-quality-upstream-sources.md):
+
+- [UI Command Audit](../skills/gis-ui-command-audit/SKILL.md): source inventory of icons/buttons, IDs and declared command bindings; no unsupported "working" claim from static code.
+- [Desktop E2E Testing](../skills/gis-desktop-e2e-testing/SKILL.md): actual interactive Windows/Qt/WebView2 user behavior and evidence, subject to native host availability.
+- [GIS Data Flow Diagnostics](../skills/gis-data-flow-diagnostics/SKILL.md): trace IDs and verified data lineage from input through engine, map, save/export/readback.
+- [UI/UX Design & Testing](../skills/gis-ui-ux-design-testing/SKILL.md): information architecture, keyboard, accessibility, bilingual layouts and functional design system.
+
+These are **orthogonal owners**. A single tested import workflow may invoke all four, but simple GIS calculations need not load them. Share `command_id` and `trace_id` without duplicating processing engines. Linux CI tests T0/T1 static/fixture contracts; real Windows UI Automation and host GIS T2–T4 remain separate evidence.
+
 ## Shared command lifecycle
 
 For every executable action: define trigger, responsible specialist, host tool and permission, input validation, expected side effects, outputs, error handling, cancellation, rollback and verification. UI controls must have working handlers or be explicitly disabled. For file conversions require output readback and preservation checks. For network services require consent, credentials handling, attribution, limits and offline behavior.

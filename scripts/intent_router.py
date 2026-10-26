@@ -32,6 +32,10 @@ DOMAINS = (
     ("geospatial-data-catalogs", ("data catalog", "data repository", "gis catalog", "stac catalog", "كتالوج البيانات", "فهرس البيانات", "مستودعات البيانات")),
     ("gis-internationalization-arabic", ("i18n", "localization", "arabic ui", "bilingual", "تعريب", "ثنائي اللغة", "تعدد اللغات")),
     ("gis-device-context", ("sunlight", "device location", "device time", "time zone", "solar position", "ضوء الشمس", "موقع الجهاز", "المنطقة الزمنية")),
+    ("gis-ui-command-audit", ("command audit", "unwired command", "dead button", "ribbon audit", "audit icons", "فحص الأوامر", "جرد الأوامر", "أيقونات غير مربوطة", "الأزرار مش شغالة")),
+    ("gis-desktop-e2e-testing", ("end-to-end desktop", "desktop e2e", "ui automation", "uiautomation", "flaUI", "webview2 testing", "اختبارات التفاعل", "اختبار تشغيل الواجهة", "اختبار تطبيق ويندوز")),
+    ("gis-data-flow-diagnostics", ("data flow", "data lineage", "gis diagnostics", "trace id", "تدفق البيانات", "تتبع البيانات", "رحلة البيانات", "تشخيص تدفق")),
+    ("gis-ui-ux-design-testing", ("ui/ux", "ui ux", "ux design", "usability testing", "accessibility audit", "تصميم واجهة", "تصميم الواجهة", "تجربة المستخدم", "اختبار قابلية الاستخدام")),
     ("global-mapper-development", ("global mapper", "جلوبال مابر", "جلوبال مابَر")),
 )
 RISKS = {"low", "medium", "high", "critical"}

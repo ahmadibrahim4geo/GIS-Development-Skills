@@ -60,6 +60,10 @@
 - Scope network/file permissions and require explicit approval for destructive edits, code execution from third parties, and outbound transfer of sensitive data. Documentation is not an OS sandbox.
 - Keep the security registry, workflows, tests, README languages, homepage and derived counters synchronized. Mark confirmed high/critical risks as release blockers until mitigated.
 
+## GIS UI quality specialists and evidence
+
+For GIS user-interface tasks, select only relevant [UI Command Audit](skills/gis-ui-command-audit/SKILL.md), [Desktop E2E](skills/gis-desktop-e2e-testing/SKILL.md), [GIS Data Flow Diagnostics](skills/gis-data-flow-diagnostics/SKILL.md) and [UI/UX Design & Testing](skills/gis-ui-ux-design-testing/SKILL.md) specialists. The [quality coordination contract](references/gis-ui-quality-coordination.md) establishes distinct ownership and common `command_id` / `trace_id` handoffs. Static declarations and synthetic traces never attest native Windows GIS runtime behavior; preserve T2–T4 NOT RUN when unavailable.
+
 ## Repository-wide request execution contract
 
 All specialist skills and agent entrypoints must follow [repository-wide orchestration](references/repository-wide-skill-orchestration.md). The intent orchestrator owns normalization and reviewed approval, GIS Development owns specialist routing, shared Security Guardian owns safety gates, specialists own domain execution, and the Development Journal and acceptance report own evidence. Never execute a consequential free-form prompt directly or allow a specialist to bypass host permissions. Documentation cannot itself enforce a host-level gate.

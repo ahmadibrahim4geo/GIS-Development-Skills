@@ -7,6 +7,15 @@
 <label for="locale" id="localeLabel">Application languages</label><select id="locale"><option value="ar-en">Arabic + English</option><option value="en">English only</option><option value="multi">Multilingual (Arabic, English, French and others)</option></select>
 <label for="files" id="filesLabel">KML/KMZ support</label><select id="files"><option value="yes">Required</option><option value="no">Not required</option></select>
 <label for="license" id="licenseLabel">Licensing preference</label><select id="license"><option value="free">Free/open-source components first</option><option value="host">Existing commercial GIS host allowed</option></select>
+<label for="qualityFocus" id="qualityLabel">Optional GIS quality workflow</label>
+<select id="qualityFocus">
+  <option value="standard">General GIS verification (default)</option>
+  <option value="audit">UI Command Audit</option>
+  <option value="e2e">Desktop E2E / WebView2 Testing</option>
+  <option value="flow">GIS Data Flow Diagnostics</option>
+  <option value="ux">UI/UX Design &amp; Testing</option>
+  <option value="all">All four quality specialists</option>
+</select>
 <label for="details" id="detailsLabel">What should your project do?</label><textarea id="details" rows="4" maxlength="4000" placeholder="Describe the desired features"></textarea>
 <label for="goal" id="goalLabel">What user outcome should this project achieve?</label><textarea id="goal" rows="2" maxlength="1500" placeholder="Describe the end result you need; the AI agent will review it"></textarea>
 <label for="success" id="successLabel">How will you know it works?</label><textarea id="success" rows="2" maxlength="1500" placeholder="Visible behavior, output files or tests you expect"></textarea>
@@ -16,13 +25,22 @@
 <p class="resources"><a id="workflowLink" href="references/repository-wide-skill-orchestration.md">Prompt-to-workflow guide</a> · <a id="roadmapLink" href="docs/PROJECT_WIZARD_PLAN.md">Implementation roadmap</a> · <a id="kmlLink" href="skills/kml-kmz-engineering/SKILL.md">KML/KMZ skill</a> · <a id="reliabilityLink" href="docs/PERFORMANCE_RELIABILITY.md">Reliability guide</a></p><p id="wizardPrivacy" class="privacy-note">Plans are generated locally. No AI is executed and no project text is uploaded.</p></main>
 <script>
 const $=id=>document.getElementById(id);let ar=false,output='',structuredPlan=null;
-const dict={en:{heading:'GIS Project Wizard',intro:'Build a free-first, testable GIS project plan.',typeLabel:'Project type',localeLabel:'Application languages',filesLabel:'KML/KMZ support',licenseLabel:'Licensing preference',detailsLabel:'What should your project do?',goalLabel:'Intended user outcome',successLabel:'Success criteria',goalPlaceholder:'Describe the final result you need',successPlaceholder:'Describe the observable tests or results',generate:'Generate plan',download:'Download Markdown',downloadJson:'Download workflow JSON',jsonHint:'Fill in the goal and success criteria to download draft JSON. This never approves or executes commands.',resultLabel:'Project plan',lang:'العربية',placeholder:'Describe the desired features',yes:'Required',no:'Not required',free:'Free/open-source components first',host:'Existing commercial GIS host allowed'},ar:{heading:'معالج مشاريع نظم المعلومات الجغرافية',intro:'أنشئ خطة مشروع قابلة للاختبار مع إعطاء الأولوية للمكونات المجانية.',typeLabel:'نوع المشروع',localeLabel:'لغات التطبيق',filesLabel:'دعم KML وKMZ',licenseLabel:'تفضيل الترخيص',detailsLabel:'ما الوظائف المطلوبة في المشروع؟',goalLabel:'الهدف النهائي الذي تريد تحقيقه',successLabel:'كيف نتحقق من نجاح العمل؟',goalPlaceholder:'صف النتيجة النهائية المطلوبة',successPlaceholder:'اكتب الاختبارات أو المخرجات التي تثبت النجاح',generate:'إنشاء الخطة',download:'تنزيل Markdown',downloadJson:'تنزيل خطة Workflow بصيغة JSON',jsonHint:'اكتب الهدف ومعايير النجاح لتنزيل خطة JSON كمسودة؛ لا تُعتبر موافقة ولا تنفذ أوامر.',resultLabel:'خطة المشروع',lang:'English',placeholder:'اكتب الوظائف المطلوبة',yes:'مطلوب',no:'غير مطلوب',free:'المكونات المجانية ومفتوحة المصدر أولاً',host:'السماح ببرنامج GIS تجاري متوفر'}};
+const dict={en:{heading:'GIS Project Wizard',intro:'Build a free-first, testable GIS project plan.',typeLabel:'Project type',localeLabel:'Application languages',filesLabel:'KML/KMZ support',licenseLabel:'Licensing preference',detailsLabel:'What should your project do?',qualityLabel:'Optional GIS quality workflow',goalLabel:'Intended user outcome',successLabel:'Success criteria',goalPlaceholder:'Describe the final result you need',successPlaceholder:'Describe the observable tests or results',generate:'Generate plan',download:'Download Markdown',downloadJson:'Download workflow JSON',jsonHint:'Fill in the goal and success criteria to download draft JSON. This never approves or executes commands.',resultLabel:'Project plan',lang:'العربية',placeholder:'Describe the desired features',yes:'Required',no:'Not required',free:'Free/open-source components first',host:'Existing commercial GIS host allowed'},ar:{heading:'معالج مشاريع نظم المعلومات الجغرافية',intro:'أنشئ خطة مشروع قابلة للاختبار مع إعطاء الأولوية للمكونات المجانية.',typeLabel:'نوع المشروع',localeLabel:'لغات التطبيق',filesLabel:'دعم KML وKMZ',licenseLabel:'تفضيل الترخيص',detailsLabel:'ما الوظائف المطلوبة في المشروع؟',qualityLabel:'مسار الجودة الإضافي للمشروع',goalLabel:'الهدف النهائي الذي تريد تحقيقه',successLabel:'كيف نتحقق من نجاح العمل؟',goalPlaceholder:'صف النتيجة النهائية المطلوبة',successPlaceholder:'اكتب الاختبارات أو المخرجات التي تثبت النجاح',generate:'إنشاء الخطة',download:'تنزيل Markdown',downloadJson:'تنزيل خطة Workflow بصيغة JSON',jsonHint:'اكتب الهدف ومعايير النجاح لتنزيل خطة JSON كمسودة؛ لا تُعتبر موافقة ولا تنفذ أوامر.',resultLabel:'خطة المشروع',lang:'English',placeholder:'اكتب الوظائف المطلوبة',yes:'مطلوب',no:'غير مطلوب',free:'المكونات المجانية ومفتوحة المصدر أولاً',host:'السماح ببرنامج GIS تجاري متوفر'}};
 const localeLabels={en:{'ar-en':'Arabic + English',en:'English only',multi:'Multilingual (Arabic, English, French and others)'},ar:{'ar-en':'العربية والإنجليزية',en:'الإنجليزية فقط',multi:'متعدد اللغات (العربية والإنجليزية والفرنسية وغيرها)'}};
 const stacks={desktop:'Qt/PySide or .NET/WPF; GDAL, PROJ; optional Cesium for 3D',pro:'ArcGIS Pro Python 3, ArcPy, .pyt/.atbx',arcmap:'Legacy ArcMap Python 2.7, ArcPy, .pyt/.tbx',dual:'Isolated ArcMap Python 2.7 and ArcGIS Pro Python 3 adapters; shared compatible logic only',qgis:'PyQGIS and Qt; plugin metadata and packaging','qgis-engine':'Version-matched QGIS Core/GUI/Analysis/Processing or QGIS Server, optional isolated PyQGIS; independent UI renderer; GDAL/PROJ when sufficient',web:'MapLibre GL JS, optional Cesium, standards-based geospatial services',remote:'GDAL, rasterio, xarray and documented data provenance',database:'PostGIS, spatial indexes and migration scripts',geoai:'Python geospatial ML stack with reproducible data and model validation'};
 
 const typeNames={
 en:{desktop:'Desktop GIS',pro:'ArcGIS Pro Toolbox',arcmap:'ArcMap Toolbox',dual:'ArcGIS Pro + ArcMap Toolbox',qgis:'QGIS Plugin','qgis-engine':'QGIS Engine / Standalone GIS',web:'Web GIS',remote:'Remote Sensing',database:'Spatial Database',geoai:'GeoAI'},
 ar:{desktop:'تطبيق GIS مكتبي',pro:'أدوات ArcGIS Pro',arcmap:'أدوات ArcMap',dual:'أداة لـ ArcGIS Pro وArcMap',qgis:'إضافة QGIS','qgis-engine':'محرك QGIS لتطبيق مستقل',web:'تطبيق خرائط ويب',remote:'الاستشعار عن بعد',database:'قاعدة بيانات مكانية',geoai:'الذكاء الاصطناعي الجغرافي'}};
+const qualityLabels={
+en:{standard:'General GIS verification (default)',audit:'UI Command Audit',e2e:'Desktop E2E / WebView2 Testing',flow:'GIS Data Flow Diagnostics',ux:'UI/UX Design & Testing',all:'All four quality specialists'},
+ar:{standard:'الفحوص الجغرافية العامة (افتراضي)',audit:'جرد أوامر وأيقونات الواجهة',e2e:'اختبار سطح المكتب وWebView2',flow:'تشخيص تدفق البيانات الجغرافية',ux:'تصميم واختبار تجربة المستخدم',all:'المهارات الأربع معًا'}
+};
+const qualityRoutes={
+ standard:[],audit:['gis-ui-command-audit'],e2e:['gis-desktop-e2e-testing'],
+ flow:['gis-data-flow-diagnostics'],ux:['gis-ui-ux-design-testing'],
+ all:['gis-ui-command-audit','gis-desktop-e2e-testing','gis-data-flow-diagnostics','gis-ui-ux-design-testing']
+};
 const skills={desktop:'gis-desktop-application-development',pro:'arcgis-toolbox-engineering',arcmap:'arcgis-toolbox-engineering',dual:'arcgis-toolbox-engineering',qgis:'qgis-plugin-development','qgis-engine':'qgis-engine-integration',web:'geospatial-web-mapping',remote:'remote-sensing-pipelines',database:'spatial-databases',geoai:'geospatial-ai-agents'};
 Object.assign(dict.en,{homeLink:'Back to GIS Skills homepage',workflowLink:'Prompt-to-workflow guide',roadmapLink:'Implementation roadmap',kmlLink:'KML/KMZ skill',reliabilityLink:'Reliability guide',wizardPrivacy:'Plans are generated locally. No AI is executed and no project text is uploaded.',statusInitial:'Choose a project type and generate a plan.',statusDirty:'Inputs changed. Regenerate the plan before downloading.',statusReady:'Plan generated. Review it before implementation.'});
 Object.assign(dict.ar,{homeLink:'العودة إلى الصفحة الرئيسية',workflowLink:'دليل تدفق الطلب إلى التنفيذ',roadmapLink:'دليل تطوير المشروع',kmlLink:'مهارة KML/KMZ',reliabilityLink:'دليل الأداء والثبات',wizardPrivacy:'إنشاء الخطة محليًا دون إرسال المدخلات إلى خادم أو تشغيل وكيل ذكاء اصطناعي.',statusInitial:'اختر نوع المشروع ثم أنشئ الخطة.',statusDirty:'تغيرت المدخلات. أنشئ الخطة من جديد قبل تنزيلها.',statusReady:'تم إنشاء الخطة. راجعها قبل التنفيذ.'});
@@ -34,8 +52,8 @@ function translate(){
   $('details').placeholder=t.placeholder;
   $('goal').placeholder=t.goalPlaceholder;
   $('success').placeholder=t.successPlaceholder;
-  for(const id of ['type','locale','files','license']){
-    const data=id==='type'?typeNames[lang]:id==='locale'?localeLabels[lang]:t;
+  for(const id of ['type','locale','files','license','qualityFocus']){
+    const data=id==='type'?typeNames[lang]:id==='locale'?localeLabels[lang]:id==='qualityFocus'?qualityLabels[lang]:t;
     for(const option of $(id).options)option.textContent=data[option.value];
   }
   $('status').textContent=output?t.statusReady:t.statusInitial;
@@ -50,6 +68,8 @@ function invalidate(){
 }
 function generatePlan(){
   const type=$('type').value,locale=$('locale').value,kml=$('files').value==='yes',commercial=$('license').value==='host';
+  const qualityFocus=$('qualityFocus').value;
+  const qualitySkills=qualityRoutes[qualityFocus]||[];
   const requirement=$('details').value.trim();
   const goal=$('goal').value.trim();
   const success=$('success').value.trim();
@@ -59,6 +79,7 @@ function generatePlan(){
   const references=['skills/prompt-intent-orchestrator/SKILL.md','references/repository-wide-skill-orchestration.md','skills/gis-development/SKILL.md','skills/'+skills[type]+'/SKILL.md','skills/gis-security-guardian/SKILL.md','references/agent-decision-tree.md','docs/PERFORMANCE_RELIABILITY.md'];
   if(locale!=='en')references.push('skills/gis-internationalization-arabic/SKILL.md');
   if(kml)references.push('skills/kml-kmz-engineering/SKILL.md');
+  if(qualitySkills.length)references.push('references/gis-ui-quality-coordination.md','references/gis-ui-quality-upstream-sources.md',...qualitySkills.map(x=>'skills/'+x+'/SKILL.md'));
   if(type==='qgis-engine')references.push('references/qgis-engine-integration.md','skills/coordinate-reference-systems/SKILL.md','skills/geospatial-data-processing/SKILL.md','skills/gis-security-guardian/SKILL.md');
   const list=references.map(x=>'- '+x);
   const phases=ar?[
@@ -98,12 +119,14 @@ function generatePlan(){
     '# خطة تنفيذ مشروع GIS','','## نوع المشروع',typeNames.ar[type],'','## الهدف المطلوب تحقيقه',goalSpec,'','## معايير النجاح',successSpec,'','## متطلبات المستخدم',requirements,'','## التقنيات المقترحة',stacks[type],
     '','## اللغات والتعريب',local,'','## التراخيص',license,'','## مراحل التنفيذ',...phases,'',
     '## اختبارات الجودة والثبات',...checks,'','## دعم KML/KMZ',fileSpec,'',
+    '## جودة الواجهة ومسار التحقق',qualityLabels.ar[qualityFocus],qualitySkills.length?'راجع جاهزية بيئة التشغيل واحتياج كل مهارة؛ لا تعتبر اختبارات Windows ناجحة دون تشغيل Windows فعلي.':'اختر مهارة جودة إضافية فقط إذا كانت مهمة المستخدم تتطلبها.','',
     '## تعليمات الوكيل البرمجي','استنتج الهدف من طلب المستخدم وراجعه ثم استخدم موجّه المهارات لإنشاء Workflow بمهام مرتبة واختبارات قابلة للتحقق. لا تنفذ بمجرد استلام البرومبت، ولا تعتبر هذه الخطة موافقة أو إذنًا بتنفيذ الأوامر:',...list,
     '','## مستوى التحقق','هذه خطة مقترحة وليست إثباتًا بنجاح تنفيذ المشروع.'
   ]:[
     '# GIS Project Implementation Plan','','## Project type',typeNames.en[type],'','## Intended user goal',goalSpec,'','## Observable success criteria',successSpec,'','## User requirements',requirements,'','## Suggested stack',stacks[type],
     '','## Application languages',local,'','## Licensing',license,'','## Implementation phases',...phases,'',
     '## Reliability and acceptance',...checks,'','## KML/KMZ',fileSpec,'',
+    '## UI quality and verification scope',qualityLabels.en[qualityFocus],qualitySkills.length?'Verify each selected specialist applies to the host; Windows E2E needs a real Windows GUI.':'Add specialist checks only when the user goal requires them.','',
     '## Agent instructions','Interpret and review the user goal, then route through the GIS skills to a dependency-ordered workflow. Never execute directly from the prompt; this plan is not authenticated approval or host authorization:',...list,
     '','## Verification status','This is a proposed plan, not evidence of project completion.'
   ];
@@ -115,6 +138,7 @@ function generatePlan(){
   if(goal && outcomes.length){
     const owner=skills[type];
     const selected=[owner,'gis-security-guardian'];
+    if(qualitySkills.length)selected.push(...qualitySkills);
     if(type==='qgis-engine')selected.push('gis-desktop-application-development','coordinate-reference-systems','geospatial-data-processing');
     if(kml)selected.push('kml-kmz-engineering');
     if(locale!=='en')selected.push('gis-internationalization-arabic');
@@ -154,7 +178,7 @@ function generatePlan(){
   $('status').textContent=dict[ar?'ar':'en'].statusReady;
 }
 $('lang').onclick=()=>{const previous=Boolean(output);ar=!ar;translate();if(previous)generatePlan()};
-for(const id of ['type','locale','files','license'])$(id).addEventListener('change',invalidate);
+for(const id of ['type','locale','files','license','qualityFocus'])$(id).addEventListener('change',invalidate);
 for(const id of ['goal','success'])$(id).addEventListener('input',invalidate);
 $('details').addEventListener('input',invalidate);
 $('generate').onclick=generatePlan;
