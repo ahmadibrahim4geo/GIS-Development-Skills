@@ -44,7 +44,7 @@ class RepositoryInternalLinksTests(unittest.TestCase):
                 if not target.exists():
                     broken.append(f"{file.relative_to(ROOT)}: {match.group(1)}")
         self.assertGreater(checked, 120, "Link gate found too few local references")
-        self.assertEqual([], broken, "Broken internal links prevent specialist handoffs")
+        self.assertFalse(broken, "Broken local links ({}):\\n".format(len(broken)) + "\\n".join(broken))
 
 
 if __name__ == "__main__":
