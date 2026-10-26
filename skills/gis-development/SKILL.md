@@ -30,7 +30,7 @@ license: MIT
 | Remote sensing | [Pipelines](../remote-sensing-pipelines/SKILL.md) |
 | MapLibre, web 2D, CesiumJS globe/3D | [Geospatial Web Mapping](../geospatial-web-mapping/SKILL.md) |
 | Independent GIS desktop application / installer | [GIS Desktop Development](../gis-desktop-application-development/SKILL.md) |
-| Native Android/iOS GIS field apps, GNSS, offline edits, secure sign-in/sync | [GIS Mobile Application Development](../gis-mobile-application-development/SKILL.md) |
+| Android/iOS GIS apps, GNSS, offline sync | [GIS Mobile Application Development](../gis-mobile-application-development/SKILL.md) |
 | UI command inventory, dead Ribbon/menu icons, handlers, shortcuts | [UI Command Audit](../gis-ui-command-audit/SKILL.md) |
 | Real Windows desktop UI, WebView2 and installer interaction tests | [Desktop E2E Testing](../gis-desktop-e2e-testing/SKILL.md) |
 | Import → engine → render → save/export provenance or missing layers | [GIS Data Flow Diagnostics](../gis-data-flow-diagnostics/SKILL.md) |
@@ -45,7 +45,7 @@ license: MIT
 | Gazetteer search / scale-aware labels | [World Gazetteer](../../references/world-gazetteer-reference-layer.md) |
 | WKID, projection, transformation, vertical datum | [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md) |
 | Symbology / map layout | [Cartography](../gis-cartography-symbology/SKILL.md) |
-| OS/device permissions, GPS/USB/serial/BLE, time, scoped files, sensors, external adapters | [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) (platform-wide) |
+| OS/device permissions and sensor adapters | [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) |
 | Device time/location/sunlight | [Device Context](../gis-device-context/SKILL.md) |
 | KML/KMZ / Earth viewers | [KML](../kml-kmz-engineering/SKILL.md) · [Earth](../../references/google-earth-pro-engineering.md) · [Timeline](../../references/historical-imagery-timeline.md) |
 
