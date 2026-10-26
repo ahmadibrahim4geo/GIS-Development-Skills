@@ -147,8 +147,12 @@ def audit_tree(directory):
         except (UnicodeError, OSError, ET.ParseError, ValueError) as exc:
             errors.append({"source_file": rel, "error": str(exc)})
     groups = Counter(item["static_status"] for item in results)
-    identifiers = [item["command_id"] for item in results if not item["id_is_candidate"]]
-    duplicates = sorted(i for i, count in Counter(identifiers).items() if count > 1)
+    # DOM IDs and XAML names are scoped to their view, not the entire application.
+    # Shared command handlers/IDs across surfaces can be intentional.
+    identifiers = [(item["source_file"], item["ui_element_id"])
+                   for item in results if item["ui_element_id"]]
+    duplicates = sorted(f"{path}#{ident}" for (path, ident), count
+                        in Counter(identifiers).items() if count > 1)
     return {
         "kind": "static_ui_declaration_inventory",
         "engine_execution": False,
