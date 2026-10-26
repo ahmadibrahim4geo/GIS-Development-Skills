@@ -11,6 +11,8 @@ compatibility: Requires the target desktop build toolchain and GIS runtime to ru
 
 Use this for **independent executable applications**, not ArcGIS Pro SDK add-ins or a QGIS plugin. Select host OS, packaging model, renderer and processing engine separately. A working toolbar mockup is not a completed GIS app.
 
+For real source-code choices across existing GIS desktop apps, Qt/C#/Rust shells and GIS engines, read the [GIS software source registry](../../references/gis-software-source-registry.md) before choosing fork vs SDK vs bridge. Public code is not evidence of a buildable package.
+
 ## Free QGIS Engine integration option
 
 For an independent desktop GIS app that actually needs QGIS functionality, route to [QGIS Engine Integration](../qgis-engine-integration/SKILL.md) and [the architecture guide](../../references/qgis-engine-integration.md). Keep any existing renderer and UI framework independent of optional PyQGIS/Processing or GeoPackage I/O, and review QGIS GPL/ABI/deployment obligations before release. A hosted plugin, a Qt widget and an unrelated standalone GIS executable are different deployment models.
