@@ -94,3 +94,7 @@ Mark each test PASS, FAIL, BLOCKED or NOT RUN with host, command, fixture, expec
 ## Audit checklist for repository maintainers
 
 Confirm that every installed specialist is reachable from the router or a documented dependency, that its scope and shared responsibilities are unambiguous, and that its referenced files exist. Verify no duplicated implementation instructions, circular routing, orphaned skills, conflicting approval policies, dead UI controls or unsupported engine claims. Check the Project Wizard and bilingual HTML navigation against this contract. Run repository validators and tests from AGENTS.md, report results separately from any native T2–T4 verification. A documentation change alone does not prove repository-wide compliance.
+
+## System/device capability route (conditional)
+
+For a reviewed feature requiring OS time, location, files, camera/microphone, permissions, Bluetooth/serial/USB, sensors or system diagnostics, invoke [System Capabilities & Permissions](../skills/system-capabilities-and-permissions/SKILL.md) plus the target platform owner and Security. Add [GIS Device Context](../skills/gis-device-context/SKILL.md) only for map/temporal/solar meaning. External skills/MCP libraries are metadata candidates until reviewed, installed and host-authorized. An offline plan cannot grant a permission.
