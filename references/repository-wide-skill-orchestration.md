@@ -2,6 +2,10 @@
 
 **Scope:** every installed GIS Development Skills specialist, shared reference, tool adapter, project wizard and agent entrypoint. This document governs workflow and handoffs; it does not replace each specialist's scientific or technical procedures.
 
+## Proven upstream references
+
+Use the [GIS-first upstream repositories guide](repository-orchestration-upstream-sources.md) for tool registries, QGIS interoperability, skill specification, optional runtime graphs and adversarial evaluation. Sources are curated examples, not automatically installed packages. Verify a reference and its license before borrowing implementation details.
+
 ## One entrypoint, multiple specialists
 
 User prompt -> Prompt Intent Orchestrator -> reviewed plan -> GIS Development Router -> specialist task graph -> Security and preflight -> available host tools -> independent verification -> Development Journal and user report.
