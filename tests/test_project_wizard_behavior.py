@@ -22,7 +22,7 @@ const fs = require('node:fs');
 const code = fs.readFileSync(process.argv[2], 'utf8');
 const selectors = {
   type: ['desktop','pro','arcmap','dual','qgis','qgis-engine','web','remote','database','geoai'],
-  locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host'], qualityFocus:['standard','audit','e2e','flow','ux','all']
+  locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host'], qualityFocus:['standard','audit','e2e','flow','ux','all'], deviceNeeds:['none','time','location','hardware','all']
 };
 const elements = Object.create(null);
 function node(id) {
@@ -39,7 +39,7 @@ for(const [id, values] of Object.entries(selectors)){
   node(id).value=values[0];
 }
 for (const id of ['lang','heading','intro','typeLabel','localeLabel','filesLabel',
-  'licenseLabel','qualityLabel','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','downloadJson','resultLabel','result','status',
+  'licenseLabel','qualityLabel','deviceLabel','jsonHint','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','downloadJson','resultLabel','result','status',
   'homeLink','roadmapLink','kmlLink','reliabilityLink','workflowLink','wizardPrivacy']) node(id);
 node('download').disabled = true;
 node('downloadJson').disabled = true;
@@ -111,6 +111,17 @@ for (const slug of qualityList) {
 }
 assert.equal(qaPlan.status,'draft');
 console.log('QUALITY_WIZARD:'+JSON.stringify(qaPlan));
+e('deviceNeeds').value='location';
+e('deviceNeeds').fire('change');
+assert.equal(e('downloadJson').disabled,true);
+e('generate').onclick();
+assert.match(e('result').textContent,/OS\/device capability and permission scope/);
+e('downloadJson').onclick();
+const devicePlan=JSON.parse(lastBlob.parts[0]);
+assert.ok(devicePlan.tasks[1].skills.includes('system-capabilities-and-permissions'));
+assert.ok(devicePlan.tasks[1].skills.includes('gis-device-context'));
+e('deviceNeeds').value='none';
+e('deviceNeeds').fire('change');
 e('qualityFocus').value='standard';
 e('qualityFocus').fire('change');
 assert.equal(e('downloadJson').disabled,true);
