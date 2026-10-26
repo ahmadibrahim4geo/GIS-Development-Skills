@@ -22,7 +22,7 @@ const fs = require('node:fs');
 const code = fs.readFileSync(process.argv[2], 'utf8');
 const selectors = {
   type: ['desktop','pro','arcmap','dual','qgis','qgis-engine','web','remote','database','geoai'],
-  locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host'], qualityFocus:['standard','audit','e2e','flow','ux','all']
+  locale: ['ar-en','en','multi'], files:['yes','no'], license:['free','host'], qualityFocus:['standard','audit','e2e','flow','ux','all'], deviceNeeds:['none','time','location','hardware','all']
 };
 const elements = Object.create(null);
 function node(id) {
