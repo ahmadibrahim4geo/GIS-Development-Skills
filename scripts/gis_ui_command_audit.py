@@ -12,6 +12,7 @@ import xml.etree.ElementTree as ET
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urlsplit, unquote
 
 XAML_TAGS = {
     "Button", "ToggleButton", "RadioButton", "MenuItem", "RibbonButton",
@@ -60,8 +61,10 @@ class HTMLControls(HTMLParser):
         self.counter = 0
 
     def handle_starttag(self, tag, pairs):
-        # Nested spans within an interactive element contribute to its text.
+        # Nested spans/images can label an interactive control.
         attributes = dict(pairs)
+        if tag == "img" and self.stack and attributes.get("src"):
+            self.stack[-1][1]["icon_ref"] = self.stack[-1][1]["icon_ref"] or attributes["src"]
         interactive = (
             tag == "button"
             or (tag == "input" and attributes.get("type", "").lower() in {"button", "submit", "reset", "image"})
@@ -123,10 +126,33 @@ def scan_xaml(text, path):
         label = attr(attributes, "Name") if tag in {"CheckBox", "RadioButton"} else ""
         label = attr(attributes, "Content") or attr(attributes, "Header") or attr(attributes, "ToolTip") or label
         icon = attr(attributes, "Icon")
+        if not icon:
+            icon = next((attr(node.attrib, "Source") for node in element.iter()
+                         if local_name(node.tag) == "Image" and attr(node.attrib, "Source")), "")
         status = "DECLARED_BINDING" if handler else "NO_BINDING"
         entries.append(normalize_entry(path, "xaml", tag, len(entries) + 1,
                                        ident, label, icon, handler, binding_kind, status))
     return entries
+
+
+def inspect_local_icon(root, file_path, icon):
+    """Only resolve explicit local image paths, never network/resources/dynamic."""
+    if not icon or icon.startswith(("{", "@", "#", "data:", "pack:", "ms-appx:", "qrc:", "//")):
+        return None
+    value = urlsplit(icon)
+    if value.scheme or not value.path:
+        return None
+    candidate = Path(unquote(value.path))
+    if candidate.suffix.casefold() not in {".svg", ".png", ".jpg", ".jpeg", ".webp", ".gif", ".ico"}:
+        return None
+    if candidate.is_absolute():
+        return None
+    path = (root / file_path).parent / candidate
+    if not path.resolve().is_relative_to(root.resolve()):
+        return {"source_file": file_path, "icon_ref": icon, "reason": "icon path escapes scan root"}
+    if not path.is_file():
+        return {"source_file": file_path, "icon_ref": icon, "reason": "icon asset missing"}
+    return None
 
 
 def audit_tree(directory):
@@ -150,6 +176,11 @@ def audit_tree(directory):
             results.extend(entries)
         except (UnicodeError, OSError, ET.ParseError, ValueError) as exc:
             errors.append({"source_file": rel, "error": str(exc)})
+    missing_icons = []
+    for item in results:
+        issue = inspect_local_icon(directory, item["source_file"], item["icon_ref"])
+        if issue:
+            missing_icons.append(issue)
     groups = Counter(item["static_status"] for item in results)
     # DOM IDs and XAML names are scoped to their view, not the entire application.
     # Shared command handlers/IDs across surfaces can be intentional.
@@ -166,6 +197,7 @@ def audit_tree(directory):
         "status_counts": {status: groups.get(status, 0)
                           for status in ("DECLARED_BINDING", "NO_BINDING", "UNINSPECTED")},
         "duplicate_declared_ids": duplicates,
+        "missing_icon_assets": missing_icons,
         "entries": results,
         "errors": errors,
         "limitations": ["HTML dynamic/delegated listeners are not resolved",
@@ -193,7 +225,7 @@ def main(argv=None):
             print(f"  {entry['source_file']} / {entry['command_id']} : {entry['static_status']}")
         for issue in report["errors"]:
             print(f"  ERROR {issue['source_file']}: {issue['error']}", file=sys.stderr)
-    return 1 if report["errors"] or report["duplicate_declared_ids"] else 0
+    return 1 if report["errors"] or report["duplicate_declared_ids"] or report["missing_icon_assets"] else 0
 
 
 if __name__ == "__main__":
