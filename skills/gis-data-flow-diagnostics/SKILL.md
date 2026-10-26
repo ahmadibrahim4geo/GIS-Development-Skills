@@ -9,6 +9,8 @@ compatibility: Offline trace format and validator use Python standard library; r
 
 **Purpose:** explain *where and why* GIS data failed between files, engines, view states and outputs. Use for missing layers, geometry/CRS errors, lost KMZ styles, incorrect NoData or elevation, project reopening gaps, disappearing map scenes and export parity defects.
 
+**Free-first source and testing policy:** follow the [repository free-first and licensing policy](../../references/free-first-policy.md). Reuse free/offline tools where feasible, disclose any paid GIS host/OS dependencies, and verify each upstream license before copying code. Never silently require a commercial service.
+
 ## Workflow
 
 1. Use the approved goal, task ID, inputs, outputs and readback criteria from [Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md). [GIS Router](../gis-development/SKILL.md) coordinates the specialists; [Security Guardian](../gis-security-guardian/SKILL.md) controls sensitive telemetry and file access.
