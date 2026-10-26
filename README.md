@@ -55,7 +55,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>23 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>28 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -70,6 +70,21 @@ A practical development skill and curated reference hub for building reliable Ar
 The new [Agent Development Journal skill](skills/agent-development-journal/SKILL.md) adds project-local **numbered reports** for every user requirement, implementation milestone, revision, cancellation and verification. Its [offline Python journal tool](scripts/development_journal.py) creates immutable linked JSON records and generated Markdown reports/INDEX.md/STATE.md in each target project's `.agent-development-log/`. See [recovery and lifecycle](references/agent-development-journal-guide.md), [external skills comparison](references/agent-memory-skill-references.md) and [offline example](examples/development-journal/README.md).
 
 Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planning-with-files), [Superpowers](https://github.com/obra/superpowers), [GitHub Spec Kit](https://github.com/github/spec-kit), without copying their hooks or tools. The **hosting agent must invoke the logger** at action checkpoints; it does not automatically monitor processes, execute code or reverse Git commits.
+
+## Four GIS UI quality engineering skills — 26 October 2026
+
+The repository now includes **28 installable GIS specialist skills**, including four independent but interoperable quality workflows:
+
+- [GIS UI Command Audit](skills/gis-ui-command-audit/SKILL.md): inspect menu/Ribbon/icon declarations and command bindings with a [read-only offline scanner](scripts/gis_ui_command_audit.py).
+- [GIS Desktop E2E Testing](skills/gis-desktop-e2e-testing/SKILL.md): native Windows UI Automation and WebView2 acceptance workflow, with real-host T3/T4 evidence required.
+- [GIS Data Flow Diagnostics](skills/gis-data-flow-diagnostics/SKILL.md): track import → CRS → engine → scene → save/export/readback using an [offline synthetic trace checker](scripts/gis_data_flow_diagnostics.py).
+- [GIS UI/UX Design & Testing](skills/gis-ui-ux-design-testing/SKILL.md): accessible layouts, RTL/LTR, real functional controls, high DPI and visual/usability tests.
+
+The [shared ownership and data contract](references/gis-ui-quality-coordination.md) carries stable command and trace IDs across specialists. The [upstream tools guide](references/gis-ui-quality-upstream-sources.md) identifies actual open-source source repositories; no upstream software is bundled or claimed native-tested. [Project Wizard](project-wizard.html) can optionally route a draft plan through one/all four without bypassing security.
+
+## Goal-first prompt → GIS workflow (26 October 2026)
+
+A GIS development prompt now has a dedicated **goal → outcomes → acceptance → specialist routing → security preflight → ordered execution → verification** path. The [offline workflow compiler](scripts/intent_router.py) converts an AI-reviewed JSON plan into a deterministic **nonexecuting** blueprint, and the [bilingual Project Wizard](project-wizard.html) can capture the intended user goal and observable success criteria and export a **draft JSON plan** that the offline compiler can validate (without executing it). Read the [shared contract](references/repository-wide-skill-orchestration.md) and [intent guide](references/intent-orchestration-workflow.md). The AI host must still interpret the request, obtain actual permission, invoke real tools and report real results.
 
 ## Prompt Intent & Execution Orchestrator — 25 October 2026
 
@@ -112,6 +127,7 @@ The existing [KML/KMZ Engineering skill](skills/kml-kmz-engineering/SKILL.md) no
 Two new installable skills extend the toolkit to **18 specialists** (including the recently added [KML/KMZ specialist](skills/kml-kmz-engineering/SKILL.md)):
 
 - [GIS Cartography & Symbology](skills/gis-cartography-symbology/SKILL.md) — vector point/line/polygon symbols, raster ramps, labels, accessible layouts, ArcMap/Pro/QGIS/MapLibre/Cesium adapters and verifiable save/reopen.
+- [System Capabilities & Permissions](skills/system-capabilities-and-permissions/SKILL.md) — general OS/device access and permission workflows with optional trusted adapters, privacy and native test contracts.
 - [GIS Device Context](skills/gis-device-context/SKILL.md) — UTC/local date/time, IANA timezone, opt-in device geolocation, scene-vs-device target and live/simulated Sunlight modes.
 - [19-source style directory (including 8 icon packs and Cesium PinBuilder)](references/cartographic-style-sources.json), including the [ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection), QGIS Resources, OS GeoDataViz, CARTOColors and scientific palette references. Upstream individual style/font rights are **not** automatically granted by hosting.
 - Offline [MapLibre point/line/polygon fixture](examples/cartography/README.md) and [Python timezone/context fixture](examples/device-context/README.md) with regression tests; real GIS rendering, GPS permission and sun lighting still require host testing.

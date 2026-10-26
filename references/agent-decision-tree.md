@@ -30,3 +30,13 @@ For an app that needs ArcGIS Toolbox interoperability, a PostGIS backend and a C
 ## Response and test contract
 
 Declare target, version, schema/CRS, expected outputs, source modifications and risk, then implementation/tests. Use [GIS Acceptance Report](../templates/GIS_ACCEPTANCE_REPORT.md), [quality tiers](../docs/QUALITY_BENCHMARK.md) and [evidence validation](../scripts/validate_evidence.py) before calling a feature completed.
+
+## GIS software command, data and UX QA routing (optional)
+
+If a GIS user requests a visual reorganization, usability, keyboard or accessible language improvement, route to [UI/UX Design & Testing](../skills/gis-ui-ux-design-testing/SKILL.md) plus any required i18n/Cartography specialist. If the user reports inert ribbon/buttons/icons or mismatched handlers, add [UI Command Audit](../skills/gis-ui-command-audit/SKILL.md). If layers disappear, CRS is wrong or save/export drops data, add [GIS Data Flow Diagnostics](../skills/gis-data-flow-diagnostics/SKILL.md), CRS/KML and a real provider readback. If success must be observed in the actual Windows application including WebView2, add [Desktop E2E Testing](../skills/gis-desktop-e2e-testing/SKILL.md).
+
+The [quality coordination contract](gis-ui-quality-coordination.md) owns the common IDs, statuses and handoffs. Never route all four merely because a UI exists; call only specialists required for observable user goals, preserve the original approved scope and native tests as NOT RUN when the host is missing.
+
+## Shared non-GIS system integrations
+
+Device time, permission-controlled GPS, OS files, notifications, serial/BLE, cameras, microphones, screen capture, hardware diagnostics and external adapters: route [System Capabilities & Permissions](../skills/system-capabilities-and-permissions/SKILL.md) + target platform + Security Guardian. Add Device Context for GIS location/time/solar only. Do not load every adapter or claim working sensor/permission from documentation.

@@ -1,9 +1,39 @@
+# Unreleased — cross-platform system capability and permission skill (2026-10-26)
+
+- Add platform-wide System Capabilities & Permissions Agent Skill, external skill/library candidate registry, native permission/driver acceptance contract and offline standard-library planner with tests.
+- Integrate Device Context, GIS Router, Security, Desktop, Web, UX/E2E, bilingual Explorer/homepage and Project Wizard; preserve protected author details and existing runtime engines.
+- Native permission prompts, hardware, Bluetooth/GPS and Windows installations have NOT been tested by these offline additions.
+
+# Unreleased — four GIS UI quality specialist skills (2026-10-26)
+
+- Add independent GIS UI Command Audit, Desktop E2E Testing, GIS Data Flow Diagnostics, and UI/UX Design & Testing skills, linked to the intent gateway, GIS Router, native Desktop Development, Security Guardian and shared evidence journal.
+- Add responsibility/command/trace handoff contract and upstream source references; keep Windows UI Automation optional and disclose unverified upstream licenses.
+- Add read-only Python stdlib HTML/XAML declaration inventory and synthetic GIS flow trace checker, with examples and regression tests. Offline classifications **do not** prove working GIS controls, real rendering, semantic CRS accuracy or native installers.
+- Integrate bilingual GIS Explorer, homepage and Project Wizard quality-focus option with machine-readable draft plan; increase installable skill inventory from 23 to 27, preserve developer identity and user approval boundaries.
+- Native Windows/QGIS/ArcGIS T2–T4 checks remain NOT RUN unless a real suitable application environment is observed.
+
+# Unreleased — cross-PR integration and real workflow handoffs (2026-10-26)
+
+- Integrate proposed Desktop GIS engineering (#25), repository-wide intent orchestration (#26), and the 188-source GIS catalog (#27) into one compatible PR, with combined CI regression tests.
+- Fix 39 broken local Markdown links previously present in `docs/ENGINEERING_UPDATES_2026-10.md`, and add repository-wide link verification.
+- Make the bilingual Project Wizard export a draft `gis-workflow-draft.json` plan matching the offline Intent Router schema; block export until the user goal and success criteria are explicit. Test actual Node DOM → Python workflow compiler handoff.
+- Upgrade GitHub Actions checkout and setup-python to verified SHA-pinned Node.js 24 releases; eliminate the deprecated Node.js 20 actions warning.
+- No native GIS runtime or authenticated hosting-agent approval has been tested; keep those acceptance tiers NOT RUN.
+
 # Unreleased — GIS Software & Source Code Registry (2026-10-26)
 
 - Extend the existing canonical project catalog from 148 to 188 **unique public repository links** (40 new, none copied) covering desktop, web, mobile, engines, spatial servers, .NET and remote sensing.
 - Add a developer-facing decision guide and bilingual website entrypoint, plus router/Desktop/Web specialist links; preserve the author section and existing catalog rather than creating a second data store.
 - Record preliminary GitHub availability/license metadata as **unverified for reuse**; no native builds, source imports or implied GIS engine/runtime compatibility.
 - Add catalog field validation and regression tests for repository source categories, primary-skill routing, unique URLs, synchronized counters and disclaimers.
+
+# Unreleased — Goal-first GIS skill workflow and Project Wizard integration (2026-10-26)
+
+- Compile a user/AI-reviewed goal, desired outcomes, success criteria, owners and dependency graph into a read-only ordered workflow using `scripts/intent_router.py --workflow`; no autonomous execution or authenticated permissions claimed.
+- Require explicit goal/outcome information for workflow compilation, reject unknown owners, cycles, missing dependencies, stale approval declarations, destructive operations without additional approval fields.
+- Add bilingual goal and success-criteria fields, eight-stage execution preview, and invalidation for edits in the existing client-only Project Wizard. Preserve other wizard fields and the author's identity.
+- Synchronize the cross-skill contract, Intent Orchestrator, core router, agent rules, EN/AR user guides, sample plans and regression tests.
+- Keep source inspection read-only by default and distinguish host-level approval, T0/T1 offline checks and GIS-native T2/T4 verification.
 
 # Unreleased — QGIS engine cross-skill compatibility and HTML routing (2026-10-25)
 

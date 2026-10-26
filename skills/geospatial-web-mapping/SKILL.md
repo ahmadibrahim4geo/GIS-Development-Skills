@@ -50,3 +50,7 @@ Review [Earth View](../../references/earth-view-architecture.md) for typed base/
 - [GeoParquet](https://github.com/opengeos/maplibre-gl-geoparquet) and [DuckDB spatial](https://github.com/opengeos/maplibre-gl-duckdb): verify spatial extension, security of SQL input, CRS and memory usage.
 - [3D Tiles](https://github.com/opengeos/maplibre-gl-3d-tiles), [historical Esri Wayback imagery releases](https://github.com/opengeos/maplibre-gl-esri-wayback), [layer controls](https://github.com/opengeos/maplibre-gl-layer-control): all need pinned compatible MapLibre versions, genuine live click tests, and upstream service rights. Wayback release date is not automatically acquisition date.
 - [OpenGeoS advanced guide](../../references/opengeos-advanced-integration.md): MapLibre plugins are not drop-in CesiumJS adapters.
+
+## Browser and WebView device permissions
+
+For browser geolocation, notifications, file picking, camera/microphone, WebUSB/serial/BLE or embedded host access, consult [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) and Security Guardian. Enforce HTTPS/secure contexts, origin and Permissions Policy, real user gestures and restricted WebView/Electron/Tauri bridges. Keep map scene/camera position distinct from user's physical GPS location via [GIS Device Context](../gis-device-context/SKILL.md).

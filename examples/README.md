@@ -22,3 +22,12 @@ See [quality benchmark](../docs/QUALITY_BENCHMARK.md). All commands should write
 - [Native ArcGIS Pro and QGIS acceptance harnesses](../native_tests/README.md)
 - [Security standard](../references/geospatial-security.md), [performance guidance](../references/geospatial-performance.md), [before/after anti-patterns](../references/gis-antipatterns.md)
 - [Mandatory acceptance report](../templates/GIS_ACCEPTANCE_REPORT.md)
+
+## GIS UI quality diagnostic fixtures
+
+- [Static command/handler inventory](ui-command-audit/README.md) — simple XAML/HTML controls and honest offline source classifications.
+- [Synthetic data-flow trace](data-flow-diagnostics/README.md) — ordered import, engine, render, save, export and readback assertions.
+- [Real Windows desktop E2E acceptance matrix](desktop-e2e/README.md) — reusable scenarios, **not** proof of native GUI execution.
+- [UI/UX and accessibility checklist](ui-ux/README.md) — design-system, bilingual, keyboard and usability evidence.
+
+These examples complement the [four quality specialists](../references/gis-ui-quality-coordination.md) without adding a mandatory Windows dependency.

@@ -38,3 +38,9 @@
 - This document is a roadmap, not proof of implementation.
 - Static wizard and linked engineering references are the first implementation increment.
 - Native GIS runtime and load/stress acceptance remain outstanding.
+
+## Optional GIS UI quality workflow (2026-10-26)
+
+The wizard now offers a bilingual **quality focus** choice: general (default), UI Command Audit, Desktop E2E, GIS Data Flow Diagnostics, UI/UX Design & Testing, or all four. Selecting one adds the corresponding specialist link to the human Markdown plan and the machine-readable **draft** JSON workflow; it does not install tools or claim tests. Changing the choice invalidates prior plan downloads. End-to-end Windows tests are only planned unless run in a real interactive Windows session; other platforms do not silently acquire Windows-only dependencies.
+
+See [coordination contract](../references/gis-ui-quality-coordination.md) and [public upstream sources](../references/gis-ui-quality-upstream-sources.md). Build/packaging checks remain separate from static syntax and UI simulation checks.
