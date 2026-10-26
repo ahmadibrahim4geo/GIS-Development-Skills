@@ -1,6 +1,7 @@
 # Agent rules for this repository
 
 - For complex/free-form prompts start with [Prompt Intent Orchestrator](skills/prompt-intent-orchestrator/SKILL.md): normalize and present a reviewable task plan, obtain revision-scoped user approval, then select specialists; JSON approval fields are not authenticated consent.
+- **Mandatory goal-first intake for the whole repository:** the hosting AI must identify the user's intended outcome, target deliverable, explicit requirements versus suggestions, success criteria, protected data and constraints before routing any consequential task. For complex prompts, compile a read-only dependency-ordered plan with `python scripts/intent_router.py --plan <reviewed-plan.json> --workflow`; require host-confirmed approval and specialist preflight before executing. See [goal-first intent workflow](references/intent-orchestration-workflow.md) and the [repository-wide contract](references/repository-wide-skill-orchestration.md). The helper does not interpret language or authorize tool calls.
 - Maintain [Agent Development Journal](skills/agent-development-journal/SKILL.md) across meaningful user requests, implementation steps, revisions, cancellations, test evidence and handoffs, within each **target project**. Verify records before resumption; no history overwrites or invented runtime results.
 - Maintain `skills/gis-development/SKILL.md` as the **general routing skill** and use domain-specific `skills/*/SKILL.md` for distinctly scoped engineering disciplines. Do not duplicate the same instructions across skills for minor changes.
 - Maintain concise progressive-disclosure reference guides under `references/`.
@@ -8,7 +9,7 @@
 - Never copy code from catalog entries without examining that upstream license.
 - The **homepage is the primary user-facing How to Use guide**: never require visitors to browse Markdown for basic steps; platform/agent install prompts should be copyable and bilingual. Maintain `assets/home-redesign.css` and the responsive workflow cards. Preserve the exact markup and contacts of the `#author` panel when redesigning other page areas; palette adjustments only.
 - Keep a practical bilingual [How to Use guide](docs/HOW_TO_USE.md) and [Arabic translation](docs/HOW_TO_USE.ar.md) linked from index.html and Explorer. Expose clear prerequisites, manual and agent routes, an actual copyable request, real test/permission caveats, and preserve creator/footer data.
-- For rapid PR development- For rapid PR development, CI runs on PR events and main pushes (not both feature pushes and PRs). Maintain [CI failure triage guidance](docs/GITHUB_ACTIONS_TROUBLESHOOTING.md), cancellation of stale runs, and never suppress a failing quality test only to reduce notifications.
+- For rapid PR development, CI runs on PR events and main pushes (not both feature pushes and PRs). Maintain [CI failure triage guidance](docs/GITHUB_ACTIONS_TROUBLESHOOTING.md), cancellation of stale runs, and never suppress a failing quality test only to reduce notifications.
 - Before publishing run `python scripts/validate_catalog.py`, `python scripts/validate_api_catalog.py`, `python scripts/validate_skill_pack.py`, and `python -m unittest discover -s tests -v`. All existing skills plus the dedicated Geospatial API Integration skill must remain discoverable.
 - Keep titles/descriptions developer focused. Clearly label illustrative templates as untested inside host apps until verified.
 
@@ -58,3 +59,7 @@
 - Run `python scripts/security_audit.py --root .` before publishing. Archive checks are read-only; external scanners are optional and must never be reported as executed unless actually run.
 - Scope network/file permissions and require explicit approval for destructive edits, code execution from third parties, and outbound transfer of sensitive data. Documentation is not an OS sandbox.
 - Keep the security registry, workflows, tests, README languages, homepage and derived counters synchronized. Mark confirmed high/critical risks as release blockers until mitigated.
+
+## Repository-wide request execution contract
+
+All specialist skills and agent entrypoints must follow [repository-wide orchestration](references/repository-wide-skill-orchestration.md). The intent orchestrator owns normalization and reviewed approval, GIS Development owns specialist routing, shared Security Guardian owns safety gates, specialists own domain execution, and the Development Journal and acceptance report own evidence. Never execute a consequential free-form prompt directly or allow a specialist to bypass host permissions. Documentation cannot itself enforce a host-level gate.

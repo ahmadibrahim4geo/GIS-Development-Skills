@@ -10,6 +10,8 @@ license: MIT
 
 Use when the deliverable is a web GIS map, browser-based spatial tool or mapping UI in a desktop application.
 
+For verified upstream *repository availability* (not runtime readiness), choose a web application, 2D/3D renderer, native map SDK or tile server from the [GIS software source registry](../../references/gis-software-source-registry.md). The existing project catalog is the single source of truth; avoid creating a second inventory.
+
 ## Procedure
 
 1. Clarify if it is a standalone web app, Tauri/WebView2 desktop shell or GeoLibre project.

@@ -16,6 +16,10 @@
   <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml"><img alt="Validation workflow status" src="https://img.shields.io/github/actions/workflow/status/ahmadibrahim4geo/GIS-Development-Skills/validate.yml?style=for-the-badge&amp;label=Tests&amp;labelColor=172B3C"></a>
 </p>
 
+## GIS Software & Source Code Registry — 26 October 2026
+
+The [GIS source code selection guide](references/gis-software-source-registry.md) routes developers to complete **desktop, web and mobile GIS applications**, reusable rendering/processing engines, spatial servers and scientific libraries. The existing [searchable project catalog](references/project-catalog.json) is the **single machine-readable source of truth** (188 unique GitHub repositories after adding 40 nonduplicate public sources); browse its live entries via the [bilingual Explorer](explorer.html#catalog). A public URL or preliminary license metadata is not a build, deployment or license audit: confirm upstream source permissions, exact versions and native tests before reuse.
+
 ## Build GIS tools, plugins and geospatial applications with a verifiable development workflow.
 
 A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.
@@ -51,7 +55,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>23 installable GIS skills</strong> · <strong>148 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>23 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -66,6 +70,10 @@ A practical development skill and curated reference hub for building reliable Ar
 The new [Agent Development Journal skill](skills/agent-development-journal/SKILL.md) adds project-local **numbered reports** for every user requirement, implementation milestone, revision, cancellation and verification. Its [offline Python journal tool](scripts/development_journal.py) creates immutable linked JSON records and generated Markdown reports/INDEX.md/STATE.md in each target project's `.agent-development-log/`. See [recovery and lifecycle](references/agent-development-journal-guide.md), [external skills comparison](references/agent-memory-skill-references.md) and [offline example](examples/development-journal/README.md).
 
 Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planning-with-files), [Superpowers](https://github.com/obra/superpowers), [GitHub Spec Kit](https://github.com/github/spec-kit), without copying their hooks or tools. The **hosting agent must invoke the logger** at action checkpoints; it does not automatically monitor processes, execute code or reverse Git commits.
+
+## Goal-first prompt → GIS workflow (26 October 2026)
+
+A GIS development prompt now has a dedicated **goal → outcomes → acceptance → specialist routing → security preflight → ordered execution → verification** path. The [offline workflow compiler](scripts/intent_router.py) converts an AI-reviewed JSON plan into a deterministic **nonexecuting** blueprint, and the [bilingual Project Wizard](project-wizard.html) can capture the intended user goal and observable success criteria and export a **draft JSON plan** that the offline compiler can validate (without executing it). Read the [shared contract](references/repository-wide-skill-orchestration.md) and [intent guide](references/intent-orchestration-workflow.md). The AI host must still interpret the request, obtain actual permission, invoke real tools and report real results.
 
 ## Prompt Intent & Execution Orchestrator — 25 October 2026
 
