@@ -54,4 +54,6 @@ license: MIT
 6. **Evidence:** complete [the acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and check it with [the evidence validator](../../scripts/validate_evidence.py). Record T0–T4 honestly; generic syntax checks or UI mockups are **not** native GIS execution.
 7. **References:** [projects](../../references/project-catalog.json), [APIs](../../references/free-geospatial-apis.json), [data](../../references/geospatial-data-repositories.json) require source/license verification.
 
+**GIS source selection:** [GIS Software & Source Code Registry](../../references/gis-software-source-registry.md) is the guided entrypoint to the [canonical project catalog](../../references/project-catalog.json). Choose complete applications versus libraries, renderers or servers before loading Desktop, Web Mapping, Processing, Remote Sensing, Mobile or API specialist skills. Source listings do not authorize code execution or imply license compatibility.
+
 **More:** [full guide](../../references/gis-development-full-guidance.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
