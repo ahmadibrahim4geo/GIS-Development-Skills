@@ -70,7 +70,7 @@ For every executable action: define trigger, responsible specialist, host tool a
 
 ## DoneProof completion gate
 
-Before claiming a task done, fixed or published, run [DoneProof](../skills/completion-evidence/SKILL.md) across all required acceptance criteria. [Protocol](doneproof-verification-protocol.md) and the [stdlib checker](../scripts/verify_completion.py) assess claim/report consistency; the existing [GIS evidence validator](../scripts/validate_evidence.py) retains T0–T4 host-specific evidence rules. Report overall VERIFIED only when all required criteria are verified at appropriate test tiers; otherwise report PARTIAL, FAILED, BLOCKED or NOT RUN. No text instruction can authorize tools or prove external execution.
+Before claiming a task done, fixed or published, run [DoneProof](../skills/completion-evidence/SKILL.md) across all required acceptance criteria. [Protocol](doneproof-verification-protocol.md) and the [stdlib checker](../scripts/verify_completion.py) with `--plan` assess claim/report consistency; the existing [GIS evidence validator](../scripts/validate_evidence.py) retains T0–T4 host-specific evidence rules. Report overall VERIFIED only when all required criteria are verified at appropriate test tiers; otherwise report PARTIAL, FAILED, BLOCKED or NOT RUN. No text instruction can authorize tools or prove external execution.
 
 ## Test matrix for all skills
 
