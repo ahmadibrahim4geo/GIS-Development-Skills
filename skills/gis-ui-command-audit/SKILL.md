@@ -9,6 +9,8 @@ compatibility: Static discovery is cross-platform; native runtime checks require
 
 **Purpose:** ensure every visible actionable control has a unique identity and a traceable, verified effect. Use for unresponsive buttons, mismatched icons, missing commands, Ribbon/toolbar/menu audits, duplicate handlers, dead shortcuts and incomplete command-to-engine bindings. This skill applies to *any* GIS program, not a particular product.
 
+**Free-first source and testing policy:** follow the [repository free-first and licensing policy](../../references/free-first-policy.md). Reuse free/offline tools where feasible, disclose any paid GIS host/OS dependencies, and verify each upstream license before copying code. Never silently require a commercial service.
+
 ## Start here
 
 1. Follow [Goal-first Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md) and [GIS Router](../gis-development/SKILL.md); scope the user-approved application, repository, UI platforms, branches and expected results before writes. [Security Guardian](../gis-security-guardian/SKILL.md) is cross-cutting.
