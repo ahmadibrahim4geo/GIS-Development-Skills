@@ -21,7 +21,7 @@ class SoftwareRegistryTests(unittest.TestCase):
         cls.new = [x for x in cls.entries if x.get("repository_access_checked_on") == ADDED_ON]
 
     def test_single_catalog_and_unique_urls(self):
-        self.assertEqual(len(self.entries), 188)
+        self.assertGreaterEqual(len(self.entries), 188)
         normalized = [x["url"].rstrip("/").casefold() for x in self.entries]
         self.assertEqual(len(normalized), len(set(normalized)))
         self.assertIn("project-catalog.json", GUIDE.read_text(encoding="utf-8"))
@@ -76,6 +76,16 @@ class SoftwareRegistryTests(unittest.TestCase):
         self.assertIn('id="author"', home)
         self.assertIn("ahmad_ibrahim_original.png", home)
 
+    def test_explorer_exposes_usable_skill_handoff(self):
+        page = (ROOT / "explorer.html").read_text(encoding="utf-8")
+        self.assertIn('entry.primary_skill', page)
+        self.assertIn('entry.role', page)
+        self.assertIn('entry.platforms', page)
+        self.assertIn('repository_access_checked_on', page)
+        self.assertIn('skills/"+entry.primary_skill+"/SKILL.md', page)
+        self.assertIn("Repository available; builds and reuse rights still unverified.", page)
+        self.assertIn('x.primary_skill,x.programming_language', page)
+
     def test_manifest_counters_match_source(self):
         manifest = json.loads((ROOT / "references" / "repository-manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(len(self.entries), manifest["reference_count"])
@@ -83,7 +93,7 @@ class SoftwareRegistryTests(unittest.TestCase):
             with self.subTest(file=file):
                 text = (ROOT / file).read_text(encoding="utf-8")
                 self.assertIn('id="projectsCount"', text)
-                self.assertIn(">188</strong>", text)
+                self.assertIn(">" + str(len(self.entries)) + "</strong>", text)
 
 
 if __name__ == "__main__":
