@@ -28,6 +28,7 @@ license: MIT
 | Remote sensing | [Pipelines](../remote-sensing-pipelines/SKILL.md) |
 | MapLibre, web 2D, CesiumJS globe/3D | [Geospatial Web Mapping](../geospatial-web-mapping/SKILL.md) |
 | Independent GIS desktop application / installer | [GIS Desktop Development](../gis-desktop-application-development/SKILL.md) |
+| Reference software observation, independent reimplementation, feature parity, clean room | [Clean-Room Reference Implementation](../clean-room-reference-implementation/SKILL.md) |
 | Android/iOS GIS apps, GNSS, offline sync | [GIS Mobile Application Development](../gis-mobile-application-development/SKILL.md) |
 | UI command inventory, dead Ribbon/menu icons, handlers, shortcuts | [UI Command Audit](../gis-ui-command-audit/SKILL.md) |
 | Real Windows desktop UI, WebView2 and installer interaction tests | [Desktop E2E Testing](../gis-desktop-e2e-testing/SKILL.md) |
