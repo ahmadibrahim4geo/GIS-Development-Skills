@@ -82,3 +82,13 @@ Ask for the original requirement, approved plan revision and task IDs; changed p
 This guide covers **how to use** the materials, not claims of live agent execution inside this website.
 
 For a QGIS-based **standalone engine** rather than a hosted plugin, install `qgis-engine-integration` and read the [architecture guide](../references/qgis-engine-integration.md) and [native runtime example](../examples/qgis-engine/README.md). Pin QGIS/Qt/Python and review upstream licensing.
+
+## Completion evidence for a reviewed plan
+
+The [responsibility matrix](../references/repository-wide-skill-orchestration.md) defines who owns intake, routing, security, execution, native checks, DoneProof, and the journal. Check static reachability with `python scripts/audit_skill_graph.py`. For a real multi-step delivery retain the reviewed plan's `request_id`, `revision`, task IDs and verbatim acceptance criteria; DoneProof must match all of them:
+
+```bash
+python scripts/verify_completion.py report.json --plan reviewed-plan.json --require-verified
+```
+
+A passing consistency report cannot prove external sends, GUI execution or authentic host permissions. Label T2–T4 NOT RUN if the required native environment is unavailable.
