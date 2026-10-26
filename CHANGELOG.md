@@ -1,3 +1,11 @@
+# Unreleased — cross-PR integration and real workflow handoffs (2026-10-26)
+
+- Integrate proposed Desktop GIS engineering (#25), repository-wide intent orchestration (#26), and the 188-source GIS catalog (#27) into one compatible PR, with combined CI regression tests.
+- Fix 39 broken local Markdown links previously present in `docs/ENGINEERING_UPDATES_2026-10.md`, and add repository-wide link verification.
+- Make the bilingual Project Wizard export a draft `gis-workflow-draft.json` plan matching the offline Intent Router schema; block export until the user goal and success criteria are explicit. Test actual Node DOM → Python workflow compiler handoff.
+- Upgrade GitHub Actions checkout and setup-python to verified SHA-pinned Node.js 24 releases; eliminate the deprecated Node.js 20 actions warning.
+- No native GIS runtime or authenticated hosting-agent approval has been tested; keep those acceptance tiers NOT RUN.
+
 # Unreleased — GIS Software & Source Code Registry (2026-10-26)
 
 - Extend the existing canonical project catalog from 148 to 188 **unique public repository links** (40 new, none copied) covering desktop, web, mobile, engines, spatial servers, .NET and remote sensing.
