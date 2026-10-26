@@ -42,6 +42,7 @@ for (const id of ['lang','heading','intro','typeLabel','localeLabel','filesLabel
   'licenseLabel','detailsLabel','details','goalLabel','goal','successLabel','success','generate','download','downloadJson','resultLabel','result','status',
   'homeLink','roadmapLink','kmlLink','reliabilityLink','workflowLink','wizardPrivacy']) node(id);
 node('download').disabled = true;
+node('downloadJson').disabled = true;
 let lastLink=null, lastBlob=null, revoke=null;
 const document = {
   documentElement:{lang:'en',dir:'ltr'},
