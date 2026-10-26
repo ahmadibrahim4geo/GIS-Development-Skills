@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 27,
+  "skill_count": 28,
   "skill_ids": [
     "agent-development-journal",
     "arcgis-toolbox-engineering",
@@ -29,6 +29,7 @@
     "qgis-plugin-development",
     "remote-sensing-pipelines",
     "spatial-databases",
+    "system-capabilities-and-permissions",
     "terrain-hydrology-lidar"
   ],
   "reference_count": 188,
