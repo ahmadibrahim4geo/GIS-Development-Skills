@@ -57,4 +57,4 @@ Use the [repository-wide execution contract](../../references/repository-wide-sk
 
 **Shared checks:** [security](../../references/geospatial-security.md) · [performance](../../references/geospatial-performance.md).
 
-**More:** [GIS software registry](../../references/gis-software-source-registry.md) · [full guide](../../references/gis-development-full-guidance.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
+**More:** [GIS software registry](../../references/gis-software-source-registry.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
