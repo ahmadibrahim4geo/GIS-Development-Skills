@@ -167,6 +167,19 @@ class GISDataFlowDiagnosticsTests(unittest.TestCase):
         self.assertFalse(result["render_verified"])
         self.assertEqual([], result["issues"])
 
+    def test_lossless_cannot_omit_readback_from_required_phases(self):
+        t = deepcopy(self.good)
+        t["required_phases"].remove("READBACK")
+        t["events"] = [event for event in t["events"] if event["phase"] != "READBACK"]
+        issues = flow.validate_trace(t)["issues"]
+        self.assertTrue(any("must require READBACK" in issue for issue in issues), issues)
+
+    def test_export_and_readback_must_refer_to_same_artifact(self):
+        t = deepcopy(self.good)
+        t["events"][-1]["artifact_id"] = "a-different-export"
+        issues = flow.validate_trace(t)["issues"]
+        self.assertTrue(any("artifact_id disagree" in issue for issue in issues), issues)
+
     def test_lossless_count_mismatch_is_detected(self):
         t = deepcopy(self.good)
         t["events"][-1]["feature_count"] = 1

@@ -35,6 +35,7 @@ See the canonical [repository-wide contract](../references/repository-wide-skill
 | Ambiguous task ownership | Workflow compiler silently selected the first eligible specialist if `owner_skill` was omitted | Require an explicit selected accountable owner; disallow shared-only owner |
 | DoneProof report omission | Reports could say fully verified while silently dropping acceptance criteria from the original plan | Add strict `--plan` binding of request, revision, task and full criterion set; require plan for `--require-verified` |
 | DoneProof unsafe/misleading JSON | Duplicate keys, non-finite JSON or impossible aggregate status could be accepted | Detect duplicate keys, reject non-finite values and oversized files, enforce aggregate status |
+| Lossless trace could skip readback | A sender could omit READBACK from both events and required phases and still receive a structural PASS | Lossless reports must explicitly require IMPORT and READBACK; exported and reopened artifact IDs must agree when present |
 | Routing drift | Existing validations checked links but not coherent domain hint, policy and shared-role coverage | Add read-only whole-pack ownership audit and invoke it in CI |
 | Public-facing workflow outdated | Homepage compressed execute, test and report into one step; evidence gates were hard to find | Separate Execute, Prove and Handoff stages; update bilingual docs and clear navigation |
 
