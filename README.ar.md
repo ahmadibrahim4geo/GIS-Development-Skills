@@ -26,6 +26,22 @@
 
 أضفنا [QGIS Engine Integration](skills/qgis-engine-integration/SKILL.md) لاستخدام QGIS Core وGUI وProcessing وServer في بناء برامج GIS مستقلة، وربط PyQGIS بأي تطبيق مكتبي أو ويب عند الحاجة، دون فرض محرك عرض أو تغيير واجهة المشروع. اقرأ [مستودعات QGIS الرسمية وهندسة التكامل](references/qgis-engine-integration.md) و[مثال الاختبار الأصلي](examples/qgis-engine/README.md). اختبارات CI وحدها لا تثبت تشغيل البرنامج، ويجب مراجعة GPL وتبعياته قبل التوزيع.
 
+## تدفق الأوامر والبيانات ومسؤوليات المهارات — 26 أكتوبر 2026
+
+**لدينا 30 مهارة، ولكل مهمة تنفيذية مسؤول محدد.** التسلسل: **طلب المستخدم ← الهدف ومعايير القبول ← التوجيه واختيار المسؤول ← الأمان والصلاحيات ← التنفيذ الحقيقي ← اختبار الأوامر والبيانات والبرنامج ← DoneProof ← سجل التطوير ← التسليم**. راجع [مصفوفة المسؤوليات](references/repository-wide-skill-orchestration.md)، و[تقرير مراجعة الجاهزية](docs/RELEASE_READINESS_AUDIT_2026-10-26.md)، و[دليل النشر](PUBLISHING.md).
+
+[UI Command Audit](skills/gis-ui-command-audit/SKILL.md) يراجع ارتباط الأزرار بوظائفها، و[GIS Data Flow Diagnostics](skills/gis-data-flow-diagnostics/SKILL.md) يتابع الاستيراد والمحرك والعرض والحفظ وإعادة القراءة. الاختبارات الأصلية لسطح المكتب والموبايل منفصلة. ملف المهارة وحده لا ينفذ البرامج ولا يمنح صلاحيات الجهاز.
+
+```bash
+python scripts/audit_skill_graph.py
+python scripts/build_manifest.py --check
+python -m unittest discover -s tests -v
+# بعد إجراء الاختبارات الفعلية، وبوجود الخطة الأصلية:
+python scripts/verify_completion.py report.json --plan reviewed-plan.json --require-verified
+```
+
+نجاح الفاحص الأخير يثبت **اتساق التقرير مع الخطة** فقط؛ ولا يثبت صحة الأدلة الخارجية تلقائيًا. الاختبارات التي لم تُشغّل داخل بيئتها الفعلية تُذكر بوضوح.
+
 ## DoneProof — إثبات الإنجاز قبل إعلان اكتمال المهمة (26 أكتوبر 2026)
 
 [DoneProof](skills/completion-evidence/SKILL.md) مهارة مشتركة تطلب دليلًا حقيقيًا لكل شرط نجاح من الإصدار الحالي للمهمة، أو توضح أن النتيجة جزئية أو فاشلة أو محجوبة أو لم تُختبر. [فاحص JSON](scripts/verify_completion.py) يتحقق من اتساق التقرير **وليس من صحة تنفيذ العمليات الخارجية**. راجع [البروتوكول](references/doneproof-verification-protocol.md) و[دراسة OpenAI Skill Creator وSuperpowers](references/skill-creator-superpowers-review.md). تظل اختبارات GIS الأصلية T0–T4 لازمة.
