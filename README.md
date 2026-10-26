@@ -16,6 +16,10 @@
   <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml"><img alt="Validation workflow status" src="https://img.shields.io/github/actions/workflow/status/ahmadibrahim4geo/GIS-Development-Skills/validate.yml?style=for-the-badge&amp;label=Tests&amp;labelColor=172B3C"></a>
 </p>
 
+## GIS Mobile Application Development
+
+Use the [standalone Android/iOS Mobile GIS skill](skills/gis-mobile-application-development/SKILL.md) with [architecture](references/mobile-gis-architecture.md), [offline edit and conflict-safe synchronization](references/mobile-gis-offline-sync.md), [secure sign-in/session handling](references/mobile-gis-authentication.md), and the [device testing matrix](references/mobile-gis-device-test-matrix.md). The [Project Wizard](project-wizard.html) now routes mobile workflows and captures Android/iOS, offline and authentication choices. The deterministic [offline T1 fixture](examples/mobile-gis/README.md) is not a tested mobile binary or successful hardware GNSS/login flow.
+
 ## GIS Software & Source Code Registry — 26 October 2026
 
 The [GIS source code selection guide](references/gis-software-source-registry.md) routes developers to complete **desktop, web and mobile GIS applications**, reusable rendering/processing engines, spatial servers and scientific libraries. The existing [searchable project catalog](references/project-catalog.json) is the **single machine-readable source of truth** (188 unique GitHub repositories after adding 40 nonduplicate public sources); browse its live entries via the [bilingual Explorer](explorer.html#catalog). A public URL or preliminary license metadata is not a build, deployment or license audit: confirm upstream source permissions, exact versions and native tests before reuse.
@@ -55,7 +59,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>28 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>29 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -73,7 +77,7 @@ Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planni
 
 ## Four GIS UI quality engineering skills — 26 October 2026
 
-The repository now includes **28 installable GIS specialist skills**, including four independent but interoperable quality workflows:
+The repository now includes **29 installable GIS specialist skills**, including four independent but interoperable quality workflows:
 
 - [GIS UI Command Audit](skills/gis-ui-command-audit/SKILL.md): inspect menu/Ribbon/icon declarations and command bindings with a [read-only offline scanner](scripts/gis_ui_command_audit.py).
 - [GIS Desktop E2E Testing](skills/gis-desktop-e2e-testing/SKILL.md): native Windows UI Automation and WebView2 acceptance workflow, with real-host T3/T4 evidence required.
