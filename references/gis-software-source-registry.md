@@ -12,7 +12,7 @@
 | Desktop spatial editor / cartography | [OpenJUMP](https://github.com/openjump-gis/openjump), [GeoDa](https://github.com/GeoDaCenter/geoda), [OpenOrienteering Mapper](https://github.com/OpenOrienteering/mapper) | Desktop + [Cartography](../skills/gis-cartography-symbology/SKILL.md) |
 | 2D/3D web map | [MapLibre](https://github.com/maplibre/maplibre-gl-js), [OpenLayers](https://github.com/openlayers/openlayers), [CesiumJS](https://github.com/CesiumGS/cesium), [TerriaJS](https://github.com/TerriaJS/terriajs) | [Web Mapping](../skills/geospatial-web-mapping/SKILL.md) |
 | Ready-to-adapt WebGIS portal | [MapStore2](https://github.com/geosolutions-it/MapStore2), [GeoNode](https://github.com/GeoNode/geonode), [Lizmap](https://github.com/3liz/lizmap-web-client) | Web Mapping + [Spatial Databases](../skills/spatial-databases/SKILL.md) + [Data Catalogs](../skills/geospatial-data-catalogs/SKILL.md) |
-| Mobile / offline field collection | [QField](https://github.com/opengisch/QField), [Mergin Maps](https://github.com/MerginMaps/mobile), [MapLibre Native](https://github.com/maplibre/maplibre-native) | Desktop/engine specialist + mobile-specific platform integration |
+| Mobile / offline field collection | [QField](https://github.com/opengisch/QField), [Mergin Maps](https://github.com/MerginMaps/mobile), [MapLibre Native](https://github.com/maplibre/maplibre-native) | [Mobile GIS Development](../skills/gis-mobile-application-development/SKILL.md) + selective QGIS/rendering adapters when needed |
 | GIS computation and file conversion | [GDAL](https://github.com/OSGeo/gdal), [PROJ](https://github.com/OSGeo/PROJ), [GEOS](https://github.com/libgeos/geos), [GRASS](https://github.com/OSGeo/grass) | [Geospatial Data Processing](../skills/geospatial-data-processing/SKILL.md) + [CRS](../skills/coordinate-reference-systems/SKILL.md) |
 | .NET / C# map application | [Mapsui](https://github.com/Mapsui/Mapsui), [NetTopologySuite](https://github.com/NetTopologySuite/NetTopologySuite) | Desktop + [Desktop/.NET implementation guide](dotnet-gis.md) |
 | Raster / imagery / geospatial AI | [SNAP Desktop](https://github.com/senbox-org/snap-desktop), [Open Data Cube](https://github.com/opendatacube/datacube-core), [eo-learn](https://github.com/sentinel-hub/eo-learn) | [Remote Sensing Pipelines](../skills/remote-sensing-pipelines/SKILL.md) |
@@ -69,6 +69,8 @@
 **Server rule:** evaluate OGC compliance, permission boundaries, data lineage, index plans, API limits, cache strategies and clean provisioning; an online demo is not deployability proof.
 
 ### 6. Mobile and offline GIS
+
+Use the dedicated [Mobile GIS Application Development skill](../skills/gis-mobile-application-development/SKILL.md), [offline synchronization](mobile-gis-offline-sync.md), [sign-in and offline session guide](mobile-gis-authentication.md), and [Android/iOS device test matrix](mobile-gis-device-test-matrix.md).
 
 **QField** and **Mergin Maps** are representative QGIS-centric field applications. Study touch interaction, GPS permissions, offline GeoPackage/project storage, edits, conflict resolution and sync. Compare **MapLibre Native** where only embedded native map rendering is needed. Mobile apps still require device-native runtime testing.
 

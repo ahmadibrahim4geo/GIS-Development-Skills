@@ -11,7 +11,7 @@
 5. A model-running agent must have deterministic local actions without purchasing a hosted LLM. Local/GPU computation and data transfer can still incur practical expenses. Earth Engine and hosted cloud datasets may require eligible accounts or quotas.
 6. If a free solution is not equivalent in accuracy/outputs to a paid GIS feature, state the limitation; do not invent feature parity.
 
-## All 28 specialists
+## All 29 specialists
 
 | Specialist | Free independent path | Optional dependency or limitation |
 | --- | --- | --- |
@@ -29,6 +29,7 @@
 | `spatial-databases` | Local PostgreSQL/PostGIS or SQLite/SpatiaLite | Managed hosted databases may charge |
 | `geospatial-web-mapping` | MapLibre/Leaflet/CesiumJS with permitted local/self-hosted layers | Hosted imagery/terrain/maps may charge or forbid caching |
 | `gis-desktop-application-development` | .NET, Tauri and free GIS engines under their licenses | ArcGIS/Global Mapper runtime DLLs need paid licensing |
+| `gis-mobile-application-development` | Free/native Android/iOS SDKs with license-reviewed MapLibre/Qt/QGIS adapters and local geodata; deterministic offline sync tests | Signing, native hardware tests, optional provider accounts and map data rights require separate verification and user permission |
 | `geospatial-data-discovery` | Metadata catalogs and independently permitted free datasets | Downloading or redistributing assets may be restricted |
 | `geospatial-data-catalogs` | Offline Python source directory search | A directory is not a free scientific data download |
 | `geospatial-api-integration` | Locally served endpoints and verified conditional free-tier sources | Trial/billed providers not default |

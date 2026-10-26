@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 28,
+  "skill_count": 29,
   "skill_ids": [
     "agent-development-journal",
     "arcgis-toolbox-engineering",
@@ -19,6 +19,7 @@
     "gis-development",
     "gis-device-context",
     "gis-internationalization-arabic",
+    "gis-mobile-application-development",
     "gis-security-guardian",
     "gis-ui-command-audit",
     "gis-ui-ux-design-testing",
