@@ -55,7 +55,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>27 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>28 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -73,7 +73,7 @@ Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planni
 
 ## Four GIS UI quality engineering skills — 26 October 2026
 
-The repository now includes **27 installable GIS specialist skills**, including four independent but interoperable quality workflows:
+The repository now includes **28 installable GIS specialist skills**, including four independent but interoperable quality workflows:
 
 - [GIS UI Command Audit](skills/gis-ui-command-audit/SKILL.md): inspect menu/Ribbon/icon declarations and command bindings with a [read-only offline scanner](scripts/gis_ui_command_audit.py).
 - [GIS Desktop E2E Testing](skills/gis-desktop-e2e-testing/SKILL.md): native Windows UI Automation and WebView2 acceptance workflow, with real-host T3/T4 evidence required.
@@ -127,6 +127,7 @@ The existing [KML/KMZ Engineering skill](skills/kml-kmz-engineering/SKILL.md) no
 Two new installable skills extend the toolkit to **18 specialists** (including the recently added [KML/KMZ specialist](skills/kml-kmz-engineering/SKILL.md)):
 
 - [GIS Cartography & Symbology](skills/gis-cartography-symbology/SKILL.md) — vector point/line/polygon symbols, raster ramps, labels, accessible layouts, ArcMap/Pro/QGIS/MapLibre/Cesium adapters and verifiable save/reopen.
+- [System Capabilities & Permissions](skills/system-capabilities-and-permissions/SKILL.md) — general OS/device access and permission workflows with optional trusted adapters, privacy and native test contracts.
 - [GIS Device Context](skills/gis-device-context/SKILL.md) — UTC/local date/time, IANA timezone, opt-in device geolocation, scene-vs-device target and live/simulated Sunlight modes.
 - [19-source style directory (including 8 icon packs and Cesium PinBuilder)](references/cartographic-style-sources.json), including the [ArcMap Style Collection](https://github.com/ahmadibrahim4geo/ArcMap-Style-Collection), QGIS Resources, OS GeoDataViz, CARTOColors and scientific palette references. Upstream individual style/font rights are **not** automatically granted by hosting.
 - Offline [MapLibre point/line/polygon fixture](examples/cartography/README.md) and [Python timezone/context fixture](examples/device-context/README.md) with regression tests; real GIS rendering, GPS permission and sun lighting still require host testing.
