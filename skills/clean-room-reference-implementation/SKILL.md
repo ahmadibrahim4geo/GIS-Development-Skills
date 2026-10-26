@@ -1,4 +1,11 @@
+---
+name: clean-room-reference-implementation
+description: Analyze permitted reference behavior and independently build/test interoperable GIS functionality using provenance and evidence gates.
+license: MIT
+---
+
 # Clean-Room Reference Implementation — GIS Development Skills
+
 
 ## Purpose
 Reproduce observable functionality and interoperable data behavior of reference software using independently authored code, without copying protected source, assets, credentials, or restricted services.
@@ -26,6 +33,18 @@ Example acceptance for placemark: create WGS84 point with name, description and 
 
 ## Integration
 Route through existing GIS intent router, security and MCP capability authorization, KML/KMZ, UI command audit, desktop end-to-end tests and GIS data-flow diagnostics. MCP capability discovery is not permission; require explicit authorization for side effects. Do not silently replace existing skills.
+
+## ZEarth twelve-role reference lab example
+
+The [ZEarth reference lab](https://github.com/ahmadibrahim4geo/Z-EARTH/tree/main/docs/google-earth-reference) contains eight **reference-analysis workstreams** R01–R08 and four **implementation audits** Z01–Z04. The manifest, distinct reports and 30-feature comparison are auditable. The `scripts/reference_lab_audit.py` runner checks each role's source-evidence contract; GitHub Actions runs twelve read-only role jobs and retains their reports.
+
+**Evidence boundary:** these are deterministic auditors and role-specific authored analyses, **not independent LLM agents** or a real Windows comparison. An external agent host may dispatch the roles individually using the manifest, subject to scoped tool access, provenance, review and licensing.
+
+Example:
+```bash
+python scripts/reference_lab_audit.py --all --out-dir reference-evidence
+node --test tests/cloud-layer.test.cjs
+```
 
 ## Release gates
 - Provenance and licensing checked
