@@ -21,6 +21,8 @@ Companion to [GIS Mobile Development](../skills/gis-mobile-application-developme
 | MOB-15 | Both | Optional Bluetooth/external GNSS: connect, disconnect, fallback, distinguish internal/external accuracy | Recorded device source, fix provenance |
 | MOB-16 | Both | Signed release package: install, launch, update with migration, backup/restore and uninstall retention policy | Package signature, build SHA, app/device versions |
 
+**Evidence status validator:** run python scripts/validate_mobile_device_evidence.py path/to/report.json. PASS requires device, OS, build SHA, observed result and evidence; physical hardware/privacy cases cannot PASS as a CI fixture. The example report is [explicitly NOT_RUN](../examples/mobile-gis/device-acceptance.example.json).
+
 ## Native automation choice
 
 Android: instrumentation tests, AndroidX Test/Espresso or UI Automator and emulator/device as supported. iOS: XCTest/XCUITest on simulator **and** device for OS/hardware-specific GNSS and entitlement evidence. Shared-flow frameworks (for example Appium) are optional and do not prove native feature fidelity without physical evidence. Run both online and no-network cases; synthetic mock GPS never counts as GNSS hardware verification.

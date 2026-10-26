@@ -30,6 +30,8 @@ jobs:
         run: python scripts/audit_license_catalog.py --summary
       - name: Offline GIS Security Guardian preflight
         run: python scripts/security_audit.py --root . --format text
+      - name: Validate mobile device evidence status (fixture-only, no native PASS claims)
+        run: python scripts/validate_mobile_device_evidence.py examples/mobile-gis/device-acceptance.example.json
       - name: Validate API catalog
         run: python scripts/validate_api_catalog.py
       - name: Validate GIS data repositories index
