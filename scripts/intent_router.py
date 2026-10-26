@@ -30,6 +30,7 @@ DOMAINS = (
     ("geospatial-api-integration", ("api", "geocod", "gazetteer", "أسماء الأماكن", "بحث عن الأماكن")),
     ("geospatial-data-discovery", ("download data", "stac", "مصادر البيانات", "تنزيل بيانات")),
     ("geospatial-ai-agents", ("agent", "geoai", "automation", "وكيل", "الذكاء الاصطناعي")),
+    ("mcp-integration-and-tool-orchestration", ("mcp", "model context protocol", "mcp server", "mcp tools", "سيرفرات mcp", "سيرفر mcp", "توجيه الأدوات", "تكامل الأدوات")),
     ("geospatial-data-catalogs", ("data catalog", "data repository", "gis catalog", "stac catalog", "كتالوج البيانات", "فهرس البيانات", "مستودعات البيانات")),
     ("gis-internationalization-arabic", ("i18n", "localization", "arabic ui", "bilingual", "تعريب", "ثنائي اللغة", "تعدد اللغات")),
     ("system-capabilities-and-permissions", ("device permissions", "system permissions", "camera permission", "microphone permission", "bluetooth permission", "صلاحيات الجهاز", "أذونات الجهاز", "إذن الكاميرا")),
@@ -316,7 +317,10 @@ def main(argv=None):
     p.add_argument("--format", choices=("text", "json"), default="text")
     p.add_argument("--gate", action="store_true", help="Check declared revision-scoped approval; never execute")
     p.add_argument("--workflow", action="store_true", help="Compile a goal-first dependency-ordered workflow preview; requires --plan, never executes")
+    p.add_argument("--mcp-inventory", type=Path, help="Optional unverified MCP/native tool inventory for read-only capability preview; requires --workflow")
     args = p.parse_args(argv)
+    if args.mcp_inventory and (not args.workflow or args.plan is None):
+        p.error("--mcp-inventory requires --plan and --workflow")
     if args.text is not None:
         if args.gate:
             p.error("--gate requires --plan")
@@ -336,6 +340,16 @@ def main(argv=None):
         return 2
     if args.workflow:
         blueprint = compile_workflow(plan, require_approved=args.gate)
+        if args.mcp_inventory and blueprint["valid"]:
+            try:
+                from mcp_tool_router import route_plan
+                inventory = json.loads(args.mcp_inventory.read_text(encoding="utf-8"))
+                blueprint["tool_route_preview"] = route_plan(plan, inventory)
+                blueprint["tool_routing_note"] = "Candidate capabilities only; no live MCP discovery, authorization or invocation."
+            except (OSError, ValueError, TypeError) as exc:
+                blueprint["valid"] = False
+                blueprint["status"] = "BLOCKED"
+                blueprint["errors"].append("MCP inventory preview invalid: " + str(exc))
         if args.format == "json":
             print(json.dumps(blueprint, ensure_ascii=False, indent=2))
         else:

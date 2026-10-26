@@ -14,6 +14,16 @@
 </p>
 
 
+## تكامل MCP وتوجيه أدوات الوكيل — 26 أكتوبر 2026
+
+أضفنا [مهارة MCP Integration & Tool Orchestration](skills/mcp-integration-and-tool-orchestration/SKILL.md) كطبقة **اختيارية** بين توجيه مهارات GIS وأدوات التنفيذ التي يوفّرها الوكيل فعلًا. تفحص القدرات المعلنة وحدود القراءة والكتابة والتشغيل، وتحدد الأدوات المرشحة وتستعمل بديلًا محليًا مصرحًا به عند غياب MCP، وإلا تُسجل الحالة BLOCKED. اقرأ [دليل تدفق الأوامر والبيانات](references/mcp-integration-workflow.md)، و[سجل القدرات](references/mcp-capability-registry.json)، و[أداة التوجيه المحلية](scripts/mcp_tool_router.py)، و[المثال التجريبي](examples/mcp-tool-routing/README.md).
+
+التسلسل: **الطلب → الهدف والخطة المعتمدة → مسؤول GIS → مرشح MCP/Native → الأمان وصلاحيات المضيف → تنفيذ فعلي → اختبارات وإعادة قراءة → DoneProof → سجل التطوير**. هذه الإضافة **لا تثبت أي MCP Server ولا تمنح صلاحيات الجهاز ولا تدّعي تشغيل QGIS أو Windows**؛ فحص JSON مجرد توجيه مبدئي لا تنفيذ.
+
+```bash
+python scripts/intent_router.py --plan examples/mcp-tool-routing/plan.example.json --workflow --mcp-inventory examples/mcp-tool-routing/inventory.example.json --format json
+```
+
 ## مهارة تطوير تطبيقات GIS للموبايل
 
 أضفنا [مهارة مستقلة لتطوير تطبيقات Android وiOS الجغرافية](skills/gis-mobile-application-development/SKILL.md)، مع [دليل اختيار المحركات](references/mobile-gis-architecture.md)، و[المزامنة والعمل دون إنترنت](references/mobile-gis-offline-sync.md)، و[تسجيل الدخول الآمن](references/mobile-gis-authentication.md)، و[مصفوفة اختبار أجهزة الموبايل](references/mobile-gis-device-test-matrix.md). يتضمن معالج المشاريع خيارات المنصة والمزامنة والتوثيق، واختبارات محلية لعقود البيانات؛ ولا تعتبر الفحوص الآلية دليلًا على عمل تطبيق أصلي على هاتف حقيقي.
@@ -28,7 +38,7 @@
 
 ## تدفق الأوامر والبيانات ومسؤوليات المهارات — 26 أكتوبر 2026
 
-**لدينا 30 مهارة، ولكل مهمة تنفيذية مسؤول محدد.** التسلسل: **طلب المستخدم ← الهدف ومعايير القبول ← التوجيه واختيار المسؤول ← الأمان والصلاحيات ← التنفيذ الحقيقي ← اختبار الأوامر والبيانات والبرنامج ← DoneProof ← سجل التطوير ← التسليم**. راجع [مصفوفة المسؤوليات](references/repository-wide-skill-orchestration.md)، و[تقرير مراجعة الجاهزية](docs/RELEASE_READINESS_AUDIT_2026-10-26.md)، و[دليل النشر](PUBLISHING.md).
+**لدينا 31 مهارة، ولكل مهمة تنفيذية مسؤول محدد.** التسلسل: **طلب المستخدم ← الهدف ومعايير القبول ← التوجيه واختيار المسؤول ← الأمان والصلاحيات ← التنفيذ الحقيقي ← اختبار الأوامر والبيانات والبرنامج ← DoneProof ← سجل التطوير ← التسليم**. راجع [مصفوفة المسؤوليات](references/repository-wide-skill-orchestration.md)، و[تقرير مراجعة الجاهزية](docs/RELEASE_READINESS_AUDIT_2026-10-26.md)، و[دليل النشر](PUBLISHING.md).
 
 [UI Command Audit](skills/gis-ui-command-audit/SKILL.md) يراجع ارتباط الأزرار بوظائفها، و[GIS Data Flow Diagnostics](skills/gis-data-flow-diagnostics/SKILL.md) يتابع الاستيراد والمحرك والعرض والحفظ وإعادة القراءة. الاختبارات الأصلية لسطح المكتب والموبايل منفصلة. ملف المهارة وحده لا ينفذ البرامج ولا يمنح صلاحيات الجهاز.
 
@@ -54,7 +64,7 @@ python scripts/verify_completion.py report.json --plan reviewed-plan.json --requ
 
 ## أربع مهارات جديدة لتدقيق برامج GIS وتصميم واجهاتها واختبارها — 26 أكتوبر 2026
 
-أصبح لدينا **30 مهارة قابلة للتثبيت**، وأضفنا أربع مهارات مترابطة مستقلة عن أي برنامج بعينه: [جرد أوامر الواجهة](skills/gis-ui-command-audit/SKILL.md)، و[اختبار البرامج المكتبية الفعلي](skills/gis-desktop-e2e-testing/SKILL.md)، و[تشخيص تدفق بيانات GIS](skills/gis-data-flow-diagnostics/SKILL.md)، و[تصميم واختبار UI/UX](skills/gis-ui-ux-design-testing/SKILL.md).
+أصبح لدينا **31 مهارة قابلة للتثبيت**، وأضفنا أربع مهارات مترابطة مستقلة عن أي برنامج بعينه: [جرد أوامر الواجهة](skills/gis-ui-command-audit/SKILL.md)، و[اختبار البرامج المكتبية الفعلي](skills/gis-desktop-e2e-testing/SKILL.md)، و[تشخيص تدفق بيانات GIS](skills/gis-data-flow-diagnostics/SKILL.md)، و[تصميم واختبار UI/UX](skills/gis-ui-ux-design-testing/SKILL.md).
 
 يحدد [عقد العمل المشترك](references/gis-ui-quality-coordination.md) مسؤولية كل مهارة والتسليم بين الأوامر والبيانات، وتوثق [مراجع الأدوات الخارجية](references/gis-ui-quality-upstream-sources.md) مصادرها. أضفنا أداتين مجانيتين للفحص الثابت وسجلات البيانات الصناعية، ولا تعتبر نتائجهما دليلًا على التشغيل داخل Windows أو ArcGIS أو QGIS. يمكن اختيار المهارات من [معالج المشاريع](project-wizard.html) بشكل اختياري دون تحويل المسودة إلى تصريح بالتنفيذ.
 
@@ -70,7 +80,7 @@ python scripts/verify_completion.py report.json --plan reviewed-plan.json --requ
 
 ## طوّر أدوات وتطبيقات نظم المعلومات الجغرافية وفق منهجية يمكن التحقق منها.
 
-مهارات تطوير برمجيات نظم المعلومات الجغرافية ومراجع مفتوحة المصدر، تشمل **30 مهارة قابلة للتثبيت** و**188 مرجعًا جغرافيًا** و**52 مصدرًا لواجهات البيانات والخدمات الجغرافية** و**24 دليلًا وبوابةً للبيانات**.
+مهارات تطوير برمجيات نظم المعلومات الجغرافية ومراجع مفتوحة المصدر، تشمل **31 مهارة قابلة للتثبيت** و**188 مرجعًا جغرافيًا** و**52 مصدرًا لواجهات البيانات والخدمات الجغرافية** و**24 دليلًا وبوابةً للبيانات**.
 
 **تحسينات المجانية والعرض:** أصبحت [الواجهة](index.html) تعرض جميع المهارات المدرجة، وزر «عرض المزيد» لكل النتائج، وفلترًا مجانيًا افتراضيًا لخدمات API (42 خدمة مجانية بشروط + خدمة واحدة للاستضافة الذاتية). الخيارات التجارية والتجريبية والمقيدة تُعرض عند اختيار «كل المستويات». راجع [سياسة المجاني أولًا](references/free-first-policy.md) لتفاصيل ترخيص ArcGIS وGlobal Mapper والبيانات والخدمات.
 

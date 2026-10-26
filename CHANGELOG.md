@@ -1,3 +1,10 @@
+# Unreleased — MCP/native capability orchestration (2026-10-26)
+
+- Add independent optional MCP Integration & Tool Orchestration skill, capability/effect registry, non-executing stdlib candidate selector with native fallback, and adversarial offline tests.
+- Connect the capability preflight to the goal-first workflow CLI via `--mcp-inventory`; retain domain ownership, Security Guardian host gates, command/data trace, DoneProof and Journal responsibilities.
+- Refresh bilingual README, homepage, Explorer, graph reachability, free-first catalog, generated inventory and CI checks without altering branded author/footer content.
+- Candidate inventories and T1/T2 fixture checks **do not** prove a real connected MCP server, native GIS engine, device automation, approval or T3/T4 run.
+
 # Unreleased — full skill workflow and release-readiness hardening (2026-10-26)
 
 - Audit all **30 installed skills** for router reachability, documented handoffs, free-first coverage and lexical-domain routing, with a read-only standard-library auditor enforced by GitHub CI.
