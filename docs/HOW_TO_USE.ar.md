@@ -37,6 +37,19 @@ python scripts/intent_router.py --plan examples/intent-orchestrator/example-plan
 
 الأمر الأول مجرد اقتراحات كلمات مفتاحية، والثاني يولد Workflow مرتبًا بناءً على هدف مكتوب في الخطة؛ لا يمنح صلاحيات ولا يغير الملفات.
 
+### أربع مهارات لتطوير جودة التطبيقات
+
+لو هدف المستخدم يتعلق بواجهة التطبيق أو فحص تشغيله، يمكن اختيار [جرد الأوامر](../skills/gis-ui-command-audit/SKILL.md)، [اختبارات Desktop الفعلية](../skills/gis-desktop-e2e-testing/SKILL.md)، [تشخيص تدفق البيانات](../skills/gis-data-flow-diagnostics/SKILL.md)، و[تصميم واختبار UI/UX](../skills/gis-ui-ux-design-testing/SKILL.md) بصورة مستقلة حسب المهمة. [دليل التكامل](../references/gis-ui-quality-coordination.md) يمنع تكرار المسؤوليات. يوجد خيار مخصص في [معالج المشاريع](../project-wizard.html).
+
+الأمثلة التالية اختبار *صناعي آمن* لا يفتح تطبيق GIS أو واجهة Windows:
+
+```sh
+python scripts/gis_ui_command_audit.py --root examples/ui-command-audit/fixture
+python scripts/gis_data_flow_diagnostics.py --trace examples/data-flow-diagnostics/trace.example.json
+```
+
+لا تعتبر نجاح فحص الشفرة أو البيانات الوصفية إثباتًا لنجاح أوامر المحرك أو الـWebView2 الحقيقية.
+
 ### الخطوة 3: اشرح المطلوب بطريقتك واطلب خطة قبل التنفيذ
 
 > عندي تطبيق GIS محتاج تحسين استيراد KML/KMZ مع الحفاظ على الأيقونات والألوان والمجلدات والأنماط الأصلية. افحص الملفات أولًا واعرض خطة مرقمة بالمهام والمخاطر والنواتج والاختبارات لاعتمادها. بعد الموافقة نفّذ المعتمد فقط، وسجّل كل خطوة وتصحيح وإلغاء في سجل تطوير المشروع. اختبر المخرجات فعلًا، ووضح الوظائف التي لم تُختبر داخل البرنامج.
