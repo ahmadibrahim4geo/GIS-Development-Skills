@@ -76,6 +76,15 @@ class DoneProofTests(unittest.TestCase):
         self.report["criteria"][0].update(status="not_run", reason="Not executed")
         self.rejected()
 
+    def test_malformed_types_cannot_crash_validator(self):
+        self.report["criteria"][0]["status"] = []
+        self.assertTrue(mod.validate(self.report))
+        self.report["criteria"][0]["status"] = "verified"
+        self.report["criteria"][0]["evidence"][0]["type"] = {}
+        self.assertTrue(mod.validate(self.report))
+        self.report["overall_status"] = []
+        self.assertTrue(mod.validate(self.report))
+
     def test_entrypoints(self):
         for rel in ("AGENTS.md", "skills/gis-development/SKILL.md",
                     "references/repository-wide-skill-orchestration.md"):

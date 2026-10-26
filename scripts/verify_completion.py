@@ -22,7 +22,7 @@ def validate(data):
         if not nonempty(data.get(key)):
             errors.append(key + " must be nonempty")
     overall = data.get("overall_status")
-    if overall not in STATES:
+    if not isinstance(overall, str) or overall not in STATES:
         errors.append("Invalid overall_status")
     items = data.get("criteria")
     if not isinstance(items, list) or not items:
@@ -41,7 +41,7 @@ def validate(data):
         if not nonempty(item.get("statement")):
             errors.append(prefix + ": missing statement")
         status = item.get("status")
-        if status not in STATES:
+        if not isinstance(status, str) or status not in STATES:
             errors.append(prefix + ": invalid status")
             continue
         statuses.append(status)
@@ -59,7 +59,7 @@ def validate(data):
             if not isinstance(obs, dict):
                 errors.append(name + ": must be an object")
                 continue
-            if obs.get("type") not in KINDS:
+            if not isinstance(obs.get("type"), str) or obs.get("type") not in KINDS:
                 errors.append(name + ": unsupported type")
             for field in ("reference", "observed"):
                 if not nonempty(obs.get(field)):
