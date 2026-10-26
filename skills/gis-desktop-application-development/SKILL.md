@@ -185,3 +185,7 @@ For each desktop project, document: use case; chosen GIS engine and UI shell; al
 - Preserve shared router, security, documentation, bilingual site, Project Wizard and CI validation contracts from [AGENTS.md](../../AGENTS.md).
 - A desktop skill is general-purpose GIS engineering guidance; personal application repositories are not implementation dependencies or mandatory examples.
 - Do not claim a desktop build, QGIS-native operation or installer works without direct evidence on the intended host.
+
+## Device and OS capability adapters
+
+Use [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) only for reviewed OS integration needs: time, local/scoped storage, native location, serial/BLE, notifications, cameras or device diagnostics. Preserve existing WPF/Qt renderer and GIS engine; the platform skill implements the native API, Security owns rights, UI/UX designs consent, and Desktop E2E provides T3/T4 evidence. Mark absent hardware or native host checks NOT RUN.
