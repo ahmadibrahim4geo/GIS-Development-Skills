@@ -34,11 +34,11 @@ def validate_report(report):
         mode = row.get("mode")
         status = row.get("status")
         ident = row.get("case_id")
-        if platform not in {"android", "ios"}:
+        if platform not in ("android", "ios"):
             errors.append(prefix + " unsupported platform")
-        if mode not in {"physical", "emulator", "simulator", "ci-fixture"}:
+        if mode not in ("physical", "emulator", "simulator", "ci-fixture"):
             errors.append(prefix + " invalid mode")
-        if status not in VALID_STATUSES:
+        if not isinstance(status, str) or status not in VALID_STATUSES:
             errors.append(prefix + " invalid status")
         if not isinstance(ident, str) or not ident.startswith("MOB-"):
             errors.append(prefix + " invalid case_id")
@@ -66,7 +66,7 @@ def validate_report(report):
                 errors.append(prefix + " Android simulator label invalid (use emulator)")
             if platform == "ios" and mode == "emulator":
                 errors.append(prefix + " iOS emulator label invalid (use simulator)")
-            if ident in HARDWARE_CASES and mode != "physical":
+            if isinstance(ident, str) and ident in HARDWARE_CASES and mode != "physical":
                 errors.append(prefix + " hardware/privacy case requires physical device for PASS")
     return errors
 

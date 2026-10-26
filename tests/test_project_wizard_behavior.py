@@ -147,6 +147,7 @@ assert.match(e('result').textContent,/PyQGIS/);
 assert.match(e('result').textContent,/skills\/qgis-plugin-development\/SKILL.md/);
 e('type').value='mobile';e('type').fire('change');
 assert.equal(e('mobileSettings').hidden,false);
+assert.match(e('qualityFocus').options.find(x=>x.value==='e2e').textContent,/Android\/iOS/);
 e('mobilePlatform').value='both';e('mobilePlatform').fire('change');
 e('mobileNetwork').value='offline-sync';e('mobileNetwork').fire('change');
 e('mobileSignIn').value='required';e('mobileSignIn').fire('change');

@@ -52,6 +52,11 @@ class MobileEvidenceTests(unittest.TestCase):
         report["cases"].append(copy.deepcopy(report["cases"][0]))
         self.assertTrue(any("duplicate" in e for e in validator.validate_report(report)))
 
+    def test_malformed_types_are_validation_errors_not_exceptions(self):
+        report = self.make_report(platform=[], mode={}, status=12, case_id=[])
+        problems = validator.validate_report(report)
+        self.assertGreaterEqual(len(problems), 3)
+
     def test_example_reports_non_execution_truthfully(self):
         import json
         report = json.loads((ROOT / "examples/mobile-gis/device-acceptance.example.json").read_text(encoding="utf-8"))
