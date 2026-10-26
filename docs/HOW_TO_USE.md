@@ -28,7 +28,7 @@ The source repo is [GIS-Development-Skills](https://github.com/ahmadibrahim4geo/
 
 A compatible AI hosting agent should **understand the objective before picking libraries**: summarize the user's intended outcome, target application, testable success criteria, requirements, constraints and known unknowns. For substantial work, propose numbered tasks and receive scope-specific approval; the [Intent Orchestrator](../skills/prompt-intent-orchestrator/SKILL.md) hands the reviewed task graph to the [GIS Router](../skills/gis-development/SKILL.md). Then domain specialists perform preflight, actual implementation and verification, accompanied by Security Guardian and journal evidence. [Workflow protocol](../references/repository-wide-skill-orchestration.md).
 
-The [Project Wizard](../project-wizard.html) offers **local, bilingual goal and success-criteria inputs** and a Markdown plan preview; it is *not* an AI runtime. The offline tool can turn a reviewed JSON plan into an ordered, **nonexecuting** preview:
+The [Project Wizard](../project-wizard.html) offers **local, bilingual goal and success-criteria inputs**, a Markdown plan preview, and a downloadable draft **JSON workflow** compatible with the offline Intent Router. JSON export requires both fields, and it is *not* an AI runtime, an executable command or an authenticated approval. The offline tool can turn a reviewed JSON plan into an ordered, **nonexecuting** preview:
 
 ```sh
 python scripts/intent_router.py --text "Create a GIS desktop map that opens KMZ" --format json
