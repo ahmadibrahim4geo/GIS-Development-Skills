@@ -92,3 +92,8 @@ python scripts/verify_completion.py report.json --plan reviewed-plan.json --requ
 ```
 
 A passing consistency report cannot prove external sends, GUI execution or authentic host permissions. Label T2–T4 NOT RUN if the required native environment is unavailable.
+
+
+## Ask for an interactive diagram when useful
+
+Ask the same coding agent: “Explain my project architecture and command/data paths as an interactive diagram.” The GIS router composes the [visualization specialist](../skills/gis-architecture-visualization/SKILL.md); the domain owner supplies facts, and the agent prepares the external Archify runtime within authorized scope and returns an HTML link. Open it to inspect components/routes and request revisions in the same conversation. Copy bilingual requests from the [homepage](../index.html#architecture-visualization). See [runtime, language and evidence limits](../references/archify-integration.md); diagram checks remain separate from GIS tests.

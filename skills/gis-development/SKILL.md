@@ -37,6 +37,7 @@ license: MIT
 | Discover/download external data | [Geospatial Data Discovery](../geospatial-data-discovery/SKILL.md) |
 | Find source directories, data repositories and STAC indexes | [Geospatial Data Catalogs](../geospatial-data-catalogs/SKILL.md) |
 | GIS AI agents | [Agents](../geospatial-ai-agents/SKILL.md) |
+| Architecture/flow explanations, design/diagnosis, structural changes | [Visualization](../gis-architecture-visualization/SKILL.md) (conditional) |
 | Optional MCP servers, host tools, fallback routing and capability preflight | [MCP Tool Orchestration](../mcp-integration-and-tool-orchestration/SKILL.md) |
 | DEM, terrain, hydrology, LiDAR / point clouds | [Terrain / Hydrology / LiDAR](../terrain-hydrology-lidar/SKILL.md) |
 | Untrusted GIS inputs, secrets and security | [GIS Security Guardian](../gis-security-guardian/SKILL.md) (cross-cutting) |
@@ -54,7 +55,7 @@ license: MIT
 
 ## Global rules (always apply)
 
-Use [optional MCP/native routing](../../references/mcp-integration-workflow.md) after domain ownership and host permission checks. Use the [repository-wide execution contract](../../references/repository-wide-skill-orchestration.md), [full guidance](../../references/gis-development-full-guidance.md), and [Security Guardian](../gis-security-guardian/SKILL.md). Protect source data, verify CRS/units/NoData, preserve provenance, check licenses/versions, measure performance and test output readback. Obtain required approval before consequential writes; host permissions remain authoritative. Use [DoneProof](../completion-evidence/SKILL.md). Record T0–T4 evidence using the [acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py). Never treat static checks as native GIS or GUI proof.
+[MCP/native routing](../../references/mcp-integration-workflow.md) follows domain/host preflight; the [execution contract](../../references/repository-wide-skill-orchestration.md), [full guidance](../../references/gis-development-full-guidance.md) and [Security Guardian](../gis-security-guardian/SKILL.md) apply. Preserve sources/provenance; check CRS/units/NoData, licenses/versions, performance and readback. Require approval for consequential writes and host permissions. Apply [DoneProof](../completion-evidence/SKILL.md) and record T0–T4 using the [acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py). Static checks ≠ native GIS/GUI proof.
 
 **Shared checks:** [security](../../references/geospatial-security.md) · [performance](../../references/geospatial-performance.md).
 

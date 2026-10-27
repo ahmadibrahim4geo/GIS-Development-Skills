@@ -230,7 +230,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     <!-- Preserve manifest-backed IDs and semantic counters exactly -->
     <div class="studio-metrics">
         <div class="p-2 text-center">
-          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">32</strong>
+          <strong id="skillsCount" class="block text-2xl sm:text-3xl font-extrabold text-sky-400">33</strong>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="en">Installable Agent Skills</span>
           <span class="text-xs sm:text-sm text-slate-300 font-medium" data-lang="ar">مهارة برمجية قابلة للتثبيت</span>
         </div>
@@ -285,7 +285,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
               <option value="qgis-plugin-development">QGIS Plugins</option>
               <option value="qgis-engine-integration">QGIS Engine · Core / Desktop / Server</option>
               <option value="kml-kmz-engineering">Google Earth · KML/KMZ</option>
-              <option value="gis-desktop-application-development">Desktop GIS · WPF / Qt / Cesium</option><option value="mcp-integration-and-tool-orchestration">MCP · Agent Tool Integration</option><option value="gis-mobile-application-development">Mobile GIS · Android / iOS / Offline</option>
+              <option value="gis-desktop-application-development">Desktop GIS · WPF / Qt / Cesium</option><option value="gis-architecture-visualization" data-archify-option>Architecture &amp; workflow diagrams</option><option value="mcp-integration-and-tool-orchestration">MCP · Agent Tool Integration</option><option value="gis-mobile-application-development">Mobile GIS · Android / iOS / Offline</option>
               <option value="geospatial-web-mapping">Web GIS · 2D / 3D</option>
               <option value="remote-sensing-pipelines">Remote Sensing</option>
               <option value="geospatial-data-processing">GDAL · Vector / Raster</option>
@@ -342,6 +342,33 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     </section>
 
     <!-- Optional MCP integration: documentation only, not a live connector -->
+    <section id="architecture-visualization" class="py-14 border-t border-slate-800/70" aria-labelledby="archifyTitle">
+      <div class="flex flex-col lg:flex-row gap-8 lg:items-start">
+        <div class="lg:w-2/5">
+          <span class="text-xs font-bold text-emerald-300 tracking-widest"><span data-lang="en">SHARED SKILL · INVOKED WHEN USEFUL</span><span data-lang="ar">مهارة مشتركة · تُستدعى عند الحاجة</span></span>
+          <h2 id="archifyTitle" class="mt-3 text-3xl font-bold text-white"><span data-lang="en">Explore architecture &amp; workflows</span><span data-lang="ar">افهم بنية المشروع وتدفق العمل</span></h2>
+          <p class="mt-4 text-slate-300 leading-relaxed"><span data-lang="en">Ask your agent to explain components, skill responsibilities or command/data flows. The GIS router selects the right specialist and adds Archify when a diagram helps. It also supports reviewed feature designs, cross-component diagnosis and structural changes.</span><span data-lang="ar">اطلب من الوكيل شرح مكونات المشروع أو مسؤوليات المهارات أو مسار الأوامر والبيانات. يختار موجّه GIS المختص المناسب ويستعين بـArchify عندما يفيد المخطط، وكذلك في تصميم الميزات وتشخيص الأعطال بين المكونات والتغييرات البنيوية.</span></p>
+          <p class="text-xs text-amber-200 mt-3"><span data-lang="en">The agent prepares the external renderer when authorized. A diagram explains proposed, source-reviewed or observed relationships; real GIS tests remain separate. Full Arabic viewer RTL is still limited upstream.</span><span data-lang="ar">يجهّز الوكيل أداة الرسم الخارجية ضمن الصلاحيات المتاحة. يميز المخطط بين التصميم المقترح والعلاقات المستخرجة من الكود والمسارات المرصودة؛ اختبارات GIS الفعلية مستقلة. دعم RTL الكامل في عارض Archify ما زال محدودًا.</span></p>
+        </div>
+        <div class="lg:w-3/5">
+          <ol class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <li class="glass-card rounded-xl p-4"><b class="text-sky-300"><span data-lang="en">01 · ASK</span><span data-lang="ar">٠١ · اطلب</span></b><p class="text-sm text-slate-300 mt-2"><span data-lang="en">Describe what you want to understand in ordinary language.</span><span data-lang="ar">حدد الجزء الذي تريد فهمه باللغة العادية.</span></p></li>
+            <li class="glass-card rounded-xl p-4"><b class="text-sky-300"><span data-lang="en">02 · ROUTE</span><span data-lang="ar">٠٢ · التوجيه</span></b><p class="text-sm text-slate-300 mt-2"><span data-lang="en">The agent gathers domain findings and chooses the diagram type.</span><span data-lang="ar">يجمع الوكيل نتائج المختص ويختار نوع المخطط.</span></p></li>
+            <li class="glass-card rounded-xl p-4"><b class="text-sky-300"><span data-lang="en">03 · EXPLORE</span><span data-lang="ar">٠٣ · استكشف</span></b><p class="text-sm text-slate-300 mt-2"><span data-lang="en">Open the HTML link, inspect components and follow routes.</span><span data-lang="ar">افتح رابط HTML واستكشف المكونات والمسارات.</span></p></li>
+            <li class="glass-card rounded-xl p-4"><b class="text-sky-300"><span data-lang="en">04 · REFINE</span><span data-lang="ar">٠٤ · عدّل</span></b><p class="text-sm text-slate-300 mt-2"><span data-lang="en">Ask for a focused revision in the same conversation.</span><span data-lang="ar">اطلب توضيحًا أو تعديلًا في نفس المحادثة.</span></p></li>
+          </ol>
+          <pre id="archifyPromptEn" class="studio-example mt-4" data-lang="en" dir="ltr">Use GIS Development Skills to explain my project's architecture as an interactive diagram. Show component responsibilities and command/data paths. Distinguish proposed, source-reviewed and runtime-observed claims, and report any checks that could not run.</pre>
+          <pre id="archifyPromptAr" class="studio-example mt-4" data-lang="ar" dir="rtl">استخدم مهارات GIS لشرح بنية مشروعي في مخطط تفاعلي، ووضح مسؤوليات المكونات ومسار الأوامر والبيانات. ميّز التصميم المقترح والعلاقات المستخرجة من الكود والمسارات المرصودة، واذكر أي فحص لم يتوفر تشغيله.</pre>
+          <button type="button" class="studio-copy mt-3" onclick="copyUsage('archify',this)"><span data-lang="en">Copy request</span><span data-lang="ar">نسخ الطلب</span></button>
+          <div class="flex flex-wrap gap-4 mt-5 text-sm">
+            <a class="text-sky-300 underline" href="examples/architecture-visualization/skill-routing.html"><span data-lang="en">Explore the example</span><span data-lang="ar">استكشف المثال</span></a>
+            <a class="text-sky-300 underline" href="skills/gis-architecture-visualization/SKILL.md"><span data-lang="en">Visualization skill</span><span data-lang="ar">مهارة المخططات</span></a>
+            <a class="text-sky-300 underline" href="references/archify-integration.md"><span data-lang="en">Invocation &amp; runtime guide</span><span data-lang="ar">دليل الاستدعاء والتشغيل</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="mcp-integration" class="py-14 border-t border-slate-800/70" aria-labelledby="mcpTitle">
       <div class="flex flex-col lg:flex-row gap-8 lg:items-start">
         <div class="lg:w-2/5">
@@ -1090,6 +1117,8 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
       const htmlEl = document.documentElement;
       const isEn = htmlEl.getAttribute('lang') === 'en';
       htmlEl.setAttribute('lang', isEn ? 'ar' : 'en');
+      const archifyOption=document.querySelector('[data-archify-option]');
+      if(archifyOption)archifyOption.textContent=isEn?'مخططات البنية وتدفق العمل':'Architecture & workflow diagrams';
       htmlEl.setAttribute('dir', isEn ? 'rtl' : 'ltr');
       document.querySelectorAll('[data-i18n-alt]').forEach(el=>el.setAttribute('alt',isEn?'أحمد إبراهيم — أخصائي GIS وكارتوجرافي':'Ahmad Ibrahim — GIS specialist and cartographer'));
       const accessLabels=isEn?{'authorGitHubLabel':'حساب أحمد إبراهيم على GitHub','authorEmailLabel':'البريد الإلكتروني لأحمد إبراهيم','authorWhatsAppLabel':'أحمد إبراهيم على واتساب','authorContributeLabel':'اقترح تطوير أداة أو مهارة'}:{'authorGitHubLabel':'Ahmad Ibrahim on GitHub','authorEmailLabel':'Email Ahmad Ibrahim','authorWhatsAppLabel':'Ahmad Ibrahim on WhatsApp','authorContributeLabel':'Suggest a GIS skill or tool'};
@@ -1145,7 +1174,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     }
 
     function copyUsage(mode, button) {
-      const id = mode === 'install' ? 'howToCommand' : mode === 'specialist' ?
+      const id = mode === 'archify' ? (document.documentElement.lang==='ar'?'archifyPromptAr':'archifyPromptEn') : mode === 'install' ? 'howToCommand' : mode === 'specialist' ?
         'studioSpecialistCommand' : (document.documentElement.lang==='ar'?'howToExampleAr':'howToExampleEn');
       const target = document.getElementById(id);
       if (!target || !button) return;
@@ -1185,6 +1214,8 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',closeMobileMenu));
     document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMobileMenu();closeSkillModal();}});
     const studioTopics={
+      'gis-architecture-visualization':{"en": "Explain architecture, responsibilities and command/data paths with optional Archify; the agent handles runtime setup and artifact checks.", "ar": "اشرح البنية والمسؤوليات ومسار الأوامر والبيانات بمخطط تفاعلي عند الحاجة، ويتولى الوكيل تجهيز أداة الرسم وفحص النتيجة.", "enTask": "Use GIS Development Skills to explain my project architecture as an interactive diagram. Show component responsibilities and command/data paths. Distinguish proposed, source-reviewed and runtime-observed claims, and report any checks that could not run.", "arTask": "استخدم مهارات GIS لشرح بنية مشروعي في مخطط تفاعلي، ووضح مسؤوليات المكونات ومسار الأوامر والبيانات. ميّز التصميم المقترح والعلاقات المستخرجة من الكود والمسارات المرصودة، واذكر أي فحص لم يتوفر تشغيله."},
+
       'mcp-integration-and-tool-orchestration':{en:'Route optional MCP/native tools only after discovering real host capabilities and confirming per-action permissions.',ar:'وجّه أدوات MCP أو الأدوات المحلية بعد التحقق من قدرات الوكيل والصلاحيات لكل أمر.',enTask:'Review my approved GIS development plan and actual host tool inventory. Map capability IDs to available MCP or native tools with fallback, least-privilege checks, and verifiable tests. Do not claim a connected server, OS permission or native test unless observed.',arTask:'راجع خطة GIS المعتمدة وجرد الأدوات الفعلي داخل الوكيل. حدد قدرات MCP والأدوات المحلية والبدائل والصلاحيات والاختبارات، ولا تدّعِ وجود سيرفر أو اختبار فعلي دون دليل.'},
       'gis-internationalization-arabic':{en:'Test UTF-8 text, Arabic RTL/BiDi UI and map labels without changing geometry or GIS field identifiers.',ar:'اختبر عرض العربية واتجاه RTL والنص المختلط وملصقات الخرائط دون تعديل الإحداثيات أو أسماء الحقول.',enTask:'Inspect my GIS application localization architecture. Preserve stable field identifiers and geometry while adding tested Arabic RTL/BiDi strings, Unicode attributes and map-label rendering. Propose a numbered plan before edits, implement approved changes, and verify exports in the actual GIS host when available.',arTask:'افحص دعم العربية واللغات في تطبيق GIS، وحافظ على أسماء الحقول والمعرّفات والإحداثيات، وطوّر عرض العربية واتجاه RTL/BiDi وملصقات الخرائط والسمات النصية. اعرض خطة مرقمة قبل التعديل ثم نفذ ما اعتمدته واختبر النواتج داخل البرنامج عند توفره.'},
       'gis-development':{en:'For mixed GIS projects, start with the core router.',ar:'للمشروعات التي تضم عدة تخصصات ابدأ بالـ GIS Router.',enTask:'Inspect my existing GIS project. Identify its runtime, CRS, data formats and key risks. Propose a numbered plan for my approval; execute approved tasks using suitable GIS skills; provide real test evidence and a numbered development journal, stating any tests not run.',arTask:'افحص مشروع GIS الموجود وحدد بيئة التشغيل ونظام الإحداثيات والصيغ والمخاطر. اعرض خطة مرقمة لاعتمادها، ونفّذ المهام المعتمدة بالمهارات المناسبة، واختبر النتائج الفعلية وسجّل كل خطوة، ووضح ما لم تختبره.'},

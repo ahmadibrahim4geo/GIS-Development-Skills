@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-ARCHIFY-20261027",
+  "task_id": "T1",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "The router discovers the new specialist and validates explicit visualization handoffs.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "offline-checks.json",
+          "observed": "Read-only routing tests and three independent handoffs passed; domain ownership and can_execute:false preserved.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "A real Archify workflow example renders and passes artifact checks.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "skill-routing.finalize-summary.json",
+          "observed": "Real Archify validate, deliver and strict check passed; browser gate explicitly skipped because Chrome is unavailable.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "English/Arabic documentation, homepage, Explorer and inventory are consistent.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "offline-checks.json",
+          "observed": "Skill pack/link/manifest validation and website script checks passed; bilingual requests are present; original author markup was read back unchanged.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "statement": "Upstream version, license, limitations and missing-runtime behavior are explicit.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "../../../references/archify-integration.md",
+          "observed": "Read back immutable upstream source/version/license, missing-runtime handling and Arabic RTL limitations; generated HTML retains upstream notices.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C5",
+      "statement": "Required offline validation and regression tests pass.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "regression-summary.json",
+          "observed": "Full offline suite: 345 tests passed; validators and offline security audit exit 0.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Diagram browser check skipped: Chrome/Chromium/Edge unavailable.",
+    "Human visual and Arabic RTL checks not run.",
+    "Native GIS/Windows/mobile execution is outside this integration."
+  ]
+}

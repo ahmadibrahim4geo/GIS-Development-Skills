@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "skipped",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "/workspace/scratch/817e827aedff/GIS-Development-Skills/examples/architecture-visualization/skill-routing.workflow.json",
+    "sha256": "ef19d5dc0327e013bb467a0db77e1bf7b51102ed3b9296fe68e1abe5b85bfb53",
+    "bytes": 3837
+  },
+  "artifact": {
+    "path": "/workspace/scratch/817e827aedff/GIS-Development-Skills/examples/architecture-visualization/skill-routing.html",
+    "sha256": "4bbf8de29079f67dc0b28dea84c6c83acdd33e6889901e0a58bb8d09b34d8ba9",
+    "bytes": 838566
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "skipped"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/chrome-unavailable",
+      "severity": "warning",
+      "message": "No supported browser found. Install Chrome/Chromium (or Microsoft Edge), or set ARCHIFY_CHROME to its executable path.",
+      "subject": {
+        "artifact": "/workspace/scratch/817e827aedff/GIS-Development-Skills/examples/architecture-visualization/skill-routing.html"
+      },
+      "evidence": {
+        "executable": null
+      },
+      "supportedFixes": [
+        "set ARCHIFY_CHROME to a Chrome/Chromium executable (or Microsoft Edge) and rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/workspace/scratch/817e827aedff/GIS-Development-Skills/.agent-development-log/evidence/archify/skill-routing.finalize.json",
+    "summaryReceipt": "/workspace/scratch/817e827aedff/GIS-Development-Skills/.agent-development-log/evidence/archify/skill-routing.finalize-summary.json",
+    "browserCheckReceipt": "/workspace/scratch/817e827aedff/GIS-Development-Skills/.agent-development-log/evidence/archify/skill-routing.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1131,
+  "browserCheck": {
+    "requested": true,
+    "ran": false
+  }
+}

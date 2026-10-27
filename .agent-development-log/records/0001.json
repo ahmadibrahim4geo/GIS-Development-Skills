@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "sequence": 1,
+  "timestamp_utc": "2026-10-27T14:04:01+00:00",
+  "kind": "request",
+  "status": "approved",
+  "summary": "Integrate Archify into the main GIS skill router",
+  "details": "User approved conditional visualization routing after reviewing invocation and end-user workflow. Preserve existing skills, domain ownership, bilingual pages and runtime evidence limits.",
+  "references": [],
+  "task_id": "T1",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": null,
+  "hash": "23028b756675cf254fd5c5626dc8fdd9d9ffdabd6802ebfee21119b1759d29b2"
+}

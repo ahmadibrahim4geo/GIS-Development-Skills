@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-ARCHIFY-20261027",
+  "revision": "r1",
+  "original_request": "خلاص يا باشا ضمها إلى، ضمها عندنا إلى المهارة الرئيسية، تمام؟ ضمها عندنا",
+  "language": "ar",
+  "status": "approved",
+  "approval": {
+    "approved_by_user": true,
+    "approved_revision": "r1",
+    "high_risk_approved": false
+  },
+  "assumptions": [
+    "The user approved the integration design explained in this conversation; the main GIS router retains domain ownership.",
+    "Archify remains an optional rendering runtime installed by the host when needed, with a pinned reviewed upstream source."
+  ],
+  "open_questions": [],
+  "goal": "Integrate Archify as a conditional shared visualization specialist reachable from the main GIS skill router.",
+  "target": "ahmadibrahim4geo/GIS-Development-Skills main branch",
+  "desired_outcomes": [
+    "Conditional skill routing, evidence-aware diagrams and bilingual user-facing instructions."
+  ],
+  "success_criteria": [
+    "The router discovers the new specialist and validates explicit visualization handoffs.",
+    "A real Archify workflow example renders and passes artifact checks.",
+    "English/Arabic documentation, homepage, Explorer and inventory are consistent.",
+    "Upstream version, license, limitations and missing-runtime behavior are explicit.",
+    "Required offline validation and regression tests pass."
+  ],
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Integrate shared Archify visualization",
+      "description": "Add specialist guidance and conditional routing, verify a real example, synchronize bilingual discovery and publish tested changes.",
+      "priority": "must",
+      "kind": "agent-tool-integration",
+      "owner_skill": "geospatial-ai-agents",
+      "skills": [
+        "geospatial-ai-agents",
+        "gis-security-guardian"
+      ],
+      "depends_on": [],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "The router discovers the new specialist and validates explicit visualization handoffs.",
+        "A real Archify workflow example renders and passes artifact checks.",
+        "English/Arabic documentation, homepage, Explorer and inventory are consistent.",
+        "Upstream version, license, limitations and missing-runtime behavior are explicit.",
+        "Required offline validation and regression tests pass."
+      ],
+      "tools": [
+        {
+          "tool_id": "host.workspace",
+          "side_effect": "write"
+        },
+        {
+          "tool_id": "host.github",
+          "side_effect": "network"
+        }
+      ]
+    }
+  ]
+}

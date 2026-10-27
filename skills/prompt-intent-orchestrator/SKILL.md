@@ -52,6 +52,8 @@ The first command emits **keyword route hints, not AI semantic understanding**. 
 
 ## Example routing matrix
 
+For explicit visual explanations or reviewed multi-component design/diagnosis/structural changes, let the GIS Router compose [Architecture & Workflow Visualization](../gis-architecture-visualization/SKILL.md). Capture the task's `visualization` purpose, diagram type, evidence basis and language using the [handoff guide](../../references/archify-integration.md). Ordinary small edits and text-only requests do not need diagrams. Keep domain ownership, existing host authorization and honest runtime limits; neither this declaration nor a rendered map starts an agent or proves execution.
+
 | User asks about | Compose these specialists |
 | --- | --- |
 | KML/KMZ import and exact style retention | KML/KMZ Engineering + Cartography, with Security |
