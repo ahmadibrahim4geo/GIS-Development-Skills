@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 33,
+  "skill_count": 34,
   "skill_ids": [
     "agent-development-journal",
     "arcgis-toolbox-engineering",
@@ -35,7 +35,8 @@
     "remote-sensing-pipelines",
     "spatial-databases",
     "system-capabilities-and-permissions",
-    "terrain-hydrology-lidar"
+    "terrain-hydrology-lidar",
+    "visual-asset-discovery-integration"
   ],
   "reference_count": 188,
   "api_count": 52,

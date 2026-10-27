@@ -27,18 +27,19 @@ license: MIT
 | Raster/vector, GDAL, GeoPandas, spatial batch | [Geospatial Data Processing](../geospatial-data-processing/SKILL.md) |
 | Remote sensing | [Pipelines](../remote-sensing-pipelines/SKILL.md) |
 | MapLibre, web 2D, CesiumJS globe/3D | [Geospatial Web Mapping](../geospatial-web-mapping/SKILL.md) |
-| Independent GIS desktop application / installer | [GIS Desktop Development](../gis-desktop-application-development/SKILL.md) |
+| Standalone GIS desktop / installer | [GIS Desktop Development](../gis-desktop-application-development/SKILL.md) |
 | Clean-room / reference parity | [Reference Implementation](../clean-room-reference-implementation/SKILL.md) |
 | Android/iOS GIS apps, GNSS, offline sync | [GIS Mobile Application Development](../gis-mobile-application-development/SKILL.md) |
-| UI command inventory, dead Ribbon/menu icons, handlers, shortcuts | [UI Command Audit](../gis-ui-command-audit/SKILL.md) |
-| Real Windows desktop UI, WebView2 and installer interaction tests | [Desktop E2E Testing](../gis-desktop-e2e-testing/SKILL.md) |
-| Import → engine → render → save/export provenance or missing layers | [GIS Data Flow Diagnostics](../gis-data-flow-diagnostics/SKILL.md) |
-| GIS UI/UX redesign, accessibility, keyboard and visual regression | [UI/UX Design & Testing](../gis-ui-ux-design-testing/SKILL.md) |
+| Command inventory, dead controls, handlers, shortcuts | [UI Command Audit](../gis-ui-command-audit/SKILL.md) |
+| Windows UI, WebView2 and installer tests | [Desktop E2E Testing](../gis-desktop-e2e-testing/SKILL.md) |
+| Import → render → save/export provenance or missing layers | [GIS Data Flow Diagnostics](../gis-data-flow-diagnostics/SKILL.md) |
+| Images, thumbnails, logos and visual resources | [Visual Assets](../visual-asset-discovery-integration/SKILL.md) |
+| UI/UX, accessibility, keyboard and visual regression | [UI/UX Design & Testing](../gis-ui-ux-design-testing/SKILL.md) |
 | Discover/download external data | [Geospatial Data Discovery](../geospatial-data-discovery/SKILL.md) |
-| Find source directories, data repositories and STAC indexes | [Geospatial Data Catalogs](../geospatial-data-catalogs/SKILL.md) |
+| Source directories, repositories and STAC indexes | [Geospatial Data Catalogs](../geospatial-data-catalogs/SKILL.md) |
 | GIS AI agents | [Agents](../geospatial-ai-agents/SKILL.md) |
 | Architecture/flow explanations, design/diagnosis, structural changes | [Visualization](../gis-architecture-visualization/SKILL.md) (conditional) |
-| Optional MCP servers, host tools, fallback routing and capability preflight | [MCP Tool Orchestration](../mcp-integration-and-tool-orchestration/SKILL.md) |
+| MCP/native tools, fallback and capability preflight | [MCP Tool Orchestration](../mcp-integration-and-tool-orchestration/SKILL.md) |
 | DEM, terrain, hydrology, LiDAR / point clouds | [Terrain / Hydrology / LiDAR](../terrain-hydrology-lidar/SKILL.md) |
 | Untrusted GIS inputs, secrets and security | [GIS Security Guardian](../gis-security-guardian/SKILL.md) (cross-cutting) |
 | Integrate GIS HTTP APIs safely | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) |
@@ -46,7 +47,7 @@ license: MIT
 | Gazetteer search / scale-aware labels | [World Gazetteer](../../references/world-gazetteer-reference-layer.md) |
 | WKID, projection, transformation, vertical datum | [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md) |
 | Symbology / map layout | [Cartography](../gis-cartography-symbology/SKILL.md) |
-| OS/device permissions and sensor adapters | [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) |
+| OS/device permissions and sensors | [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) |
 | Device time/location/sunlight | [Device Context](../gis-device-context/SKILL.md) |
 | KML/KMZ / Earth viewers | [KML](../kml-kmz-engineering/SKILL.md) · [Earth](../../references/google-earth-pro-engineering.md) · [Timeline](../../references/historical-imagery-timeline.md) |
 

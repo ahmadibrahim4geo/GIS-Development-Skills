@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "parent agent independent readback",
+  "official_logo_blob_sha1": "ad0369a879a24cede570930d32637708e805cdd1",
+  "canonical_source": "https://github.com/WordPress/openverse/blob/main/documentation/meta/brand/icon.svg",
+  "cloud_source": "https://commons.wikimedia.org/wiki/File:Cloudsandbluesky.jpg",
+  "verified_variants": [
+    {
+      "asset_id": "clouds-explanation",
+      "path": "assets/clouds-explanation/clouds-explanation-96x64.png",
+      "width": 96,
+      "height": 64,
+      "sha256": "9e54ccfcfc17d92313c353a806757d1a5296303226e9059d7944c274e13d7444"
+    },
+    {
+      "asset_id": "clouds-explanation",
+      "path": "assets/clouds-explanation/clouds-explanation-192x128.png",
+      "width": 192,
+      "height": 128,
+      "sha256": "717461b7be8cc0f0394508944ea90410a6627878312ac608cc8be9c81b519e8b"
+    },
+    {
+      "asset_id": "openverse-mark-dark",
+      "path": "assets/openverse-mark-dark/openverse-mark-dark-64x64.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "81a902e27e0371bad120902fc1db337bb05fdcb4dfaa6974dbc25e908d0f04ba"
+    },
+    {
+      "asset_id": "openverse-mark-dark",
+      "path": "assets/openverse-mark-dark/openverse-mark-dark-128x128.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "d8437474831c3379186993142e3ab42b6dae2255ec76a6bd3d167cbe1e21566b"
+    },
+    {
+      "asset_id": "openverse-mark-light",
+      "path": "assets/openverse-mark-light/openverse-mark-light-64x64.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "59d79c64bfc90c12b2e3835b2e9850787fd6d8a7a7166de5ca5bd3edaaf6d04e"
+    },
+    {
+      "asset_id": "openverse-mark-light",
+      "path": "assets/openverse-mark-light/openverse-mark-light-128x128.png",
+      "width": 128,
+      "height": 128,
+      "sha256": "4458314f432b1be3bdc766506972bd7834ab8704ddd3c87d05c4bff2cdcfd8eb"
+    }
+  ],
+  "visual_review": "Contact sheet inspected at actual 64/128 and 96x64/192x128 dimensions",
+  "scope": "Actual source acquisition and local preparation; target application/UI/package not present or tested",
+  "T3": "NOT RUN",
+  "T4": "NOT RUN"
+}

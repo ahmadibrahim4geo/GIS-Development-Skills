@@ -93,6 +93,9 @@ python scripts/verify_completion.py report.json --plan reviewed-plan.json --requ
 
 A passing consistency report cannot prove external sends, GUI execution or authentic host permissions. Label T2–T4 NOT RUN if the required native environment is unavailable.
 
+## Find and integrate visual assets
+
+Ask: “Find a suitable image for each option, use official logos for providers, broaden the internet search as needed, and integrate local assets with credits and real size checks.” The router selects [Visual Asset Discovery & Integration](../skills/visual-asset-discovery-integration/SKILL.md) and the relevant target UI/platform owner. See [copyable requests](../examples/visual-assets/README.md) and [source/optional skill choices](../references/visual-asset-sources.md). Existing tools perform search/download/generation; a skill is not an internet connection.
 
 ## Ask for an interactive diagram when useful
 

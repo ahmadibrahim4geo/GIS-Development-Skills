@@ -78,7 +78,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>33 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>34 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -432,3 +432,9 @@ This repository's **original** scripts, templates and written guidance are MIT l
 ### World Gazetteer: search and reference labels
 
 The [World Gazetteer implementation guide](references/world-gazetteer-reference-layer.md) adds offline-first GeoNames name search and an **independent, scale-aware Reference Layers overlay** for desktop/web GIS (especially future ZEarth integration). It specifies label priority, zoom/detail categories, Arabic/English names, map collision/3D culling, attribution, and preservation of user KML/KMZ styles. A [Python/SQLite 2D demonstrator with unit tests](examples/gazetteer/README.md) is included; it is **not** a completed native GIS/desktop integration.
+
+## Visual Asset Discovery & Integration
+
+Use [the visual assets skill](skills/visual-asset-discovery-integration/SKILL.md) for images, thumbnails, official logos, screenshots, illustrations, covers and backgrounds in any desktop, web, mobile or other project. It inspects provider resources and wider internet sources through available host tools, verifies original-source reuse terms, prepares local variants and hands assets to the correct UI/platform owner. Distinguish actual data previews from illustrative/generated pictures; do not silently substitute generic icons.
+
+[Workflow and optional raster helper](references/visual-asset-workflow.md) · [Sources and related skills](references/visual-asset-sources.md) · [Bilingual request and acceptance scenarios](examples/visual-assets/README.md). Network, generation and native UI capabilities are discovered at runtime, not supplied by Markdown.

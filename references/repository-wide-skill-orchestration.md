@@ -123,6 +123,9 @@ Confirm that every installed specialist is reachable from the router or a docume
 
 For a reviewed feature requiring OS time, location, files, camera/microphone, permissions, Bluetooth/serial/USB, sensors or system diagnostics, invoke [System Capabilities & Permissions](../skills/system-capabilities-and-permissions/SKILL.md) plus the target platform owner and Security. Add [GIS Device Context](../skills/gis-device-context/SKILL.md) only for map/temporal/solar meaning. External skills/MCP libraries are metadata candidates until reviewed, installed and host-authorized. An offline plan cannot grant a permission.
 
+## Conditional visual resource acquisition
+
+[Visual Asset Discovery & Integration](../skills/visual-asset-discovery-integration/SKILL.md) owns source discovery, image suitability, original-source/brand review, local variants and attribution. Request it for any reviewed project needing photographs, thumbnails, official logos, illustrations, screenshots or covers. UI/UX and platform owners retain layout/resource packaging; scientific owners retain actual dataset/render semantics. Use actual available search/retrieval/generation tools and preserve asset_id, source URLs, license evidence, hashes and target-size readback. Search results or a prepared asset alone do not prove native UI integration.
 
 ## Conditional architecture and workflow visualization
 

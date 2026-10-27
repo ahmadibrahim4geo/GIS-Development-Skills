@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "request_id": "visual-assets-2026-10-27",
+  "revision": "r1",
+  "original_request": "فأنا بقى عايز بقى مهارة تعمل الكلام ده ويعايز مهارة، ولو في مهارات بنفس الطريقة برضه ممكن أستعين بيها.",
+  "language": "ar",
+  "status": "approved",
+  "approval": {
+    "approved_by_user": true,
+    "approved_revision": "r1",
+    "high_risk_approved": false
+  },
+  "goal": "Add the previously reviewed general visual asset discovery and integration workflow to GIS Development Skills.",
+  "target": {
+    "repository": "ahmadibrahim4geo/GIS-Development-Skills",
+    "deliverable": "Repository specialist, routing, bilingual guides, local preparation helper and verified publication"
+  },
+  "desired_outcomes": [
+    "Agents can route project imagery and official logo requests to a general specialist.",
+    "Agents have practical source, preparation and integration instructions plus related skill references."
+  ],
+  "success_criteria": [
+    "Published specialist and routes match the reviewed visual-assets scope and pass repository checks."
+  ],
+  "assumptions": [
+    "The current request authorizes implementing the discussed scope in the project repository; no other application is modified.",
+    "Existing permission to update this repository's main branch persists; no paid provider, dependency installation or sensitive upload is required."
+  ],
+  "open_questions": [],
+  "tasks": [
+    {
+      "id": "VISUAL-ASSETS",
+      "title": "Implement and publish visual asset specialist",
+      "description": "Implement the discussed general scope, related source/skill references, preparation helper, routing and bilingual discovery; validate and publish the repository update.",
+      "priority": "must",
+      "kind": "agent-skill-development",
+      "owner_skill": "geospatial-ai-agents",
+      "skills": [
+        "geospatial-ai-agents",
+        "visual-asset-discovery-integration",
+        "gis-ui-ux-design-testing",
+        "gis-security-guardian"
+      ],
+      "depends_on": [],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "General image, thumbnail, official-logo, screenshot and illustration workflow has real-tool, provenance and factual-preview boundaries.",
+        "Main and lexical routers, platform handoffs, bilingual guides, homepage, Explorer and derived inventory expose the specialist.",
+        "Related image sources and skills are reviewed and their optional runtime/license limits are documented.",
+        "Local raster helper and repository validators pass with fresh behavior-test and output readback evidence.",
+        "Repository publication is independently read back at the new branch head."
+      ],
+      "tools": [
+        {
+          "tool_id": "host-source-search",
+          "side_effect": "network"
+        },
+        {
+          "tool_id": "local-source-edit",
+          "side_effect": "write"
+        },
+        {
+          "tool_id": "repository-publication",
+          "side_effect": "write"
+        }
+      ]
+    }
+  ]
+}

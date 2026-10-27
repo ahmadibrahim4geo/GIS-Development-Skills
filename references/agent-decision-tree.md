@@ -42,6 +42,9 @@ The [quality coordination contract](gis-ui-quality-coordination.md) owns the com
 
 Device time, permission-controlled GPS, OS files, notifications, serial/BLE, cameras, microphones, screen capture, hardware diagnostics and external adapters: route [System Capabilities & Permissions](../skills/system-capabilities-and-permissions/SKILL.md) + target platform + Security Guardian. Add Device Context for GIS location/time/solar only. Do not load every adapter or claim working sensor/permission from documentation.
 
+## Visual assets across project types
+
+For thumbnails, source/brand logos, illustrations, photographs, covers, backgrounds or screenshots, select [Visual Asset Discovery & Integration](../skills/visual-asset-discovery-integration/SKILL.md) through the main router and add only the needed UI/UX, platform or scientific data owner. Use official sources and wider internet search through actual host tools; consult the [workflow](visual-asset-workflow.md) and [source/skill guide](visual-asset-sources.md). A terrain selector is one example, not a domain restriction. A genuine command icon remains with its existing UI/cartographic owner.
 
 ## Conditional architecture and workflow visualization
 

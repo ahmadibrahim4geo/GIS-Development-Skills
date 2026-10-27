@@ -1,3 +1,10 @@
+# Unreleased — visual asset discovery and integration (2026-10-27)
+
+- Add a general specialist for internet/source discovery, official logos, thumbnails, illustrations, screenshots, covers and backgrounds, with source/brand review and real-versus-illustrative preview rules.
+- Connect the main router, bilingual lexical hints, Desktop/Web/Mobile/UI specialists, free-first policy, README languages, homepage and Explorer. Preserve existing identity, author/footer and sources.
+- Add an optional local Pillow helper for safe new raster variants, alpha/padding, source/variant hashes and metadata readback, with behavioral tests. It does not search, download, generate, authenticate licenses or prove native UI integration.
+- Document extensible sources and optional related design/search skills without automatically installing dependencies or paid providers; require independent T2–T4 evidence for live source/render/UI/package behavior.
+
 # Unreleased — conditional Archify visualization (2026-10-27)
 
 - Add GIS Architecture & Workflow Visualization as shared support for explicit diagram explanations, reviewed feature designs, cross-component diagnosis and structural changes.
