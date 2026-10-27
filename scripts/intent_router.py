@@ -14,6 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 DOMAINS = (
+    ("gis-architecture-visualization", ("archify", "architecture diagram", "workflow diagram", "draw a diagram", "interactive diagram", "visualize architecture", "diagram the", "ارسملي", "ارسم لي", "مخطط", "مين مسؤول عن مين", "وضحلي بنية", "وضّحلي بنية")),
     ("clean-room-reference-implementation", ("clean room", "clean-room", "reference software", "reference implementation", "feature parity", "reverse engineering", "الهندسة النظيفة", "الإطار المرجعي", "تحليل برنامج مرجعي", "دراسة برنامج مرجعي", "مضاهاة جوجل إيرث")),
     ("kml-kmz-engineering", ("kml", "kmz", "placemark", "كي ام ال", "كى ام ال", "ستايل km", "ملفات الكي")),
     ("gis-desktop-application-development", ("desktop", "exe", "wpf", "زيرث", "zearth", "سطح المكتب", "برنامج مستقل")),
@@ -45,6 +46,13 @@ DOMAINS = (
 RISKS = {"low", "medium", "high", "critical"}
 SIDE_EFFECTS = {"read", "write", "network", "destructive"}
 STATUSES = {"draft", "approved"}
+VISUALIZATION_SKILL = "gis-architecture-visualization"
+VISUALIZATION_FIELDS = {
+    "purpose": {"architecture-explanation", "feature-design", "cross-component-diagnosis", "structural-change"},
+    "diagram_type": {"architecture", "workflow", "sequence", "dataflow", "lifecycle", "erd", "class", "tree", "timeline", "waterfall"},
+    "evidence_basis": {"proposed", "source-reviewed", "runtime-observed"},
+    "language": {"en", "ar"},
+}
 
 
 def available_skills(root=SKILLS):
@@ -78,6 +86,27 @@ def route_hints(request, known=None):
 
 def _text(value):
     return isinstance(value, str) and bool(value.strip())
+
+
+def validate_visualization(task, prefix):
+    """Validate an optional declared handoff, never infer or execute a diagram."""
+    selected = task.get("skills")
+    has_skill = isinstance(selected, list) and VISUALIZATION_SKILL in selected
+    if not has_skill and "visualization" not in task:
+        return []
+    errors = []
+    if not has_skill:
+        errors.append(prefix + ".visualization requires selecting " + VISUALIZATION_SKILL)
+    declaration = task.get("visualization")
+    if not isinstance(declaration, dict):
+        return errors + [prefix + ".visualization must declare purpose, diagram_type, evidence_basis and language"]
+    for key, choices in VISUALIZATION_FIELDS.items():
+        value = declaration.get(key)
+        if not isinstance(value, str) or value not in choices:
+            errors.append(prefix + ".visualization." + key + " is missing or invalid")
+    if set(declaration) - set(VISUALIZATION_FIELDS):
+        errors.append(prefix + ".visualization contains unknown fields")
+    return errors
 
 
 def validate_plan(plan, known=None, require_approved=False):
@@ -143,6 +172,7 @@ def validate_plan(plan, known=None, require_approved=False):
             errors.append(pref + ".skills contain unknown or missing skill")
         if isinstance(selected, list) and "gis-security-guardian" not in selected:
             errors.append(pref + ".skills must include gis-security-guardian")
+        errors.extend(validate_visualization(task, pref))
         deps = task.get("depends_on")
         if not isinstance(deps, list) or any(not _text(x) for x in deps):
             errors.append(pref + ".depends_on must be string array")
@@ -303,6 +333,16 @@ def compile_workflow(plan, known=None, require_approved=False):
             "completion_gate": "completion-evidence (DoneProof); validate each acceptance criterion against fresh results",
             "journal_owner": "agent-development-journal",
         }
+        if "visualization" in task:
+            step["visualization"] = {
+                **task["visualization"],
+                "renderer": "archify",
+                "artifact_owner": VISUALIZATION_SKILL,
+                "status": "NOT_STARTED",
+                "runtime_verified": False,
+                "gis_execution_proven": False,
+            }
+            step["preflight"].append("actual Node.js, Archify runtime and browser availability; local output and source privacy")
         result["steps"].append(step)
         result["handoffs"].extend(
             {"from_task": dep, "to_task": task["id"], "data_contract": "approved_plan_task_dependency"}

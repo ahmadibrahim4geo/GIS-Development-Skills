@@ -1,3 +1,10 @@
+# Unreleased — conditional Archify visualization (2026-10-27)
+
+- Add GIS Architecture & Workflow Visualization as shared support for explicit diagram explanations, reviewed feature designs, cross-component diagnosis and structural changes.
+- Connect main/intent routing, validate declared purpose/type/evidence/language, retain domain ownership and non-executing workflow previews.
+- Add an independently authored workflow example, bilingual copyable requests and runtime/license/Arabic RTL guidance; synchronize discovery, policy and generated skill inventory.
+- External renderer/browser checks are separate from native GIS proof; missing optional runtime leaves unrelated GIS work available.
+
 # Unreleased — MCP/native capability orchestration (2026-10-26)
 
 - Add independent optional MCP Integration & Tool Orchestration skill, capability/effect registry, non-executing stdlib candidate selector with native fallback, and adversarial offline tests.

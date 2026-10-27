@@ -1,0 +1,8 @@
+{
+  "command": "python -m unittest discover -s tests -v",
+  "exit_code": 0,
+  "tests": 345,
+  "elapsed_seconds": 1.715,
+  "result": "OK",
+  "scope": "Offline Python regression; not native GIS/browser execution"
+}

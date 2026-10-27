@@ -1,0 +1,150 @@
+{
+  "validators": [
+    {
+      "command": [
+        "python",
+        "scripts/validate_catalog.py"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "Catalog valid: 188 sources"
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "scripts/validate_api_catalog.py"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "API catalog valid: 52 services"
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "scripts/validate_data_repositories.py"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "Data source directory valid: 24 entries"
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "scripts/validate_skill_pack.py"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "Skill pack valid: 33 skills; README, reference and website paths checked"
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "scripts/build_manifest.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "Manifest valid: 33 skills / 188 references / 52 APIs / 24 data repositories"
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "scripts/audit_skill_graph.py"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "Skill flow audit: PASS | skills=33 | routed=31 | lexical domains=28",
+        "NOTE: Static metadata and document references only. No real host execution or approval."
+      ]
+    },
+    {
+      "command": [
+        "python",
+        "scripts/security_audit.py",
+        "--root",
+        ".",
+        "--format",
+        "text"
+      ],
+      "exit_code": 0,
+      "summary": [
+        "GIS Security Guardian: pass | 33 skills | 0 findings (0 blocking)",
+        "External scanners: NOT RUN (install and run separately if authorized)."
+      ]
+    }
+  ],
+  "inline_javascript": [
+    {
+      "file": "index.html",
+      "script": 0,
+      "exit_code": 0,
+      "error": ""
+    },
+    {
+      "file": "explorer.html",
+      "script": 0,
+      "exit_code": 0,
+      "error": ""
+    },
+    {
+      "file": "examples/architecture-visualization/skill-routing.html",
+      "script": 0,
+      "exit_code": 0,
+      "error": ""
+    },
+    {
+      "file": "examples/architecture-visualization/skill-routing.html",
+      "script": 1,
+      "exit_code": 0,
+      "error": ""
+    }
+  ],
+  "independent_use": [
+    {
+      "request": "request-1.plan.json",
+      "owner": "gis-ui-ux-design-testing",
+      "visualization": null,
+      "valid": true,
+      "can_execute": false
+    },
+    {
+      "request": "request-2.plan.json",
+      "owner": "gis-architecture-visualization",
+      "visualization": {
+        "purpose": "architecture-explanation",
+        "diagram_type": "workflow",
+        "evidence_basis": "source-reviewed",
+        "language": "ar",
+        "renderer": "archify",
+        "artifact_owner": "gis-architecture-visualization",
+        "status": "NOT_STARTED",
+        "runtime_verified": false,
+        "gis_execution_proven": false
+      },
+      "valid": true,
+      "can_execute": false
+    },
+    {
+      "request": "request-3.plan.json",
+      "owner": "gis-data-flow-diagnostics",
+      "visualization": {
+        "purpose": "cross-component-diagnosis",
+        "diagram_type": "dataflow",
+        "evidence_basis": "proposed",
+        "language": "ar",
+        "renderer": "archify",
+        "artifact_owner": "gis-architecture-visualization",
+        "status": "NOT_STARTED",
+        "runtime_verified": false,
+        "gis_execution_proven": false
+      },
+      "valid": true,
+      "can_execute": false
+    }
+  ]
+}

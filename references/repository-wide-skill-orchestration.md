@@ -122,3 +122,8 @@ Confirm that every installed specialist is reachable from the router or a docume
 ## System/device capability route (conditional)
 
 For a reviewed feature requiring OS time, location, files, camera/microphone, permissions, Bluetooth/serial/USB, sensors or system diagnostics, invoke [System Capabilities & Permissions](../skills/system-capabilities-and-permissions/SKILL.md) plus the target platform owner and Security. Add [GIS Device Context](../skills/gis-device-context/SKILL.md) only for map/temporal/solar meaning. External skills/MCP libraries are metadata candidates until reviewed, installed and host-authorized. An offline plan cannot grant a permission.
+
+
+## Conditional architecture and workflow visualization
+
+The [GIS Architecture & Workflow Visualization specialist](../skills/gis-architecture-visualization/SKILL.md) is shared support for explicit diagram explanations, reviewed multi-component feature designs, cross-component diagnostics and structural changes. The GIS router decides whether it helps; the domain specialist retains implementation/testing ownership. Follow the [Archify integration handoff](archify-integration.md), declare proposed/source-reviewed/runtime-observed evidence, and record actual renderer/browser availability. Skip simple isolated edits and honor text-only requests. Editable JSON and interactive HTML are explanatory artifacts, not execution permissions or native GIS test evidence.
