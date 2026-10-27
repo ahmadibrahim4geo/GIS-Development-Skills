@@ -1,7 +1,7 @@
 # Project development state — agent handoff
 
 Read with INDEX.md and the linked reports. Independently inspect code and tests.
-Recorded steps: 5
+Recorded steps: 6
 
 ## Latest records
 
@@ -10,6 +10,7 @@ Recorded steps: 5
 - #0003 [completed] Verify Archify integration and record browser limitation (related: #0002)
 - #0004 [in_progress] Add general visual asset discovery and integration skill
 - #0005 [in_progress] Visual assets validated after current-main integration (related: #0004)
+- #0006 [completed] Visual asset specialist published and independently read back (related: #0005)
 
 ## Open/blocked records (confirm whether still applicable)
 
