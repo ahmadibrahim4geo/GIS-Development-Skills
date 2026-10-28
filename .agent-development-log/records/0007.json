@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 7,
+  "timestamp_utc": "2026-10-28T03:49:29+00:00",
+  "kind": "revision",
+  "status": "in_progress",
+  "summary": "Make visual asset source selection explicitly project-driven",
+  "details": "User clarified that named websites must never limit discovery; the current project provider website may already contain the suitable image. Update the specialist and public guidance to make source examples optional, with no fixed provider sequence.",
+  "references": [
+    6
+  ],
+  "task_id": "VISUAL-SOURCES-OPEN",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "31bd2c24c50432efb044cc1d53e50379a55a51695d570cfe7b2a039198833d68",
+  "hash": "2757282ad90e8b49cd454f7fa6edb558c277e7997038f565012211928ba42ef5"
+}

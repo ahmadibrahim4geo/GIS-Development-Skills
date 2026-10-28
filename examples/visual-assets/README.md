@@ -12,6 +12,7 @@ Use [Visual Asset Discovery & Integration](../../skills/visual-asset-discovery-i
 
 | Request | Expected route and output | Failure to catch |
 | --- | --- | --- |
+| An unlisted project provider already has a suitable image inside its website | Inspect that original, review relevance/terms and use it directly; choose other sources only as needed | Rejecting the source because it is absent from a catalog, or forcing a named image-library search first |
 | Small image for each terrain model | Actual model/data capture if factual; otherwise clearly illustrative local thumbnail | Repeated generic mountain icons presented as distinct real model previews |
 | Logos for service/source cards | Official verified brand assets, contain/padding, credits and correct local binding | Invented/recolored mark, cropped lettering, wrong organization |
 | Illustrations for a non-GIS learning app | Topic-appropriate web search or available generation/design tools, explicit representation type | Hardcoded terrain-only source selection |

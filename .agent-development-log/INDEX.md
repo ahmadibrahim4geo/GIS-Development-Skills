@@ -11,3 +11,5 @@ create a linked revision or cancellation. This local hash chain is not a signatu
 | [#0004](reports/0004.md) | 2026-10-27T14:30:25+00:00 | request | in_progress | — | Add general visual asset discovery and integration skill |
 | [#0005](reports/0005.md) | 2026-10-27T14:35:20+00:00 | verification | in_progress | #0004 | Visual assets validated after current-main integration |
 | [#0006](reports/0006.md) | 2026-10-27T14:38:55+00:00 | verification | completed | #0005 | Visual asset specialist published and independently read back |
+| [#0007](reports/0007.md) | 2026-10-28T03:49:29+00:00 | revision | in_progress | #0006 | Make visual asset source selection explicitly project-driven |
+| [#0008](reports/0008.md) | 2026-10-28T03:51:12+00:00 | verification | in_progress | #0007 | Project-driven source clarification passed repository checks |

@@ -1,3 +1,9 @@
+# Unreleased — project-driven visual sources (2026-10-28)
+
+- Clarify that visual source discovery has no fixed website/provider allowlist or mandatory search order. Sources change with the project and task.
+- Permit direct selection of suitable imagery embedded or linked inside the current project source website, after the existing relevance/source/terms review. Named catalogs and optional skills remain non-exclusive examples.
+- Align the source/workflow guides, acceptance example, policy, bilingual README and homepage wording. No runtime or provider restriction was introduced.
+
 # Unreleased — visual asset discovery and integration (2026-10-27)
 
 - Add a general specialist for internet/source discovery, official logos, thumbnails, illustrations, screenshots, covers and backgrounds, with source/brand review and real-versus-illustrative preview rules.

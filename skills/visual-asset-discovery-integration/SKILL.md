@@ -1,6 +1,6 @@
 ---
 name: visual-asset-discovery-integration
-description: Find, inspect, prepare and integrate images, thumbnails, official logos, screenshots, illustrations, covers and backgrounds into desktop, web, mobile and other projects. Use for thumbnail, visual asset, image search, logo sourcing, preview cards, سامبنيل, ثَمبنيل, صورة مصغرة, صورة لكل اختيار, صور توضيحية or شعارات, including when a reviewed UI task needs meaningful imagery. Search the relevant provider and wider internet with actual host tools; distinguish real data previews from illustrative or generated pictures.
+description: Find, inspect, prepare and integrate images, thumbnails, official logos, screenshots, illustrations, covers and backgrounds into desktop, web, mobile and other projects. Use for thumbnail, visual asset, image search, logo sourcing, preview cards, سامبنيل, ثَمبنيل, صورة مصغرة, صورة لكل اختيار, صور توضيحية or شعارات, including when a reviewed UI task needs meaningful imagery. Choose sources dynamically from the project's current website/provider and any relevant internet source; no fixed provider list or search order. Distinguish real data previews from illustrative or generated pictures.
 ---
 
 # Visual Asset Discovery & Integration
@@ -15,14 +15,16 @@ Distinguish a command icon, a brand mark, an illustrative thumbnail and an actua
 
 ## Discover and acquire
 
+**Project-driven source selection:** derive the search from the current task, subject and project context. There is no fixed website/provider allowlist or mandatory search order. Inspect relevant images already embedded or linked in the website, documentation, product/data pages or media resources the project is using. If a suitable reusable image is there, use it directly after the normal relevance/source/terms review; do not require an unrelated image-library search first. Add, skip or replace candidate sources as the project changes, and stop when the visual brief is satisfied.
+
 1. Inspect actual host capabilities: web/image search, HTTP/file retrieval, source-service connector, screenshot/render capture and optional image generation. Follow [MCP/native capability routing](../mcp-integration-and-tool-orchestration/SKILL.md) where needed. A SKILL.md cannot grant internet access or install tools; report a missing capability accurately.
 2. Choose the appropriate route, not a rigid provider sequence:
-   - **Official logo:** provider brand/media/download resources first; verify identity, usage terms and variant. Preserve proportions, colors, clear space and alpha; never generate a replacement for an existing official mark.
+   - **Official logo:** prefer authoritative brand/media resources; a verified matching asset from another suitable source may also be used. Verify identity, usage terms and variant. Preserve proportions, colors, clear space and alpha; never generate a replacement for an existing official mark.
    - **Data/model preview:** render or capture the actual selected data/provider when available. For scientific comparisons keep area, camera, lighting, scale and color interpretation consistent. Do not invent visible differences.
-   - **Representative image:** search the relevant provider's documentation/gallery and wider internet, including open-media indexes. Expand subject, synonyms, language and source type if initial results are weak; the source list is extensible.
+   - **Representative image:** inspect the project's current source website and any relevant internet source. Use appropriate images found inside the source's own pages directly when suitable; documentation, galleries and image indexes are optional routes. Expand subject, synonyms, language and source type when needed.
    - **Screenshot:** capture the relevant running application or use a licensed current official screenshot. Record application/version/context; never pass a mockup off as a working feature.
    - **Custom illustration:** invoke an available generation/design skill when appropriate and permitted. Label generated/illustrative material; use real data/rendering for factual map, numerical, scientific or model-specific evidence.
-3. Use [source and optional skill references](../../references/visual-asset-sources.md) progressively. Prefer existing service tools. Do not auto-install external skills, keys or paid providers. Search-engine results are discovery candidates, not permission to redistribute.
+3. Treat [source and optional skill references](../../references/visual-asset-sources.md) as non-exhaustive examples, never required destinations or prerequisites for selecting an unlisted source. Choose relevant available tools and sources for this project. Do not auto-install external skills, keys or paid providers. Search-engine results are discovery candidates, not permission to redistribute.
 4. Open the original asset page, inspect the image itself and verify relevance, authorship, reuse/derivative terms and attribution. Reject a mismatched model, watermark, uncertain license or low-quality crop. For brand marks check brand rules separately from the asset package license.
 5. Download the selected asset through an authorized host tool and inspect the saved file. Respect rate limits/Retry-After and provider conditions; do not scrape a login wall or bypass a restriction. After a bounded retry, change to an appropriate source or state the exact missing input. A search card or displayed image group is not a downloaded project asset.
 

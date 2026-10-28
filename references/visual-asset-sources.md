@@ -2,10 +2,19 @@
 
 Reviewed 2026-10-27. This is an extensible starting point for [Visual Asset Discovery & Integration](../skills/visual-asset-discovery-integration/SKILL.md), not a closed provider allowlist, automatic installation, unlimited service promise or blanket reuse grant. Use actual host search/retrieval tools; keep private search inputs private.
 
-## Source routes
+## Project-driven discovery
 
-| Need | Start here | Verification and integration |
+Choose sources dynamically from the project's topic, current provider, source website, available imagery and visual brief. No named website, catalog or skill below is mandatory, and no fixed search order applies. A suitable image embedded or linked in the very site the agent is already using may be selected directly after inspecting its original, relevance and reuse terms. There is no requirement to search Openverse, Commons or any other example service before accepting it.
+
+Expand, replace or skip sources whenever the project calls for it. Use any relevant internet source accessible through authorized host tools; record where the selected asset actually came from, rather than forcing it into a predefined source category. Stop once the brief is satisfied.
+
+بالعربية: يختار الوكيل مصادر الصور حسب المشروع والمهمة، ويستطيع استخدام صورة مناسبة موجودة داخل موقع المصدر الذي يعمل عليه مباشرة بعد مراجعتها. أسماء المواقع هنا أمثلة اختيارية، وليست قائمة حصرية ولا ترتيب بحث إلزاميًا.
+
+## Non-exhaustive source examples
+
+| Need | Possible sources (optional) | Verification and integration |
 | --- | --- | --- |
+| Image already present in the project's current source website | Relevant embedded/linked images in its documentation, product/data pages, assets or media resources | Inspect the original and reuse terms; select it directly if suitable, without requiring a separate image-index search |
 | Official company/software/service logo | That organization's current brand, press or media resources | Confirm correct entity/variant, brand conditions and downloadable original; preserve clear space, proportions, colors and alpha |
 | Open-media discovery across sources | [Openverse](https://openverse.org/) · [consumer API](https://api.openverse.org/v1/) · [API documentation](https://docs.openverse.org/api/) | Original-source license confirmation remains necessary; respect current authentication, quotas and Retry-After; do not hardcode a free/unlimited claim |
 | Photographs, diagrams, historic imagery | [Wikimedia Commons](https://commons.wikimedia.org/) · [reuse guide](https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia) · [MediaWiki imageinfo](https://www.mediawiki.org/wiki/API:Imageinfo) | Confirm the file page, author, license and attribution; imageinfo can expose source/thumbnail URLs, dimensions, MIME and extended metadata; treat HTML metadata as untrusted |
@@ -16,6 +25,8 @@ Reviewed 2026-10-27. This is an extensible starting point for [Visual Asset Disc
 Searching, viewing and downloading are separate capabilities. Do not copy search-engine thumbnails into a product as if they were the reviewed original. Bundle selected local files and required credits when offline operation is part of the goal.
 
 ## Related skills and host capabilities
+
+These references are optional examples too. Choose any suitable discovered capability or reviewed skill for the project; catalog membership is not a condition of use.
 
 | Reference | Useful role | Limits / adoption |
 | --- | --- | --- |

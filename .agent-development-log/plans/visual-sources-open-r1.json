@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "request_id": "visual-source-selection-2026-10-28",
+  "revision": "r1",
+  "original_request": "ما تقيدوش بمصادر معينة. أنا المصادر المعينة دي هتبقى متغيرة على حسب المشروع اللي هو شغال عليه، على حسب أي حاجة فاهمني؟ فهو مش متقيدوش بأي حاجة. وممكن أصلاً يلاقي الصورة اللي هو محتاجها دي جوه الموقع بتاع المصدر اللي هو شغال منه فاهمني؟ فيعني المصادر أنا مش عايزها تكون مقيدة أوي فاهمني؟",
+  "language": "ar",
+  "status": "approved",
+  "approval": {
+    "approved_by_user": true,
+    "approved_revision": "r1",
+    "high_risk_approved": false
+  },
+  "goal": "Make visual asset discovery explicitly project-driven without a fixed source list or required search order.",
+  "target": "ahmadibrahim4geo/GIS-Development-Skills",
+  "desired_outcomes": [
+    "The current project/source website can supply the selected image directly.",
+    "Named providers and optional skill references are clearly non-exclusive examples."
+  ],
+  "success_criteria": [
+    "Published skill and guides state dynamic source selection and permit direct use of relevant source-site imagery."
+  ],
+  "assumptions": [
+    "The user explicitly requested this clarification and asked to continue; current repository publication authorization persists."
+  ],
+  "open_questions": [],
+  "tasks": [
+    {
+      "id": "VISUAL-SOURCES-OPEN",
+      "title": "Clarify project-driven source discovery",
+      "description": "Update the skill, source/workflow guides, example, policy and bilingual public wording; preserve existing authenticity and reuse checks and publish the clarification.",
+      "kind": "skill-documentation",
+      "priority": "must",
+      "owner_skill": "visual-asset-discovery-integration",
+      "skills": [
+        "visual-asset-discovery-integration",
+        "gis-security-guardian"
+      ],
+      "depends_on": [],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "The skill explicitly permits dynamically selected and unlisted sources without a mandatory provider order, including images inside the project's current source website.",
+        "Public bilingual guides, example and source policy consistently describe named services as optional examples.",
+        "Required repository checks pass and the published main files are independently read back."
+      ],
+      "tools": [
+        {
+          "tool_id": "local-source-edit",
+          "side_effect": "write"
+        },
+        {
+          "tool_id": "github-publication",
+          "side_effect": "write"
+        }
+      ]
+    }
+  ]
+}
