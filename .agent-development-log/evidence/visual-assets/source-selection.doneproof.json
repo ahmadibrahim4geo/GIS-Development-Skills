@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "request_id": "visual-source-selection-2026-10-28",
+  "task_id": "VISUAL-SOURCES-OPEN",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "SRC1",
+      "statement": "The skill explicitly permits dynamically selected and unlisted sources without a mandatory provider order, including images inside the project's current source website.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "skills/visual-asset-discovery-integration/SKILL.md",
+          "observed": "Published specialist explicitly states no fixed provider allowlist or mandatory search order, with direct selection of suitable images inside the current project source website.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "SRC2",
+      "statement": "Public bilingual guides, example and source policy consistently describe named services as optional examples.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/visual-asset-sources.md",
+          "observed": "Source/workflow guides, example, policy, bilingual READMEs and homepage now treat named services as optional examples.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "SRC3",
+      "statement": "Required repository checks pass and the published main files are independently read back.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "provider_receipt",
+          "reference": "https://github.com/ahmadibrahim4geo/GIS-Development-Skills/commit/fd86ca44eaefe5e09e35de63d68b1e0fffb7132d",
+          "observed": "356 tests and all required repository checks passed; published main fd86ca44eaefe5e09e35de63d68b1e0fffb7132d and tree 87f392dea4bbd5fb92c331379054b8a6ac545bd9 independently read back and matched the tested local tree.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Documentation clarification; no new source/provider restriction or runtime code change.",
+    "No new application UI or live source acquisition was needed for this revision."
+  ]
+}

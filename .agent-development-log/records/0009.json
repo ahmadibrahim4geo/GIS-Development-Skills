@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "sequence": 9,
+  "timestamp_utc": "2026-10-28T03:52:08+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Project-driven visual sources published and read back",
+  "details": "Main fd86ca44eaefe5e09e35de63d68b1e0fffb7132d and tree 87f392dea4bbd5fb92c331379054b8a6ac545bd9 independently matched the tested local tree. No fixed source list or search order; current source-site imagery may be selected directly. All three reviewed criteria verified; 356 tests and required checks passed.",
+  "references": [
+    8
+  ],
+  "task_id": "VISUAL-SOURCES-OPEN",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [
+    "python scripts/verify_completion.py --plan --require-verified"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "7aab9bf07e7d154c2dcc741e7bd53be4184b5dbe2fd622998312f645c852dd04",
+  "hash": "c874ad6d70eb287f5647fee9bfc46d0a9068790adc22cd4d94304d7d4a47fcee"
+}

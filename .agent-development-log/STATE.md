@@ -1,7 +1,7 @@
 # Project development state — agent handoff
 
 Read with INDEX.md and the linked reports. Independently inspect code and tests.
-Recorded steps: 8
+Recorded steps: 9
 
 ## Latest records
 
@@ -13,6 +13,7 @@ Recorded steps: 8
 - #0006 [completed] Visual asset specialist published and independently read back (related: #0005)
 - #0007 [in_progress] Make visual asset source selection explicitly project-driven (related: #0006)
 - #0008 [in_progress] Project-driven source clarification passed repository checks (related: #0007)
+- #0009 [completed] Project-driven visual sources published and read back (related: #0008)
 
 ## Open/blocked records (confirm whether still applicable)
 
