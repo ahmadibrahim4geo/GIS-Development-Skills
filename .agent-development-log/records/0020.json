@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "sequence": 20,
+  "timestamp_utc": "2026-10-29T16:35:43+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Harden CI validation workflow for new helper scripts",
+  "details": "Added scripts/gis_code_discovery.py, prepare_visual_asset.py, evaluate_visual_skill.py, build_skill_bundle.py, and security_guardian.py to syntax checking in .github/workflows/validate.yml.",
+  "references": [
+    19
+  ],
+  "task_id": "GIS-CODE-DISCOVERY-20261029",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [
+    "tests/test_workflow_event_policy.py"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "3a293afc168500c246b97927bbed21431bd5909e0d43ac236c1f377550ba6772",
+  "hash": "47ae54622553b822996fee999cbdbf2eb1d5299454879ccdc907ecc524439125"
+}
