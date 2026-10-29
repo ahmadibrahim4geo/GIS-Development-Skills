@@ -62,7 +62,7 @@ html[lang=ar] .studio-hero h1{font-size:clamp(32px,3.6vw,49px);letter-spacing:0;
 .studio-use-card h3{font-size:22px;font-weight:820;margin:9px 0 8px;color:#f2fff7}
 .studio-use-card p,.studio-use-card li{color:#b9cdc0;font-size:12px;line-height:1.85}
 .studio-use-card ol,.studio-use-card ul{margin:10px 0 15px;padding-inline-start:19px;list-style:disc}
-.studio-use-card .studio-example{white-space:pre-wrap;overflow-wrap:anywhere;background:#091617;border:1px solid #3d5a4b;border-radius:11px;color:#d3f8df;font:12px/1.75 ui-monospace,monospace;padding:15px;margin:12px 0;min-height:112px}
+.studio-example{white-space:pre-wrap!important;overflow-wrap:anywhere!important;word-break:break-word!important;background:#091617;border:1px solid #3d5a4b;border-radius:11px;color:#d3f8df;font:12px/1.75 ui-monospace,monospace;padding:15px;margin:12px 0;min-height:80px;max-width:100%;box-sizing:border-box}
 .studio-use-card .studio-cmd{display:flex;align-items:center;gap:10px;justify-content:space-between;background:#091617;border:1px solid #3d5a4b;border-radius:11px;padding:12px;margin:11px 0}
 .studio-use-card .studio-cmd code{font:12px/1.65 ui-monospace,monospace;color:#d3f8df;overflow-wrap:anywhere;min-width:0}
 .studio-copy{font-size:12px;font-weight:800;color:#ebfff0;background:#264e3d;border:1px solid #608c69;border-radius:8px;min-height:38px;padding:8px 12px;cursor:pointer;flex-shrink:0}
@@ -104,3 +104,10 @@ footer{background:#090f10!important}footer .foot{border-top-color:#324b41!import
 @media(max-width:930px){.studio-hero{grid-template-columns:1fr;padding:42px 0 34px}.studio-workbench{max-width:660px}.studio-how-grid{grid-template-columns:1fr}.studio-four{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:610px){.studio-hero{padding:32px 0}.studio-logo{max-height:128px}.studio-hero h1{font-size:clamp(33px,8vw,46px)}.studio-workbench{padding:17px}.studio-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important;margin-bottom:34px!important}.studio-metrics>div{padding:16px 10px!important;border-bottom:1px solid #355247}.studio-metrics>div:nth-child(2n){border-inline-end:0!important}.studio-metrics>div:last-child{grid-column:1/-1;border-bottom:0}.studio-head{display:block}.studio-head-aside{display:block;margin-top:12px}.studio-howto{padding:39px 0!important}.studio-four,.studio-faq{grid-template-columns:1fr}.studio-use-card{padding:18px}.studio-use-card .studio-cmd{flex-wrap:wrap}.studio-use-card .studio-copy{margin-inline-start:auto}}
 @media(prefers-reduced-motion:reduce){.studio-action:hover{transform:none}}
+html,body{overflow-x:hidden}
+.min-w-0{min-width:0!important}
+#architecture-visualization .flex>div,#mcp-integration .flex>div{min-width:0;box-sizing:border-box}
+@media(min-width:640px){.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))!important}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))!important}.md\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
+@media(min-width:1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))!important}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))!important}.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
+

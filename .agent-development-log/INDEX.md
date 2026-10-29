@@ -25,3 +25,4 @@ create a linked revision or cancellation. This local hash chain is not a signatu
 | [#0018](reports/0018.md) | 2026-10-29T16:19:09+00:00 | verification | completed | #0017 | Verify GIS Code Discovery & Reuse with 10 test scenarios and DoneProof report |
 | [#0019](reports/0019.md) | 2026-10-29T16:30:49+00:00 | handoff | completed | #0018 | Release v1.2.0: Synchronize index and push 35 skills to GitHub main |
 | [#0020](reports/0020.md) | 2026-10-29T16:35:43+00:00 | implementation | completed | #0019 | Harden CI validation workflow for new helper scripts |
+| [#0021](reports/0021.md) | 2026-10-29T17:24:13+00:00 | implementation | completed | — | Fix homepage layout flex blowout, pre wrapping, and responsive grids |

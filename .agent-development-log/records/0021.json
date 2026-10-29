@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "sequence": 21,
+  "timestamp_utc": "2026-10-29T17:24:13+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Fix homepage layout flex blowout, pre wrapping, and responsive grids",
+  "details": "Resolved layout collapsing in architecture-visualization and mcp-integration sections by making studio-example wrap pre tags globally, adding min-w-0 to flex children, adding missing sm and lg responsive grid classes, and ensuring bilingual Arabic step labels.",
+  "references": [],
+  "task_id": "",
+  "plan_revision": "",
+  "changed_files": [
+    "assets/home-redesign.css",
+    "index.html"
+  ],
+  "tests": [
+    "python -m unittest tests/test_landing_page.py tests/test_home_redesign.py tests/test_gis_pathway_behavior.py -v"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "47ae54622553b822996fee999cbdbf2eb1d5299454879ccdc907ecc524439125",
+  "hash": "794ab62c5be17ec6dd2b142a8851ebda9710c21646d25c7747d8719688c57ca1"
+}
