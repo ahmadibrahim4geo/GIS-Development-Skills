@@ -14,6 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 DOMAINS = (
+    ("gis-code-discovery", ("code discovery", "gis code", "code snippet", "code snippets", "sdk snippet", "arcgis sdk", "pyqgis snippet", "gdal sample", "gis recipe", "كود جغرافي", "خوارزمية جغرافية", "مقتطفات برمجية", "وصفات برمجية", "أمثلة برمجية")),
     ("visual-asset-discovery-integration", ("thumbnail", "visual asset", "image search", "image sourcing", "official logo", "logos", "brand asset", "سامبنيل", "سنبنيل", "ثَمبنيل", "صورة مصغرة", "صورة لكل اختيار", "صور توضيحية", "شعار", "شعارات")),
 
 ("gis-architecture-visualization", ("archify", "architecture diagram", "workflow diagram", "draw a diagram", "interactive diagram", "visualize architecture", "diagram the", "ارسملي", "ارسم لي", "مخطط", "مين مسؤول عن مين", "وضحلي بنية", "وضّحلي بنية")),

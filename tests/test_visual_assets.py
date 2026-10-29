@@ -19,6 +19,8 @@ def load_script(name):
 
 assets = load_script("prepare_visual_asset")
 router = load_script("intent_router")
+evaluator = load_script("evaluate_visual_skill")
+
 META = {
     "asset_id": "test-mark", "role": "logo", "representation": "brand-mark",
     "source_page": "https://example.org/synthetic-fixture",
@@ -60,6 +62,14 @@ class VisualMetadataTests(unittest.TestCase):
     def test_duplicate_json_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             json.loads('{"asset_id":"a","asset_id":"b"}', object_pairs_hook=assets.unique_pairs)
+
+
+class VisualEvaluationTests(unittest.TestCase):
+    def test_evaluator_runs_all_benchmarks_and_passes(self):
+        results = evaluator.run_benchmark()
+        self.assertEqual(6, len(results))
+        for r in results:
+            self.assertEqual("PASS", r["status"], f"Scenario {r['id']} failed")
 
 
 try:
@@ -134,6 +144,23 @@ class VisualPreparationTests(unittest.TestCase):
                     data_reference="Synthetic data only")
         with self.assertRaisesRegex(ValueError, "contain"):
             assets.prepare(self.source, item, self.root / "science", fit="cover")
+
+    def test_webp_variants_and_theme_luminance_analysis(self):
+        target = self.root / "webp-assets"
+        record = assets.prepare(self.source, META, target, formats=("png", "webp"))
+        self.assertEqual(4, len(record["variants"]))
+        self.assertIn("theme_visibility", record)
+        self.assertIn("recommended_background", record["theme_visibility"])
+        self.assertTrue(any(v["format"] == "webp" for v in record["variants"]))
+        for v in record["variants"]:
+            if v["format"] == "webp":
+                self.assertTrue((target / v["path"]).is_file())
+
+    def test_svg_script_injection_rejected(self):
+        bad_svg = self.root / "bad.svg"
+        bad_svg.write_text('<svg xmlns="http://www.w3.org/2000/svg"><script>alert(1)</script></svg>')
+        with self.assertRaisesRegex(ValueError, "Security Guardian"):
+            assets.inspect_source_security(bad_svg)
 
 
 if __name__ == "__main__":

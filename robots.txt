@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ahmadibrahim4geo.github.io/GIS-Development-Skills/sitemap.xml

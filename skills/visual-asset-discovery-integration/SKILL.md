@@ -42,4 +42,4 @@ Own asset discovery, suitability, provenance and preparation. UI/UX owns layout/
 
 Keep `request_id`, `task_id`, `asset_id` and applicable `command_id`/`trace_id` across handoffs. Record searches and inspected sources, selection reasons, rejected substitutions, acquired paths, actual tool results, tests and missing capabilities. Report independently: T0 routing/metadata; T1 local preparation/readback; T2 live source/engine; T3 actual UI; T4 packaged offline behavior. Do not claim a download, official identity, native rendering, installation or completed integration without observed evidence.
 
-For a practical Arabic/English request and independent acceptance scenarios, see [the example](../../examples/visual-assets/README.md).
+For cross-agent adapters (Cursor, Claude), see [agents](agents/README.md). For automated benchmark evaluation, run [evaluate_visual_skill.py](../../scripts/evaluate_visual_skill.py). For practical Arabic/English requests and independent acceptance scenarios, see [the example](../../examples/visual-assets/README.md).

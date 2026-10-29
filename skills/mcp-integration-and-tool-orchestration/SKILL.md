@@ -30,4 +30,4 @@ python scripts/intent_router.py --plan examples/mcp-tool-routing/plan.example.js
 
 These commands **only preview candidates** and cannot authenticate the inventory, prompt approval or permissions. The included examples are fictional tool declarations; do not claim any GitHub, Windows, QGIS, GDAL or MCP service is installed.
 
-**Verification tiers:** T0 instructions, T1 structural tests, T2 offline fixture, T3 real connected MCP/native application, T4 representative GIS user scenario. Missing host/runtime access means T3/T4 **NOT RUN**. Full [workflow, threat model and fallbacks](../../references/mcp-integration-workflow.md).
+**Verification tiers:** follow the [canonical registry](../../references/evidence-tiers.json): T0 instructions/source review, T1 structural and offline fixture tests, T2 observed load/integration through a named connected MCP/native bridge, T3 a real GIS operation with output readback, and T4 a packaged representative user scenario. Missing host/runtime access means T2–T4 **NOT RUN**. Full [workflow, threat model and fallbacks](../../references/mcp-integration-workflow.md).

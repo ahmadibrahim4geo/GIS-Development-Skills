@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "request_id": "VISUAL-SKILL-PRO-UPGRADE-2026-10-29",
+  "task_id": "TASK-PRO-UPGRADE",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "CRIT-01",
+      "statement": "Cursor and Claude cross-agent adapter configurations are created with actionable directives",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "skills/visual-asset-discovery-integration/agents/cursor.mdc",
+          "observed": "Created cursor.mdc defining zero-hotlinking, official logo integrity, and local density preparation directives.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "artifact_readback",
+          "reference": "skills/visual-asset-discovery-integration/agents/claude.md",
+          "observed": "Created claude.md providing system prompt addendum and tool execution instructions.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "CRIT-02",
+      "statement": "scripts/evaluate_visual_skill.py benchmark runs standalone and achieves 100% score (6/6)",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python scripts/evaluate_visual_skill.py --strict",
+          "observed": "Benchmark Suite passed 6/6 cases (100.0%): brand logo crop protection, scientific preview data reference, unverified license rejection, 1x/2x density scaling, cryptographic SHA-256 hash readback, and strict duplicate JSON rejection.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "CRIT-03",
+      "statement": "examples/visual-assets/README.md showcases visual demo, comparison table, and benchmark metrics",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "examples/visual-assets/README.md",
+          "observed": "README showcases the problem/solution comparison (why agents fail vs skill), 5-second quickstart, and 100% verified benchmark results table.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "CRIT-04",
+      "statement": "Skill pack validator, unit tests, and security audit pass cleanly with zero blocking findings",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python scripts/validate_skill_pack.py",
+          "observed": "Skill pack valid: 34 skills; README, reference and website paths checked.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "command_output",
+          "reference": "python -m unittest discover -s tests -p test_visual_assets.py -v",
+          "observed": "12 tests ran and passed (100%), including metadata rejection, local preparation, and evaluation suite.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "command_output",
+          "reference": "python scripts/security_audit.py --root .",
+          "observed": "GIS Security Guardian: pass | 34 skills | 0 findings (0 blocking).",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Synthetic local evaluation and unit testing only; live external provider downloads and native UI rendering require host environment observation."
+  ]
+}

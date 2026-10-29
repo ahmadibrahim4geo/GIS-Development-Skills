@@ -36,4 +36,4 @@ Do **not** copy upstream code before licensing is confirmed. Do not copy local p
 - [Remote sensing pipelines](../skills/remote-sensing-pipelines/SKILL.md) — satellite collection/version, cloud masks, dates, raster pixel provenance.
 - [GIS API integration](../skills/geospatial-api-integration/SKILL.md) — correctly authenticated Copernicus and public NASA GIBS WMS.
 
-This review is **T0 documentary evidence only**. T1 needs a real build, T2 synthetic WMS bbox/date/state tests, T3 browser/Electron provider and UI tests, T4 Windows deployment with representative imagery requests and no credential leaks.
+This review is **T0 documentary evidence only**. T1 needs a real build and synthetic WMS bbox/date/state tests; T2 requires observed integration with a named browser/Electron renderer or live provider; T3 requires the real imagery/UI operation plus output/state readback; T4 requires clean Windows deployment with representative imagery requests and no credential leaks.

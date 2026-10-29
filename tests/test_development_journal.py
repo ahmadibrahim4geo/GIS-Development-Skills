@@ -93,7 +93,10 @@ class DevelopmentJournalTests(unittest.TestCase):
     def test_symlink_directory_refused(self):
         folder = self.root / journal.FOLDER
         (folder / "reports").rename(folder / "old-reports")
-        (folder / "reports").symlink_to(folder / "old-reports", target_is_directory=True)
+        try:
+            (folder / "reports").symlink_to(folder / "old-reports", target_is_directory=True)
+        except OSError:
+            self.skipTest("Symlinks require administrator privilege or Developer Mode on Windows")
         with self.assertRaises(ValueError):
             self.record()
 

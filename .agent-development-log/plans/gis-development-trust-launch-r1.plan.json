@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-TRUST-LAUNCH-20261029",
+  "revision": "r1",
+  "original_request": "نفذ",
+  "language": "ar",
+  "status": "approved",
+  "approval": {
+    "approved_by_user": true,
+    "approved_revision": "r1",
+    "high_risk_approved": false
+  },
+  "goal": "Turn GIS Development Skills from a broad documentation catalog into an installable, evidence-consistent and demonstrable GIS agent-skill product ready for a trustworthy public launch.",
+  "target": "The existing GIS-Development-Skills repository on Windows; preserve the approved brand, bilingual experience, author panel, catalogs, prior skills and current uncommitted visual-asset work.",
+  "desired_outcomes": [
+    "A self-contained and verifiable distribution path for the core GIS skill suite",
+    "One canonical T0-T4 evidence model with no offline/native classification drift",
+    "A runnable first golden workflow for open-source GIS development with observable artifacts and honest native-test limits",
+    "A conversion-focused README and public-site metadata that expose installation, proof and contribution paths quickly",
+    "A tested release candidate with community and publication assets prepared without performing external publication"
+  ],
+  "success_criteria": [
+    "A clean bundle build and isolated install-smoke test produce no missing local references",
+    "Repository checks reject inconsistent T0-T4 classifications and all current evidence labels use the canonical model",
+    "The golden workflow creates deterministic outputs with negative tests and a machine-readable acceptance report",
+    "The first README screen contains the value proposition, install path, copyable request, golden workflow and proof status with synchronized counts",
+    "All mandated catalog, skill-pack, manifest, security and unit-test commands pass, or every failure is reported with evidence"
+  ],
+  "constraints": [
+    "Do not overwrite or discard pre-existing uncommitted visual-asset and journal changes",
+    "Do not delete or rename existing skills, references, catalogs, templates, brand assets, author content or language controls",
+    "Preserve the exact approved English mission sentence and approved brand title/tagline",
+    "Prefer free and open tooling; disclose licensed/native GIS requirements",
+    "Do not claim ArcGIS, QGIS, browser, agent-client or packaged T2-T4 execution unless actually observed"
+  ],
+  "non_goals": [
+    "Guaranteeing GitHub Trending or purchasing artificial engagement",
+    "Adding more specialist domains before the distribution and evidence foundation is stable",
+    "Publishing a GitHub tag, Release, Discussions setting or repository metadata before a separate final external-action checkpoint",
+    "Certifying every external catalog entry or every proprietary GIS runtime in this revision"
+  ],
+  "assumptions": [
+    "The current approved implementation scope is the r1 sequence presented immediately before the user's approval",
+    "The first golden workflow should be free-first and runnable offline, with a QGIS native adapter whose native status remains NOT RUN when QGIS is unavailable"
+  ],
+  "open_questions": [],
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Build a self-contained GIS skill distribution and install smoke test",
+      "description": "Add a deterministic bundle builder, package manifest and isolated verification path so the core suite retains every referenced skill, script, reference, example and template after installation.",
+      "priority": "must",
+      "kind": "agent-skill-packaging",
+      "skills": [
+        "geospatial-ai-agents",
+        "gis-security-guardian"
+      ],
+      "depends_on": [],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "The bundle builder writes only to a new output directory and excludes Git metadata, development journals, caches and secrets",
+        "An isolated bundle audit reports zero missing local Markdown links and required runtime files",
+        "Documentation distinguishes source-repository installation from the verified self-contained bundle path"
+      ],
+      "tools": [
+        {"tool_id": "host.source-inspection", "side_effect": "read"},
+        {"tool_id": "host.workspace-write", "side_effect": "write"},
+        {"tool_id": "host.local-test", "side_effect": "read"}
+      ],
+      "owner_skill": "geospatial-ai-agents"
+    },
+    {
+      "id": "T2",
+      "title": "Canonicalize T0-T4 evidence and inventory truth",
+      "description": "Create one machine-readable evidence-tier contract, align validators and public labels, and remove misleading current-inventory or synthetic-native classifications.",
+      "priority": "must",
+      "kind": "quality-contract",
+      "skills": [
+        "geospatial-ai-agents",
+        "gis-security-guardian"
+      ],
+      "depends_on": [],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "One canonical evidence-tier registry defines T0 through T4 and is referenced by validation code",
+        "Offline fixtures are never labeled as native T2 evidence",
+        "Current README and policy inventory counts agree with the generated repository manifest"
+      ],
+      "tools": [
+        {"tool_id": "host.source-inspection", "side_effect": "read"},
+        {"tool_id": "host.workspace-write", "side_effect": "write"},
+        {"tool_id": "host.local-test", "side_effect": "read"}
+      ],
+      "owner_skill": "geospatial-ai-agents"
+    },
+    {
+      "id": "T3",
+      "title": "Create the first golden open-source GIS workflow",
+      "description": "Deliver a deterministic QGIS Processing-oriented vertical slice with a pure-Python core, synthetic fixture, expected artifact, negative tests, native adapter and evidence report.",
+      "priority": "must",
+      "kind": "qgis-golden-workflow",
+      "skills": [
+        "qgis-plugin-development",
+        "geospatial-data-processing",
+        "coordinate-reference-systems",
+        "gis-security-guardian"
+      ],
+      "depends_on": ["T1", "T2"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "The offline command generates and rereads a deterministic GIS artifact from a repository fixture",
+        "Negative tests cover malformed geometry, missing CRS or unsafe output behavior",
+        "The QGIS adapter and native acceptance command are documented while native status remains NOT RUN unless observed",
+        "The workflow has a copyable prompt, environment matrix and machine-readable evidence report"
+      ],
+      "tools": [
+        {"tool_id": "host.workspace-write", "side_effect": "write"},
+        {"tool_id": "host.local-test", "side_effect": "read"}
+      ],
+      "owner_skill": "qgis-plugin-development"
+    },
+    {
+      "id": "T4",
+      "title": "Rebuild the public front door around proof and adoption",
+      "description": "Shorten the README entry experience, preserve historical detail in CHANGELOG, add proof/status surfaces, SEO metadata and contribution templates without redesigning protected brand or author content.",
+      "priority": "must",
+      "kind": "repository-onboarding",
+      "skills": [
+        "gis-ui-ux-design-testing",
+        "gis-internationalization-arabic",
+        "gis-security-guardian"
+      ],
+      "depends_on": ["T1", "T2", "T3"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "A visitor can find install, copyable request, golden workflow and evidence status within the opening README section",
+        "English and Arabic counts and required mission/brand text remain synchronized",
+        "Homepage contains description, canonical and social metadata using project-subpath-safe URLs",
+        "Community files add a pull-request template and code of conduct without claiming that repository admin settings changed"
+      ],
+      "tools": [
+        {"tool_id": "host.workspace-write", "side_effect": "write"},
+        {"tool_id": "host.local-test", "side_effect": "read"}
+      ],
+      "owner_skill": "gis-ui-ux-design-testing"
+    },
+    {
+      "id": "T5",
+      "title": "Verify and prepare the release candidate",
+      "description": "Run every mandated validator and test, audit security and skill reachability, bind DoneProof to this plan and prepare—not publish—the release notes and administrator checklist.",
+      "priority": "must",
+      "kind": "release-verification",
+      "skills": [
+        "geospatial-ai-agents",
+        "gis-security-guardian"
+      ],
+      "depends_on": ["T1", "T2", "T3", "T4"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "Catalog, API, skill-pack, manifest, skill-graph, security and full unit-test commands have fresh recorded outcomes",
+        "DoneProof matches every required criterion in this approved r1 plan",
+        "Release notes distinguish verified offline evidence from native and external actions that remain NOT RUN",
+        "No external release, tag or administrator-setting mutation occurs without a separate final checkpoint"
+      ],
+      "tools": [
+        {"tool_id": "host.source-inspection", "side_effect": "read"},
+        {"tool_id": "host.local-test", "side_effect": "read"},
+        {"tool_id": "host.workspace-write", "side_effect": "write"}
+      ],
+      "owner_skill": "geospatial-ai-agents"
+    }
+  ]
+}

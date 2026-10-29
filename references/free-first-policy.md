@@ -11,11 +11,12 @@
 5. A model-running agent must have deterministic local actions without purchasing a hosted LLM. Local/GPU computation and data transfer can still incur practical expenses. Earth Engine and hosted cloud datasets may require eligible accounts or quotas.
 6. If a free solution is not equivalent in accuracy/outputs to a paid GIS feature, state the limitation; do not invent feature parity.
 
-## All 33 specialists
+## All 35 specialists
 
 | Specialist | Free independent path | Optional dependency or limitation |
 | --- | --- | --- |
 | `gis-development` | Free decision router, offline fixtures and Python examples | Optional commercial hosts only by explicit request |
+| `gis-code-discovery` | Free deterministic offline search across vetted open-source snippets and recipes (MIT/Apache/BSD/QGIS); no paid AI/API required | Public repositories and documentation have independent licenses; proprietary SDKs (e.g. ArcGIS Pro SDK) require host licenses for native execution |
 | `gis-architecture-visualization` | Local Archify interactive HTML with editable JSON; no paid renderer/API key; offline route/plan validation | External Archify runtime (reviewed Apache-2.0 source), Node.js and a usable browser for browser checks; host setup permissions, source privacy and incomplete upstream Arabic RTL support remain explicit |
 | `clean-room-reference-implementation` | Free read-only reference-file metadata observation, independently authored open-source implementations, deterministic local audit scripts and public KML/OGC standards | Proprietary program binaries/shaders/imagery remain restricted; native Windows tests, authorized agents and external services require separate verification; no mandatory paid provider |
 | `completion-evidence` | Free Python standard-library report consistency checker; no API key or hosted AI required | Host permissions, real command execution, provider receipts and native T2–T4 checks are not performed by this offline validator |

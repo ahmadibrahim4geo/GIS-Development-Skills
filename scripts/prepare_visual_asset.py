@@ -80,7 +80,58 @@ def read_metadata(path):
                       parse_constant=lambda x: (_ for _ in ()).throw(ValueError("Non-finite metadata")))
 
 
-def prepare(source, metadata, output_dir, width=64, height=64, scales=(1, 2), fit="contain"):
+def analyze_theme_visibility(image):
+    """Evaluate perceived luminance of non-transparent pixels to guide UI/UX theme contrast."""
+    if image.mode != "RGBA":
+        image = image.convert("RGBA")
+    data = image.get_flattened_data() if hasattr(image, "get_flattened_data") else image.getdata()
+    visible = [p for p in data if p[3] > 32]
+    if not visible:
+        return {
+            "has_transparency": True,
+            "perceived_luminance": 0.0,
+            "recommended_background": "any",
+            "ui_contrast_note": "Fully transparent or empty asset"
+        }
+    has_transparency = len(visible) < len(data)
+    total_lum = sum(0.2126 * p[0] + 0.7152 * p[1] + 0.0722 * p[2] for p in visible)
+    avg_lum = round(total_lum / (len(visible) * 255.0), 3)
+    if avg_lum < 0.35:
+        rec = "light"
+        note = "Dark asset; best displayed on light theme backgrounds"
+    elif avg_lum > 0.65:
+        rec = "dark"
+        note = "Light asset; best displayed on dark theme backgrounds"
+    else:
+        rec = "any"
+        note = "Balanced luminance; suitable for neutral, dark or light backgrounds"
+    return {
+        "has_transparency": has_transparency,
+        "perceived_luminance": avg_lum,
+        "recommended_background": rec,
+        "ui_contrast_note": note
+    }
+
+
+def inspect_source_security(source_path):
+    """Integrate with Security Guardian to inspect archive bundles or dangerous file contents."""
+    p = Path(source_path)
+    if p.suffix.lower() == ".zip":
+        try:
+            import security_guardian
+            res = security_guardian.inspect_archive(p)
+            if res.get("status") != "pass":
+                raise ValueError("Security Guardian rejected archive source: " + ", ".join(res.get("issues", [])))
+        except ImportError:
+            pass
+    elif p.suffix.lower() == ".svg":
+        text = p.read_text(encoding="utf-8", errors="ignore").lower()
+        for dangerous in ("<script", "javascript:", "onload=", "onerror=", "<!entity"):
+            if dangerous in text:
+                raise ValueError(f"Security Guardian rejected SVG source containing {dangerous}")
+
+
+def prepare(source, metadata, output_dir, width=64, height=64, scales=(1, 2), fit="contain", formats=("png",)):
     """Create a new directory; never overwrite a source or pre-existing output."""
     errors = metadata_errors(metadata)
     if errors:
@@ -98,11 +149,21 @@ def prepare(source, metadata, output_dir, width=64, height=64, scales=(1, 2), fi
         raise ValueError("fit must be contain or cover")
     if metadata["role"] in {"logo", "scientific-preview"} and fit != "contain":
         raise ValueError("Logos and scientific previews must use contain")
+    if not isinstance(formats, (list, tuple)) or not formats:
+        raise ValueError("formats must be a nonempty list or tuple")
+    for fmt in formats:
+        if fmt.lower() not in ("png", "webp"):
+            raise ValueError(f"Unsupported format '{fmt}'; must be png or webp")
+
     source, output_dir = Path(source), Path(output_dir)
     if output_dir.exists() or output_dir.is_symlink():
         raise ValueError("Destination already exists; choose a new directory")
     if not source.is_file() or source.stat().st_size > MAX_BYTES:
         raise ValueError("Source missing or larger than 20 MiB")
+
+    # Security check on source
+    inspect_source_security(source)
+
     try:
         from PIL import Image, ImageOps
     except ImportError as exc:
@@ -129,6 +190,10 @@ def prepare(source, metadata, output_dir, width=64, height=64, scales=(1, 2), fi
     if fit == "cover" and any(
             width * scale > raster.width or height * scale > raster.height for scale in scales):
         raise ValueError("Cover would upscale; choose a larger original or smaller dimensions")
+
+    # Evaluate UI/UX theme contrast
+    theme_vis = analyze_theme_visibility(raster)
+
     # Validate/decode fully before making any output directory.
     output_dir.mkdir(parents=True, exist_ok=False)
     try:
@@ -144,18 +209,25 @@ def prepare(source, metadata, output_dir, width=64, height=64, scales=(1, 2), fi
                 result = Image.new("RGBA", target, (0, 0, 0, 0))
                 result.alpha_composite(resized, ((target[0] - dims[0]) // 2,
                                                  (target[1] - dims[1]) // 2))
-            name = "{}-{}x{}.png".format(metadata["asset_id"], *target)
-            destination = output_dir / name
-            kwargs = {"icc_profile": icc} if icc else {}
-            result.save(destination, format="PNG", optimize=True, **kwargs)
-            with Image.open(destination) as check:
-                check.load()
-                if check.size != target or check.mode != "RGBA":
-                    raise ValueError("Variant readback failed")
-            payload = destination.read_bytes()
-            variants.append({"path": name, "width": target[0], "height": target[1],
-                             "scale": scale, "bytes": len(payload),
-                             "sha256": hashlib.sha256(payload).hexdigest()})
+
+            for fmt in formats:
+                ext = fmt.lower()
+                name = "{}-{}x{}.{}".format(metadata["asset_id"], target[0], target[1], ext)
+                destination = output_dir / name
+                kwargs = {"icc_profile": icc} if icc else {}
+                if ext == "png":
+                    result.save(destination, format="PNG", optimize=True, **kwargs)
+                elif ext == "webp":
+                    result.save(destination, format="WEBP", lossless=True, **kwargs)
+
+                with Image.open(destination) as check:
+                    check.load()
+                    if check.size != target or (ext == "png" and check.mode != "RGBA"):
+                        raise ValueError("Variant readback failed")
+                payload = destination.read_bytes()
+                variants.append({"path": name, "format": ext, "width": target[0], "height": target[1],
+                                 "scale": scale, "bytes": len(payload),
+                                 "sha256": hashlib.sha256(payload).hexdigest()})
         record = dict(metadata)
         record.update({
             "schema_version": "1.0",
@@ -163,7 +235,10 @@ def prepare(source, metadata, output_dir, width=64, height=64, scales=(1, 2), fi
             "original_filename": source.name,
             "original_sha256": hashlib.sha256(raw).hexdigest(),
             "source_dimensions": {"width": raster.width, "height": raster.height},
-            "fit": fit, "variants": variants,
+            "fit": fit,
+            "formats": [f.lower() for f in formats],
+            "theme_visibility": theme_vis,
+            "variants": variants,
             "verification_scope": "Local raster decode/readback only; source review, licensing and UI loading are host responsibilities",
         })
         (output_dir / "asset.json").write_text(
@@ -184,10 +259,17 @@ def main(argv=None):
     parser.add_argument("--height", type=int, default=64)
     parser.add_argument("--scales", nargs="+", type=int, default=[1, 2])
     parser.add_argument("--fit", choices=("contain", "cover"), default="contain")
+    parser.add_argument("--formats", nargs="+", choices=("png", "webp"), default=["png"])
+    parser.add_argument("--webp", action="store_true", help="Also generate WebP variants alongside PNG")
     args = parser.parse_args(argv)
+
+    formats = list(args.formats)
+    if args.webp and "webp" not in formats:
+        formats.append("webp")
+
     try:
         record = prepare(args.input, read_metadata(args.metadata), args.output_dir,
-                         args.width, args.height, args.scales, args.fit)
+                          args.width, args.height, args.scales, args.fit, formats=formats)
     except (OSError, ValueError, SyntaxError) as exc:
         print("ERROR: " + str(exc), file=sys.stderr)
         return 1

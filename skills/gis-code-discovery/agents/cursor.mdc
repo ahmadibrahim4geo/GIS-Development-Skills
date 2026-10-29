@@ -1,0 +1,30 @@
+---
+description: Discover, evaluate, adapt, and reuse verified GIS code snippets, SDK examples, and spatial algorithms with license and CRS validation
+globs: **/*
+alwaysApply: false
+---
+
+# GIS Code Discovery & Reuse (Cursor Agent Rule)
+
+Apply this rule whenever implementing, refactoring, or researching GIS algorithms, spatial operations, or GIS SDK code (ArcGIS Pro SDK, ArcPy, PyQGIS, GDAL, GeoPandas, WebGIS).
+
+## Core Directives
+
+1. **Discover Before Reinventing:**
+   - Search authoritative SDK snippets and cookbooks before writing complex geospatial algorithms from scratch.
+   - Use `scripts/gis_code_discovery.py` to query recipes and vetted repositories.
+
+2. **Strict Platform Separation:**
+   - **ArcGIS Pro SDK (.NET C#):** Use official snippets (`ArcGIS.Desktop.*`), enforce `QueuedTask.Run()` for thread-safe map/geodatabase access. NEVER suggest ArcPy Python scripts for a .NET add-in.
+   - **ArcPy (Python):** Geoprocessing workflows only within licensed ArcGIS Pro / Server Python runtimes.
+   - **PyQGIS (Python):** Subclass `QgsProcessingAlgorithm` for custom processing tools; ensure QGIS 3.x compatibility.
+   - **GDAL / Rasterio / GeoPandas (Open Source):** Use for pure Python workflows without commercial or desktop host dependencies.
+
+3. **Geospatial & Spatial Fidelity Validation:**
+   - Always verify Coordinate Reference System (CRS) transformations.
+   - Explicitly handle NoData values in raster operations; never let NoData contaminate statistics.
+   - Verify geometry validity (`is_valid`, `buffer(0)`) before geometric overlays.
+
+4. **License & Security Hygiene:**
+   - Check license terms before adapting code. If license is `unknown` or incompatible, learn the pattern conceptually; do not copy bytes.
+   - Strip hardcoded API keys, database credentials, and absolute user paths.

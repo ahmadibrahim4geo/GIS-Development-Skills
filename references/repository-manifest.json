@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 34,
+  "skill_count": 35,
   "skill_ids": [
     "agent-development-journal",
     "arcgis-toolbox-engineering",
@@ -16,6 +16,7 @@
     "geospatial-web-mapping",
     "gis-architecture-visualization",
     "gis-cartography-symbology",
+    "gis-code-discovery",
     "gis-data-flow-diagnostics",
     "gis-desktop-application-development",
     "gis-desktop-e2e-testing",

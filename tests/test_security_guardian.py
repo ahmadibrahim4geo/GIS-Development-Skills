@@ -20,7 +20,9 @@ class SecurityGuardianTests(unittest.TestCase):
     def make_archive(self, target, members):
         with zipfile.ZipFile(target, "w") as out:
             for name, data in members:
-                out.writestr(name, data)
+                info = zipfile.ZipInfo("dummy")
+                info.filename = name
+                out.writestr(info, data)
 
     def test_safe_archive(self):
         with tempfile.TemporaryDirectory() as tmp:

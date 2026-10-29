@@ -14,7 +14,7 @@ Expected output contains **one synthetic clear item** and its asset *names*, **n
 Scope and caveats:
 - Real STAC API paging, OAuth, signed assets, collection conformance, actual availability, cloud masks, geometry intersection and COG analysis **are not implemented**. A bbox overlap is **not** a polygon intersection. Crossing the antimeridian is rejected rather than silently mishandled.
 - The tool validates item IDs, bbox order/ranges, timezone-aware acquisition datetimes, cloud percentage and the `assets` object of included items; it never accesses an asset link or asserts its license.
-- This offline test is **T2 fixture evidence** only. For real imagery, use a verified provider endpoint, its actual STAC Search API, pagination, item/source lineage, and licensed raster reads after credentials and legal rights are checked.
+- This offline test is **T1 fixture evidence** only. T2 requires an observed integration with a named live STAC provider/runtime. For real imagery, use a verified provider endpoint, its actual STAC Search API, pagination, item/source lineage, and licensed raster reads after credentials and legal rights are checked.
 - No billed model, cloud account, proprietary GIS host, or API key is needed.
 
 See [Remote Sensing Pipelines](../../skills/remote-sensing-pipelines/SKILL.md), [Data Catalogs](../../skills/geospatial-data-catalogs/SKILL.md), and [free-first policy](../../references/free-first-policy.md).

@@ -27,12 +27,13 @@ def inspect_archive(path, *, max_files=1000, max_bytes=268435456,
                 findings.append("member-count-exceeded")
             seen = set()
             for info in members:
-                raw = info.filename
+                raw = getattr(info, "orig_filename", info.filename)
                 name = raw.replace("\\", "/")
                 parts = PurePosixPath(name).parts
                 if (
                     not raw or "\\" in raw or raw.startswith(("/", "\\"))
-                    or ":" in parts[0] if parts else True
+                    or "//" in raw
+                    or (":" in parts[0] if parts else True)
                 ):
                     findings.append("unsafe-path")
                 if any(part in ("..", ".") for part in name.split("/")):

@@ -17,6 +17,11 @@ class EvidenceTests(unittest.TestCase):
     def test_example_is_complete(self):
         self.assertEqual(module.validate(self.report), [])
 
+    def test_validator_levels_come_from_canonical_registry(self):
+        registry = json.loads((ROOT / "references/evidence-tiers.json").read_text(encoding="utf-8"))
+        expected = {item["id"]: item["ordinal"] for item in registry["tiers"]}
+        self.assertEqual(expected, module.LEVELS)
+
     def test_native_claim_requires_logs(self):
         self.report["evidence_tier"] = "T3"
         self.report["status"] = "pass"

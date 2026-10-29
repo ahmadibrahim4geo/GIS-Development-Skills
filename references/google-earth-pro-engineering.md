@@ -46,4 +46,4 @@ Related internal guides: [KML/KMZ fidelity](google-kml-kmz-compatibility.md), [s
 | Elevation | Profile derived from explicitly named DEM; map/profile linked; NoData and vertical datum reported |
 | Tours | Valid sequenced camera playback, interruption, state restoration and KML export capability report |
 
-**Evidence tiers:** T0 sources, T1 schema/static checks, T2 fixture-driven tests, T3 actual GUI/provider integration, T4 clean packaged Windows executable. Never upgrade the claimed tier without evidence.
+**Evidence tiers:** T0 sources, T1 schema/static and fixture-driven checks, T2 observed integration in a named Google Earth/Cesium/target runtime or provider adapter, T3 actual GUI/provider operation plus state/output readback, and T4 a clean packaged Windows executable. Never upgrade the claimed tier without evidence.

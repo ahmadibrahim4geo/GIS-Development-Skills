@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-CODE-DISCOVERY-20261029",
+  "revision": "r1",
+  "original_request": "تطوير نظام ذكي لاكتشاف الأكواد الجغرافية وإعادة استخدامها داخل GIS-Development-Skills",
+  "language": "ar",
+  "status": "approved",
+  "approval": {
+    "approved_by_user": true,
+    "approved_revision": "r1",
+    "high_risk_approved": false
+  },
+  "assumptions": [
+    "المهارة الجديدة هي gis-code-discovery وترتبط بالموجه العام دون إنشاء نظام توجيه مواز",
+    "المصادر المعتمدة الأولية الـ 12 هي نقطة انطلاق وليست قائمة مغلقة",
+    "تحديث العداد من 34 إلى 35 مهارة في جميع ملفات المستودع والمانيفست"
+  ],
+  "open_questions": [],
+  "goal": "Build an intelligent GIS code discovery and reuse specialist with verified source registries, semantic recipe catalog, and Main Router integration",
+  "target": "skills/gis-code-discovery, references/gis-code-sources.json, references/gis-code-recipes.json, scripts/gis_code_discovery.py",
+  "desired_outcomes": [
+    "A structured, extensible registry of vetted GIS code repositories and official cookbooks",
+    "A function-level semantic recipe database supporting discovered, reviewed, adapted, and tested states",
+    "A deterministic discovery and scoring engine that validates functional fit, SDK/API version, license, and spatial fidelity",
+    "Clean integration into the GIS Development Router and bilingual documentation"
+  ],
+  "success_criteria": [
+    "The new specialist skill passes validate_skill_pack.py and security audit",
+    "The 10 practical verification test scenarios pass with 100% in tests/test_code_discovery.py",
+    "Repository manifest, READMEs, index.html counters, and intent router are synchronized to 35 skills",
+    "DoneProof report verifies completion against reviewed criteria"
+  ],
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Build GIS code source and recipe registries",
+      "description": "Create references/gis-code-sources.json containing the 12 vetted primary sources with license, version and capability metadata, and references/gis-code-recipes.json supporting recipe states.",
+      "priority": "must",
+      "kind": "knowledge-registry",
+      "owner_skill": "gis-code-discovery",
+      "skills": [
+        "gis-code-discovery",
+        "gis-security-guardian"
+      ],
+      "depends_on": [],
+      "risk": "low",
+      "acceptance_criteria": [
+        "gis-code-sources.json indexes the 12 vetted repositories with explicit license and supported version metadata",
+        "gis-code-recipes.json supports discovered, reviewed, adapted, tested, rejected, and deprecated states"
+      ],
+      "tools": [
+        {"tool_id": "host.file-write", "side_effect": "write"}
+      ]
+    },
+    {
+      "id": "T2",
+      "title": "Author the gis-code-discovery specialist skill and cross-agent adapters",
+      "description": "Create skills/gis-code-discovery/SKILL.md adhering to Agent Skills spec with 10-step lifecycle, and create OpenAI, Cursor, and Claude adapters.",
+      "priority": "must",
+      "kind": "specialist-authoring",
+      "owner_skill": "gis-code-discovery",
+      "skills": [
+        "gis-code-discovery",
+        "gis-security-guardian"
+      ],
+      "depends_on": ["T1"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "SKILL.md frontmatter description is under 1024 characters and documents the discover-evaluate-adapt-test workflow",
+        "Cross-agent adapters are provided for Cursor, Claude, and OpenAI"
+      ],
+      "tools": [
+        {"tool_id": "host.file-write", "side_effect": "write"}
+      ]
+    },
+    {
+      "id": "T3",
+      "title": "Implement the function-level code discovery and evaluation engine",
+      "description": "Create scripts/gis_code_discovery.py to parse natural language requests into GIS concepts, search repositories and recipes, and score candidate solutions against technical and spatial criteria.",
+      "priority": "must",
+      "kind": "discovery-engine",
+      "owner_skill": "gis-code-discovery",
+      "skills": [
+        "gis-code-discovery",
+        "completion-evidence",
+        "gis-security-guardian"
+      ],
+      "depends_on": ["T2"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "gis_code_discovery.py maps queries to GIS concepts (e.g. raster sampling, ribbon commands, PyQGIS algorithms)",
+        "Engine scores candidates across functional fit, SDK version, license permissions, and spatial fidelity"
+      ],
+      "tools": [
+        {"tool_id": "host.file-write", "side_effect": "write"}
+      ]
+    },
+    {
+      "id": "T4",
+      "title": "Integrate with Main Router, update manifest and bilingual documentation",
+      "description": "Register gis-code-discovery in skills/gis-development/SKILL.md, scripts/intent_router.py, update manifest to 35 skills, and synchronize README.md, README.ar.md, and index.html.",
+      "priority": "must",
+      "kind": "router-integration",
+      "owner_skill": "gis-code-discovery",
+      "skills": [
+        "gis-code-discovery",
+        "gis-development",
+        "gis-internationalization-arabic",
+        "gis-security-guardian"
+      ],
+      "depends_on": ["T3"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "Main GIS router and intent router recognize code discovery requests in English and Arabic",
+        "Repository manifest and index.html agree on 35 discoverable skills"
+      ],
+      "tools": [
+        {"tool_id": "host.file-write", "side_effect": "write"}
+      ]
+    },
+    {
+      "id": "T5",
+      "title": "Implement practical 10-scenario test suite and verify completion",
+      "description": "Create tests/test_code_discovery.py covering ArcGIS Pro SDK vs ArcPy, PyQGIS algorithms, GDAL raster sampling, WebGIS, KML styles, license refusal, and run full verification suite.",
+      "priority": "must",
+      "kind": "verification",
+      "owner_skill": "gis-code-discovery",
+      "skills": [
+        "gis-code-discovery",
+        "completion-evidence",
+        "agent-development-journal",
+        "gis-security-guardian"
+      ],
+      "depends_on": ["T4"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "All 10 practical verification test scenarios pass in tests/test_code_discovery.py",
+        "Full repository validation suite passes cleanly with zero blocking findings",
+        "DoneProof report verifies completion against reviewed criteria"
+      ],
+      "tools": [
+        {"tool_id": "host.local-test", "side_effect": "read"}
+      ]
+    }
+  ]
+}

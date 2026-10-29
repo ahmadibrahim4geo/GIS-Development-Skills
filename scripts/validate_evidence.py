@@ -4,11 +4,25 @@ import argparse
 import json
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+TIER_REGISTRY = ROOT / "references" / "evidence-tiers.json"
 REQUIRED = ("target", "os", "application_version", "python_runtime", "crs_units",
             "evidence_tier", "commands_executed", "fixtures_used", "expected_result",
             "observed_result", "not_tested", "known_limitations", "source_changes",
             "provenance_licensing", "status", "native_runtime_verified", "evidence_links")
-LEVELS = {"T0": 0, "T1": 1, "T2": 2, "T3": 3, "T4": 4}
+
+
+def load_levels(path=TIER_REGISTRY):
+    registry = json.loads(Path(path).read_text(encoding="utf-8"))
+    tiers = registry.get("tiers", [])
+    levels = {tier["id"]: tier["ordinal"] for tier in tiers
+              if isinstance(tier, dict) and "id" in tier and "ordinal" in tier}
+    if levels != {"T0": 0, "T1": 1, "T2": 2, "T3": 3, "T4": 4}:
+        raise ValueError("Invalid canonical evidence tier registry")
+    return levels
+
+
+LEVELS = load_levels()
 STATES = {"pass", "partial", "blocked", "fail", "not tested"}
 
 

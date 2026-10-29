@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-CODE-DISCOVERY-20261029",
+  "task_id": "T5",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "CRIT-01",
+      "statement": "All 10 practical verification test scenarios pass in tests/test_code_discovery.py",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -m unittest tests/test_code_discovery.py -v",
+          "observed": "Ran 10 tests in 0.012s - OK. Scenarios verified: ArcGIS Pro SDK button QueuedTask constraint, PyQGIS processing algorithm subclassing, GDAL/Rasterio elevation sampling with NoData, Web GIS MapLibre vector tile initialization, KML placemark hex inversion, unverified license rejection, missing source fallback, platform constraint mismatch, nonsense query handling without hallucination, and bilingual router integration.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "CRIT-02",
+      "statement": "Full repository validation suite passes cleanly with zero blocking findings",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -m unittest discover -s tests -v",
+          "observed": "Ran 381 tests in 11.909s - OK (skipped=1). All unit and integration tests passing cleanly across 35 skills.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "command_output",
+          "reference": "python scripts/security_audit.py --root .",
+          "observed": "GIS Security Guardian: pass | 35 skills | 0 findings (0 blocking).",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "command_output",
+          "reference": "python scripts/validate_skill_pack.py",
+          "observed": "Skill pack valid: 35 skills; README, reference and website paths checked.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "command_output",
+          "reference": "python scripts/audit_skill_graph.py",
+          "observed": "Skill flow audit: PASS | skills=35 | routed=33 | lexical domains=30.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "CRIT-03",
+      "statement": "DoneProof report verifies completion against reviewed criteria",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": ".agent-development-log/evidence/code-discovery/t5-verification.doneproof.json",
+          "observed": "Verified DoneProof consistency bound to request GIS-CODE-DISCOVERY-20261029 revision r1.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

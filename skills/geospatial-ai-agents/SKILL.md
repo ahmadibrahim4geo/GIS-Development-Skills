@@ -30,7 +30,7 @@ For optional Model Context Protocol tools, load [MCP Tool Orchestration](../mcp-
 3. Run preflight (installed runtime, plugin, model entitlement, provider license, predicted data size). Disable unavailable controls, don't invent success.
 4. Execute real GIS operation through PyQGIS/ArcPy/Whitebox/GDAL etc, not free-form model arithmetic; log versions, parameters, sources, hashes and output files.
 5. Validate the output independently: re-open layers, feature counts, attribute schema, CRS, NoData, georeferencing, geometry validity and intended map view.
-6. Report full evidence: T0 description-only, T1 syntax, T2 offline fixture, T3 real GIS runtime, T4 representative user scenario. A demo or notebook alone does not prove T3/T4.
+6. Report full evidence using the [canonical registry](../../references/evidence-tiers.json): T0 source/procedure review, T1 deterministic offline/static fixture, T2 observed integration in a named native GIS/runtime/provider, T3 real operation plus independent output readback, and T4 packaged clean-environment user workflow. A demo or notebook alone does not prove T2–T4.
 
 ## Starter recipes
 

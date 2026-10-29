@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "request_id": "VISUAL-SKILL-PRO-UPGRADE-2026-10-29",
+  "revision": "r1",
+  "original_request": "أريد أن أوصل هذه المهارة إلى المرحلة الاحترافية، وأرى كيف تعمل المهارات التي تتصدر التريند على GitHub، وما الفرق بيني وبينهم لأرفع مستوى المهارة",
+  "language": "ar",
+  "status": "approved",
+  "approval": {
+    "approved_by_user": true,
+    "approved_revision": "r1",
+    "high_risk_approved": false
+  },
+  "assumptions": [
+    "المهارة المستهدفة هي visual-asset-discovery-integration",
+    "التطوير يجب أن يحافظ على توافقية المستودع الكاملة وجميع الفحوصات والاختبارات القائمة"
+  ],
+  "open_questions": [],
+  "goal": "Elevate Visual Asset Discovery & Integration to top-trending GitHub standard with standalone packaging, automated evals, and showcase documentation",
+  "target": "skills/visual-asset-discovery-integration and examples/visual-assets",
+  "desired_outcomes": [
+    "Zero-friction cross-agent configuration for Cursor and Claude",
+    "Automated quantitative evaluation benchmark runner",
+    "High-impact visual showcase and bilingual documentation",
+    "Verified DoneProof evidence and full test suite pass"
+  ],
+  "success_criteria": [
+    "All cross-agent configs and evals run cleanly without repository breakage",
+    "Skill pack validator, catalog validators, and unit tests pass at 100%",
+    "Security audit reports 0 findings",
+    "DoneProof report verifies completion against reviewed criteria"
+  ],
+  "tasks": [
+    {
+      "id": "TASK-PRO-UPGRADE",
+      "title": "Elevate Visual Skill to GitHub-Trending Standard",
+      "description": "Provide cross-agent adapters, automated evals suite, killer showcase README, and repository verification.",
+      "priority": "must",
+      "kind": "skill-packaging",
+      "owner_skill": "visual-asset-discovery-integration",
+      "skills": [
+        "visual-asset-discovery-integration",
+        "completion-evidence",
+        "agent-development-journal",
+        "gis-security-guardian"
+      ],
+      "depends_on": [],
+      "risk": "low",
+      "acceptance_criteria": [
+        "Cursor and Claude cross-agent adapter configurations are created with actionable directives",
+        "scripts/evaluate_visual_skill.py benchmark runs standalone and achieves 100% score (6/6)",
+        "examples/visual-assets/README.md showcases visual demo, comparison table, and benchmark metrics",
+        "Skill pack validator, unit tests, and security audit pass cleanly with zero blocking findings"
+      ],
+      "tools": [
+        {
+          "tool_id": "host.file-write",
+          "side_effect": "write"
+        },
+        {
+          "tool_id": "host.verification",
+          "side_effect": "read"
+        }
+      ]
+    }
+  ]
+}

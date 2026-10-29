@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "sequence": 18,
+  "timestamp_utc": "2026-10-29T16:19:09+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Verify GIS Code Discovery & Reuse with 10 test scenarios and DoneProof report",
+  "details": "All 10 scenarios in tests/test_code_discovery.py passed. Full repository suite (381 tests) passed cleanly. DoneProof report t5-verification.doneproof.json verified against plan r1.",
+  "references": [
+    17
+  ],
+  "task_id": "GIS-CODE-DISCOVERY-20261029",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [
+    "tests/test_code_discovery.py"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "6a0d46a0876fe6a2b25331d0e5a317bfb0a8e809964aa540fcdefa87314993d2",
+  "hash": "01b25a5086f5d14af102d6bfccbe8418349ef8b62e4177c30826820c810a1881"
+}

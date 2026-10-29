@@ -25,7 +25,7 @@
 2. Inspect **Jobs → validate → failed step**. Open the log around `FAIL:`, `ERROR:`, `AssertionError`, and process exit messages.
 3. Verify if another PR has since fixed the issue. Group identical failures by *test identifier and offending file*, not by total message count.
 4. Fix the smallest root cause, run local tests, publish to an isolated PR, and wait for both `Validate GIS Skill` and `GIS Security Guardian` to be green **for the updated SHA**.
-5. Confirm changes to `index.html` and `explorer.html` preserve bilingual layout and existing functional controls; T0–T2 tests are not native T3/T4 GIS acceptance.
+5. Confirm changes to `index.html` and `explorer.html` preserve bilingual layout and existing functional controls; T0–T1 tests are not native T2–T4 GIS acceptance.
 6. Keep old failed runs as useful historical diagnostics. Repo's latest successful CI state matters for merging.
 
 ## Important limitations

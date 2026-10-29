@@ -78,7 +78,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>34 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>35 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -155,7 +155,7 @@ Apache-2.0 sample-code licenses do not grant rights to proprietary ArcGIS produc
 
 **Free-first audit:** [Cost/licensing and 19 independent skill paths](references/free-first-policy.md). The website now lists all specialists, has incremental project browsing instead of a hard 60-result cut-off, and defaults API discovery to 43 self-hostable or conditionally free entries. Commercial, trial, strictly restricted and unavailable records remain optionally viewable; live provider rights are not guaranteed.
 
-**Practical free workflow upgrade (2026-10-25):** [Original upstream license-file audit](references/upstream-license-audit.md) (8 inspected / 138 linked projects), [offline license evidence scanner](scripts/audit_license_catalog.py), and two complete dependency-free T2 fixtures: [DEM Horn slope](examples/terrain-slope/README.md) and [STAC metadata selection](examples/stac-offline/README.md). The example scripts output real ASCII elevation-slope or JSON metadata files, but **do not** validate external terrain CRS or live satellite services. Upstream data, models, proprietary GIS host and API terms remain independent.
+**Practical free workflow upgrade (2026-10-25):** [Original upstream license-file audit](references/upstream-license-audit.md) (8 inspected / 138 linked projects), [offline license evidence scanner](scripts/audit_license_catalog.py), and two complete dependency-free T1 fixtures: [DEM Horn slope](examples/terrain-slope/README.md) and [STAC metadata selection](examples/stac-offline/README.md). The example scripts output real ASCII elevation-slope or JSON metadata files, but **do not** validate external terrain CRS or live satellite services. Upstream data, models, proprietary GIS host and API terms remain independent.
 
 **Maintainer:** [Ahmed Ibrahim](https://github.com/ahmadibrahim4geo). This is an independent community engineering resource, not an official project of Esri, QGIS, GeoRust or other third-party catalog entries. **Documentation v0.3.5** is not a GitHub software release; starter code and GIS host integrations require separate runtime testing.
 
@@ -438,3 +438,12 @@ The [World Gazetteer implementation guide](references/world-gazetteer-reference-
 Use [the visual assets skill](skills/visual-asset-discovery-integration/SKILL.md) for images, thumbnails, official logos, screenshots, illustrations, covers and backgrounds in any desktop, web, mobile or other project. It chooses sources dynamically for each project, including suitable images inside the current source website and any relevant internet source; named catalogs are optional examples with no mandatory search order. Through available host tools it verifies original-source reuse terms, prepares local variants and hands assets to the correct UI/platform owner. Distinguish actual data previews from illustrative/generated pictures; do not silently substitute generic icons.
 
 [Workflow and optional raster helper](references/visual-asset-workflow.md) · [Sources and related skills](references/visual-asset-sources.md) · [Bilingual request and acceptance scenarios](examples/visual-assets/README.md). Network, generation and native UI capabilities are discovered at runtime, not supplied by Markdown.
+
+
+## GIS Code Discovery & Reuse
+
+Use [the code discovery skill](skills/gis-code-discovery/SKILL.md) to discover, evaluate, and adapt verified GIS snippets and SDK recipes across ArcGIS Pro SDK (.NET 8), ArcPy, PyQGIS, GDAL/Rasterio, and Web GIS (MapLibre, CesiumJS). It indexes 12 vetted primary sources and provides verified function-level recipes across raster sampling, ribbon button wiring, processing algorithms, and KML style conversion.
+
+**Core Principle:** Discover first, evaluate second, adapt third, test last. Candidates are evaluated across 4 technical dimensions: functional fit, platform/version compatibility, license permissions, and spatial fidelity (CRS handling, NoData propagation, thread affinity). Direct copy of unverified licenses is blocked.
+
+[Vetted Sources Registry](references/gis-code-sources.json) · [Spatial Recipes Catalog](references/gis-code-recipes.json) · [Bilingual Prompts & Scenarios](examples/code-discovery/README.md).

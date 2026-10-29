@@ -25,4 +25,4 @@ For an auditable machine-readable record populate [the JSON example](gis-accepta
 python scripts/validate_evidence.py templates/gis-acceptance.example.json
 ```
 
-If a task was only coded or unit-tested without target application runtime, report T0/T1; do not claim T3 or T4. See [quality benchmark](../docs/QUALITY_BENCHMARK.md).
+If a task was only coded or unit-tested without target application runtime, report T0/T1; do not claim T2, T3 or T4. See the [machine-readable tier registry](../references/evidence-tiers.json) and [quality benchmark](../docs/QUALITY_BENCHMARK.md).

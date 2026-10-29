@@ -1,14 +1,16 @@
 # GIS Skill Quality Benchmark
 
-An evidence-based verification standard for installable agent skills and GIS workflow examples. A repository link, syntax check, mock or screenshot alone is not proof of native correctness.
+An evidence-based verification standard for installable agent skills and GIS workflow examples. The machine-readable source of truth is [evidence-tiers.json](../references/evidence-tiers.json). A repository link, syntax check, mock or screenshot alone is not proof of native correctness.
 
 | Tier | Required evidence | Not established |
 | --- | --- | --- |
 | T0 | Source and documented procedure inspected | Executable operation |
 | T1 | Repeatable offline/static unit tests using fixtures | Licensed ArcGIS/QGIS or live API |
-| T2 | Skill installs or toolbox/dialogue loads in named native client | End-to-end numerical correctness |
-| T3 | Actual GIS/DB operation completes and produced outputs are re-read and compared | Clean distributed Windows application |
-| T4 | Packaged software installs, launches, runs actions, exports/reopens, uninstalls and preserves files in clean OS | Future live-provider uptime |
+| T2 | Feature loads or integrates in a named compatible native GIS client, engine, database or live-provider adapter with a controlled fixture | End-to-end operation and independent output readback |
+| T3 | Actual GIS/DB/provider operation completes and produced outputs are independently re-opened or re-read and compared | Clean packaged distribution |
+| T4 | Packaged software installs or provisions in a clean representative environment, runs the user workflow, persists, exports/reopens and recovers/uninstalls where applicable | Future live-provider uptime or untested versions |
+
+An offline, static, mocked or synthetic fixture is **T1 at most**, even when it produces a real file. T2 begins only when the named native/runtime/provider integration was actually observed. Unavailable T2–T4 checks are `NOT RUN`, never inferred from CI.
 
 ## Five quality gates
 1. **Geospatial accuracy:** CRS, true coordinate transformation, horizontal/vertical units, geometry validity, raster pixel alignment and nodata.

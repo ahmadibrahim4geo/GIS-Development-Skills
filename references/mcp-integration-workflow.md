@@ -39,7 +39,7 @@ The candidate planner requires a separate tool inventory with exact tool IDs, `p
 - Attach each actual invocation's `command_id` and `trace_id` to the specialist evidence record.
 - On disconnected server, invalid schema, denied consent, rate limit, timeout or invalid GIS output: label `BLOCKED` or `FAILED`, log reason, and use an approved equivalent adapter only if the user goal and side-effect scope remain intact.
 - Validate post-write state with independent readback; UI Command Audit, Desktop E2E, and Data Flow Diagnostics remain separate specialists.
-- Local T1/T2 tests prove planner logic only. T3 MCP or native GIS operation and T4 representative target-device behavior require an actual host and fresh evidence.
+- Local T1 tests prove planner logic only. T2 requires observed integration through a named connected MCP/native bridge, T3 requires a real GIS operation with output readback, and T4 requires representative packaged target-device behavior with fresh evidence.
 
 ## Example: GIS desktop application
 

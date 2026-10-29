@@ -26,21 +26,22 @@ license: MIT
 | PostGIS, SpatiaLite, schema/indexes | [Spatial Databases](../spatial-databases/SKILL.md) |
 | Raster/vector, GDAL, GeoPandas, spatial batch | [Geospatial Data Processing](../geospatial-data-processing/SKILL.md) |
 | Remote sensing | [Pipelines](../remote-sensing-pipelines/SKILL.md) |
-| MapLibre, web 2D, CesiumJS globe/3D | [Geospatial Web Mapping](../geospatial-web-mapping/SKILL.md) |
+| MapLibre, web 2D, CesiumJS 3D | [Geospatial Web Mapping](../geospatial-web-mapping/SKILL.md) |
 | Standalone GIS desktop / installer | [GIS Desktop Development](../gis-desktop-application-development/SKILL.md) |
-| Clean-room / reference parity | [Reference Implementation](../clean-room-reference-implementation/SKILL.md) |
+| Clean-room reference parity | [Reference Implementation](../clean-room-reference-implementation/SKILL.md) |
 | Android/iOS GIS apps, GNSS, offline sync | [GIS Mobile Application Development](../gis-mobile-application-development/SKILL.md) |
-| Command inventory, dead controls, handlers, shortcuts | [UI Command Audit](../gis-ui-command-audit/SKILL.md) |
+| Command inventory, handlers, dead controls | [UI Command Audit](../gis-ui-command-audit/SKILL.md) |
 | Windows UI, WebView2 and installer tests | [Desktop E2E Testing](../gis-desktop-e2e-testing/SKILL.md) |
-| Import → render → save/export provenance or missing layers | [GIS Data Flow Diagnostics](../gis-data-flow-diagnostics/SKILL.md) |
-| Images, thumbnails, logos and visual resources | [Visual Assets](../visual-asset-discovery-integration/SKILL.md) |
+| Data flow provenance, missing layers | [GIS Data Flow Diagnostics](../gis-data-flow-diagnostics/SKILL.md) |
+| Images, thumbnails, logos | [Visual Assets](../visual-asset-discovery-integration/SKILL.md) |
+| GIS code snippets, SDK examples, recipes | [GIS Code Discovery](../gis-code-discovery/SKILL.md) |
 | UI/UX, accessibility, keyboard and visual regression | [UI/UX Design & Testing](../gis-ui-ux-design-testing/SKILL.md) |
 | Discover/download external data | [Geospatial Data Discovery](../geospatial-data-discovery/SKILL.md) |
 | Source directories, repositories and STAC indexes | [Geospatial Data Catalogs](../geospatial-data-catalogs/SKILL.md) |
 | GIS AI agents | [Agents](../geospatial-ai-agents/SKILL.md) |
-| Architecture/flow explanations, design/diagnosis, structural changes | [Visualization](../gis-architecture-visualization/SKILL.md) (conditional) |
+| Architecture diagrams, structural changes | [Visualization](../gis-architecture-visualization/SKILL.md) (conditional) |
 | MCP/native tools, fallback and capability preflight | [MCP Tool Orchestration](../mcp-integration-and-tool-orchestration/SKILL.md) |
-| DEM, terrain, hydrology, LiDAR / point clouds | [Terrain / Hydrology / LiDAR](../terrain-hydrology-lidar/SKILL.md) |
+| DEM, terrain, hydrology, LiDAR | [Terrain / Hydrology / LiDAR](../terrain-hydrology-lidar/SKILL.md) |
 | Untrusted GIS inputs, secrets and security | [GIS Security Guardian](../gis-security-guardian/SKILL.md) (cross-cutting) |
 | Integrate GIS HTTP APIs safely | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) |
 | Geocoding | [API Integration](../geospatial-api-integration/SKILL.md) · [providers](../../references/geocoding-place-search.md) |
