@@ -408,7 +408,7 @@
       "id": "openlandmap-stac",
       "name": "OpenLandMap STAC catalog",
       "url": "https://stac.openlandmap.org/",
-      "type": "stac-catalog",
+      "type": "catalog-index",
       "category": "land-cover-and-soil",
       "coverage": "global; product-specific NoData",
       "access": "STAC metadata and COG references",
