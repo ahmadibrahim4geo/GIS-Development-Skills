@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "sequence": 28,
+  "timestamp_utc": "2026-10-30T03:29:53+00:00",
+  "kind": "revision",
+  "status": "completed",
+  "summary": "Synchronize release note with completed main publication",
+  "details": "Updated the trust-launch release-candidate note after branch publication so it no longer states that the verified feature is unpublished. The note now records publication to origin/main under approved revision r2, keeps tag and GitHub Release actions explicitly NOT RUN, and leaves remaining administrator actions behind separate approval. Fifteen golden-workflow, internal-link and how-to regression tests passed.",
+  "references": [
+    27
+  ],
+  "task_id": "GIS-TRUST-LAUNCH-20261029",
+  "plan_revision": "r2",
+  "changed_files": [
+    "docs/RELEASE_CANDIDATE_TRUST_LAUNCH_R1.md"
+  ],
+  "tests": [
+    "python -m unittest tests.test_golden_qgis_coordinate_audit tests.test_repository_internal_links tests.test_how_to_use -v"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "e04268b3daf8639fce5e5e1c92e3f81ff5ba331759e2a8d7ab703eb8d8ba5c2e",
+  "hash": "6718a6051e10ee3efbb388edba7aba65ac2a545831f525aab2d4fc1ff2e1a10e"
+}

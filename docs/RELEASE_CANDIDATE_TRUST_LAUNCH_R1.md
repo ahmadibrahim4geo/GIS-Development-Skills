@@ -1,7 +1,7 @@
 # Trust Launch r1 — release-candidate notes
 
-Status: **locally verified release candidate; not published**
-Reviewed plan: `GIS-TRUST-LAUNCH-20261029`, revision `r1`
+Status: **verified feature published to `origin/main`; no tag or GitHub Release created**
+Reviewed plans: `GIS-TRUST-LAUNCH-20261029`, revisions `r1` and `r2`
 Verification date: 30 October 2026 (Africa/Cairo)
 
 ## What changed
@@ -48,11 +48,13 @@ same permitted environment.
 No Git tag, GitHub Release, repository topic, About text, Discussions setting,
 Pages source or other administrator setting was changed by this work.
 
-## Administrator publication checkpoint
+## Remaining administrator publication checkpoint
 
-Do not perform these actions without a separate explicit approval:
+Branch publication was separately approved and completed under revision `r2`.
+The remaining external or administrator actions still require separate explicit
+approval:
 
-- [ ] Review the diff and the plan-bound DoneProof reports.
+- [x] Review the diff and the plan-bound DoneProof reports.
 - [ ] Install the generated archive in each named supported agent client and
       retain client/version-specific smoke evidence.
 - [ ] Run `native_qgis_smoke.py` in the supported QGIS version and retain its
