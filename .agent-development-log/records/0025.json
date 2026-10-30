@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "sequence": 25,
+  "timestamp_utc": "2026-10-30T03:23:41+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Add bilingual golden workflow proof section to homepage",
+  "details": "Added a responsive index.html section with a copyable offline audit command, current 390-test snapshot, measured 10,000-point T1 benchmark, T1 verified boundary, QGIS T2-T4 NOT RUN boundary and links to expected artifacts and release evidence. English desktop, mobile and Arabic RTL browser previews rendered successfully. Exact #author markup compared with HEAD and remained unchanged.",
+  "references": [
+    24
+  ],
+  "task_id": "GIS-TRUST-LAUNCH-20261029",
+  "plan_revision": "r2",
+  "changed_files": [
+    "index.html",
+    "tests/test_golden_qgis_coordinate_audit.py"
+  ],
+  "tests": [
+    "python -m unittest tests.test_golden_qgis_coordinate_audit tests.test_landing_page tests.test_how_to_use tests.test_website_runtime_integrity tests.test_discoverability tests.test_repository_internal_links -v",
+    "browser preview: English desktop, 390x844 mobile, Arabic RTL"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "9d34f4c2b640dc3e0ea088d65b72fa57bc31e02cf9e6f96774371806a3566452",
+  "hash": "bf89fb1c6e3699139292dd828dcf6080a89216f8a78397e7f7a50f11cfc3fd48"
+}

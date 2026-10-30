@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-TRUST-LAUNCH-20261029",
+  "task_id": "T6",
+  "revision": "r2",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "T6-C1",
+      "statement": "index.html contains one bilingual golden-workflow section with copyable offline command, measured T1 performance and explicit QGIS T2-T4 NOT RUN status",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "index.html#golden-workflow",
+          "observed": "The final homepage contains one English/Arabic golden-workflow section, copyUsage support for its offline command, bounded 10K-feature timing and throughput, a T1 VERIFIED card, and an explicit QGIS T2-T4 NOT RUN card.",
+          "result": "pass",
+          "revision": "r2"
+        }
+      ]
+    },
+    {
+      "id": "T6-C2",
+      "statement": "The homepage remains valid under existing navigation, bilingual, accessibility and JavaScript regression tests",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -m unittest tests.test_golden_qgis_coordinate_audit tests.test_landing_page tests.test_how_to_use tests.test_website_runtime_integrity tests.test_discoverability tests.test_repository_internal_links -v",
+          "observed": "All 32 targeted homepage, bilingual, accessibility, navigation, JavaScript, discoverability and internal-link regression tests passed on the final files.",
+          "result": "pass",
+          "revision": "r2"
+        },
+        {
+          "type": "manual_review",
+          "reference": "local browser review of index.html",
+          "observed": "The golden workflow was inspected in English desktop, 390px mobile and Arabic RTL mobile layouts with no observed overflow or broken layout; links and copy control were present in the accessibility tree.",
+          "result": "pass",
+          "revision": "r2"
+        }
+      ]
+    },
+    {
+      "id": "T6-C3",
+      "statement": "The protected #author panel markup and existing catalog/language controls remain present",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "exact #author fragment comparison against HEAD plus landing-page regression tests",
+          "observed": "The exact #author section markup is unchanged from HEAD, and the existing catalog, navigation, language-switch and public creator tests passed.",
+          "result": "pass",
+          "revision": "r2"
+        }
+      ]
+    }
+  ]
+}

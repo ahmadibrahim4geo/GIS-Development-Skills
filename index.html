@@ -303,7 +303,10 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
           <p><span data-lang="en">You'll need Node.js, a coding agent supporting Agent Skills, and permission to modify an existing project. Review CLI security prompts before installing.</span><span data-lang="ar">تحتاج Node.js ووكيلًا يدعم Agent Skills وصلاحية تعديل مشروعك. راجع طلبات الصلاحيات قبل استخدام أوامر التثبيت.</span></p>
           <p style="margin-top:13px"><strong><span data-lang="en">1. Install the core GIS router</span><span data-lang="ar">١. ثبّت المهارة الأساسية</span></strong></p>
           <div class="studio-cmd" dir="ltr"><code id="howToCommand">npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development</code><button type="button" class="studio-copy" onclick="copyUsage('install',this)"><span data-lang="en">Copy</span><span data-lang="ar">نسخ</span></button></div>
-          <p class="studio-small"><span data-lang="en">This uses the third-party Skills CLI. It installs instructions, not GIS software or an AI model. Unmerged PR-only skills are not in public main yet.</span><span data-lang="ar">الأمر يستخدم أداة Skills CLI خارجية. يثبت تعليمات، وليس برنامج GIS أو نموذج AI. المهارات الموجودة فقط في PR غير مدموج لن تكون في main المنشور بعد.</span></p>
+          <p class="studio-small"><span data-lang="en">This uses the third-party Skills CLI. It installs instructions, not GIS software or an AI model. Some clients copy only the selected nested skill; use the self-contained bundle below when shared references and specialist routing must be preserved.</span><span data-lang="ar">الأمر يستخدم أداة Skills CLI خارجية ويثبت تعليمات، وليس برنامج GIS أو نموذج AI. قد تنسخ بعض البرامج مجلد المهارة فقط؛ استخدم الحزمة المكتفية ذاتيًا أدناه للحفاظ على المراجع والتوجيه الكامل.</span></p>
+          <p style="margin-top:13px"><strong><span data-lang="en">Verified complete bundle (after cloning)</span><span data-lang="ar">الحزمة الكاملة المتحقق منها بعد الاستنساخ</span></strong></p>
+          <div class="studio-cmd" dir="ltr"><code>python scripts/build_skill_bundle.py --output-dir dist/skill-release</code><button type="button" class="studio-copy" onclick="navigator.clipboard.writeText('python scripts/build_skill_bundle.py --output-dir dist/skill-release')"><span data-lang="en">Copy</span><span data-lang="ar">نسخ</span></button></div>
+          <p class="studio-small"><a href="docs/SKILL_DISTRIBUTION.md"><span data-lang="en">Distribution and audit details</span><span data-lang="ar">تفاصيل التوزيع والفحص</span></a> · <a href="examples/golden-qgis-coordinate-audit/README.md"><span data-lang="en">Run the golden QGIS-oriented workflow</span><span data-lang="ar">شغّل المسار الذهبي الموجّه إلى QGIS</span></a></p>
           <p style="margin-top:15px"><strong><span data-lang="en">2. Select your project type</span><span data-lang="ar">٢. اختَر نوع مشروعك</span></strong></p>
           <div class="studio-select-wrap"><label for="studioPlatform"><span data-lang="en">GIS platform / skill</span><span data-lang="ar">البرنامج / المهارة</span></label>
             <select class="studio-platform-picker" id="studioPlatform">
@@ -367,6 +370,36 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
         <details><summary><span data-lang="en">Are the skills free and do they require internet?</span><span data-lang="ar">هل المهارات مجانية أو تحتاج إنترنت؟</span></summary><p><span data-lang="en">The skills are free open documentation. Installation and some APIs use the internet. Many GIS test examples run offline; some vendor runtimes and services have separate terms.</span><span data-lang="ar">الوثائق والمهارات مفتوحة ومجانية، لكن التثبيت وبعض APIs يحتاجان الإنترنت؛ أمثلة كثيرة تعمل محليًا وبعض البرامج والخدمات لها شروط مستقلة.</span></p></details>
       </div>
       <p class="studio-qa-note"><span data-lang="en">More optional detail:</span><span data-lang="ar">مزيد من التفاصيل الاختيارية:</span> <a href="docs/HOW_TO_USE.md" style="color:var(--ui-lime);text-decoration:underline">English guide</a> · <a href="docs/HOW_TO_USE.ar.md" style="color:var(--ui-lime);text-decoration:underline">الدليل العربي</a> · <a href="references/free-first-policy.md" style="color:var(--ui-lime);text-decoration:underline"><span data-lang="en">Licensing terms</span><span data-lang="ar">التراخيص</span></a>. <span data-lang="en">Everything needed for a first successful use is explained above on this page.</span><span data-lang="ar">طريقة الاستخدام الأساسية كاملة موجودة هنا في الصفحة نفسها.</span></p>
+    </section>
+
+    <!-- Golden workflow: deterministic offline proof; native QGIS remains separately tested -->
+    <section id="golden-workflow" class="py-14 border-t border-slate-800/70" aria-labelledby="goldenWorkflowTitle">
+      <div class="flex flex-col lg:flex-row gap-8 lg:items-start">
+        <div class="lg:w-2/5 min-w-0">
+          <span class="text-xs font-bold text-emerald-300 tracking-widest"><span data-lang="en">RUNNABLE PROOF · OPEN-SOURCE FIRST</span><span data-lang="ar">إثبات قابل للتشغيل · مفتوح المصدر أولًا</span></span>
+          <h2 id="goldenWorkflowTitle" class="mt-3 text-3xl font-bold text-white"><span data-lang="en">Start with the golden coordinate audit</span><span data-lang="ar">ابدأ بالمسار الذهبي لتدقيق الإحداثيات</span></h2>
+          <p class="mt-4 text-slate-300 leading-relaxed"><span data-lang="en">Run a dependency-free EPSG:4326 GeoJSON audit that preserves the source, rejects malformed or duplicate features, writes deterministic artifacts and rereads their SHA-256 before success.</span><span data-lang="ar">شغّل تدقيق GeoJSON معلنًا كـEPSG:4326 بدون مكتبات خارجية؛ يحافظ على المصدر، ويرفض العناصر التالفة أو المكررة، وينتج ملفات حتمية ثم يعيد قراءتها ويتحقق من بصمتها قبل النجاح.</span></p>
+          <div class="studio-cmd mt-5" dir="ltr"><code id="goldenWorkflowCommand">python examples/golden-qgis-coordinate-audit/coordinate_audit.py examples/golden-qgis-coordinate-audit/fixtures/points.geojson .local-output/coordinate-audit</code><button type="button" class="studio-copy" onclick="copyUsage('golden',this)"><span data-lang="en">Copy</span><span data-lang="ar">نسخ</span></button></div>
+          <p class="text-xs text-amber-200 mt-3"><span data-lang="en">The output directory must be new. The fixture is synthetic and the offline result is T1—not proof that QGIS loaded or executed the adapter.</span><span data-lang="ar">لازم يكون مجلد الإخراج جديدًا. البيانات تجريبية والنتيجة المحلية T1 فقط؛ وليست دليلًا على تحميل الموصل أو تشغيله داخل QGIS.</span></p>
+        </div>
+        <div class="lg:w-3/5 min-w-0">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-3" aria-label="Golden workflow verification snapshot">
+            <article class="glass-card rounded-xl p-4"><strong class="block text-2xl text-emerald-300">391</strong><span class="text-xs text-slate-300"><span data-lang="en">repository tests passed</span><span data-lang="ar">اختبارًا ناجحًا للمستودع</span></span></article>
+            <article class="glass-card rounded-xl p-4"><strong class="block text-2xl text-sky-300">10K</strong><span class="text-xs text-slate-300"><span data-lang="en">generated points benchmarked</span><span data-lang="ar">نقطة في اختبار الأداء</span></span></article>
+            <article class="glass-card rounded-xl p-4"><strong class="block text-2xl text-sky-300">78.518 ms</strong><span class="text-xs text-slate-300"><span data-lang="en">observed T1 run</span><span data-lang="ar">قياس T1 في هذه البيئة</span></span></article>
+            <article class="glass-card rounded-xl p-4"><strong class="block text-2xl text-emerald-300">127,359/s</strong><span class="text-xs text-slate-300"><span data-lang="en">features on that run</span><span data-lang="ar">عنصرًا/ث في نفس التشغيل</span></span></article>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+            <article class="glass-card rounded-xl p-4 border-emerald-500/30"><b class="text-emerald-300">T1 · VERIFIED</b><p class="text-sm text-slate-300 mt-2"><span data-lang="en">Fixture, negative paths, expected bytes, bounded inputs, hash and output readback.</span><span data-lang="ar">بيانات تجريبية وحالات فشل وناتج متوقع وحدود للمدخل وبصمة وإعادة قراءة.</span></p></article>
+            <article class="glass-card rounded-xl p-4 border-amber-500/30"><b class="text-amber-200">T2–T4 · NOT RUN</b><p class="text-sm text-slate-300 mt-2"><span data-lang="en">Native QGIS load, real host operation and clean-environment packaging still require observed acceptance.</span><span data-lang="ar">تحميل QGIS والتشغيل الفعلي والتغليف في بيئة نظيفة ما زالت تحتاج اختبار قبول مرصود.</span></p></article>
+          </div>
+          <div class="flex flex-wrap gap-4 mt-5 text-sm">
+            <a class="text-sky-300 underline" href="examples/golden-qgis-coordinate-audit/README.md"><span data-lang="en">Workflow, limits &amp; commands</span><span data-lang="ar">المسار والحدود والأوامر</span></a>
+            <a class="text-sky-300 underline" href="examples/golden-qgis-coordinate-audit/expected/summary.json"><span data-lang="en">Expected machine result</span><span data-lang="ar">الناتج الآلي المتوقع</span></a>
+            <a class="text-sky-300 underline" href="docs/RELEASE_CANDIDATE_TRUST_LAUNCH_R1.md"><span data-lang="en">Release-candidate evidence</span><span data-lang="ar">أدلة مرشح الإصدار</span></a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Optional MCP integration: documentation only, not a live connector -->
@@ -1228,7 +1261,7 @@ footer .foot a{color:#38bdf8;text-decoration:underline;text-underline-offset:2px
     }
 
     function copyUsage(mode, button) {
-      const id = mode === 'archify' ? (document.documentElement.lang==='ar'?'archifyPromptAr':'archifyPromptEn') : mode === 'install' ? 'howToCommand' : mode === 'specialist' ?
+      const id = mode === 'golden' ? 'goldenWorkflowCommand' : mode === 'archify' ? (document.documentElement.lang==='ar'?'archifyPromptAr':'archifyPromptEn') : mode === 'install' ? 'howToCommand' : mode === 'specialist' ?
         'studioSpecialistCommand' : (document.documentElement.lang==='ar'?'howToExampleAr':'howToExampleEn');
       const target = document.getElementById(id);
       if (!target || !button) return;

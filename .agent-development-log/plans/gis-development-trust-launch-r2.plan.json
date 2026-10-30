@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-TRUST-LAUNCH-20261029",
+  "revision": "r2",
+  "original_request": "أنا عايزك تحدث بقى ملف الإندكس وترفع التحديثات على الفرع الرئيسي في الريبو.",
+  "language": "ar",
+  "status": "approved",
+  "approval": {
+    "approved_by_user": true,
+    "approved_revision": "r2",
+    "high_risk_approved": false
+  },
+  "goal": "Publish the verified trust-launch improvements on the repository main branch with an updated bilingual homepage that exposes the golden workflow, measured offline performance and honest evidence boundaries.",
+  "target": "index.html and the already verified trust-launch working-tree changes in the GIS-Development-Skills repository; publish only to origin/main.",
+  "desired_outcomes": [
+    "The homepage presents the golden QGIS-oriented workflow and release-candidate proof in English and Arabic",
+    "All repository, website, security and release-gate checks pass after the homepage change",
+    "One reviewed commit containing the trust-launch work is pushed to origin/main and independently read back"
+  ],
+  "success_criteria": [
+    "The new homepage section is responsive, bilingual, keyboard-link accessible and preserves the protected author panel",
+    "Required validators, security audit and full unit suite pass on the exact pre-push working tree",
+    "The pushed origin/main commit matches the local HEAD and contains the intended files"
+  ],
+  "constraints": [
+    "Preserve the approved brand, exact English mission sentence, author panel markup and contact links",
+    "Do not claim native QGIS T2-T4, agent-client installation or external scanner execution",
+    "Do not rewrite history, force-push, create a tag or GitHub Release, or mutate repository administrator settings",
+    "Fetch and stop on any remote divergence instead of overwriting other contributors"
+  ],
+  "non_goals": [
+    "Running QGIS native acceptance in this revision",
+    "Publishing a packaged GitHub Release",
+    "Changing GitHub About, topics, Discussions or Pages settings"
+  ],
+  "assumptions": [],
+  "open_questions": [],
+  "tasks": [
+    {
+      "id": "T6",
+      "title": "Expose the golden workflow and proof on the homepage",
+      "description": "Add a bilingual, responsive and accessible homepage section for the golden coordinate audit, bounded performance sample, evidence tiers and release-candidate links without changing protected author content.",
+      "priority": "must",
+      "kind": "repository-onboarding",
+      "skills": [
+        "gis-ui-ux-design-testing",
+        "gis-internationalization-arabic",
+        "gis-security-guardian"
+      ],
+      "depends_on": [],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "index.html contains one bilingual golden-workflow section with copyable offline command, measured T1 performance and explicit QGIS T2-T4 NOT RUN status",
+        "The homepage remains valid under existing navigation, bilingual, accessibility and JavaScript regression tests",
+        "The protected #author panel markup and existing catalog/language controls remain present"
+      ],
+      "tools": [
+        {"tool_id": "host.workspace-write", "side_effect": "write"},
+        {"tool_id": "host.local-test", "side_effect": "read"}
+      ],
+      "owner_skill": "gis-ui-ux-design-testing"
+    },
+    {
+      "id": "T7",
+      "title": "Verify, commit and publish the approved revision to main",
+      "description": "Run mandatory release checks, review the exact diff, create one non-rewriting commit, fetch for divergence safety, push to origin/main and read back the remote commit.",
+      "priority": "must",
+      "kind": "release-publication",
+      "skills": [
+        "geospatial-ai-agents",
+        "gis-security-guardian"
+      ],
+      "depends_on": ["T6"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Catalog, API, skill-pack, manifest, skill-graph, security, website and full unit-test checks pass on the final files",
+        "The commit contains only the reviewed trust-launch and homepage files and is created without history rewriting",
+        "origin/main is pushed successfully and its commit ID equals local HEAD after remote readback"
+      ],
+      "tools": [
+        {"tool_id": "host.source-inspection", "side_effect": "read"},
+        {"tool_id": "host.local-test", "side_effect": "read"},
+        {"tool_id": "host.git-commit", "side_effect": "write"},
+        {"tool_id": "host.git-fetch-push", "side_effect": "network"}
+      ],
+      "owner_skill": "geospatial-ai-agents"
+    }
+  ]
+}

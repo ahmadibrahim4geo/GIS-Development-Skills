@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 24,
+  "timestamp_utc": "2026-10-30T03:21:27+00:00",
+  "kind": "revision",
+  "status": "approved",
+  "summary": "Approve homepage update and publication to origin/main",
+  "details": "User explicitly authorized updating index.html and publishing the verified trust-launch changes to the repository main branch. Scope excludes force-push, tag, GitHub Release and repository administrator settings. Plan GIS-TRUST-LAUNCH-20261029 revision r2 compiled successfully; host approval is the user's current request.",
+  "references": [
+    23
+  ],
+  "task_id": "GIS-TRUST-LAUNCH-20261029",
+  "plan_revision": "r2",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "d5627c743f3294d4db414d4fa9ee0691bcc39f311f935f684bc4d040d9edfc5e",
+  "hash": "9d34f4c2b640dc3e0ea088d65b72fa57bc31e02cf9e6f96774371806a3566452"
+}

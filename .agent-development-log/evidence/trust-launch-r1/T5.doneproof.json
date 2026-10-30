@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-TRUST-LAUNCH-20261029",
+  "task_id": "T5",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "T5-C1",
+      "statement": "Catalog, API, skill-pack, manifest, skill-graph, security and full unit-test commands have fresh recorded outcomes",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "mandatory validators plus python -m unittest discover -s tests -v",
+          "observed": "Catalog 188 PASS; API 52 PASS; skill pack 35 PASS; manifest 35/188/52/24 PASS; skill graph PASS; security 0 findings; full suite 390 tests OK with one Windows symlink test skipped.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T5-C2",
+      "statement": "DoneProof matches every required criterion in this approved r1 plan",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python scripts/verify_completion.py .agent-development-log/evidence/trust-launch-r1/T1..T5.doneproof.json --plan .agent-development-log/plans/gis-development-trust-launch-r1.plan.json --require-verified",
+          "observed": "Each of the five task reports passed strict plan binding with no omitted, added or changed acceptance criteria.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T5-C3",
+      "statement": "Release notes distinguish verified offline evidence from native and external actions that remain NOT RUN",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "docs/RELEASE_CANDIDATE_TRUST_LAUNCH_R1.md",
+          "observed": "Release-candidate notes separate T1 offline proof from QGIS T2-T4, client installation and external scanner checks that remain NOT RUN.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T5-C4",
+      "statement": "No external release, tag or administrator-setting mutation occurs without a separate final checkpoint",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "manual_review",
+          "reference": "docs/RELEASE_CANDIDATE_TRUST_LAUNCH_R1.md#administrator-publication-checkpoint",
+          "observed": "Work stopped at local release-candidate preparation; no publication, tag, release, topic, About, Discussions or Pages-setting action was performed.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

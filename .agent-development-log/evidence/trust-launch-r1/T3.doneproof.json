@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-TRUST-LAUNCH-20261029",
+  "task_id": "T3",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "T3-C1",
+      "statement": "The offline command generates and rereads a deterministic GIS artifact from a repository fixture",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -m unittest tests.test_golden_qgis_coordinate_audit.GoldenCoordinateAuditTests.test_fixture_matches_committed_expected_artifacts -v",
+          "observed": "Fresh output matched committed GeoJSON and summary bytes; the core reread both files and verified the artifact SHA-256.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T3-C2",
+      "statement": "Negative tests cover malformed geometry, missing CRS or unsafe output behavior",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -m unittest tests.test_golden_qgis_coordinate_audit -v",
+          "observed": "Nine tests passed, covering malformed geometry, missing CRS, duplicate JSON keys, existing-output preservation, bounded feature counts, deterministic artifacts, benchmark correctness, CLI output and adapter syntax/evidence status.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T3-C3",
+      "statement": "The QGIS adapter and native acceptance command are documented while native status remains NOT RUN unless observed",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "examples/golden-qgis-coordinate-audit/README.md",
+          "observed": "The guide documents the Processing adapter and native_qgis_smoke.py command; T2, T3 and T4 are explicitly NOT RUN in committed offline evidence.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T3-C4",
+      "statement": "The workflow has a copyable prompt, environment matrix and machine-readable evidence report",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "examples/golden-qgis-coordinate-audit/evidence/offline-t1.json",
+          "observed": "Machine-readable T1 report is present and the workflow README includes a copyable agent request plus offline/QGIS environment matrix.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

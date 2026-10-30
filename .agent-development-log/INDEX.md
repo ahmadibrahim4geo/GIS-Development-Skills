@@ -26,3 +26,8 @@ create a linked revision or cancellation. This local hash chain is not a signatu
 | [#0019](reports/0019.md) | 2026-10-29T16:30:49+00:00 | handoff | completed | #0018 | Release v1.2.0: Synchronize index and push 35 skills to GitHub main |
 | [#0020](reports/0020.md) | 2026-10-29T16:35:43+00:00 | implementation | completed | #0019 | Harden CI validation workflow for new helper scripts |
 | [#0021](reports/0021.md) | 2026-10-29T17:24:13+00:00 | implementation | completed | — | Fix homepage layout flex blowout, pre wrapping, and responsive grids |
+| [#0022](reports/0022.md) | 2026-10-30T03:15:47+00:00 | implementation | completed | #0013 | Implement golden QGIS workflow and proof-first onboarding |
+| [#0023](reports/0023.md) | 2026-10-30T03:19:54+00:00 | verification | completed | #0022 | Verify trust-launch r1 release candidate with performance evidence |
+| [#0024](reports/0024.md) | 2026-10-30T03:21:27+00:00 | revision | approved | #0023 | Approve homepage update and publication to origin/main |
+| [#0025](reports/0025.md) | 2026-10-30T03:23:41+00:00 | implementation | completed | #0024 | Add bilingual golden workflow proof section to homepage |
+| [#0026](reports/0026.md) | 2026-10-30T03:27:36+00:00 | verification | completed | #0025 | Verify final trust-launch homepage and release gates |

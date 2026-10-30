@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "sequence": 22,
+  "timestamp_utc": "2026-10-30T03:15:47+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Implement golden QGIS workflow and proof-first onboarding",
+  "details": "Added a deterministic EPSG:4326 coordinate audit with expected artifacts, negative tests, output readback, QGIS Processing adapter and honest native NOT RUN boundary. Moved install, copyable request, golden workflow and evidence status into the English/Arabic front door and homepage while preserving the protected author panel.",
+  "references": [
+    13
+  ],
+  "task_id": "GIS-TRUST-LAUNCH-20261029",
+  "plan_revision": "r1",
+  "changed_files": [
+    "examples/golden-qgis-coordinate-audit",
+    "tests/test_golden_qgis_coordinate_audit.py",
+    "README.md",
+    "README.ar.md",
+    "index.html",
+    "docs/HOW_TO_USE.md",
+    "docs/HOW_TO_USE.ar.md"
+  ],
+  "tests": [
+    "python -m unittest tests.test_golden_qgis_coordinate_audit tests.test_skill_distribution tests.test_evidence_tiers tests.test_readme_layout tests.test_landing_page tests.test_how_to_use tests.test_discoverability tests.test_manifest_and_metadata -v"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "794ab62c5be17ec6dd2b142a8851ebda9710c21646d25c7747d8719688c57ca1",
+  "hash": "413b95265fe47d805a48358d21412a9b11539dd13d2037f3bd3c7d00e5359ade"
+}

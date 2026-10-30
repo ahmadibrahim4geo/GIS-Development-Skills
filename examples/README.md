@@ -4,6 +4,7 @@ These **additive** examples supplement the existing `templates/` and installed s
 
 | Workflow | Entry | Dependencies | Status |
 | --- | --- | --- | --- |
+| Golden EPSG:4326 coordinate audit | [Verified QGIS-oriented workflow](golden-qgis-coordinate-audit/README.md) | Python 3.10+ stdlib; optional QGIS | T1 deterministic artifact/readback; QGIS T2–T4 **NOT RUN** |
 | Project source code licensing evidence | [License audit](../references/upstream-license-audit.md) · [scanner](../scripts/audit_license_catalog.py) | Python 3.11+ stdlib | 8 original license files inspected; 130 remain unverified |
 | DEM slope (Horn 3×3; ASCII raster) | [Free raster example](terrain-slope/README.md) | Python 3.11+ stdlib | T1 synthetic 45-degree planar test; **input CRS not auto-verified** |
 | STAC item metadata cloud/date/bbox filtering | [Free metadata example](stac-offline/README.md) | Python 3.11+ stdlib | T1 synthetic STAC-like metadata; **not a live search or asset download** |

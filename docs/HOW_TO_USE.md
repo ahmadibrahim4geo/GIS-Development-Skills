@@ -22,7 +22,23 @@ Check the CLI's version, installation prompts, scope and permissions before appr
 npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill kml-kmz-engineering
 ```
 
+That convenient source command may copy only the selected nested skill in some
+clients. Because the suite also uses shared root-level references and sibling
+skills, the repository's verified complete path is to clone the source and
+build its self-contained archive:
+
+```sh
+python scripts/build_skill_bundle.py --output-dir dist/skill-release
+python scripts/build_skill_bundle.py --check dist/skill-release/gis-development-suite.zip
+```
+
+See the [distribution contract](SKILL_DISTRIBUTION.md). Installing the archive
+in a named client still needs a client-specific smoke test; bundle validation
+alone does not prove that integration.
+
 The source repo is [GIS-Development-Skills](https://github.com/ahmadibrahim4geo/GIS-Development-Skills). The install command points to the **published main** branch; additions in an unmerged Pull Request may not yet be installed. Your AI host may have another installation method; consult its own documentation. Running `npx` does not automatically install ArcGIS, QGIS, a model or licenses.
+
+For a fast proof-oriented first run, use the [golden QGIS coordinate audit](../examples/golden-qgis-coordinate-audit/README.md). Its offline result is T1; native QGIS T2–T4 remain NOT RUN until observed in that host.
 
 ### Prompt → goal → skill workflow (whole repository)
 

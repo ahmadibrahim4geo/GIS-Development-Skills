@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-TRUST-LAUNCH-20261029",
+  "task_id": "T4",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "T4-C1",
+      "statement": "A visitor can find install, copyable request, golden workflow and evidence status within the opening README section",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "README.md",
+          "observed": "The opening Start with a result section contains bundle commands, a copyable request, the golden workflow command and a four-surface evidence table.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T4-C2",
+      "statement": "English and Arabic counts and required mission/brand text remain synchronized",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -m unittest tests.test_readme_layout tests.test_landing_page tests.test_manifest_and_metadata -v",
+          "observed": "README layout, brand, mission and generated-count synchronization tests passed for 35 skills, 188 references, 52 APIs and 24 data repositories.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T4-C3",
+      "statement": "Homepage contains description, canonical and social metadata using project-subpath-safe URLs",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -m unittest tests.test_discoverability -v",
+          "observed": "Three discoverability tests passed for canonical, Open Graph, Twitter, JSON-LD, sitemap, robots and community files.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T4-C4",
+      "statement": "Community files add a pull-request template and code of conduct without claiming that repository admin settings changed",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "CODE_OF_CONDUCT.md and .github/PULL_REQUEST_TEMPLATE.md",
+          "observed": "Both files are present; release-candidate notes explicitly state that topics, About, Discussions, Pages and other administrator settings were not changed.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

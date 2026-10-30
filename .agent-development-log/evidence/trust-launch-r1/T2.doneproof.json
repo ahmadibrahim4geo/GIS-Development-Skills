@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-TRUST-LAUNCH-20261029",
+  "task_id": "T2",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "T2-C1",
+      "statement": "One canonical evidence-tier registry defines T0 through T4 and is referenced by validation code",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python scripts/validate_evidence_tiers.py",
+          "observed": "Validator reported the T0-T4 registry and documentation labels consistent; unit tests confirmed ordered tiers and the native boundary.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T2-C2",
+      "statement": "Offline fixtures are never labeled as native T2 evidence",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -m unittest tests.test_evidence_tiers -v",
+          "observed": "Four tests passed; forbidden offline/static/synthetic T2 wording is rejected while named native T2 wording remains valid.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T2-C3",
+      "statement": "Current README and policy inventory counts agree with the generated repository manifest",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python scripts/build_manifest.py --check",
+          "observed": "Manifest valid: 35 skills / 188 references / 52 APIs / 24 data repositories; README synchronization test passed.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

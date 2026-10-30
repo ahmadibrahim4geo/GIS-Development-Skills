@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "sequence": 23,
+  "timestamp_utc": "2026-10-30T03:19:54+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Verify trust-launch r1 release candidate with performance evidence",
+  "details": "Verified catalogs, API catalog, skill pack, evidence tiers, manifest, skill graph, security audit, deterministic bundle build/audit, golden workflow performance sample and the full unit suite. Strict DoneProof reports for T1-T5 match the approved r1 plan. Native QGIS T2-T4, agent-client install, external scanners and external publication remain NOT RUN.",
+  "references": [
+    22
+  ],
+  "task_id": "GIS-TRUST-LAUNCH-20261029",
+  "plan_revision": "r1",
+  "changed_files": [
+    "docs/RELEASE_CANDIDATE_TRUST_LAUNCH_R1.md",
+    "examples/golden-qgis-coordinate-audit"
+  ],
+  "tests": [
+    "python -m unittest discover -s tests -v",
+    "python scripts/validate_catalog.py; validate_api_catalog.py; validate_skill_pack.py; build_manifest.py --check; audit_skill_graph.py; security_audit.py",
+    "python scripts/build_skill_bundle.py --output-dir <new-temp>; --check <archive>",
+    "python scripts/verify_completion.py T1..T5.doneproof.json --plan gis-development-trust-launch-r1.plan.json --require-verified"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "413b95265fe47d805a48358d21412a9b11539dd13d2037f3bd3c7d00e5359ade",
+  "hash": "d5627c743f3294d4db414d4fa9ee0691bcc39f311f935f684bc4d040d9edfc5e"
+}

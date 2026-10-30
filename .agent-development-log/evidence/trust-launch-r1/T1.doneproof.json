@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-TRUST-LAUNCH-20261029",
+  "task_id": "T1",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "T1-C1",
+      "statement": "The bundle builder writes only to a new output directory and excludes Git metadata, development journals, caches and secrets",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -m unittest tests.test_skill_distribution -v",
+          "observed": "Four distribution tests passed, including refusal to overwrite outputs and rejection of sensitive names; the allowlist excludes Git, journals, caches and build outputs.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T1-C2",
+      "statement": "An isolated bundle audit reports zero missing local Markdown links and required runtime files",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python scripts/build_skill_bundle.py --output-dir <new-temp> && python scripts/build_skill_bundle.py --check <new-temp>/gis-development-suite.zip",
+          "observed": "Builder and independent archive audit both reported GIS skill bundle: PASS; archive SHA-256 was 35e3ed378829fd3fdd0fbba8cac24da3ceb554ef2c0f174b285c49ba3bf5755a for this working-tree build.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "T1-C3",
+      "statement": "Documentation distinguishes source-repository installation from the verified self-contained bundle path",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "docs/SKILL_DISTRIBUTION.md",
+          "observed": "The guide separately labels source checkout, nested-skill installation and the verified self-contained archive, including client-installation limitations.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

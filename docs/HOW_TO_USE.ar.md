@@ -22,7 +22,21 @@ npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill gis-development
 npx skills add ahmadibrahim4geo/GIS-Development-Skills --skill kml-kmz-engineering
 ```
 
+قد تنسخ بعض برامج التثبيت مجلد المهارة المحددة فقط، بينما تعتمد الحزمة على
+مراجع وسكربتات ومهارات شقيقة في جذر المستودع. لذلك المسار المحلي المتحقق منه
+للحزمة الكاملة هو:
+
+```sh
+python scripts/build_skill_bundle.py --output-dir dist/skill-release
+python scripts/build_skill_bundle.py --check dist/skill-release/gis-development-suite.zip
+```
+
+راجع [عقد التوزيع](SKILL_DISTRIBUTION.md). نجاح فحص الأرشيف لا يثبت تثبيته في
+كل برنامج Agent؛ يلزم اختبار مستقل باسم البرنامج وإصداره.
+
 راجع رسائل التثبيت وطلب الصلاحيات، وقد تحتاج بعض الوكلاء إلى طريقة تثبيت مختلفة. التثبيت من المستودع المنشور على `main` **لا يتضمن بالضرورة المهارات الموجودة فقط داخل Pull Request لم يُدمج**. الأمر لا يثبت ArcGIS أو QGIS ولا يوفر اشتراك نموذج ذكاء اصطناعي.
+
+لأول تجربة عملية قائمة على الدليل، استخدم [المسار الذهبي لتدقيق الإحداثيات](../examples/golden-qgis-coordinate-audit/README.md). نتيجته المحلية T1 فقط، وتظل اختبارات QGIS الأصلية T2–T4 بحالة NOT RUN حتى تنفيذها فعليًا.
 
 ### من البرومبت إلى هدف واضح وخطة تنفيذ
 

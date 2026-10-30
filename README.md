@@ -2,6 +2,8 @@
   <img src="assets/brand/banner-dark.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
 </p>
 
+<p align="center">Build GIS tools, plugins and geospatial applications with a verifiable development workflow.</p>
+
 <p align="center"><sub>Official vector identity: <a href="assets/brand/README.md">brand assets and usage guide</a> · <a href="assets/brand/logo-light.svg">transparent logo</a> · <a href="assets/brand/icon.svg">standalone icon</a></sub></p>
 
 
@@ -15,6 +17,60 @@
   <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/"><img alt="Website status" src="https://img.shields.io/website?url=https%3A%2F%2Fahmadibrahim4geo.github.io%2FGIS-Development-Skills%2F&amp;style=for-the-badge&amp;label=Website&amp;labelColor=172B3C"></a>
   <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml"><img alt="Validation workflow status" src="https://img.shields.io/github/actions/workflow/status/ahmadibrahim4geo/GIS-Development-Skills/validate.yml?style=for-the-badge&amp;label=Tests&amp;labelColor=172B3C"></a>
 </p>
+
+## Start with a result, not a catalog
+
+GIS Development Skills is a bilingual, security-aware skill suite for agents
+that build QGIS/ArcGIS tools, standalone GIS applications, web maps, spatial
+data pipelines and integrations. It turns a free-form request into a reviewed
+plan, routes it to one accountable specialist, and requires evidence before a
+completion claim.
+
+### 1. Build the self-contained suite
+
+The repository's skills share root-level references, scripts, examples and
+templates. Build the verified suite instead of copying one nested skill folder:
+
+```powershell
+python scripts/build_skill_bundle.py --output-dir dist/skill-release
+python scripts/build_skill_bundle.py --check dist/skill-release/gis-development-suite.zip
+```
+
+Then inspect `dist/skill-release/gis-development-suite/` or install the archive
+with a compatible Agent Skills client. See the [distribution contract](docs/SKILL_DISTRIBUTION.md); client installation remains unverified until tested in
+that named client and version.
+
+### 2. Give the agent a concrete request
+
+> Build a QGIS Processing tool that audits an EPSG:4326 GeoJSON point layer.
+> Preserve the source, write to a new output directory, reject malformed or
+> duplicate features, test expected artifacts, and report T0–T4 evidence without
+> claiming native QGIS execution unless it was actually observed.
+
+### 3. Run the golden workflow
+
+```powershell
+python examples/golden-qgis-coordinate-audit/coordinate_audit.py `
+  examples/golden-qgis-coordinate-audit/fixtures/points.geojson `
+  .local-output/coordinate-audit
+```
+
+The [golden QGIS-oriented workflow](examples/golden-qgis-coordinate-audit/README.md)
+has a dependency-free core, deterministic fixture and expected artifact,
+negative tests, output readback, a QGIS Processing adapter and a machine-readable
+evidence boundary.
+
+| Surface | Freshly verifiable in this repository | Not established by offline checks |
+| --- | --- | --- |
+| Distribution | bounded bundle, manifest hashes, local-link audit | installation in every agent client |
+| Workflow | T1 fixture, failure paths, expected bytes and readback | QGIS T2–T4 native/package behavior |
+| Safety | permission and archive checks, no-overwrite defaults | complete OS isolation or third-party trust |
+| Catalogs | generated counts and schema validation | every upstream license, uptime or build |
+
+Use [How to Use](docs/HOW_TO_USE.md) · [دليل الاستخدام](docs/HOW_TO_USE.ar.md) ·
+[quality benchmark](docs/QUALITY_BENCHMARK.md) · [evidence tiers](references/evidence-tiers.json) ·
+[release-candidate evidence](docs/RELEASE_CANDIDATE_TRUST_LAUNCH_R1.md) ·
+[contribution guide](CONTRIBUTING.md).
 
 ## Architecture & Workflow Visualization — Archify (27 October 2026)
 
@@ -42,8 +98,6 @@ Use the [standalone Android/iOS Mobile GIS skill](skills/gis-mobile-application-
 ## GIS Software & Source Code Registry — 26 October 2026
 
 The [GIS source code selection guide](references/gis-software-source-registry.md) routes developers to complete **desktop, web and mobile GIS applications**, reusable rendering/processing engines, spatial servers and scientific libraries. The existing [searchable project catalog](references/project-catalog.json) is the **single machine-readable source of truth** (188 unique GitHub repositories after adding 40 nonduplicate public sources); browse its live entries via the [bilingual Explorer](explorer.html#catalog). A public URL or preliminary license metadata is not a build, deployment or license audit: confirm upstream source permissions, exact versions and native tests before reuse.
-
-## Build GIS tools, plugins and geospatial applications with a verifiable development workflow.
 
 A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.
 

@@ -2,6 +2,8 @@
   <img src="assets/brand/banner-dark.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
 </p>
 
+<p align="center">طوّر أدوات وإضافات وتطبيقات GIS بمنهجية تطوير قابلة للتحقق.</p>
+
 <p align="center"><sub>الهوية البصرية الرسمية: <a href="assets/brand/README.md">ملفات الهوية ودليل استخدامها</a> · <a href="assets/brand/logo-light.svg">الشعار الشفاف</a> · <a href="assets/brand/icon.svg">الأيقونة المستقلة</a></sub></p>
 
 
@@ -12,6 +14,47 @@
   <a href="skills/gis-development/SKILL.md">المهارة الأساسية</a> ·
   <a href="CONTRIBUTING.md">المساهمة</a>
 </p>
+
+## ابدأ بنتيجة قابلة للإثبات، لا بقائمة طويلة
+
+**GIS Development Skills** حزمة ثنائية اللغة ومراعية للأمان لتطوير أدوات QGIS
+وArcGIS، وتطبيقات GIS المستقلة، وخرائط الويب، ومسارات معالجة البيانات. تحول
+الطلب إلى خطة يراجعها المستخدم، وتختار مختصًا مسؤولًا، ولا تعلن الاكتمال قبل
+وجود دليل فعلي.
+
+### 1. ابنِ الحزمة المكتفية ذاتيًا
+
+```powershell
+python scripts/build_skill_bundle.py --output-dir dist/skill-release
+python scripts/build_skill_bundle.py --check dist/skill-release/gis-development-suite.zip
+```
+
+يحافظ هذا المسار على المهارات والمراجع والسكربتات والأمثلة المشتركة، ويصدر
+Manifest ببصمات الملفات. راجع [عقد التوزيع](docs/SKILL_DISTRIBUTION.md)؛ نجاح
+بناء الحزمة لا يثبت تثبيتها داخل كل برنامج وكل إصدار من برامج الوكلاء.
+
+### 2. استخدم طلبًا واضحًا
+
+> ابنِ أداة QGIS Processing تدقق طبقة نقاط GeoJSON معلنة كـ EPSG:4326. حافظ
+> على المصدر، واكتب في مجلد جديد، وارفض العناصر التالفة أو المكررة، واختبر
+> الناتج المتوقع، وبلّغ أدلة T0–T4 من غير ادعاء تشغيل QGIS إلا بعد رصده فعليًا.
+
+### 3. شغّل المسار الذهبي
+
+```powershell
+python examples/golden-qgis-coordinate-audit/coordinate_audit.py `
+  examples/golden-qgis-coordinate-audit/fixtures/points.geojson `
+  .local-output/coordinate-audit
+```
+
+يقدم [المسار الذهبي الموجّه إلى QGIS](examples/golden-qgis-coordinate-audit/README.md)
+نواة Python بلا اعتماديات خارجية، وبيانات اختبار حتمية، وناتجًا متوقعًا، وحالات
+فشل، وإعادة قراءة للناتج، وموصل QGIS Processing. المتحقق محليًا هو T1؛ أما
+QGIS الأصلي والتغليف T2–T4 فحالتهما **NOT RUN** حتى تنفيذ اختبار أصلي موثق.
+
+روابط سريعة: [دليل الاستخدام](docs/HOW_TO_USE.ar.md) ·
+[معيار الجودة](docs/QUALITY_BENCHMARK.md) · [مستويات الإثبات](references/evidence-tiers.json) ·
+[أدلة مرشح الإصدار](docs/RELEASE_CANDIDATE_TRUST_LAUNCH_R1.md) · [المساهمة](CONTRIBUTING.md).
 
 
 ## تصوير البنية وتدفق العمل — Archify (27 أكتوبر 2026)
