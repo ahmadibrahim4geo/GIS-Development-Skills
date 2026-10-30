@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 31,
+  "timestamp_utc": "2026-10-30T08:23:51+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Register OpenGeoHub STAC API and synchronize 53-service catalog",
+  "details": "Added opengeohub-stac-api to free-geospatial-apis.json under public-fair-use with OAS 3.1 / POST search documentation, updated manifest, READMEs, index.html, explorer.html, and added regression test in test_api_catalog.py.",
+  "references": [],
+  "task_id": "",
+  "plan_revision": "",
+  "changed_files": [],
+  "tests": [
+    "python scripts/validate_api_catalog.py; python scripts/build_manifest.py --check; python -m unittest discover -s tests -v"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "fbd80abad6162652574339a1ff93bc9693f2cbc3ce8f6aa6f63bb677f39e3e31",
+  "hash": "a4b3061f992fe65deffc3eb960e5c36f5ec28450ba7a8981c1dba7200d2ea7fd"
+}

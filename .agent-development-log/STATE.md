@@ -1,11 +1,10 @@
 # Project development state — agent handoff
 
 Read with INDEX.md and the linked reports. Independently inspect code and tests.
-Recorded steps: 30
+Recorded steps: 31
 
 ## Latest records
 
-- #0021 [completed] Fix homepage layout flex blowout, pre wrapping, and responsive grids
 - #0022 [completed] Implement golden QGIS workflow and proof-first onboarding (related: #0013)
 - #0023 [completed] Verify trust-launch r1 release candidate with performance evidence (related: #0022)
 - #0024 [approved] Approve homepage update and publication to origin/main (related: #0023)
@@ -15,6 +14,7 @@ Recorded steps: 30
 - #0028 [completed] Synchronize release note with completed main publication (related: #0027)
 - #0029 [completed] Clarify homepage unit-test evidence count (related: #0028)
 - #0030 [completed] Synchronize and integrate OpenGeoHub and OpenLandMap sources with router and homepage
+- #0031 [completed] Register OpenGeoHub STAC API and synchronize 53-service catalog
 
 ## Open/blocked records (confirm whether still applicable)
 

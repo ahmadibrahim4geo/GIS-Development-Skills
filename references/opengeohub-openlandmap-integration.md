@@ -90,6 +90,55 @@ When discovering or integrating OpenGeoHub and OpenLandMap datasets, the agent m
 - **Spatial Coverage:** Global terrestrial coverage, with product-specific NoData masks (e.g. deserts, oceans, high-latitude ice).
 - **Temporal Coverage:** Multi-epoch where documented (e.g., GLC_FCS30D land cover covers 1985–2022 with 5-year intervals before 2000 and annual intervals thereafter). Later years only exist if indexed and verified in STAC items.
 
+### Programmatic Integration: Live OpenGeoHub STAC API
+
+The OpenGeoHub STAC service exposes an interactive STAC Browser at `https://stac.opengeohub.org/` and an OpenAPI 3.1 REST API at `https://stac.opengeohub.org/v1/` (catalog entry `opengeohub-stac-api`).
+
+- **Base Landing URL:** `https://stac.opengeohub.org/v1/`
+- **OpenAPI Schema:** `https://stac.opengeohub.org/v1/api`
+- **Catalogs Endpoint:** `https://stac.opengeohub.org/v1/cat` (`openlandmap`, `ecodatacube`, `landmetric`)
+- **Search Method:** `POST https://stac.opengeohub.org/v1/cat/{catalog_id}/search` (Note: GET returns 405 Method Not Allowed; always submit JSON payload via POST).
+
+#### Python Client Example (Requests / PySTAC)
+
+```python
+import requests
+
+def search_openlandmap_cogs(bbox, limit=5):
+    """Query OpenGeoHub STAC API for OpenLandMap COG assets and styling."""
+    url = "https://stac.opengeohub.org/v1/cat/openlandmap/search"
+    payload = {
+        "limit": limit,
+        "bbox": bbox  # [min_lon, min_lat, max_lon, max_lat]
+    }
+    headers = {"User-Agent": "GIS-Development-Skills/1.0", "Content-Type": "application/json"}
+    
+    resp = requests.post(url, json=payload, headers=headers, timeout=15)
+    resp.raise_for_status()
+    features = resp.json().get("features", [])
+    
+    results = []
+    for item in features:
+        item_id = item["id"]
+        assets = item.get("assets", {})
+        cog_urls = [a["href"] for a in assets.values() if "image/tiff" in a.get("type", "")]
+        qml_styles = [a["href"] for k, a in assets.items() if "qml" in k.lower()]
+        sld_styles = [a["href"] for k, a in assets.items() if "sld" in k.lower()]
+        results.append({
+            "id": item_id,
+            "cogs": cog_urls,
+            "qml": qml_styles,
+            "sld": sld_styles
+        })
+    return results
+
+if __name__ == "__main__":
+    items = search_openlandmap_cogs(bbox=[24.0, 21.0, 37.0, 32.0], limit=2)
+    for it in items:
+        print(f"Dataset: {it['id']}")
+        print(f"  COG: {it['cogs']}")
+```
+
 ---
 
 ## 3. Z-EARTH Data Explorer Specification (View-Only Design)

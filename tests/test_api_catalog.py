@@ -97,5 +97,15 @@ class APICatalogTests(unittest.TestCase):
         self.assertEqual('MIT (LICENSE.md verified)',by_url['https://github.com/opengeos/geolibre-r']['license'])
         self.assertIn('Apache-2.0',by_url['https://github.com/opengeos/RustGIS']['license'])
 
+    def test_opengeohub_stac_api_metadata(self):
+        src = {s['id']: s for s in self.catalog['services']}
+        self.assertIn('opengeohub-stac-api', src)
+        entry = src['opengeohub-stac-api']
+        self.assertEqual('public-fair-use', entry['access'])
+        self.assertEqual('none', entry['authentication'])
+        self.assertIn('stac.opengeohub.org/v1/', entry['service_url'])
+        self.assertIn('COG', entry['formats'])
+        self.assertEqual('free-conditional', entry['cost_tier'])
+
 if __name__=='__main__':
     unittest.main()

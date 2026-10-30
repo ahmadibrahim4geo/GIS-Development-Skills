@@ -132,7 +132,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>35 installable GIS skills</strong> · <strong>193 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>26 curated data repositories</strong></p>
+<p align="center"><strong>35 installable GIS skills</strong> · <strong>193 curated geospatial references</strong> · <strong>53 public API sources</strong> · <strong>26 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·

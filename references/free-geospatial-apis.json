@@ -1504,6 +1504,40 @@
       "native_runtime_verified": false,
       "policy_changed": null,
       "cost_tier": "commercial"
+    },
+    {
+      "id": "opengeohub-stac-api",
+      "name": "OpenGeoHub STAC API",
+      "category": "satellite-imagery",
+      "documentation_url": "https://opengeohub.org/",
+      "service_url": "https://stac.opengeohub.org/v1/",
+      "access": "public-fair-use",
+      "authentication": "none",
+      "coverage": "global",
+      "formats": [
+        "STAC-JSON",
+        "GeoJSON",
+        "COG",
+        "GeoTIFF"
+      ],
+      "limits": "Open public STAC API without authentication; rate-limit requests responsibly and cache metadata; search queries require POST /v1/cat/{catalog_id}/search.",
+      "attribution": "Attribution to OpenGeoHub Foundation, OpenLandMap and EcoDataCube; licenses vary by dataset (mostly CC BY 4.0, CC BY-SA 4.0, ODbL).",
+      "use_cases": [
+        "STAC catalog search",
+        "global soil properties",
+        "land cover time series",
+        "biomass carbon stock",
+        "cloud-optimized geotiff streaming"
+      ],
+      "caveat": "Interactive browser UI lives at https://stac.opengeohub.org/ while programmatic REST API root is https://stac.opengeohub.org/v1/. Search endpoint /search requires HTTP POST with JSON payload (GET returns 405). Raster assets are hosted as COGs on Ceph S3 storage.",
+      "verified_on": "2026-10-30",
+      "example_url": "https://stac.opengeohub.org/v1/cat",
+      "status": "unknown",
+      "last_checked": null,
+      "tested_by_repository": false,
+      "native_runtime_verified": false,
+      "policy_changed": null,
+      "cost_tier": "free-conditional"
     }
   ],
   "pricing_groups": {

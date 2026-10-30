@@ -1,9 +1,10 @@
 # Unreleased — OpenGeoHub and time-aware Data Explorer reference (2026-10-30)
 
 - Register five upstream GIS code/research repositories (scikit-map, soildb, GEDTM30, spatial-prediction-eml, spatial-layers) with root licenses or explicit unverified status.
-- Expand OpenGeoHub and OpenLandMap STAC data references, routing links, a view-only Data Explorer contract, protocol distinctions (static STAC catalog, dynamic STAC API, COG byte serving, WMS/XYZ) and bilingual discovery notes.
+- Register OpenGeoHub STAC API (`opengeohub-stac-api`) under public-fair-use in `free-geospatial-apis.json` (OAS 3.1, POST /search, COG assets, QML/SLD symbology), expanding API catalog to 53 services.
+- Expand OpenGeoHub and OpenLandMap STAC data references, live Python client integration, routing links, a view-only Data Explorer contract, protocol distinctions (static STAC catalog, dynamic STAC API, COG byte serving, WMS/XYZ) and bilingual discovery notes.
 - Integrate routing keywords in `intent_router.py` and `gis_code_discovery.py` for spatial prediction, soil properties, multi-epoch land cover, COG raster review, and research repository comparisons.
-- Synchronize manifest and public inventory counters (193 project references, 52 APIs, 26 data repositories, 17 code/research sources across READMEs, index.html and explorer.html). Desktop runtime not modified.
+- Synchronize manifest and public inventory counters (193 project references, 53 APIs, 26 data repositories, 17 code/research sources across READMEs, index.html and explorer.html). Desktop runtime not modified.
 
 # Unreleased — project-driven visual sources (2026-10-28)
 
