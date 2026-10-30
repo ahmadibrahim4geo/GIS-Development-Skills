@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "sequence": 27,
+  "timestamp_utc": "2026-10-30T03:28:55+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "Publish verified trust launch to origin/main",
+  "details": "Created the reviewed feature commit b203306282da83820e64db4f1756eb8d4acf7609 without history rewriting and pushed it to origin/main. Immediate git ls-remote readback matched local HEAD exactly. T7 DoneProof passed strict r2 plan binding. No force push, tag, GitHub Release or administrator-setting change occurred; native QGIS T2-T4, agent-client installation and external scanners remain NOT RUN.",
+  "references": [
+    26
+  ],
+  "task_id": "GIS-TRUST-LAUNCH-20261029",
+  "plan_revision": "r2",
+  "changed_files": [
+    "index.html",
+    "README.md",
+    "README.ar.md",
+    "docs/HOW_TO_USE.md",
+    "docs/HOW_TO_USE.ar.md",
+    "docs/RELEASE_CANDIDATE_TRUST_LAUNCH_R1.md",
+    "examples/golden-qgis-coordinate-audit/README.md"
+  ],
+  "tests": [
+    "git ls-remote origin refs/heads/main equals git rev-parse HEAD",
+    "python scripts/verify_completion.py T7.doneproof.json --plan r2 --require-verified"
+  ],
+  "test_result": "passed",
+  "commit": "b203306282da83820e64db4f1756eb8d4acf7609",
+  "previous_hash": "53e60762e50ec2d0b6894b9b34669ce1db1ddab842bfd1e39f0d78b7e8a5ccf9",
+  "hash": "e04268b3daf8639fce5e5e1c92e3f81ff5ba331759e2a8d7ab703eb8d8ba5c2e"
+}

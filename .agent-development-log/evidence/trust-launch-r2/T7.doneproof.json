@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-TRUST-LAUNCH-20261029",
+  "task_id": "T7",
+  "revision": "r2",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "T7-C1",
+      "statement": "Catalog, API, skill-pack, manifest, skill-graph, security, website and full unit-test checks pass on the final files",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "mandatory pre-publish validators and python -m unittest discover -s tests -q",
+          "observed": "Catalog 188, API 52, skill pack 35, T1 evidence contract, manifest 35/188/52/24, skill graph, Security Guardian with 0 findings, 32 targeted website tests, and the full 391-test suite all passed; one Windows symlink test was skipped. External scanners and native QGIS T2-T4 remained NOT RUN.",
+          "result": "pass",
+          "revision": "r2"
+        }
+      ]
+    },
+    {
+      "id": "T7-C2",
+      "statement": "The commit contains only the reviewed trust-launch and homepage files and is created without history rewriting",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "git diff --cached --name-status; git diff --cached --check; git commit -m feat: publish verified GIS golden workflow",
+          "observed": "The reviewed 37-file trust-launch, homepage, documentation, test and evidence set was committed normally as b203306282da83820e64db4f1756eb8d4acf7609 after a clean diff check; no rebase, reset, amend, force push, tag or release was used.",
+          "result": "pass",
+          "revision": "r2"
+        }
+      ]
+    },
+    {
+      "id": "T7-C3",
+      "statement": "origin/main is pushed successfully and its commit ID equals local HEAD after remote readback",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "git push origin main; git rev-parse HEAD; git ls-remote origin refs/heads/main",
+          "observed": "The push advanced origin/main from 045aeaa to b203306; immediate readback returned b203306282da83820e64db4f1756eb8d4acf7609 for both local HEAD and origin/main.",
+          "result": "pass",
+          "revision": "r2"
+        }
+      ]
+    }
+  ]
+}

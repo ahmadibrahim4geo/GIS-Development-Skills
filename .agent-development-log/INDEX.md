@@ -31,3 +31,4 @@ create a linked revision or cancellation. This local hash chain is not a signatu
 | [#0024](reports/0024.md) | 2026-10-30T03:21:27+00:00 | revision | approved | #0023 | Approve homepage update and publication to origin/main |
 | [#0025](reports/0025.md) | 2026-10-30T03:23:41+00:00 | implementation | completed | #0024 | Add bilingual golden workflow proof section to homepage |
 | [#0026](reports/0026.md) | 2026-10-30T03:27:36+00:00 | verification | completed | #0025 | Verify final trust-launch homepage and release gates |
+| [#0027](reports/0027.md) | 2026-10-30T03:28:55+00:00 | handoff | completed | #0026 | Publish verified trust launch to origin/main |
