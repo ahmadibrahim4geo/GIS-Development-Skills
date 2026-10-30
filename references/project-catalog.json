@@ -4153,7 +4153,8 @@
       "repository_access_checked_on": "2026-10-30",
       "programming_language": "Python",
       "primary_skill": "gis-code-discovery",
-      "source_availability": "public-repository;build-not-verified"
+      "source_availability": "public-repository;build-not-verified",
+      "license_metadata_unverified": "MIT"
     },
     {
       "name": "soildb",
@@ -4176,7 +4177,8 @@
       "repository_access_checked_on": "2026-10-30",
       "programming_language": "Verify per module",
       "primary_skill": "geospatial-data-processing",
-      "source_availability": "public-repository;build-not-verified"
+      "source_availability": "public-repository;build-not-verified",
+      "license_metadata_unverified": "unknown (no root LICENSE found)"
     },
     {
       "name": "GEDTM30",
@@ -4199,7 +4201,8 @@
       "repository_access_checked_on": "2026-10-30",
       "programming_language": "Verify per module",
       "primary_skill": "terrain-hydrology-lidar",
-      "source_availability": "public-repository;build-not-verified"
+      "source_availability": "public-repository;build-not-verified",
+      "license_metadata_unverified": "unknown (no root LICENSE found)"
     },
     {
       "name": "spatial-prediction-eml",
@@ -4226,7 +4229,8 @@
       "repository_access_checked_on": "2026-10-30",
       "programming_language": "R",
       "primary_skill": "gis-code-discovery",
-      "source_availability": "public-repository;build-not-verified"
+      "source_availability": "public-repository;build-not-verified",
+      "license_metadata_unverified": "CC-BY-SA-4.0"
     },
     {
       "name": "spatial-layers",
@@ -4253,7 +4257,8 @@
       "repository_access_checked_on": "2026-10-30",
       "programming_language": "Mixed",
       "primary_skill": "gis-cartography-symbology",
-      "source_availability": "public-repository;build-not-verified"
+      "source_availability": "public-repository;build-not-verified",
+      "license_metadata_unverified": "GPL-3.0"
     }
   ]
 }
