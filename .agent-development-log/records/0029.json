@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 29,
+  "timestamp_utc": "2026-10-30T03:30:53+00:00",
+  "kind": "revision",
+  "status": "completed",
+  "summary": "Clarify homepage unit-test evidence count",
+  "details": "Corrected the golden-workflow metric from the overbroad label '391 repository tests passed' to the exact result '391 repository tests run; 1 skipped' in English and Arabic. Added a regression assertion that rejects the old overclaim. Twenty-four golden-workflow, landing-page and JavaScript integrity tests passed.",
+  "references": [
+    28
+  ],
+  "task_id": "GIS-TRUST-LAUNCH-20261029",
+  "plan_revision": "r2",
+  "changed_files": [
+    "index.html",
+    "tests/test_golden_qgis_coordinate_audit.py"
+  ],
+  "tests": [
+    "python -m unittest tests.test_golden_qgis_coordinate_audit tests.test_landing_page tests.test_website_runtime_integrity -v"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "6718a6051e10ee3efbb388edba7aba65ac2a545831f525aab2d4fc1ff2e1a10e",
+  "hash": "628a18bf00de693bc89c2cdca114bbb4741a3bdf75290841d6da3ea31fbafab6"
+}

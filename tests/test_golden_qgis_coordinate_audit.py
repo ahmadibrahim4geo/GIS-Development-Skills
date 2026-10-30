@@ -27,6 +27,9 @@ class GoldenCoordinateAuditTests(unittest.TestCase):
         self.assertIn("T2–T4 · NOT RUN", section)
         self.assertIn('data-lang="en"', section)
         self.assertIn('data-lang="ar"', section)
+        self.assertIn("repository tests run; 1 skipped", section)
+        self.assertIn("إجمالي الاختبارات؛ اختبار واحد متجاوز", section)
+        self.assertNotIn("repository tests passed", section)
         self.assertIn("golden-qgis-coordinate-audit/README.md", section)
 
     def test_fixture_matches_committed_expected_artifacts(self):
