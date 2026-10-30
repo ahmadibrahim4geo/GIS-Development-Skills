@@ -12,10 +12,12 @@ Use for DEM, climate, satellite images, environmental rasters, OSM/POIs and geos
 
 **Geocoding / Gazetteers:** open [the cost-ranked provider guide](../../references/geocoding-place-search.md) for forward/reverse search, POI, Arabic place names, suggestions and allowed fallbacks. Never equate OpenCage's trial quota with a production plan.
 
+For OpenGeoHub/OpenLandMap scientific rasters and time-aware Earth viewers, read [provider and rendering reference](../../references/opengeohub-openlandmap-integration.md); catalogs alone do not prove tiles or years.
+
 ## Procedure
 
 1. Ask for or infer domain, area, period, resolution, coordinate system, output type and intended commercial/noncommercial use.
-2. Read `../../references/free-geospatial-apis.md` and its JSON catalog (52 service entries across bathymetry and boundaries, demographic, climate, water, routing, hazards, satellite and more), and use the [24-entry data repositories directory](../../references/geospatial-data-repositories.json) via the [catalog specialist](../geospatial-data-catalogs/SKILL.md) for broader portals. For supplementary discovery, read `../../references/gishub-software.md` and `../../references/project-catalog.json`.
+2. Read `../../references/free-geospatial-apis.md` and its JSON catalog (52 service entries across bathymetry and boundaries, demographic, climate, water, routing, hazards, satellite and more), and use the [data repositories directory](../../references/geospatial-data-repositories.json) via the [catalog specialist](../geospatial-data-catalogs/SKILL.md) for broader portals. For supplementary discovery, read `../../references/gishub-software.md` and `../../references/project-catalog.json`.
 3. Browse catalogs like `opengeos/geospatial-data-catalogs`, `opengeos/stac-index-catalogs`, `opengeos/NASA-CMR-STAC` as **indexes**, never assume an indexed API is available.
 4. Verify the *underlying* provider's official page for current access, key requirements, geographic/time coverage, quotas, TOS, attribution and CORS.
 5. Try a small legally accessible sample if tools/environment permit. Confirm CRS, pixel size, date, DEM vertical datum, NoData and geolocation.

@@ -1,3 +1,9 @@
+# Unreleased — OpenGeoHub and time-aware Data Explorer reference (2026-10-30)
+
+- Register five upstream GIS code/research repositories with root licenses or explicit unverified status.
+- Add OpenGeoHub and OpenLandMap STAC data references, routing links, a view-only Data Explorer contract and bilingual discovery notes.
+- Synchronize manifest and public inventory counters. Desktop runtime not modified.
+
 # Unreleased — project-driven visual sources (2026-10-28)
 
 - Clarify that visual source discovery has no fixed website/provider allowlist or mandatory search order. Sources change with the project and task.

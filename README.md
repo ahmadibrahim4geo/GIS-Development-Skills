@@ -132,7 +132,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>35 installable GIS skills</strong> · <strong>188 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>35 installable GIS skills</strong> · <strong>193 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -501,3 +501,7 @@ Use [the code discovery skill](skills/gis-code-discovery/SKILL.md) to discover, 
 **Core Principle:** Discover first, evaluate second, adapt third, test last. Candidates are evaluated across 4 technical dimensions: functional fit, platform/version compatibility, license permissions, and spatial fidelity (CRS handling, NoData propagation, thread affinity). Direct copy of unverified licenses is blocked.
 
 [Vetted Sources Registry](references/gis-code-sources.json) · [Spatial Recipes Catalog](references/gis-code-recipes.json) · [Bilingual Prompts & Scenarios](examples/code-discovery/README.md).
+
+## OpenGeoHub / OpenLandMap research sources
+
+Five scientific GIS repositories and environmental data catalog references have been registered for task-specific agent discovery. See [source integration and time-aware Z-EARTH Data Explorer design](references/opengeohub-openlandmap-integration.md). This is planning/reference integration only, not a completed desktop feature.

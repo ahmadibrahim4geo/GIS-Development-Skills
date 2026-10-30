@@ -35,3 +35,7 @@ User data goal -> source directory -> candidate original provider
 An [offline deterministic directory search example](../examples/data-catalogs/README.md) demonstrates filtering without scraping providers. For live STAC access, see [Remote Sensing Pipelines](../skills/remote-sensing-pipelines/SKILL.md).
 
 **Attribution:** OpenGeoS and Dr. Qiusheng Wu upstream projects are independently linked and credited; this project is not endorsed by them.
+
+## OpenGeoHub / OpenLandMap
+
+See the [OpenGeoHub dataset, licensing, STAC/COG and Earth-view guide](opengeohub-openlandmap-integration.md). Confirm actual epochs and layer access independently; static STAC is not automatically a map tile API.

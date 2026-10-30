@@ -12,6 +12,8 @@ license: MIT
 
 Use this specialist when a user needs dataset repositories, downloadable GIS layers, catalogs/portals, archives, STAC discovery or comprehensive domain coverage. It complements, but **does not replace**, [data discovery](../geospatial-data-discovery/SKILL.md) and [API integration](../geospatial-api-integration/SKILL.md).
 
+**OpenGeoHub/OpenLandMap:** [Scientific STAC/catalog reference](../../references/opengeohub-openlandmap-integration.md) distinguishes metadata, COG assets and actual map services.
+
 1. Define theme, geographic coverage, era, resolution, raster/vector/point-cloud format, usage rights and intended host.
 2. Search the curated [data repository index](../../references/geospatial-data-repositories.json) and [selection guide](../../references/geospatial-data-repositories.md), prioritizing the user's [GIS Data Repositories Professional 2026](https://github.com/ahmadibrahim4geo/gis-data-repositories-professional-2026) for broad exploration. Do not mirror that master index.
 3. For OpenGeoS use geospatial-data-catalogs, AWS metadata indices, GEE, CMR, STAC Index and Planetary Computer as *discovery references*, **never presume hosted data, free API or zero quota**.
