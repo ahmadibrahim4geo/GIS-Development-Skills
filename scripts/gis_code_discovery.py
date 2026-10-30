@@ -36,6 +36,10 @@ PLATFORM_PATTERNS = {
     ],
     "kml-kmz": [
         r"\bkml\b", r"\bkmz\b", r"\bplacemark\b", r"\bstyle\b", r"\baabbggrr\b"
+    ],
+    "spatial-modeling": [
+        r"\bspatial\s+prediction\b", r"\bspatial\s+machine\s+learning\b",
+        r"\bscikit-map\b", r"\bensemble\b", r"\bتنبؤ\s+مكاني\b", r"\bتعلم\s+آلي\s+مكاني\b"
     ]
 }
 

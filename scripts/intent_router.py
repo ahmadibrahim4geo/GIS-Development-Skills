@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 DOMAINS = (
-    ("gis-code-discovery", ("code discovery", "gis code", "code snippet", "code snippets", "sdk snippet", "arcgis sdk", "pyqgis snippet", "gdal sample", "gis recipe", "كود جغرافي", "خوارزمية جغرافية", "مقتطفات برمجية", "وصفات برمجية", "أمثلة برمجية")),
+    ("gis-code-discovery", ("code discovery", "gis code", "code snippet", "code snippets", "sdk snippet", "arcgis sdk", "pyqgis snippet", "gdal sample", "gis recipe", "كود جغرافي", "خوارزمية جغرافية", "مقتطفات برمجية", "وصفات برمجية", "أمثلة برمجية", "كود python", "python code", "تنبؤ مكاني", "خوارزمية تنبؤ", "spatial prediction", "spatial machine learning", "تعلم آلي مكاني", "كود بحثي", "كودًا بحثيًا", "كودا بحثيا", "أكواد بحثية", "research code", "scikit-map")),
     ("visual-asset-discovery-integration", ("thumbnail", "visual asset", "image search", "image sourcing", "official logo", "logos", "brand asset", "سامبنيل", "سنبنيل", "ثَمبنيل", "صورة مصغرة", "صورة لكل اختيار", "صور توضيحية", "شعار", "شعارات")),
 
 ("gis-architecture-visualization", ("archify", "architecture diagram", "workflow diagram", "draw a diagram", "interactive diagram", "visualize architecture", "diagram the", "ارسملي", "ارسم لي", "مخطط", "مين مسؤول عن مين", "وضحلي بنية", "وضّحلي بنية")),
@@ -29,14 +29,14 @@ DOMAINS = (
     ("qgis-plugin-development", ("qgis plugin", "qgis processing", "processing provider", "qgis extension", "إضافة qgis", "بلجن كيو جي")),
     ("qgis-engine-integration", ("qgis engine", "qgis core", "qgis libraries", "qgis standalone", "qgis runtime", "محرك qgis", "مكتبات qgis", "محرك كيو جي")),
     ("geospatial-web-mapping", ("cesium", "maplibre", "web map", "globe", "ثلاثية الأبعاد", "كرة أرضية")),
-    ("remote-sensing-pipelines", ("sentinel", "landsat", "gee", "satellite", "الاستشعار", "مرئيات")),
+    ("remote-sensing-pipelines", ("sentinel", "landsat", "gee", "satellite", "الاستشعار", "مرئيات", "cog", "cloud optimized geotiff", "طبقة cog", "تغطية زمنية", "temporal coverage")),
     ("geospatial-data-processing", ("gdal", "geopandas", "raster", "vector", "راستر", "فيكتور")),
     ("spatial-databases", ("postgis", "spatialite", "spatial sql", "قواعد البيانات المكانية")),
-    ("geospatial-api-integration", ("api", "geocod", "gazetteer", "أسماء الأماكن", "بحث عن الأماكن")),
-    ("geospatial-data-discovery", ("download data", "stac", "مصادر البيانات", "تنزيل بيانات")),
+    ("geospatial-api-integration", ("api", "geocod", "gazetteer", "أسماء الأماكن", "بحث عن الأماكن", "خدمة stac", "stac api", "واجهة برمجة")),
+    ("geospatial-data-discovery", ("download data", "stac", "مصادر البيانات", "تنزيل بيانات", "خصائص التربة", "soil", "التربة", "land cover", "الغطاء الأرضي", "غطاء أرضي", "خرائط خصائص")),
     ("geospatial-ai-agents", ("agent", "geoai", "automation", "وكيل", "الذكاء الاصطناعي")),
     ("mcp-integration-and-tool-orchestration", ("mcp", "model context protocol", "mcp server", "mcp tools", "سيرفرات mcp", "سيرفر mcp", "توجيه الأدوات", "تكامل الأدوات")),
-    ("geospatial-data-catalogs", ("data catalog", "data repository", "gis catalog", "stac catalog", "كتالوج البيانات", "فهرس البيانات", "مستودعات البيانات")),
+    ("geospatial-data-catalogs", ("data catalog", "data repository", "gis catalog", "stac catalog", "كتالوج البيانات", "فهرس البيانات", "مستودعات البيانات", "بيانات بيئية", "environmental data", "مستودعات البيانات البيئية", "مستودع بيانات", "opengeohub", "openlandmap", "مصدر بيانات مفتوح")),
     ("gis-internationalization-arabic", ("i18n", "localization", "arabic ui", "bilingual", "تعريب", "ثنائي اللغة", "تعدد اللغات")),
     ("system-capabilities-and-permissions", ("device permissions", "system permissions", "camera permission", "microphone permission", "bluetooth permission", "صلاحيات الجهاز", "أذونات الجهاز", "إذن الكاميرا")),
     ("gis-device-context", ("sunlight", "device location", "device time", "time zone", "solar position", "ضوء الشمس", "موقع الجهاز", "المنطقة الزمنية")),

@@ -132,7 +132,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>35 installable GIS skills</strong> · <strong>193 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>24 curated data repositories</strong></p>
+<p align="center"><strong>35 installable GIS skills</strong> · <strong>193 curated geospatial references</strong> · <strong>52 public API sources</strong> · <strong>26 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -496,12 +496,12 @@ Use [the visual assets skill](skills/visual-asset-discovery-integration/SKILL.md
 
 ## GIS Code Discovery & Reuse
 
-Use [the code discovery skill](skills/gis-code-discovery/SKILL.md) to discover, evaluate, and adapt verified GIS snippets and SDK recipes across ArcGIS Pro SDK (.NET 8), ArcPy, PyQGIS, GDAL/Rasterio, and Web GIS (MapLibre, CesiumJS). It indexes 12 vetted primary sources and provides verified function-level recipes across raster sampling, ribbon button wiring, processing algorithms, and KML style conversion.
+Use [the code discovery skill](skills/gis-code-discovery/SKILL.md) to discover, evaluate, and adapt verified GIS snippets and SDK recipes across ArcGIS Pro SDK (.NET 8), ArcPy, PyQGIS, GDAL/Rasterio, and Web GIS (MapLibre, CesiumJS). It indexes 17 vetted code and research sources and provides verified function-level recipes across raster sampling, ribbon button wiring, processing algorithms, and KML style conversion.
 
 **Core Principle:** Discover first, evaluate second, adapt third, test last. Candidates are evaluated across 4 technical dimensions: functional fit, platform/version compatibility, license permissions, and spatial fidelity (CRS handling, NoData propagation, thread affinity). Direct copy of unverified licenses is blocked.
 
 [Vetted Sources Registry](references/gis-code-sources.json) · [Spatial Recipes Catalog](references/gis-code-recipes.json) · [Bilingual Prompts & Scenarios](examples/code-discovery/README.md).
 
-## OpenGeoHub / OpenLandMap research sources
+## OpenGeoHub / OpenLandMap Scientific Sources & Data Explorer
 
-Five scientific GIS repositories and environmental data catalog references have been registered for task-specific agent discovery. See [source integration and time-aware Z-EARTH Data Explorer design](references/opengeohub-openlandmap-integration.md). This is planning/reference integration only, not a completed desktop feature.
+Five scientific GIS repositories and environmental data catalog references have been registered for task-specific agent discovery: [scikit-map](https://github.com/openlandmap/scikit-map) (MIT spatial ML), [soildb](https://github.com/openlandmap/soildb) (pedometric data modeling), [GEDTM30](https://github.com/openlandmap/GEDTM30) (30 m global elevation model), [spatial-prediction-eml](https://github.com/opengeohub/spatial-prediction-eml) (CC-BY-SA-4.0 ensemble prediction), and [spatial-layers](https://github.com/openlandmap/spatial-layers) (GPL-3.0 cartographic symbology). See [source integration, STAC/COG protocols, and time-aware Z-EARTH Data Explorer design](references/opengeohub-openlandmap-integration.md). This is planning/reference integration only, not a completed desktop feature.

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 30,
+  "timestamp_utc": "2026-10-30T06:51:19+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Synchronize and integrate OpenGeoHub and OpenLandMap sources with router and homepage",
+  "details": "Merged PR #36 (017262d), enriched OpenGeoHub integration reference with per-repo usage boundaries and protocol distinctions, updated intent_router and gis_code_discovery for spatial prediction and ML, synchronized READMEs, index.html, explorer.html, and CHANGELOG, and passed all 394 repository tests.",
+  "references": [],
+  "task_id": "",
+  "plan_revision": "",
+  "changed_files": [],
+  "tests": [
+    "python scripts/validate_catalog.py; python scripts/validate_api_catalog.py; python scripts/validate_data_repositories.py; python scripts/validate_skill_pack.py; python scripts/build_manifest.py --check; python -m unittest discover -s tests -v"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "628a18bf00de693bc89c2cdca114bbb4741a3bdf75290841d6da3ea31fbafab6",
+  "hash": "fbd80abad6162652574339a1ff93bc9693f2cbc3ce8f6aa6f63bb677f39e3e31"
+}

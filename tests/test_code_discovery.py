@@ -120,6 +120,42 @@ class GISCodeDiscoveryTests(unittest.TestCase):
         self.assertIn("gis-code-discovery", en_hints)
         self.assertIn("gis-code-discovery", ar_hints)
 
+    def test_11_opengeohub_scikit_map_source_retrieval(self):
+        """Scenario 11: scikit-map is discovered for spatial prediction with MIT license."""
+        query = "spatial prediction machine learning scikit-map"
+        res = cd.search_knowledge_base(query, sources_data=self.sources, recipes_data=self.recipes)
+        top_source = res["matching_sources"][0]
+        self.assertEqual(top_source["id"], "openlandmap-scikit-map")
+        self.assertEqual(top_source["license"], "MIT")
+        self.assertIn("spatial-modeling", res["detected_platforms"])
+
+    def test_12_unverified_license_flagged_for_soildb(self):
+        """Scenario 12: soildb research reference has unverified license and limitation warnings."""
+        soildb = next((s for s in self.sources["sources"] if s["source_id"] == "openlandmap-soildb"), None)
+        self.assertIsNotNone(soildb)
+        self.assertFalse(soildb["license_verified"])
+        self.assertEqual(soildb["license"], "unknown")
+        self.assertIn("no copying", soildb["limitations"])
+
+    def test_13_router_scenarios_from_user_guidelines(self):
+        """Scenario 13: The five user routing scenarios route to appropriate skills."""
+        s1 = router.route_hints("ابحث عن كود Python للتنبؤ المكاني")["suggested_skills"]
+        self.assertIn("gis-code-discovery", s1)
+
+        s2 = router.route_hints("اكتشف خرائط خصائص التربة لمنطقة جغرافية محددة")["suggested_skills"]
+        self.assertIn("geospatial-data-discovery", s2)
+
+        s3 = router.route_hints("ابحث عن منتجات Land Cover ذات تغطية زمنية")["suggested_skills"]
+        self.assertIn("geospatial-data-discovery", s3)
+        self.assertIn("remote-sensing-pipelines", s3)
+
+        s4 = router.route_hints("حدد إمكانية استعراض طبقة COG داخل تطبيق GIS")["suggested_skills"]
+        self.assertIn("remote-sensing-pipelines", s4)
+
+        s5 = router.route_hints("قارن بين مصدر بيانات مفتوح ومستودع يضم كودًا بحثيًا")["suggested_skills"]
+        self.assertIn("gis-code-discovery", s5)
+        self.assertIn("geospatial-data-catalogs", s5)
+
 
 if __name__ == "__main__":
     unittest.main()
