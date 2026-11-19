@@ -15,16 +15,13 @@ RECIPES_PATH = ROOT / "references" / "gis-code-recipes.json"
 
 PLATFORM_PATTERNS = {
     "arcgis-pro-sdk": [
-        r"\barcgis\s+pro\s+sdk\b", r"\badd-?in\b", r"\bqueuedtask\b",
-        r"\bribbon\b", r"\bdockpane\b", r"\bc#\b", r"\b\.net\b", r"\bbutton\b"
+        r"\barcgis\s+pro\s+sdk\b", r"\barcgis\.desktop\b", r"\bqueuedtask\b"
     ],
     "arcpy": [
-        r"\barcpy\b", r"\bgeoprocessing\b", r"\bfeature\s+class\b",
-        r"\bspatial\s+analyst\b", r"\bgdb\b", r"\bgeodatabase\b"
+        r"\barcpy\b", r"\bspatial\s+analyst\b"
     ],
     "pyqgis": [
-        r"\bpyqgis\b", r"\bqgis\b", r"\bprocessing\s+algorithm\b",
-        r"\bqgsprocessing\b", r"\bplugin\b", r"\bإضافة\s+qgis\b"
+        r"\bpyqgis\b", r"\bqgis\b", r"\bqgsprocessing\w*\b"
     ],
     "gdal-rasterio": [
         r"\bgdal\b", r"\brasterio\b", r"\bdem\b", r"\belevation\b",
@@ -43,6 +40,18 @@ PLATFORM_PATTERNS = {
     ]
 }
 
+PLATFORM_ALIASES = {
+    "qgis": "pyqgis", "gdal": "gdal-rasterio", "rasterio": "gdal-rasterio",
+    "raster-analysis": "gdal-rasterio",
+}
+HOST_PLATFORMS = {"arcgis-pro-sdk", "arcpy", "pyqgis"}
+NONFUNCTIONAL_TERMS = {
+    "create", "convert", "use", "for", "with", "the", "and", "into", "from",
+    "my", "app", "gis", "interface", "current", "build", "tool", "tools",
+    "code", "find", "qgis", "pyqgis", "arcgis", "pro", "sdk", "arcpy",
+    "gdal", "rasterio", "maplibre", "kml", "kmz", "python", "javascript",
+}
+
 
 def load_registry(path):
     path = Path(path)
@@ -52,6 +61,7 @@ def load_registry(path):
 
 
 def detect_platforms(query_text):
+    """Return lexical hints only; generic UI controls do not identify a GIS host."""
     text = query_text.lower()
     matches = []
     for platform, patterns in PLATFORM_PATTERNS.items():
@@ -60,40 +70,80 @@ def detect_platforms(query_text):
     return matches or ["generic-gis"]
 
 
+def selected_platforms(query_text, target_platform=None):
+    """Constrain candidates; a caller-supplied target wins over lexical hints.
+
+    This offline selector cannot authenticate a host or resolve an unknown engine.
+    Conflicting host hints require an explicit target rather than mixed recipes.
+    """
+    if target_platform:
+        target = PLATFORM_ALIASES.get(target_platform.lower(), target_platform.lower())
+        return ([target], "declared") if target in PLATFORM_PATTERNS else ([], "unknown-target")
+    detected = [p for p in detect_platforms(query_text) if p != "generic-gis"]
+    hosts = [p for p in detected if p in HOST_PLATFORMS]
+    if len(hosts) > 1:
+        return [], "ambiguous-host"
+    selected = hosts or detected
+    return selected, "query-hint" if selected else "unresolved"
+
+
+def candidate_platforms(item):
+    """Read applicability from catalog identity/environment fields, never code."""
+    domains = [item.get("domain", ""), *item.get("gis_domains", [])]
+    platforms = {
+        PLATFORM_ALIASES.get(domain.lower(), domain.lower()) for domain in domains
+        if PLATFORM_ALIASES.get(domain.lower(), domain.lower()) in PLATFORM_PATTERNS
+    }
+    identity = " ".join([
+        item.get("title", ""), item.get("source_name", ""),
+        item.get("target_environment", ""), *item.get("frameworks", []),
+    ])
+    platforms.update(p for p in detect_platforms(identity) if p != "generic-gis")
+    return platforms
+
+
+def functional_terms(text):
+    return {t for t in re.findall(r"[^\W_]+", text.lower())
+            if len(t) > 2 and t not in NONFUNCTIONAL_TERMS}
+
+
 def evaluate_candidate(item, query_text, target_platform=None):
     """Score candidate recipe or source across 4 dimensions: fit, platform, license, spatial."""
     score = 0
     issues = []
-    text = query_text.lower()
     item_title = item.get("title") or item.get("source_name", "")
     item_domain = item.get("domain") or item.get("source_type", "")
-    item_lang = item.get("language") or ", ".join(item.get("programming_languages", []))
     item_lic = item.get("license", "unknown").lower()
 
-    # 1. Functional Fit
-    tokens = [t for t in re.split(r"\W+", text) if len(t) > 2]
-    matched_tokens = [t for t in tokens if t in (item_title + " " + item_domain + " " + json.dumps(item)).lower()]
+    # 1. Functional fit must be independent of host names and license boilerplate.
+    tokens = functional_terms(query_text)
+    description = " ".join([
+        item_title, item_domain, *item.get("inputs", []), *item.get("outputs", []),
+        *item.get("gis_domains", []), *item.get("code_categories", []),
+        *item.get("recommended_use_cases", []),
+    ])
+    matched_tokens = tokens & functional_terms(description)
     token_ratio = len(matched_tokens) / max(1, len(tokens))
     score += int(token_ratio * 40)
 
-    # 2. Platform & Language Match
-    detected = detect_platforms(query_text)
-    if target_platform:
-        if target_platform.lower() in (item_domain + " " + item_lang).lower():
-            score += 30
-        else:
-            issues.append(f"Platform mismatch: expected {target_platform}")
-    elif any(d in (item_domain + " " + item_lang).lower() for d in detected):
+    # 2. Applicability is a gate, not a ranking bonus that other scores can beat.
+    selected, resolution = selected_platforms(query_text, target_platform)
+    compatible = bool(set(selected) & candidate_platforms(item))
+    if compatible:
         score += 30
     else:
-        score += 10
+        issues.append(f"Platform mismatch: expected {target_platform or ', '.join(selected) or 'resolved target'}")
+    if not selected:
+        issues.append(f"Target platform unresolved ({resolution}); inspect the requested engine/host")
+    if not matched_tokens:
+        issues.append("No functional match beyond platform or generic UI terms")
 
     # 3. License Permissibility
     if any(p in item_lic for p in ["mit", "apache", "bsd", "cc0"]):
         score += 20
     elif "gpl" in item_lic:
         score += 15
-        issues.append("Copyleft license (GPL): requires architectural isolation for proprietary targets")
+        issues.append("Copyleft license (GPL): review distribution/compatibility obligations; process isolation is not an automatic exemption")
     elif "unknown" in item_lic or "unverified" in item_lic:
         issues.append("Unverified license: direct copy prohibited, study conceptual logic only")
     else:
@@ -105,10 +155,14 @@ def evaluate_candidate(item, query_text, target_platform=None):
     else:
         issues.append("No explicit spatial constraints declared")
 
+    applicable = compatible and bool(matched_tokens)
     return {
-        "score": min(100, score),
+        "score": min(100, score) if applicable else 0,
         "issues": issues,
-        "is_safe_to_adapt": "Unverified license" not in " ".join(issues)
+        "applicable": applicable,
+        "functional_match": bool(matched_tokens),
+        "platform_resolution": resolution,
+        "is_safe_to_adapt": applicable and "Unverified license" not in " ".join(issues)
     }
 
 
@@ -121,10 +175,20 @@ def search_knowledge_base(query, platform=None, sources_data=None, recipes_data=
     sources = sources_data.get("sources", [])
     recipes = recipes_data.get("recipes", [])
     detected = detect_platforms(query)
+    selected, resolution = selected_platforms(query, platform)
 
     ranked_recipes = []
+    research_recipes = []
     for r in recipes:
         eval_res = evaluate_candidate(r, query, target_platform=platform)
+        if not eval_res["applicable"]:
+            if eval_res["functional_match"]:
+                research_recipes.append({
+                    "id": r.get("recipe_id"), "title": r.get("title"),
+                    "domain": r.get("domain"), "use": "reference-only",
+                    "issues": eval_res["issues"], "is_safe_to_adapt": False,
+                })
+            continue
         ranked_recipes.append({
             "type": "recipe",
             "id": r.get("recipe_id"),
@@ -140,9 +204,10 @@ def search_knowledge_base(query, platform=None, sources_data=None, recipes_data=
         })
 
     ranked_sources = []
+    research_sources = []
     for s in sources:
         eval_res = evaluate_candidate(s, query, target_platform=platform)
-        ranked_sources.append({
+        source = {
             "type": "source",
             "id": s.get("source_id"),
             "name": s.get("source_name"),
@@ -152,7 +217,11 @@ def search_knowledge_base(query, platform=None, sources_data=None, recipes_data=
             "score": eval_res["score"],
             "issues": eval_res["issues"],
             "limitations": s.get("limitations")
-        })
+        }
+        if eval_res["applicable"]:
+            ranked_sources.append(source)
+        elif eval_res["functional_match"]:
+            research_sources.append({**source, "use": "reference-only", "is_safe_to_adapt": False})
 
     ranked_recipes.sort(key=lambda x: x["score"], reverse=True)
     ranked_sources.sort(key=lambda x: x["score"], reverse=True)
@@ -160,15 +229,20 @@ def search_knowledge_base(query, platform=None, sources_data=None, recipes_data=
     return {
         "query": query,
         "detected_platforms": detected,
+        "selected_platforms": selected,
+        "platform_resolution": resolution,
         "matching_recipes": ranked_recipes[:5],
-        "matching_sources": ranked_sources[:5]
+        "matching_sources": ranked_sources[:5],
+        "research_recipes": research_recipes[:5],
+        "research_sources": research_sources[:5],
+        "status": "candidates" if ranked_recipes or ranked_sources else "unresolved",
     }
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--query", type=str, required=True, help="Natural language GIS code query")
-    parser.add_argument("--platform", type=str, default=None, help="Target platform (arcgis-pro-sdk, arcpy, pyqgis, gdal, web-gis)")
+    parser.add_argument("--platform", type=str, default=None, help="Reviewed target platform (arcgis-pro-sdk, arcpy, pyqgis/qgis, gdal, web-gis); unknown targets remain unresolved")
     parser.add_argument("--format", choices=["text", "json"], default="text", help="Output format")
     args = parser.parse_args(argv)
 
@@ -180,6 +254,7 @@ def main(argv=None):
         print(f"\n{'='*70}")
         print(f"GIS Code Discovery: '{args.query}'")
         print(f"Detected Platforms: {', '.join(results['detected_platforms'])}")
+        print(f"Target resolution: {results['platform_resolution']}; status: {results['status']}")
         print(f"{'='*70}\n")
         print("Matching Code Recipes:")
         for r in results["matching_recipes"]:
@@ -189,6 +264,11 @@ def main(argv=None):
         print("\nMatching Authoritative Sources:")
         for s in results["matching_sources"]:
             print(f"  [{s['score']}%] {s['name']} ({s['url']})")
+        print("\nResearch references only (not implementation matches):")
+        for r in results["research_recipes"]:
+            print(f"  {r['title']}: {'; '.join(r['issues'])}")
+        for s in results["research_sources"]:
+            print(f"  {s['name']} ({s['url']}): {'; '.join(s['issues'])}")
         print()
     return 0
 

@@ -96,6 +96,8 @@ REQUIRED_PATHS = (
     "references/repository-manifest.json",
     "references/repository-wide-skill-orchestration.md",
     "scripts/intent_router.py",
+    "scripts/validate_architecture_flow.py",
+    "references/ui-engine-architecture-contract.md",
     "scripts/security_audit.py",
     "scripts/verify_completion.py",
     "templates/GIS_ACCEPTANCE_REPORT.md",

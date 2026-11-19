@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "request_id": "UDS-MASTER-001",
+  "task_id": "UDS6",
+  "revision": "r5",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "c1",
+      "statement": "Reversible AI Copilot specification enforces mandatory QUndoStack wrapping for all tool operations, selection context awareness, three-tier permissions, and visual diff confirmation gates for batch actions across any CAD/GIS software.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/reversible-cad-ai-copilot.md",
+          "observed": "File exists and specifies the Reversibility Contract (QUndoStack/QUndoCommand), selection context awareness injection, three-tier permissions, strict pboettch/json-schema-validator integration, and ghosted visual diff preview gates.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Export Studio reference details multi-view camera presets, engineering print layouts (A0-A4 at true scale with title blocks and legends, drawing from Smart Plot PDF), 3D flythrough animations via Bezier curves (drawing from Contour 3D flight camera), interactive before/after sliders, and vector/semantic roundtrip integrity (GPKG, DXF, glTF, CityJSON, IFC 4.3).",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/urban-export-studio.md",
+          "observed": "File exists and specifies multi-view camera presets, ISO A0-A4 true-scale plotting with title blocks (Smart Plot PDF pattern), 3D Bezier flythrough video generation (Contour pattern), before/after sliders, and lossless roundtrips across GPKG, DXF, glTF, CityJSON, and IFC 4.3.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    }
+  ]
+}

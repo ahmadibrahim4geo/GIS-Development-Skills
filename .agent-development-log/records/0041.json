@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "sequence": 41,
+  "timestamp_utc": "2026-11-19T00:22:40+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Verify remote sensing expansion with plan-bound DoneProof",
+  "details": "Executed full regression suite (446 tests, 445 passed, 1 skipped). Validated catalog (193), API (53), skill pack (35), manifest and security (0 findings). Validated all 6 DoneProof reports (RS1-RS6) against reviewed plan r1 with exit code 0. Acceptance report generated; native GIS T2-T4 runtimes declared NOT RUN.",
+  "references": [
+    40
+  ],
+  "task_id": "REMOTE-SENSING-EXPANSION-001",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [
+    "verify_completion.py on RS1-RS6; unittest discover: 446 tests"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "ad2acd7a9753170e18c8ab32cbaeb852a8f07bc3d6225c19d229629b4270f092",
+  "hash": "72118021f9765222bdea541103339bf25f03ea63ac875d73e82ff2d3fcf19507"
+}

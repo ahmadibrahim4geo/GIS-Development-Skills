@@ -4,6 +4,7 @@
 
 - [Routing and user interaction](#routing-and-user-interaction)
 - [Structured handoff](#structured-handoff)
+- [UI and engine data-flow handoff](#ui-and-engine-data-flow-handoff)
 - [Runtime and source provenance](#runtime-and-source-provenance)
 - [Authoring and delivery](#authoring-and-delivery)
 - [Evidence, language and failure handling](#evidence-language-and-failure-handling)
@@ -43,6 +44,28 @@ python scripts/intent_router.py --plan examples/architecture-visualization/plan.
 ```
 
 The example remains draft/unapproved. `--gate` correctly blocks it; user-provided approval booleans cannot replace actual host authorization.
+
+## UI and engine data-flow handoff
+
+For ribbon/tool regrouping, replacing a UI shell, or connecting a named UI framework to GIS execution, use the [UI/engine architecture contract](ui-engine-architecture-contract.md). The domain task declares `architecture` independently of its four-field `visualization` object. The compiled preview preserves the architecture declaration, including `flow_spec_ref`; no extra visualization field or implicit engine selection is needed. Abstract skill-responsibility diagrams remain valid without GIS payload contracts.
+
+Read the referenced flow specification before authoring the diagram. It is a local, renderer-independent design contract, **not Archify input JSON**. Convert its nodes/edges into the actual installed runtime's supported schema. Keep component IDs, stable command mappings, contract labels, evidence labels and source references in the authored view/cards. The diagram must answer:
+
+1. Which host remains, which UI changes, and which components own rendering and GIS computation?
+2. How does a user command reach validation, its adapter/service and the GIS engine; which data/schema crosses each boundary?
+3. How do result, error and enabled/checked/map state return to the UI? For asynchronous work, who owns each thread, progress, cancellation and recovery?
+4. For a migration, which existing command, handler, shortcut and state semantics survive the before/after mapping? Which reviewed exclusions remain?
+5. If persistence is required, where is the independent save/export readback path? Which edges are proposed, source-reviewed or runtime-observed?
+
+A node chain showing only router → skills → Archify cannot answer those questions. Use a dataflow view and an asynchronous sequence where needed; a component overview may accompany them. The question and evidence determine the view, without requiring every diagram type. Keep unknown handlers, source versions and UI.js identities explicit; do not invent integration APIs or live trace IDs. Missing implementation identity blocks dependent execution readiness, while a proposed draft can still compile for review.
+
+For a worked draft, compile [the QGIS ribbon plan](../examples/architecture-visualization/qgis-ribbon.plan.json), then inspect [its proposed flow](../examples/architecture-visualization/qgis-ribbon.flow.json):
+
+```bash
+python scripts/intent_router.py --plan examples/architecture-visualization/qgis-ribbon.plan.json --workflow --format json
+```
+
+This example has unresolved target components and illustrative command IDs. Its static validity cannot establish QGIS compatibility, command parity, thread safety or a rendered Archify artifact. It intentionally contains no generated HTML or native execution receipt.
 
 ## Runtime and source provenance
 

@@ -1,0 +1,29 @@
+[
+  {
+    "query": "Create QGIS ribbon button",
+    "platform_resolution": "query-hint",
+    "selected_platforms": [
+      "pyqgis"
+    ],
+    "status": "unresolved",
+    "implementation_recipes": []
+  },
+  {
+    "query": "Use UI.js for the interface of my GIS app",
+    "platform_resolution": "unresolved",
+    "selected_platforms": [],
+    "status": "unresolved",
+    "implementation_recipes": []
+  },
+  {
+    "query": "Create ArcGIS Pro SDK ribbon button",
+    "platform_resolution": "query-hint",
+    "selected_platforms": [
+      "arcgis-pro-sdk"
+    ],
+    "status": "candidates",
+    "implementation_recipes": [
+      "recipe-arcgis-pro-sdk-button"
+    ]
+  }
+]

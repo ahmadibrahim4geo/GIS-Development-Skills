@@ -1,0 +1,1 @@
+PASS: additive source changes except a semantically equivalent compact architecture link in the router (5494 characters, limit 5500). Source attachment, existing content, author section, exact mission, catalogs, manifest and skill inventory preserved. Local reference/skill links resolve. Source review only; no native UI or cross-client execution.

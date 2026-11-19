@@ -27,4 +27,4 @@ Use alongside [data catalogs](../geospatial-data-catalogs/SKILL.md), [geospatial
 
 ## Esri elevation GP as a licensed host reference
 
-[Esri/elevation-gp-python](https://github.com/Esri/elevation-gp-python) contains ArcMap and ArcGIS Pro viewshed/profile Python toolbox patterns. It requires Spatial Analyst and related ArcGIS service entitlements for hosted execution. Retain open DEM workflows for independent products and verify real raster NoData, resolution, vertical units and native host execution.
+[Esri/elevation-gp-python](https://github.com/Esri/elevation-gp-python) contains ArcMap and ArcGIS Pro viewshed/profile Python toolbox patterns. It requires Spatial Analyst and related ArcGIS service entitlements for hosted execution. Retain open DEM workflows for independent products and verify real raster NoData, resolution, vertical units and native host execution. For astronomical solar position, real-time shadow casting, urban D8 stormwater runoff, and roadway gully spacing calculations, see [universal simulation engines](../../references/urban-simulation-engines.md).

@@ -1,3 +1,41 @@
+# Unreleased — universal desktop CAD/GIS, parametric modeling, and reversible AI copilot standards (2026-11-19)
+
+- Establish a universal engineering standard across all desktop CAD/GIS applications, geoprocessing tools, and AI copilot development, incorporating specifications from 78 open-source GitHub repositories, 7 industry benchmarks, interactive prototypes, and local software projects.
+- Add `references/urban-design-competency-coverage.md` mapping 55+ technical competencies (LOD 0-3, Double Precision Local Origin, decoupled core, 4 subsurface networks), 78 GitHub repositories, 7 industry benchmarks, and local projects to universal standards.
+- Add `references/urban-design-source-registry.json` and `references/urban-design-sources.md` auditing all 78 repositories with strict license classification (MIT, Apache-2.0, LGPL v3 dynamic linking for SARibbon/ADS, GPL clean-room rules, PolyForm Noncommercial quarantine) and supply chain threat modeling.
+- Add `references/native-cad-gis-desktop-architecture.md` establishing C++20/Qt6 vs Godot 4 vs UE5 engine tradeoff evaluations, Camera-Relative Local Render Origin shifting, Dark CAD UI design tokens, contextual ribbons (`SARibbon`), dockable panels (`Qt-ADS`), dynamic property inspector (`QtPropertyBrowser`), and locked metric scales 1:500–1:5000 (`Lock-Canvus-Zoom`).
+- Add `references/urban-hierarchy-parametric-modeling.md` defining the 8-layer spatial data hierarchy, relational DAG cascading engine, ASAM OpenDRIVE clothoid networks, Streetmix cross-section assemblies, earcut polygon triangulation with interior holes, Clipper2 setbacks, open BIM (IFC 4.3), and 4 subsurface infrastructure networks.
+- Add `references/urban-simulation-engines.md` standardizing astronomical solar/shadow calculations (Ladybug concepts), stormwater D8 runoff and roadway gully spacing (`SmartGully` pattern), and microscopic multimodal traffic simulation (Eclipse SUMO XML).
+- Add `references/reversible-cad-ai-copilot.md` and `references/urban-export-studio.md` specifying mandatory `QUndoStack` / `Ctrl+Z` reversibility, strict C++ JSON Schema validation (`pboettch/json-schema-validator`), selection context awareness, ISO A0–A4 true-scale plotting (`Smart Plot PDF`), 3D flythrough cameras (`Contour`), and vector roundtrips.
+- Add `references/token-optimization-triad.md` and `references/agent-context-memory-architecture.md` formalizing Ponytail (pre-coding), Caveman (surgical patches), Token Optimizer (cleanup), and the modular 5-file `context/` architecture.
+- Update target skills (`gis-desktop-application-development`, `geospatial-data-processing`, `terrain-hydrology-lidar`, `geospatial-ai-agents`), enrich `scripts/intent_router.py` with bilingual CAD/GIS keywords, and synchronize English/Arabic READMEs without exceeding router character limits. Native GIS T2–T4 runtimes remain NOT RUN.
+- Tune `skills/gis-desktop-application-development` and `skills/prompt-intent-orchestrator`: upgrade frontmatter description, activate clickable markdown links for all 10 architectural references, expand engine selection table with CAD engines (Clipper2, earcut, SARibbon, IfcOpenShell, libOpenDRIVE), add Desktop CAD/GIS Invariants section, and update homepage (`index.html`) quick options.
+
+# Unreleased — remote sensing indices, band mappings, and scientific interpretation (2026-11-19)
+
+- Enhance `skills/remote-sensing-pipelines` with a comprehensive spectral index catalog, physical band mappings, and scientific interpretation guidance without creating a duplicate skill.
+- Add `references/remote-sensing-indices.json` (19 core indices across optical and SAR domains with mathematical ranges and authoritative citations) and `references/remote-sensing-indices.md`.
+- Add `references/remote-sensing-sensor-band-mappings.md` documenting sensor bands across Landsat (TM/ETM+/OLI), Sentinel-2 MSI, MODIS, and HLS, with Level-2 surface reflectance scale factors ($DN \times 0.0000275 - 0.2$), Sentinel-2 L2A BOA offsets, and SAR linear power units.
+- Add `references/remote-sensing-threshold-profiles.json` enforcing that classification thresholds are context-dependent and never universal constants; guard against automatic uncalibrated classification.
+- Add `references/remote-sensing-index-source-registry.json` establishing a 6-tier hierarchy of official mission docs, peer-reviewed studies, and training materials with a 12-step dynamic discovery protocol.
+- Add reproducible synthetic evaluation engine `examples/remote-sensing/synthetic_index_calculator.py` and 23 unit tests in `tests/test_remote_sensing_indices.py` covering exact formulas, edge cases (zero division, NaN, negative reflectance), alias disambiguation (NDWI, NDSI, RVI), and threshold safety guards.
+- Integrate bilingual routing in `scripts/intent_router.py` and synchronize English and Arabic documentation. Native GIS T2–T4 runtimes remain NOT RUN.
+
+# Unreleased — portable execution guidance (2026-11-15)
+
+- Add shared model/agent-independent guidance with proportionate Lite/Standard/Deep effort, capability-based tools, reuse decisions and bounded diagnosis.
+- Connect existing intake, routing, code discovery, agent engineering, journal and DoneProof owners; preserve approval, security and evidence requirements without adding a skill or parallel workflow.
+- Explain the guidance in English/Arabic READMEs and the homepage guide. Cross-client behavior and native GIS execution remain unverified by these documentation changes.
+
+# Unreleased — architectural intent and UI/engine contracts (2026-11-05)
+
+- Route ribbon, UI shell and engine integration requests through explicit source/target and component ownership; keep unknown UI.js identity unresolved until source/version preflight.
+- Preserve typed architecture, constraints, task descriptions, I/O contracts and command correlation in workflow previews; distinguish dependency edges from declared data contracts.
+- Add renderer-independent flow validation and a proposed QGIS ribbon example covering command parity, connected result/error/state paths, asynchronous policies and readback.
+- Gate code recipe applicability by the intended GIS platform, preventing generic ribbon/button terms from selecting ArcGIS Pro for QGIS requests.
+- Extend bilingual wizard/homepage/README guidance and regression scenarios; keep all 35 skills and existing catalog counts. Full offline verification: 423 tests, 422 passed and one Windows symlink privilege skip. Native GIS T2–T4 and Archify rendering remain NOT RUN. See the [Arabic engineering review](docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md).
+- Use no-clobber atomic rename for journal writes on Windows workspaces that disallow hard links; preserve existing canonical history.
+
 # Unreleased — OpenGeoHub and time-aware Data Explorer reference (2026-10-30)
 
 - Register five upstream GIS code/research repositories (scikit-map, soildb, GEDTM30, spatial-prediction-eml, spatial-layers) with root licenses or explicit unverified status.

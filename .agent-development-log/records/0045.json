@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 45,
+  "timestamp_utc": "2026-11-19T02:01:48+00:00",
+  "kind": "revision",
+  "status": "proposed",
+  "summary": "Propose deep-dive CAD/GIS engineering and tooling plan r5 embedding all chat technical specifics",
+  "details": "Revise plan to r5 embedding all specific technical details from the 37 chat rounds: LOD 0-3 specifications, Local Render Origin double precision coordinate shifting, decoupled Engineering Core, earcut holes, Clipper2 setbacks, OpenDRIVE clothoid junctions, Streetmix cross-section assemblies, 4 subsurface utility networks, SUMO traffic export, QUndoStack AI reversibility with Ctrl+Z, pboettch/json-schema-validator, modular context/ structure, and token optimization triad.",
+  "references": [
+    44
+  ],
+  "task_id": "",
+  "plan_revision": "r5",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "2cd7b0ca4a879a9faa04c004a839cfb6b7b3dad506fae01addab0565247be135",
+  "hash": "d35c773d5d372440ab4cb0d81f655f8a1215c45e9afe6ecac8d7fde94d48aaf0"
+}

@@ -55,11 +55,21 @@ The first command **does not infer a goal**. The second emits an unapproved blue
 
 Example spoken Egyptian Arabic: "عايز الشبكة خطوط طول وعرض، تشغيل وإيقاف، وإظهار التسميات، وكمان المبالغة الرأسية." Interpret as TWO independent features: (A) coordinate grid toggle AND label toggle with CRS and LOD behaviour, and (B) terrain vertical exaggeration with an adjustable range, persistence and live scene refresh. Propose any unmentioned defaults as optional suggestions; **never fabricate an existing control, working engine, or passing test**.
 
+### Architectural requests → explicit component boundaries
+
+Before reducing a request to skill names, capture the existing **source host**, requested **target host**, what changes, and what must remain. "حوّل أدوات QGIS إلى Ribbon" may describe command reorganization inside QGIS, a source fork, or a standalone shell; preserve that uncertainty until project evidence or user context resolves it. "اربطها بمحرك واجهة UI.js" additionally requires identifying the named framework's source, version and role. Do not substitute a similarly named library or assume that an interface framework supplies map rendering or GIS analysis.
+
+Follow the single [UI/engine architecture contract](ui-engine-architecture-contract.md) for the optional task `architecture` declaration, ownership, command migration and data-flow handoff. Distinguish `ui-reorganization`, `ui-shell-migration`, `engine-integration` and `engine-replacement`. Specify UI framework, renderer and GIS engine independently; record unresolved identities openly. Read-only diagnosis can establish these boundaries without a new approval ceremony; consequential implementation uses the reviewed revision and host authorization.
+
+For migrating commands, plan the original action → new control → handler/adapter → engine → result/state → map refresh → save/readback path. Add Command Audit before migration, and Data Flow Diagnostics/Visualization when the requested explanation or cross-component design needs them. Keep one target-domain owner per task. An unidentified framework blocks only dependent implementation while permitted discovery and unrelated work continue.
+
 ## Machine-readable planning schema (v1)
 
 Top-level fields: schema_version (1.0), request_id, revision, original_request, language (ar or en), status (draft or approved), approval object (approved_by_user, approved_revision, high_risk_approved), assumptions, open_questions, and tasks array.
 
 Each task: id, title, description, priority (must/should/could), kind (domain tag), skills (existing specialist IDs), depends_on (task IDs), risk (low/medium/high/critical), acceptance_criteria (measurable, nonempty array), tools (optional candidate tools, each with tool_id and side_effect = read/write/network/destructive).
+
+Architectural tasks may additionally declare `architecture` using the [versioned UI/engine contract](ui-engine-architecture-contract.md): `schema_version`, `change_type`, `source_host`, `target_host`, `ui_framework`, `renderer`, `gis_engine`, `integration_mode`, `preserved_invariants`, `command_inventory_ref` and `flow_spec_ref`. Component identities distinguish unresolved proposals from source-reviewed dependencies. This declaration does not authorize installation, shell migration or engine replacement. Preserve the architecture, plan `constraints`/`non_goals` and supplied command/trace and input/output contracts in the compiled handoff; successful structural compilation is not semantic or native-runtime proof.
 
 Do **not** embed secrets, precise device locations, source files or untrusted executable snippets in the plan. Store originals in the user's authorized workspace. Tool IDs describe *candidates*, not capabilities guaranteed to be available.
 
@@ -72,6 +82,8 @@ Use [GIS Decision Tree](agent-decision-tree.md) and [GIS Security Guardian](../s
 - 3D terrain & graticule in a desktop globe → gis-desktop-application-development + geospatial-web-mapping + terrain-hydrology-lidar + coordinate-reference-systems; separate visual vertical exaggeration from modifying source DEM elevation; test in running renderer and save/reload.
 - Weather-station GIS toolbox → arcgis-toolbox-engineering + remote-sensing-pipelines + geospatial-data-processing; test actual exported workbooks, schemas and both ET methods separately where requested.
 - HTTP geocoding or gazetteer → geospatial-api-integration + host map skill; verify quotas, LOD labels and data licensing.
+- QGIS Ribbon migration → establish plugin/source-fork/standalone delivery, then target platform owner + UI/UX + Command Audit; preserve command IDs, handlers, state and project behavior.
+- Standalone UI framework + QGIS processing → Desktop owns shell/packaging, QGIS Engine owns the processing boundary; keep framework identity unresolved until reviewed, and add flow/visualization support when requested.
 
 For all tasks, specify observable acceptance criteria **before** execution, then record test-level evidence using [T0–T4 rubric](../docs/QUALITY_BENCHMARK.md), [acceptance report](../templates/GIS_ACCEPTANCE_REPORT.md) and [evidence validator](../scripts/validate_evidence.py). A unit test is not a native desktop GUI test.
 

@@ -1,0 +1,32 @@
+[
+  {
+    "skill": "gis-development",
+    "exit_code": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "skill": "prompt-intent-orchestrator",
+    "exit_code": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "skill": "gis-code-discovery",
+    "exit_code": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "skill": "agent-development-journal",
+    "exit_code": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "skill": "completion-evidence",
+    "exit_code": 0,
+    "output": "Skill is valid!\n"
+  },
+  {
+    "skill": "geospatial-ai-agents",
+    "exit_code": 0,
+    "output": "Skill is valid!\n"
+  }
+]

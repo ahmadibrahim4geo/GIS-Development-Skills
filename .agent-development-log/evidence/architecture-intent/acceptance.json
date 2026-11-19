@@ -1,0 +1,49 @@
+{
+  "target": "Repository architecture-intent routing and UI/engine planning contracts",
+  "os": "Windows-11-10.0.26300-SP0",
+  "application_version": "2a0a9a23618e40218484ec8ae5848a481df51f1a + local changes",
+  "python_runtime": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "crs_units": "No native GIS data processed; CRS/units are explicit contract requirements",
+  "evidence_tier": "T1",
+  "commands_executed": [
+    "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -X utf8 -B scripts/validate_catalog.py",
+    "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -X utf8 -B scripts/validate_api_catalog.py",
+    "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -X utf8 -B scripts/validate_skill_pack.py",
+    "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -X utf8 -B scripts/build_manifest.py --check",
+    "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -X utf8 -B scripts/audit_skill_graph.py",
+    "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -X utf8 -B scripts/security_audit.py --root . --format text",
+    "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -X utf8 -B scripts/validate_architecture_flow.py examples/architecture-visualization/qgis-ribbon.flow.json",
+    "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -X utf8 -B scripts/intent_router.py --plan examples/architecture-visualization/qgis-ribbon.plan.json --workflow --format json",
+    "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -X utf8 -B -m unittest discover -s tests -v",
+    "git diff --check"
+  ],
+  "fixtures_used": [
+    "examples/architecture-visualization/qgis-ribbon.plan.json",
+    "examples/architecture-visualization/qgis-ribbon.flow.json",
+    "tests/test_architecture_intent.py",
+    "tests/test_code_discovery.py",
+    "tests/test_project_wizard_behavior.py"
+  ],
+  "expected_result": "Preserve architectural intent/contracts and reject incompatible implementations/incomplete declared flows without runtime or authorization claims",
+  "observed_result": "423 tests executed: 422 passed, one Windows symlink privilege skip; all 10 recorded checks passed; author panel byte-equivalent after Unicode readback",
+  "not_tested": [
+    "QGIS/UI.js native T2-T4",
+    "Archify rendering/browser visual inspection",
+    "External scanners",
+    "Publishing and installation outside the repository"
+  ],
+  "known_limitations": [
+    "Keyword signals are not semantic understanding",
+    "Declared source inventories/contracts require source review",
+    "Static flow consistency is not live execution or authenticated consent"
+  ],
+  "source_changes": "Routing/intake/compiler, flow validator, compatible code discovery, bilingual wizard and guidance, tests and Windows journal no-clobber compatibility; original GIS data unchanged",
+  "provenance_licensing": "Independent repository changes; no third-party source copied, downloaded or installed",
+  "status": "pass",
+  "native_runtime_verified": false,
+  "evidence_links": [
+    ".agent-development-log\\evidence\\architecture-intent\\checks.json",
+    ".agent-development-log\\evidence\\architecture-intent\\unit-tests.log",
+    "docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md"
+  ]
+}

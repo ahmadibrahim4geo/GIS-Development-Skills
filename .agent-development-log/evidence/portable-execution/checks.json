@@ -1,0 +1,83 @@
+[
+  {
+    "name": "catalog",
+    "command": [
+      "scripts/validate_catalog.py"
+    ],
+    "exit_code": 0,
+    "log": ".agent-development-log\\evidence\\portable-execution\\catalog.log"
+  },
+  {
+    "name": "api-catalog",
+    "command": [
+      "scripts/validate_api_catalog.py"
+    ],
+    "exit_code": 0,
+    "log": ".agent-development-log\\evidence\\portable-execution\\api-catalog.log"
+  },
+  {
+    "name": "skill-pack",
+    "command": [
+      "scripts/validate_skill_pack.py"
+    ],
+    "exit_code": 0,
+    "log": ".agent-development-log\\evidence\\portable-execution\\skill-pack.log"
+  },
+  {
+    "name": "manifest",
+    "command": [
+      "scripts/build_manifest.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "log": ".agent-development-log\\evidence\\portable-execution\\manifest.log"
+  },
+  {
+    "name": "security",
+    "command": [
+      "scripts/security_audit.py",
+      "--root",
+      "."
+    ],
+    "exit_code": 0,
+    "log": ".agent-development-log\\evidence\\portable-execution\\security.log"
+  },
+  {
+    "name": "skill-graph",
+    "command": [
+      "scripts/audit_skill_graph.py"
+    ],
+    "exit_code": 0,
+    "log": ".agent-development-log\\evidence\\portable-execution\\skill-graph.log"
+  },
+  {
+    "name": "router-regression",
+    "command": [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_evidence_contract.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "log": ".agent-development-log\\evidence\\portable-execution\\router-regression.log"
+  },
+  {
+    "name": "link-regression",
+    "command": [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_repository_internal_links.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "log": ".agent-development-log\\evidence\\portable-execution\\link-regression.log"
+  }
+]

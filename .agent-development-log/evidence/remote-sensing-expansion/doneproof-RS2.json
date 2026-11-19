@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "request_id": "REMOTE-SENSING-EXPANSION-001",
+  "task_id": "RS2",
+  "revision": "r1",
+  "overall_status": "verified",
+  "scope": "Index catalog, sensor band mappings, and threshold resources",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "Resources distinguish mathematical range, observed range, encoded storage, physical units and classification thresholds; formula constants and sensor applicability cite original/official sources.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/remote-sensing-indices.json",
+          "observed": "Read back 19 indices: mathematical ranges, typical observed field ranges, dimensionless units, and primary citations (Rouse 1974, Huete 2002, McFeeters 1996, Gao 1996, Hall 1995, etc.) verified.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "artifact_readback",
+          "reference": "references/remote-sensing-sensor-band-mappings.md",
+          "observed": "Read back sensor mappings: Landsat TM/ETM+/OLI, Sentinel-2 MSI, MODIS, HLS, Level-2 scaling (DN*0.0000275 - 0.2), and S2 L2A offsets documented.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "NDWI, NDSI and RVI ambiguity and Gao wavelength versus NDMI approximations are explicit; unknown thresholds remain unavailable for automatic classification.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/remote-sensing-indices.md",
+          "observed": "Read back alias collision table and threshold rules: NDWI McFeeters vs Gao, NDSI snow vs salinity, and RVI SAR vs optical Jordan simple ratio explicitly separated.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "artifact_readback",
+          "reference": "references/remote-sensing-threshold-profiles.json",
+          "observed": "Read back threshold profiles: all profiles marked approved_for_automatic_classification=false with mandatory caveats against universal use.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "Structured resources validate unique IDs, references, source/runtime verification and license/version metadata without duplicating existing catalogs.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests/test_remote_sensing_indices.py",
+          "observed": "test_indices_catalog_schema, test_source_registry_schema, and test_threshold_profiles_safety_guard passed with unique IDs and MIT license.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

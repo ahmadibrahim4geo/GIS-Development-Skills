@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "request_id": "UDS-MASTER-001",
+  "task_id": "UDS5",
+  "revision": "r5",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "c1",
+      "statement": "Simulation standards specified: solar/shadow astronomical calculations, stormwater runoff hydrology (D8 flow, runoff coefficients, gully spacing), and agent movement/traffic simulation (SUMO XML export and A/B Street multimodal concepts).",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/urban-simulation-engines.md",
+          "observed": "File exists and documents complete mathematical formulas for astronomical solar position, shadow projection, rational method stormwater runoff, D8 flow accumulation, gully spacing, and Eclipse SUMO XML network export schemas.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Hydrological modeling bridges GIS elevation grids with parametric road cross-fall and drainage gullies based on verified local stormwater engineering patterns.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/urban-simulation-engines.md",
+          "observed": "Hydrological modeling explicitly couples terrain DEM D8 flow with roadway cross-fall slopes, gutter spread width constraints, and gully spacing optimization based on SmartGully and Storm Drainage Calculation Dashboard patterns.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    }
+  ]
+}

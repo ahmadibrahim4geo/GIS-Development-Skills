@@ -97,6 +97,10 @@ def _write(path, content, overwrite=False):
             os.fsync(f.fileno())
         if overwrite:
             os.replace(temporary, path)
+        elif os.name == "nt":
+            # Windows rename is atomic and refuses an existing destination.
+            # Avoid hard links, which some Windows workspaces disallow.
+            os.rename(temporary, path)
         else:
             os.link(temporary, path)  # Exclusive: never replace canonical record.
             temporary.unlink()

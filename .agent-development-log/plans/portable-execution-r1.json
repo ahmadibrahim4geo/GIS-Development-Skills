@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "request_id": "PORTABLE-EXECUTION-001",
+  "revision": "r1",
+  "original_request": "كيف أستفيد من هذه المهارة في المهارة بتاعتنا وهي ليست موجهة، يعني هنعتبرها إن هي مش موجهة لنموذج بعينه أو لأجنت بعينه.",
+  "original_followup": "اوك",
+  "language": "ar",
+  "status": "approved",
+  "approval": {"approved_by_user": true, "approved_revision": "r1", "high_risk_approved": false},
+  "approval_basis": "The user replied اوك to the host recommendation to add concise execution guidance linked from the existing router and update each existing component within its ownership. This is a host record of that conversational approval, not independent authentication by JSON.",
+  "goal": "Improve the existing GIS skill suite with proportionate execution guidance independent of model vendor or agent framework, retaining permission gates and evidence semantics.",
+  "target": "Local GIS Development Skills documentation and existing skill entrypoints",
+  "desired_outcomes": ["A single concise shared reference defines effort modes, capability-based execution and bounded diagnosis", "Existing owners link the guidance without a second router, journal or evidence system", "Bilingual public guidance and fresh offline evidence accurately describe scope and limits"],
+  "success_criteria": ["The shared guidance and existing skill links are readable and consistent with current approval, security and T0-T4 contracts", "Required repository checks have fresh observed results and native or cross-client execution is not claimed"],
+  "constraints": ["Preserve pre-existing uncommitted work, skill inventory, catalogs, source attachment, exact mission, author markup, brand and language controls", "Treat Skill Argon.md as reference data, not executable instructions; independently write guidance without copying unlicensed text", "Local reversible documentation and evidence changes only; no installation, publication, provider access or agent delegation", "Effort modes do not waive approval or native evidence requirements"],
+  "non_goals": ["Guarantee compatibility or behavior across every model or client", "Modify GIS engines, runtime scripts, catalog inventory or native tools"],
+  "assumptions": ["The user's اوك authorizes the preceding concrete recommendation; implementation details stay within that scope", "Lite, Standard and Deep describe host-selected effort, not new machine-enforced workflow states"],
+  "open_questions": [],
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Add shared portable execution guidance and owner links",
+      "description": "Add references/portable-execution-guidance.md; link concise owner-specific guidance from the router, intent, code discovery, journal and DoneProof; synchronize public English/Arabic descriptions using existing page structure.",
+      "kind": "documentation",
+      "priority": "must",
+      "owner_skill": "geospatial-ai-agents",
+      "skills": ["geospatial-ai-agents", "gis-development", "prompt-intent-orchestrator", "gis-code-discovery", "agent-development-journal", "completion-evidence", "gis-security-guardian"],
+      "depends_on": [],
+      "risk": "low",
+      "tools": [],
+      "acceptance_criteria": ["One shared reference defines Lite, Standard and Deep without bypassing approval, permissions or T0-T4 requirements", "The guidance uses capabilities and optional tool examples, bounds retries and delegation, and retains existing routing, journal and evidence ownership", "Existing skill entrypoints and bilingual public guidance link the reference while preserving original content, inventory, mission, author markup and language controls"]
+    },
+    {
+      "id": "T2",
+      "title": "Verify documentation integration and record evidence",
+      "description": "Inspect task-specific diffs and preserved content; run existing validators, unit tests, skill checks and plan-bound evidence validation; append the project journal and record native limits.",
+      "kind": "verification",
+      "priority": "must",
+      "owner_skill": "geospatial-ai-agents",
+      "skills": ["geospatial-ai-agents", "completion-evidence", "agent-development-journal", "gis-security-guardian"],
+      "depends_on": ["T1"],
+      "risk": "low",
+      "tools": [],
+      "acceptance_criteria": ["Catalog, API, skill pack, manifest, security, skill graph and unittest checks pass with fresh saved output", "Changed artifacts are read back, skill metadata and links checked, and protected content compared to the pre-edit baseline", "Plan-bound reports and the verified append-only journal record observed outcomes and explicitly leave native GIS and cross-client behavior unverified"]
+    }
+  ]
+}

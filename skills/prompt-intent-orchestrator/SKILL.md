@@ -18,6 +18,8 @@ Do not start with code generation, engine installation or a skill keyword match.
 
 Next, load the [goal-first workflow protocol](../../references/intent-orchestration-workflow.md) and [repository-wide execution contract](../../references/repository-wide-skill-orchestration.md). Use the existing GIS Router to delegate domain tasks, one accountable owner per deliverable, Security Guardian for every execution path, and the Development Journal for verified actions. Approval gates apply to consequential changes, not simple factual/read-only questions.
 
+**Preserve architectural intent:** "حوّل أدوات QGIS إلى Ribbon" and "build on UI.js" require identifying the source host, delivery target, intended UI change and protected command/data behavior. Distinguish UI reorganization, UI shell migration, engine integration and engine replacement using the [UI/engine architecture contract](../../references/ui-engine-architecture-contract.md). A QGIS mention does not establish plugin versus source fork versus standalone delivery; an unknown `UI.js` remains unresolved until its identity and role are inspected. Keep UI framework, map renderer and geospatial engine separate in the optional task `architecture` declaration. Lexical hints flag review needs; the hosting AI still interprets the requirement and presents it faithfully.
+
 **Executable offline aid, not autonomous AI:** use `python scripts/intent_router.py --plan examples/intent-orchestrator/example-plan.json --workflow --format json` to compile a goal+outcome brief and task dependencies into a read-only workflow preview. It will block missing goals, unknown owners, cycles and an unapproved plan when `--gate` is requested. The host must still semantically interpret and authenticate authorization; `--gate` never starts a tool.
 
 ## Operating sequence — Intake → Understand → Review → Route → Preflight → Execute → Verify
@@ -32,6 +34,7 @@ Next, load the [goal-first workflow protocol](../../references/intent-orchestrat
 
 ### Interaction policy
 
+- Choose effort with the [portable execution guidance](../../references/portable-execution-guidance.md). Lite/Standard/Deep are advisory modes, not approval substitutes or new workflow states; preserve existing scope-specific authorization.
 - For explanatory or clearly scoped read-only requests, provide a direct answer or lightweight interpreted preview; do not force a long planning ceremony.
 - For multi-step development, ambiguous requirements or any consequential side effect, show the plan for approval **before making the requested changes**. The host's authenticated approval signal is authoritative; a boolean in user-provided JSON is **not** proof of authorization.
 - Do not repeatedly ask for details already provided. If safe progress is possible, draft the best feasible plan and mark assumptions; block only the unsafe or impossible portion.
@@ -59,7 +62,10 @@ For explicit visual explanations or reviewed multi-component design/diagnosis/st
 | KML/KMZ import and exact style retention | KML/KMZ Engineering + Cartography, with Security |
 | Earth-style desktop program, terrain exaggeration, geodetic grid | Desktop GIS + Web Mapping + Terrain + CRS, with Security |
 | ArcGIS Pro Python toolbox, ET calculations | ArcGIS Toolbox + Remote Sensing + Data Processing, with Security |
+| Move existing QGIS tools into a Ribbon | Determine plugin/fork/standalone target first; target platform owner + UI/UX + proactive Command Audit, with Security |
+| Connect a UI framework such as UI.js to QGIS processing | Verify framework identity; Desktop owns a standalone shell, QGIS Engine owns its adapter; Data Flow/Visualization for requested flow explanation, with Security |
 | World Gazetteer search/viewport labels | API Integration + Desktop or Web Mapping + [gazetteer guide](../../references/world-gazetteer-reference-layer.md), with Security |
+| Standalone CAD/GIS desktop, parametric urban design, or AI copilot | Desktop Development + Data Processing + Terrain/Hydrology + AI Agents, with Security |
 | GeoAI-based automation / many operations | Geospatial AI Agents + relevant domain specialists, with Security |
 
 Prioritize existing skills and approved tools over generating redundant plugins. Never confuse a plan preview, mock, static HTML display or T1 test with working production integration.

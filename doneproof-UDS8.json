@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "request_id": "UDS-MASTER-001",
+  "task_id": "UDS8",
+  "revision": "r5",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "c1",
+      "statement": "Existing skills link to new progressive references; intent_router.py recognizes desktop CAD/GIS architecture, parametric modeling, DAG dependencies, reversible CAD copilot, and multi-physics simulation queries in Arabic and English.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "skills/*/SKILL.md; scripts/intent_router.py --text",
+          "observed": "Progressive references linked into targeted skills; intent_router.py correctly routes bilingual CAD, parametric, simulation, and copilot prompts with exit code 0.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Bilingual READMEs and CHANGELOG updated; character length of skills/gis-development/SKILL.md strictly maintained < 5500 chars; author panel and branding preserved.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "scripts/validate_skill_pack.py; skills/gis-development/SKILL.md",
+          "observed": "README.md, README.ar.md, and CHANGELOG.md updated; skills/gis-development/SKILL.md character count 5494 (<5500 limit); author panel and branding preserved; skill pack valid.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    }
+  ]
+}

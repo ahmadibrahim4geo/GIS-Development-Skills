@@ -1,0 +1,164 @@
+{
+  "request_id": "ARCH-INTENT-001",
+  "revision": "r1",
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "os": "Windows-11-10.0.26300-SP0",
+  "native_gis_execution": "NOT RUN",
+  "archify_render": "NOT RUN",
+  "checks": [
+    {
+      "name": "catalog",
+      "command": [
+        "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_catalog.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.081,
+      "log": ".agent-development-log\\evidence\\architecture-intent\\catalog.log"
+    },
+    {
+      "name": "api-catalog",
+      "command": [
+        "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_api_catalog.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.089,
+      "log": ".agent-development-log\\evidence\\architecture-intent\\api-catalog.log"
+    },
+    {
+      "name": "skill-pack",
+      "command": [
+        "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_skill_pack.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 1.068,
+      "log": ".agent-development-log\\evidence\\architecture-intent\\skill-pack.log"
+    },
+    {
+      "name": "manifest",
+      "command": [
+        "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/build_manifest.py",
+        "--check"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.151,
+      "log": ".agent-development-log\\evidence\\architecture-intent\\manifest.log"
+    },
+    {
+      "name": "skill-flow",
+      "command": [
+        "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/audit_skill_graph.py"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.13,
+      "log": ".agent-development-log\\evidence\\architecture-intent\\skill-flow.log"
+    },
+    {
+      "name": "security",
+      "command": [
+        "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/security_audit.py",
+        "--root",
+        ".",
+        "--format",
+        "text"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.32,
+      "log": ".agent-development-log\\evidence\\architecture-intent\\security.log"
+    },
+    {
+      "name": "architecture-flow",
+      "command": [
+        "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/validate_architecture_flow.py",
+        "examples/architecture-visualization/qgis-ribbon.flow.json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.109,
+      "log": ".agent-development-log\\evidence\\architecture-intent\\architecture-flow.log"
+    },
+    {
+      "name": "architecture-plan",
+      "command": [
+        "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "scripts/intent_router.py",
+        "--plan",
+        "examples/architecture-visualization/qgis-ribbon.plan.json",
+        "--workflow",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.114,
+      "log": ".agent-development-log\\evidence\\architecture-intent\\architecture-plan.log"
+    },
+    {
+      "name": "unit-tests",
+      "command": [
+        "C:\\Users\\ahmad\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "seconds": 18.012,
+      "log": ".agent-development-log\\evidence\\architecture-intent\\unit-tests.log"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "seconds": 0.068,
+      "log": ".agent-development-log\\evidence\\architecture-intent\\diff-check.log"
+    }
+  ]
+}

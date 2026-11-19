@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "request_id": "REMOTE-SENSING-EXPANSION-001",
+  "task_id": "RS1",
+  "revision": "r1",
+  "overall_status": "verified",
+  "scope": "Brief gap audit and baseline verification",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "Coverage matrix covers every substantive brief section and identifies existing versus missing behavior.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "manual_review",
+          "reference": "D:/My Software/Skills/REMOTE_SENSING_SKILLS_AGENT_IMPLEMENTATION_BRIEF.md",
+          "observed": "Audited sections 0 to 10 against skills/remote-sensing-pipelines and references; identified gaps in spectral index catalog, Level-2 sensor scaling, contextual threshold profiles, and dynamic scientific discovery.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Source records distinguish reviewed, unavailable, stale and unverified content with scoped dates and license status; baseline protects earlier work.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/remote-sensing-index-source-registry.json",
+          "observed": "Curated source registry created with checked_on dates, authoritative_for vs not_authoritative_for scopes, access models and license status; pre-existing uncommitted work protected.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

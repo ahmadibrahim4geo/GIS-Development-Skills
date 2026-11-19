@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "sequence": 65,
+  "timestamp_utc": "2026-11-19T03:34:56+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Audit and tune desktop CAD/GIS skills and intent routing contracts",
+  "details": "Reviewed gis-desktop-application-development, prompt-intent-orchestrator, and gis-development skills. Upgraded frontmatter description to include C++20/Qt6 Widgets, 2D CAD drafting, 3D viewports, and parametric urban modeling. Converted backtick references to clickable Markdown links and integrated all 10 new architectural references. Expanded engine selection table with Clipper2, earcut, SARibbon, IfcOpenShell, and libOpenDRIVE. Added Desktop CAD/GIS Invariants section (Local Render Origin, QUndoStack reversibility, C++ JSON Schema validation gate, relational DAG cascade, and LockCanvasZoom). Verified 455 tests passing and router character constraint < 5500 preserved.",
+  "references": [],
+  "task_id": "",
+  "plan_revision": "",
+  "changed_files": [
+    "skills/gis-desktop-application-development/SKILL.md",
+    "skills/gis-development/SKILL.md",
+    "skills/prompt-intent-orchestrator/SKILL.md"
+  ],
+  "tests": [
+    "python -m unittest discover -s tests -v"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "5bef1e0f3f739cbdc5333eb53e21e1b85f63b4f559e532ee66d17ec2cbfddaa3",
+  "hash": "822f5af4519c958c6984461119ef01ca6f159833dd579d417d3f6f1dda51b2e7"
+}

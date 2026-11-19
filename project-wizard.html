@@ -16,6 +16,21 @@
   <option value="ux">UI/UX Design &amp; Testing</option>
   <option value="all">All four quality specialists</option>
 </select>
+<label for="architectureChange" id="architectureLabel">What changes? (optional)</label>
+<select id="architectureChange" aria-describedby="architectureHint">
+  <option value="none">No UI or engine architecture change</option>
+  <option value="ui-reorganization">Reorganize tools into menus or a Ribbon</option>
+  <option value="ui-shell-migration">Move to a different UI shell</option>
+  <option value="engine-integration">Connect a GIS engine to the interface</option>
+  <option value="engine-replacement">Replace the GIS engine</option>
+</select>
+<p id="architectureHint" class="privacy-note">Choose the intended change explicitly. Component names remain unverified until the agent reviews the project; this form never installs or replaces an engine.</p>
+<div id="architectureSettings" hidden>
+  <label for="architectureSource" id="architectureSourceLabel">Existing application or host (if known)</label>
+  <textarea id="architectureSource" rows="1" maxlength="240" dir="auto" placeholder="For example, my existing QGIS plugin"></textarea>
+  <label for="architectureUi" id="architectureUiLabel">Named UI component (if requested)</label>
+  <textarea id="architectureUi" rows="1" maxlength="200" dir="auto" placeholder="For example, UI.js; leave blank if undecided"></textarea>
+</div>
 <label for="deviceNeeds" id="deviceLabel">System and device capabilities</label>
 <select id="deviceNeeds"><option value="none">No OS/device integration</option><option value="time">Clock and time zone</option><option value="location">Location and GPS permission</option><option value="hardware">Files, sensors and hardware</option><option value="all">Multiple device capabilities</option></select>
 <div id="mobileSettings" hidden><label for="mobilePlatform" id="mobilePlatformLabel">Mobile platforms</label><select id="mobilePlatform"><option value="android">Android only</option><option value="ios">iOS only</option><option value="both">Android + iOS</option></select><label for="mobileNetwork" id="mobileNetworkLabel">Offline and synchronization</label><select id="mobileNetwork"><option value="local">Offline local data only</option><option value="offline-sync">Offline-first with verified server sync</option><option value="online">Online-first with offline failure handling</option></select><label for="mobileSignIn" id="mobileSignInLabel">Authentication</label><select id="mobileSignIn"><option value="guest">Local/guest (no online sign-in)</option><option value="optional">Optional secure sign-in</option><option value="required">Verified sign-in required for remote sync</option></select></div><label for="details" id="detailsLabel">What should your project do?</label><textarea id="details" rows="4" maxlength="4000" placeholder="Describe the desired features"></textarea>
@@ -24,7 +39,7 @@
 <button id="generate" type="button">Generate plan</button><button id="download" type="button" disabled>Download Markdown</button><button id="downloadJson" type="button" disabled>Download workflow JSON</button>
 <p id="jsonHint" class="privacy-note">To export a draft JSON workflow, fill in both the goal and observable success criteria. Export is not approval or execution.</p>
 <p id="status" role="status" aria-live="polite">Choose a project type and generate a plan.</p><h2 id="resultLabel">Project plan</h2><pre id="result" aria-live="polite"></pre>
-<p class="resources"><a id="workflowLink" href="references/repository-wide-skill-orchestration.md">Prompt-to-workflow guide</a> · <a id="roadmapLink" href="docs/PROJECT_WIZARD_PLAN.md">Implementation roadmap</a> · <a id="kmlLink" href="skills/kml-kmz-engineering/SKILL.md">KML/KMZ skill</a> · <a id="reliabilityLink" href="docs/PERFORMANCE_RELIABILITY.md">Reliability guide</a></p><p id="wizardPrivacy" class="privacy-note">Plans are generated locally. No AI is executed and no project text is uploaded.</p></main>
+<p class="resources"><a id="workflowLink" href="references/repository-wide-skill-orchestration.md">Prompt-to-workflow guide</a> · <a id="architectureLink" href="references/ui-engine-architecture-contract.md">UI and engine planning</a> · <a id="roadmapLink" href="docs/PROJECT_WIZARD_PLAN.md">Implementation roadmap</a> · <a id="kmlLink" href="skills/kml-kmz-engineering/SKILL.md">KML/KMZ skill</a> · <a id="reliabilityLink" href="docs/PERFORMANCE_RELIABILITY.md">Reliability guide</a></p><p id="wizardPrivacy" class="privacy-note">Plans are generated locally. No AI is executed and no project text is uploaded.</p></main>
 <script>
 const $=id=>document.getElementById(id);let ar=false,output='',structuredPlan=null;
 const dict={en:{heading:'GIS Project Wizard',intro:'Build a free-first, testable GIS project plan.',typeLabel:'Project type',localeLabel:'Application languages',filesLabel:'KML/KMZ support',licenseLabel:'Licensing preference',detailsLabel:'What should your project do?',qualityLabel:'Optional GIS quality workflow',goalLabel:'Intended user outcome',successLabel:'Success criteria',goalPlaceholder:'Describe the final result you need',successPlaceholder:'Describe the observable tests or results',generate:'Generate plan',download:'Download Markdown',downloadJson:'Download workflow JSON',jsonHint:'Fill in the goal and success criteria to download draft JSON. This never approves or executes commands.',resultLabel:'Project plan',lang:'العربية',placeholder:'Describe the desired features',yes:'Required',no:'Not required',free:'Free/open-source components first',host:'Existing commercial GIS host allowed'},ar:{heading:'معالج مشاريع نظم المعلومات الجغرافية',intro:'أنشئ خطة مشروع قابلة للاختبار مع إعطاء الأولوية للمكونات المجانية.',typeLabel:'نوع المشروع',localeLabel:'لغات التطبيق',filesLabel:'دعم KML وKMZ',licenseLabel:'تفضيل الترخيص',detailsLabel:'ما الوظائف المطلوبة في المشروع؟',qualityLabel:'مسار الجودة الإضافي للمشروع',goalLabel:'الهدف النهائي الذي تريد تحقيقه',successLabel:'كيف نتحقق من نجاح العمل؟',goalPlaceholder:'صف النتيجة النهائية المطلوبة',successPlaceholder:'اكتب الاختبارات أو المخرجات التي تثبت النجاح',generate:'إنشاء الخطة',download:'تنزيل Markdown',downloadJson:'تنزيل خطة Workflow بصيغة JSON',jsonHint:'اكتب الهدف ومعايير النجاح لتنزيل خطة JSON كمسودة؛ لا تُعتبر موافقة ولا تنفذ أوامر.',resultLabel:'خطة المشروع',lang:'English',placeholder:'اكتب الوظائف المطلوبة',yes:'مطلوب',no:'غير مطلوب',free:'المكونات المجانية ومفتوحة المصدر أولاً',host:'السماح ببرنامج GIS تجاري متوفر'}};
@@ -45,7 +60,20 @@ const qualityRoutes={
  flow:['gis-data-flow-diagnostics'],ux:['gis-ui-ux-design-testing'],
  all:['gis-ui-command-audit','gis-desktop-e2e-testing','gis-data-flow-diagnostics','gis-ui-ux-design-testing']
 };
+const architectureNames={
+ en:{none:'No UI or engine architecture change','ui-reorganization':'Reorganize tools into menus or a Ribbon','ui-shell-migration':'Move to a different UI shell','engine-integration':'Connect a GIS engine to the interface','engine-replacement':'Replace the GIS engine'},
+ ar:{none:'لا تغيير في بنية الواجهة أو المحرك','ui-reorganization':'إعادة تنظيم الأدوات في قوائم أو شريط Ribbon','ui-shell-migration':'الانتقال إلى إطار واجهة مختلف','engine-integration':'ربط محرك GIS بالواجهة','engine-replacement':'استبدال محرك GIS'}
+};
+const architectureRoutes={
+ none:[],
+ 'ui-reorganization':['gis-ui-ux-design-testing','gis-ui-command-audit'],
+ 'ui-shell-migration':['gis-ui-ux-design-testing','gis-ui-command-audit'],
+ 'engine-integration':['gis-data-flow-diagnostics'],
+ 'engine-replacement':['gis-data-flow-diagnostics']
+};
 const skills={mobile:'gis-mobile-application-development',desktop:'gis-desktop-application-development',pro:'arcgis-toolbox-engineering',arcmap:'arcgis-toolbox-engineering',dual:'arcgis-toolbox-engineering',qgis:'qgis-plugin-development','qgis-engine':'qgis-engine-integration',web:'geospatial-web-mapping',remote:'remote-sensing-pipelines',database:'spatial-databases',geoai:'geospatial-ai-agents'};
+Object.assign(dict.en,{architectureLabel:'What changes? (optional)',architectureSourceLabel:'Existing application or host (if known)',architectureUiLabel:'Named UI component (if requested)',architectureHint:'Choose the intended change explicitly. Component names remain unverified until the agent reviews the project; this form never installs or replaces an engine.',architectureSourcePlaceholder:'For example, my existing QGIS plugin',architectureUiPlaceholder:'For example, UI.js; leave blank if undecided',architectureLink:'UI and engine planning'});
+Object.assign(dict.ar,{architectureLabel:'ما التغيير المطلوب؟ (اختياري)',architectureSourceLabel:'التطبيق أو البيئة الحالية (إن كانت معروفة)',architectureUiLabel:'مكوّن الواجهة المطلوب بالاسم (إن وجد)',architectureHint:'اختر التغيير المقصود صراحةً. تظل أسماء المكونات غير متحققة حتى يفحص الوكيل المشروع؛ لا يثبّت هذا النموذج محركًا ولا يستبدله.',architectureSourcePlaceholder:'مثال: إضافة QGIS الحالية لدي',architectureUiPlaceholder:'مثال: UI.js؛ اتركه فارغًا إن لم تحسم الاختيار',architectureLink:'تخطيط الواجهة والمحرك'});
 Object.assign(dict.en,{mobilePlatformLabel:'Mobile platforms',mobileNetworkLabel:'Offline and synchronization',mobileSignInLabel:'Authentication',deviceLabel:'System and device capabilities',homeLink:'Back to GIS Skills homepage',workflowLink:'Prompt-to-workflow guide',roadmapLink:'Implementation roadmap',kmlLink:'KML/KMZ skill',reliabilityLink:'Reliability guide',wizardPrivacy:'Plans are generated locally. No AI is executed and no project text is uploaded.',statusInitial:'Choose a project type and generate a plan.',statusDirty:'Inputs changed. Regenerate the plan before downloading.',statusReady:'Plan generated. Review it before implementation.'});
 Object.assign(dict.ar,{mobilePlatformLabel:'أنظمة الموبايل',mobileNetworkLabel:'العمل دون اتصال والمزامنة',mobileSignInLabel:'تسجيل الدخول',deviceLabel:'قدرات الجهاز وصلاحيات النظام',homeLink:'العودة إلى الصفحة الرئيسية',workflowLink:'دليل تدفق الطلب إلى التنفيذ',roadmapLink:'دليل تطوير المشروع',kmlLink:'مهارة KML/KMZ',reliabilityLink:'دليل الأداء والثبات',wizardPrivacy:'إنشاء الخطة محليًا دون إرسال المدخلات إلى خادم أو تشغيل وكيل ذكاء اصطناعي.',statusInitial:'اختر نوع المشروع ثم أنشئ الخطة.',statusDirty:'تغيرت المدخلات. أنشئ الخطة من جديد قبل تنزيلها.',statusReady:'تم إنشاء الخطة. راجعها قبل التنفيذ.'});
 function translate(){
@@ -55,13 +83,16 @@ function translate(){
   Object.keys(t).forEach(k=>{if(k!=='placeholder'&&!k.startsWith('status')&&$(k))$(k).textContent=t[k]});
   $('details').placeholder=t.placeholder;
   $('mobileSettings').hidden=$('type').value!=='mobile';
+  $('architectureSettings').hidden=$('architectureChange').value==='none';
+  $('architectureSource').placeholder=t.architectureSourcePlaceholder;
+  $('architectureUi').placeholder=t.architectureUiPlaceholder;
   for(const [id,key] of [['mobilePlatform','platform'],['mobileNetwork','network'],['mobileSignIn','signIn']]){
     for(const option of $(id).options)option.textContent=mobileOptions[key][lang][option.value];
   }
   $('goal').placeholder=t.goalPlaceholder;
   $('success').placeholder=t.successPlaceholder;
-  for(const id of ['type','locale','files','license','qualityFocus','deviceNeeds']){
-    const data=id==='type'?typeNames[lang]:id==='locale'?localeLabels[lang]:id==='qualityFocus'?qualityLabels[lang]:id==='deviceNeeds'?deviceNames[lang]:t;
+  for(const id of ['type','locale','files','license','qualityFocus','deviceNeeds','architectureChange']){
+    const data=id==='type'?typeNames[lang]:id==='locale'?localeLabels[lang]:id==='qualityFocus'?qualityLabels[lang]:id==='deviceNeeds'?deviceNames[lang]:id==='architectureChange'?architectureNames[lang]:t;
     for(const option of $(id).options)option.textContent=(id==='qualityFocus'&&$('type').value==='mobile'&&option.value==='e2e')?(lang==='ar'?'اختبار الأجهزة الفعلية Android/iOS':'Native Android/iOS device testing'):data[option.value];
   }
   $('status').textContent=output?t.statusReady:t.statusInitial;
@@ -80,6 +111,11 @@ function generatePlan(){
   const mobilePlatform=$('mobilePlatform').value,mobileNetwork=$('mobileNetwork').value,mobileSignIn=$('mobileSignIn').value;
   const qualityFocus=$('qualityFocus').value;
   const qualitySkills=(qualityRoutes[qualityFocus]||[]).filter(x=>type!=='mobile'||x!=='gis-desktop-e2e-testing');
+  const architectureChange=$('architectureChange').value;
+  const hasArchitecture=architectureChange!=='none';
+  const architectureSource=$('architectureSource').value.trim();
+  const architectureUi=$('architectureUi').value.trim();
+  const architectureSkills=architectureRoutes[architectureChange]||[];
   const requirement=$('details').value.trim();
   const goal=$('goal').value.trim();
   const success=$('success').value.trim();
@@ -87,6 +123,7 @@ function generatePlan(){
   const successSpec='> '+(success||(ar?'معايير النجاح غير محددة؛ يجب إعداد نتائج واختبارات قابلة للملاحظة.':'Success criteria not specified. Define observable output and tests before execution.')).replace(/\r?\n/g,'\n> ');
   const requirements='> '+(requirement||(ar?'التفاصيل لم تحدد بعد.':'Requirements not specified yet.')).replace(/\r?\n/g,'\n> ');
   const references=['skills/prompt-intent-orchestrator/SKILL.md','references/repository-wide-skill-orchestration.md','skills/gis-development/SKILL.md','skills/'+skills[type]+'/SKILL.md','skills/gis-security-guardian/SKILL.md','references/agent-decision-tree.md','docs/PERFORMANCE_RELIABILITY.md'];
+  if(hasArchitecture)references.push('references/ui-engine-architecture-contract.md',...architectureSkills.map(x=>'skills/'+x+'/SKILL.md'));
   if(deviceNeeds!=='none')references.push('skills/system-capabilities-and-permissions/SKILL.md','references/system-capabilities-permissions.md','references/system-skill-interop.md');
   if(deviceNeeds==='location'||deviceNeeds==='all')references.push('skills/gis-device-context/SKILL.md');
   if(locale!=='en')references.push('skills/gis-internationalization-arabic/SKILL.md');
@@ -126,6 +163,14 @@ function generatePlan(){
   const local=locale==='en'?(ar?'واجهة إنجليزية LTR مع موارد قابلة للتعريب.':'English LTR; keep resources localization-ready.'):(ar?'اختبار واجهة RTL/Unicode وملصقات الخرائط العربية والتنسيق المختلط.':'Test Arabic RTL/BiDi, Unicode attributes and map labels, including mixed scripts.');
   const license=commercial?(ar?'استخدام البرامج التجارية المتوفرة يتطلب التحقق من الترخيص، مع عرض بديل مجاني عند الإمكان.':'Commercial host allowed with verified license; suggest free alternatives when feasible.'):(ar?'ابدأ بالمكتبات والبيانات المجانية والمفتوحة، وراجع تراخيص كل مصدر.':'Prioritize free/open-source libraries and permitted data; check each license.');
   const fileSpec=kml?(ar?'حافظ على رموز وألوان وأنماط ومجلدات وارتفاعات KML/KMZ، وأمّن XML/ZIP واختبر الاستيراد والتصدير وإعادة الفتح.':'Secure ZIP/XML and preserve original KML/KMZ styles, icons, folders and altitude; test import/export/reopen fidelity.'):(ar?'دعم KML/KMZ غير مطلوب حاليًا.':'KML/KMZ not requested for this project.');
+  const architectureSpec=hasArchitecture?[
+    architectureNames[ar?'ar':'en'][architectureChange],
+    (ar?'البيئة الحالية: ':'Existing host: ')+(architectureSource||(ar?'غير محسومة':'unresolved')),
+    (ar?'بيئة التسليم المختارة: ':'Selected delivery target: ')+typeNames[ar?'ar':'en'][type],
+    (ar?'مكوّن الواجهة المطلوب: ':'Requested UI component: ')+(architectureUi||(ar?'غير محسوم':'unresolved')),
+    ar?'هوية مكوّن الواجهة ومحرك العرض ومحرك GIS غير متحققة؛ افحص المصدر والإصدار والترخيص وحدود الربط قبل التنفيذ.':'UI component, renderer and GIS engine identities are unverified; inspect source, version, license and integration boundaries before implementation.',
+    ar?'حافظ على البيانات الأصلية وسلوك الأوامر داخل النطاق؛ تتطلب تغييرات الواجهة والمحرك خطة مراجعة.':'Preserve original data and in-scope command behavior; UI and engine changes require a reviewed plan.'
+  ].map(line=>'> '+line.replace(/\r?\n/g,'\n> ')).join('\n'):'';
   const checks=ar?[
     '- تحقق من CRS وترتيب المحاور والوحدات وNoData وسلامة الهندسة.',
     '- اختبر مدخلات تالفة وملفات صغيرة وكبيرة وإلغاء العمليات والتعافي.',
@@ -153,6 +198,7 @@ function generatePlan(){
     '## OS/device capability and permission scope',deviceSpec,'','## Agent instructions','Interpret and review the user goal, then route through the GIS skills to a dependency-ordered workflow. Never execute directly from the prompt; this plan is not authenticated approval or host authorization:',...list,
     '','## Verification status','This is a proposed plan, not evidence of project completion.'
   ];
+  if(hasArchitecture)sections.push('',ar?'## التغيير المعماري (مسودة)':'## Architecture change (draft)',architectureSpec);
   if(type==='mobile')sections.push('',ar?'## تنفيذ واختبارات GIS Mobile':'## Mobile GIS implementation and native testing',mobileSpec,ar?'اختبارات Android وiOS وGPS وتسجيل الدخول والمزامنة على الأجهزة الفعلية لا يمكن إثباتها من المتصفح.':'Native Android/iOS, GNSS, sign-in and sync checks are NOT RUN without matching device, app build and server evidence.');
   // Machine-readable handoff uses the exact offline Intent Router v1 schema.
   // No browser-side language model, authorization, network access or tool dispatch.
@@ -162,6 +208,7 @@ function generatePlan(){
   if(goal && outcomes.length){
     const owner=skills[type];
     const selected=[owner,'gis-security-guardian'];
+    selected.push(...architectureSkills);
     if(qualitySkills.length)selected.push(...qualitySkills);
     if(deviceNeeds!=='none')selected.push('system-capabilities-and-permissions');
     if(deviceNeeds==='location'||deviceNeeds==='all')selected.push('gis-device-context');
@@ -183,10 +230,10 @@ function generatePlan(){
       target:typeNames.en[type],
       desired_outcomes:[goal],
       success_criteria:outcomes,
-      constraints:[license,local,fileSpec,deviceSpec,...(type==='mobile'?[mobileSpec]:[])],
+      constraints:[license,local,fileSpec,deviceSpec,...(hasArchitecture?[architectureSpec]:[]),...(type==='mobile'?[mobileSpec]:[])],
       non_goals:[],
       assumptions:['Draft, not AI-verified: suggested technologies, GIS host version and dependencies need actual validation.','Assign a unique request ID and confirm the entire goal with the user before approval.'],
-      open_questions:[...(requirement?['Confirm GIS runtime versions, original data, CRS/units and project scope before execution.']:['Describe project features, input/output GIS data, target GIS runtime and CRS before implementation.']),...(mobileAuthConflict?['Resolve local-only versus remote authenticated sign-in conflict before implementation.']:[])],
+      open_questions:[...(requirement?['Confirm GIS runtime versions, original data, CRS/units and project scope before execution.']:['Describe project features, input/output GIS data, target GIS runtime and CRS before implementation.']),...(hasArchitecture?['Inspect source/target host compatibility, UI component source/version/license, renderer and GIS engine identities, command inventory and flow contracts before dependent implementation.']:[]),...(mobileAuthConflict?['Resolve local-only versus remote authenticated sign-in conflict before implementation.']:[])],
       tasks:[
         {id:'T1',title:'Review goal and architecture',description:'Confirm the user goal, requirements, platform, GIS engine, data contracts and licensing.',
          priority:'must',kind:'planning',owner_skill:owner,skills:specialisms,depends_on:[],risk:'low',
@@ -199,14 +246,27 @@ function generatePlan(){
          acceptance_criteria:['Provide observed test evidence for the agreed success criteria.','Report blocked and NOT RUN native checks, change history and rollback information.'],tools:[]}
       ]
     };
+    if(hasArchitecture){
+      const unresolved=(name,role)=>({name:name||'unresolved',role,status:'unresolved',source_ref:null,version:null});
+      structuredPlan.tasks[0].acceptance_criteria.push('Resolve architecture identities and source/target compatibility; inspect command inventory and flow contracts before dependent implementation.');
+      structuredPlan.tasks[1].architecture={
+        schema_version:'1.0',change_type:architectureChange,
+        source_host:architectureSource||'unresolved',target_host:typeNames.en[type],
+        ui_framework:unresolved(architectureUi,'ui-shell'),
+        renderer:unresolved(null,'map-renderer'),gis_engine:unresolved(null,'geospatial-engine'),
+        integration_mode:'unresolved',
+        preserved_invariants:['Preserve original GIS data and project semantics.','Preserve in-scope command behavior; review exclusions and engine changes before implementation.'],
+        command_inventory_ref:null,flow_spec_ref:null
+      };
+    }
   }
   $('downloadJson').disabled=!structuredPlan;
   output=sections.join('\n');$('result').textContent=output;$('download').disabled=false;
   $('status').textContent=dict[ar?'ar':'en'].statusReady;
 }
 $('lang').onclick=()=>{const previous=Boolean(output);ar=!ar;translate();if(previous)generatePlan()};
-for(const id of ['type','locale','files','license','qualityFocus','deviceNeeds','mobilePlatform','mobileNetwork','mobileSignIn'])$(id).addEventListener('change',()=>{if(id==='type')translate();invalidate();});
-for(const id of ['goal','success'])$(id).addEventListener('input',invalidate);
+for(const id of ['type','locale','files','license','qualityFocus','deviceNeeds','mobilePlatform','mobileNetwork','mobileSignIn','architectureChange'])$(id).addEventListener('change',()=>{if(id==='type'||id==='architectureChange')translate();invalidate();});
+for(const id of ['goal','success','architectureSource','architectureUi'])$(id).addEventListener('input',invalidate);
 $('details').addEventListener('input',invalidate);
 $('generate').onclick=generatePlan;
 $('download').onclick=()=>{

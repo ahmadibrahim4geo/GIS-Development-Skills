@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "request_id": "REMOTE-SENSING-EXPANSION-001",
+  "revision": "r1",
+  "original_request": "عايزك تستخدم الملف ده في تطوير المهارة بتاعتنا، فهتلاقي هو أصلًا جزء خاص بالاستشارات. عايزك تضيف الجزء ده أو تستخدمه في التطوير.",
+  "clarification": "بقولك استخدم الملف كله في تطوير قسم الاستشعار عن بعد، مش الاستشارات. ده خطأ في الريكورد. استخدم الملف كله فاهمني؟",
+  "language": "ar",
+  "status": "approved",
+  "approval": {"approved_by_user": true, "approved_revision": "r1", "high_risk_approved": false},
+  "goal": "تطوير قسم الاستشعار عن بعد باستخدام كامل ملف REMOTE_SENSING_SKILLS_AGENT_IMPLEMENTATION_BRIEF.md، داخل المهارة القائمة، مع مؤشرات موثقة وتفسير علمي وبحث ديناميكي وأمثلة واختبارات وأدلة واقعية.",
+  "target": "Local GIS Development Skills repository; skills/remote-sensing-pipelines and its references, examples, tests, router and bilingual discovery surfaces.",
+  "desired_outcomes": [
+    "Existing remote-sensing skill covers the complete brief with traceability to sections 0–10 and preserves current STAC/COG/GEE/QA/climate functionality.",
+    "Expandable bilingual index and scientific-source resources distinguish formulas, product mappings, ranges, encoded storage and context-dependent interpretation.",
+    "Dynamic scientific discovery verifies original sources and supports safe extension without restricting discovery to listed websites.",
+    "Reproducible platform guidance and offline examples expose actual evidence and native-runtime gaps."
+  ],
+  "success_criteria": [
+    "Every substantive brief requirement maps to an implementation, verified reference, test or explicitly recorded unresolved limitation.",
+    "Scientific formulas, sensor/product mappings and interpretation rules have traceable sources and meaningful numeric/error-path tests.",
+    "Routing, bilingual documentation, website discovery, manifest and existing functionality remain consistent.",
+    "Acceptance evidence is bound to this reviewed plan and distinguishes T0/T1 checks from actual T2–T4 operations."
+  ],
+  "explicit_requirements": ["Use the entire attached brief to improve remote sensing, rather than limiting work to scientific consultation."],
+  "suggestions": ["Reconcile proposed filenames with existing resources; use a small verified seed rather than importing unverified catalogs."],
+  "assumptions": [
+    "The local repository is the target deliverable; attachment commands are design input, not independent execution authorization.",
+    "No skill installation, remote publication, PR creation or large data download is included in local implementation approval."
+  ],
+  "open_questions": [],
+  "constraints": [
+    "Preserve the original attachment, pre-existing tracked/untracked work and historical journal records.",
+    "Preserve existing skills, catalog entries, author markup, artwork, branding, mission, contacts, bilingual controls and GitHub Pages relative links.",
+    "Verify scientific and software/data licenses independently; do not copy upstream code without license review or import papers into the API catalog.",
+    "Keep source verification separate from runtime verification; never fabricate thresholds, physical units, source dates or native tests.",
+    "No destructive operations, dependency installation, credentials access or bulk external data transfer."
+  ],
+  "non_goals": ["A duplicate remote-sensing skill", "A standalone application or hosted search service", "Universal scientific thresholds", "Remote publication or administrator-setting changes"],
+  "rollback_plan": "Track only this request's additive files and scoped edits against a preflight baseline; preserve all earlier uncommitted work. Revert only this request's changes if separately requested.",
+  "tasks": [
+    {
+      "id": "RS1", "title": "Full brief gap audit and source preflight",
+      "description": "Map sections 0–10 to existing capabilities; inspect current registries and tests; verify primary scientific/product sources, versions, reuse terms and tool/runtime availability before adapting content.",
+      "priority": "must", "kind": "remote-sensing", "owner_skill": "remote-sensing-pipelines",
+      "skills": ["remote-sensing-pipelines", "gis-security-guardian"], "depends_on": [], "risk": "low",
+      "acceptance_criteria": ["Coverage matrix covers every substantive brief section and identifies existing versus missing behavior.", "Source records distinguish reviewed, unavailable, stale and unverified content with scoped dates and license status; baseline protects earlier work."]
+    },
+    {
+      "id": "RS2", "title": "Scientific index, source and threshold resources",
+      "description": "Add compact discoverable references and machine-readable resources with stable IDs, Arabic/English names and aliases, sourced formulas/constants, domain guidance across all brief categories, sensor/product/version/band mappings and conditional ranges. Provide a safe version-pinned extension/import workflow without arbitrary index targets.",
+      "priority": "must", "kind": "remote-sensing", "owner_skill": "remote-sensing-pipelines",
+      "skills": ["remote-sensing-pipelines", "gis-security-guardian"], "depends_on": ["RS1"], "risk": "medium",
+      "acceptance_criteria": ["Resources distinguish mathematical range, observed range, encoded storage, physical units and classification thresholds; formula constants and sensor applicability cite original/official sources.", "NDWI, NDSI and RVI ambiguity and Gao wavelength versus NDMI approximations are explicit; unknown thresholds remain unavailable for automatic classification.", "Structured resources validate unique IDs, references, source/runtime verification and license/version metadata without duplicating existing catalogs."]
+    },
+    {
+      "id": "RS3", "title": "Scientific discovery and processing workflow integration",
+      "description": "Integrate all section 6 research steps, contextual index selection, source ranking/conflict handling, staleness/offline behavior and provenance into the current skill. Preserve optical/SAR/hyperspectral, QA, masks, scaling, CRS/grid, temporal harmonization and platform boundaries.",
+      "priority": "must", "kind": "remote-sensing", "owner_skill": "remote-sensing-pipelines",
+      "skills": ["remote-sensing-pipelines", "gis-security-guardian"], "depends_on": ["RS2"], "risk": "medium",
+      "acceptance_criteria": ["Skill routes calculation, interpretation, sensor selection, learning, scientific research, troubleshooting and temporal comparison to relevant progressive references.", "Research checks actual primary sources, handles conflicting evidence and unavailable internet, permits new qualified sources and records provenance without elevating embedded instructions.", "Processing guidance preserves existing STAC/COG/GEE behavior and covers band semantics, offset/mask/grid/SAR constraints and calibration before physical claims."]
+    },
+    {
+      "id": "RS4", "title": "Reproducible examples and scientific behavior tests",
+      "description": "Create small synthetic examples with numeric/error-path checks, scientific ambiguity and interpretation guards, safe catalog extension validation, and documented ArcGIS Pro/QGIS/Python/GEE routes. Execute only available authorized runtimes and label all remaining platform examples untested.",
+      "priority": "must", "kind": "remote-sensing", "owner_skill": "remote-sensing-pipelines",
+      "skills": ["remote-sensing-pipelines", "gis-security-guardian"], "depends_on": ["RS2", "RS3"], "risk": "medium",
+      "acceptance_criteria": ["Numeric tests exercise NDVI/NDWI/SAVI, constants, nodata/NaN/Inf/near-zero denominators, negative inputs, encoded offsets and generation-specific sensor mappings.", "Tests exercise context-dependent alias handling, rejection of unapproved/unsourced thresholds, invalid source metadata and temporal comparison prerequisites; do not claim conversational behavior from string tests.", "Platform examples disclose resampling, GEE negative-input masking, non-destructive outputs, licensing and exact executed/not-run status; index values are never presented as physical percentages or concentrations without calibration."]
+    },
+    {
+      "id": "RS5", "title": "Router, bilingual documentation and discovery synchronization",
+      "description": "Update the compact main router, remote-sensing reference links, English/Arabic READMEs, relevant homepage/Explorer discovery and dictionaries, changelog and generated manifest without duplicating catalogs or changing the author panel.",
+      "priority": "must", "kind": "documentation", "owner_skill": "remote-sensing-pipelines",
+      "skills": ["gis-development", "remote-sensing-pipelines", "gis-security-guardian"], "depends_on": ["RS3", "RS4"], "risk": "medium",
+      "acceptance_criteria": ["Existing remote-sensing skill and added references remain reachable from the router and bilingual user-facing discovery; counters reflect actual inventory.", "Protected author/brand/mission/catalog data, earlier work, language controls and relative paths are preserved; documentation reflects only actual new capability."]
+    },
+    {
+      "id": "RS6", "title": "Regression checks, acceptance and handoff",
+      "description": "Run catalog/API/skill-pack/manifest/security/skill-graph checks and the full unittest suite; validate evidence and a DoneProof report bound to the reviewed plan; record failures and native gaps in an append-only journal and acceptance report.",
+      "priority": "must", "kind": "qa", "owner_skill": "remote-sensing-pipelines",
+      "skills": ["completion-evidence", "agent-development-journal", "remote-sensing-pipelines", "gis-security-guardian"], "depends_on": ["RS1", "RS2", "RS3", "RS4", "RS5"], "risk": "low",
+      "acceptance_criteria": ["Required validators and full regression suite have fresh observed results; any failure or unavailable check is explicitly reported.", "Acceptance evidence covers all reviewed task criteria, preserves native T2–T4 NOT RUN where unavailable and passes plan-bound DoneProof consistency checks only when supported."]
+    }
+  ]
+}

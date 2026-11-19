@@ -1,0 +1,52 @@
+{
+  "target": "Portable execution documentation integration, PORTABLE-EXECUTION-001 r1",
+  "os": "Windows-11-10.0.26300-SP0",
+  "application_version": "Repository documentation and Python stdlib checks; no native GIS application",
+  "python_runtime": "3.14.7",
+  "crs_units": "Not applicable: no spatial data or measurement changes",
+  "evidence_tier": "T1",
+  "commands_executed": [
+    "scripts/intent_router.py --plan .agent-development-log/plans/portable-execution-r1.json --workflow --format json",
+    "scripts/validate_catalog.py",
+    "scripts/validate_api_catalog.py",
+    "scripts/validate_skill_pack.py",
+    "scripts/build_manifest.py --check",
+    "scripts/security_audit.py --root .",
+    "scripts/audit_skill_graph.py",
+    "-m unittest discover -s tests -p test_evidence_contract.py -v",
+    "-m unittest discover -s tests -p test_repository_internal_links.py -v",
+    "-m unittest discover -s tests -v",
+    "skill-creator/scripts/quick_validate.py on six changed skill folders",
+    "Task baseline comparison and local link/readback review"
+  ],
+  "fixtures_used": [
+    "tests/ (existing offline suite)",
+    ".agent-development-log/evidence/portable-execution/baseline/ (pre-edit snapshots)"
+  ],
+  "expected_result": "Documentation guidance integrated without weakening approval/evidence contracts or disrupting existing inventory and offline checks",
+  "observed_result": "423 unittests: 422 passed, 1 Windows symlink privilege skip. Catalog, API, skill pack, manifest, security and skill graph checks passed; six skill metadata checks passed. Router/link regressions passed after correcting router length and snapshot file extensions. Source review preserved author, mission, catalogs and pre-existing work.",
+  "not_tested": [
+    "Native ArcGIS/QGIS T2-T4: NOT RUN; documentation-only scope",
+    "Cross-model and cross-client installation/behavior: NOT RUN; no universal support claim",
+    "Visual browser rendering: NOT RUN; static homepage/link/JavaScript tests only",
+    "External security scanners: NOT RUN; local security audit only",
+    "One unittest skipped because Windows symlink creation privileges are unavailable"
+  ],
+  "known_limitations": [
+    "Instructions are host guidance, not an OS enforcement layer",
+    "Tests include pre-existing working tree changes; task-only diff separates this task",
+    "First full test run failed on new snapshot links and router length; retained initial log documents both; neither tests nor assertions were weakened"
+  ],
+  "source_changes": "One new shared reference; six skill entrypoints; shared contract; bilingual READMEs; one homepage paragraph; unreleased note. Catalogs/source attachment unchanged. Append-only task journal and evidence added.",
+  "provenance_licensing": "Independently written guidance informed by user-supplied Skill Argon.md as reference data. No explicit source license was established and no verbatim source passage or third-party code was imported. Existing repository licensing retained.",
+  "status": "pass",
+  "native_runtime_verified": false,
+  "evidence_links": [
+    ".agent-development-log/evidence/portable-execution/checks.json",
+    ".agent-development-log/evidence/portable-execution/unittest.log",
+    ".agent-development-log/evidence/portable-execution/skill-quick-validation.json",
+    ".agent-development-log/evidence/portable-execution/source-review.txt",
+    ".agent-development-log/evidence/portable-execution/task-only.diff",
+    ".agent-development-log/evidence/portable-execution/workflow.json"
+  ]
+}

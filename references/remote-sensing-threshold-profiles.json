@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "catalog_title": "Remote Sensing Contextual Threshold Profiles",
+  "description": "Conditional and illustrative classification threshold profiles. These demonstrate schema and contextual constraints; none are universal or approved for unverified automatic classification.",
+  "provenance": {
+    "reviewed_on": "2026-11-19",
+    "source_verified": true,
+    "runtime_verified": false,
+    "license": "MIT",
+    "mandatory_rule": "NEVER treat any threshold profile as a universal constant. Automated classification requires explicit user or regional calibration approval."
+  },
+  "profiles": [
+    {
+      "id": "dNBR_USGS_FIRE_SEVERITY_PROFILE",
+      "index_id": "dNBR_Key_2006",
+      "status": "conditional_reference",
+      "purpose": "Landscape fire burn severity classification guidelines (Key & Benson 2006 / USGS)",
+      "sensor_product": "Landsat TM/ETM+/OLI Level-2 Surface Reflectance or Sentinel-2 L2A",
+      "region": "Western US temperate forests (USFS/NPS reference)",
+      "biome_or_landcover": "Temperate mixed conifer forest",
+      "season": "Post-fire immediate assessment (aligned phenology)",
+      "scale_factor_convention": "unscaled_unitless",
+      "classes": [
+        {"class_name": "Enhanced Regrowth / High Pre-fire Greenness", "min": -2.0, "max": -0.10, "color_hex": "#2e7d32"},
+        {"class_name": "Unburned", "min": -0.10, "max": 0.10, "color_hex": "#81c784"},
+        {"class_name": "Low Severity", "min": 0.10, "max": 0.27, "color_hex": "#fff59d"},
+        {"class_name": "Moderate-Low Severity", "min": 0.27, "max": 0.44, "color_hex": "#ffb74d"},
+        {"class_name": "Moderate-High Severity", "min": 0.44, "max": 0.66, "color_hex": "#f57c00"},
+        {"class_name": "High Severity", "min": 0.66, "max": 2.0, "color_hex": "#b71c1c"}
+      ],
+      "source_doi_or_url": "https://www.fs.usda.gov/rmrs/publications/landscape-assessment-sampling-and-analysis-methods",
+      "calibration_method": "Composite Burn Index (CBI) field calibration plots in temperate forest",
+      "validation_metric": "R-squared ~ 0.72 vs field CBI in western US forests",
+      "caveats": [
+        "Thresholds are designed for temperate forests; dry rangelands, savannas, and boreal peatlands require different local cutoffs",
+        "If using USGS scaled dNBR product, values must be multiplied by 1000 (-100, 100, 270, 440, 660)",
+        "Pre- and post-fire imagery must be phenologically matched (anniversary date) to avoid seasonal false positives"
+      ],
+      "approved_for_automatic_classification": false
+    },
+    {
+      "id": "NDVI_QUALITATIVE_LANDCOVER_GUIDELINE",
+      "index_id": "NDVI_Rouse_1974",
+      "status": "illustrative_not_approved",
+      "purpose": "Demonstrate qualitative optical vegetation ranges. NOT operational classification boundaries.",
+      "sensor_product": "Any optical sensor surface reflectance",
+      "region": "Global general guideline",
+      "biome_or_landcover": "Mixed global biomes",
+      "season": "Peak growing season",
+      "scale_factor_convention": "unitless_reflectance",
+      "classes": [
+        {"class_name": "Deep Open Water / Shadow", "min": -1.0, "max": 0.0, "color_hex": "#0d47a1"},
+        {"class_name": "Bare Soil / Rock / Arid Ground", "min": 0.0, "max": 0.2, "color_hex": "#d7ccc8"},
+        {"class_name": "Sparse / Senescent Vegetation", "min": 0.2, "max": 0.4, "color_hex": "#c8e6c9"},
+        {"class_name": "Moderate Green Canopy", "min": 0.4, "max": 0.6, "color_hex": "#4caf50"},
+        {"class_name": "Dense Vigorous Canopy", "min": 0.6, "max": 1.0, "color_hex": "#1b5e20"}
+      ],
+      "source_doi_or_url": "https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index",
+      "calibration_method": "Qualitative generalized literature guidance",
+      "validation_metric": null,
+      "caveats": [
+        "NDVI values are heavily influenced by soil background color, moisture, sensor viewing geometry, and atmospheric aerosol residual",
+        "DO NOT use fixed 0.2/0.4/0.6 boundaries as automated land cover maps without regional validation and multi-temporal metrics",
+        "NDVI does NOT represent percentage cover directly"
+      ],
+      "approved_for_automatic_classification": false
+    },
+    {
+      "id": "NDSI_SNOW_EXTRACTION_GUIDELINE",
+      "index_id": "NDSI_Hall_1995",
+      "status": "conditional_reference",
+      "purpose": "Snow delineation threshold with mandatory NIR brightness co-condition (Hall et al. 1995 / MODIS Snow Product)",
+      "sensor_product": "MODIS Surface Reflectance / Landsat OLI / Sentinel-2 L2A",
+      "region": "Global cryosphere and mountains",
+      "biome_or_landcover": "Snow, glacier, alpine terrain",
+      "season": "Winter / Spring snow cover",
+      "scale_factor_convention": "unitless_reflectance",
+      "classes": [
+        {"class_name": "Snow Cover", "min": 0.4, "max": 1.0, "color_hex": "#e0f7fa"},
+        {"class_name": "Snow-Free Land / Vegetation", "min": -1.0, "max": 0.4, "color_hex": "#8d6e63"}
+      ],
+      "source_doi_or_url": "https://doi.org/10.1016/0034-4257(95)00137-P",
+      "calibration_method": "MODIS Snow team empirical rule: NDSI >= 0.4 AND NIR >= 0.11 (to prevent open water misclassification)",
+      "validation_metric": "Snow mapping accuracy > 93% in cloud-free conditions",
+      "caveats": [
+        "Water bodies also have high NDSI (since NDSI formula is identical to MNDWI). The condition NIR >= 0.11 (or NIR >= 0.10) is MANDATORY to separate snow from open water",
+        "Thin cirrus clouds and shadows in steep terrain cause errors"
+      ],
+      "approved_for_automatic_classification": false
+    }
+  ]
+}

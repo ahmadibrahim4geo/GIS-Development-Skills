@@ -38,6 +38,8 @@ User prompt -> Prompt Intent Orchestrator -> reviewed plan -> GIS Development Ro
 
 The agent host must actually load and follow these documents. Markdown cannot technically intercept or prevent arbitrary tool calls; enforce permissions, allowlists and approval in the host as well.
 
+Use [portable execution guidance](portable-execution-guidance.md) for proportionate effort, capability-based tools and bounded diagnosis within this workflow. Advisory Lite/Standard/Deep modes do not change canonical states, ownership, approval or evidence tiers; model/agent independence is a design goal, not proof of cross-client execution.
+
 ## Request states and transitions
 
 | State | Owner | Required output | Next state |

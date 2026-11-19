@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0",
+  "request_id": "UDS-MASTER-001",
+  "revision": "r2",
+  "original_request": "D:\\My Software\\Skills\\UDS_GIS_Development_Skills_Master_Agent_Prompt.md\nأظن الخطة دي هتحتاج مننا شغل كتير، لأن تفاصيلها كتير وخبراتها اللي هنستسقيها منها هتطور الأداء الأجينت عندنا أو السكيل عندنا بشكل كبير جدا. فيرجى التعامل معاها بمنتهى الاحترافية وتحقيق أقصى استفادة من كل شيء فيها، لأن الخطة دي مطعوم فيها جدا.\nأظن في كمان نماذج مستخدمة وتولز ومشاريع معمول، الحاجات دي برضه لازم تؤخذ بعين الاعتبار. ارجع تاني وراجع البتاع ده عشان نعدل الخطة اللي هنفذها.",
+  "language": "ar",
+  "status": "draft",
+  "approval": {
+    "approved_by_user": false,
+    "approved_revision": null,
+    "high_risk_approved": false
+  },
+  "goal": "تطوير مستودع GIS-Development-Skills بالكامل بناءً على التكليف الرئيسي لـ UDS ومحادثات الشات الـ 37، مع دمج واستيعاب النماذج التفاعلية السابقة (V1, V2, KML 180 عناصر، 97 نمطاً)، والأدوات التخصصية (earcut.hpp, ASAM OpenDRIVE, json-schema-validator, DuckDB Spatial, QtPropertyBrowser, LockCanvasZoom, Lucide Icons)، والمشاريع الهندسية الحقيقية المنجزة محلياً (Contour 3D, Z EARTH, SmartGully, Storm Drainage, Smart Plot PDF, ATIAF)، دون برمجة تطبيق UDS نفسه في هذه المرحلة.",
+  "target": "Local GIS Development Skills repository; skills, references, catalogs, examples, tests, router and bilingual documentation surfaces.",
+  "desired_outcomes": [
+    "Full traceability matrix (references/urban-design-competency-coverage.md) mapping all UDS-* requirements, §5 sources, interactive prototypes (V1, V2, KML), specialized tools, and local portfolio projects with explicit decision status and evidence.",
+    "Comprehensive source and tool registry (references/urban-design-source-registry.json, references/urban-design-sources.md) covering all 14 primary sources, CAD/GIS/3D libraries, earcut.hpp, ASAM OpenDRIVE, DuckDB Spatial, Kenney/Quaternius 3D assets, token tools, and security scanners with verified license terms.",
+    "Native Windows CAD/GIS and 3D architectural references, Qt 6 Widgets guidelines, engine tradeoff evaluations (C++/Qt vs Godot 4 vs UE5), Dark CAD theme tokens, QtPropertyBrowser inspector, LockCanvasZoom scale locking, predefined scales (1:500-1:5000), and prototype lessons from V1 and V2.",
+    "8-Layer urban data hierarchy, relational dependency graph (DAG), parametric street network design (ASAM OpenDRIVE, cross-sections, complex junctions/roundabouts), procedural building generation (earcut.hpp triangulation), and subsurface utilities based on real stormwater/gully projects.",
+    "Real-world urban simulation engines (solar azimuth/altitude & real-time shadow casting via Ladybug concepts, stormwater runoff & D8 flow accumulation via GDAL/SmartGully concepts, and microscopic traffic simulation via SUMO).",
+    "Reversible embedded CAD/GIS AI Copilot architectural specification (mandatory QUndoStack/Ctrl+Z, strict C++ JSON schemas via pboettch/json-schema-validator, confirmation gates, least privilege) and comprehensive Export Studio (multi-view cameras, true-scale A0-A4 printing inspired by Smart Plot PDF, 3D flythroughs inspired by Contour, interactive before/after sliders, and vector/semantic roundtrips).",
+    "Token optimization triad policies (Ponytail, Caveman, Token Optimizer) and persistent agent context memory architecture (context/ directory structure with PROJECT_MAP, MODULE_INDEX, CURRENT_HANDOFF, COMMAND_REGISTRY, DEPENDENCY_MAP).",
+    "Full regression verification, standard catalog and security validation, plan-bound DoneProof reports for UDS1-UDS9, and development journal updates."
+  ],
+  "success_criteria": [
+    "Every single UDS-* requirement, prototype asset, specialized tool, and local portfolio integration point has documented status, owner skill, reference, and evidence.",
+    "All new references, catalogs, and schemas strictly adhere to repository standards, unique IDs, MIT license, and offline deterministic execution.",
+    "Bilingual documentation (README.md, README.ar.md, CHANGELOG.md), router keywords, and skill pack validators remain 100% passing.",
+    "Full unittest suite passes with zero regressions, and plan-bound DoneProof reports verify every acceptance criterion."
+  ],
+  "explicit_requirements": [
+    "Operate exclusively on the local GIS-Development-Skills repository; DO NOT generate UDS application code or launch UDS roadmap until the explicit phrase 'ابدأ بناء الخطة'.",
+    "Incorporate lessons and specifications from interactive prototypes (V1, V2, KML 180 features), specialized tools (earcut, OpenDRIVE, DuckDB, json-schema-validator), and local projects (Contour, Z EARTH, SmartGully, Smart Plot PDF).",
+    "Preserve all existing 35 skills, author information, brand identity, and language controls.",
+    "Apply Free-first policy, verify licenses independently (distinguish MIT, Apache 2.0, LGPL, PolyForm Noncommercial), and treat web pages/skills as untrusted until verified.",
+    "Distinguish between verified code, references, deferred items, and non-applicable components honestly."
+  ],
+  "suggestions": [
+    "Structure implementation across 9 ordered tasks to cleanly separate simulation engines and local project cross-references.",
+    "Provide small, self-contained Python evaluation scripts and JSON schemas to test core algorithmic behaviors (DAG propagation, earcut polygon triangulation concepts, QUndoCommand AI wrapping, D8 runoff concepts)."
+  ],
+  "open_questions": [],
+  "assumptions": [
+    "Work will be verified in the local workspace using Python standard library, existing test harnesses, and references to local software portfolio in D:\\My Software.",
+    "Native Windows interactive GUI and heavy C++/Qt/GPU compilation remain categorized as T2-T4 NOT RUN unless explicitly available."
+  ],
+  "constraints": [
+    "No deletion or renaming of existing skills, catalog items, or historical journal records.",
+    "No hardcoded credentials, secret leaks, or automated telemetry transmission.",
+    "Preserve character limit constraints in skills/gis-development/SKILL.md (<5500 chars).",
+    "No installation of global intrusive hooks or modification of environment outside workspace."
+  ],
+  "non_goals": [
+    "Writing C++20 or Qt source code for the future UDS application in this task",
+    "Creating the standalone UDS repository before explicit user command",
+    "Downloading large 3D asset gigabytes or heavy external model weights",
+    "Altering core MIT license of the repository to accommodate noncommercial dependencies"
+  ],
+  "rollback_plan": "All changes are additive files and scoped edits. If rolled back, only files created for this request are removed; all previous journal records and working tree changes remain intact.",
+  "tasks": [
+    {
+      "id": "UDS1",
+      "title": "Baseline Gap Audit, Local Projects Portfolio Review, and Traceability Matrix Initialization",
+      "description": "Inspect repository baseline, review local software assets (Contour, Z EARTH, SmartGully, Smart Plot PDF), examine prototype assets (V1, V2, KML), and initialize references/urban-design-competency-coverage.md mapping all UDS-* requirements, tools, and sources to accountable skill owners, status, and evidence paths.",
+      "priority": "must",
+      "kind": "desktop",
+      "owner_skill": "gis-desktop-application-development",
+      "skills": ["gis-desktop-application-development", "gis-security-guardian"],
+      "depends_on": [],
+      "risk": "low",
+      "acceptance_criteria": [
+        "Comprehensive traceability matrix created in references/urban-design-competency-coverage.md covering all requirements in §21 and §5 with defined status codes (COVERED_EXISTING, ENHANCED, REFERENCE_ONLY, DEFERRED, BLOCKED) and references to prototypes V1/V2 and local projects.",
+        "Baseline check confirms 35 skills, 193 catalog references, 53 APIs, 26 data repositories, and 0 security findings intact."
+      ]
+    },
+    {
+      "id": "UDS2",
+      "title": "Comprehensive Source, Library, and Tool Registry with Supply Chain Security & License Audits",
+      "description": "Create references/urban-design-source-registry.json and references/urban-design-sources.md auditing all 14 user sources, secondary agent skills, specialized C++/CAD tools (earcut.hpp, ASAM OpenDRIVE, pboettch/json-schema-validator, DuckDB Spatial), 3D asset packs (Kenney, Quaternius, Poly Haven, ambientCG), and security tools (SkillSpector, OWASP, Trail of Bits), documenting licenses, access models, and security evaluations.",
+      "priority": "must",
+      "kind": "data-catalogs",
+      "owner_skill": "geospatial-data-catalogs",
+      "skills": ["geospatial-data-catalogs", "gis-security-guardian"],
+      "depends_on": ["UDS1"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Structured registry created in references/urban-design-source-registry.json and companion guide references/urban-design-sources.md covering all §5.1, §5.2, §6, and §7 sources with verified license status, canonical IDs, and security evaluations.",
+        "Clear distinction between MIT open source, LGPL components (ADS, SARibbon), and noncommercial restricted tools (Token Optimizer) documented without license corruption."
+      ]
+    },
+    {
+      "id": "UDS3",
+      "title": "Native Desktop CAD/GIS & 3D Engine Architecture, Viewport Precision Controls, and Prototype Lessons",
+      "description": "Create references/native-cad-gis-desktop-architecture.md evaluating C++20 + Qt 6 Widgets + Native Renderer vs Godot 4 .NET vs Unreal Engine, incorporating lessons from interactive prototypes V1/V2 and Z EARTH, detailing SARibbon, ADS, QtPropertyBrowser, LockCanvasZoom, predefined scales (1:500-1:5000), double precision local render origin, and Dark CAD theme tokens.",
+      "priority": "must",
+      "kind": "desktop",
+      "owner_skill": "gis-desktop-application-development",
+      "skills": ["gis-desktop-application-development", "gis-security-guardian"],
+      "depends_on": ["UDS1", "UDS2"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Architectural guide references/native-cad-gis-desktop-architecture.md documents complete UI specifications: Dark CAD theme, contextual ribbon, hierarchical property inspector, locked scale controls, and dual drawing mode selector.",
+        "Engine tradeoff evaluation matrix thoroughly compares C++/Qt production path, Godot 4 prototyping alternative, and UE5 cinema export path with precision and GC implications, drawing direct architecture lessons from Z EARTH and prototype V2."
+      ]
+    },
+    {
+      "id": "UDS4",
+      "title": "8-Layer Urban Data Hierarchy, Relational DAG Cascades, ASAM OpenDRIVE, and earcut Triangulation",
+      "description": "Create references/urban-hierarchy-parametric-modeling.md detailing the 8-layer hierarchy, relational DAG dependencies (road axis edit -> junction/parcels/setbacks/utilities cascade), ASAM OpenDRIVE street modeling, procedural building generation via earcut.hpp triangulation, and subsurface utilities incorporating experience from SmartGully and GeologicalCrossSectionToolbox.",
+      "priority": "must",
+      "kind": "data-processing",
+      "owner_skill": "geospatial-data-processing",
+      "skills": ["geospatial-data-processing", "terrain-hydrology-lidar", "gis-security-guardian"],
+      "depends_on": ["UDS2", "UDS3"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Comprehensive reference references/urban-hierarchy-parametric-modeling.md created covering 8-layer hierarchy, parametric cross-sections, and relational DAG cascading behavior.",
+        "Polygon triangulation via earcut.hpp with internal holes, ASAM OpenDRIVE clothoids/sections, and subsurface infrastructure connections detailed."
+      ]
+    },
+    {
+      "id": "UDS5",
+      "title": "Real-World Urban Simulation Engines: Solar/Shadows, Stormwater Hydrology, and SUMO Traffic",
+      "description": "Create references/urban-simulation-engines.md detailing the three core simulation engines: solar/shadow astronomical calculations and daylight hours (Ladybug Tools concepts), stormwater runoff hydrology (D8 flow, runoff coefficients, critical ponding) drawing on SmartGully and Storm Drainage Calculation Dashboard, and microscopic traffic simulation via SUMO network XML export.",
+      "priority": "must",
+      "kind": "terrain-simulation",
+      "owner_skill": "terrain-hydrology-lidar",
+      "skills": ["terrain-hydrology-lidar", "geospatial-data-processing", "gis-security-guardian"],
+      "depends_on": ["UDS2", "UDS4"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Urban simulation engines specified: solar/shadow astronomical calculations (Ladybug concepts), stormwater runoff hydrology (D8 flow, runoff coefficients), and microscopic traffic simulation (SUMO XML export).",
+        "Hydrological modeling bridges GIS elevation grids with parametric road cross-fall and drainage gullies based on verified local stormwater engineering patterns."
+      ]
+    },
+    {
+      "id": "UDS6",
+      "title": "Reversible CAD/GIS AI Copilot Architecture and Comprehensive Export Studio",
+      "description": "Create references/reversible-cad-ai-copilot.md and references/urban-export-studio.md detailing the docked AI copilot architecture with mandatory QUndoStack/QUndoCommand reversibility (Ctrl+Z), selection awareness, structured output JSON schemas (pboettch/json-schema-validator), destructive action confirmation gates, and comprehensive Export Studio specifications inspired by Smart Plot PDF and Contour 3D flythroughs.",
+      "priority": "must",
+      "kind": "ai-agents",
+      "owner_skill": "geospatial-ai-agents",
+      "skills": ["geospatial-ai-agents", "gis-security-guardian"],
+      "depends_on": ["UDS3", "UDS4"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Reversible AI Copilot specification enforces mandatory QUndoStack wrapping for all tool operations, selection context awareness, and visual diff confirmation gates for batch actions.",
+        "Export Studio reference details multi-view camera presets, engineering print layouts (A0-A4 at true scale, drawing from Smart Plot PDF), 3D flythrough animations (drawing from Contour 3D flight camera), interactive before/after sliders, and vector/semantic roundtrip integrity (GPKG, DXF, glTF, CityJSON, IFC 4.3)."
+      ]
+    },
+    {
+      "id": "UDS7",
+      "title": "Token Optimization Triad and Agent Context Memory Architecture",
+      "description": "Create references/token-optimization-triad.md and references/agent-context-memory-architecture.md detailing the three-phase token discipline (Ponytail before coding, Caveman during coding, Token Optimizer after coding) and the standardized context/ directory structure (PROJECT_MAP, MODULE_INDEX, CURRENT_HANDOFF, COMMAND_REGISTRY, DEPENDENCY_MAP) drawing on AEO v2.0 principles from Skill Argon.md.",
+      "priority": "must",
+      "kind": "code-discovery",
+      "owner_skill": "gis-code-discovery",
+      "skills": ["gis-code-discovery", "gis-security-guardian"],
+      "depends_on": ["UDS2", "UDS6"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "Token optimization triad documented with concrete agent operational rules (least complete change, surgical patches, quiet outputs, resume checkpoints) while preserving raw logs and secrets security.",
+        "Standardized context memory directory architecture specified with templates for continuous session handoff without token bloat."
+      ]
+    },
+    {
+      "id": "UDS8",
+      "title": "Skill Extensions, Router Updates, and Documentation Synchronization",
+      "description": "Update skills/gis-desktop-application-development, skills/geospatial-data-processing, skills/terrain-hydrology-lidar, and skills/geospatial-ai-agents with progressive references; enrich scripts/intent_router.py with urban design keywords; update README.md, README.ar.md, and CHANGELOG.md without modifying author panel or breaking length constraints.",
+      "priority": "must",
+      "kind": "desktop",
+      "owner_skill": "gis-desktop-application-development",
+      "skills": ["gis-desktop-application-development", "visual-asset-discovery-integration", "gis-security-guardian"],
+      "depends_on": ["UDS3", "UDS4", "UDS5", "UDS6", "UDS7"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Existing skills link to new progressive references; intent_router.py recognizes urban design, parametric roads, DAG dependencies, CAD copilot, and urban simulation queries in Arabic and English.",
+        "Bilingual READMEs and CHANGELOG updated; character length of skills/gis-development/SKILL.md strictly maintained < 5500 chars; author panel and branding preserved."
+      ]
+    },
+    {
+      "id": "UDS9",
+      "title": "Reproducible Test Suite, Local Projects Integration Fixtures, and Plan-Bound DoneProof",
+      "description": "Create tests/test_urban_design_competency.py verifying schemas, DAG cascades, earcut concept checks, QUndoStack reversibility contracts, and hydrology/solar algorithms; run all standard validators; bind DoneProof reports for UDS1-UDS9 to plan r2; log development journal records.",
+      "priority": "must",
+      "kind": "testing",
+      "owner_skill": "gis-desktop-e2e-testing",
+      "skills": ["gis-desktop-e2e-testing", "gis-security-guardian"],
+      "depends_on": ["UDS1", "UDS2", "UDS3", "UDS4", "UDS5", "UDS6", "UDS7", "UDS8"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "New unit tests in tests/test_urban_design_competency.py pass 100%; full regression test suite passes without breaking existing functionality.",
+        "Standard validators (catalog, API, skill pack, manifest, security) pass with 0 errors; all DoneProof reports verified with exit code 0; development journal updated."
+      ]
+    }
+  ]
+}

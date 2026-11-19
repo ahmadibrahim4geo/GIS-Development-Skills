@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "request_id": "UDS-MASTER-001",
+  "revision": "r1",
+  "original_request": "D:\\My Software\\Skills\\UDS_GIS_Development_Skills_Master_Agent_Prompt.md\nأظن الخطة دي هتحتاج مننا شغل كتير، لأن تفاصيلها كتير وخبراتها اللي هنستسقيها منها هتطور الأداء الأجينت عندنا أو السكيل عندنا بشكل كبير جدا. فيرجى التعامل معاها بمنتهى الاحترافية وتحقيق أقصى استفادة من كل شيء فيها، لأن الخطة دي مطعوم فيها جدا.",
+  "language": "ar",
+  "status": "draft",
+  "approval": {
+    "approved_by_user": false,
+    "approved_revision": null,
+    "high_risk_approved": false
+  },
+  "goal": "تطوير مستودع GIS-Development-Skills بالكامل بناءً على متطلبات Master Agent Execution Brief لمشروع Urban Design Studio (UDS) وفق المراحل A-F والملحق التفصيلي، ليصبح المرجع الهندسي والتشغيلي الموحد للتطبيقات المكتبية الجغرافية، دون برمجة UDS نفسه في هذه المرحلة.",
+  "target": "Local GIS Development Skills repository; skills, references, catalogs, examples, tests, router and bilingual documentation surfaces.",
+  "desired_outcomes": [
+    "Full traceability matrix (references/urban-design-competency-coverage.md) mapping all UDS-* and SOURCE-* requirements with explicit decision status and evidence.",
+    "Comprehensive source and library registry covering all 14 primary sources, CAD/GIS/3D engines, token optimization tools, and security scanners with license audits.",
+    "Native Windows CAD/GIS and 3D architectural references, Qt 6 Widgets guidelines, engine tradeoff evaluations (C++/Qt vs Godot 4 vs UE5), and precision CAD viewport specifications.",
+    "8-Layer urban data hierarchy, relational dependency graph (DAG), parametric street network design (ASAM OpenDRIVE), procedural building generation (earcut.hpp triangulation), and urban simulation engines (solar/shadow, runoff hydrology, SUMO traffic).",
+    "Reversible embedded CAD/GIS AI Copilot architectural specification (mandatory QUndoStack/Ctrl+Z, strict JSON schemas, confirmation gates, least privilege) and comprehensive Export Studio (multi-view camera shots, layout printing, 3D flythrough, vector/semantic roundtrips).",
+    "Token optimization triad policies (Ponytail, Caveman, Token Optimizer) and persistent agent context memory architecture (context/ directory structure).",
+    "Full regression verification, standard catalog and security validation, plan-bound DoneProof reports, and development journal updates."
+  ],
+  "success_criteria": [
+    "Every single UDS-* requirement (UDS-CORE-001..017, UDS-ROAD-001..010, UDS-BLD-001..010, UDS-GIS-001..009, UDS-ANALYSIS-001..004, UDS-EXPORT-001..008, UDS-AI-001..011, UDS-SIM-001..002, etc.) and all 14 primary user sources have documented status, owner skill, reference, and evidence.",
+    "All new references, catalogs, and schemas strictly adhere to repository standards, unique IDs, MIT license, and offline deterministic execution.",
+    "Bilingual documentation (README.md, README.ar.md, CHANGELOG.md), router keywords, and skill pack validators remain 100% passing.",
+    "Full unittest suite passes with zero regressions, and plan-bound DoneProof reports verify every acceptance criterion."
+  ],
+  "explicit_requirements": [
+    "Operate exclusively on the local GIS-Development-Skills repository; DO NOT generate UDS application code or launch UDS roadmap until the explicit phrase 'ابدأ بناء الخطة'.",
+    "Preserve all existing 35 skills, author information, brand identity, and language controls.",
+    "Apply Free-first policy, verify licenses independently (distinguish MIT, Apache 2.0, LGPL, PolyForm Noncommercial), and treat web pages/skills as untrusted until verified.",
+    "Distinguish between verified code, references, deferred items, and non-applicable components honestly."
+  ],
+  "suggestions": [
+    "Structure implementation across 8 ordered tasks to facilitate review and step-by-step verification.",
+    "Provide small, self-contained Python evaluation scripts and JSON schemas to test core algorithmic behaviors (e.g. DAG propagation, earcut triangulation concepts, QUndoCommand AI wrapping)."
+  ],
+  "open_questions": [],
+  "assumptions": [
+    "Work will be verified in the local workspace using Python standard library and existing offline test harnesses.",
+    "Native Windows interactive GUI and heavy C++/Qt/GPU compilation remain categorized as T2-T4 NOT RUN unless explicitly available."
+  ],
+  "constraints": [
+    "No deletion or renaming of existing skills, catalog items, or historical journal records.",
+    "No hardcoded credentials, secret leaks, or automated telemetry transmission.",
+    "Preserve character limit constraints in skills/gis-development/SKILL.md (<5500 chars).",
+    "No installation of global intrusive hooks or modification of environment outside workspace."
+  ],
+  "non_goals": [
+    "Writing C++20 or Qt source code for the future UDS application in this task",
+    "Creating the standalone UDS repository before explicit user command",
+    "Downloading large 3D asset gigabytes or heavy external model weights",
+    "Altering core MIT license of the repository to accommodate noncommercial dependencies"
+  ],
+  "rollback_plan": "All changes are additive files and scoped edits. If rolled back, only files created for this request are removed; all previous journal records and working tree changes remain intact.",
+  "tasks": [
+    {
+      "id": "UDS1",
+      "title": "Baseline Gap Audit and Traceability Matrix Initialization",
+      "description": "Inspect repository baseline, verify current 35 skills and references, and initialize references/urban-design-competency-coverage.md mapping all UDS-* requirements and §5 sources to accountable skill owners, status, and evidence paths.",
+      "priority": "must",
+      "kind": "desktop",
+      "owner_skill": "gis-desktop-application-development",
+      "skills": ["gis-desktop-application-development", "gis-security-guardian"],
+      "depends_on": [],
+      "risk": "low",
+      "acceptance_criteria": [
+        "Comprehensive traceability matrix created in references/urban-design-competency-coverage.md covering all requirements in §21 and §5 with defined status codes (COVERED_EXISTING, ENHANCED, REFERENCE_ONLY, DEFERRED, BLOCKED).",
+        "Baseline check confirms 35 skills, 193 catalog references, 53 APIs, 26 data repositories, and 0 security findings intact."
+      ]
+    },
+    {
+      "id": "UDS2",
+      "title": "Source Research, Licensing Audit, and Supply Chain Security Registry",
+      "description": "Create references/urban-design-source-registry.json and references/urban-design-sources.md auditing all 14 user-provided sources, secondary agent skills, and C++/CAD/GIS libraries, documenting license terms (MIT, Apache, LGPL, PolyForm Noncommercial), access models, and security evaluation.",
+      "priority": "must",
+      "kind": "data-catalogs",
+      "owner_skill": "geospatial-data-catalogs",
+      "skills": ["geospatial-data-catalogs", "gis-security-guardian"],
+      "depends_on": ["UDS1"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Structured registry created in references/urban-design-source-registry.json and companion guide references/urban-design-sources.md covering all §5.1, §5.2, and §6 sources with verified license status, canonical IDs, and security evaluations.",
+        "Clear distinction between MIT open source, LGPL components (ADS, SARibbon), and noncommercial restricted tools (Token Optimizer) documented without license corruption."
+      ]
+    },
+    {
+      "id": "UDS3",
+      "title": "Native Desktop CAD/GIS & 3D Engine Architecture Specifications",
+      "description": "Create references/native-cad-gis-desktop-architecture.md evaluating C++20 + Qt 6 Widgets + Native Renderer vs Godot 4 .NET vs Unreal Engine, detailing SARibbon, ADS, QtPropertyBrowser, LockCanvasZoom, predefined scales (1:500-1:5000), double precision local render origin, and Dark CAD theme tokens.",
+      "priority": "must",
+      "kind": "desktop",
+      "owner_skill": "gis-desktop-application-development",
+      "skills": ["gis-desktop-application-development", "gis-security-guardian"],
+      "depends_on": ["UDS1", "UDS2"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Architectural guide references/native-cad-gis-desktop-architecture.md documents complete UI specifications: Dark CAD theme, contextual ribbon, hierarchical property inspector, locked scale controls, and dual drawing mode selector.",
+        "Engine tradeoff evaluation matrix thoroughly compares C++/Qt production path, Godot 4 prototyping alternative, and UE5 cinema export path with precision and GC implications."
+      ]
+    },
+    {
+      "id": "UDS4",
+      "title": "8-Layer Urban Data Hierarchy, Relational DAG, and Simulation Engines",
+      "description": "Create references/urban-hierarchy-parametric-modeling.md and references/urban-simulation-engines.md detailing the 8-layer hierarchy, relational DAG dependencies (road edit -> junction/parcels/setbacks/utilities cascade), ASAM OpenDRIVE street modeling, procedural building generation via earcut.hpp, and solar/shadow, stormwater runoff, and SUMO traffic simulation.",
+      "priority": "must",
+      "kind": "data-processing",
+      "owner_skill": "geospatial-data-processing",
+      "skills": ["geospatial-data-processing", "terrain-hydrology-lidar", "gis-security-guardian"],
+      "depends_on": ["UDS2", "UDS3"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Comprehensive references created covering 8-layer hierarchy, parametric cross-sections, and relational DAG cascading behavior.",
+        "Urban simulation engines specified: solar/shadow astronomical calculations (Ladybug concepts), stormwater runoff hydrology (D8 flow, runoff coefficients), and microscopic traffic simulation (SUMO XML export)."
+      ]
+    },
+    {
+      "id": "UDS5",
+      "title": "Reversible CAD/GIS AI Copilot Architecture and Export Studio",
+      "description": "Create references/reversible-cad-ai-copilot.md and references/urban-export-studio.md detailing the docked AI copilot architecture with mandatory QUndoStack/QUndoCommand reversibility (Ctrl+Z), selection awareness, structured output JSON schemas (pboettch/json-schema-validator), destructive action confirmation gates, and comprehensive Export Studio specifications.",
+      "priority": "must",
+      "kind": "ai-agents",
+      "owner_skill": "geospatial-ai-agents",
+      "skills": ["geospatial-ai-agents", "gis-security-guardian"],
+      "depends_on": ["UDS3", "UDS4"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Reversible AI Copilot specification enforces mandatory QUndoStack wrapping for all tool operations, selection context awareness, and visual diff confirmation gates for batch actions.",
+        "Export Studio reference details multi-view camera presets, engineering print layouts (A0-A4 at true scale), 3D flythrough animations, interactive before/after sliders, and vector/semantic roundtrip integrity (GPKG, DXF, glTF, CityJSON, IFC 4.3)."
+      ]
+    },
+    {
+      "id": "UDS6",
+      "title": "Token Optimization Triad and Agent Context Memory Architecture",
+      "description": "Create references/token-optimization-triad.md and references/agent-context-memory-architecture.md detailing the three-phase token discipline (Ponytail before coding, Caveman during coding, Token Optimizer after coding) and the standardized context/ directory structure (PROJECT_MAP, MODULE_INDEX, CURRENT_HANDOFF, COMMAND_REGISTRY, DEPENDENCY_MAP).",
+      "priority": "must",
+      "kind": "code-discovery",
+      "owner_skill": "gis-code-discovery",
+      "skills": ["gis-code-discovery", "gis-security-guardian"],
+      "depends_on": ["UDS2", "UDS5"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "Token optimization triad documented with concrete agent operational rules (least complete change, surgical patches, quiet outputs, resume checkpoints) while preserving raw logs and secrets security.",
+        "Standardized context memory directory architecture specified with templates for continuous session handoff without token bloat."
+      ]
+    },
+    {
+      "id": "UDS7",
+      "title": "Skill Extensions, Router Updates, and Documentation Synchronization",
+      "description": "Update skills/gis-desktop-application-development, skills/geospatial-data-processing, and skills/geospatial-ai-agents with progressive references; enrich scripts/intent_router.py with urban design keywords; update README.md, README.ar.md, and CHANGELOG.md without modifying author panel or breaking length constraints.",
+      "priority": "must",
+      "kind": "desktop",
+      "owner_skill": "gis-desktop-application-development",
+      "skills": ["gis-desktop-application-development", "gis-security-guardian"],
+      "depends_on": ["UDS3", "UDS4", "UDS5", "UDS6"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "Existing skills link to new progressive references; intent_router.py recognizes urban design, parametric roads, DAG dependencies, and CAD copilot queries in Arabic and English.",
+        "Bilingual READMEs and CHANGELOG updated; character length of skills/gis-development/SKILL.md strictly maintained < 5500 chars; author panel and branding preserved."
+      ]
+    },
+    {
+      "id": "UDS8",
+      "title": "Reproducible Test Suite, Regression Verification, and Plan-Bound DoneProof",
+      "description": "Create tests/test_urban_design_competency.py verifying schemas, DAG cascades, earcut concept checks, and QUndoStack reversibility contracts; run all standard validators; bind DoneProof reports for UDS1-UDS8 to plan r1; log development journal records.",
+      "priority": "must",
+      "kind": "testing",
+      "owner_skill": "gis-desktop-e2e-testing",
+      "skills": ["gis-desktop-e2e-testing", "gis-security-guardian"],
+      "depends_on": ["UDS1", "UDS2", "UDS3", "UDS4", "UDS5", "UDS6", "UDS7"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "New unit tests in tests/test_urban_design_competency.py pass 100%; full regression test suite passes without breaking existing functionality.",
+        "Standard validators (catalog, API, skill pack, manifest, security) pass with 0 errors; all DoneProof reports verified with exit code 0; development journal updated."
+      ]
+    }
+  ]
+}

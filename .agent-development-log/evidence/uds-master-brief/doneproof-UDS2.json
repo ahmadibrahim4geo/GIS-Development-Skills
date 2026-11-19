@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "request_id": "UDS-MASTER-001",
+  "task_id": "UDS2",
+  "revision": "r5",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "c1",
+      "statement": "Structured registry created in references/urban-design-source-registry.json and companion guide references/urban-design-sources.md covering all 78 repositories with verified license status, canonical IDs, and security evaluations.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/urban-design-source-registry.json",
+          "observed": "JSON file contains 78 repository records with verified licenses, canonical IDs (UDS-LIB-001 to UDS-LIB-078), security evaluations, and companion guide references/urban-design-sources.md.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Clear distinction between MIT open source, LGPL components (ADS, SARibbon), and noncommercial restricted tools (Token Optimizer) documented without license corruption.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/urban-design-sources.md",
+          "observed": "Clear legal boundary architecture documented: MIT for direct embedding, LGPL v3 dynamic linking rules for SARibbon/ADS, GPL clean-room rules, and PolyForm Noncommercial quarantine for Token Optimizer.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    }
+  ]
+}

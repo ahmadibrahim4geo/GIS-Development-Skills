@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "request_id": "PORTABLE-EXECUTION-001",
+  "task_id": "T1",
+  "revision": "r1",
+  "overall_status": "verified",
+  "scope": "Documentation and source review only",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "One shared reference defines Lite, Standard and Deep without bypassing approval, permissions or T0-T4 requirements",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "manual_review",
+          "reference": "references/portable-execution-guidance.md",
+          "observed": "Read back the full shared guide: modes are advisory and preserve authorization, licensing and T0-T4 requirements.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "The guidance uses capabilities and optional tool examples, bounds retries and delegation, and retains existing routing, journal and evidence ownership",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "manual_review",
+          "reference": "references/portable-execution-guidance.md",
+          "observed": "Read back capability selection, local reuse before conditional source discovery, bounded causal diagnosis, optional authorized delegation and retained existing owners.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "Existing skill entrypoints and bilingual public guidance link the reference while preserving original content, inventory, mission, author markup and language controls",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": ".agent-development-log/evidence/portable-execution/source-review.txt",
+          "observed": "Observed baseline comparison: original content preserved except equivalent router compaction; six owner links, bilingual public explanation and local links inspected; inventories, source attachment, mission and author section unchanged.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ],
+  "not_verified": [
+    "Native ArcGIS/QGIS T2-T4: NOT RUN; documentation-only scope",
+    "Cross-model and cross-client installation/behavior: NOT RUN; no universal support claim",
+    "Visual browser rendering: NOT RUN; static homepage/link/JavaScript tests only",
+    "External security scanners: NOT RUN; local security audit only",
+    "One unittest skipped because Windows symlink creation privileges are unavailable"
+  ]
+}

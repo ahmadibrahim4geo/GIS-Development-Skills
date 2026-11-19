@@ -10,6 +10,7 @@ license: MIT
 
 1. Recover **all required acceptance criteria** and the current revision. Do not drop inconvenient requirements.
 2. Decide what would actually prove each claim: fresh command + exit status, saved artifact readback, provider receipt, or real host/UI operation.
+   Match checks to the deliverable under the [portable execution guidance](../../references/portable-execution-guidance.md). Explanations, documentation and native GIS operations need different checks; effort modes never lower a claim's required evidence tier, and missing capabilities remain explicit gaps.
 3. Run allowed checks, inspect actual output and attach a reference, observation and current revision. Never fabricate logs, infer an external send/merge from drafts, or substitute T0/T1 static tests for native T2–T4 GIS/UI evidence. Third-party reports require independent corroboration.
 4. Assign each criterion VERIFIED, PARTIAL, FAILED, BLOCKED or NOT RUN. No tool access or no permission is not success.
 5. Claim overall completion **only if all required criteria are VERIFIED**. Report deliverables, remaining gaps, failed checks, evidence and exact limitations in the user's language. Re-verify after changes.

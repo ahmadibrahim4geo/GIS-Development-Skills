@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "sequence": 34,
+  "timestamp_utc": "2026-11-05T11:19:11+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Verify architecture-intent fixes against reviewed plan r1",
+  "details": "All required source/offline checks PASS: catalogs, API, skill pack, manifest, skill graph, security (0 findings), architecture flow/plan, diff check. Full run: 423 tests, 422 passed, one Windows symlink privilege skip. Five DoneProof reports passed plan-bound --require-verified; acceptance JSON passed T1 validator. Author section independently compared to HEAD unchanged. Initial failed router-size run retained under evidence/architecture-intent/attempt-1; router shortened without weakening test. Native QGIS/UI.js T2-T4, Archify rendering, browser visual QA, external scanners, publication and installation outside repo NOT RUN. Scope is local repository changes; detailed Arabic review saved.",
+  "references": [
+    33
+  ],
+  "task_id": "ARCH-INTENT-001",
+  "plan_revision": "r1",
+  "changed_files": [
+    "docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md",
+    "scripts/intent_router.py",
+    "scripts/validate_architecture_flow.py",
+    "scripts/gis_code_discovery.py",
+    "project-wizard.html"
+  ],
+  "tests": [
+    ".agent-development-log/evidence/architecture-intent/checks.json",
+    ".agent-development-log/evidence/architecture-intent/acceptance.json",
+    ".agent-development-log/evidence/architecture-intent/T5.doneproof.json"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "bf72a5046413c49f8da0c712cd7646b57e35b4c9bdc4111595fc5aa2c77e93df",
+  "hash": "0782d51cebf8eb4cfd63df8600d650100da1fdef7b90ccd985a0c75736f026b6"
+}

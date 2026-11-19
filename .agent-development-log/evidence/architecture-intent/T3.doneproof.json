@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "request_id": "ARCH-INTENT-001",
+  "task_id": "T3",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "QGIS ribbon requests cannot select ArcGIS Pro SDK implementations; generic UI.js does not silently choose a GIS engine",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": ".agent-development-log\\evidence\\architecture-intent\\unit-tests.log",
+          "observed": "Code-discovery negative regressions and fresh smoke readback exclude ArcGIS recipes for QGIS ribbon and return no implementation for unknown UI.js.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "artifact_readback",
+          "reference": "docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md",
+          "observed": "Reviewed current artifact and observed check receipts; scope is repository T0/T1 only.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Existing legitimate platform discovery scenarios remain passing",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": ".agent-development-log\\evidence\\architecture-intent\\unit-tests.log",
+          "observed": "All original code-discovery cases remain passing alongside nine new applicability regressions.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "artifact_readback",
+          "reference": "docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md",
+          "observed": "Reviewed current artifact and observed check receipts; scope is repository T0/T1 only.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

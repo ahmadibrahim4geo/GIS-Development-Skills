@@ -12,6 +12,8 @@ license: MIT
 
 An LLM **chooses tools**; a deterministic GIS engine does the geometry, raster and CRS calculations. Prefer typed actions, never arbitrary code execution or raw shell commands for a user request.
 
+Use [portable execution guidance](../../references/portable-execution-guidance.md) to select effort, discover host capabilities and bound diagnostic retries. Model/framework independence describes the instructions, not verified support in every client; optional delegation still requires host/project authorization.
+
 For optional Model Context Protocol tools, load [MCP Tool Orchestration](../mcp-integration-and-tool-orchestration/SKILL.md) and the [capability routing contract](../../references/mcp-integration-workflow.md). Compare verified host-offered MCP and native adapters with the intended GIS operation; never infer an installed server from this documentation or bypass host approval.
 
 
@@ -38,4 +40,4 @@ For optional Model Context Protocol tools, load [MCP Tool Orchestration](../mcp-
 - Query STAC catalog by AOI, date and cloud constraints -> inspect item metadata -> fetch a legal sample COG -> validate raster bands/pixel QA -> log complete source.
 - Automated GEE workflow -> authenticate -> bound region/time -> apply pixel-level QA -> export output -> verify actual exported file exists.
 
-Do not import Claude-specific skill commands as if they were generic ChatGPT runtime actions. Adapt architecture, include explicit dependency and security review.
+Do not import Claude-specific skill commands as if they were generic ChatGPT runtime actions. Adapt architecture, include explicit dependency and security review. For embedded desktop AI copilots, mandatory QUndoStack Ctrl+Z reversibility, strict C++ JSON Schema validation, and selection context awareness, see [reversible CAD/GIS copilot](../../references/reversible-cad-ai-copilot.md), [export studio](../../references/urban-export-studio.md), [token optimization triad](../../references/token-optimization-triad.md), and [agent context memory architecture](../../references/agent-context-memory-architecture.md).

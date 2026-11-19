@@ -14,6 +14,10 @@ license: MIT
 
 **Route:** [decision tree](../../references/agent-decision-tree.md); rendering ≠ analysis.
 
+**Effort:** [guide](../../references/portable-execution-guidance.md).
+
+**QGIS ribbon/UI.js:** [contract](../../references/ui-engine-architecture-contract.md); verify names before host/shell/renderer/engine choice.
+
 ## Choose specialists
 
 | Task | Read first |
@@ -24,23 +28,23 @@ license: MIT
 | QGIS plugin / Processing algorithm | [QGIS Plugin Development](../qgis-plugin-development/SKILL.md) |
 | QGIS engine | [Integration](../qgis-engine-integration/SKILL.md) |
 | PostGIS, SpatiaLite, schema/indexes | [Spatial Databases](../spatial-databases/SKILL.md) |
-| Raster/vector, GDAL, GeoPandas, spatial batch | [Geospatial Data Processing](../geospatial-data-processing/SKILL.md) |
+| Raster/vector, GDAL, GeoPandas | [Geospatial Data Processing](../geospatial-data-processing/SKILL.md) |
 | Remote sensing | [Pipelines](../remote-sensing-pipelines/SKILL.md) |
 | MapLibre, web 2D, CesiumJS 3D | [Geospatial Web Mapping](../geospatial-web-mapping/SKILL.md) |
-| Standalone GIS desktop / installer | [GIS Desktop Development](../gis-desktop-application-development/SKILL.md) |
+| Standalone CAD/GIS desktop / studio | [GIS Desktop Development](../gis-desktop-application-development/SKILL.md) |
 | Clean-room reference parity | [Reference Implementation](../clean-room-reference-implementation/SKILL.md) |
-| Android/iOS GIS apps, GNSS, offline sync | [GIS Mobile Application Development](../gis-mobile-application-development/SKILL.md) |
+| Android/iOS, GNSS, offline | [GIS Mobile Application Development](../gis-mobile-application-development/SKILL.md) |
 | Command inventory, handlers, dead controls | [UI Command Audit](../gis-ui-command-audit/SKILL.md) |
 | Windows UI, WebView2 and installer tests | [Desktop E2E Testing](../gis-desktop-e2e-testing/SKILL.md) |
 | Data flow provenance, missing layers | [GIS Data Flow Diagnostics](../gis-data-flow-diagnostics/SKILL.md) |
 | Images, thumbnails, logos | [Visual Assets](../visual-asset-discovery-integration/SKILL.md) |
 | GIS code snippets, SDK examples, recipes | [GIS Code Discovery](../gis-code-discovery/SKILL.md) |
-| UI/UX, accessibility, keyboard and visual regression | [UI/UX Design & Testing](../gis-ui-ux-design-testing/SKILL.md) |
+| UI/UX, keyboard, accessibility | [UI/UX Design & Testing](../gis-ui-ux-design-testing/SKILL.md) |
 | Discover/download external data | [Geospatial Data Discovery](../geospatial-data-discovery/SKILL.md) |
 | Source directories, repositories and STAC indexes | [Geospatial Data Catalogs](../geospatial-data-catalogs/SKILL.md) |
 | GIS AI agents | [Agents](../geospatial-ai-agents/SKILL.md) |
 | Architecture diagrams, structural changes | [Visualization](../gis-architecture-visualization/SKILL.md) (conditional) |
-| MCP/native tools, fallback and capability preflight | [MCP Tool Orchestration](../mcp-integration-and-tool-orchestration/SKILL.md) |
+| MCP/native tools and fallback | [MCP Tool Orchestration](../mcp-integration-and-tool-orchestration/SKILL.md) |
 | DEM, terrain, hydrology, LiDAR | [Terrain / Hydrology / LiDAR](../terrain-hydrology-lidar/SKILL.md) |
 | Untrusted GIS inputs, secrets and security | [GIS Security Guardian](../gis-security-guardian/SKILL.md) (cross-cutting) |
 | Integrate GIS HTTP APIs safely | [Geospatial API Integration](../geospatial-api-integration/SKILL.md) |
@@ -55,9 +59,9 @@ license: MIT
 
 **Wizard:** [planner](../../project-wizard.html). **Arabic:** [i18n](../gis-internationalization-arabic/SKILL.md). **QA:** [guide](../../docs/PERFORMANCE_RELIABILITY.md).
 
-## Global rules (always apply)
+## Rules (always apply)
 
-[MCP/native routing](../../references/mcp-integration-workflow.md) follows domain/host preflight; the [execution contract](../../references/repository-wide-skill-orchestration.md), [full guidance](../../references/gis-development-full-guidance.md) and [Security Guardian](../gis-security-guardian/SKILL.md) apply. Preserve sources/provenance; check CRS/units/NoData, licenses/versions, performance and readback. Require approval for consequential writes and host permissions. Apply [DoneProof](../completion-evidence/SKILL.md) and record T0–T4 using the [acceptance report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py). Static checks ≠ native GIS/GUI proof.
+[MCP/native routing](../../references/mcp-integration-workflow.md) follows domain preflight. Apply the [execution contract](../../references/repository-wide-skill-orchestration.md), [full guidance](../../references/gis-development-full-guidance.md) and [Security Guardian](../gis-security-guardian/SKILL.md): preserve sources, CRS/units/NoData, licenses, permissions and readback. Use [DoneProof](../completion-evidence/SKILL.md), [T0–T4 report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py). Static checks ≠ native proof.
 
 **Shared checks:** [security](../../references/geospatial-security.md) · [performance](../../references/geospatial-performance.md).
 

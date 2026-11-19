@@ -6,35 +6,36 @@ Run with --text for conservative bilingual keyword hints or --plan for a JSON
 draft from a human/AI. --gate verifies declared fields, not user identity.
 """
 import argparse
+import copy
 import json
 import re
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 DOMAINS = (
-    ("gis-code-discovery", ("code discovery", "gis code", "code snippet", "code snippets", "sdk snippet", "arcgis sdk", "pyqgis snippet", "gdal sample", "gis recipe", "كود جغرافي", "خوارزمية جغرافية", "مقتطفات برمجية", "وصفات برمجية", "أمثلة برمجية", "كود python", "python code", "تنبؤ مكاني", "خوارزمية تنبؤ", "spatial prediction", "spatial machine learning", "تعلم آلي مكاني", "كود بحثي", "كودًا بحثيًا", "كودا بحثيا", "أكواد بحثية", "research code", "scikit-map")),
+    ("gis-code-discovery", ("code discovery", "gis code", "code snippet", "code snippets", "sdk snippet", "arcgis sdk", "pyqgis snippet", "gdal sample", "gis recipe", "كود جغرافي", "خوارزمية جغرافية", "مقتطفات برمجية", "وصفات برمجية", "أمثلة برمجية", "كود python", "python code", "تنبؤ مكاني", "خوارزمية تنبؤ", "spatial prediction", "spatial machine learning", "تعلم آلي مكاني", "كود بحثي", "كودًا بحثيًا", "كودا بحثيا", "أكواد بحثية", "research code", "scikit-map", "ponytail", "caveman", "token optimizer", "ترشيد توكنات", "هندسة سياق", "context engineering")),
     ("visual-asset-discovery-integration", ("thumbnail", "visual asset", "image search", "image sourcing", "official logo", "logos", "brand asset", "سامبنيل", "سنبنيل", "ثَمبنيل", "صورة مصغرة", "صورة لكل اختيار", "صور توضيحية", "شعار", "شعارات")),
 
 ("gis-architecture-visualization", ("archify", "architecture diagram", "workflow diagram", "draw a diagram", "interactive diagram", "visualize architecture", "diagram the", "ارسملي", "ارسم لي", "مخطط", "مين مسؤول عن مين", "وضحلي بنية", "وضّحلي بنية")),
     ("clean-room-reference-implementation", ("clean room", "clean-room", "reference software", "reference implementation", "feature parity", "reverse engineering", "الهندسة النظيفة", "الإطار المرجعي", "تحليل برنامج مرجعي", "دراسة برنامج مرجعي", "مضاهاة جوجل إيرث")),
     ("kml-kmz-engineering", ("kml", "kmz", "placemark", "كي ام ال", "كى ام ال", "ستايل km", "ملفات الكي")),
-    ("gis-desktop-application-development", ("desktop", "exe", "wpf", "زيرث", "zearth", "سطح المكتب", "برنامج مستقل")),
+    ("gis-desktop-application-development", ("desktop", "standalone", "exe", "wpf", "زيرث", "zearth", "سطح المكتب", "برنامج مستقل", "تطبيق مستقل", "cad", "dark cad", "saribbon", "qt-ads", "lock-canvas-zoom", "كاد", "واجهة كاد", "برنامج كاد")),
     ("gis-mobile-application-development", ("android", "ios app", "iphone", "gnss", "offline sync", "mobile gis", "موبايل", "هاتف", "تطبيق جوال", "تطبيق أندرويد", "تطبيق اندرويد")),
-    ("terrain-hydrology-lidar", ("terrain", "dem", "elevation", "lidar", "تضاريس", "ارتفاع", "المبالغة", "الترين")),
+    ("terrain-hydrology-lidar", ("terrain", "dem", "elevation", "lidar", "تضاريس", "ارتفاع", "المبالغة", "الترين", "sumo", "ladybug", "gully", "ponding", "runoff coefficient", "سيول", "تصريف أمطار", "شمس وظلال", "مسار الشمس")),
     ("coordinate-reference-systems", ("crs", "epsg", "projection", "grid", "graticule", "خطوط الطول", "دوائر العرض", "الإحداثي", "مسقط")),
     ("gis-cartography-symbology", ("symbol", "style", "icon", "symbology", "أيقون", "الرموز", "ألوان", "ملصق")),
     ("arcgis-toolbox-engineering", ("arcgis", "arcpy", "arcmap", "pyt", "أرك جي", "بايثون تول")),
-    ("qgis-plugin-development", ("qgis plugin", "qgis processing", "processing provider", "qgis extension", "إضافة qgis", "بلجن كيو جي")),
+    ("qgis-plugin-development", ("qgis plugin", "processing provider", "qgis extension", "إضافة qgis", "بلجن كيو جي")),
     ("qgis-engine-integration", ("qgis engine", "qgis core", "qgis libraries", "qgis standalone", "qgis runtime", "محرك qgis", "مكتبات qgis", "محرك كيو جي")),
     ("geospatial-web-mapping", ("cesium", "maplibre", "web map", "globe", "ثلاثية الأبعاد", "كرة أرضية")),
-    ("remote-sensing-pipelines", ("sentinel", "landsat", "gee", "satellite", "الاستشعار", "مرئيات", "cog", "cloud optimized geotiff", "طبقة cog", "تغطية زمنية", "temporal coverage")),
-    ("geospatial-data-processing", ("gdal", "geopandas", "raster", "vector", "راستر", "فيكتور")),
+    ("remote-sensing-pipelines", ("sentinel", "landsat", "gee", "satellite", "الاستشعار", "مرئيات", "cog", "cloud optimized geotiff", "طبقة cog", "تغطية زمنية", "temporal coverage", "ndvi", "ndwi", "ndmi", "savi", "evi", "nbr", "spectral index", "spectral indices", "مؤشر طيفي", "مؤشرات طيفية", "كلوروفيل", "حريق", "مياه سطحية", "رطوبة النبات")),
+    ("geospatial-data-processing", ("gdal", "geopandas", "raster", "vector", "راستر", "فيكتور", "earcut", "clipper2", "opendrive", "streetmix", "dag cascade", "تثليث", "توبولوجيا بارامترية", "ارتدادات")),
     ("spatial-databases", ("postgis", "spatialite", "spatial sql", "قواعد البيانات المكانية")),
     ("geospatial-api-integration", ("api", "geocod", "gazetteer", "أسماء الأماكن", "بحث عن الأماكن", "خدمة stac", "stac api", "واجهة برمجة")),
     ("geospatial-data-discovery", ("download data", "stac", "مصادر البيانات", "تنزيل بيانات", "خصائص التربة", "soil", "التربة", "land cover", "الغطاء الأرضي", "غطاء أرضي", "خرائط خصائص")),
-    ("geospatial-ai-agents", ("agent", "geoai", "automation", "وكيل", "الذكاء الاصطناعي")),
+    ("geospatial-ai-agents", ("agent", "geoai", "automation", "وكيل", "الذكاء الاصطناعي", "qundostack", "qundocommand", "cad copilot", "مساعد كاد", "تراجع آمن", "ctrl+z")),
     ("mcp-integration-and-tool-orchestration", ("mcp", "model context protocol", "mcp server", "mcp tools", "سيرفرات mcp", "سيرفر mcp", "توجيه الأدوات", "تكامل الأدوات")),
     ("geospatial-data-catalogs", ("data catalog", "data repository", "gis catalog", "stac catalog", "كتالوج البيانات", "فهرس البيانات", "مستودعات البيانات", "بيانات بيئية", "environmental data", "مستودعات البيانات البيئية", "مستودع بيانات", "opengeohub", "openlandmap", "مصدر بيانات مفتوح")),
     ("gis-internationalization-arabic", ("i18n", "localization", "arabic ui", "bilingual", "تعريب", "ثنائي اللغة", "تعدد اللغات")),
@@ -56,6 +57,27 @@ VISUALIZATION_FIELDS = {
     "evidence_basis": {"proposed", "source-reviewed", "runtime-observed"},
     "language": {"en", "ar"},
 }
+ARCHITECTURE_CHANGES = {"ui-reorganization", "ui-shell-migration", "engine-integration", "engine-replacement"}
+ARCHITECTURE_ROLES = {"ui_framework": "ui-shell", "renderer": "map-renderer", "gis_engine": "geospatial-engine"}
+TASK_CONTRACT_FIELDS = ("command_id", "trace_id", "input_artifact_id", "output_artifact_id",
+                        "input_schema", "output_schema", "input_contract", "output_contract")
+
+
+def architecture_hints(request):
+    """Flag a review question, never choose a host/engine from UI terminology."""
+    text = request.casefold()
+    signals = []
+    if re.search(r"\bribbon\b|ريبون|ريبُن|الشريط|شريط الأدوات", text):
+        signals.append("command-surface")
+    if re.search(r"ui[.-]?js|ui framework|ui shell|frontend|front-end|محرك واجه|إطار واجه|اطار واجه", text):
+        signals.append("ui-component-identity")
+    if re.search(r"migrat|re-shell|replace.*engine|swap.*engine|حو[ّ]?ل.*واجه|نقل.*أدوات|استبد[ال].*محرك|دمج.*واجه", text):
+        signals.append("architecture-change")
+    isolated = bool(re.search(r"\b(change|rename|recolor)\b.*\b(label|colou?r|text|icon)\b|غي[ّ]?ر.*(لون|اسم|نص|أيقون)|غير.*(لون|اسم|نص|ايقون)", text))
+    required = bool(signals) and not (isolated and not any(s != "command-surface" for s in signals))
+    return {"required": required, "signals": signals,
+            "basis": "lexical-hints-only", "delivery_model": "unresolved" if required else None,
+            "next_step": "Host must distinguish source host, delivery host, changed component and protected behavior; inspect named components before selecting an adapter."}
 
 
 def available_skills(root=SKILLS):
@@ -71,6 +93,11 @@ def route_hints(request, known=None):
             if name in known and any(token in lowered for token in tokens)]
     if "gis-security-guardian" in known:
         hits.append("gis-security-guardian")
+    architecture_review = architecture_hints(request)
+    # A request for ribbon/integration must reach intake even when no installed
+    # domain keyword matches. Do not force a QGIS plugin or standalone engine.
+    if architecture_review["required"] and "prompt-intent-orchestrator" in known:
+        hits.append("prompt-intent-orchestrator")
     return {
         "schema_version": "1.0",
         "stage": "draft_hints_only",
@@ -82,6 +109,7 @@ def route_hints(request, known=None):
         "language_hint": "ar" if re.search(r"[\u0600-\u06ff]", request) else "en",
         "suggested_skills": list(dict.fromkeys(hits)),
         "requires_semantic_review": True,
+        "architecture_review": architecture_review,
         "approval": "not_requested",
         "note": "Keyword matches only. A human/LLM must identify tasks, uncertainties, acceptance tests and obtain approval before tool dispatch."
     }
@@ -89,6 +117,79 @@ def route_hints(request, known=None):
 
 def _text(value):
     return isinstance(value, str) and bool(value.strip())
+
+
+def _local_ref(value):
+    """A project-relative reference only; no read, fetch or execution here."""
+    if not _text(value) or "\\" in value or ":" in value or "\x00" in value:
+        return False
+    path = PurePosixPath(value)
+    return bool(path.parts) and not path.is_absolute() and path.as_posix() == value and not any(p in (".", "..") for p in path.parts)
+
+
+def validate_architecture(task, prefix):
+    """Validate declared intent separately from renderer configuration."""
+    if "architecture" not in task:
+        return []
+    declaration = task["architecture"]
+    fields = {"schema_version", "change_type", "source_host", "target_host", *ARCHITECTURE_ROLES,
+              "integration_mode", "preserved_invariants", "command_inventory_ref", "flow_spec_ref"}
+    if not isinstance(declaration, dict):
+        return [prefix + ".architecture must be an object"]
+    errors = []
+    pref = prefix + ".architecture"
+    if set(declaration) != fields:
+        errors.append(pref + " must contain exactly the documented architecture fields")
+    if declaration.get("schema_version") != "1.0":
+        errors.append(pref + ".schema_version must be 1.0")
+    change_type = declaration.get("change_type")
+    if not isinstance(change_type, str) or change_type not in ARCHITECTURE_CHANGES:
+        errors.append(pref + ".change_type is invalid")
+    for key in ("source_host", "target_host"):
+        if not _text(declaration.get(key)):
+            errors.append(pref + "." + key + " must name a host or explicitly say unresolved")
+    for key, role in ARCHITECTURE_ROLES.items():
+        component = declaration.get(key)
+        if not isinstance(component, dict):
+            errors.append(pref + "." + key + " must declare component identity")
+            continue
+        if set(component) != {"name", "role", "status", "source_ref", "version"}:
+            errors.append(pref + "." + key + " has missing or unknown identity fields")
+        if not _text(component.get("name")) or component.get("role") != role:
+            errors.append(pref + "." + key + " needs a name and role " + role)
+        state = component.get("status")
+        if state not in ("unresolved", "source-reviewed"):
+            errors.append(pref + "." + key + ".status is invalid")
+        for name in ("source_ref", "version"):
+            value = component.get(name)
+            if value is not None and not _text(value):
+                errors.append(pref + "." + key + "." + name + " must be text or null")
+            if state == "source-reviewed" and not _text(value):
+                errors.append(pref + "." + key + "." + name + " is required for source-reviewed identity")
+    if declaration.get("integration_mode") not in ("in-process", "worker-ipc", "service", "unresolved"):
+        errors.append(pref + ".integration_mode is invalid")
+    invariants = declaration.get("preserved_invariants")
+    if not isinstance(invariants, list) or not invariants or any(not _text(v) for v in invariants):
+        errors.append(pref + ".preserved_invariants must be nonempty strings")
+    for key in ("command_inventory_ref", "flow_spec_ref"):
+        value = declaration.get(key)
+        if value is not None and not _local_ref(value):
+            errors.append(pref + "." + key + " must be a safe project-relative path or null")
+    return errors
+
+
+def architecture_blockers(declaration):
+    """Discovery gaps, NOT a runtime check or an authenticated action gate."""
+    blockers = []
+    for key in ("source_host", "target_host", "integration_mode"):
+        if re.search(r"\b(unknown|unresolved|unverified|uninspected)\b|غير (معروف|محسوم|محدد)|مجهول", declaration[key].casefold()):
+            blockers.append(key + " is unresolved")
+    blockers.extend(key + " identity/version is unresolved" for key in ARCHITECTURE_ROLES
+                    if declaration[key]["status"] == "unresolved")
+    for key in ("command_inventory_ref", "flow_spec_ref"):
+        if declaration[key] is None:
+            blockers.append(key + " requires discovery before implementation")
+    return blockers
 
 
 def validate_visualization(task, prefix):
@@ -133,6 +234,9 @@ def validate_plan(plan, known=None, require_approved=False):
         val = plan.get(field)
         if not isinstance(val, list) or any(not _text(x) for x in val):
             errors.append(field + " must be a list of strings")
+    for field in ("constraints", "non_goals"):
+        if field in plan and (not isinstance(plan[field], list) or any(not _text(v) for v in plan[field])):
+            errors.append(field + " must be a list of strings")
     approval = plan.get("approval")
     if not isinstance(approval, dict):
         approval = {}
@@ -176,6 +280,16 @@ def validate_plan(plan, known=None, require_approved=False):
         if isinstance(selected, list) and "gis-security-guardian" not in selected:
             errors.append(pref + ".skills must include gis-security-guardian")
         errors.extend(validate_visualization(task, pref))
+        errors.extend(validate_architecture(task, pref))
+        for field in TASK_CONTRACT_FIELDS:
+            if field not in task:
+                continue
+            value = task[field]
+            if field.endswith(("schema", "contract")):
+                if not (_text(value) or isinstance(value, dict) and bool(value)):
+                    errors.append(pref + "." + field + " must be a schema/reference object or nonempty text")
+            elif not _text(value):
+                errors.append(pref + "." + field + " must be nonempty text")
         deps = task.get("depends_on")
         if not isinstance(deps, list) or any(not _text(x) for x in deps):
             errors.append(pref + ".depends_on must be string array")
@@ -185,6 +299,20 @@ def validate_plan(plan, known=None, require_approved=False):
         if len(deps) != len(set(deps)):
             errors.append(pref + " contains duplicate dependencies")
         depends[ident] = deps
+        contracts = task.get("handoff_contracts", [])
+        if not isinstance(contracts, list):
+            errors.append(pref + ".handoff_contracts must be an array")
+        else:
+            seen_contracts = set()
+            for item in contracts:
+                if (not isinstance(item, dict) or set(item) != {"from_task", "contract_ref"}
+                        or not _text(item.get("from_task")) or item["from_task"] not in deps
+                        or not _local_ref(item.get("contract_ref"))):
+                    errors.append(pref + ".handoff_contracts needs a dependency from_task and local contract_ref")
+                elif item["from_task"] in seen_contracts:
+                    errors.append(pref + ".handoff_contracts has duplicate dependency contract")
+                else:
+                    seen_contracts.add(item["from_task"])
         criteria = task.get("acceptance_criteria")
         if not isinstance(criteria, list) or not criteria or any(not _text(x) for x in criteria):
             errors.append(pref + ".acceptance_criteria must be nonempty string array")
@@ -303,6 +431,8 @@ def compile_workflow(plan, known=None, require_approved=False):
         "target": plan.get("target") if isinstance(plan, dict) else None,
         "desired_outcomes": plan.get("desired_outcomes") if isinstance(plan, dict) else None,
         "success_criteria": plan.get("success_criteria") if isinstance(plan, dict) else None,
+        **{key: copy.deepcopy(plan[key]) for key in ("constraints", "non_goals", "assumptions", "open_questions")
+           if isinstance(plan, dict) and key in plan},
         "phases": list(WORKFLOW_PHASES),
         "status": "BLOCKED" if errors else "AWAITING_HOST_AUTHORIZATION" if require_approved else "AWAITING_REVIEW",
         "approval_declarations_checked": bool(require_approved and not errors),
@@ -323,6 +453,9 @@ def compile_workflow(plan, known=None, require_approved=False):
             "step": step_number,
             "task_id": task["id"],
             "title": task["title"],
+            "description": task["description"],
+            "priority": task["priority"],
+            "kind": task["kind"],
             "owner_skill": owner,
             "skills": task["skills"],
             "depends_on": task["depends_on"],
@@ -336,6 +469,14 @@ def compile_workflow(plan, known=None, require_approved=False):
             "completion_gate": "completion-evidence (DoneProof); validate each acceptance criterion against fresh results",
             "journal_owner": "agent-development-journal",
         }
+        for key in TASK_CONTRACT_FIELDS:
+            if key in task:
+                step[key] = copy.deepcopy(task[key])
+        if "architecture" in task:
+            step["architecture"] = copy.deepcopy(task["architecture"])
+            step["architecture_blockers"] = architecture_blockers(task["architecture"])
+            step["architecture_status"] = "NEEDS_DISCOVERY" if step["architecture_blockers"] else "REQUIRES_PREFLIGHT"
+            step["preflight"].append("inspect referenced command inventory and validate_architecture_flow.py on flow_spec_ref; verify actual component/runtime compatibility")
         if "visualization" in task:
             step["visualization"] = {
                 **task["visualization"],
@@ -346,10 +487,15 @@ def compile_workflow(plan, known=None, require_approved=False):
                 "gis_execution_proven": False,
             }
             step["preflight"].append("actual Node.js, Archify runtime and browser availability; local output and source privacy")
+            if "architecture" in task:
+                step["visualization"]["flow_spec_ref"] = task["architecture"]["flow_spec_ref"]
         result["steps"].append(step)
-        result["handoffs"].extend(
-            {"from_task": dep, "to_task": task["id"], "data_contract": "approved_plan_task_dependency"}
-            for dep in task["depends_on"])
+        contracts = {item["from_task"]: item["contract_ref"] for item in task.get("handoff_contracts", [])}
+        for dep in task["depends_on"]:
+            edge = {"from_task": dep, "to_task": task["id"], "kind": "task_dependency"}
+            if dep in contracts:
+                edge["contract_ref"] = contracts[dep]
+            result["handoffs"].append(edge)
     return result
 
 

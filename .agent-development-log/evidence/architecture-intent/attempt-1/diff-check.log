@@ -1,0 +1,6 @@
+warning: in the working copy of '.agent-development-log/INDEX.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.agent-development-log/STATE.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/build_skill_bundle.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/gis_code_discovery.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/intent_router.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_code_discovery.py', LF will be replaced by CRLF the next time Git touches it

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "request_id": "UDS-MASTER-001",
+  "task_id": "UDS4",
+  "revision": "r5",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "c1",
+      "statement": "Comprehensive reference references/urban-hierarchy-parametric-modeling.md created covering 8-layer spatial hierarchy, parametric cross-sections, and relational DAG cascading behavior for any parametric geospatial engineering workflow.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/urban-hierarchy-parametric-modeling.md",
+          "observed": "File exists and documents the complete 8-layer hierarchy (L0 to L7), parametric cross-sections, and relational DAG cascading behavior with rollback transactions across dependent layers.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Polygon triangulation via earcut.hpp with internal holes, Clipper2 offsetting, ASAM OpenDRIVE clothoids/sections, Streetmix cross-section concepts, and 4 subsurface infrastructure networks detailed.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/urban-hierarchy-parametric-modeling.md",
+          "observed": "Detailed specifications provided for earcut.hpp triangulation with interior holes, Clipper2 polygon offsetting for setbacks, ASAM OpenDRIVE clothoid transitions, Streetmix assemblies, and 4 subsurface utilities (sanitary, storm with gully spacing, water, electrical).",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    }
+  ]
+}

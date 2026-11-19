@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "request_id": "UDS-MASTER-001",
+  "task_id": "UDS9",
+  "revision": "r5",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "c1",
+      "statement": "New unit tests in tests/test_urban_design_competency.py pass 100%; full regression test suite passes without breaking existing functionality.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -m unittest tests/test_urban_design_competency.py; python -m unittest discover -s tests -v",
+          "observed": "Ran 9 tests in tests/test_urban_design_competency.py OK; Ran 455 tests in 17.071s OK (skipped=1) across entire suite with zero failures or regressions.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Standard validators (catalog, API, skill pack, manifest, security) pass with 0 errors; all DoneProof reports verified with exit code 0; development journal updated.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "scripts/validate_catalog.py; scripts/validate_api_catalog.py; scripts/validate_skill_pack.py; scripts/build_manifest.py; scripts/security_audit.py; scripts/verify_completion.py",
+          "observed": "Catalog valid: 193 sources; API catalog valid: 53 services; Skill pack valid: 35 skills; Manifest valid; Security Guardian pass (0 findings); DoneProof reports UDS1 through UDS9 verified with exit code 0.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    }
+  ]
+}

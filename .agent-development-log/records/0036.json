@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "sequence": 36,
+  "timestamp_utc": "2026-11-15T16:06:45+00:00",
+  "kind": "implementation",
+  "status": "in_progress",
+  "summary": "Add portable execution reference and scoped owner links",
+  "details": "Added independently written shared guidance for effort modes, capability-based execution, reuse decisions, bounded diagnosis, optional authorized delegation and honest verification. Linked six existing skill owners and global contract; added bilingual README/homepage explanations and an unreleased note. No skill or catalog added. An initial patch context mismatch was rejected without changes; corrected the exact heading context. Review and repository checks are next; native GIS and cross-client behavior have not been tested.",
+  "references": [
+    35
+  ],
+  "task_id": "PORTABLE-EXECUTION-001",
+  "plan_revision": "r1",
+  "changed_files": [
+    "references/portable-execution-guidance.md",
+    "skills/gis-development/SKILL.md",
+    "skills/prompt-intent-orchestrator/SKILL.md",
+    "skills/gis-code-discovery/SKILL.md",
+    "skills/agent-development-journal/SKILL.md",
+    "skills/completion-evidence/SKILL.md",
+    "skills/geospatial-ai-agents/SKILL.md",
+    "references/repository-wide-skill-orchestration.md",
+    "README.md",
+    "README.ar.md",
+    "index.html",
+    "CHANGELOG.md"
+  ],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "0af7bd08fe525da4ed7633565f5d1ef1af7a027a90e72ebb166a9614ab8736c5",
+  "hash": "f18e4947f4fb4652131d2385d4d6262c31dc5e7a86bdc1eb94e4ff782dad79bc"
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "sequence": 32,
+  "timestamp_utc": "2026-11-05T11:05:57+00:00",
+  "kind": "request",
+  "status": "approved",
+  "summary": "Repair architecture-intent routing and UI/engine handoffs",
+  "details": "User explicitly instructed the host to carry out necessary improvements after the read-only audit. Scope and criteria are in .agent-development-log/plans/architecture-intent-r1.json. JSON is not consent. No publication, third-party install or actual engine migration. Original journal helper failed before creating record 0032 because hard links are denied; Windows no-clobber atomic rename now used, with original records intact.",
+  "references": [],
+  "task_id": "ARCH-INTENT-001",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "a4b3061f992fe65deffc3eb960e5c36f5ec28450ba7a8981c1dba7200d2ea7fd",
+  "hash": "d7cecb66c2ae4e047db22e653647cb09796da7ec6ff46497cc4efb250dd2af30"
+}

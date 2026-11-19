@@ -1,0 +1,11 @@
+test_core_router_retains_all_full_guidance (test_evidence_contract.EvidenceTests.test_core_router_retains_all_full_guidance) ... ok
+test_example_is_complete (test_evidence_contract.EvidenceTests.test_example_is_complete) ... ok
+test_missing_fields (test_evidence_contract.EvidenceTests.test_missing_fields) ... ok
+test_native_claim_requires_logs (test_evidence_contract.EvidenceTests.test_native_claim_requires_logs) ... ok
+test_unverified_result_cannot_pass (test_evidence_contract.EvidenceTests.test_unverified_result_cannot_pass) ... ok
+test_validator_levels_come_from_canonical_registry (test_evidence_contract.EvidenceTests.test_validator_levels_come_from_canonical_registry) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

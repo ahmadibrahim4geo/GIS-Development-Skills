@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0",
+  "registry_title": "Remote Sensing Scientific Source and Index Registry",
+  "description": "Curated registry of official product specifications, peer-reviewed indices, spectral libraries, training materials, and scientific discovery catalogs for Earth observation.",
+  "provenance": {
+    "reviewed_on": "2026-11-19",
+    "source_verified": true,
+    "runtime_verified": false,
+    "license": "MIT",
+    "hierarchy_rule": "Primary research papers and official agency mission documentation outrank educational tutorials and community scripts. Code repositories illustrate implementation syntax but do not prove scientific validity."
+  },
+  "sources": [
+    {
+      "id": "usgs-landsat-c2-l2-specs",
+      "title": "USGS Landsat Collection 2 Level-2 Science Products Scaling and Specifications",
+      "organization": "USGS / NASA",
+      "kind": "official_product_documentation",
+      "priority": "high",
+      "topics": ["landsat", "surface_reflectance", "scaling_factors", "qa_pixel", "thermal_st"],
+      "url": "https://www.usgs.gov/faqs/how-do-i-use-a-scale-factor-landsat-level-2-science-products",
+      "authoritative_for": [
+        "Landsat C2 L2 SR scaling: reflectance = DN * 0.0000275 - 0.2",
+        "Landsat C2 L2 Surface Temperature: ST = DN * 0.00341802 + 149.0 (Kelvin)",
+        "QA_PIXEL bitmask definitions for clouds, shadow, dilation, and water"
+      ],
+      "not_authoritative_for": ["universal_ecological_thresholds"],
+      "language": "en",
+      "access_model": "public_web_page",
+      "license_status": "us_government_public_domain",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "usgs-landsat-spectral-indices",
+      "title": "Landsat Surface Reflectance-Derived Spectral Indices",
+      "organization": "USGS",
+      "kind": "official_product_documentation",
+      "priority": "high",
+      "topics": ["ndvi", "ndmi", "nbr", "evi", "savi", "storage_scale"],
+      "url": "https://www.usgs.gov/landsat-missions/landsat-surface-reflectance-derived-spectral-indices",
+      "authoritative_for": [
+        "Landsat pre-packaged spectral indices definitions",
+        "Ready-made product scale factor: stored as int16 with scale factor 0.0001 (range -10000 to 10000)"
+      ],
+      "not_authoritative_for": ["raw_dn_scaling_which_uses_different_equation"],
+      "language": "en",
+      "access_model": "public_web_page",
+      "license_status": "us_government_public_domain",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "copernicus-sentinel2-l2a-docs",
+      "title": "Copernicus Data Space Ecosystem - Sentinel-2 MSI Level-2A Processing",
+      "organization": "ESA / European Commission",
+      "kind": "official_product_documentation",
+      "priority": "high",
+      "topics": ["sentinel-2", "l2a", "scl_mask", "processing_baseline", "harmonization"],
+      "url": "https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel2.html",
+      "authoritative_for": [
+        "Sentinel-2 band spatial resolutions (10m, 20m, 60m)",
+        "Scene Classification Layer (SCL) classes (0=NoData, 1=Saturated, 3=Cloud Shadow, 4=Vegetation, 5=Bare Soil, 6=Water, 7=Unclassified, 8=Cloud Medium, 9=Cloud High, 10=Cirrus, 11=Snow)",
+        "Processing baselines (e.g. PB 04.00+ reflectance offset -1000 DN)"
+      ],
+      "not_authoritative_for": ["landsat_comparisons_without_hls"],
+      "language": "en",
+      "access_model": "public_web_page",
+      "license_status": "open_copernicus_data_policy",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "nasa-hls-harmonized-landsat-sentinel",
+      "title": "Harmonized Landsat and Sentinel-2 (HLS) Science Products",
+      "organization": "NASA GSFC",
+      "kind": "official_product_documentation",
+      "priority": "high",
+      "topics": ["hls", "time_series", "cross_sensor_harmonization", "brdf", "atmospheric_correction"],
+      "url": "https://hls.gsfc.nasa.gov/",
+      "authoritative_for": [
+        "NBAR (Nadir BRDF-Adjusted Reflectance)",
+        "Sensor bandpass alignment between OLI and MSI",
+        "Consistent 30m grid time-series metrics"
+      ],
+      "not_authoritative_for": ["native_10m_sentinel2_resolution"],
+      "language": "en",
+      "access_model": "public_web_page",
+      "license_status": "nasa_open_science",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "awesome-spectral-indices",
+      "title": "Awesome Spectral Indices Catalog",
+      "organization": "Awesome Spectral Indices Project (Montero et al. 2023)",
+      "kind": "peer_reviewed_catalog",
+      "priority": "high",
+      "topics": ["spectral_indices", "formulas", "band_mappings", "cross_domain"],
+      "url": "https://github.com/awesome-spectral-indices/awesome-spectral-indices",
+      "authoritative_for": [
+        "Standardized formula naming and community index definitions",
+        "Scientific literature citations for 200+ indices across optical sensors"
+      ],
+      "not_authoritative_for": ["sensor_radiometric_calibration_files", "universal_thresholds"],
+      "language": "en",
+      "access_model": "open_source_repository",
+      "license_status": "mit",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "index-database-idb",
+      "title": "Index DataBase (IDB) for Remote Sensing Indices",
+      "organization": "University of Bonn / Remote Sensing Working Group",
+      "kind": "academic_database",
+      "priority": "high",
+      "topics": ["index_by_sensor", "sensor_by_index", "wavelengths", "applications"],
+      "url": "https://www.indexdatabase.de/",
+      "authoritative_for": [
+        "Cross-mapping of specific satellite sensor bands to mathematical indices",
+        "Hyperspectral and multispectral band availability checks"
+      ],
+      "not_authoritative_for": ["real_time_api_availability_without_preflight"],
+      "language": "en",
+      "access_model": "public_web_database",
+      "license_status": "academic_fair_use",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "un-spider-recommended-practices",
+      "title": "UN-SPIDER Recommended Practices for Disaster Risk Management",
+      "organization": "United Nations Office for Outer Space Affairs (UNOOSA)",
+      "kind": "international_standard_guideline",
+      "priority": "high",
+      "topics": ["flood_mapping", "burn_severity", "drought", "sar_flood", "insar_coherence"],
+      "url": "https://un-spider.org/advisory-support/recommended-practices",
+      "authoritative_for": [
+        "Multi-sensor flood mapping protocols (Sentinel-1 SAR + Sentinel-2 optical + DTM terrain mask)",
+        "SAR false positive warnings (smooth airport runways, calm water, radar shadows)",
+        "InSAR coherence threshold bounds (0 to 1, distinct from backscatter power)"
+      ],
+      "not_authoritative_for": ["commercial_insurance_payout_guarantees"],
+      "language": "en",
+      "access_model": "public_web_page",
+      "license_status": "un_public_domain",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "fao-wapor-water-productivity",
+      "title": "FAO WaPOR - Water Productivity through Open access of Remotely sensed derived data",
+      "organization": "Food and Agriculture Organization (FAO)",
+      "kind": "official_product_documentation",
+      "priority": "medium",
+      "topics": ["evapotranspiration", "water_productivity", "biomass", "agriculture", "drought"],
+      "url": "https://www.fao.org/in-action/remote-sensing-for-water-productivity/wapor-data/en/",
+      "authoritative_for": [
+        "Actual Evapotranspiration (AETI) and transpiration fractions",
+        "Agricultural water productivity metrics and spatial resolution tiers (250m, 100m, 20m)"
+      ],
+      "not_authoritative_for": ["uncalibrated_optical_chlorophyll_indices"],
+      "language": "en",
+      "access_model": "public_web_page",
+      "license_status": "fao_open_access_cc_by_sa",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "usgs-spectral-library-v7",
+      "title": "USGS High Spectral Resolution Reflectance Laboratory Spectral Library v7",
+      "organization": "USGS Spectroscopy Laboratory",
+      "kind": "laboratory_reference_database",
+      "priority": "high",
+      "topics": ["minerals", "soils", "plants", "hyperspectral", "continuum_removal"],
+      "url": "https://www.usgs.gov/labs/spectroscopy-lab/usgs-spectral-library",
+      "authoritative_for": [
+        "Diagnostic absorption features (e.g. 2.2 µm Al-OH clay, 2.35 µm Mg-OH/carbonate, 0.9 µm Fe3+)",
+        "Continuous spectral response signatures from 0.2 to 200 µm"
+      ],
+      "not_authoritative_for": ["broadband_multispectral_band_ratios_as_definitive_mineral_proof"],
+      "language": "en",
+      "access_model": "public_data_release",
+      "license_status": "us_government_public_domain",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "nasa-arset-training",
+      "title": "NASA Applied Remote Sensing Training Program (ARSET)",
+      "organization": "NASA Earthdata",
+      "kind": "official_training_program",
+      "priority": "medium",
+      "topics": ["disasters", "water_resources", "land_management", "air_quality", "sar_training"],
+      "url": "https://www.earthdata.nasa.gov/data/projects/arset",
+      "authoritative_for": [
+        "Structured methodological workflows and tutorials for NASA and ESA Earth observation datasets",
+        "Current Earthdata migration and resource endpoints"
+      ],
+      "not_authoritative_for": ["raw_sensor_engineering_calibrations"],
+      "language": "en",
+      "access_model": "open_educational_courses",
+      "license_status": "nasa_public_domain",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "esa-step-snap",
+      "title": "ESA Science Toolbox Exploitation Platform (STEP) / SNAP Documentation",
+      "organization": "European Space Agency (ESA)",
+      "kind": "software_documentation",
+      "priority": "medium",
+      "topics": ["snap", "sentinel-1_toolbox", "sentinel-2_toolbox", "sar_calibration", "terrain_flattening"],
+      "url": "https://step.esa.int/main/doc/",
+      "authoritative_for": [
+        "Sentinel-1 SAR calibration, speckle filtering, debursting, and Range-Doppler terrain correction algorithms",
+        "Biophysical processor algorithms in Sentinel-2 toolbox"
+      ],
+      "not_authoritative_for": ["standalone_cloud_native_stac_api_queries"],
+      "language": "en",
+      "access_model": "public_web_page",
+      "license_status": "gpl_open_source",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    },
+    {
+      "id": "google-earth-engine-guides",
+      "title": "Google Earth Engine Guides and Image Processing API",
+      "organization": "Google",
+      "kind": "cloud_platform_documentation",
+      "priority": "medium",
+      "topics": ["gee", "raster_expressions", "normalized_difference", "cloud_masking"],
+      "url": "https://developers.google.com/earth-engine/guides",
+      "authoritative_for": [
+        "ee.Image.normalizedDifference syntax and negative input masking behavior",
+        "Scale, CRS transformation, and reducer behaviors in Earth Engine cloud runtimes"
+      ],
+      "not_authoritative_for": ["scientific_independent_peer_review_of_novel_indices"],
+      "language": "en",
+      "access_model": "public_documentation",
+      "license_status": "proprietary_free_educational_and_research_tier",
+      "checked_on": "2026-11-19",
+      "last_verified_live": null,
+      "confidence": "high_for_stated_scope"
+    }
+  ]
+}

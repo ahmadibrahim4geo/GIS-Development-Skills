@@ -1,6 +1,6 @@
 ---
 name: remote-sensing-pipelines
-description: Plan, implement and verify reproducible STAC, Cloud Optimized GeoTIFF, Google Earth Engine and satellite/climate raster pipelines with acquisition metadata, quality masks, correct scaling and aligned output grids.
+description: Plan, implement and verify reproducible STAC, Cloud Optimized GeoTIFF, Google Earth Engine and satellite/climate raster pipelines with acquisition metadata, quality masks, correct scaling, spectral index calculation, alias disambiguation and scientific interpretation.
 license: MIT
 ---
 
@@ -8,7 +8,36 @@ license: MIT
 
 **Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
 
-Use for satellite scenes, Earth Engine, STAC/COG collections, cloud masking and climate rasters. Consult [data discovery](../geospatial-data-discovery/SKILL.md), [CRS engineering](../coordinate-reference-systems/SKILL.md), and [GIS development](../gis-development/SKILL.md).
+Use for satellite scenes, Earth Engine, STAC/COG collections, cloud masking, spectral index calculation, biophysical interpretation and climate rasters. Consult [data discovery](../geospatial-data-discovery/SKILL.md), [data catalogs](../geospatial-data-catalogs/SKILL.md), [CRS engineering](../coordinate-reference-systems/SKILL.md), and [GIS development](../gis-development/SKILL.md).
+
+## Spectral indices, sensor band mappings, and scientific interpretation
+
+Scientific satellite workflows must separate algebra from interpretation. Consult the progressive references:
+- [Remote Sensing Indices & Interpretation Guide](../../references/remote-sensing-indices.md): Formulations, domain guides, physical parameter caveats, and mathematical bounds.
+- [Sensor Band Mappings & Product Scaling](../../references/remote-sensing-sensor-band-mappings.md): Band assignments across Landsat (TM/ETM+/OLI), Sentinel-2 MSI, MODIS, and HLS, with Level-2 surface reflectance scale factors ($DN \times 0.0000275 - 0.2$), SCL masks, and SAR linear power units.
+- [Spectral Indices Catalog (`remote-sensing-indices.json`)](../../references/remote-sensing-indices.json): Machine-readable index formulas and domain metadata.
+- [Contextual Threshold Profiles (`remote-sensing-threshold-profiles.json`)](../../references/remote-sensing-threshold-profiles.json): Conditional, non-universal classification cutoffs (e.g. dNBR fire severity, NDSI snow).
+- [Scientific Source Registry (`remote-sensing-index-source-registry.json`)](../../references/remote-sensing-index-source-registry.json): Curated official agency documentation and peer-reviewed citations.
+
+### Scientific rules of index interpretation
+1. **Four distinct layers:** Distinguish (a) mathematical algebraic bounds, (b) typical observed landscape values, (c) local conditional classification thresholds, and (d) encoded storage integers (e.g. USGS index products scaled by `0.0001`).
+2. **Values are not percentages:** $\text{NDVI} = 0.65$ does not equal 65% vegetation cover; $\text{NDWI} = 0.40$ does not mean 40% water depth; $\text{NDBI} > 0$ does not prove an urban surface.
+3. **Disambiguate collisions:**
+   - **NDWI:** McFeeters 1996 $(\text{Green} - \text{NIR})/(\text{Green} + \text{NIR})$ maps open surface water; Gao 1996 $(\text{NIR} - \text{SWIR})/(\text{NIR} + \text{SWIR})$ (NDMI) measures plant canopy moisture.
+   - **NDSI:** Hall 1995 snow mapping requires $\text{NIR} \ge 0.11$ to prevent water confusion. Distinct from salinity indices.
+   - **RVI:** Radar Vegetation Index uses linear backscatter intensity power; distinct from Jordan 1969 optical Simple Ratio ($\text{NIR} / \text{Red}$).
+4. **GEE and division protection:** Guard against zero denominators and NaNs. Note that `ee.Image.normalizedDifference()` silently masks pixels with negative inputs; use explicit expressions when analyzing dark water or shadows.
+
+## Dynamic scientific source discovery workflow
+
+When resolving unfamiliar indices, novel sensors, regional thresholds or calibration disputes, follow this non-exclusive discovery protocol:
+1. **Intent detection:** Classify user goal (index calculation, physical interpretation, sensor selection, error diagnostics, temporal change).
+2. **Known registry first:** Query `remote-sensing-indices.json` and `remote-sensing-index-source-registry.json` before initiating web search.
+3. **Dynamic discovery:** Search official space agencies (USGS, NASA, ESA), peer-reviewed databases (Crossref, OpenAlex, NASA ADS), and academic publications. Do not restrict search to predetermined lists.
+4. **Search expansion:** Use bilingual targeted queries combining index acronym, author, DOI, sensor, Level-2 product, processing baseline, and validation region.
+5. **Rank by authority:** (a) Primary peer-reviewed paper / official product guide $\rightarrow$ (b) Regional empirical validation $\rightarrow$ (c) Official training (ARSET, STEP) $\rightarrow$ (d) Open-source code examples.
+6. **Verification & two-source cross-check:** Verify formulas against the original publication; if two reputable sources diverge (e.g. different SWIR band definitions), record both with explicit reasons.
+7. **Failure handling:** If network search is unavailable or unauthenticated, fall back to the curated local registry with clear confidence disclosure; never invent a DOI or threshold.
 
 ## Offline STAC discovery fixture
 

@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "request_id": "ARCH-INTENT-001",
+  "task_id": "T1",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "Architectural review signals remain lexical and do not force plugin, standalone, engine identity or execution",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": ".agent-development-log\\evidence\\architecture-intent\\unit-tests.log",
+          "observed": "Architecture regressions exercise four bilingual ribbon/UI.js requests plus small-edit negative cases; outputs retain unresolved model and can_execute=false.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "artifact_readback",
+          "reference": "docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md",
+          "observed": "Reviewed current artifact and observed check receipts; scope is repository T0/T1 only.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Valid typed architecture, constraints, non-goals, command IDs and declared handoff contracts survive workflow compilation; invalid declarations fail",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": ".agent-development-log\\evidence\\architecture-intent\\unit-tests.log",
+          "observed": "Roundtrip assertions preserve architecture, constraints, non_goals, task description, command/trace and I/O declarations; malformed identity, local refs and handoffs are rejected.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "artifact_readback",
+          "reference": "docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md",
+          "observed": "Reviewed current artifact and observed check receipts; scope is repository T0/T1 only.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

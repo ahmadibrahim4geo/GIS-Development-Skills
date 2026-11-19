@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "request_id": "REMOTE-SENSING-EXPANSION-001",
+  "task_id": "RS6",
+  "revision": "r1",
+  "overall_status": "verified",
+  "scope": "Regression verification, security audit, and final handoff",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "Required validators and full regression suite have fresh observed results; any failure or unavailable check is explicitly reported.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests/test_remote_sensing_indices.py",
+          "observed": "Full test suite ran 446 tests with 445 passed and 1 skipped (Windows symlink privilege). Zero failures.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "command_output",
+          "reference": "scripts/security_audit.py",
+          "observed": "python scripts/security_audit.py --root . passed: 35 skills, 0 findings (0 blocking). External scanners NOT RUN.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Acceptance evidence covers all reviewed task criteria, preserves native T2–T4 NOT RUN where unavailable and passes plan-bound DoneProof consistency checks only when supported.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "scripts/verify_completion.py",
+          "observed": "Validated RS1, RS2, RS3, RS4, RS5, and RS6 DoneProof reports against reviewed plan r1 with exit code 0. Native GIS T2-T4 execution explicitly declared NOT RUN.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

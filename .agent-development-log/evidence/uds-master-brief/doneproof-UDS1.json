@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "request_id": "UDS-MASTER-001",
+  "task_id": "UDS1",
+  "revision": "r5",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "c1",
+      "statement": "Comprehensive traceability matrix created in references/urban-design-competency-coverage.md covering all requirements, the 78 GitHub repositories, the 7 industry benchmarks, prototypes V1/V2, and local projects with defined status codes (COVERED_EXISTING, ENHANCED, REFERENCE_ONLY, DEFERRED, BLOCKED).",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "references/urban-design-competency-coverage.md",
+          "observed": "File exists with full matrix covering 55 competencies (UDS-001 to UDS-055), 78 GitHub repositories categorized by role, 7 industry benchmarks, local software portfolio, and prototypes with verified status codes.",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "statement": "Baseline check confirms 35 skills, 193 catalog references, 53 APIs, 26 data repositories, and 0 security findings intact.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "scripts/validate_catalog.py; scripts/validate_api_catalog.py; scripts/validate_skill_pack.py; scripts/security_audit.py",
+          "observed": "Catalog valid: 193 sources; API catalog valid: 53 services; Skill pack valid: 35 skills; Security Guardian: pass | 35 skills | 0 findings (0 blocking).",
+          "revision": "r5",
+          "result": "pass"
+        }
+      ]
+    }
+  ]
+}

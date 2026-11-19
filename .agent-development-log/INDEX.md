@@ -36,3 +36,37 @@ create a linked revision or cancellation. This local hash chain is not a signatu
 | [#0029](reports/0029.md) | 2026-10-30T03:30:53+00:00 | revision | completed | #0028 | Clarify homepage unit-test evidence count |
 | [#0030](reports/0030.md) | 2026-10-30T06:51:19+00:00 | implementation | completed | — | Synchronize and integrate OpenGeoHub and OpenLandMap sources with router and homepage |
 | [#0031](reports/0031.md) | 2026-10-30T08:23:51+00:00 | implementation | completed | — | Register OpenGeoHub STAC API and synchronize 53-service catalog |
+| [#0032](reports/0032.md) | 2026-11-05T11:05:57+00:00 | request | approved | — | Repair architecture-intent routing and UI/engine handoffs |
+| [#0033](reports/0033.md) | 2026-11-05T11:14:20+00:00 | implementation | in_progress | #0032 | Implement architecture contract and regressions; resolve compact router check |
+| [#0034](reports/0034.md) | 2026-11-05T11:19:11+00:00 | verification | completed | #0033 | Verify architecture-intent fixes against reviewed plan r1 |
+| [#0035](reports/0035.md) | 2026-11-15T16:03:21+00:00 | request | approved | — | Approve portable execution guidance within existing skill owners |
+| [#0036](reports/0036.md) | 2026-11-15T16:06:45+00:00 | implementation | in_progress | #0035 | Add portable execution reference and scoped owner links |
+| [#0037](reports/0037.md) | 2026-11-15T16:10:15+00:00 | verification | completed | #0036 | Verify portable execution documentation with preserved native limits |
+| [#0038](reports/0038.md) | 2026-11-15T16:24:19+00:00 | plan | proposed | — | Expand remote sensing from the entire implementation brief |
+| [#0039](reports/0039.md) | 2026-11-19T00:09:51+00:00 | decision | approved | #0038 | Approve remote sensing expansion plan r1 |
+| [#0040](reports/0040.md) | 2026-11-19T00:22:33+00:00 | implementation | in_progress | #0039 | Implement remote sensing indices, band mappings and discovery workflow |
+| [#0041](reports/0041.md) | 2026-11-19T00:22:40+00:00 | verification | completed | #0040 | Verify remote sensing expansion with plan-bound DoneProof |
+| [#0042](reports/0042.md) | 2026-11-19T00:27:42+00:00 | plan | proposed | — | Propose UDS master brief expansion plan r1 |
+| [#0043](reports/0043.md) | 2026-11-19T01:48:23+00:00 | revision | proposed | #0042 | Propose universal CAD/GIS engineering and tooling plan r3 |
+| [#0044](reports/0044.md) | 2026-11-19T01:58:36+00:00 | revision | proposed | #0043 | Propose universal CAD/GIS engineering and tooling plan r4 integrating 78 repositories and internet models |
+| [#0045](reports/0045.md) | 2026-11-19T02:01:48+00:00 | revision | proposed | #0044 | Propose deep-dive CAD/GIS engineering and tooling plan r5 embedding all chat technical specifics |
+| [#0046](reports/0046.md) | 2026-11-19T02:05:32+00:00 | decision | approved | #0045 | Approve universal CAD/GIS engineering and tooling plan r5 |
+| [#0047](reports/0047.md) | 2026-11-19T02:06:00+00:00 | implementation | in_progress | #0046 | Start Task UDS1: Baseline audit and traceability matrix |
+| [#0048](reports/0048.md) | 2026-11-19T02:08:14+00:00 | verification | completed | #0047 | Verify Task UDS1: Baseline audit and traceability matrix |
+| [#0049](reports/0049.md) | 2026-11-19T02:08:27+00:00 | implementation | in_progress | #0048 | Start Task UDS2: Universal 78-Repository and tool registry |
+| [#0050](reports/0050.md) | 2026-11-19T02:11:06+00:00 | verification | completed | #0049 | Verify Task UDS2: Universal 78-Repository and tool registry |
+| [#0051](reports/0051.md) | 2026-11-19T02:11:24+00:00 | implementation | in_progress | #0050 | Start Task UDS3: Universal Native Desktop CAD/GIS Architecture |
+| [#0052](reports/0052.md) | 2026-11-19T02:12:36+00:00 | verification | completed | #0051 | Verify Task UDS3: Universal Native Desktop CAD/GIS Architecture |
+| [#0053](reports/0053.md) | 2026-11-19T02:12:48+00:00 | implementation | in_progress | #0052 | Start Task UDS4: Parametric Spatial Hierarchy and Relational DAG Modeling |
+| [#0054](reports/0054.md) | 2026-11-19T02:13:58+00:00 | verification | completed | #0053 | Verify Task UDS4: Parametric Spatial Hierarchy and Relational DAG Modeling |
+| [#0055](reports/0055.md) | 2026-11-19T02:14:13+00:00 | implementation | in_progress | #0054 | Start Task UDS5: Universal Multi-Physics Engineering Simulation Engines |
+| [#0056](reports/0056.md) | 2026-11-19T02:15:12+00:00 | verification | completed | #0055 | Verify Task UDS5: Universal Multi-Physics Engineering Simulation Engines |
+| [#0057](reports/0057.md) | 2026-11-19T02:15:31+00:00 | implementation | in_progress | #0056 | Start Task UDS6: Universal Reversible CAD/GIS AI Copilot Architecture and Export Studio |
+| [#0058](reports/0058.md) | 2026-11-19T02:16:59+00:00 | verification | completed | #0057 | Verify Task UDS6: Universal Reversible CAD/GIS AI Copilot Architecture and Export Studio |
+| [#0059](reports/0059.md) | 2026-11-19T02:17:12+00:00 | implementation | in_progress | #0058 | Start Task UDS7: Universal Token Optimization Triad and Context Memory Architecture |
+| [#0060](reports/0060.md) | 2026-11-19T02:18:15+00:00 | verification | completed | #0059 | Verify Task UDS7: Universal Token Optimization Triad and Context Memory Architecture |
+| [#0061](reports/0061.md) | 2026-11-19T02:18:33+00:00 | implementation | in_progress | #0060 | Start Task UDS8: Skill Extensions, Intent Router, and Documentation Synchronization |
+| [#0062](reports/0062.md) | 2026-11-19T02:23:45+00:00 | verification | completed | #0061 | Verify Task UDS8: Skill Extensions, Intent Router, and Documentation Synchronization |
+| [#0063](reports/0063.md) | 2026-11-19T02:24:10+00:00 | implementation | in_progress | #0062 | Start Task UDS9: Reproducible Test Suite and Plan-Bound DoneProof Verification |
+| [#0064](reports/0064.md) | 2026-11-19T02:27:04+00:00 | verification | completed | #0063 | Verify Task UDS9: Reproducible Test Suite and Plan-Bound DoneProof Verification |
+| [#0065](reports/0065.md) | 2026-11-19T03:34:56+00:00 | implementation | completed | — | Audit and tune desktop CAD/GIS skills and intent routing contracts |

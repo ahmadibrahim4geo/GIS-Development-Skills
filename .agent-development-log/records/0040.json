@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "sequence": 40,
+  "timestamp_utc": "2026-11-19T00:22:33+00:00",
+  "kind": "implementation",
+  "status": "in_progress",
+  "summary": "Implement remote sensing indices, band mappings and discovery workflow",
+  "details": "Expanded skills/remote-sensing-pipelines and added references/remote-sensing-indices.json, references/remote-sensing-sensor-band-mappings.md, references/remote-sensing-threshold-profiles.json, references/remote-sensing-index-source-registry.json, references/remote-sensing-indices.md, and examples/remote-sensing/synthetic_index_calculator.py. Synchronized READMEs, CHANGELOG and intent_router.py.",
+  "references": [
+    39
+  ],
+  "task_id": "REMOTE-SENSING-EXPANSION-001",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [
+    "python -m unittest tests/test_remote_sensing_indices.py -v: 23 passed"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "e25c5bf0bdb8f72ad251d3ec0b874a2afbacfeeb3edadf3088261a66c85d9b4d",
+  "hash": "ad2acd7a9753170e18c8ab32cbaeb852a8f07bc3d6225c19d229629b4270f092"
+}

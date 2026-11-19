@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "request_id": "REMOTE-SENSING-EXPANSION-001",
+  "task_id": "RS5",
+  "revision": "r1",
+  "overall_status": "verified",
+  "scope": "Router, bilingual documentation and discovery synchronization",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "Existing remote-sensing skill and added references remain reachable from the router and bilingual user-facing discovery; counters reflect actual inventory.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "scripts/intent_router.py",
+          "observed": "python scripts/intent_router.py --text 'احسبلي مؤشر ndvi و ndwi للمياه السطحية' routed successfully to remote-sensing-pipelines and gis-security-guardian.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "command_output",
+          "reference": "scripts/build_manifest.py",
+          "observed": "python scripts/build_manifest.py --check passed; 35 skills / 193 references / 53 APIs / 26 data repositories intact.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Protected author/brand/mission/catalog data, earlier work, language controls and relative paths are preserved; documentation reflects only actual new capability.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "scripts/validate_skill_pack.py",
+          "observed": "python scripts/validate_skill_pack.py passed with 35 skills; README.md, README.ar.md and CHANGELOG.md updated without altering author panel or baseline counters.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

@@ -26,6 +26,12 @@ data pipelines and integrations. It turns a free-form request into a reviewed
 plan, routes it to one accountable specialist, and requires evidence before a
 completion claim.
 
+The instructions are independent of a model vendor or agent framework. Use
+[portable execution guidance](references/portable-execution-guidance.md) to scale
+effort from Lite to Standard or Deep and select authorized tools by capability.
+Installation and behavior still require verification in each client; every mode
+retains the existing approval and evidence requirements.
+
 ### 1. Build the self-contained suite
 
 The repository's skills share root-level references, scripts, examples and
@@ -46,6 +52,21 @@ that named client and version.
 > Preserve the source, write to a new output directory, reject malformed or
 > duplicate features, test expected artifacts, and report T0–T4 evidence without
 > claiming native QGIS execution unless it was actually observed.
+
+For a UI or engine architecture change, give the source and intended target too:
+
+> Convert my existing QGIS tools to a ribbon inside QGIS, preserving commands,
+> shortcuts, the GIS engine and original data. First identify the QGIS version
+> and the exact source/package I mean by UI.js before proposing integration.
+> Separate the UI shell, map renderer and processing engine; show request,
+> result, error, state, save and independent readback paths. If this needs a
+> standalone app or a QGIS source fork, present that decision before changing
+> hosts. Test a command and its shortcut against the real GIS result, and mark
+> unavailable T2–T4 tests NOT RUN.
+
+The [UI and GIS engine architecture contract](references/ui-engine-architecture-contract.md)
+defines the handoff. Keyword hints, a compiled plan and a rendered diagram do
+not establish native QGIS execution.
 
 ### 3. Run the golden workflow
 
@@ -71,6 +92,16 @@ Use [How to Use](docs/HOW_TO_USE.md) · [دليل الاستخدام](docs/HOW_T
 [quality benchmark](docs/QUALITY_BENCHMARK.md) · [evidence tiers](references/evidence-tiers.json) ·
 [release-candidate evidence](docs/RELEASE_CANDIDATE_TRUST_LAUNCH_R1.md) ·
 [contribution guide](CONTRIBUTING.md).
+
+## Universal Desktop CAD/GIS & Geoprocessing Engineering Standards (November 2026)
+
+This repository now provides a unified, production-grade engineering standard for building native desktop CAD/GIS applications, geoprocessing tools, and AI copilot systems, incorporating specifications from 78 open-source repositories, 7 industry benchmarks, interactive prototypes, and local software projects:
+- **Native Architecture & Dark CAD UX**: C++20/Qt6 widgets, 64-bit double precision, Camera-Relative Local Render Origin shifting, SARibbon contextual tabs, Qt Advanced Docking System panels, QtPropertyBrowser, and locked metric scales (1:500–1:5000). See [native desktop architecture](references/native-cad-gis-desktop-architecture.md).
+- **Parametric Hierarchy & Topology**: 8-layer spatial data hierarchy, relational DAG cascading engine, ASAM OpenDRIVE clothoids and road cross-sections (Streetmix style), polygon triangulation with holes (`earcut.hpp`), setbacks (`Clipper2`), and 4 subsurface utilities (sanitary, stormwater with gully spacing, water, electrical). See [parametric spatial modeling](references/urban-hierarchy-parametric-modeling.md).
+- **Multi-Physics Engineering Simulation**: Astronomical solar position and shadow projection (Ladybug concepts), stormwater runoff D8 hydrology and roadway gully spacing (SmartGully patterns), and microscopic traffic simulation (Eclipse SUMO XML). See [simulation engines](references/urban-simulation-engines.md).
+- **Reversible AI Copilot & Export Studio**: Mandatory `QUndoStack` / `QUndoCommand` reversibility (`Ctrl+Z`), strict C++ JSON Schema validation (`pboettch/json-schema-validator`), selection context awareness, ISO A0–A4 true-scale plotting (`Smart Plot PDF`), 3D flythrough cameras (`Contour`), and vector roundtrips (GPKG, DXF, glTF, CityJSON, IFC 4.3). See [reversible CAD copilot](references/reversible-cad-ai-copilot.md) and [export studio](references/urban-export-studio.md).
+- **Token Optimization & Context Memory**: Ponytail (pre-coding), Caveman (surgical patches), Token Optimizer (cleanup), and modular 5-file `context/` directory architecture. See [token optimization triad](references/token-optimization-triad.md) and [context memory architecture](references/agent-context-memory-architecture.md).
+- **Comprehensive Registry & Audit**: [urban design source registry](references/urban-design-source-registry.json) (78 repositories), [sources guide](references/urban-design-sources.md), and [competency coverage](references/urban-design-competency-coverage.md).
 
 ## Architecture & Workflow Visualization — Archify (27 October 2026)
 
@@ -269,7 +300,7 @@ Previous skills, original guidance, project/API references, brand assets and bil
 
 - [Spatial Databases](skills/spatial-databases/SKILL.md): PostGIS/SpatiaLite, spatial indexing and measured query plans.
 - [Geospatial Data Processing](skills/geospatial-data-processing/SKILL.md): vector/raster pipelines, safe coordinate transformations and reproducible checks.
-- [Remote Sensing Pipelines](skills/remote-sensing-pipelines/SKILL.md): STAC/COG, Earth Engine, radiometric QA and aligned raster grids.
+- [Remote Sensing Pipelines](skills/remote-sensing-pipelines/SKILL.md): STAC/COG, Earth Engine, radiometric QA, spectral indices, sensor band mappings and scientific interpretation.
 - [Reproducible engineering examples](examples/README.md): topology audit, modeled weather to GeoJSON, batch map PDF export, PostGIS SQL and STAC/COG checklist.
 - [GIS Quality Benchmark](docs/QUALITY_BENCHMARK.md): T0–T4 test-evidence levels and native GIS acceptance requirements.
 - [Production workflow reference](references/production-workflows.md): implementation safeguards, test limits and examples.

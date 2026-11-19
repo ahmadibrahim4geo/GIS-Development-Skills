@@ -19,6 +19,8 @@ Distinguish between .NET C# ArcGIS Pro SDK and Python ArcPy; never offer ArcPy c
 
 ## Discover and acquire
 
+Inspect existing project code and accepted dependencies first; record whether reuse, adaptation or new code best fits. Expand external discovery for unresolved needs under the [portable decision guidance](../../references/portable-execution-guidance.md). GitHub is one source, not a mandatory search for every small change.
+
 Inspect candidate sources dynamically; the curated starting repositories in the [code source registry](../../references/gis-code-sources.json) are trusted starting references, not a closed whitelist:
 
 1. **Official SDK Snippets & Cookbooks:** Prefer authoritative resources:

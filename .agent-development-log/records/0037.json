@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "sequence": 37,
+  "timestamp_utc": "2026-11-15T16:10:15+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Verify portable execution documentation with preserved native limits",
+  "details": "PORTABLE-EXECUTION-001 r1 documentation and offline integration verified. Full suite: 423 tests, 422 passed, 1 skipped for Windows symlink privilege. Catalog 193, APIs 53, skills 35, repositories 26; catalog/API/skill-pack/manifest/security/skill-graph checks passed; security audit 0 findings. Six skill-creator metadata checks passed. Baseline comparison preserved existing source content except semantically equivalent router compaction to 5494 characters, author markup, exact mission, catalogs and source attachment. First full run failed because baseline .md copies appeared as broken docs and router exceeded 5500 chars; snapshots renamed with .snapshot suffix and router shortened without weakening tests. Corrected both targeted regressions and reran full suite successfully. Initial failure log retained. Earlier readback display failed on terminal encoding after saving evidence; UTF-8 readback succeeded. Acceptance and task evidence stored under evidence/portable-execution. Native GIS T2-T4, browser visual rendering, cross-client behavior and external scanners NOT RUN. No commit, publication or installation.",
+  "references": [
+    36
+  ],
+  "task_id": "PORTABLE-EXECUTION-001",
+  "plan_revision": "r1",
+  "changed_files": [
+    "references/portable-execution-guidance.md"
+  ],
+  "tests": [
+    "python -m unittest discover -s tests -v: 423 tests, 422 passed, 1 Windows symlink skip",
+    "catalog/API/skill-pack/manifest/security/skill-graph and six quick skill checks: passed",
+    "baseline protection/readback and router/link regressions: passed"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "f18e4947f4fb4652131d2385d4d6262c31dc5e7a86bdc1eb94e4ff782dad79bc",
+  "hash": "8ce954fa2ba05e1a8ebb094688ed553351296bf2fbd13058dcc10e8960f52210"
+}

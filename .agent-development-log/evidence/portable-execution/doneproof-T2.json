@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "request_id": "PORTABLE-EXECUTION-001",
+  "task_id": "T2",
+  "revision": "r1",
+  "overall_status": "verified",
+  "scope": "Documentation and offline repository verification only",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "Catalog, API, skill pack, manifest, security, skill graph and unittest checks pass with fresh saved output",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": ".agent-development-log/evidence/portable-execution/checks.json",
+          "observed": "All eight current repository/targeted checks exited 0. Fresh full unittest log: 423 tests, 422 passed, one Windows symlink privilege skip; no failures.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Changed artifacts are read back, skill metadata and links checked, and protected content compared to the pre-edit baseline",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": ".agent-development-log/evidence/portable-execution/source-review.txt",
+          "observed": "Read back the new guide and task-only diff; compared protected content with pre-edit snapshots, checked local links, ran six skill metadata validators and verified unchanged final source hashes.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "Plan-bound reports and the verified append-only journal record observed outcomes and explicitly leave native GIS and cross-client behavior unverified",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": ".agent-development-log/evidence/portable-execution/journal-verification.log",
+          "observed": "Observed Journal valid: 37 records after request 35, implementation 36 and verification 37. Acceptance reports explicitly distinguish offline checks from unrun native GIS, UI rendering and cross-client behavior; reports retain request, task and revision binding.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ],
+  "not_verified": [
+    "Native GIS T2-T4",
+    "Cross-model and cross-client behavior",
+    "Browser visual rendering",
+    "External security scanners"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "skills/gis-development/SKILL.md": "8d3a77f21295871bb5bf60224343455cadda07e539fc6ff7d63406dbb2c86f7f",
+  "skills/prompt-intent-orchestrator/SKILL.md": "e7ebc00db4f218d8448877167fdfc98196d37ee2b6430e31d950fea4d6cf4668",
+  "skills/gis-code-discovery/SKILL.md": "4423185e27842f5dc035121d3e74b27b8dddce2842a6e6271937f4ffe80b793b",
+  "skills/agent-development-journal/SKILL.md": "ee5af34441b0431f3773529a1d9736b6e1f90e868ab13f623943016e3e08b42b",
+  "skills/completion-evidence/SKILL.md": "5e1812c4f8463c8cdfe18d4b0a8786ec11ad3bf8555cbd8125587e7237c763b5",
+  "skills/geospatial-ai-agents/SKILL.md": "7df9b3f3a0408c982ea0e87e94d99f5e59655e19602fa9faf2110ecd35b1acc3",
+  "references/repository-wide-skill-orchestration.md": "ad4a608d8df7603e61379244b104235e168f4cff024f72364b9b7d166f991fb4",
+  "README.md": "88805d9ee23350eecfa65227afa1434affee14058f14b71ae049e9a8dfb58525",
+  "README.ar.md": "ac99a5597b1f1d642bb8b2f1fdf12c741a3c6a544c3478baea40b77efcb3fef7",
+  "index.html": "9f785f720d47d69a6ec63dff13be9abbde70fd4355d5ad13cd7505d04afaf3dd",
+  "CHANGELOG.md": "4bc6fa50fe531ab51ea9660e8512e0d87b7c194111d22db81607ed57bea43fab",
+  "references/project-catalog.json": "5609fb1976c8c40dbc914a79adc13d959feeac5e99f3c6607cee3f879db646ec",
+  "references/free-geospatial-apis.json": "963f2baac28725955447bbd62e2142722006748f11550e02285c47ef7c8773ec",
+  "references/repository-manifest.json": "730e14f6802aee38b3901f89a9356cda79c0c854c6fe8719e8700f5ed2eb99f9",
+  "source_attachment_sha256": "409c9b1d20c4192fe5767f96d66523d2322f8f4ccad56a281b99d7ffc10a0839"
+}

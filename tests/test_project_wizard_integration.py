@@ -25,7 +25,7 @@ class WizardIntegrationTests(unittest.TestCase):
         self.assertIn("URL.createObjectURL",self.wizard)
         self.assertIn("textContent=output",self.wizard)
         for name in ('docs/PROJECT_WIZARD_PLAN.md','docs/PERFORMANCE_RELIABILITY.md',
-                     'skills/kml-kmz-engineering/SKILL.md'):
+                     'skills/kml-kmz-engineering/SKILL.md','references/ui-engine-architecture-contract.md'):
             self.assertIn(name,self.wizard)
             self.assertTrue((ROOT/name).is_file(),name)
 
@@ -40,7 +40,8 @@ class WizardIntegrationTests(unittest.TestCase):
 
     def test_bilingual_ui_and_download_claims(self):
         for field in ('id="type"','id="locale"','id="files"','id="license"',
-                      'id="details"','id="result"'):
+                      'id="details"','id="result"','id="architectureChange"',
+                      'id="architectureSource"','id="architectureUi"'):
             self.assertIn(field,self.wizard)
         for label in ('العربية','English','document.documentElement.dir',
                       'Arabic + English','Download Markdown'):

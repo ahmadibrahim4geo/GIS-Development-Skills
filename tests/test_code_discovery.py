@@ -90,7 +90,7 @@ class GISCodeDiscoveryTests(unittest.TestCase):
         self.assertEqual(len(res["matching_sources"]), 0)
 
     def test_08_version_and_platform_mismatch_detection(self):
-        """Scenario 8: Candidate evaluated against mismatched target platform is penalized."""
+        """An incompatible host blocks adaptation even when a recipe has a license."""
         candidate = {
             "title": "QGIS Python Plugin",
             "domain": "pyqgis",
@@ -99,6 +99,9 @@ class GISCodeDiscoveryTests(unittest.TestCase):
         }
         eval_mismatch = cd.evaluate_candidate(candidate, "create button", target_platform="arcgis-pro-sdk")
         self.assertTrue(any("Platform mismatch: expected arcgis-pro-sdk" in issue for issue in eval_mismatch["issues"]))
+        self.assertFalse(eval_mismatch["applicable"])
+        self.assertFalse(eval_mismatch["is_safe_to_adapt"])
+        self.assertEqual(eval_mismatch["score"], 0)
 
     def test_09_no_hallucinated_libraries_on_nonsense_query(self):
         """Scenario 9: Bogus nonsense query yields low scores without making up metadata."""
@@ -155,6 +158,89 @@ class GISCodeDiscoveryTests(unittest.TestCase):
         s5 = router.route_hints("قارن بين مصدر بيانات مفتوح ومستودع يضم كودًا بحثيًا")["suggested_skills"]
         self.assertIn("gis-code-discovery", s5)
         self.assertIn("geospatial-data-catalogs", s5)
+
+    def test_14_generic_ui_terms_do_not_identify_arcgis(self):
+        for query in ("ribbon", "button", ".NET add-in", "C# dockpane", "plugin"):
+            with self.subTest(query=query):
+                self.assertEqual(cd.detect_platforms(query), ["generic-gis"])
+
+    def test_15_qgis_ribbon_never_returns_arcgis_implementation(self):
+        for query in (
+            "Convert QGIS tools to a ribbon",
+            "Create QGIS ribbon button",
+            "حول أدوات QGIS إلى ribbon واربطها بمحرك UI.js",
+        ):
+            with self.subTest(query=query):
+                res = cd.search_knowledge_base(query)
+                self.assertEqual(res["selected_platforms"], ["pyqgis"])
+                # No catalog recipe implements this migration. Neither a Pro button
+                # nor an unrelated QGIS Processing stub is a ribbon implementation.
+                self.assertEqual(res["matching_recipes"], [])
+                arcgis = next(r for r in res["research_recipes"]
+                              if r["id"] == "recipe-arcgis-pro-sdk-button")
+                self.assertEqual(arcgis["use"], "reference-only")
+                self.assertFalse(arcgis["is_safe_to_adapt"])
+                self.assertNotIn("code_snippet", arcgis)
+
+    def test_16_unknown_ui_engine_does_not_choose_an_implementation(self):
+        res = cd.search_knowledge_base("Use UI.js for the interface of my GIS app")
+        self.assertEqual(res["platform_resolution"], "unresolved")
+        self.assertEqual(res["status"], "unresolved")
+        self.assertEqual(res["selected_platforms"], [])
+        self.assertEqual(res["matching_recipes"], [])
+        self.assertEqual(res["matching_sources"], [])
+
+    def test_17_declared_target_blocks_incompatible_query_hints(self):
+        res = cd.search_knowledge_base("Create ArcGIS Pro SDK ribbon button", platform="qgis")
+        self.assertEqual(res["selected_platforms"], ["pyqgis"])
+        self.assertEqual(res["platform_resolution"], "declared")
+        self.assertEqual(res["matching_recipes"], [])
+        self.assertNotIn("esri-arcgis-pro-sdk-snippets",
+                         [s["id"] for s in res["matching_sources"]])
+        self.assertIn("esri-arcgis-pro-sdk-snippets",
+                      [s["id"] for s in res["research_sources"]])
+
+    def test_18_unknown_declared_target_cannot_fall_back_to_arcgis(self):
+        res = cd.search_knowledge_base("Create ArcGIS Pro SDK ribbon button", platform="UI.js")
+        self.assertEqual(res["platform_resolution"], "unknown-target")
+        self.assertEqual(res["matching_recipes"], [])
+        self.assertEqual(res["matching_sources"], [])
+
+    def test_19_conflicting_hosts_need_an_explicit_target(self):
+        query = "Compare QGIS processing algorithm with ArcGIS Pro SDK button"
+        unresolved = cd.search_knowledge_base(query)
+        self.assertEqual(unresolved["platform_resolution"], "ambiguous-host")
+        self.assertEqual(unresolved["matching_recipes"], [])
+        resolved = cd.search_knowledge_base(query, platform="qgis")
+        self.assertEqual([r["id"] for r in resolved["matching_recipes"]],
+                         ["recipe-qgis-processing-algorithm"])
+
+    def test_20_known_platform_aliases_remain_usable(self):
+        for platform, query, expected in (
+            ("qgis", "processing algorithm", "recipe-qgis-processing-algorithm"),
+            ("gdal", "sample raster elevation", "recipe-sample-raster-at-points"),
+        ):
+            with self.subTest(platform=platform):
+                res = cd.search_knowledge_base(query, platform=platform)
+                self.assertEqual(res["matching_recipes"][0]["id"], expected)
+
+    def test_21_compatible_ribbon_recipe_can_be_selected(self):
+        recipes = copy.deepcopy(self.recipes)
+        recipes["recipes"].append({
+            "recipe_id": "fixture-qgis-ribbon", "title": "QGIS Ribbon Command",
+            "domain": "pyqgis", "target_environment": "QGIS 3.x",
+            "language": "Python", "license": "MIT", "code_snippet": "fixture only",
+        })
+        res = cd.search_knowledge_base("Create QGIS ribbon button", recipes_data=recipes)
+        self.assertEqual([r["id"] for r in res["matching_recipes"]], ["fixture-qgis-ribbon"])
+
+    def test_22_gpl_notice_does_not_promise_an_isolation_exemption(self):
+        candidate = next(r for r in self.recipes["recipes"]
+                         if r["recipe_id"] == "recipe-qgis-processing-algorithm")
+        result = cd.evaluate_candidate(candidate, "QGIS processing algorithm")
+        self.assertTrue(result["applicable"])
+        notice = next(issue for issue in result["issues"] if "GPL" in issue)
+        self.assertIn("process isolation is not an automatic exemption", notice)
 
 
 if __name__ == "__main__":

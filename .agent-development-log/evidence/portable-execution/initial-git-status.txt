@@ -1,0 +1,37 @@
+ M .agent-development-log/INDEX.md
+ M .agent-development-log/STATE.md
+ M CHANGELOG.md
+ M README.ar.md
+ M README.md
+ M examples/architecture-visualization/README.md
+ M index.html
+ M project-wizard.html
+ M references/agent-decision-tree.md
+ M references/archify-integration.md
+ M references/intent-orchestration-workflow.md
+ M scripts/build_skill_bundle.py
+ M scripts/development_journal.py
+ M scripts/gis_code_discovery.py
+ M scripts/intent_router.py
+ M skills/gis-architecture-visualization/SKILL.md
+ M skills/gis-development/SKILL.md
+ M skills/prompt-intent-orchestrator/SKILL.md
+ M tests/test_code_discovery.py
+ M tests/test_project_wizard_behavior.py
+ M tests/test_project_wizard_integration.py
+?? .agent-development-log/evidence/architecture-intent/
+?? .agent-development-log/evidence/portable-execution/
+?? .agent-development-log/plans/architecture-intent-r1.json
+?? .agent-development-log/plans/portable-execution-r1.json
+?? .agent-development-log/records/0032.json
+?? .agent-development-log/records/0033.json
+?? .agent-development-log/records/0034.json
+?? .agent-development-log/reports/0032.md
+?? .agent-development-log/reports/0033.md
+?? .agent-development-log/reports/0034.md
+?? docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md
+?? examples/architecture-visualization/qgis-ribbon.flow.json
+?? examples/architecture-visualization/qgis-ribbon.plan.json
+?? references/ui-engine-architecture-contract.md
+?? scripts/validate_architecture_flow.py
+?? tests/test_architecture_intent.py

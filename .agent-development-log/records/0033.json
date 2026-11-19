@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 33,
+  "timestamp_utc": "2026-11-05T11:14:20+00:00",
+  "kind": "implementation",
+  "status": "in_progress",
+  "summary": "Implement architecture contract and regressions; resolve compact router check",
+  "details": "Updated routing and bilingual planning, preserved typed architecture/I-O/command contracts, added graph validation, and excluded incompatible code recipes. First full run: 423 tests, one compact-router length failure, one Windows symlink test skipped. Required catalog/API/skill/manifest/graph/security checks passed. Shortened router through progressive references without weakening its size test; native and Archify render NOT RUN.",
+  "references": [
+    32
+  ],
+  "task_id": "ARCH-INTENT-001",
+  "plan_revision": "r1",
+  "changed_files": [
+    "scripts/intent_router.py",
+    "scripts/validate_architecture_flow.py"
+  ],
+  "tests": [
+    ".agent-development-log/evidence/architecture-intent/unit-tests.log"
+  ],
+  "test_result": "failed",
+  "commit": "",
+  "previous_hash": "d7cecb66c2ae4e047db22e653647cb09796da7ec6ff46497cc4efb250dd2af30",
+  "hash": "bf72a5046413c49f8da0c712cd7646b57e35b4c9bdc4111595fc5aa2c77e93df"
+}

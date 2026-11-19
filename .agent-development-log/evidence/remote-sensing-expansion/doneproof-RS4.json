@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "request_id": "REMOTE-SENSING-EXPANSION-001",
+  "task_id": "RS4",
+  "revision": "r1",
+  "overall_status": "verified",
+  "scope": "Reproducible examples and scientific behavior unit tests",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "Numeric tests exercise NDVI/NDWI/SAVI, constants, nodata/NaN/Inf/near-zero denominators, negative inputs, encoded offsets and generation-specific sensor mappings.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests/test_remote_sensing_indices.py",
+          "observed": "test_ndvi_exact_calculation, test_ndvi_zero_denominator_returns_nan, test_ndvi_negative_inputs_or_shadow, test_ndwi_water_mcfeeters, test_ndwi_moisture_gao, test_savi_soil_adjustment, test_evi_three_band_formulation, test_msavi_radical_protection, and Level-2 unpacking tests passed.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Tests exercise context-dependent alias handling, rejection of unapproved/unsourced thresholds, invalid source metadata and temporal comparison prerequisites; do not claim conversational behavior from string tests.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests/test_remote_sensing_indices.py",
+          "observed": "AliasDisambiguationTests (NDWI surface vs canopy, NDSI snow vs salinity, RVI SAR vs optical) and test_threshold_profiles_safety_guard passed with REJECTED_UNAPPROVED on unapproved profiles.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "Platform examples disclose resampling, GEE negative-input masking, non-destructive outputs, licensing and exact executed/not-run status; index values are never presented as physical percentages or concentrations without calibration.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "examples/remote-sensing/synthetic_index_calculator.py",
+          "observed": "Read back synthetic_index_calculator.py and references/remote-sensing-indices.md: multi-platform recipes for Python/Rasterio, GEE expression, QGIS, and ArcGIS Pro documented with exact non-destructive semantics and licensing.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

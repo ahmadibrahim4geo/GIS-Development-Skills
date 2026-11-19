@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "request_id": "REMOTE-SENSING-EXPANSION-001",
+  "task_id": "RS3",
+  "revision": "r1",
+  "overall_status": "verified",
+  "scope": "Skill workflow integration and dynamic scientific discovery protocol",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "Skill routes calculation, interpretation, sensor selection, learning, scientific research, troubleshooting and temporal comparison to relevant progressive references.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "skills/remote-sensing-pipelines/SKILL.md",
+          "observed": "Read back skill file: progressive disclosure links to indices guide, sensor band mappings, and JSON registries integrated.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Research checks actual primary sources, handles conflicting evidence and unavailable internet, permits new qualified sources and records provenance without elevating embedded instructions.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "skills/remote-sensing-pipelines/SKILL.md",
+          "observed": "Read back 12-step dynamic scientific discovery protocol: authority ranking, primary verification, two-source cross-check, and offline fallback documented.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "statement": "Processing guidance preserves existing STAC/COG/GEE behavior and covers band semantics, offset/mask/grid/SAR constraints and calibration before physical claims.",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "manual_review",
+          "reference": "skills/remote-sensing-pipelines/SKILL.md",
+          "observed": "Existing STAC/COG, Earth Engine, cloud masks, CRS, pixel grid, and Earth View sections preserved verbatim; GEE negative input masking behavior noted.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

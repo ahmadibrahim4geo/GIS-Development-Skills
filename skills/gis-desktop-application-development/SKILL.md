@@ -1,6 +1,6 @@
 ---
 name: gis-desktop-application-development
-description: Architect, implement, package and verify independent Windows GIS desktop applications (Qt/PySide, Tauri/Rust, C# WPF/WebView2) with real mapping and geoprocessing tools, offline data, 2D/3D renderers, bilingual UX, installers and source-to-release QA. Use when converting an ArcGIS Python toolbox into a standalone executable or building a GIS desktop product.
+description: Architect, implement, package and verify independent Windows GIS and CAD desktop applications (C++20/Qt6 Widgets, Qt/PySide, Tauri/Rust, C# WPF/WebView2) with real mapping, 2D CAD drafting, 3D viewport rendering, parametric urban design modeling, geoprocessing tools, offline data, bilingual UX, installers and source-to-release QA. Use when building a standalone GIS/CAD desktop product, converting a Python toolbox into an executable, or architecting a multi-layered spatial design studio.
 license: MIT
 compatibility: Requires the target desktop build toolchain and GIS runtime to run integration tests; the skill itself is documentation.
 ---
@@ -50,6 +50,7 @@ For a complete step-by-step implementation, use the [Desktop GIS Engineering Pla
 For source repositories, licenses, and choosing an actual GIS engine or interface toolkit, use the [Desktop GIS Technology Directory](../../references/desktop-gis-technology-directory.md).
 
 **Choose your route:**
+- Hybrid 2D/3D CAD/GIS Studio & Parametric Modeling: C++20/Qt6 Widgets, SARibbon, Qt-ADS, high-precision Camera-Relative Local Render Origin, Clipper2 polygon setbacks, earcut polygon triangulation with holes, OpenDRIVE alignments, and Open BIM (IFC 4.3).
 - Full-featured GIS workstation: QGIS Core / GUI / Processing and Qt; follow the QGIS integration specialist.
 - Lightweight 2D viewer: MapLibre renderer with separately chosen GDAL / PROJ / GEOS processing.
 - 3D globe: CesiumJS plus a GIS data-processing adapter.
@@ -78,13 +79,22 @@ Read [Earth View architecture](../../references/earth-view-architecture.md) for 
 
 ## Read only what the task needs
 
-- Engineering and release acceptance: `../../references/desktop-application-engineering.md`
-- Rendering/UI architecture: `../../references/desktop-and-web.md`, `../../references/geolibre-integration.md`, `../../references/dotnet-gis.md`
-- Correct map/CRS APIs: `../coordinate-reference-systems/SKILL.md`
-- Scientific data and API access: `../geospatial-data-discovery/SKILL.md`
-- Real MIRSAD Desktop development experience: `../../references/ahmad-ibrahim-gis-case-studies.md`
-- GIS backend and I/O: `../../references/geospatial-foundations.md`
-- Imported KML/KMZ exact styles, asset bundles, ExtendedData and hierarchy: [KML/KMZ Engineering](../kml-kmz-engineering/SKILL.md) and [Google interoperability contract](../../references/google-kml-kmz-compatibility.md). In Earth/Explorer-style desktop apps, keep imported user styles and Temporary/My Places separate; geometry-only conversion is not faithful rendering.
+- Engineering and release acceptance: [Desktop Engineering Playbook](../../references/desktop-application-engineering.md)
+- Native CAD/GIS & 3D Desktop Architecture: [C++20/Qt6 CAD/GIS Architecture](../../references/native-cad-gis-desktop-architecture.md)
+- Universal Source & Tool Registry: [Open-Source CAD/GIS Registry](../../references/urban-design-sources.md) · [JSON Source Catalog](../../references/urban-design-source-registry.json)
+- Competency Coverage & Traceability: [Urban Design Competency Coverage](../../references/urban-design-competency-coverage.md)
+- Parametric Spatial Hierarchy & Cascading: [Parametric Modeling & Relational DAG](../../references/urban-hierarchy-parametric-modeling.md)
+- Universal Simulation Engines (Solar, Stormwater, Traffic): [Urban Simulation Engines](../../references/urban-simulation-engines.md)
+- Reversible CAD/GIS AI Copilot: [Reversible AI Copilot & QUndoStack Integration](../../references/reversible-cad-ai-copilot.md)
+- True-Scale ISO Plotting & 3D Flythrough: [Urban Export Studio](../../references/urban-export-studio.md)
+- Token Optimization Triad: [Ponytail, Caveman & Token Optimizer](../../references/token-optimization-triad.md)
+- Agent Context & Memory Architecture: [Modular 5-File Context Protocol](../../references/agent-context-memory-architecture.md)
+- Rendering/UI architecture: [Desktop & Web Architecture](../../references/desktop-and-web.md) · [GeoLibre Integration](../../references/geolibre-integration.md) · [Dotnet GIS](../../references/dotnet-gis.md)
+- Correct map/CRS APIs: [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md)
+- Scientific data and API access: [Geospatial Data Discovery](../geospatial-data-discovery/SKILL.md)
+- Real MIRSAD Desktop development experience: [Ahmad Ibrahim GIS Case Studies](../../references/ahmad-ibrahim-gis-case-studies.md)
+- GIS backend and I/O: [Geospatial Foundations](../../references/geospatial-foundations.md)
+- Imported KML/KMZ exact styles, asset bundles, ExtendedData and hierarchy: [KML/KMZ Engineering](../kml-kmz-engineering/SKILL.md) and [Google Interoperability Contract](../../references/google-kml-kmz-compatibility.md). In Earth/Explorer-style desktop apps, keep imported user styles and Temporary/My Places separate; geometry-only conversion is not faithful rendering.
 
 ## Google Earth Pro patterns and historical imagery (reference only)
 
@@ -158,8 +168,22 @@ Treat these as **capabilities, not interchangeable complete engines**. Select on
 | 10 | PDAL | LiDAR and point clouds | Optional for point-cloud workloads |
 | 11 | RustGIS | Rust-native GIS application architecture reference | Evaluate actual APIs, maturity, test coverage and license before adopting; never assume production readiness |
 | 12 | WhiteboxTools | Specialized terrain/hydrology | Optional; review current edition, licensing and redistribution conditions |
+| 13 | Clipper2 | 2D polygon offsetting, setbacks, boolean clipping | High-performance 64-bit integer polygon clipping for parcel setbacks and road boundaries |
+| 14 | earcut.hpp | Polygon triangulation with holes and islands | Fast header-only tessellation for 3D building extrusion and parcel meshes |
+| 15 | SARibbon / Qt-ADS | Ribbon bar and dockable workspaces | Office/Civil 3D ribbon UI with customizable dock panels and property browsers |
+| 16 | IfcOpenShell | Open BIM (IFC 4.3) import and export | Industry Foundation Classes parsing and geometry creation for urban BIM |
+| 17 | libOpenDRIVE | Road network geometry and clothoid spirals | ASAM OpenDRIVE parsing and parametric road centerline alignment |
 
 Rust UI choices (Tauri, egui, Iced, Dioxus) are **application shells/frameworks, not GIS engines**. Evaluate only after selecting GIS capabilities. Do not add unrelated desktop frameworks merely to increase catalog size.
+
+## Desktop CAD/GIS Invariants & Engine Rules
+
+When building or reviewing standalone hybrid CAD/GIS desktop software (e.g. C++20/Qt6):
+1. **Camera-Relative Local Render Origin:** In global projected CRS (e.g. UTM with coordinates $> 3,000,000\text{ m}$), 32-bit GPU floating-point precision degrades to $> 5\text{ cm}$, causing severe vertex jitter and z-fighting. Always perform double-precision vertex subtraction relative to the active camera before uploading vertex buffers to the GPU, preserving sub-millimeter precision ($< 0.0001\text{ mm}$).
+2. **Reversibility Invariant (`Ctrl+Z`):** AI copilot tools and user operations must never mutate the document model directly. Every mutation must be encapsulated as a `QUndoCommand` and pushed to `QUndoStack`. Pressing `Ctrl+Z` must cleanly revert all geometric and attribute changes without leaving orphan entities.
+3. **Native C++ Schema Validation Gate:** All AI assistant tool calls must be strictly validated inside native C++ via `pboettch/json-schema-validator` before dispatching to application slots, preventing malformed parameters and injection payloads.
+4. **Relational DAG Cascade:** Parametric geometry dependencies (e.g. Centerline $\rightarrow$ Right-of-Way $\rightarrow$ Sidewalk $\rightarrow$ Parcel Setbacks $\rightarrow$ Building Massing $\rightarrow$ Subsurface Utilities) must be modeled as a directed acyclic graph. Modifying a parent node automatically cascades downstream without cycle deadlocks.
+5. **Fixed Scale Locking (`LockCanvasZoom`):** For engineering and municipal submissions, provide locked standard drafting scales (1:500, 1:1000, 1:2000, 1:5000) with true millimeter screen-to-paper calibration.
 
 ## Independent GIS desktop workflow (composes shared standards)
 

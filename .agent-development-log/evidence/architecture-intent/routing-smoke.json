@@ -1,0 +1,138 @@
+[
+  {
+    "schema_version": "1.0",
+    "stage": "draft_hints_only",
+    "original_request": "حوّل واجهة QGIS إلى ribbon مع الحفاظ على الأدوات",
+    "goal": null,
+    "target": null,
+    "desired_outcomes": [],
+    "next_step": "Hosting AI must infer and show the user goal, deliverables, constraints and measurable success criteria; no execution from keywords.",
+    "language_hint": "ar",
+    "suggested_skills": [
+      "gis-security-guardian",
+      "prompt-intent-orchestrator"
+    ],
+    "requires_semantic_review": true,
+    "architecture_review": {
+      "required": true,
+      "signals": [
+        "command-surface",
+        "architecture-change"
+      ],
+      "basis": "lexical-hints-only",
+      "delivery_model": "unresolved",
+      "next_step": "Host must distinguish source host, delivery host, changed component and protected behavior; inspect named components before selecting an adapter."
+    },
+    "approval": "not_requested",
+    "note": "Keyword matches only. A human/LLM must identify tasks, uncertainties, acceptance tests and obtain approval before tool dispatch."
+  },
+  {
+    "schema_version": "1.0",
+    "stage": "draft_hints_only",
+    "original_request": "حوّل أدوات QGIS إلى ribbon واربطها بمحرك واجهة UI.js",
+    "goal": null,
+    "target": null,
+    "desired_outcomes": [],
+    "next_step": "Hosting AI must infer and show the user goal, deliverables, constraints and measurable success criteria; no execution from keywords.",
+    "language_hint": "ar",
+    "suggested_skills": [
+      "gis-security-guardian",
+      "prompt-intent-orchestrator"
+    ],
+    "requires_semantic_review": true,
+    "architecture_review": {
+      "required": true,
+      "signals": [
+        "command-surface",
+        "ui-component-identity",
+        "architecture-change"
+      ],
+      "basis": "lexical-hints-only",
+      "delivery_model": "unresolved",
+      "next_step": "Host must distinguish source host, delivery host, changed component and protected behavior; inspect named components before selecting an adapter."
+    },
+    "approval": "not_requested",
+    "note": "Keyword matches only. A human/LLM must identify tasks, uncertainties, acceptance tests and obtain approval before tool dispatch."
+  },
+  {
+    "schema_version": "1.0",
+    "stage": "draft_hints_only",
+    "original_request": "Build a standalone QGIS app with UI.js ribbon",
+    "goal": null,
+    "target": null,
+    "desired_outcomes": [],
+    "next_step": "Hosting AI must infer and show the user goal, deliverables, constraints and measurable success criteria; no execution from keywords.",
+    "language_hint": "en",
+    "suggested_skills": [
+      "gis-desktop-application-development",
+      "gis-security-guardian",
+      "prompt-intent-orchestrator"
+    ],
+    "requires_semantic_review": true,
+    "architecture_review": {
+      "required": true,
+      "signals": [
+        "command-surface",
+        "ui-component-identity"
+      ],
+      "basis": "lexical-hints-only",
+      "delivery_model": "unresolved",
+      "next_step": "Host must distinguish source host, delivery host, changed component and protected behavior; inspect named components before selecting an adapter."
+    },
+    "approval": "not_requested",
+    "note": "Keyword matches only. A human/LLM must identify tasks, uncertainties, acceptance tests and obtain approval before tool dispatch."
+  },
+  {
+    "schema_version": "1.0",
+    "stage": "draft_hints_only",
+    "original_request": "Explain the data flow from UI.js ribbon to QGIS processing and map refresh",
+    "goal": null,
+    "target": null,
+    "desired_outcomes": [],
+    "next_step": "Hosting AI must infer and show the user goal, deliverables, constraints and measurable success criteria; no execution from keywords.",
+    "language_hint": "en",
+    "suggested_skills": [
+      "gis-data-flow-diagnostics",
+      "gis-security-guardian",
+      "prompt-intent-orchestrator"
+    ],
+    "requires_semantic_review": true,
+    "architecture_review": {
+      "required": true,
+      "signals": [
+        "command-surface",
+        "ui-component-identity"
+      ],
+      "basis": "lexical-hints-only",
+      "delivery_model": "unresolved",
+      "next_step": "Host must distinguish source host, delivery host, changed component and protected behavior; inspect named components before selecting an adapter."
+    },
+    "approval": "not_requested",
+    "note": "Keyword matches only. A human/LLM must identify tasks, uncertainties, acceptance tests and obtain approval before tool dispatch."
+  },
+  {
+    "schema_version": "1.0",
+    "stage": "draft_hints_only",
+    "original_request": "غيّر لون زر ribbon",
+    "goal": null,
+    "target": null,
+    "desired_outcomes": [],
+    "next_step": "Hosting AI must infer and show the user goal, deliverables, constraints and measurable success criteria; no execution from keywords.",
+    "language_hint": "ar",
+    "suggested_skills": [
+      "gis-security-guardian"
+    ],
+    "requires_semantic_review": true,
+    "architecture_review": {
+      "required": false,
+      "signals": [
+        "command-surface"
+      ],
+      "basis": "lexical-hints-only",
+      "delivery_model": null,
+      "next_step": "Host must distinguish source host, delivery host, changed component and protected behavior; inspect named components before selecting an adapter."
+    },
+    "approval": "not_requested",
+    "note": "Keyword matches only. A human/LLM must identify tasks, uncertainties, acceptance tests and obtain approval before tool dispatch."
+  }
+]

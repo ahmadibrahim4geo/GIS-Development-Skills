@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "request_id": "ARCH-INTENT-001",
+  "task_id": "T4",
+  "revision": "r1",
+  "overall_status": "verified",
+  "criteria": [
+    {
+      "id": "C1",
+      "statement": "Wizard exports a valid architecture-aware draft while preserving user text, constraints and existing nonarchitectural plans",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": ".agent-development-log\\evidence\\architecture-intent\\unit-tests.log",
+          "observed": "Real Node wizard handlers generate/translate/invalidate drafts for four architecture change types and compiler tests preserve unresolved identity, source/target and constraints.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "artifact_readback",
+          "reference": "docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md",
+          "observed": "Reviewed current artifact and observed check receipts; scope is repository T0/T1 only.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "statement": "Arabic/English controls and homepage/README guidance describe the real architectural review and its limits",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": ".agent-development-log\\evidence\\architecture-intent\\unit-tests.log",
+          "observed": "Bilingual README/homepage examples link the contract; landing/onboarding tests pass, and independent original/current author-panel readback is identical.",
+          "result": "pass",
+          "revision": "r1"
+        },
+        {
+          "type": "artifact_readback",
+          "reference": "docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md",
+          "observed": "Reviewed current artifact and observed check receipts; scope is repository T0/T1 only.",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    }
+  ]
+}

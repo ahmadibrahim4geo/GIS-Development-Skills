@@ -17,6 +17,9 @@ A Skill is agent guidance; **it cannot automatically intercept a process or exec
 4. On a new project, initialize exactly one folder `.agent-development-log/` under the authorized project root.
 
 ## Per-process reporting
+
+Keep decisions, reviewed criteria and the next action in this existing journal/plan under the [portable execution guidance](../../references/portable-execution-guidance.md); do not introduce a second diary for an effort mode. A simple read-only reply may carry evidence inline; meaningful project work retains this journal's required records.
+
 - **New request:** append a `request` or `plan` report; capture intended outcome, task ID, plan revision, constraints, assumptions and approval status. Proposals are not completed work.
 - **After each meaningful operation:** append an `implementation`, `decision`, `verification`, `blocker` or `handoff` event. Include what actually happened, relative files, observed Git reference, tests and failures. Group a related batch of commands as one step only if its results are traceable.
 - **When user changes a previous step:** append `revision`, always `--ref` the earlier report. A cancelled request becomes a NEW `cancellation` report, not an erased old entry. For an actual revert, append `rollback` with link and evidence, only after separately approved safe code changes.
