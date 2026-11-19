@@ -70,3 +70,4 @@ create a linked revision or cancellation. This local hash chain is not a signatu
 | [#0063](reports/0063.md) | 2026-11-19T02:24:10+00:00 | implementation | in_progress | #0062 | Start Task UDS9: Reproducible Test Suite and Plan-Bound DoneProof Verification |
 | [#0064](reports/0064.md) | 2026-11-19T02:27:04+00:00 | verification | completed | #0063 | Verify Task UDS9: Reproducible Test Suite and Plan-Bound DoneProof Verification |
 | [#0065](reports/0065.md) | 2026-11-19T03:34:56+00:00 | implementation | completed | — | Audit and tune desktop CAD/GIS skills and intent routing contracts |
+| [#0066](reports/0066.md) | 2026-11-19T04:55:17+00:00 | implementation | completed | — | Clean up raw LaTeX artifacts and format text in skills |

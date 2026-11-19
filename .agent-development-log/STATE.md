@@ -1,11 +1,10 @@
 # Project development state — agent handoff
 
 Read with INDEX.md and the linked reports. Independently inspect code and tests.
-Recorded steps: 65
+Recorded steps: 66
 
 ## Latest records
 
-- #0056 [completed] Verify Task UDS5: Universal Multi-Physics Engineering Simulation Engines (related: #0055)
 - #0057 [in_progress] Start Task UDS6: Universal Reversible CAD/GIS AI Copilot Architecture and Export Studio (related: #0056)
 - #0058 [completed] Verify Task UDS6: Universal Reversible CAD/GIS AI Copilot Architecture and Export Studio (related: #0057)
 - #0059 [in_progress] Start Task UDS7: Universal Token Optimization Triad and Context Memory Architecture (related: #0058)
@@ -15,6 +14,7 @@ Recorded steps: 65
 - #0063 [in_progress] Start Task UDS9: Reproducible Test Suite and Plan-Bound DoneProof Verification (related: #0062)
 - #0064 [completed] Verify Task UDS9: Reproducible Test Suite and Plan-Bound DoneProof Verification (related: #0063)
 - #0065 [completed] Audit and tune desktop CAD/GIS skills and intent routing contracts
+- #0066 [completed] Clean up raw LaTeX artifacts and format text in skills
 
 ## Open/blocked records (confirm whether still applicable)
 

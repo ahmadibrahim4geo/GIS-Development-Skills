@@ -21,11 +21,11 @@ Scientific satellite workflows must separate algebra from interpretation. Consul
 
 ### Scientific rules of index interpretation
 1. **Four distinct layers:** Distinguish (a) mathematical algebraic bounds, (b) typical observed landscape values, (c) local conditional classification thresholds, and (d) encoded storage integers (e.g. USGS index products scaled by `0.0001`).
-2. **Values are not percentages:** $\text{NDVI} = 0.65$ does not equal 65% vegetation cover; $\text{NDWI} = 0.40$ does not mean 40% water depth; $\text{NDBI} > 0$ does not prove an urban surface.
+2. **Values are not percentages:** NDVI = 0.65 does not equal 65% vegetation cover; NDWI = 0.40 does not mean 40% water depth; NDBI > 0 does not prove an urban surface.
 3. **Disambiguate collisions:**
-   - **NDWI:** McFeeters 1996 $(\text{Green} - \text{NIR})/(\text{Green} + \text{NIR})$ maps open surface water; Gao 1996 $(\text{NIR} - \text{SWIR})/(\text{NIR} + \text{SWIR})$ (NDMI) measures plant canopy moisture.
-   - **NDSI:** Hall 1995 snow mapping requires $\text{NIR} \ge 0.11$ to prevent water confusion. Distinct from salinity indices.
-   - **RVI:** Radar Vegetation Index uses linear backscatter intensity power; distinct from Jordan 1969 optical Simple Ratio ($\text{NIR} / \text{Red}$).
+   - **NDWI:** McFeeters 1996 (Green - NIR) / (Green + NIR) maps open surface water; Gao 1996 (NIR - SWIR) / (NIR + SWIR) (NDMI) measures plant canopy moisture.
+   - **NDSI:** Hall 1995 snow mapping requires NIR ≥ 0.11 to prevent water confusion. Distinct from salinity indices.
+   - **RVI:** Radar Vegetation Index uses linear backscatter intensity power; distinct from Jordan 1969 optical Simple Ratio (NIR / Red).
 4. **GEE and division protection:** Guard against zero denominators and NaNs. Note that `ee.Image.normalizedDifference()` silently masks pixels with negative inputs; use explicit expressions when analyzing dark water or shadows.
 
 ## Dynamic scientific source discovery workflow
@@ -35,7 +35,7 @@ When resolving unfamiliar indices, novel sensors, regional thresholds or calibra
 2. **Known registry first:** Query `remote-sensing-indices.json` and `remote-sensing-index-source-registry.json` before initiating web search.
 3. **Dynamic discovery:** Search official space agencies (USGS, NASA, ESA), peer-reviewed databases (Crossref, OpenAlex, NASA ADS), and academic publications. Do not restrict search to predetermined lists.
 4. **Search expansion:** Use bilingual targeted queries combining index acronym, author, DOI, sensor, Level-2 product, processing baseline, and validation region.
-5. **Rank by authority:** (a) Primary peer-reviewed paper / official product guide $\rightarrow$ (b) Regional empirical validation $\rightarrow$ (c) Official training (ARSET, STEP) $\rightarrow$ (d) Open-source code examples.
+5. **Rank by authority:** (a) Primary peer-reviewed paper / official product guide → (b) Regional empirical validation → (c) Official training (ARSET, STEP) → (d) Open-source code examples.
 6. **Verification & two-source cross-check:** Verify formulas against the original publication; if two reputable sources diverge (e.g. different SWIR band definitions), record both with explicit reasons.
 7. **Failure handling:** If network search is unavailable or unauthenticated, fall back to the curated local registry with clear confidence disclosure; never invent a DOI or threshold.
 

@@ -179,10 +179,10 @@ Rust UI choices (Tauri, egui, Iced, Dioxus) are **application shells/frameworks,
 ## Desktop CAD/GIS Invariants & Engine Rules
 
 When building or reviewing standalone hybrid CAD/GIS desktop software (e.g. C++20/Qt6):
-1. **Camera-Relative Local Render Origin:** In global projected CRS (e.g. UTM with coordinates $> 3,000,000\text{ m}$), 32-bit GPU floating-point precision degrades to $> 5\text{ cm}$, causing severe vertex jitter and z-fighting. Always perform double-precision vertex subtraction relative to the active camera before uploading vertex buffers to the GPU, preserving sub-millimeter precision ($< 0.0001\text{ mm}$).
+1. **Camera-Relative Local Render Origin:** In global projected CRS (e.g. UTM with coordinates > 3,000,000 m), 32-bit GPU floating-point precision degrades to > 5 cm, causing severe vertex jitter and z-fighting. Always perform double-precision vertex subtraction relative to the active camera before uploading vertex buffers to the GPU, preserving sub-millimeter precision (< 0.0001 mm).
 2. **Reversibility Invariant (`Ctrl+Z`):** AI copilot tools and user operations must never mutate the document model directly. Every mutation must be encapsulated as a `QUndoCommand` and pushed to `QUndoStack`. Pressing `Ctrl+Z` must cleanly revert all geometric and attribute changes without leaving orphan entities.
 3. **Native C++ Schema Validation Gate:** All AI assistant tool calls must be strictly validated inside native C++ via `pboettch/json-schema-validator` before dispatching to application slots, preventing malformed parameters and injection payloads.
-4. **Relational DAG Cascade:** Parametric geometry dependencies (e.g. Centerline $\rightarrow$ Right-of-Way $\rightarrow$ Sidewalk $\rightarrow$ Parcel Setbacks $\rightarrow$ Building Massing $\rightarrow$ Subsurface Utilities) must be modeled as a directed acyclic graph. Modifying a parent node automatically cascades downstream without cycle deadlocks.
+4. **Relational DAG Cascade:** Parametric geometry dependencies (e.g. Centerline → Right-of-Way → Sidewalk → Parcel Setbacks → Building Massing → Subsurface Utilities) must be modeled as a directed acyclic graph. Modifying a parent node automatically cascades downstream without cycle deadlocks.
 5. **Fixed Scale Locking (`LockCanvasZoom`):** For engineering and municipal submissions, provide locked standard drafting scales (1:500, 1:1000, 1:2000, 1:5000) with true millimeter screen-to-paper calibration.
 
 ## Independent GIS desktop workflow (composes shared standards)
