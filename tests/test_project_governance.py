@@ -133,6 +133,25 @@ class ProjectGovernanceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             pg.register_skill(self.root, "Unsafe", "file:///etc/passwd", "bad", "", "")
 
+    def test_governance_symlink_and_injected_metadata_are_rejected(self):
+        outside = Path(self.temp.name) / "outside.md"
+        outside.write_text("do not touch", encoding="utf-8")
+        link = self.root / "AGENTS.md"
+        try:
+            link.symlink_to(outside)
+        except (OSError, NotImplementedError):
+            return
+        with self.assertRaises(ValueError):
+            pg.init(self.root)
+        self.assertEqual(outside.read_text(encoding="utf-8"), "do not touch")
+        link.unlink()
+        pg.init(self.root)
+        with self.assertRaises(ValueError):
+            pg.register_skill(self.root, "Injected", "https://example.org/skill\\nunsafe",
+                              "test", "", "")
+        with self.assertRaises(ValueError):
+            pg.register_folder(self.root, "plans", "purpose\\nnew heading")
+
     def test_audit_is_read_only(self):
         before = sorted(x.name for x in self.root.iterdir())
         result = pg.audit(self.root)
