@@ -65,28 +65,4 @@ license: MIT
 
 **Shared checks:** [security](../../references/geospatial-security.md) · [performance](../../references/geospatial-performance.md).
 
-**More:** [GIS software registry](../../references/gis-software-source-registry.md) · [antipatterns](../../references/gis-antipatterns.md) · [examples](../../examples/README.md).
-
-
-## Project-level bootstrap and engineering governance
-
-For a multi-step **software project** route the root project inspection,
-structure inventory, required user-owned testing data/ and separate testing
-results/, numbered plans and project-local AGENTS.md through the existing
-[project governance contract](../../references/project-governance-workflow.md)
-and [project helper](../../scripts/project_governance.py).
-Read-only audit precedes authorized initialization. Register new persistent
-folders with a purpose and preserve the host project's native build layout.
-
-The Workflow Orchestrator is a *logical* engineering organization: Intent
-defines goals, the architecture/toolchain roles assess the current project,
-GIS specialists execute, Security Guardian checks untrusted dependencies,
-QA verifies concrete outcomes and the existing Journal/DoneProof records
-handoffs. Do not claim an actual multi-agent runtime unless host-native tools
-and roles demonstrably execute.
-
-For uncovered specialist needs, examine existing skills, source registries
-and libraries first. Search outside only for a real gap; stage source-only
-external candidates in target-project New Skill/ with no automatic activation.
-Retain Remote Sensing, NVIDIA/Anthropic/Qt upstream references and the
-[Token Optimization Triad](../../references/token-optimization-triad.md).
+**Project governance:** [bootstrap, testing data and skill intake](../../references/project-governance-workflow.md).
