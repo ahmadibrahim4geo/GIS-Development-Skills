@@ -155,3 +155,20 @@ skill search, malicious-code scanning, IDE automation, toolchain probing,
 remote runtime execution, multi-agent dispatch, automatic source restructuring
 or native GUI acceptance. Those capabilities need separate host integration
 and observed end-to-end tests before claims of completion.
+
+
+## Read-only IDE and toolchain reconnaissance
+
+Use scripts/toolchain_discovery.py from the actual accessible suite checkout:
+
+    python scripts/toolchain_discovery.py --project PATH
+
+The helper inspects recognized project-root source/build file patterns and
+checks command candidates on PATH without running executables, reading secrets
+or installing tools. It records FOUND_ON_PATH_NOT_EXECUTED or NOT_FOUND_ON_PATH;
+neither proves a Visual Studio workload or Qt/GIS runtime is usable. Output
+paths that could expose local usernames are hidden unless --include-paths
+is explicitly requested. A Toolchain Engineer must subsequently examine
+real solutions, SDK workloads, versions, GUI capability and user permissions
+before implementing or claiming a native build. Use a suitable official
+project template and actual IDE only when the tool is available to the agent.
