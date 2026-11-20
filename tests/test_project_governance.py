@@ -147,10 +147,10 @@ class ProjectGovernanceTests(unittest.TestCase):
         link.unlink()
         pg.init(self.root)
         with self.assertRaises(ValueError):
-            pg.register_skill(self.root, "Injected", "https://example.org/skill\\nunsafe",
+            pg.register_skill(self.root, "Injected", "https://example.org/skill\nunsafe",
                               "test", "", "")
         with self.assertRaises(ValueError):
-            pg.register_folder(self.root, "plans", "purpose\\nnew heading")
+            pg.register_folder(self.root, "plans", "purpose\nnew heading")
 
     def test_audit_is_read_only(self):
         before = sorted(x.name for x in self.root.iterdir())
