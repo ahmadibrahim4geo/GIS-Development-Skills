@@ -16,7 +16,7 @@ license: MIT
 
 **Effort:** [guide](../../references/portable-execution-guidance.md).
 
-**QGIS ribbon/UI.js:** [contract](../../references/ui-engine-architecture-contract.md); verify names before host/shell/renderer/engine choice.
+**QGIS UI.js:** [contract](../../references/ui-engine-architecture-contract.md).
 
 ## Choose specialists
 
@@ -65,4 +65,4 @@ license: MIT
 
 **Shared checks:** [security](../../references/geospatial-security.md) · [performance](../../references/geospatial-performance.md).
 
-**More:** [antipatterns](../../references/gis-antipatterns.md) · [project governance](../../references/project-governance-workflow.md).
+**More:** [software sources](../../references/gis-software-source-registry.md) · [antipatterns](../../references/gis-antipatterns.md) · [governance](../../references/project-governance-workflow.md).
