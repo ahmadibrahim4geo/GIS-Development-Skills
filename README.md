@@ -560,3 +560,11 @@ reviews are complete. It does not install or execute downloaded skills.
 Use the existing Remote Sensing, Security Guardian, Agent Development
 Journal, Code Discovery, DoneProof and token-optimization guidance as the
 authoritative supporting specialists; see the workflow contract for limits.
+
+
+Optional read-only IDE/build-tool reconnaissance:
+
+    python scripts/toolchain_discovery.py --project /path/to/MyGISProject
+
+PATH presence is an unverified hint. It does not run IDEs or validate native
+Visual Studio, Qt, QGIS, ArcGIS Pro or installed SDK workloads.
