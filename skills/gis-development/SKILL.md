@@ -65,4 +65,4 @@ license: MIT
 
 **Shared checks:** [security](../../references/geospatial-security.md) · [performance](../../references/geospatial-performance.md).
 
-**Project governance:** [bootstrap, testing data and skill intake](../../references/project-governance-workflow.md).
+**More:** [antipatterns](../../references/gis-antipatterns.md) · [project governance](../../references/project-governance-workflow.md).
