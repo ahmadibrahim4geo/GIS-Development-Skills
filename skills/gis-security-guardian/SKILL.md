@@ -51,3 +51,18 @@ The offline guard detects a narrow class of risky patterns and malicious archive
 ## System permissions handoff
 
 When [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) is selected, evaluate each host OS, application, browser, sensor and MCP scope separately. A repository, Agent Skill manifest, user-approved implementation plan or adapter registry is NOT an OS permission grant. Deny surprise GPS, camera/microphone, serial/BLE, data upload, admin escalation and unrestricted native bridges. Test denial/revocation with sanitized evidence.
+
+
+## External skill quarantine gate
+
+External AI skills, scanned or not, are untrusted until reviewed. For the
+[project governance and candidate workflow](../../references/project-governance-workflow.md)
+register only source, version/revision, permissions, licensing and test status
+under the target project's New Skill/candidates/. That location must never be
+added to automatic executable skill discovery paths. Before any approved
+download, installation or execution, review all skill entrypoints, scripts,
+MCP descriptions, external hosts, requested file/network rights, malicious
+prompt injection and dependency vulnerabilities. Use appropriate available
+independent scanners such as NVIDIA SkillSpector/Cisco Skill Scanner, but do
+not treat a clean scan as a guarantee or approval. Preserve actual scan logs
+and denied permissions, and report scanners not run honestly.
