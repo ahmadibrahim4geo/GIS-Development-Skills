@@ -413,3 +413,24 @@ python scripts/search_catalog.py --query rust
 ## إضافة مصادر OpenGeoHub وOpenLandMap
 
 أضفنا خمسة مستودعات علمية إلى مسار اكتشاف الأكواد ومراجع لمصادر البيانات البيئية: [scikit-map](https://github.com/openlandmap/scikit-map) (تعلم آلي مكاني بترخيص MIT)، و[soildb](https://github.com/openlandmap/soildb) (مخططات بيانات التربة والنمذجة البيدومترية)، و[GEDTM30](https://github.com/openlandmap/GEDTM30) (نموذج تضاريس عالمي بدقة 30 متراً)، و[spatial-prediction-eml](https://github.com/opengeohub/spatial-prediction-eml) (تنبؤ مكاني تجميعي في R بترخيص CC-BY-SA-4.0)، و[spatial-layers](https://github.com/openlandmap/spatial-layers) (أدلة الرموز والترميز البيئي بترخيص GPL-3.0). راجع [دليل التكامل وبروتوكولات STAC/COG وتخطيط استعراض البيانات الزمني داخل Z-EARTH](references/opengeohub-openlandmap-integration.md). هذه الإضافة تخص المهارة والتوثيق، ولا تعني تنفيذ الواجهة داخل البرنامج بعد.
+
+
+## حوكمة المشروع وبيانات الاختبار
+
+يوفّر [دليل حوكمة المشروعات](references/project-governance-workflow.md)
+وظيفة اختيارية لتجهيز **المشروع المستهدف** دون حذف الملفات القديمة أو
+فرض نقل الكود إلى هيكل غير متوافق مع بيئة التطوير.
+
+ابدأ بفحص هيكل المشروع، ثم بعد التصريح بالتعديلات المناسبة يمكن إنشاء
+ملفات قواعد الوكيل ودليل المجلدات والخطط المرقمة وحالة استئناف العمل.
+
+    python scripts/project_governance.py --project PATH audit
+    python scripts/project_governance.py --project PATH init
+    python scripts/project_governance.py --project PATH new-test-run --name "Raster validation"
+
+المجلد **testing data/** مخصص لبيانات المستخدم الأصلية ولا تُكتب فيه نتائج
+الاختبار، حتى إن كان فارغًا عند التهيئة. والمجلد **testing results/** يستقبل
+المخرجات التجريبية في مجلدات مرقمة. أما **New Skill/** فهو لحفظ معلومات
+المهارات الخارجية المرشحة فقط، دون تثبيت أو تشغيل تلقائي قبل مراجعة الترخيص
+والأمان والصلاحيات والاختبار الفعلي. يستمر استخدام المهارات الحالية الخاصة
+بالاستشعار عن بعد والأمان والاختبار وتوفير التوكنات وسجل التطوير.
