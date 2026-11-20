@@ -173,6 +173,11 @@ enforce operating-system isolation by itself.
 def init(root):
     if not root.is_dir():
         raise ValueError("Project root must already exist")
+    for rel in ("AGENTS.md", ".gitignore", CONFIG, "PROJECT_STRUCTURE.md",
+                "context/CURRENT_HANDOFF.md", "New Skill/README.md",
+                "New Skill/SKILLS_REGISTRY.json"):
+        if (root / rel).is_symlink():
+            raise ValueError(f"Refusing to read or write symlinked governance file: {rel}")
     created = []
     for rel in DIRECTORIES:
         directory = safe_path(root, rel)
@@ -276,6 +281,8 @@ def structure_text(root, dirs, files, declared):
 
 
 def sync(root):
+    if (root / "PROJECT_STRUCTURE.md").is_symlink() or (root / CONFIG).is_symlink():
+        raise ValueError("Symlinked governance files are not permitted")
     declared = config(root)["folders"]
     dirs, files = inventory(root)
     output = root / "PROJECT_STRUCTURE.md"
@@ -301,6 +308,8 @@ def sync(root):
 
 
 def register_folder(root, rel, purpose):
+    if "\n" in purpose or "\r" in purpose or len(purpose) > 300:
+        raise ValueError("Directory purpose must be a concise single line")
     folder = safe_path(root, rel)
     if not folder.is_dir():
         raise ValueError("Register an existing directory, not a proposed path")
@@ -313,6 +322,8 @@ def register_folder(root, rel, purpose):
 
 
 def new_plan(root, title, request):
+    if "\n" in title or "\r" in title or len(title) > 160:
+        raise ValueError("Plan title must be a concise single line")
     safe_path(root, "plans/active").mkdir(parents=True, exist_ok=True)
     sequence = next_id(root, ("plans/active", "plans/archive"))
     rel = f"plans/active/{sequence}_{slug(title)}"
@@ -375,6 +386,10 @@ def new_test_run(root, title):
 
 
 def register_skill(root, name, source, purpose, revision, license_name):
+    for label, value in (("name", name), ("source", source), ("purpose", purpose),
+                         ("revision", revision), ("license", license_name)):
+        if not isinstance(value, str) or len(value) > 1024 or any(ord(c) < 32 or ord(c) == 127 for c in value):
+            raise ValueError(f"Invalid external skill {label}: control characters or excessive length")
     parsed = urlparse(source)
     if parsed.scheme != "https" or not parsed.netloc or parsed.username or parsed.password:
         raise ValueError("External skill source must be a public HTTPS URL")
