@@ -132,3 +132,18 @@ For a reviewed feature requiring OS time, location, files, camera/microphone, pe
 ## Conditional architecture and workflow visualization
 
 The [GIS Architecture & Workflow Visualization specialist](../skills/gis-architecture-visualization/SKILL.md) is shared support for explicit diagram explanations, reviewed multi-component feature designs, cross-component diagnostics and structural changes. The GIS router decides whether it helps; the domain specialist retains implementation/testing ownership. Follow the [Archify integration handoff](archify-integration.md), declare proposed/source-reviewed/runtime-observed evidence, and record actual renderer/browser availability. Skip simple isolated edits and honor text-only requests. Editable JSON and interactive HTML are explanatory artifacts, not execution permissions or native GIS test evidence.
+
+
+## Target-project bootstrap, structure and fixture separation
+
+After reviewed scope and before substantial code changes, apply
+[project governance](project-governance-workflow.md) and inspect target-root
+AGENTS.md, existing build layout, toolchain, folder inventory and source/data
+boundaries. This is an **architectural preflight**, not automatic permission
+to migrate or delete an existing tree. The project governance helper supports
+read-only audit, authorized additive initialization, numbered plans, folder
+descriptions, user-owned testing data, separate numbered testing results,
+and external skill candidate-only registration. Keep the existing project
+journal, CRS/scientific quality rules and DoneProof evidence contract as the
+single sources of truth. Actual skill execution, Windows GUI tests, IDE
+discovery, security scanners and native T2–T4 require available host tools.
