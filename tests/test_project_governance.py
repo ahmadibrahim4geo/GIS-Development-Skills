@@ -115,7 +115,7 @@ class ProjectGovernanceTests(unittest.TestCase):
         self.assertTrue((self.root / created["run"] / "TEST_RUN.md").is_file())
         self.assertIn("NOT RUN", (self.root / created["run"] / "TEST_RUN.md").read_text(encoding="utf-8"))
         self.assertEqual(fixture.read_bytes(), previous)
-        self.assertEqual(pg.new_test_run(self.root, "Another Run")["run"][:4], "0002")
+        self.assertEqual(Path(pg.new_test_run(self.root, "Another Run")["run"]).name[:4], "0002")
 
     def test_external_skill_is_candidate_only(self):
         pg.init(self.root)
