@@ -62,3 +62,16 @@ Before recording completed work, apply [DoneProof](../completion-evidence/SKILL.
 Report numbers are project-local, chronological and unbroken. A revision/cancellation/rollback refers to earlier steps, old records remain, and verification detects altered/missing reports. Run real GIS acceptance tests separately using [GIS Acceptance Report](../../templates/GIS_ACCEPTANCE_REPORT.md), distinguishing T0/T1 source and offline evidence from T2 native integration, T3 operation/readback and T4 packaged clean-environment proof.
 
 Read [journal lifecycle](../../references/agent-development-journal-guide.md), [inspiring upstream skills](../../references/agent-memory-skill-references.md) and [offline example](../../examples/development-journal/README.md). The helper does NOT implement code changes, perform Git revert, verify user identity, watch processes, or authenticate an approval.
+
+
+## Project structure, plans and testing fixtures integration
+
+Use the shared [Project Governance contract](../../references/project-governance-workflow.md)
+before beginning substantial development in a target project. Governance
+creates plans/active, plans/archive, testing data (protected user fixtures),
+testing results (generated runs), PROJECT_STRUCTURE.md, and optional New Skill
+candidate metadata. These directories complement but do NOT replace the
+canonical .agent-development-log/ records and reports. Link plan IDs and
+test-result evidence to real journal events; never duplicate or erase the
+append-only ledger. The current handoff is a concise resume summary, and all
+historical claims still require actual source/host verification.

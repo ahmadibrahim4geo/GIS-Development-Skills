@@ -536,3 +536,35 @@ Use [the code discovery skill](skills/gis-code-discovery/SKILL.md) to discover, 
 ## OpenGeoHub / OpenLandMap Scientific Sources & Data Explorer
 
 Five scientific GIS repositories and environmental data catalog references have been registered for task-specific agent discovery: [scikit-map](https://github.com/openlandmap/scikit-map) (MIT spatial ML), [soildb](https://github.com/openlandmap/soildb) (pedometric data modeling), [GEDTM30](https://github.com/openlandmap/GEDTM30) (30 m global elevation model), [spatial-prediction-eml](https://github.com/opengeohub/spatial-prediction-eml) (CC-BY-SA-4.0 ensemble prediction), and [spatial-layers](https://github.com/openlandmap/spatial-layers) (GPL-3.0 cartographic symbology). See [source integration, STAC/COG protocols, and time-aware Z-EARTH Data Explorer design](references/opengeohub-openlandmap-integration.md). This is planning/reference integration only, not a completed desktop feature.
+
+
+## Project governance and testing data (project-local)
+
+The [project governance workflow](references/project-governance-workflow.md)
+adds a safe, opt-in bootstrap for **target projects**, not an automatic
+reorganization of this skills repository. It preserves existing code and
+build layouts, appends project-level agent rules, documents permanent folders,
+numbers development plans, and separates user-provided fixture data from
+test outputs.
+
+Example, from an accessible checkout of this repository:
+
+    python scripts/project_governance.py --project /path/to/MyGISProject audit
+    python scripts/project_governance.py --project /path/to/MyGISProject init
+    python scripts/project_governance.py --project /path/to/MyGISProject new-test-run --name "CRS roundtrip"
+
+The user-owned folder is named **testing data/** and generated runs go to
+**testing results/**. The **New Skill/** folder stores *untrusted candidate
+metadata* only until external security, license, permission and runtime
+reviews are complete. It does not install or execute downloaded skills.
+Use the existing Remote Sensing, Security Guardian, Agent Development
+Journal, Code Discovery, DoneProof and token-optimization guidance as the
+authoritative supporting specialists; see the workflow contract for limits.
+
+
+Optional read-only IDE/build-tool reconnaissance:
+
+    python scripts/toolchain_discovery.py --project /path/to/MyGISProject
+
+PATH presence is an unverified hint. It does not run IDEs or validate native
+Visual Studio, Qt, QGIS, ArcGIS Pro or installed SDK workloads.
