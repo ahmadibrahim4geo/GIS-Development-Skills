@@ -3,7 +3,7 @@
 ## 1. Executive Summary & Problem Statement
 
 When an AI agent starts a fresh session, resumes after context compaction (`/compact`), or is handed off to a peer worker in a multi-agent swarm, it faces the **Cold-Start Problem**:
-- Re-scanning directories and reading entire codebases wastes 50,000 to 150,000 tokens per session.
+- Re-scanning directories and loading unrelated code increases the context needed to resume.
 - Context window space is squandered before implementation even begins.
 - Hallucinations increase as outdated conversational logs accumulate.
 
@@ -71,12 +71,12 @@ project-root/
 
 ---
 
-## 4. The 1-Second Cold-Start Protocol
+## 4. Checkpoint and resume
 
 When an agent enters a project or begins a turn:
-1. **Step 1**: Read `context/CURRENT_HANDOFF.md` (~30 lines).
-2. **Step 2**: If project architecture context is needed, read `context/PROJECT_MAP.md` (~50 lines).
-3. **Outcome**: The agent achieves **100% situational awareness** in under 1 second, consuming **< 1,000 tokens**, without executing a single blind directory search or full-file scan.
+1. Read `context/CURRENT_HANDOFF.md` for the active task, approved revision, last relevant evidence and next action. Verify the journal and compare the handoff with the current project root and working state.
+2. If the evidence or affected files changed, repeat the relevant narrow check before relying on the saved state. Open `context/PROJECT_MAP.md` or other references for remaining gaps.
+3. Measure elapsed time or token usage against the same task and inputs when reporting an improvement. Label bytes or lines read as a proxy when token data is unavailable.
 
 ---
 

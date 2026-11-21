@@ -1,11 +1,12 @@
 
+@import url("brand/tokens.css");
 /* GIS Development Skills | geospatial identity refresh | 2026 */
-:root{--bg:#091318;--panel:#102128;--panel2:#162b2f;--stroke:#28464a;--text:#f2f8f8;--muted:#adc1c0;--green:#b9eb91;--mint:#42d5c1;--radius:20px}
-body:before{height:900px;background:radial-gradient(ellipse at 88% 5%,#136a6760 0,transparent 45%),radial-gradient(ellipse at 9% 25%,#164c5c48 0,transparent 47%),radial-gradient(ellipse at 62% 75%,#2b5c2842 0,transparent 39%)}
+:root{--bg:#071725;--panel:#0B253A;--panel2:#12344C;--stroke:#2B4E66;--text:#f2f8f8;--muted:#adc1c0;--green:#67B5A6;--mint:#81CCBE;--radius:20px}
+body:before{height:900px;background:radial-gradient(ellipse at 88% 5%,#136a6760 0,transparent 45%),radial-gradient(ellipse at 9% 25%,#164c5c48 0,transparent 47%),radial-gradient(ellipse at 62% 75%,#216D8342 0,transparent 39%)}
 .container{width:min(1190px,calc(100% - 42px))}
 .brand{gap:10px;min-width:0}.brand img{height:47px;width:47px;border-radius:12px;flex-shrink:0;object-position:center}
 .nav-brand-name{font-size:13px;letter-spacing:.2px;font-weight:800;line-height:1.2;color:#f1f8f6}
-.nav-brand-name strong{font-weight:850;color:#adeda1}
+.nav-brand-name strong{font-weight:850;color:#9CD8CC}
 .nav-brand-name small{display:block;font-size:10px;font-weight:600;color:#8aaea7;margin-top:3px;letter-spacing:.25px}
 .nav-links{gap:18px}
 .hero{grid-template-columns:1.13fr .87fr;gap:42px;padding-block:94px 77px}
@@ -14,17 +15,17 @@ body:before{height:900px;background:radial-gradient(ellipse at 88% 5%,#136a6760 
 .hero-brand{display:block;width:min(100%,620px);height:auto;border-radius:17px;filter:drop-shadow(0 15px 30px #0002)}
 .hero-exact{font-size:clamp(18px,2.1vw,24px);line-height:1.48;font-weight:760;letter-spacing:-.45px;color:#effbf3;margin:22px 0 9px;max-width:660px;text-wrap:balance}
 .hero .lead{font-size:15px;color:#a8c5c1;line-height:1.84;margin-top:15px}
-.hero-visual{min-height:452px;border:1px solid #365e5c;background:linear-gradient(138deg,#123038 0%,#102227 49%,#0c1b24 100%);transform:perspective(980px) rotateY(-4deg);box-shadow:0 28px 70px #0008,0 0 0 6px #1a3c3c23;isolation:isolate}
+.hero-visual{min-height:452px;border:1px solid #365e5c;background:linear-gradient(138deg,#123B54 0%,#0C273B 49%,#081D30 100%);transform:perspective(980px) rotateY(-4deg);box-shadow:0 28px 70px #0008,0 0 0 6px #1a3c3c23;isolation:isolate}
 .hero-visual:before{content:"";inset:auto -55px -60px auto;width:265px;height:265px;position:absolute;border-radius:50%;background:#26c7b42b;filter:blur(50px);pointer-events:none}
 .visual-top{font-size:9px;letter-spacing:1.6px}
 .globe-art{max-height:290px;filter:drop-shadow(0 0 32px #53cabc3b)}
 .visual-float{position:absolute;z-index:2;display:flex;flex-direction:column;gap:1px;padding:10px 13px;backdrop-filter:blur(14px);border-radius:11px;border:1px solid #55877a80;background:#102b2de8;box-shadow:0 10px 24px #0005;max-width:190px}
-.visual-float b{color:#bdf099;font-size:12px;font-family:monospace}.visual-float span{color:#67cbbb;font-size:9px;letter-spacing:1.5px}
+.visual-float b{color:#A2D9CE;font-size:12px;font-family:monospace}.visual-float span{color:#67cbbb;font-size:9px;letter-spacing:1.5px}
 .visual-float strong{color:#edf9f4;font-size:11px}.float-a{top:92px;right:8px}.float-b{left:5px;bottom:78px}
 .visual-foot{gap:6px}.tech{padding:5px 8px;background:#133233;border-color:#3e7165;font-size:10px}
 .stat{background:linear-gradient(135deg,#193033,#142329);border-color:#2c4d49}.stat strong{font-size:39px}
-.feature{background:linear-gradient(140deg,#173135,#102128);border-color:#34504d;box-shadow:inset 0 1px #8cdec516}
-.feature:hover{border-color:#60cfae}.feature .glyph{background:#234b45;color:#bceca1}.feature h3{color:#f2faf7}
+.feature{background:linear-gradient(140deg,#12364C,#0B253A);border-color:#34504d;box-shadow:inset 0 1px #8cdec516}
+.feature:hover{border-color:#60cfae}.feature .glyph{background:#17485A;color:#A3D9D0}.feature h3{color:#f2faf7}
 .section-head h2{text-wrap:balance}.explorer{box-shadow:0 25px 90px #0003}
 .author-section{padding-top:95px;padding-bottom:30px}
 .author-panel{display:grid;grid-template-columns:minmax(210px,.75fr) minmax(0,2fr);gap:32px;align-items:center;border:1px solid #4b796c;border-radius:25px;padding:34px;background:linear-gradient(120deg,#143237,#17292c 55%,#113136);position:relative;overflow:hidden}

@@ -22,6 +22,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import unicodedata
 import urllib.parse
 import zipfile
 from pathlib import Path
@@ -50,6 +51,7 @@ ALLOWED_ROOT_DIRECTORIES = (
 ALLOWED_ROOT_FILES = (
     ".gitignore",
     "AGENTS.md",
+    "CLAUDE.md",
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "LICENSE",
@@ -96,6 +98,8 @@ REQUIRED_PATHS = (
     "references/repository-manifest.json",
     "references/repository-wide-skill-orchestration.md",
     "scripts/intent_router.py",
+    "scripts/project_readiness.py",
+    "scripts/project_governance.py",
     "scripts/validate_architecture_flow.py",
     "references/ui-engine-architecture-contract.md",
     "scripts/security_audit.py",
@@ -181,11 +185,11 @@ references remain available after packaging.  It contains instructions and
 deterministic helpers; it does not install GIS software, grant licenses or
 prove native execution.
 
-1. Read [the core GIS router](skills/gis-development/SKILL.md).
-2. For complex requests, start with [Prompt Intent Orchestrator](skills/prompt-intent-orchestrator/SKILL.md) and obtain revision-scoped approval before consequential changes.
-3. Always apply [GIS Security Guardian](skills/gis-security-guardian/SKILL.md).
-4. Load only the specialist selected by the router and the references needed for the current task.
-5. Before claiming completion, apply [DoneProof](skills/completion-evidence/SKILL.md) and record honest T0–T4 evidence.
+Start with [the shared project policy](AGENTS.md#start-here). Identify the goal and proof of success, apply the security and token policies, and use the required project and specialist checks. Read [skill readiness](references/project-governance-workflow.md#skill-readiness-before-use) for the capabilities you need.
+
+Work in [small verified steps](references/portable-execution-guidance.md#work-within-existing-ownership). Review the saved state on resumption, collect evidence before reporting results, and use the [GitHub delivery workflow](PUBLISHING.md#approved-github-delivery) when it is in scope. Use the model selected by the user.
+
+To identify the bundle used by a session, run `python -B scripts/build_skill_bundle.py --identity . --format json` from the directory containing this `SKILL.md`. Compare the entry path and fingerprint with the authorized distribution.
 
 Use [the bilingual How to Use guide](docs/HOW_TO_USE.md) and
 [Arabic guide](docs/HOW_TO_USE.ar.md) for practical requests and limitations.
@@ -245,6 +249,33 @@ def manifest_entries(bundle_root: Path):
         }
 
 
+def content_fingerprint(entries):
+    payload = json.dumps(sorted(entries, key=lambda entry: entry["path"]),
+                         sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    return sha256_bytes(payload.encode("utf-8"))
+
+
+def bundle_identity(root):
+    root = root.resolve()
+    entry = root / "SKILL.md"
+    manifest = root / "bundle-manifest.json"
+    if not entry.is_file() or not manifest.is_file():
+        raise BundleError("Choose the root containing SKILL.md and bundle-manifest.json.")
+    try:
+        data = json.loads(manifest.read_text("utf-8"))
+        fingerprint = content_fingerprint(data["files"])
+    except (TypeError, KeyError, ValueError) as exc:
+        raise BundleError("Cannot read the bundle inventory.") from exc
+    if data.get("bundle_name") != BUNDLE_NAME:
+        raise BundleError("Unexpected bundle name.")
+    entry_hash = sha256_file(entry)
+    declared_hash = next((item.get("sha256") for item in data["files"] if item["path"] == "SKILL.md"), None)
+    return {"status": "PASS" if declared_hash == entry_hash else "FAIL", "bundle_root": str(root),
+            "entrypoint": str(entry), "entrypoint_sha256": entry_hash,
+            "manifest_content_sha256": fingerprint, "source_commit": data.get("source_commit"),
+            "full_content_verification": "use --check"}
+
+
 def write_manifest(bundle_root: Path, commit: str) -> dict:
     entries = list(manifest_entries(bundle_root))
     total_bytes = sum(entry["size"] for entry in entries)
@@ -258,6 +289,7 @@ def write_manifest(bundle_root: Path, commit: str) -> dict:
         "entrypoint": "SKILL.md",
         "manifest_scope": "all bundle files except bundle-manifest.json",
         "source_commit": commit,
+        "content_sha256": content_fingerprint(entries),
         "source_roots": list(ALLOWED_ROOT_DIRECTORIES),
         "excluded_directories": sorted(EXCLUDED_DIRECTORY_NAMES),
         "inventory": inventory(bundle_root),
@@ -270,31 +302,70 @@ def write_manifest(bundle_root: Path, commit: str) -> dict:
     return data
 
 
-def local_markdown_target(raw: str) -> str | None:
+def local_markdown_target(raw: str) -> tuple[str, str] | None:
     value = raw.strip()
-    if not value or value.startswith("#"):
+    if not value:
         return None
     if value.startswith("<") and ">" in value:
         value = value[1 : value.index(">")]
     else:
         value = value.split(maxsplit=1)[0]
-    value = urllib.parse.unquote(value)
-    if not value or value.startswith("#") or value.startswith("//") or SCHEME.match(value):
+    if value.startswith("//") or SCHEME.match(value):
         return None
-    return value.split("#", 1)[0].split("?", 1)[0]
+    path, _, fragment = value.partition("#")
+    return urllib.parse.unquote(path.split("?", 1)[0]), urllib.parse.unquote(fragment)
+
+
+def markdown_anchors(document):
+    anchors, fence = set(), None
+    previous = ""
+    for line in document.read_text("utf-8").splitlines():
+        marker = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
+        if marker:
+            delimiter = marker[1]
+            if fence is None:
+                fence = delimiter
+            elif delimiter.startswith(fence) and not marker[2].strip():
+                fence = None
+            previous = ""
+            continue
+        if fence:
+            continue
+        anchors.update(re.findall(r'<(?:a|h[1-6])\b[^>]*\b(?:id|name)=["\']([^"\']+)', line, re.I))
+        heading = re.match(r"^ {0,3}#{1,6}\s+(.*?)\s*#*\s*$", line)
+        if heading:
+            text = heading[1]
+        elif previous and re.fullmatch(r" {0,3}(?:=+|-+)\s*", line):
+            text = previous
+        else:
+            previous = line.strip()
+            continue
+        previous = ""
+        text = MARKDOWN_LINK.sub(lambda match: match[0].split("]", 1)[0].lstrip("!["), text)
+        text = re.sub(r"<[^>]+>", "", text).strip().lower().replace(" ", "-")
+        slug = "".join(char for char in text if char in "-_" or unicodedata.category(char)[0] in "LMN")
+        if slug:
+            anchor, index = slug, 0
+            while anchor in anchors:
+                index += 1
+                anchor = f"{slug}-{index}"
+            anchors.add(anchor)
+    return anchors
 
 
 def audit_markdown_links(bundle_root: Path) -> list[dict]:
     missing = []
     resolved_root = bundle_root.resolve()
+    anchors = {}
     for document in sorted(bundle_root.rglob("*.md")):
         text = document.read_text("utf-8")
         for line_number, line in enumerate(text.splitlines(), 1):
             for match in MARKDOWN_LINK.finditer(line):
-                target = local_markdown_target(match.group(1))
-                if not target:
+                link = local_markdown_target(match.group(1))
+                if link is None:
                     continue
-                destination = (document.parent / target).resolve()
+                target, fragment = link
+                destination = (document.parent / target).resolve() if target else document.resolve()
                 try:
                     destination.relative_to(resolved_root)
                 except ValueError:
@@ -316,6 +387,13 @@ def audit_markdown_links(bundle_root: Path) -> list[dict]:
                             "reason": "missing",
                         }
                     )
+                elif fragment and document.name in {"SKILL.md", "AGENTS.md"} and destination.suffix.lower() == ".md":
+                    if destination not in anchors:
+                        anchors[destination] = markdown_anchors(destination)
+                    if fragment not in anchors[destination]:
+                        missing.append({"document": document.relative_to(bundle_root).as_posix(),
+                                        "line": line_number, "target": f"{target}#{fragment}",
+                                        "reason": "missing-fragment"})
     return missing
 
 
@@ -346,10 +424,15 @@ def audit_directory(bundle_root: Path) -> dict:
         record = expected[relative]
         if path.stat().st_size != record.get("size") or sha256_file(path) != record.get("sha256"):
             mismatched.append(relative)
-    required_missing = [path for path in REQUIRED_PATHS if not (bundle_root / path).exists()]
+    # Older bundles use the same schema without the preflight or content identity.
+    required = REQUIRED_PATHS if "content_sha256" in manifest else tuple(
+        path for path in REQUIRED_PATHS if path not in {"scripts/project_readiness.py", "scripts/project_governance.py"})
+    required_missing = [path for path in required if not (bundle_root / path).exists()]
+    fingerprint = content_fingerprint(expected.values())
+    fingerprint_mismatch = "content_sha256" in manifest and manifest["content_sha256"] != fingerprint
     broken_links = audit_markdown_links(bundle_root)
     status = "PASS" if not any(
-        (missing_files, unexpected_files, mismatched, required_missing, broken_links)
+        (missing_files, unexpected_files, mismatched, required_missing, broken_links, fingerprint_mismatch)
     ) else "FAIL"
     result = {
         "schema_version": SCHEMA_VERSION,
@@ -361,6 +444,8 @@ def audit_directory(bundle_root: Path) -> dict:
         "hash_or_size_mismatches": mismatched,
         "required_paths_missing": required_missing,
         "broken_local_markdown_links": broken_links,
+        "content_sha256": fingerprint,
+        "manifest_fingerprint_mismatch": fingerprint_mismatch,
         "native_gis_execution": "NOT_RUN",
         "agent_client_installation": "NOT_RUN",
     }
@@ -475,6 +560,7 @@ def parse_args(argv=None):
     action = parser.add_mutually_exclusive_group(required=True)
     action.add_argument("--output-dir", type=Path, help="New parent directory for bundle outputs")
     action.add_argument("--check", type=Path, help="Existing bundle directory or ZIP to audit")
+    action.add_argument("--identity", type=Path, help="Report the selected bundle entry and manifest fingerprint")
     parser.add_argument("--format", choices=("text", "json"), default="text")
     return parser.parse_args(argv)
 
@@ -482,7 +568,10 @@ def parse_args(argv=None):
 def main(argv=None) -> int:
     args = parse_args(argv)
     try:
-        result = build(args.output_dir) if args.output_dir else audit_path(args.check)
+        if args.identity is not None:
+            result = bundle_identity(args.identity)
+        else:
+            result = build(args.output_dir) if args.output_dir else audit_path(args.check)
     except (BundleError, OSError, zipfile.BadZipFile) as exc:
         if args.format == "json":
             print(json.dumps({"status": "FAIL", "error": str(exc)}, ensure_ascii=False, indent=2))
@@ -493,12 +582,17 @@ def main(argv=None) -> int:
         print(json.dumps(result, ensure_ascii=False, indent=2))
     else:
         print(f"GIS skill bundle: {result['status']}")
+        if args.identity is not None:
+            print(f"Entrypoint: {result['entrypoint']}")
+            print(f"Entrypoint SHA-256: {result['entrypoint_sha256']}")
+            print(f"Manifest content SHA-256: {result['manifest_content_sha256']}")
+            return int(result["status"] != "PASS")
         if "archive" in result:
             print(f"Archive: {result['archive']}")
             print(f"SHA-256: {result['archive_sha256']}")
         print("Native GIS execution: NOT RUN")
         print("Agent client installation: NOT RUN")
-    return 0
+    return int(result["status"] != "PASS")
 
 
 if __name__ == "__main__":

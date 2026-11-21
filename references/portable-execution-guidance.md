@@ -22,13 +22,14 @@ Scale the amount of planning and checking, never the truth of a claim. Modes do 
 
 ## Work within existing ownership
 
-1. **Understand and inspect:** recover the user's outcome, constraints, protected data and success criteria. Read the affected project and existing implementation before choosing changes.
-2. **Choose reuse or construction:** inspect local utilities and accepted dependencies first. For unresolved needs use [GIS Code Discovery](../skills/gis-code-discovery/SKILL.md) to evaluate official sources or external candidates. Record fit, version, license and the decision. GitHub is one possible source; external search is conditional on the gap. Unclear licensing permits conceptual study only, without copying source text or code.
-3. **Execute a verifiable slice:** follow the approved dependency order through the [GIS router](../skills/gis-development/SKILL.md). Prefer a small end-to-end result before expansion. Recheck files against their read baseline before overwriting, preserve unrelated edits and inspect the written result.
-4. **Check and diagnose:** use the specialist's acceptance checks. Capture input, versions, actual error and expected result; test one causal hypothesis with a small probe, then rerun the failed check after correction. Compare the same measurement before and after when claiming improvement.
-5. **Record and hand off:** retain decisions, the next action and evidence in the existing [Development Journal](../skills/agent-development-journal/SKILL.md), reviewed plan and acceptance report. Do not introduce a competing diary or status vocabulary. [DoneProof](../skills/completion-evidence/SKILL.md) owns completion claims.
+1. **Understand:** identify the user's outcome, limits, protected inputs and a result that can be checked.
+2. **Inspect:** read the affected files, callers or inputs. For a reported failure, reproduce it with the smallest representative input and record expected versus actual behavior. Identify the earliest point where the behavior differs.
+3. **Decide:** inspect existing utilities and compatible installed dependencies. If a material gap remains, use official sources and [GIS Code Discovery](../skills/gis-code-discovery/SKILL.md). Record consequential reuse, dependency or architecture choices with the evidence that supports them. Evaluate source and license before reuse.
+4. **Split and execute:** follow the approved dependency order through the [GIS router](../skills/gis-development/SKILL.md). Resolve the uncertainty most likely to change the approach early. Deliver a narrow end-to-end result before expansion. Recheck the baseline before overwriting and read back the changed artifact.
+5. **Test:** first run the focused check, then the relevant regression or acceptance checks. Include a representative failure path when the task warrants it. Match the test to the user's deliverable and record the outcome actually observed.
+6. **Fix and recheck:** when a check fails, state one causal hypothesis and test it with a small, discriminating probe. Change the hypothesis when the result contradicts it. Rerun the original reproduction and relevant checks after a correction. Preserve the decision, evidence and next action in the existing [journal](../skills/agent-development-journal/SKILL.md), plan and [DoneProof](../skills/completion-evidence/SKILL.md) report.
 
-These practices fit inside the canonical workflow. Before resuming, verify the journal and compare it with current files and observed checks; historical reports cannot authorize new actions.
+Scale these steps to the task. On resumption, compare the current root, revision and working state with the saved handoff and verify its latest relevant claim. Continue from the first unverified or stale step. Keep the task, evidence and next action in the existing handoff.
 
 ## Bound diagnosis and optional delegation
 

@@ -40,6 +40,15 @@ class StudioHomepageTests(unittest.TestCase):
         expected=json.loads((ROOT/"references/repository-manifest.json").read_text(encoding="utf-8"))["skill_count"]
         self.assertEqual(int(re.search(r'id="skillsCount"[^>]*>(\d+)',self.site).group(1)),expected)
 
+    def test_homepage_leads_with_full_scope_and_keeps_kml_examples(self):
+        hero = self.site.split('class="studio-hero"', 1)[1].split('<aside', 1)[0]
+        self.assertIn('Build GIS tools, plugins and geospatial applications with a verifiable development workflow.', hero)
+        for capability in ('ArcGIS', 'QGIS', 'mobile', 'web maps', 'satellite imagery', 'APIs'):
+            self.assertIn(capability, hero)
+        specialty = self.site.split('id="earth-kml"', 1)[1].split('</section>', 1)[0]
+        self.assertIn('<details class="studio-specialty-details">', specialty)
+        self.assertIn('skills/kml-kmz-engineering/SKILL.md', specialty)
+
     def test_all_guidance_is_in_homepage(self):
         for i in ("how-to-use","howToHeading","studioPlatform","howToCommand",
                   "studioSpecialistCommand","howToExampleEn","howToExampleAr",

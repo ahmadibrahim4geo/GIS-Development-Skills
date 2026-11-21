@@ -2,8 +2,8 @@
 """Offline intent route hints and structural plan/approval declaration validation.
 
 NO LLM, remote call, execution, authorization, file writes or OS isolation.
-Run with --text for conservative bilingual keyword hints or --plan for a JSON
-draft from a human/AI. --gate verifies declared fields, not user identity.
+Run with --text for conservative bilingual keyword hints, optionally with
+--context, or --plan for a JSON draft. --gate checks declarations only.
 """
 import argparse
 import copy
@@ -505,10 +505,13 @@ def main(argv=None):
     action.add_argument("--text", help="Unstructured input; get lexical skill hints, NOT AI understanding")
     action.add_argument("--plan", type=Path, help="Structured JSON plan drafted by an agent or human")
     p.add_argument("--format", choices=("text", "json"), default="text")
+    p.add_argument("--context", type=Path, help="Optional delivery and runtime declarations; requires --text")
     p.add_argument("--gate", action="store_true", help="Check declared revision-scoped approval; never execute")
     p.add_argument("--workflow", action="store_true", help="Compile a goal-first dependency-ordered workflow preview; requires --plan, never executes")
     p.add_argument("--mcp-inventory", type=Path, help="Optional unverified MCP/native tool inventory for read-only capability preview; requires --workflow")
     args = p.parse_args(argv)
+    if args.context and args.text is None:
+        p.error("--context requires --text")
     if args.mcp_inventory and (not args.workflow or args.plan is None):
         p.error("--mcp-inventory requires --plan and --workflow")
     if args.text is not None:
@@ -517,11 +520,26 @@ def main(argv=None):
         if args.workflow:
             p.error("--workflow requires --plan")
         out = route_hints(args.text)
+        if args.context:
+            try:
+                if __package__:
+                    from .contextual_routing import recommend
+                else:
+                    from contextual_routing import recommend
+                context = json.loads(args.context.read_text(encoding="utf-8"))
+                out["contextual_route"] = recommend(args.text, context, available_skills())
+            except (OSError, ValueError) as exc:
+                print("Invalid route context: " + str(exc), file=sys.stderr)
+                return 2
         if args.format == "json":
             print(json.dumps(out, ensure_ascii=False, indent=2))
         else:
             print("Possible skills (keyword hints only):", ", ".join(out["suggested_skills"]))
             print(out["note"])
+            if args.context:
+                recommendation = out["contextual_route"]
+                print("Context preview:", recommendation["status"], recommendation["delivery"] or "")
+                print(recommendation["reason"])
         return 0
     try:
         plan = json.loads(args.plan.read_text(encoding="utf-8"))

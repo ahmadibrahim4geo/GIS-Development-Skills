@@ -25,12 +25,12 @@ Based on `DietrichGebert/ponytail`:
 
 ### 2.1 Principles
 - **Anchor Before Reading**: Never read an entire source file blindly. Use targeted symbol discovery (`grep`, AST indexers, symbol outlines) to locate exact line ranges.
-- **Narrow Range Reads**: When inspecting code, read only the target class, function, or data structure plus 10 lines of surrounding context.
-- **Scope Boundary Locking**: Before generating any code, explicitly define the exact files, classes, and interfaces that are in scope. All other files are declared immutable for the task.
+- **Targeted reads**: Start with the relevant symbols and callers. Expand to the full file or dependency when contracts, invariants or review require it.
+- **Scoped edits**: Identify the affected files and interfaces. Preserve unrelated changes and follow the reviewed scope if the work needs more files.
 
 ### 2.2 Operational Anti-Pattern vs. Best Practice
 - **Bad**: Reading all 800 lines of `SpatialDocument.cpp` to understand a single coordinate transformation method.
-- **Good**: Grepping for `void applyLocalOriginShift` and reading lines 140–185 only. Saves **~90% of input tokens**.
+- **Example**: Locate `applyLocalOriginShift`, inspect its body and callers, and expand the read if coordinate-system assumptions remain unclear.
 
 ---
 
@@ -53,8 +53,8 @@ Based on `JuliusBrussee/caveman`:
 Based on `alexgreensh/token-optimizer`:
 
 ### 4.1 Artifact & Scratch Compaction
-- **Scratch Pruning**: Remove temporary scripts, intermediate log dumps, and evaluation scrapers immediately upon completing an evaluation milestone.
-- **Checkpoint Distillation**: At the end of each task or work session, distill findings into a compact, bulleted handoff record (under 40 lines) rather than leaving verbose conversational transcripts.
+- **Evidence retention**: Keep relevant test output and readback in their existing evidence locations. Summarize the essentials in conversation.
+- **Checkpoint distillation**: Preserve the active task, verified result, next action and any open dependency in the existing handoff for substantial work.
 
 ### 4.2 Legal & Licensing Quarantine Notice
 > **Important Legal Boundary**: `alexgreensh/token-optimizer` is licensed under `PolyForm-Noncommercial-1.0`. In accordance with our repository security standards, its scripts and techniques are quarantined strictly to developer-side agent workflows. They are **never packaged, bundled, or distributed** inside shipped desktop software binaries.
@@ -67,9 +67,9 @@ Every agent operating in this repository must adhere to this checklist before, d
 
 | Phase | Checkpoint Rule | Verification Mechanism |
 | :--- | :--- | :--- |
-| **Pre-Coding** | Are line ranges targeted? | Grep/AST used; no blind full-file reads over 200 lines. |
+| **Pre-Coding** | Are reads scoped to the task? | Relevant definitions and callers found and surrounding contracts inspected as needed. |
 | **Pre-Coding** | Is the change scope isolated? | Explicit list of modified files declared upfront. |
 | **During Coding** | Is the edit surgical? | `edit_file` used with tight match blocks; no whole-file overwrites. |
 | **During Coding** | Are commands quiet? | Test and build flags use quiet/terse modes. |
-| **Post-Coding** | Are scratch files purged? | Temporary scrapers deleted via `Remove-Item` / `rm`. |
+| **Post-Coding** | Is decisive evidence accessible? | Handoff links to the relevant logs or readback outside the active context. |
 | **Post-Coding** | Is handoff recorded? | Sessional progress distilled into `context/CURRENT_HANDOFF.md`. |

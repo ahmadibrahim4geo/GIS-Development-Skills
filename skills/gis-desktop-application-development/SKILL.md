@@ -63,6 +63,8 @@ For source repositories, licenses, and choosing an actual GIS engine or interfac
 
 **Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
 
+For the existing project target, use [toolchain discovery and recommendation](../../references/project-governance-workflow.md#read-only-ide-and-toolchain-reconnaissance). Pick editing, building, visual design or preview separately and validate the installed tool with the project's framework and version.
+
 Use this for **independent executable applications**, not ArcGIS Pro SDK add-ins or a QGIS plugin. Select host OS, packaging model, renderer and processing engine separately. A working toolbar mockup is not a completed GIS app.
 
 ## Free QGIS Engine integration option

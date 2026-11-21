@@ -51,6 +51,14 @@ $$\text{Reflectance} = \text{DN} \times 0.0000275 - 0.2$$
 > If using pre-computed USGS spectral index products (e.g. Landsat NDVI or NDMI geotiffs), the values are stored as 16-bit signed integers with a scale factor of `0.0001`:  
 > $\text{NDVI} = \text{DN} \times 0.0001$ (stored range $-10000 \text{ to } +10000$). Never apply the band scaling equation ($0.0000275 - 0.2$) to an index product!
 
+For archived Landsat 8 Collection 1 Level-2 surface reflectance, the scale
+is 0.0001, the offset is zero and the fill value is -9999. Its pixel_qa bits
+differ from Collection 2 QA_PIXEL. Identify the product from its metadata
+before choosing a scale or mask. The synthetic paired-pixel fixture covers
+both collections with B4 red and B5 near-infrared. Level-1 TOA products and
+pre-collection scenes require their own calibration and QA interpretation.
+[USGS scaling comparison](https://www.usgs.gov/faqs/why-are-fill-values-and-scaling-factors-landsat-collection-2-level-2-products-different-those) · [Collection 1 LaSRC Product Guide](https://www.usgs.gov/media/files/landsat-8-collection-1-land-surface-reflectance-code-product-guide) · [Collection 2 QA bands](https://www.usgs.gov/landsat-missions/landsat-collection-2-quality-assessment-bands)
+
 ### B. Copernicus Sentinel-2 MSI Level-2A (Bottom-Of-Atmosphere Reflectance)
 * **Processing Baselines prior to 04.00 (before 25 Jan 2022):**
   $$\text{Reflectance} = \frac{\text{DN}}{10000.0}$$

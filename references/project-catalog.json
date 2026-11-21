@@ -1849,14 +1849,18 @@
         "dotnet"
       ],
       "description": "Ribbon, dockpane, editing, command wiring and event integration examples for ArcGIS Pro",
-      "reviewed_on": "2026-10-24",
-      "license": "verify-upstream",
+      "reviewed_on": "2026-11-21",
+      "license": "Apache-2.0 (repository source only)",
       "integration": "platform-samples",
       "status": "unknown",
       "last_checked": null,
       "tested_by_repository": false,
       "native_runtime_verified": false,
-      "license_verified": false
+      "license_verified": true,
+      "license_scope": "inspected-repository-license-file-only",
+      "license_evidence_url": "https://github.com/Esri/arcgis-pro-sdk-community-samples/blob/abd56c5b842318bf3da879c553d9283209cd27e7/License.txt",
+      "license_checked_on": "2026-11-21",
+      "license_caveat": "Match the sample release to the installed, separately licensed ArcGIS Pro host. An official 3.6 sample revision is available alongside the reviewed 3.8 branch revision."
     },
     {
       "name": "Esri raster-functions",
@@ -2951,7 +2955,7 @@
         "windows"
       ],
       "description": "Version-specific ArcGIS Pro SDK C# AI-assisted samples: Editing, Map Exploration, Layouts, Geodatabase and QueuedTask.",
-      "reviewed_on": "2026-10-25",
+      "reviewed_on": "2026-11-21",
       "license": "Apache-2.0 (repository source only)",
       "integration": "reference-only",
       "status": "unknown",
@@ -2960,9 +2964,9 @@
       "native_runtime_verified": false,
       "license_verified": true,
       "license_scope": "inspected-repository-license-file-only",
-      "license_evidence_url": "https://github.com/Esri/arcgis-pro-sdk-snippets/blob/main/License.txt",
-      "license_checked_on": "2026-10-25",
-      "license_caveat": "Examples target a licensed ArcGIS Pro 3.7 .NET SDK host, not an independent GIS desktop engine."
+      "license_evidence_url": "https://github.com/Esri/arcgis-pro-sdk-snippets/blob/22855e3a7c238f2de542602272b2f896d59d50b5/License.txt",
+      "license_checked_on": "2026-11-21",
+      "license_caveat": "The reviewed snippets target a separately licensed ArcGIS Pro 3.8 host and .NET Runtime 10.0.0 or newer."
     },
     {
       "name": "Esri Arcade expression examples",

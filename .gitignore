@@ -6,3 +6,12 @@ venv/
 .vscode/
 .idea/
 .DS_Store
+
+/testing data/*
+!/testing data/.gitkeep
+/testing results/*
+!/testing results/.gitkeep
+/dist/user-testing/
+/Old - Safe to Remove/
+/GIS_Development_Skills_Complete_Brand_Kit/
+/GIS_Development_Skills_Execution_Package_2026-11-20/

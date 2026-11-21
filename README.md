@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="assets/brand/banner-dark.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
+  <img src="assets/brand/banner.png" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200" height="200">
 </p>
 
 <p align="center">Build GIS tools, plugins and geospatial applications with a verifiable development workflow.</p>
 
-<p align="center"><sub>Official vector identity: <a href="assets/brand/README.md">brand assets and usage guide</a> · <a href="assets/brand/logo-light.svg">transparent logo</a> · <a href="assets/brand/icon.svg">standalone icon</a></sub></p>
+<p align="center"><a href="README.ar.md">العربية</a> · <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website</a> · <a href="docs/HOW_TO_USE.md">How to use</a> · <a href="assets/brand/README.md">Brand assets</a></p>
 
 
 
@@ -18,13 +18,20 @@
   <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml"><img alt="Validation workflow status" src="https://img.shields.io/github/actions/workflow/status/ahmadibrahim4geo/GIS-Development-Skills/validate.yml?style=for-the-badge&amp;label=Tests&amp;labelColor=172B3C"></a>
 </p>
 
-## Start with a result, not a catalog
+## What you can build
 
 GIS Development Skills is a bilingual, security-aware skill suite for agents
 that build QGIS/ArcGIS tools, standalone GIS applications, web maps, spatial
 data pipelines and integrations. It turns a free-form request into a reviewed
 plan, routes it to one accountable specialist, and requires evidence before a
 completion claim.
+
+| Project | Start with |
+| --- | --- |
+| ArcGIS toolboxes and QGIS plugins | [ArcPy](skills/arcgis-toolbox-engineering/SKILL.md) · [PyQGIS](skills/qgis-plugin-development/SKILL.md) |
+| GIS apps and interactive maps | [Desktop](skills/gis-desktop-application-development/SKILL.md) · [Mobile](skills/gis-mobile-application-development/SKILL.md) · [Web maps](skills/geospatial-web-mapping/SKILL.md) |
+| Spatial analysis and satellite imagery | [Vector and raster](skills/geospatial-data-processing/SKILL.md) · [Remote sensing](skills/remote-sensing-pipelines/SKILL.md) · [Terrain and hydrology](skills/terrain-hydrology-lidar/SKILL.md) |
+| Data integration, automation and map exchange | [GIS APIs](skills/geospatial-api-integration/SKILL.md) · [Agent workflows](skills/geospatial-ai-agents/SKILL.md) · [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) |
 
 The instructions are independent of a model vendor or agent framework. Use
 [portable execution guidance](references/portable-execution-guidance.md) to scale

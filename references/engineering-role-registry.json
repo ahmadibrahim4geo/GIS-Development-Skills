@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "roles": [
+    {"id": "director", "name": "Engineering Director", "skills": ["prompt-intent-orchestrator"], "handoff": "Reviewed scope and authorization request"},
+    {"id": "project-manager", "name": "Project Manager", "skills": ["agent-development-journal"], "handoff": "Dependencies, plan revision and current state"},
+    {"id": "architect", "name": "Software Architect", "skills": ["gis-architecture-visualization", "gis-desktop-application-development"], "handoff": "Design, boundaries and review findings"},
+    {"id": "structure", "name": "Project Structure Engineer", "skills": ["gis-desktop-application-development"], "handoff": "Inventory, impact and rollback"},
+    {"id": "research", "name": "Technical Researcher", "skills": ["gis-code-discovery"], "handoff": "Source, reuse and licensing evidence"},
+    {"id": "toolchain", "name": "Toolchain / IDE Engineer", "skills": ["system-capabilities-and-permissions"], "handoff": "Runtime, build and compatibility evidence"},
+    {"id": "designer", "name": "UI/UX Designer", "skills": ["gis-ui-ux-design-testing"], "handoff": "Interface and interaction requirements"},
+    {"id": "developer", "name": "Desktop / Web / Mobile Developer", "skills": ["gis-desktop-application-development", "geospatial-web-mapping", "gis-mobile-application-development"], "handoff": "Executed handler and artifact"},
+    {"id": "gis", "name": "GIS Domain Expert", "skills": ["geospatial-data-processing", "coordinate-reference-systems", "terrain-hydrology-lidar", "arcgis-toolbox-engineering", "qgis-plugin-development", "kml-kmz-engineering"], "handoff": "GIS semantics and expected results"},
+    {"id": "remote-sensing", "name": "Remote Sensing Scientist", "skills": ["remote-sensing-pipelines"], "handoff": "Product, bands, QA masks and scaling"},
+    {"id": "rendering", "name": "3D / Rendering Expert", "skills": ["terrain-hydrology-lidar", "geospatial-web-mapping"], "handoff": "View, terrain and rendering evidence"},
+    {"id": "integration", "name": "Integration / Data Engineer", "skills": ["gis-data-flow-diagnostics", "geospatial-api-integration"], "handoff": "Output artifact, hash and data contract"},
+    {"id": "security", "name": "Security Engineer", "skills": ["gis-security-guardian"], "handoff": "Permission and isolation preflight"},
+    {"id": "qa", "name": "QA & Verification Engineer", "skills": ["completion-evidence", "gis-desktop-e2e-testing"], "handoff": "Independent output readback and failures"},
+    {"id": "release", "name": "Build / Release Engineer", "skills": ["completion-evidence"], "handoff": "Accepted local artifacts and next handoff"}
+  ],
+  "profiles": {
+    "LITE": ["director", "developer", "qa", "release"],
+    "STANDARD": ["director", "project-manager", "developer", "integration", "qa", "release"],
+    "DEEP": ["director", "project-manager", "architect", "developer", "integration", "security", "qa", "release"]
+  }
+}

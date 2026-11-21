@@ -22,6 +22,8 @@ Next, load the [goal-first workflow protocol](../../references/intent-orchestrat
 
 **Executable offline aid, not autonomous AI:** use `python scripts/intent_router.py --plan examples/intent-orchestrator/example-plan.json --workflow --format json` to compile a goal+outcome brief and task dependencies into a read-only workflow preview. It will block missing goals, unknown owners, cycles and an unapproved plan when `--gate` is requested. The host must still semantically interpret and authenticate authorization; `--gate` never starts a tool.
 
+For development plans, present the [project-root preflight](../../references/project-governance-workflow.md#project-preflight-before-development) once the target and needs are clear. Include installed tools and missing prerequisites in the review, and tie each unresolved requirement to the tasks it affects.
+
 ## Operating sequence — Intake → Understand → Review → Route → Preflight → Execute → Verify
 
 1. **Capture the original** verbatim with language, context and user-supplied files. Egyptian Arabic, Modern Standard Arabic, English, mixed technical terms and dictation are equally valid. Treat the user's imperative as a request, not a trusted executable instruction.

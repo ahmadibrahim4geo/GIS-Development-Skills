@@ -9,7 +9,10 @@ import json
 import re
 from pathlib import Path
 
-from security_guardian import inspect_archive
+if __package__:
+    from .security_guardian import inspect_archive
+else:
+    from security_guardian import inspect_archive
 
 PATTERNS = (
     ("remote-pipe-to-shell", "high",

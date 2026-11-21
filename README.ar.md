@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/brand/banner-dark.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
+  <img src="assets/brand/banner.png" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200" height="200">
 </p>
 
 <p align="center">طوّر أدوات وإضافات وتطبيقات GIS بمنهجية تطوير قابلة للتحقق.</p>
@@ -15,12 +15,19 @@
   <a href="CONTRIBUTING.md">المساهمة</a>
 </p>
 
-## ابدأ بنتيجة قابلة للإثبات، لا بقائمة طويلة
+## إيه اللي تقدر تطوّره؟
 
 **GIS Development Skills** حزمة ثنائية اللغة ومراعية للأمان لتطوير أدوات QGIS
 وArcGIS، وتطبيقات GIS المستقلة، وخرائط الويب، ومسارات معالجة البيانات. تحول
 الطلب إلى خطة يراجعها المستخدم، وتختار مختصًا مسؤولًا، ولا تعلن الاكتمال قبل
 وجود دليل فعلي.
+
+| نوع المشروع | ابدأ بـ |
+| --- | --- |
+| أدوات ArcGIS وإضافات QGIS | [ArcPy](skills/arcgis-toolbox-engineering/SKILL.md) · [PyQGIS](skills/qgis-plugin-development/SKILL.md) |
+| تطبيقات GIS وخرائط تفاعلية | [سطح المكتب](skills/gis-desktop-application-development/SKILL.md) · [الموبايل](skills/gis-mobile-application-development/SKILL.md) · [خرائط الويب](skills/geospatial-web-mapping/SKILL.md) |
+| التحليل المكاني وصور الأقمار الصناعية | [معالجة المتجهات والراستر](skills/geospatial-data-processing/SKILL.md) · [الاستشعار عن بُعد](skills/remote-sensing-pipelines/SKILL.md) · [التضاريس والهيدرولوجيا](skills/terrain-hydrology-lidar/SKILL.md) |
+| ربط البيانات والأتمتة وتبادل الخرائط | [واجهات GIS API](skills/geospatial-api-integration/SKILL.md) · [مسارات الوكلاء](skills/geospatial-ai-agents/SKILL.md) · [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) |
 
 التعليمات مستقلة عن اسم النموذج وإطار الوكيل. يوضح [دليل التنفيذ المرن](references/portable-execution-guidance.md)
 اختيار مستوى Lite أو Standard أو Deep حسب حجم المهمة ومخاطرها، واختيار الأدوات

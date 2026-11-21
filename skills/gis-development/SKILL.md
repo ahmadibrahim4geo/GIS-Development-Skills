@@ -10,7 +10,7 @@ license: MIT
 
 **Examples:** [DEM](../../examples/terrain-slope/README.md), [STAC](../../examples/stac-offline/README.md).
 
-**Intake:** [Global contract](../../references/repository-wide-skill-orchestration.md) → [Intent review](../prompt-intent-orchestrator/SKILL.md) → Router.
+**Intake:** [Contract](../../references/repository-wide-skill-orchestration.md) → [Intent review](../prompt-intent-orchestrator/SKILL.md).
 
 **Route:** [decision tree](../../references/agent-decision-tree.md); rendering ≠ analysis.
 
@@ -23,7 +23,8 @@ license: MIT
 | Task | Read first |
 | --- | --- |
 | ArcMap 10.x | [ArcGIS Toolbox](../arcgis-toolbox-engineering/SKILL.md) · [legacy](../../references/arcmap-legacy.md) |
-| ArcGIS Pro / ArcPy | [ArcGIS Toolbox](../arcgis-toolbox-engineering/SKILL.md) |
+| ArcPy / Python toolbox | [ArcGIS Toolbox](../arcgis-toolbox-engineering/SKILL.md) |
+| ArcGIS Pro SDK / C# add-in | [SDK workflow](../../references/arcgis-pro.md) · [code discovery](../gis-code-discovery/SKILL.md) |
 | Global Mapper | [Specialist](../global-mapper-development/SKILL.md) |
 | QGIS plugin / Processing algorithm | [QGIS Plugin Development](../qgis-plugin-development/SKILL.md) |
 | QGIS engine | [Integration](../qgis-engine-integration/SKILL.md) |
@@ -57,12 +58,12 @@ license: MIT
 | KML/KMZ / Earth viewers | [KML](../kml-kmz-engineering/SKILL.md) · [Earth](../../references/google-earth-pro-engineering.md) · [Timeline](../../references/historical-imagery-timeline.md) |
 
 
-**Wizard:** [planner](../../project-wizard.html). **Arabic:** [i18n](../gis-internationalization-arabic/SKILL.md). **QA:** [guide](../../docs/PERFORMANCE_RELIABILITY.md).
+[Planner](../../project-wizard.html) · [Arabic i18n](../gis-internationalization-arabic/SKILL.md) · [QA](../../docs/PERFORMANCE_RELIABILITY.md).
 
 ## Rules (always apply)
 
-[MCP/native routing](../../references/mcp-integration-workflow.md) follows domain preflight. Apply the [execution contract](../../references/repository-wide-skill-orchestration.md), [full guidance](../../references/gis-development-full-guidance.md) and [Security Guardian](../gis-security-guardian/SKILL.md): preserve sources, CRS/units/NoData, licenses, permissions and readback. Use [DoneProof](../completion-evidence/SKILL.md), [T0–T4 report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py). Static checks ≠ native proof.
+[MCP routing](../../references/mcp-integration-workflow.md) follows preflight. Apply [execution](../../references/repository-wide-skill-orchestration.md), [GIS](../../references/gis-development-full-guidance.md) and [security](../gis-security-guardian/SKILL.md) rules for sources, CRS, units, NoData, licenses, permissions and readback. Verify with [DoneProof](../completion-evidence/SKILL.md), the [T0–T4 report](../../templates/GIS_ACCEPTANCE_REPORT.md) and [validator](../../scripts/validate_evidence.py).
 
 **Shared checks:** [security](../../references/geospatial-security.md) · [performance](../../references/geospatial-performance.md).
 
-**More:** [software sources](../../references/gis-software-source-registry.md) · [antipatterns](../../references/gis-antipatterns.md) · [governance](../../references/project-governance-workflow.md).
+**More:** [software sources](../../references/gis-software-source-registry.md) · [antipatterns](../../references/gis-antipatterns.md) · [project preflight](../../references/project-governance-workflow.md).

@@ -53,7 +53,7 @@
 
 ## API classification (catalog review, not live verification)
 
-The 52 versioned API entries currently classify as **42 conditional free**, **1 self-hosted open source**, **3 restricted public**, **1 trial-only**, **4 commercial/metered**, and **1 temporarily unavailable**. Filter out commercial, trial, restricted and unavailable providers from free-only usage by default. Individual terms and upstream outages can change.
+Use the [versioned API catalog](free-geospatial-apis.json) for the current entries and `cost_tier` values. Free-only recommendations include `free-conditional` and `free-self-hosted` entries, subject to the documented terms and data licenses. Individual terms and upstream outages can change.
 
 **Official grounding:** [QGIS free download](https://www.qgis.org/download/), [Esri ArcGIS Pro trial](https://www.esri.com/en-us/arcgis/products/arcgis-pro/trial), [Global Mapper SDK licensing](https://support.globalmapper.com/hc/en-us/articles/53166637315860-Licensing).
 

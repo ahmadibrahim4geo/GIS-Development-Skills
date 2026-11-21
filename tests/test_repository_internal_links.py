@@ -10,6 +10,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LOCAL_LINK = re.compile(r"\]\(([^)\n]+)\)")
+LOCAL_INPUTS = {"Old - Safe to Remove", "GIS_Development_Skills_Complete_Brand_Kit"}
 
 
 def local_target(source, href):
@@ -34,7 +35,8 @@ class RepositoryInternalLinksTests(unittest.TestCase):
         broken = []
         checked = 0
         for file in sorted(ROOT.rglob("*.md")):
-            if any(part in {".git", "node_modules", "vendor"} for part in file.parts):
+            parts = file.relative_to(ROOT).parts
+            if parts[0] in LOCAL_INPUTS or any(part in {".git", "node_modules", "vendor"} for part in parts):
                 continue
             for match in LOCAL_LINK.finditer(file.read_text(encoding="utf-8")):
                 target = local_target(file, match.group(1))

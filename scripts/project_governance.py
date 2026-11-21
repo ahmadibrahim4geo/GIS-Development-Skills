@@ -6,13 +6,30 @@ untrusted skill execution. Mutating commands require an explicit CLI invocation.
 The hosting agent remains responsible for actual user approval and native tests.
 """
 import argparse
+import hashlib
 import json
 import os
 import re
 import shutil
 import sys
 from pathlib import Path
-from urllib.parse import urlparse
+
+if __package__:
+    from . import project_structure as structure
+    from . import project_readiness
+    from . import skill_intake
+    from . import skill_readiness
+    from . import test_runs
+else:
+    import project_structure as structure
+    import project_readiness
+    import skill_intake
+    import skill_readiness
+    import test_runs
+
+safe_path = structure.safe_path
+numbered = structure.numbered
+next_id = structure.next_id
 
 MANAGED = "<!-- GIS-Development-Skills:managed-project-governance-v1 -->"
 STRUCTURE_MARKER = "<!-- GIS-Development-Skills:managed-structure-v1 -->"
@@ -45,32 +62,9 @@ ROOT_FILES = {
     "package.json": "JavaScript package scripts and dependencies",
     "CMakeLists.txt": "CMake build definition",
     "requirements.txt": "Python dependency requirements",
+    "metadata.txt": "Project metadata, including the QGIS plugin manifest when applicable",
 }
-IGNORED_WALK = {".git", ".venv", "venv", "node_modules", "__pycache__",
-                ".pytest_cache", ".mypy_cache", ".idea", ".vs", ".next",
-                "bin", "obj", "build", "dist", "testing data",
-                "testing results", ".agent-development-log"}
 CONFIG = ".gis-project-governance.json"
-
-
-def safe_path(root, relative):
-    """Only an existing or future non-symlinked path below the project."""
-    if not isinstance(relative, str) or not relative.strip():
-        raise ValueError("Nonempty relative path required")
-    if "\x00" in relative or "\\" in relative or ":" in relative:
-        raise ValueError("Use a POSIX-style project-relative path")
-    candidate = Path(relative)
-    if candidate.is_absolute() or any(x in (".", "..") for x in candidate.parts):
-        raise ValueError("Absolute and traversing paths are prohibited")
-    root = root.resolve()
-    full = root / candidate
-    if not full.resolve().is_relative_to(root):
-        raise ValueError("Path escapes project root")
-    for part in (root / candidate).relative_to(root).parts:
-        root = root / part
-        if root.is_symlink():
-            raise ValueError("Symlinked paths are not permitted")
-    return full
 
 
 def slug(title):
@@ -112,22 +106,13 @@ def save_json(path, obj):
 
 
 def config(root):
-    data = read_json(root / CONFIG, {"schema_version": "1.0", "folders": {}})
+    data = read_json(safe_path(root, CONFIG), {"schema_version": "1.0", "folders": {}})
     if data.get("schema_version") != "1.0" or not isinstance(data.get("folders"), dict):
         raise ValueError("Unsupported project governance configuration")
+    if any(not isinstance(info, dict) or not isinstance(info.get("purpose"), str)
+           for info in data["folders"].values()):
+        raise ValueError("Each folder registration must have a text purpose")
     return data
-
-
-def numbered(base):
-    return sorted([p for p in base.iterdir() if p.is_dir() and re.match(r"^\d{4}_", p.name)]) if base.exists() else []
-
-
-def next_id(root, locations):
-    used = []
-    for location in locations:
-        for entry in numbered(root / location):
-            used.append(int(entry.name[:4]))
-    return f"{max(used, default=0) + 1:04d}"
 
 
 def rule_block():
@@ -142,6 +127,9 @@ def rule_block():
   accepted dependencies and relevant installed skills. Choose the smallest valid
   set of domain specialists and reusable components, then use the appropriate
   engineering workflow and permissions.
+- Run project_governance.py preflight against this project's root for setup needs.
+  Reuse the installed editor. Report required tools and compatible alternatives
+  in the plan. Continue independent work while an unavailable prerequisite is resolved.
 - Preserve existing sources, folder names, assets and user data. Before structural
   moves, produce an impact assessment, obtain required approval, and test imports,
   builds and real application behavior. Never reorganize merely to match a template.
@@ -176,8 +164,7 @@ def init(root):
     for rel in ("AGENTS.md", ".gitignore", CONFIG, "PROJECT_STRUCTURE.md",
                 "context/CURRENT_HANDOFF.md", "New Skill/README.md",
                 "New Skill/SKILLS_REGISTRY.json"):
-        if (root / rel).is_symlink():
-            raise ValueError(f"Refusing to read or write symlinked governance file: {rel}")
+        safe_path(root, rel)
     created = []
     for rel in DIRECTORIES:
         directory = safe_path(root, rel)
@@ -235,21 +222,20 @@ def init(root):
 
 def inventory(root, max_depth=10):
     dirs, root_files = [], []
-    for base, folders, files in os.walk(root, topdown=True, followlinks=False):
-        relative = Path(base).relative_to(root)
-        depth = len(relative.parts)
-        folders[:] = sorted(x for x in folders if
-                            x not in IGNORED_WALK and not (Path(base) / x).is_symlink())
-        if depth >= max_depth:
-            folders[:] = []
+    for directory, folders, files in structure.walk_project(root, max_depth):
+        relative = directory.relative_to(root)
         for name in folders:
             dirs.append((relative / name).as_posix())
-        if depth == 0:
-            root_files = sorted(x for x in files if not (root / x).is_symlink())
+        if directory == root:
+            root_files = files
     for special in ("testing data", "testing results", "dist", "dist/user-testing",
                     "New Skill", "New Skill/candidates", "New Skill/approved",
                     "New Skill/promotion", ".agent-development-log"):
-        if (root / special).is_dir() and special not in dirs:
+        try:
+            path = safe_path(root, special)
+        except ValueError:
+            continue
+        if path.is_dir() and special not in dirs:
             dirs.append(special)
     return sorted(set(dirs), key=str.casefold), root_files
 
@@ -272,7 +258,7 @@ def structure_text(root, dirs, files, declared):
         lines.append(f"| \u0060{rel}\u0060 | {describe(rel, declared).replace('|', '/')} |")
     lines += ["", "## Root files", "", "| Path | Purpose |", "| --- | --- |"]
     for name in files:
-        lines.append(f"| \u0060{name}\u0060 | {ROOT_FILES.get(name, 'NEEDS_DESCRIPTION — inspect this root file')} |")
+        lines.append(f"| \u0060{name}\u0060 | {root_file_purpose(name)} |")
     lines += ["", "## Maintenance", "",
               "Register new persistent directories with register-folder and run sync.",
               "Review existing project build files before moving anything. Generated",
@@ -280,17 +266,32 @@ def structure_text(root, dirs, files, declared):
     return "\n".join(lines)
 
 
+def root_file_purpose(name):
+    if name in ROOT_FILES:
+        return ROOT_FILES[name]
+    groups = {
+        ".sln": ".NET solution file", ".slnx": ".NET solution file",
+        ".csproj": ".NET build and resource configuration",
+        ".vbproj": ".NET build and resource configuration",
+        ".pyt": "ArcGIS Python toolbox", ".atbx": "ArcGIS toolbox", ".tbx": "ArcGIS toolbox",
+        ".qgs": "QGIS project", ".qgz": "Compressed QGIS project",
+        ".pro": "Qt qmake project", ".ui": "Qt Designer form", ".qml": "QML interface or component",
+    }
+    return groups.get(Path(name).suffix.casefold(),
+                      "NEEDS_DESCRIPTION — inspect this root file")
+
+
 def sync(root):
-    if (root / "PROJECT_STRUCTURE.md").is_symlink() or (root / CONFIG).is_symlink():
-        raise ValueError("Symlinked governance files are not permitted")
-    declared = config(root)["folders"]
+    output = safe_path(root, "PROJECT_STRUCTURE.md")
+    settings = config(root)
+    declared = settings["folders"]
     dirs, files = inventory(root)
-    output = root / "PROJECT_STRUCTURE.md"
+    files = sorted({*files, CONFIG, output.name})
     text = structure_text(root, dirs, files, declared)
     if output.exists() and not output.read_text(encoding="utf-8").startswith(STRUCTURE_MARKER):
         return {"updated": False, "reason": "User-authored PROJECT_STRUCTURE.md preserved",
                 "undocumented_directories": [x for x in dirs if x not in declared and x not in DIRECTORIES]}
-    save_json(root / CONFIG, config(root))  # Keep structured config valid.
+    save_json(root / CONFIG, settings)
     if output.exists():
         temporary = output.with_suffix(".md.tmp")
         if temporary.exists():
@@ -316,7 +317,7 @@ def register_folder(root, rel, purpose):
     if not purpose.strip():
         raise ValueError("Directory purpose cannot be blank")
     data = config(root)
-    data["folders"][rel] = {"purpose": purpose.strip()}
+    data["folders"][folder.relative_to(root.resolve()).as_posix()] = {"purpose": purpose.strip()}
     save_json(root / CONFIG, data)
     return sync(root)
 
@@ -369,73 +370,183 @@ def close_plan(root, sequence, evidence):
             "note": "Evidence file presence checked, NOT its scientific/native validity. DoneProof and project journal remain required."}
 
 
-def new_test_run(root, title):
-    if not (root / "testing data").is_dir():
-        raise ValueError("Run init first to create the user-owned testing data directory")
-    sequence = next_id(root, ("testing results",))
-    rel = f"testing results/{sequence}_{slug(title)}"
-    path = safe_path(root, rel)
-    path.mkdir(parents=True)
-    write_new(path / "TEST_RUN.md",
-              f"# Test run {sequence}: {title.strip()}\n\n"
-              "Status: NOT RUN\n\nInput: ../testing data/ (read-only user fixtures)\n\n"
-              "Expected result: TO DEFINE\n\nActual result: NOT RUN\n\n"
-              "Tool versions, exact commands, output readback, and evidence: NOT RUN\n")
-    return {"run": rel, "status": "NOT RUN",
-            "input_folder": "testing data", "output_folder": rel}
+def new_test_run(root, title, *, inputs=(), expect=None, license_note=None):
+    return test_runs.create(root, title, slug(title), inputs, expect, license_note)
 
 
-def register_skill(root, name, source, purpose, revision, license_name):
+def skill_registry(root):
+    skills_path = safe_path(root, "New Skill/SKILLS_REGISTRY.json")
+    registry = read_json(skills_path, {"schema_version": "1.0", "skills": []})
+    if (registry.get("schema_version") != "1.0" or not isinstance(registry.get("skills"), list)
+            or any(not isinstance(entry, dict) for entry in registry["skills"])):
+        raise ValueError("Invalid skill registry")
+    return skills_path, registry
+
+
+def register_skill(root, name, source, purpose, revision, license_name, *,
+                   license_evidence=None, effects=(), dependencies=()):
     for label, value in (("name", name), ("source", source), ("purpose", purpose),
-                         ("revision", revision), ("license", license_name)):
+                         ("revision", revision), ("license", license_name),
+                         ("license evidence", license_evidence or ""),
+                         *(("dependency", dependency) for dependency in dependencies)):
         if not isinstance(value, str) or len(value) > 1024 or any(ord(c) < 32 or ord(c) == 127 for c in value):
             raise ValueError(f"Invalid external skill {label}: control characters or excessive length")
-    parsed = urlparse(source)
-    if parsed.scheme != "https" or not parsed.netloc or parsed.username or parsed.password:
-        raise ValueError("External skill source must be a public HTTPS URL")
-    skills_path = root / "New Skill/SKILLS_REGISTRY.json"
-    registry = read_json(skills_path, {"schema_version": "1.0", "skills": []})
-    if registry.get("schema_version") != "1.0" or not isinstance(registry.get("skills"), list):
-        raise ValueError("Invalid skill registry")
-    if any(x.get("source") == source for x in registry["skills"]):
-        raise ValueError("Skill source already registered")
-    base = safe_path(root, "New Skill/candidates")
-    base.mkdir(parents=True, exist_ok=True)
-    sid = next_id(root, ("New Skill/candidates",))
-    folder = base / f"{sid}_{slug(name)}"
-    folder.mkdir()
-    write_new(folder / "SOURCE.md",
-              f"# Candidate: {name}\n\nSource: {source}\n\n"
-              f"Upstream revision: {revision or 'NOT PINNED'}\n\n"
-              f"Reported license: {license_name or 'UNVERIFIED'}\n\n"
-              f"Purpose: {purpose}\n\nSecurity review: NOT RUN\n\n"
-              "Status: CANDIDATE ONLY — no files fetched, no tools executed.\n")
-    registry["skills"].append(
-        {"id": sid, "name": name, "source": source,
-         "revision": revision or None, "license": license_name or "UNVERIFIED",
-         "purpose": purpose, "status": "CANDIDATE_UNREVIEWED",
-         "path": folder.relative_to(root).as_posix(),
-         "security_review": "NOT RUN", "runtime_test": "NOT RUN"})
-    save_json(skills_path, registry)
+    if not skill_intake.public_https(source) or (license_evidence and not skill_intake.public_https(license_evidence)):
+        raise ValueError("External skill source and license evidence require clean public HTTPS URLs")
+    if len(dependencies) > 20 or not set(effects) <= set(skill_intake.EFFECTS):
+        raise ValueError("Invalid candidate dependencies or declared effects")
+    with skill_intake.registry_lock(root):
+        skills_path, registry = skill_registry(root)
+        if any(x.get("source") == source for x in registry["skills"]):
+            raise ValueError("Skill source already registered")
+        base = safe_path(root, "New Skill/candidates")
+        base.mkdir(parents=True, exist_ok=True)
+        sid = next_id(root, ("New Skill/candidates",))
+        folder = safe_path(root, f"New Skill/candidates/{sid}_{slug(name)}")
+        folder.mkdir()
+        source_file = folder / "SOURCE.md"
+        try:
+            write_new(source_file,
+                      f"# Candidate: {name}\n\nSource: {source}\n\n"
+                      f"Upstream revision: {revision or 'NOT PINNED'}\n\n"
+                      f"Reported license: {license_name or 'UNVERIFIED'}\n\n"
+                      f"License evidence: {license_evidence or 'NOT RECORDED'}\n\n"
+                      f"Purpose: {purpose}\n\nSecurity review: NOT RUN\n\n"
+                      "Status: CANDIDATE ONLY — no files fetched, no tools executed.\n")
+            registry["skills"].append(
+                {"id": sid, "name": name, "source": source,
+                 "revision": revision or None, "license": license_name or "UNVERIFIED",
+                 "license_evidence": license_evidence, "declared_effects": sorted(set(effects)),
+                 "dependencies": list(dependencies), "purpose": purpose,
+                 "status": "CANDIDATE_UNREVIEWED", "path": folder.relative_to(root).as_posix(),
+                 "security_review": "NOT RUN", "runtime_test": "NOT RUN", "active": False})
+            save_json(skills_path, registry)
+        except (OSError, ValueError):
+            source_file.unlink(missing_ok=True)
+            folder.rmdir()
+            raise
     sync(root)
     return {"id": sid, "path": folder.relative_to(root).as_posix(),
             "status": "CANDIDATE_UNREVIEWED", "executed": False}
 
 
+def review_skill(root, candidate_id, snapshot, sha256):
+    if not re.fullmatch(r"\d{4}", candidate_id):
+        raise ValueError("Candidate ID must be four digits")
+    source = safe_path(root, snapshot)
+    with skill_intake.registry_lock(root):
+        skills_path, registry = skill_registry(root)
+        matches = [candidate for candidate in registry["skills"] if candidate.get("id") == candidate_id]
+        if len(matches) != 1:
+            raise ValueError("Exactly one registered candidate is required")
+        candidate = matches[0]
+        if not isinstance(candidate.get("source"), str) or not skill_intake.public_https(candidate["source"]):
+            raise ValueError("Invalid registered candidate source")
+        folder = safe_path(root, candidate["path"])
+        if folder.parent != safe_path(root, "New Skill/candidates") or not folder.name.startswith(candidate_id + "_"):
+            raise ValueError("Review records must stay inside the registered quarantine")
+        result = skill_intake.inspect_snapshot(source, sha256, candidate)
+        canonical = json.dumps(result, ensure_ascii=False, sort_keys=True)
+        hash_id = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+        reference = folder.relative_to(root).as_posix() + f"/reviews/{hash_id}.json"
+        path = safe_path(root, reference)
+        if path.exists():
+            if read_json(path, {}) != result:
+                raise ValueError("Previously saved review differs from current evidence")
+        else:
+            write_new(path, json.dumps(result, ensure_ascii=False, indent=2) + "\n")
+        if read_json(path, {}) != result:
+            raise ValueError("Candidate review readback did not match")
+        candidate.update(status=result["status"], security_review=reference, active=False, runtime_test="NOT RUN")
+        save_json(skills_path, registry)
+    return {**result, "review": reference}
+
+
 def audit(root):
-    required = ["AGENTS.md", "PROJECT_STRUCTURE.md", "testing data", "testing results",
-                "New Skill/SKILLS_REGISTRY.json", "plans/active", "plans/archive",
-                "context/CURRENT_HANDOFF.md"]
-    missing = [x for x in required if not (root / x).exists()]
-    dirs, _ = inventory(root)
+    required_files = ("AGENTS.md", "PROJECT_STRUCTURE.md", "New Skill/SKILLS_REGISTRY.json",
+                      "context/CURRENT_HANDOFF.md")
+    required_dirs = ("testing data", "testing results", "plans/active", "plans/archive")
+    missing = []
+    for name in (*required_files, *required_dirs):
+        try:
+            path = safe_path(root, name)
+            exists = path.is_file() if name in required_files else path.is_dir()
+            if exists:
+                continue
+        except ValueError:
+            pass
+        missing.append(name)
+    dirs, files = inventory(root)
     defined = config(root)["folders"]
-    active = [p.name for p in numbered(root / "plans/active")]
+    active = [] if "plans/active" in missing else [p.name for p in numbered(root / "plans/active")]
     unknown = [x for x in dirs if x not in DIRECTORIES and x not in defined]
+    stale = []
+    for name in defined:
+        try:
+            if safe_path(root, name).is_dir():
+                continue
+        except ValueError:
+            pass
+        stale.append(name)
+    documentation = "MISSING"
+    if "PROJECT_STRUCTURE.md" not in missing:
+        document = safe_path(root, "PROJECT_STRUCTURE.md")
+        with document.open("r", encoding="utf-8") as handle:
+            first_line = handle.readline(len(STRUCTURE_MARKER) + 1)
+            if first_line.rstrip("\n") == STRUCTURE_MARKER:
+                expected = structure_text(root, dirs, files, defined)
+                actual = first_line + handle.read(max(0, len(expected) - len(first_line)) + 1)
+                documentation = "CURRENT" if actual == expected else "DRIFTED"
+            else:
+                documentation = "USER_MANAGED"
+    profiles, findings, _, _, limits = structure.inspect_sources(root)
+    needs_update = bool(missing or unknown or stale or documentation == "DRIFTED")
     return {"project": str(root), "missing_required": missing,
             "undocumented_directories": unknown, "active_plans": active,
+            "architecture_profiles": profiles, "source_findings": findings, "source_scan": limits,
+            "disposition": "EXTEND" if needs_update else "KEEP",
+            "structure_drift": {"status": "REVIEW" if needs_update else "NO_DRIFT_FOUND",
+                                "documentation": documentation,
+                                "stale_folder_registrations": sorted(stale),
+                                "undocumented_root_files": [name for name in files
+                                                            if root_file_purpose(name).startswith("NEEDS_DESCRIPTION")]},
             "testing_data_user_owned": True, "testing_results_separate": True,
             "runtime_verification": "NOT RUN",
             "note": "Read-only structural check; it does not execute GIS, a build or a scanner."}
+
+
+def plan_move(root, source, destination):
+    root = root.resolve()
+    source_path = safe_path(root, source)
+    destination_path = safe_path(root, destination)
+    source = source_path.relative_to(root).as_posix()
+    destination = destination_path.relative_to(root).as_posix()
+    for name in (source, destination):
+        if (structure.source_excluded(name) or Path(name).name.startswith(".")
+                or name.casefold() in {"agents.md", "project_structure.md", "license"}):
+            raise ValueError("Protected and generated paths are outside the migration preview")
+    if not (source_path.is_file() or source_path.is_dir()):
+        raise ValueError("Migration source must be an existing project file or directory")
+    if destination_path.exists():
+        raise ValueError("Migration destination already exists")
+    if destination_path.is_relative_to(source_path):
+        raise ValueError("Migration destination cannot be inside the source")
+    if not destination_path.parent.is_dir():
+        raise ValueError("Migration destination parent must already exist")
+
+    profiles, _, references, sources, limits = structure.inspect_sources(root, include_docs=True)
+    impacted, truncated = structure.move_references(source, destination, references, sources)
+    return {
+        "disposition": "REFACTOR", "status": "PREVIEW", "applied": False,
+        "operation": {"from": source, "to": destination},
+        "rollback": {"from": destination, "to": source, "restore_reference_edits": True},
+        "architecture_profiles": sorted(profiles), "references_to_review": impacted,
+        "reference_results_truncated": truncated, "source_scan": limits,
+        "verification_required": ["Review generated and dynamic references",
+                                  "Re-run relevant imports, build and tests in a separate working copy",
+                                  "Read back the project outputs and compare with the pre-move baseline"],
+        "runtime_verification": "NOT RUN",
+    }
 
 
 def main(argv=None):
@@ -444,7 +555,35 @@ def main(argv=None):
     commands = parser.add_subparsers(dest="action", required=True)
     commands.add_parser("init")
     commands.add_parser("sync")
-    commands.add_parser("audit")
+    check = commands.add_parser("audit")
+    check.add_argument("--check", action="store_true", help="exit 1 when governance drift needs review")
+    preflight = commands.add_parser("preflight", help="Read project requirements and installed-tool candidates")
+    preflight.add_argument("--mode", choices=("new", "existing"), required=True)
+    preflight.add_argument("--target", choices=project_readiness.TARGETS, help="Reviewed project target")
+    preflight.add_argument("--target-version", help="Requested release from the plan or project")
+    preflight.add_argument("--require", choices=project_readiness.toolchain_advice.CAPABILITIES,
+                           action="append", default=[], help="Capability needed by the reviewed plan")
+    preflight.add_argument("--required-tool", choices=project_readiness.OFFICIAL, action="append", default=[],
+                           help="Standalone requirement. Use --requires-tool to bind it to a capability")
+    preflight.add_argument("--requires-tool", metavar="ACTION=TOOL", action="append", default=[],
+                           help="Bind a reviewed tool requirement to a specific capability")
+    preflight.add_argument("--project-file", help="Root-relative .NET project or solution entry")
+    preflight.add_argument("--tool-path", metavar="TOOL=LOCAL_PATH", action="append", default=[],
+                           help="Check a user-supplied local tool file without launching it")
+    preflight.add_argument("--package", action="append", default=[], help="Literal dependency from the reviewed plan")
+    preflight.add_argument("--prefer", choices=project_readiness.OFFICIAL, help="Prefer a compatible existing tool")
+    preflight.add_argument("--license-confirmed", choices=project_readiness.OFFICIAL, action="append", default=[])
+    skill = commands.add_parser("skill-preflight", help="Inspect a selected skill and its declared prerequisites")
+    skill.add_argument("--skill", required=True, help="Skill name or github-delivery")
+    skill.add_argument("--skill-dir", type=Path, help="Path to the active skill directory")
+    skill.add_argument("--require-file", action="append", default=[])
+    skill.add_argument("--require-command", action="append", default=[])
+    skill.add_argument("--require-capability", action="append", default=[])
+    skill.add_argument("--available-capability", action="append", default=[], help="Host declaration for inspection only")
+    skill.add_argument("--source-reviewed", action="store_true", help="Record provenance reviewed by the host")
+    move = commands.add_parser("plan-move", help="preview a move and its references without writing files")
+    move.add_argument("--from", dest="source", required=True)
+    move.add_argument("--to", dest="destination", required=True)
     folder = commands.add_parser("register-folder")
     folder.add_argument("--path", required=True)
     folder.add_argument("--purpose", required=True)
@@ -458,16 +597,32 @@ def main(argv=None):
     close.add_argument("--evidence", required=True)
     run = commands.add_parser("new-test-run")
     run.add_argument("--name", required=True)
+    run.add_argument("--input", action="append", default=[], help="file relative to testing data/")
+    run.add_argument("--expect", help="project-relative JSON containing independent output expectations")
+    run.add_argument("--license-note", help="provenance and license for the selected fixtures")
+    commands.add_parser("test-data-inventory")
+    record = commands.add_parser("record-test-run")
+    record.add_argument("--id", required=True)
+    record.add_argument("--command", required=True, help="record a command already executed by the host")
+    record.add_argument("--runtime", required=True)
+    record.add_argument("--semantics", required=True)
     skill = commands.add_parser("register-skill")
     skill.add_argument("--name", required=True)
     skill.add_argument("--source", required=True)
     skill.add_argument("--purpose", required=True)
     skill.add_argument("--revision", default="")
     skill.add_argument("--license", default="")
+    skill.add_argument("--license-evidence")
+    skill.add_argument("--effect", action="append", choices=skill_intake.EFFECTS, default=[])
+    skill.add_argument("--dependency", action="append", default=[])
+    review = commands.add_parser("review-skill", help="Inspect a local ZIP without extracting or running the candidate")
+    review.add_argument("--id", required=True)
+    review.add_argument("--snapshot", required=True, help="Project-relative ZIP")
+    review.add_argument("--sha256", required=True)
     opts = parser.parse_args(argv)
     root = opts.project.expanduser().resolve()
     try:
-        if not root.is_dir():
+        if opts.action != "preflight" and not root.is_dir():
             raise ValueError("Project must exist; this tool does not create an arbitrary project root")
         if opts.action == "init":
             result = init(root)
@@ -475,6 +630,22 @@ def main(argv=None):
             result = sync(root)
         elif opts.action == "audit":
             result = audit(root)
+        elif opts.action == "preflight":
+            result = project_readiness.preflight(
+                root, mode=opts.mode, target=opts.target, actions=opts.require,
+                target_version=opts.target_version, prefer=opts.prefer,
+                license_confirmed=opts.license_confirmed, required_tools=opts.required_tool,
+                planned_packages=opts.package, requires_tool=opts.requires_tool,
+                project_file=opts.project_file, tool_paths=opts.tool_path,
+            )
+        elif opts.action == "skill-preflight":
+            result = skill_readiness.inspect(
+                root, opts.skill, skill_dir=opts.skill_dir, require_files=opts.require_file,
+                require_commands=opts.require_command, require_capabilities=opts.require_capability,
+                available_capabilities=opts.available_capability, source_reviewed=opts.source_reviewed,
+            )
+        elif opts.action == "plan-move":
+            result = plan_move(root, opts.source, opts.destination)
         elif opts.action == "register-folder":
             result = register_folder(root, opts.path, opts.purpose)
         elif opts.action == "new-plan":
@@ -485,13 +656,28 @@ def main(argv=None):
         elif opts.action == "close-plan":
             result = close_plan(root, opts.id, opts.evidence)
         elif opts.action == "new-test-run":
-            result = new_test_run(root, opts.name)
+            result = new_test_run(root, opts.name, inputs=opts.input,
+                                  expect=opts.expect, license_note=opts.license_note)
+        elif opts.action == "test-data-inventory":
+            result = test_runs.inventory(root)
+        elif opts.action == "record-test-run":
+            result = test_runs.record(root, opts.id, opts.command, opts.runtime, opts.semantics)
         elif opts.action == "register-skill":
             result = register_skill(root, opts.name, opts.source,
-                                    opts.purpose, opts.revision, opts.license)
+                                    opts.purpose, opts.revision, opts.license,
+                                    license_evidence=opts.license_evidence, effects=opts.effect,
+                                    dependencies=opts.dependency)
+        elif opts.action == "review-skill":
+            result = review_skill(root, opts.id, opts.snapshot, opts.sha256)
         else:
             raise ValueError("Unrecognized action")
         print(json.dumps(result, ensure_ascii=False, indent=2))
+        if opts.action == "record-test-run" and result["status"] != "PASS":
+            return 1
+        if opts.action == "review-skill" and result["status"] == "REJECTED_ISOLATED":
+            return 1
+        if opts.action == "audit" and opts.check and result["structure_drift"]["status"] == "REVIEW":
+            return 1
         return 0
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(json.dumps({"error": str(exc), "action": opts.action}, ensure_ascii=False), file=sys.stderr)

@@ -35,6 +35,19 @@ python scripts/verify_completion.py report.json --plan reviewed-plan.json --requ
 
 The last command fails closed without a matching original reviewed plan. Passing checks never authenticates the user's authorization or remote/native behavior.
 
+## Approved GitHub delivery
+
+Confirm the repository, intended ref and requested effect before staging or
+sending changes. Inspect the diff, protect unrelated local edits, and run the
+reviewed checks on the content being delivered. Use the Git and GitHub tools
+the host actually exposes for those actions. [Yeet](https://github.com/openai/skills/blob/main/skills/.curated/yeet/SKILL.md)
+is a reference for a combined stage, commit, push and pull request request.
+
+Record each applicable result separately: local commit SHA, remote branch
+readback, pull request URL and head SHA, and CI results for that exact head.
+For an authorized merge or release, verify the resulting remote commit, tag
+or published asset. A missing tool or permission blocks its dependent action.
+
 ## Release checklist
 
 1. Run `python scripts/audit_skill_graph.py`, `python scripts/build_manifest.py --check`, `python scripts/validate_catalog.py`, `python scripts/validate_api_catalog.py`, `python scripts/validate_skill_pack.py`, and `python -m unittest discover -s tests -v`.
