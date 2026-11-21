@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/brand/banner.png" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200" height="200">
+  <img src="assets/brand/banner.png" alt="GIS Development Skills — The Heart of Geospatial Innovation. By Ahmed Ibrahim." width="1200" height="200">
 </p>
 
 <p align="center">طوّر أدوات وإضافات وتطبيقات GIS بمنهجية تطوير قابلة للتحقق.</p>

@@ -115,6 +115,30 @@ html,body{overflow-x:hidden}
 
 /* Homepage appearance for Brand Kit 3.1. */
 :root { --ui-lime: var(--gis-teal); --ui-ink: var(--gis-mist); }
+.studio-hero { padding-block-start: 39px; }
+.studio-brand-banner { grid-column: 1 / -1; min-width: 0; }
+.studio-brand-banner picture { display: block; }
+.studio-brand-banner .studio-logo {
+  display: block;
+  width: 100%;
+  max-height: none;
+  margin: 0;
+  aspect-ratio: 6 / 1;
+  border: 1px solid #36566c;
+  border-radius: 17px;
+}
+.studio-brand-credit { display: none; }
+@media (max-width: 640px) {
+  .studio-hero { padding-block-start: 25px; }
+  .studio-brand-banner {
+    padding: 10px 14px 13px;
+    border: 1px solid #36566c;
+    border-radius: 13px;
+    background: #0b2a44;
+  }
+  .studio-brand-banner .studio-logo { aspect-ratio: 1220 / 318; border: 0; border-radius: 0; }
+  .studio-brand-credit { display: block; margin-inline: 7px; color: #eaf6fa; font-size: .82rem; font-weight: 700; }
+}
 .studio-hero h1 { font-size: clamp(30px, 3.5vw, 49px); letter-spacing: -.033em; line-height: 1.14; }
 html[lang=ar] .studio-hero h1 { font-size: clamp(28px, 3.25vw, 45px); line-height: 1.42; }
 .studio-logo { width: min(100%, 430px); margin: 0 0 22px; }

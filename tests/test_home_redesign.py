@@ -32,6 +32,8 @@ class StudioHomepageTests(unittest.TestCase):
     def test_hero_brand_metric_and_design_system(self):
         self.assertIn('class="studio-hero"',self.site)
         self.assertIn('src="assets/brand/logo-dark.svg"',self.site)
+        self.assertIn('srcset="assets/brand/banner-dark.svg"', self.site)
+        self.assertIn('class="studio-brand-credit"', self.site)
         self.assertIn('href="assets/home-redesign.css"',self.site)
         for token in (".studio-hero", ".studio-metrics", ".studio-howto",
                       ".studio-how-grid", "@media(max-width:610px)",

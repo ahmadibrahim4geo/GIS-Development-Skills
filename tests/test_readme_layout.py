@@ -35,6 +35,11 @@ class ReadmeLayoutTests(unittest.TestCase):
         for filename in ("banner-dark.svg", "banner-light.svg"):
             svg = ET.parse(brand / filename).getroot()
             self.assertEqual(svg.get("viewBox"), "0 0 2400 400")
+            credit = svg.find(".//*[@id='creator-credit']")
+            self.assertIsNotNone(credit, filename)
+            self.assertEqual(credit.text, "By Ahmed Ibrahim")
+            self.assertEqual(credit.get("font-style"), "normal")
+            self.assertGreaterEqual(int(credit.get("font-size")), 48)
         png_header = (brand / "banner.png").read_bytes()[:24]
         self.assertEqual(png_header[:8], bytes.fromhex("89 50 4E 47 0D 0A 1A 0A"))
         self.assertEqual(struct.unpack(">II", png_header[16:24]), (2400, 400))
