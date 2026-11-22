@@ -4,7 +4,7 @@
 
 <p align="center">Build GIS tools, plugins and geospatial applications with a verifiable development workflow.</p>
 
-<p align="center"><a href="README.ar.md">العربية</a> · <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website</a> · <a href="docs/HOW_TO_USE.md">How to use</a> · <a href="assets/brand/README.md">Brand assets</a></p>
+<p align="center">English (default) · <a href="README.ar.md" lang="ar">العربية</a> · <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website</a> · <a href="docs/HOW_TO_USE.md">How to use</a> · <a href="assets/brand/README.md">Brand assets</a></p>
 
 
 
@@ -55,6 +55,16 @@ with a compatible Agent Skills client. See the [distribution contract](docs/SKIL
 that named client and version.
 
 ### 2. Give the agent a concrete request
+
+For HTML and web UI, open the [homepage project picker](index.html#how-to-use) and choose **HTML and web interfaces**. The homepage opens in English and the language switch offers Arabic. Follow the [paired setup](references/modern-web-guidance-workflow.md), then run the readiness check from your project root.
+
+```sh
+python -B scripts/web_guidance.py check
+```
+
+> Build a responsive HTML page in English with a button that opens a confirmation dialog. Check both web skills first. Verify keyboard operation and focus return in a real browser at mobile and desktop widths.
+
+The next example covers QGIS Processing.
 
 > Build a QGIS Processing tool that audits an EPSG:4326 GeoJSON point layer.
 > Preserve the source, write to a new output directory, reject malformed or
