@@ -15,6 +15,7 @@ ROUTES = {
     "basemap-license": ("geospatial-data-discovery", (), "geospatial-data-catalogs"),
     "snapping-audit": ("gis-ui-command-audit", (), "gis-desktop-e2e-testing"),
     "skill-quarantine": ("gis-security-guardian", (), None),
+    "web-frontend": ("gis-ui-ux-design-testing", ("node", "python"), None),
 }
 
 MATCHES = {
@@ -61,7 +62,33 @@ BYPASS = re.compile(
     r"(?:تجاهل|تخطي|تجاوز|زور) (?:الاذن|الصلاحيات|الموافقه|العزل|التعليمات)"
 )
 NEGATED = re.compile(r"\b(?:not|no|without|بدون|مش|بلاش)\s+(?:an?\s+|the\s+)?(?:arcpy|wpf|qt|qgis|plugin|sdk)\b")
-CAPABILITIES = {"arcpy", "arcgis-pro-sdk", "qgis", "dotnet", "qt-sdk", "wpf-designer", "qt-designer"}
+CAPABILITIES = {"arcpy", "arcgis-pro-sdk", "qgis", "dotnet", "qt-sdk", "wpf-designer", "qt-designer", "node", "python"}
+WEB_SKILLS = ("modern-web-guidance", "ui-ux-pro-max")
+WEB_TARGET = re.compile(
+    r"\b(?:html|css|javascript)\b|\.(?:html?|css|jsx|tsx|vue|svelte)\b|"
+    r"\b(?:web (?:page|site|app(?:lication)?|ui|map|dashboard)|website|webpage|frontend|front-end|"
+    r"landing page|webview2?|react (?:app|component|dashboard))\b|"
+    r"صفحه (?:ويب|هبوط)|موقع (?:ويب|الكتروني|تعريفي)|تطبيق(?:ات)? ويب|واجهه ويب|خريطه ويب|فرونت ?اند"
+)
+UI_ACTION = re.compile(
+    r"\b(?:build|create|make|design|implement|code|add|edit|update|fix|refactor|"
+    r"modernize|redesign|review|improve|audit|convert|generate|change)\b|"
+    r"اعمل|انش[ئي]|ابني|اكتب|صمم|نفذ|ضيف|اضف|عدل|غير|ظبط|طور|حسن|اصلح|حول|راجع"
+)
+NON_UI = re.compile(
+    r"\b(?:backend[- ]only|server[- ]side only|plain text|copy[- ]only|"
+    r"fix (?:an? |the )?(?:typo|spelling)|"
+    r"(?:copy|translate|proofread|rename|inspect|open|read) (?:only )?(?:the )?(?:html|css|page))\b|"
+    r"الباك ?اند فقط|النص فقط|ترجم النص|انسخ (?:الملف|النص)|اصلح خطا (?:مطبعي|املائي)"
+)
+BACKEND_TARGET = re.compile(
+    r"\b(?:back[- ]?end|server[- ]side|api (?:routes?|endpoints?)|database migration)\b|"
+    r"باك ?اند|مسار(?:ات)? الخادم|قاعده البيانات"
+)
+FRONTEND_DETAIL = re.compile(
+    r"\b(?:html|css|frontend|front-end|full[- ]stack|forms?|buttons?|dialogs?|webview2?)\b|"
+    r"واجهه|فرونت ?اند|نموذج|زر|نافذه"
+)
 
 
 def normalize(request):
@@ -69,6 +96,12 @@ def normalize(request):
     normalized = re.sub(r"[\u0640\u064b-\u065f]", "", normalized)
     normalized = normalized.translate(str.maketrans("أإآىة", "ااايه"))
     return " ".join(normalized.split())
+
+
+def web_ui_requested(request):
+    text = normalize(request)
+    return bool(WEB_TARGET.search(text) and UI_ACTION.search(text) and not NON_UI.search(text)
+                and (not BACKEND_TARGET.search(text) or FRONTEND_DETAIL.search(text)))
 
 
 def inspect_context(context):
@@ -95,6 +128,9 @@ def recommend(request, context, known):
         name for name, patterns in MATCHES.items()
         if all(re.search(pattern, candidate_text) for pattern in patterns)
     ]
+    web_ui = web_ui_requested(candidate_text) or delivery == "web-frontend"
+    if web_ui and (not matches or delivery == "web-frontend"):
+        matches.append("web-frontend")
     # A command audit supports delivery of a plugin; it is not a second host.
     plugin_command_audit = "snapping-audit" in matches and ("qgis-plugin" in matches or delivery == "qgis-plugin")
     if plugin_command_audit and delivery != "snapping-audit":
@@ -122,6 +158,11 @@ def recommend(request, context, known):
     if selected is None:
         return result
     owner, required, supporting = ROUTES[selected]
+    if web_ui:
+        result["required_web_skills"] = list(WEB_SKILLS)
+        result["web_readiness"] = "BOTH_REQUIRED_BEFORE_USE"
+        if selected != "web-frontend":
+            required += ROUTES["web-frontend"][1]
     if selected == "qgis-plugin" and plugin_command_audit:
         supporting = "gis-ui-command-audit"
     required = list(required)
@@ -142,4 +183,6 @@ def recommend(request, context, known):
         reason="Route matches the declared delivery or a combination of framework and task signals."
         if status == "RECOMMENDED" else "The required skill is absent from the local inventory.",
     )
+    if web_ui and "modern-web-guidance" in known:
+        result["supporting_skills"].append("modern-web-guidance")
     return result

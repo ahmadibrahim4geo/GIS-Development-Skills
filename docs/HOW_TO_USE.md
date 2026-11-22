@@ -6,6 +6,8 @@ GIS Development Skills is a collection of guidance files (`SKILL.md`), engineeri
 
 ## Route A — Use with a supported coding agent
 
+For a standalone HTML file or browser interface, use the [Modern Web Guidance and UI/UX Pro Max workflow](../references/modern-web-guidance-workflow.md) to verify both local providers.
+
 ### 1. Choose a task and the real host
 Decide the application and version (ArcGIS Pro/ArcMap, QGIS, desktop/WPF/Cesium, browser GIS, KML/KMZ, geoprocessing or remote sensing), operating system, data format, coordinate reference system (CRS), desired outputs and any licensing constraints. Prepare an existing working project with backup/version control.
 

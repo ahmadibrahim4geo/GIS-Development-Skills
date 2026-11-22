@@ -12,9 +12,20 @@ import re
 import sys
 from pathlib import Path, PurePosixPath
 
+if __package__:
+    from .contextual_routing import WEB_SKILLS, web_ui_requested
+else:
+    try:
+        from scripts.contextual_routing import WEB_SKILLS, web_ui_requested
+    except ModuleNotFoundError as exc:
+        if exc.name != "scripts":
+            raise
+        from contextual_routing import WEB_SKILLS, web_ui_requested
+
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 DOMAINS = (
+    ("modern-web-guidance", ("modern-web-guidance", "modern web guidance")),
     ("gis-code-discovery", ("code discovery", "gis code", "code snippet", "code snippets", "sdk snippet", "arcgis sdk", "pyqgis snippet", "gdal sample", "gis recipe", "كود جغرافي", "خوارزمية جغرافية", "مقتطفات برمجية", "وصفات برمجية", "أمثلة برمجية", "كود python", "python code", "تنبؤ مكاني", "خوارزمية تنبؤ", "spatial prediction", "spatial machine learning", "تعلم آلي مكاني", "كود بحثي", "كودًا بحثيًا", "كودا بحثيا", "أكواد بحثية", "research code", "scikit-map", "ponytail", "caveman", "token optimizer", "ترشيد توكنات", "هندسة سياق", "context engineering")),
     ("visual-asset-discovery-integration", ("thumbnail", "visual asset", "image search", "image sourcing", "official logo", "logos", "brand asset", "سامبنيل", "سنبنيل", "ثَمبنيل", "صورة مصغرة", "صورة لكل اختيار", "صور توضيحية", "شعار", "شعارات")),
 
@@ -91,6 +102,9 @@ def route_hints(request, known=None):
     lowered = request.casefold()
     hits = [name for name, tokens in DOMAINS
             if name in known and any(token in lowered for token in tokens)]
+    web_skills = list(WEB_SKILLS) if web_ui_requested(request) else []
+    if web_skills:
+        hits.extend(name for name in ("gis-ui-ux-design-testing", *WEB_SKILLS) if name in known)
     if "gis-security-guardian" in known:
         hits.append("gis-security-guardian")
     architecture_review = architecture_hints(request)
@@ -108,6 +122,7 @@ def route_hints(request, known=None):
         "next_step": "Hosting AI must infer and show the user goal, deliverables, constraints and measurable success criteria; no execution from keywords.",
         "language_hint": "ar" if re.search(r"[\u0600-\u06ff]", request) else "en",
         "suggested_skills": list(dict.fromkeys(hits)),
+        **({"required_web_skills": web_skills} if web_skills else {}),
         "requires_semantic_review": True,
         "architecture_review": architecture_review,
         "approval": "not_requested",

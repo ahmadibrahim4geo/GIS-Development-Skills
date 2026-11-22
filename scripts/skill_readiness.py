@@ -16,6 +16,7 @@ IDENTIFIER = re.compile(r"[a-z][a-z0-9-]{0,63}\Z")
 COMMAND = re.compile(r"[a-zA-Z0-9][a-zA-Z0-9_.+-]{0,63}\Z")
 # Optional providers are alternatives. Presence never substitutes for a smoke test.
 PROFILES = {
+    "modern-web-guidance": ((), ("node",), ()),
     "ui-ux-pro-max": (("scripts/search.py", "data/catalog-summary.json"),
                       ("python", "python3", "py"), ()),
     "craft-anything": ((), ("craft-anything-cli",), ("craft-mcp",)),

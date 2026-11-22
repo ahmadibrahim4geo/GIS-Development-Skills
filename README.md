@@ -30,6 +30,7 @@ completion claim.
 | --- | --- |
 | ArcGIS toolboxes and QGIS plugins | [ArcPy](skills/arcgis-toolbox-engineering/SKILL.md) · [PyQGIS](skills/qgis-plugin-development/SKILL.md) |
 | GIS apps and interactive maps | [Desktop](skills/gis-desktop-application-development/SKILL.md) · [Mobile](skills/gis-mobile-application-development/SKILL.md) · [Web maps](skills/geospatial-web-mapping/SKILL.md) |
+| HTML and web frontends | [Modern Web Guidance and UI/UX Pro Max](references/modern-web-guidance-workflow.md) |
 | Spatial analysis and satellite imagery | [Vector and raster](skills/geospatial-data-processing/SKILL.md) · [Remote sensing](skills/remote-sensing-pipelines/SKILL.md) · [Terrain and hydrology](skills/terrain-hydrology-lidar/SKILL.md) |
 | Data integration, automation and map exchange | [GIS APIs](skills/geospatial-api-integration/SKILL.md) · [Agent workflows](skills/geospatial-ai-agents/SKILL.md) · [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) |
 
@@ -170,7 +171,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>35 installable GIS skills</strong> · <strong>193 curated geospatial references</strong> · <strong>53 public API sources</strong> · <strong>26 curated data repositories</strong></p>
+<p align="center"><strong>36 installable GIS skills</strong> · <strong>193 curated geospatial references</strong> · <strong>53 public API sources</strong> · <strong>26 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·

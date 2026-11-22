@@ -32,6 +32,7 @@
 | `remote-sensing-pipelines` | STAC/public imagery assets after license checks, GDAL/Rasterio/xarray | GEE/cloud processing or AI may have account/quota requirements |
 | `spatial-databases` | Local PostgreSQL/PostGIS or SQLite/SpatiaLite | Managed hosted databases may charge |
 | `geospatial-web-mapping` | MapLibre/Leaflet/CesiumJS with permitted local/self-hosted layers | Hosted imagery/terrain/maps may charge or forbid caching |
+| `modern-web-guidance` | Local GoogleChrome CLI and guides with UI/UX Pro Max using Node.js and Python | Review the Apache-2.0 artifact and its notices, and the MIT design provider and data provenance |
 | `gis-desktop-application-development` | .NET, Tauri and free GIS engines under their licenses | ArcGIS/Global Mapper runtime DLLs need paid licensing |
 | `gis-mobile-application-development` | Free/native Android/iOS SDKs with license-reviewed MapLibre/Qt/QGIS adapters and local geodata; deterministic offline sync tests | Signing, native hardware tests, optional provider accounts and map data rights require separate verification and user permission |
 | `geospatial-data-discovery` | Metadata catalogs and independently permitted free datasets | Downloading or redistributing assets may be restricted |

@@ -8,6 +8,8 @@
 4. Follow the [engineering method](references/portable-execution-guidance.md#work-within-existing-ownership). Inspect and decide, resolve material unknowns early, deliver a small verifiable slice, then correct observed failures and rerun the relevant checks.
 5. Resume from verified [project history](skills/agent-development-journal/SKILL.md). Use [DoneProof](skills/completion-evidence/SKILL.md) for results and the [GitHub delivery workflow](PUBLISHING.md#approved-github-delivery) when delivery is in scope.
 
+- Any request to create or change standalone HTML or a browser UI activates [Modern Web Guidance](skills/modern-web-guidance/SKILL.md) together with UI/UX Pro Max before implementation, including the frontend part of full-stack and WebView work. Verify both providers with the [paired readiness workflow](references/modern-web-guidance-workflow.md) and surface any missing requirement before using the pair.
+
 The method uses the model selected by the user. [Client setup](docs/SKILL_DISTRIBUTION.md#use-one-policy-across-agent-clients) describes how to locate this policy and verify tools in a fresh session.
 
 - For complex/free-form prompts start with [Prompt Intent Orchestrator](skills/prompt-intent-orchestrator/SKILL.md): normalize and present a reviewable task plan, obtain revision-scoped user approval, then select specialists; JSON approval fields are not authenticated consent.

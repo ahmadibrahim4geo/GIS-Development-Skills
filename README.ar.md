@@ -26,6 +26,7 @@
 | --- | --- |
 | أدوات ArcGIS وإضافات QGIS | [ArcPy](skills/arcgis-toolbox-engineering/SKILL.md) · [PyQGIS](skills/qgis-plugin-development/SKILL.md) |
 | تطبيقات GIS وخرائط تفاعلية | [سطح المكتب](skills/gis-desktop-application-development/SKILL.md) · [الموبايل](skills/gis-mobile-application-development/SKILL.md) · [خرائط الويب](skills/geospatial-web-mapping/SKILL.md) |
+| ملفات HTML وواجهات الويب | [Modern Web Guidance وUI/UX Pro Max](references/modern-web-guidance-workflow.md) |
 | التحليل المكاني وصور الأقمار الصناعية | [معالجة المتجهات والراستر](skills/geospatial-data-processing/SKILL.md) · [الاستشعار عن بُعد](skills/remote-sensing-pipelines/SKILL.md) · [التضاريس والهيدرولوجيا](skills/terrain-hydrology-lidar/SKILL.md) |
 | ربط البيانات والأتمتة وتبادل الخرائط | [واجهات GIS API](skills/geospatial-api-integration/SKILL.md) · [مسارات الوكلاء](skills/geospatial-ai-agents/SKILL.md) · [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) |
 
@@ -165,7 +166,7 @@ python scripts/verify_completion.py report.json --plan reviewed-plan.json --requ
 
 ## طوّر أدوات وتطبيقات نظم المعلومات الجغرافية وفق منهجية يمكن التحقق منها.
 
-مهارات تطوير برمجيات نظم المعلومات الجغرافية ومراجع مفتوحة المصدر، تشمل **35 مهارة قابلة للتثبيت** و**193 مرجعًا جغرافيًا** و**53 مصدرًا لواجهات البيانات والخدمات الجغرافية** و**26 دليلًا وبوابةً للبيانات**.
+مهارات تطوير برمجيات نظم المعلومات الجغرافية ومراجع مفتوحة المصدر، تشمل **36 مهارة قابلة للتثبيت** و**193 مرجعًا جغرافيًا** و**53 مصدرًا لواجهات البيانات والخدمات الجغرافية** و**26 دليلًا وبوابةً للبيانات**.
 
 **تحسينات المجانية والعرض:** أصبحت [الواجهة](index.html) تعرض جميع المهارات المدرجة، وزر «عرض المزيد» لكل النتائج، وفلترًا مجانيًا افتراضيًا لخدمات API (42 خدمة مجانية بشروط + خدمة واحدة للاستضافة الذاتية). الخيارات التجارية والتجريبية والمقيدة تُعرض عند اختيار «كل المستويات». راجع [سياسة المجاني أولًا](references/free-first-policy.md) لتفاصيل ترخيص ArcGIS وGlobal Mapper والبيانات والخدمات.
 

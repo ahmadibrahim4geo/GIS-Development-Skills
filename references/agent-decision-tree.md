@@ -20,6 +20,8 @@ Use one accountable owner per task and only the supporting specialists needed fo
 
 ## Select the platform and domain
 
+For standalone HTML and browser UI changes, apply [Modern Web Guidance with UI/UX Pro Max](modern-web-guidance-workflow.md) after the paired readiness check. A map renderer adds Geospatial Web Mapping.
+
 1. Is the user building inside ArcGIS? **ArcMap 10.x:** Python 2.7 and `arcpy.mapping` where applicable. **ArcGIS Pro:** supported Python 3 / ArcPy / `arcpy.mp`; distinguish `.pyt`, script tool and Pro SDK add-in. Consult the [official Esri Python distribution checker](esri-python-environment-compatibility.md) for package compatibility, and use C# SDK snippets only for Pro-hosted add-ins.
 2. Global Mapper from Blue Marble Geographics? Route to [Global Mapper Development](../skills/global-mapper-development/SKILL.md): distinguish `.gms`, embedded Python and commercially licensed SDK/DLL; check edition and feature entitlements. Source forks on GitHub are not the Global Mapper engine.
 3. QGIS-related? First distinguish the source host from the delivery target above. **QGIS-hosted Processing algorithm:** Processing provider interface. **Plugin:** PyQGIS/Qt with real action wiring. **Standalone QGIS libraries/engine:** [QGIS Engine Integration](../skills/qgis-engine-integration/SKILL.md) plus independent Desktop engineering. Mentioning QGIS Processing alone does not establish a plugin. For a non-Qt host consider an optional headless PyQGIS worker, keeping the original renderer and applying license/runtime gates.

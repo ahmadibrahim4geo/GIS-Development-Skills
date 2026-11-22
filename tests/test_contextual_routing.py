@@ -64,6 +64,36 @@ def evaluation():
 
 
 class ContextualRoutingTests(unittest.TestCase):
+    def test_web_pair_routes_bilingual_frontends_and_preserves_other_hosts(self):
+        known = intent_router.available_skills()
+        cases = (
+            ("اعمل ملف HTML بالعربي فيه زر يفتح نافذة تأكيد", "web-frontend"),
+            ("Build a full-stack web app with an accessible form", "web-frontend"),
+            ("Add a WebView2 interface to a WPF app", "wpf-app"),
+            ("Fix keyboard focus in the React component", "web-frontend"),
+            ("Edit settings.html to add a confirmation dialog", "web-frontend"),
+        )
+        for request, delivery in cases:
+            with self.subTest(request=request):
+                route = contextual_routing.recommend(request, {}, known)
+                self.assertEqual(route["delivery"], delivery)
+                self.assertEqual(route["required_web_skills"], ["modern-web-guidance", "ui-ux-pro-max"])
+                self.assertEqual(route["web_readiness"], "BOTH_REQUIRED_BEFORE_USE")
+                self.assertIn("modern-web-guidance", route["supporting_skills"])
+                self.assertTrue({"node", "python"}.issubset(route["capabilities_to_verify"]))
+                self.assertEqual(intent_router.route_hints(request, known)["required_web_skills"],
+                                 route["required_web_skills"])
+
+    def test_web_pair_skips_non_frontend_requests(self):
+        known = intent_router.available_skills()
+        for request in ("Implement a backend-only API route for a web app",
+                        "Implement the API endpoint for a web app",
+                        "Build a PySide desktop app", "Fix a typo in index.html",
+                        "Rename the HTML file", "ترجم النص فقط في صفحة ويب"):
+            with self.subTest(request=request):
+                self.assertNotIn("required_web_skills", contextual_routing.recommend(request, {}, known))
+                self.assertNotIn("required_web_skills", intent_router.route_hints(request, known))
+
     def test_bilingual_deliverables_and_boundaries(self):
         for row in evaluation()["cases"]:
             with self.subTest(case=row["case"], request=row["request"]):

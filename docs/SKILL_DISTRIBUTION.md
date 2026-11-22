@@ -61,6 +61,8 @@ and its shared dependencies together. Do not point users to a single nested
 skill install as a verified complete route until an isolated installation test
 shows that its external references are present.
 
+For HTML and browser frontends, the bundle includes the [Modern Web Guidance skill](../skills/modern-web-guidance/SKILL.md) and its readiness helper. The [paired workflow](../references/modern-web-guidance-workflow.md) specifies the reviewed npm archive, Node.js, Python and a compatible UI/UX Pro Max installation.
+
 The archive has a root skill named `gis-development-suite`. A compatible
 Agent Skills installer may accept a local or release-asset archive, for example:
 
