@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 93,
+  "timestamp_utc": "2026-11-21T04:11:04+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Audited agent entry, contextual routes and rooted preflight, with r9 remediation drafted for review",
+  "details": "Observed different installed and r8 root content and missing installed project_readiness.py. Synthetic QGIS snapping yielded CONFLICT in Arabic and English. Synthetic WPF linked library produced an unresolved target. Named Visual Studio requirement had no dependency relation to candidate build. Malformed global.json left preflight build CANDIDATE and failed installed dotnet --version with exit 1. Bundle link audit accepted an absent fragment. Started a separate draft plan for local remediation, awaiting review. No agent implementation, installed skill update or remote mutation occurred.",
+  "references": [
+    92
+  ],
+  "task_id": "AGENT-WEAKNESS-AUDIT",
+  "plan_revision": "r9",
+  "changed_files": [
+    "plans/active/0002_Agent-Hardening/PLAN.json",
+    "plans/active/0002_Agent-Hardening/AUDIT.ar.md"
+  ],
+  "tests": [
+    "25 targeted unit tests and T0 skill graph passed; five-step r9 workflow preview validated; native .NET configuration failure reproduced"
+  ],
+  "test_result": "passed",
+  "commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "previous_hash": "5e9bfb6c9771d393bb2b31b3adf176b452864d9c88b0f347a58a9180f1508fa6",
+  "hash": "80b0ed81db17379c432cf1df5f4ff89eaacb6e85474647db0d79340803d2e67c"
+}

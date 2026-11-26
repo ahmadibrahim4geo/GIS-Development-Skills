@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 98,
+  "timestamp_utc": "2026-11-21T04:50:51+00:00",
+  "kind": "revision",
+  "status": "proposed",
+  "summary": "Consolidated further research into the r10 agent root plan",
+  "details": "User endorsed model-independent problem-solving and requested additional research before one consolidated root update. Reviewed Anthropic context engineering and evaluation guidance, Agent Skills evaluation, GitHub Agent Skill Stack and native client discovery docs. Added minimal startup context, role overlap handling, stale handoff revalidation, outcome checks and per-client discovery evidence to the draft. Root implementation remains at r9.",
+  "references": [
+    97
+  ],
+  "task_id": "PORTABLE-AGENT-ROOT",
+  "plan_revision": "r10",
+  "changed_files": [
+    "plans/active/0003_Agent-Roots-Portable-Skills/PLAN.json",
+    "plans/active/0003_Agent-Roots-Portable-Skills/RESEARCH.ar.md"
+  ],
+  "tests": [
+    "Five-task draft compiled AWAITING_REVIEW; all eight local research links resolved"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "a9b4fece012fb1b1f79c63b569576845ccaeac744f52831d0b3b0d2a3efabae1",
+  "hash": "c85054a267cc4df4ea0074229a9f5b3a60aa8199b3be567c9abe7f313c72dc4c"
+}

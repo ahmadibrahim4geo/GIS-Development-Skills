@@ -126,7 +126,7 @@ The 78 GitHub repositories identified from the 37 chat rounds are categorized be
 1. `mapbox/earcut.hpp` — Header-only polygon triangulation supporting interior holes (`geospatial-data-processing`).
 2. `AngusJohnson/Clipper2` — Polygon clipping, boolean operations, and offsetting (`geospatial-data-processing`).
 3. `IfcOpenShell/IfcOpenShell` — Open BIM IFC 4.3 processing engine (`geospatial-data-processing`).
-4. `duckdb/duckdb-skills` — Analytical in-memory spatial SQL extension (`geospatial-data-processing`).
+4. `duckdb/duckdb-spatial` — Analytical in-memory spatial SQL extension (`geospatial-data-processing`).
 5. `pboettch/json-schema-validator` — Strict C++ JSON schema validator (`geospatial-ai-agents`).
 6. `nlohmann/json` — Modern JSON for C++ (`geospatial-ai-agents`).
 7. `zeux/meshoptimizer` — GPU mesh optimization library (`gis-desktop-application-development`).

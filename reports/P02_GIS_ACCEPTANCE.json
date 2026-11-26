@@ -1,0 +1,99 @@
+{
+  "target": "Phase P02: governance and controlled relocation in the golden QGIS coordinate-audit example",
+  "os": "Windows",
+  "application_version": "QGIS 4.2.3-Belém do Pará; Qt 6.11.0",
+  "python_runtime": "Python 3.14.7 for governance; bundled Python 3.12.15 for QGIS Processing",
+  "crs_units": "Input EPSG:4326, longitude/latitude in degrees. No reprojection or metric operation.",
+  "evidence_tier": "T3",
+  "commands_executed": [
+    "python -B scripts/project_governance.py --project <copy> audit",
+    "python -B scripts/project_governance.py --project <copy> init",
+    "python -B scripts/project_governance.py --project <copy> register-folder --path <folder> --purpose <reviewed-purpose>",
+    "python -B scripts/project_governance.py --project <copy> plan-move --from audit_core.py --to coordinate_audit_core.py",
+    "python -B scripts/project_governance.py --project <copy> sync",
+    "python -B scripts/project_governance.py --project <copy> audit --check",
+    "python -B -m unittest discover -s tests -v",
+    "Installed python-qgis.bat -s -B with a scratch wrapper adding its bundled Processing module, running copied native_qgis_smoke.py before change, after change, and after rollback"
+  ],
+  "fixtures_used": [
+    "examples/golden-qgis-coordinate-audit/fixtures/points.geojson SHA-256 5da2c7d2ba22e610b9887b14a8ccebf76cafefaeae564f7a70f638afaeb9d065"
+  ],
+  "expected_result": "Read-only preview exposes three local imports; each QGIS run accepts 2 points, rejects 3, and reproduces both expected JSON outputs. Rollback restores original project file hashes.",
+  "observed_result": "Preview exposed all three imports without writing. Five copied Python sources compiled after relocation. Both output files matched the committed expected JSON and were byte-identical across all three QGIS runs. Original and rolled-back copies of all 10 example files matched their starting hashes.",
+  "not_tested": [
+    "QGIS GUI/installed plugin acceptance",
+    "Packaged clean-environment T4",
+    "Runtime verification for ArcGIS, WPF, Qt GUI and web GIS in P02",
+    "Archify HTML and browser checks",
+    "External security scanners"
+  ],
+  "known_limitations": [
+    "Synthetic example tests only the named Windows QGIS Processing runtime.",
+    "Structural inspection is bounded and resolves a subset of literal imports and build references."
+  ],
+  "source_changes": "Example source, input data and execution package retained their starting hashes. The temporary copy was edited and rolled back.",
+  "provenance_licensing": "Golden coordinate-audit source and its synthetic fixture from the existing MIT repository; installed QGIS used locally.",
+  "status": "pass",
+  "native_runtime_verified": true,
+  "evidence_links": [
+    "reports/PROJECT_STRUCTURE_ACCEPTANCE.md",
+    "P02_NATIVE_QGIS/logs/before.json",
+    "P02_NATIVE_QGIS/logs/after.json",
+    "P02_NATIVE_QGIS/logs/rollback.json"
+  ],
+  "native_observations": {
+    "before": {
+      "accepted_feature_count": 2,
+      "algorithm_id": "verified_coordinate_audit",
+      "artifact_sha256": "64a252d87cb217fff31a1da2f93c14061d606bd4386b23ac9ea7c2fcaa3cd0fa",
+      "clean_environment_T4": "NOT RUN",
+      "evidence_tier": "T3",
+      "qgis_version": "4.2.3-Belém do Pará",
+      "rejected_feature_count": 3,
+      "schema_version": "1.0",
+      "status": "verified",
+      "workflow_id": "golden-qgis-coordinate-audit"
+    },
+    "after": {
+      "accepted_feature_count": 2,
+      "algorithm_id": "verified_coordinate_audit",
+      "artifact_sha256": "64a252d87cb217fff31a1da2f93c14061d606bd4386b23ac9ea7c2fcaa3cd0fa",
+      "clean_environment_T4": "NOT RUN",
+      "evidence_tier": "T3",
+      "qgis_version": "4.2.3-Belém do Pará",
+      "rejected_feature_count": 3,
+      "schema_version": "1.0",
+      "status": "verified",
+      "workflow_id": "golden-qgis-coordinate-audit"
+    },
+    "rollback": {
+      "accepted_feature_count": 2,
+      "algorithm_id": "verified_coordinate_audit",
+      "artifact_sha256": "64a252d87cb217fff31a1da2f93c14061d606bd4386b23ac9ea7c2fcaa3cd0fa",
+      "clean_environment_T4": "NOT RUN",
+      "evidence_tier": "T3",
+      "qgis_version": "4.2.3-Belém do Pará",
+      "rejected_feature_count": 3,
+      "schema_version": "1.0",
+      "status": "verified",
+      "workflow_id": "golden-qgis-coordinate-audit"
+    }
+  },
+  "output_sha256": {
+    "audited_points.geojson": "64a252d87cb217fff31a1da2f93c14061d606bd4386b23ac9ea7c2fcaa3cd0fa",
+    "summary.json": "9a4746f0d9c89a8d20de46798b257a4c8bdb153f04ff57fc59c87cc57ae7acb4"
+  },
+  "migration_observations": {
+    "copy_only": true,
+    "compile_count": 5,
+    "preview_found_imports": [
+      "benchmark_coordinate_audit.py",
+      "coordinate_audit.py",
+      "qgis_processing/coordinate_audit_algorithm.py"
+    ],
+    "preview_mutated_files": false,
+    "post_move_drift": "DRIFTED",
+    "post_sync": "NO_DRIFT_FOUND",
+    "original_example_files_unchanged": 10
+  }
+}

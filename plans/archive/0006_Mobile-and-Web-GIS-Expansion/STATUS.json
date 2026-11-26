@@ -1,0 +1,10 @@
+{
+  "id": "0006",
+  "title": "Mobile and Web GIS Expansion",
+  "status": "ARCHIVED_ABSORBED_BY_0007",
+  "revision": 1,
+  "evidence": [],
+  "archived_in_phase": "P08",
+  "superseded_by": "plans/active/0007_Master-Integration",
+  "absorbed_requirements": "r1 tasks T1-T6 absorbed into T1-T42 across P05 (Web GIS) and P06 (Mobile GIS) under 0007_Master-Integration"
+}

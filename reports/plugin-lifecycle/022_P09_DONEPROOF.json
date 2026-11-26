@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P09",
+  "revision": "r1",
+  "overall_status": "partial",
+  "criteria": [
+    {
+      "id": "P09-SIX-CLIENT-ADAPTERS-AND-E39-PARITY",
+      "statement": "Implement and build codex, chatgpt, claude-code, claude-ai, antigravity, and cursor adapters alongside portable with client manifests, marketplaces, rules, stripped ChatGPT hooks, parity reports, bilingual READMEs, and E39 skill parity",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "reports/plugin-lifecycle/021_PLUGIN_P09_SYNC.json + plugin-system/tests/test_p09_platform_adapters.py",
+          "observed": "All 7 targets BUILT (source_digest d5b14e0263d4, 767 canonical files), --check-only UP_TO_DATE, --prepare-release PREPARED_FOR_SUBMISSION, and 13/13 P09 tests OK",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P09-CI-WORKFLOWS-HOOKS-AND-OWNER-CONFIG",
+      "statement": "Create SHA-pinned plugin-validate/build/release workflows, opt-in loop-safe hooks, and outside-Git owner config guards without secrets or ExecutionPolicy Bypass",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests test_ci_workflows_sha_pinned_and_safe_permissions + test_pl_t16 + test_pl_t18 + test_req_pl_026",
+          "observed": "Workflow SHA pins, concurrency, read-only permissions, stale marketplace gate (exit 2), loop idempotency, and external owner-config CLI verified",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P09-LIVE-HOST-CLI-AND-PORTAL-UPLOADS",
+      "statement": "Live installed client smoke tests (codex, claude, agy plugin validate, cursor, live reload, and remote GitHub/portal store sessions)",
+      "status": "not_run",
+      "reason": "Host binaries codex/claude/agy/cursor absent (NOT_INSTALLED), PowerShell ExecutionPolicy=Restricted, and portal/CI remote triggers remain manual/external",
+      "evidence": []
+    }
+  ]
+}

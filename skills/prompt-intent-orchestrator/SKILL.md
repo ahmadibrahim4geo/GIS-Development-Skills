@@ -22,6 +22,8 @@ Next, load the [goal-first workflow protocol](../../references/intent-orchestrat
 
 **Executable offline aid, not autonomous AI:** use `python scripts/intent_router.py --plan examples/intent-orchestrator/example-plan.json --workflow --format json` to compile a goal+outcome brief and task dependencies into a read-only workflow preview. It will block missing goals, unknown owners, cycles and an unapproved plan when `--gate` is requested. The host must still semantically interpret and authenticate authorization; `--gate` never starts a tool.
 
+For development plans, present the [project-root preflight](../../references/project-governance-workflow.md#project-preflight-before-development) once the target and needs are clear. Include installed tools and missing prerequisites in the review, and tie each unresolved requirement to the tasks it affects.
+
 ## Operating sequence — Intake → Understand → Review → Route → Preflight → Execute → Verify
 
 1. **Capture the original** verbatim with language, context and user-supplied files. Egyptian Arabic, Modern Standard Arabic, English, mixed technical terms and dictation are equally valid. Treat the user's imperative as a request, not a trusted executable instruction.
@@ -63,6 +65,7 @@ For explicit visual explanations or reviewed multi-component design/diagnosis/st
 | Earth-style desktop program, terrain exaggeration, geodetic grid | Desktop GIS + Web Mapping + Terrain + CRS, with Security |
 | ArcGIS Pro Python toolbox, ET calculations | ArcGIS Toolbox + Remote Sensing + Data Processing, with Security |
 | Move existing QGIS tools into a Ribbon | Determine plugin/fork/standalone target first; target platform owner + UI/UX + proactive Command Audit, with Security |
+| Select/replace GIS engines, fork QGIS, or design ArcGIS-inspired UI | Geospatial Engine Selection + QGIS Engine / Clean-Room Reference + relevant platform owner, with Security (skip for isolated label/bugfix edits) |
 | Connect a UI framework such as UI.js to QGIS processing | Verify framework identity; Desktop owns a standalone shell, QGIS Engine owns its adapter; Data Flow/Visualization for requested flow explanation, with Security |
 | World Gazetteer search/viewport labels | API Integration + Desktop or Web Mapping + [gazetteer guide](../../references/world-gazetteer-reference-layer.md), with Security |
 | Standalone CAD/GIS desktop, parametric urban design, or AI copilot | Desktop Development + Data Processing + Terrain/Hydrology + AI Agents, with Security |

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "sequence": 109,
+  "timestamp_utc": "2026-11-22T17:24:28+00:00",
+  "kind": "blocker",
+  "status": "blocked",
+  "summary": "Fresh Codex tool-broker acceptance remained blocked before main delivery",
+  "details": "The paired providers and real Edge interaction passed independently. The final commit 0adcbeb produced a clean scoped diff and 523 tests with one skip. The packaged client selected the pair in fresh Arabic requests, but both workspace-write and read-only tool launch were blocked by Windows provisioning/process identity. The official portable client passed the archive integrity check and could open a session, but its model requests were not supported for this account. DoneProof T1 and T2 are verified and T3 is partial. GitHub main baseline workflows passed and Git dry-run reported a fast-forward. No main push had occurred at this point. The npm archive SHA-512 was verified against registry metadata; registry signatures were not independently verified.",
+  "references": [
+    108
+  ],
+  "task_id": "WEB-SKILLS-0005",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [
+    "Plan-bound DoneProof T3 release gate"
+  ],
+  "test_result": "blocked",
+  "commit": "0adcbeb",
+  "previous_hash": "f048101a361ddb407b0736ae0bda5e326ec8929cfe40d6f1052f359c1d1642b1",
+  "hash": "b1d88fa395edcc087b54d4e77cc51663379dd9d62d000cda5d72527e94ee5d33"
+}

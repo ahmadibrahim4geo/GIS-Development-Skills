@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Read-only build/IDE/toolchain candidate discovery for GIS projects.
+"""Discover build tools, with opt-in Windows installation and version queries.
 
-No executable is launched. Presence on PATH is not evidence that SDK workloads,
-licenses, extensions, GUI interaction, or build/run are actually available.
+The default audit does not launch executables. Installed-tool queries are
+optional and do not establish licenses, IDE interaction or build/run results.
 """
 import argparse
 import json
@@ -11,9 +11,17 @@ import shutil
 import sys
 from pathlib import Path
 
+if __package__:
+    from . import native_toolchain, toolchain_advice
+else:
+    import native_toolchain
+    import toolchain_advice
+
 TOOL_COMMANDS = {
     "Git": ("git",),
     "VS Code": ("code", "code.cmd"),
+    "Antigravity IDE": ("antigravity", "antigravity.cmd"),
+    "Rider": ("rider64", "rider", "rider.cmd"),
     "Visual Studio": ("devenv", "devenv.exe"),
     "Visual Studio Installer Discovery": ("vswhere", "vswhere.exe"),
     "dotnet SDK CLI": ("dotnet", "dotnet.exe"),
@@ -62,13 +70,13 @@ def discover_stack(root):
     return sorted(stacks), matches
 
 
-def audit(root, which=shutil.which, expose_paths=False):
+def audit(root, which=shutil.which, expose_paths=False, native=False, *, planned=False, extra_tools=()):
     root = root.resolve()
-    if not root.is_dir():
+    if not root.is_dir() and not (planned and not root.exists() and root.parent.is_dir()):
         raise ValueError("Existing project directory required")
     stacks, matches = discover_stack(root)
-    names = sorted(set(n for stack in stacks for n in STACK_TOOLS[stack]))
-    names += [n for n in ("VS Code", "Visual Studio", "Qt Creator",
+    names = sorted({n for stack in stacks for n in STACK_TOOLS[stack]} | set(extra_tools))
+    names += [n for n in ("VS Code", "Antigravity IDE", "Visual Studio", "Qt Creator", "Rider",
                           "Visual Studio Installer Discovery") if n not in names]
     tools = {}
     for name in names:
@@ -84,7 +92,7 @@ def audit(root, which=shutil.which, expose_paths=False):
         tools[name] = item
     missing = [name for name in sorted(set(n for s in stacks for n in STACK_TOOLS[s]))
                if tools[name]["status"] == "NOT_FOUND_ON_PATH"]
-    return {
+    result = {
         "schema_version": "1.0",
         "platform": sys.platform,
         "project_type_hints": stacks,
@@ -97,6 +105,14 @@ def audit(root, which=shutil.which, expose_paths=False):
         "security": "No programs run. No installer, network or agent skills invoked.",
         "note": "NOT_FOUND_ON_PATH does not prove a tool is not installed; inspect installed Windows apps and SDK registration separately when authorized.",
     }
+    if native:
+        installed = native_toolchain.probe(root, expose_paths)
+        result["native_inventory"] = installed
+        result["sdk_workload_verification"] = (
+            "QUERY_RESULTS_RECORDED" if installed.get("status") != "WINDOWS_NATIVE_PROBE_UNAVAILABLE"
+            else "NOT RUN")
+        result["security"] = "Only fixed installed-tool queries and file metadata; no installer, IDE UI, project code or agent skill invoked."
+    return result
 
 
 def main(argv=None):
@@ -104,10 +120,29 @@ def main(argv=None):
     cli.add_argument("--project", type=Path, required=True)
     cli.add_argument("--include-paths", action="store_true",
                      help="Show executable paths; may reveal local usernames and software locations")
+    cli.add_argument("--native", action="store_true",
+                     help="Query trusted Windows installs and SDK workloads without build or launch")
+    cli.add_argument("--recommend", choices=toolchain_advice.TARGETS,
+                     help="Recommend observed alternatives for an existing project target")
+    cli.add_argument("--capability", choices=toolchain_advice.CAPABILITIES,
+                     help="Requested capability, separate from the editor or project type")
+    cli.add_argument("--target-version", help="Project's required major or major.minor runtime version")
+    cli.add_argument("--prefer", choices=toolchain_advice.TOOLS, help="Prefer an applicable installed tool")
+    cli.add_argument("--license-confirmed", choices=toolchain_advice.TOOLS, action="append", default=[],
+                     help="Caller confirms the installed tool's terms cover this use")
     args = cli.parse_args(argv)
+    if bool(args.recommend) != bool(args.capability):
+        cli.error("--recommend and --capability are required together")
+    if not args.recommend and (args.target_version or args.prefer or args.license_confirmed):
+        cli.error("Version, preference and license declarations require --recommend")
     try:
-        print(json.dumps(audit(args.project, expose_paths=args.include_paths),
-                         indent=2, ensure_ascii=False))
+        report = audit(args.project, expose_paths=args.include_paths, native=args.native or bool(args.recommend))
+        if args.recommend:
+            report["recommendation"] = toolchain_advice.recommend(
+                report, args.recommend, args.capability, target_version=args.target_version,
+                prefer=args.prefer, license_confirmed=args.license_confirmed,
+            )
+        print(json.dumps(report, indent=2, ensure_ascii=False))
         return 0
     except (OSError, ValueError) as exc:
         print(json.dumps({"error": str(exc)}, ensure_ascii=False), file=sys.stderr)

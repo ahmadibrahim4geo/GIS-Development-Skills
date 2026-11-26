@@ -83,6 +83,37 @@ def calc_ndvi(nir: float, red: float) -> float:
     return (nir - red) / denom
 
 
+def landsat8_l2_ndvi(collection, bands, qa_name, qa_value):
+    """NDVI for a paired Landsat 8 L2 SR fixture pixel; None represents a mask.
+
+    Expects aligned, calibrated product inputs identified from the actual scene
+    metadata. It does not infer the collection from acquisition date or filenames.
+    This narrow vegetation fixture masks snow, cloud and shadow; saturation and
+    aerosol screening are separate scene-level requirements.
+    """
+    if type(collection) is not int or collection not in (1, 2):
+        raise ValueError("Landsat 8 Collection 1 or 2 Level-2 SR is required")
+    expected_qa = "pixel_qa" if collection == 1 else "QA_PIXEL"
+    if qa_name != expected_qa or type(qa_value) is not int or not 0 <= qa_value <= 65535:
+        raise ValueError("QA band or encoded value does not match the selected collection")
+    if not isinstance(bands, dict) or not {"B4", "B5"} <= bands.keys():
+        raise ValueError("Landsat 8 requires named B4 red and B5 near-infrared inputs")
+    red, nir = bands["B4"], bands["B5"]
+    minimum, maximum = (-32768, 32767) if collection == 1 else (0, 65535)
+    if any(type(dn) is not int or not minimum <= dn <= maximum for dn in (red, nir)):
+        raise ValueError("Reflectance DN does not fit the declared product encoding")
+    if collection == 1:
+        rejected_bits = 1 | 8 | 16 | 32 | 1024
+        if red in (-9999, 20000) or nir in (-9999, 20000) or qa_value & rejected_bits or (qa_value >> 8) & 3 == 3:
+            return None
+        value = calc_ndvi(nir * 0.0001, red * 0.0001)
+    else:
+        if red == 0 or nir == 0 or qa_value & 0b111111:
+            return None
+        value = calc_ndvi(unpack_landsat_c2_l2_sr(nir), unpack_landsat_c2_l2_sr(red))
+    return value if math.isfinite(value) else None
+
+
 def calc_evi(nir: float, red: float, blue: float, g: float = 2.5, c1: float = 6.0, c2: float = 7.5, l: float = 1.0) -> float:
     """Calculate Enhanced Vegetation Index (Huete et al. 2002).
     

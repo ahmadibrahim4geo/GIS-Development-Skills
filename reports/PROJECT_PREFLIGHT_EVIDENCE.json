@@ -1,0 +1,341 @@
+{
+  "request_id": "GDS-PROJECT-PREFLIGHT-2026-11-21",
+  "revision": "r8",
+  "plan_sha256": "9a47b09a29ad9a32f77ac2baa15ebf9f7ff8ac672a24836373ec66bdcb01503e",
+  "host": "Windows-11-10.0.26300-SP0",
+  "python": "3.14.7",
+  "new_project_preflight": {
+    "mode": "new",
+    "root_exists": false,
+    "target": "wpf",
+    "detected_targets": [],
+    "target_version": "10.0",
+    "project_files": [],
+    "existing_solutions": [],
+    "frameworks": [],
+    "sdk_config": null,
+    "manifest_files": [],
+    "dependencies": [
+      {
+        "ecosystem": "plan",
+        "name": "Mapsui",
+        "declared_version": null,
+        "source": "reviewed plan",
+        "installation_status": "NOT CHECKED"
+      }
+    ],
+    "dependency_count": 1,
+    "visual_studio_components": [],
+    "scan_limits": {},
+    "manifest_findings": [],
+    "work": [
+      {
+        "action": "inspect",
+        "status": "CONTINUE",
+        "required": false,
+        "options": []
+      },
+      {
+        "action": "build",
+        "status": "CANDIDATE",
+        "required": true,
+        "reason": null,
+        "selected_candidate": "dotnet-cli",
+        "options": [
+          {
+            "id": "dotnet-cli",
+            "tool": ".NET SDK CLI",
+            "cost": "NO_COST",
+            "terms": "No .NET SDK license fee",
+            "basis": "SDK_QUERY",
+            "versions": [
+              "10.0.300"
+            ],
+            "status": "CANDIDATE",
+            "checks": [],
+            "official_url": "https://dotnet.microsoft.com/en-us/download/dotnet"
+          }
+        ]
+      },
+      {
+        "action": "visual-design",
+        "status": "VERIFY_REQUIRED",
+        "required": true,
+        "reason": null,
+        "selected_candidate": null,
+        "options": [
+          {
+            "id": "visual-studio",
+            "tool": "Visual Studio",
+            "cost": "CHECK_TERMS",
+            "terms": "Community eligibility or the installed license",
+            "basis": "INSTALLER_METADATA",
+            "versions": [
+              "17.14.37710.0"
+            ],
+            "status": "VERIFY_REQUIRED",
+            "checks": [
+              "Verify the .NET Desktop Development workload and the selected designer.",
+              "Verify that this Visual Studio release supports the project's target framework in the designer.",
+              "Confirm that the installed license covers this use."
+            ],
+            "official_url": "https://visualstudio.microsoft.com/vs/older-downloads/"
+          }
+        ]
+      },
+      {
+        "action": "edit",
+        "status": "OPTIONAL",
+        "required": false,
+        "reason": null,
+        "selected_candidate": null,
+        "options": [
+          {
+            "id": "vscode",
+            "tool": "VS Code",
+            "cost": "NO_COST",
+            "terms": "The editor is free. Check extension terms separately.",
+            "basis": "NOT_OBSERVED",
+            "versions": [],
+            "status": "NOT_OBSERVED",
+            "checks": [],
+            "official_url": "https://code.visualstudio.com/download"
+          },
+          {
+            "id": "rider",
+            "tool": "Rider",
+            "cost": "CHECK_TERMS",
+            "terms": "Free non-commercial license subject to JetBrains terms",
+            "basis": "NOT_OBSERVED",
+            "versions": [],
+            "status": "NOT_OBSERVED",
+            "checks": [],
+            "official_url": "https://www.jetbrains.com/rider/download/"
+          },
+          {
+            "id": "visual-studio",
+            "tool": "Visual Studio",
+            "cost": "CHECK_TERMS",
+            "terms": "Community eligibility or the installed license",
+            "basis": "INSTALLER_METADATA",
+            "versions": [
+              "17.14.37710.0"
+            ],
+            "status": "VERIFY_REQUIRED",
+            "checks": [
+              "Confirm that the installed license covers this use."
+            ],
+            "official_url": "https://visualstudio.microsoft.com/vs/older-downloads/"
+          },
+          {
+            "id": "antigravity",
+            "tool": "Antigravity IDE",
+            "cost": "CHECK_TERMS",
+            "terms": "Check the installed product and any service or extension terms",
+            "basis": "FILE_METADATA",
+            "versions": [
+              "2.34.0.0",
+              "1.107.0.0"
+            ],
+            "status": "VERIFY_REQUIRED",
+            "checks": [
+              "Confirm that the installed license covers this use."
+            ],
+            "official_url": "https://antigravity.google/"
+          }
+        ]
+      }
+    ],
+    "tasks_on_hold": [
+      "visual-design"
+    ],
+    "continue_independent_work": true,
+    "existing_solution_paths": [],
+    "installs_or_downloads": "NOT RUN",
+    "next_action": "If a required tool remains unavailable, offer the compatible path or ask for an installation decision."
+  },
+  "existing_project_preflight": {
+    "mode": "existing",
+    "root_exists": true,
+    "target": "dotnet",
+    "detected_targets": [
+      "dotnet"
+    ],
+    "target_version": "10.0",
+    "project_files": [
+      "ExistingLib/ExistingLib.csproj"
+    ],
+    "existing_solutions": [
+      "Existing.sln"
+    ],
+    "frameworks": [
+      "net10.0"
+    ],
+    "sdk_config": null,
+    "manifest_files": [
+      "ExistingLib/ExistingLib.csproj"
+    ],
+    "dependencies": [],
+    "dependency_count": 0,
+    "visual_studio_components": [],
+    "scan_limits": {
+      "bytes_read": 277,
+      "files_considered": 3,
+      "skipped_files": 0,
+      "unreadable_directories": 0,
+      "budget_reached": false,
+      "walk_depth": 10
+    },
+    "manifest_findings": [],
+    "work": [
+      {
+        "action": "inspect",
+        "status": "CONTINUE",
+        "required": false,
+        "options": []
+      },
+      {
+        "action": "build",
+        "status": "CANDIDATE",
+        "required": true,
+        "reason": null,
+        "selected_candidate": "dotnet-cli",
+        "options": [
+          {
+            "id": "dotnet-cli",
+            "tool": ".NET SDK CLI",
+            "cost": "NO_COST",
+            "terms": "No .NET SDK license fee",
+            "basis": "SDK_QUERY",
+            "versions": [
+              "10.0.300"
+            ],
+            "status": "CANDIDATE",
+            "checks": [],
+            "official_url": "https://dotnet.microsoft.com/en-us/download/dotnet"
+          }
+        ]
+      },
+      {
+        "action": "edit",
+        "status": "OPTIONAL",
+        "required": false,
+        "reason": null,
+        "selected_candidate": null,
+        "options": [
+          {
+            "id": "vscode",
+            "tool": "VS Code",
+            "cost": "NO_COST",
+            "terms": "The editor is free. Check extension terms separately.",
+            "basis": "NOT_OBSERVED",
+            "versions": [],
+            "status": "NOT_OBSERVED",
+            "checks": [],
+            "official_url": "https://code.visualstudio.com/download"
+          },
+          {
+            "id": "rider",
+            "tool": "Rider",
+            "cost": "CHECK_TERMS",
+            "terms": "Free non-commercial license subject to JetBrains terms",
+            "basis": "NOT_OBSERVED",
+            "versions": [],
+            "status": "NOT_OBSERVED",
+            "checks": [],
+            "official_url": "https://www.jetbrains.com/rider/download/"
+          },
+          {
+            "id": "visual-studio",
+            "tool": "Visual Studio",
+            "cost": "CHECK_TERMS",
+            "terms": "Community eligibility or the installed license",
+            "basis": "INSTALLER_METADATA",
+            "versions": [
+              "17.14.37710.0"
+            ],
+            "status": "VERIFY_REQUIRED",
+            "checks": [
+              "Confirm that the installed license covers this use."
+            ],
+            "official_url": "https://visualstudio.microsoft.com/vs/older-downloads/"
+          },
+          {
+            "id": "antigravity",
+            "tool": "Antigravity IDE",
+            "cost": "CHECK_TERMS",
+            "terms": "Check the installed product and any service or extension terms",
+            "basis": "FILE_METADATA",
+            "versions": [
+              "2.34.0.0",
+              "1.107.0.0"
+            ],
+            "status": "VERIFY_REQUIRED",
+            "checks": [
+              "Confirm that the installed license covers this use."
+            ],
+            "official_url": "https://antigravity.google/"
+          }
+        ]
+      }
+    ],
+    "tasks_on_hold": [],
+    "continue_independent_work": true,
+    "existing_solution_paths": [
+      {
+        "tool": "dotnet-cli",
+        "purpose": "Build the existing compatible solution or project",
+        "source": "https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build",
+        "availability": "CANDIDATE",
+        "test": "NOT RUN"
+      }
+    ],
+    "installs_or_downloads": "NOT RUN",
+    "next_action": "If a required tool remains unavailable, offer the compatible path or ask for an installation decision."
+  },
+  "existing_solution_build": {
+    "status": "PASS",
+    "solution": "Existing.sln",
+    "framework": "net10.0",
+    "assembly": "193E530416A2550DFD5DEE1D4A88A321C406E17750E7A87C2B16D1CD1E220A34",
+    "source_unchanged": true
+  },
+  "missing_ide_case": {
+    "basis": "offline fixture",
+    "related_action": "required-tool:visual-studio",
+    "action_status": "BLOCKED",
+    "build_candidate": "dotnet-cli",
+    "rider_real_open_test": "NOT RUN"
+  },
+  "qa": {
+    "cases": 506,
+    "passed": 505,
+    "skipped_windows_symlink": 1,
+    "exit_codes": {
+      "catalog": "0",
+      "api": "0",
+      "data": "0",
+      "skills": "0",
+      "manifest": "0",
+      "flow": "0",
+      "security": "0",
+      "suite": "0"
+    },
+    "archive_check": {
+      "schema_version": "1.0",
+      "bundle_name": "gis-development-suite",
+      "status": "PASS",
+      "file_count": 435,
+      "missing_files": [],
+      "unexpected_files": [],
+      "hash_or_size_mismatches": [],
+      "required_paths_missing": [],
+      "broken_local_markdown_links": [],
+      "native_gis_execution": "NOT_RUN",
+      "agent_client_installation": "NOT_RUN"
+    },
+    "unpacked_preflight": "PASS"
+  },
+  "execution_mode": "SEQUENTIAL_ROLE_SIMULATION",
+  "review_mode": "SAME_AGENT_REVIEW"
+}

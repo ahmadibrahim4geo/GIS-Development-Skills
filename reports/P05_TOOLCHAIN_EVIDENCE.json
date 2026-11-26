@@ -1,0 +1,248 @@
+{
+  "phase": "P05",
+  "revision": "r4",
+  "native_discovery": {
+    "schema_version": "1.0",
+    "platform": "win32",
+    "project_type_hints": [
+      "dotnet"
+    ],
+    "matched_files": {
+      "dotnet": [
+        "ToolchainSmoke.csproj"
+      ]
+    },
+    "tool_candidates": {
+      "Git": {
+        "status": "FOUND_ON_PATH_NOT_EXECUTED",
+        "selected_command": "git"
+      },
+      "MSBuild": {
+        "status": "NOT_FOUND_ON_PATH",
+        "selected_command": null
+      },
+      "dotnet SDK CLI": {
+        "status": "FOUND_ON_PATH_NOT_EXECUTED",
+        "selected_command": "dotnet"
+      },
+      "VS Code": {
+        "status": "NOT_FOUND_ON_PATH",
+        "selected_command": null
+      },
+      "Visual Studio": {
+        "status": "NOT_FOUND_ON_PATH",
+        "selected_command": null
+      },
+      "Qt Creator": {
+        "status": "NOT_FOUND_ON_PATH",
+        "selected_command": null
+      },
+      "Visual Studio Installer Discovery": {
+        "status": "NOT_FOUND_ON_PATH",
+        "selected_command": null
+      }
+    },
+    "missing_from_path": [
+      "MSBuild"
+    ],
+    "native_ide_gui_test": "NOT RUN",
+    "sdk_workload_verification": "QUERY_RESULTS_RECORDED",
+    "build_test": "NOT RUN",
+    "security": "Only fixed installed-tool queries and file metadata; no installer, IDE UI, project code or agent skill invoked.",
+    "note": "NOT_FOUND_ON_PATH does not prove a tool is not installed; inspect installed Windows apps and SDK registration separately when authorized.",
+    "native_inventory": {
+      "platform": "Windows",
+      "release": "11",
+      "machine": "AMD64",
+      "python": {
+        "version": "3.14.7",
+        "virtualenv": false,
+        "conda_prefix_metadata": false
+      },
+      "dotnet": {
+        "status": "OBSERVED",
+        "sdk_versions": [
+          "10.0.300"
+        ],
+        "runtimes": [
+          {
+            "name": "Microsoft.AspNetCore.App",
+            "version": "3.1.10"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App",
+            "version": "8.0.0"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App",
+            "version": "10.0.0"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App",
+            "version": "10.0.8"
+          },
+          {
+            "name": "Microsoft.NETCore.App",
+            "version": "3.1.10"
+          },
+          {
+            "name": "Microsoft.NETCore.App",
+            "version": "8.0.0"
+          },
+          {
+            "name": "Microsoft.NETCore.App",
+            "version": "8.0.17"
+          },
+          {
+            "name": "Microsoft.NETCore.App",
+            "version": "10.0.0"
+          },
+          {
+            "name": "Microsoft.NETCore.App",
+            "version": "10.0.8"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App",
+            "version": "8.0.0"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App",
+            "version": "8.0.17"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App",
+            "version": "10.0.0"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App",
+            "version": "10.0.8"
+          }
+        ],
+        "workloads_status": "QUERY_UNAVAILABLE",
+        "workloads": []
+      },
+      "visual_studio": {
+        "status": "OBSERVED",
+        "instances": [
+          {
+            "product": "Visual Studio Community 2022",
+            "version": "17.14.37710.0",
+            "complete": true,
+            "launchable_reported": true,
+            "workloads": {
+              "Microsoft.VisualStudio.Workload.ManagedDesktop": false,
+              "Microsoft.VisualStudio.Workload.ManagedDesktopBuildTools": false,
+              "Microsoft.VisualStudio.Workload.NativeDesktop": false,
+              "Microsoft.VisualStudio.Workload.VCTools": false
+            }
+          }
+        ]
+      },
+      "node": {
+        "version": "v26.7.0"
+      },
+      "installer_file_versions": [
+        {
+          "product": "ArcGIS Pro",
+          "version": "3.6.0.59527",
+          "status": "VERSION_RESOURCE_READ"
+        },
+        {
+          "product": "QGIS",
+          "version": "4.2.3.0",
+          "status": "VERSION_RESOURCE_READ"
+        },
+        {
+          "product": "Qt runtime bundled with QGIS",
+          "version": "6.11.1.0",
+          "status": "VERSION_RESOURCE_READ"
+        },
+        {
+          "product": "Python bundled with QGIS",
+          "version": "3.12.15150.1013",
+          "status": "VERSION_RESOURCE_READ"
+        }
+      ],
+      "qt_sdk_candidates": [],
+      "arcgis_conda_python": [
+        {
+          "environment": "arcgispro-py3",
+          "version": "3.13.7"
+        }
+      ],
+      "project_virtualenvs": [],
+      "license_or_host_execution": "NOT RUN"
+    }
+  },
+  "supplemental_dotnet_workloads": {
+    "status": "OBSERVED",
+    "sdk": "10.0.300",
+    "workloads": [],
+    "observation": "Sandbox denied Service Control Manager read; same read-only list succeeded in host-approved scope."
+  },
+  "wpf_acceptance": {
+    "status": "PASS",
+    "sdk": "10.0.300",
+    "framework": "net10.0-windows",
+    "stages": {
+      "sdk": 0,
+      "template": 0,
+      "restore": 0,
+      "build": 0,
+      "launch": 0
+    },
+    "window_readback": {
+      "NativeWindowLoaded": true,
+      "AutomationPattern": "Invoke",
+      "Clicks": 1,
+      "Raster": {
+        "Crs": "EPSG:4326",
+        "Rows": 2,
+        "Columns": 2,
+        "NoData": -9999,
+        "ValidCells": 3
+      },
+      "Label": "EPSG:4326 | 2 x 2 | 3 valid cells",
+      "Runtime": ".NET 10.0.8",
+      "Architecture": "X64"
+    },
+    "assembly_sha256": "346af726503d576a763cef24198372e5915ee85e953374c10afdc766c0d6e24e",
+    "input_sha256": "3060649ae057da42ada8b4035775947c43a722ca627e64540dafc608c4848efb"
+  },
+  "scope_limits": {
+    "visual_studio_gui": "NOT RUN",
+    "qt_sdk_build": "NOT RUN",
+    "arcgis_license": "NOT RUN",
+    "cross_process_wpf_ui": "NOT RUN",
+    "clean_install": "NOT RUN"
+  },
+  "wpf_acceptance_rerun": {
+    "status": "PASS",
+    "sdk": "10.0.300",
+    "framework": "net10.0-windows",
+    "stages": {
+      "sdk": 0,
+      "template": 0,
+      "restore": 0,
+      "build": 0,
+      "launch": 0
+    },
+    "window_readback": {
+      "NativeWindowLoaded": true,
+      "AutomationPattern": "Invoke",
+      "Clicks": 1,
+      "Raster": {
+        "Crs": "EPSG:4326",
+        "Rows": 2,
+        "Columns": 2,
+        "NoData": -9999,
+        "ValidCells": 3
+      },
+      "Label": "EPSG:4326 | 2 x 2 | 3 valid cells",
+      "Runtime": ".NET 10.0.8",
+      "Architecture": "X64"
+    },
+    "assembly_sha256": "2c89c86c8bd160391f1ddb52cd6233d9ded6137fa85e5d1d548eda1791e69e2e",
+    "input_sha256": "3060649ae057da42ada8b4035775947c43a722ca627e64540dafc608c4848efb"
+  }
+}

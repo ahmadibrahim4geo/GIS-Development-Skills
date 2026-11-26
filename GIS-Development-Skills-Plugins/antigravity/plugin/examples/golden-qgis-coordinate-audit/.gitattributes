@@ -1,0 +1,4 @@
+# The fixture checksum and golden artifact comparisons use the committed LF bytes.
+fixtures/points.geojson text eol=lf
+expected/*.geojson text eol=lf
+expected/*.json text eol=lf

@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-MASTER-INTEGRATION-0007",
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P11",
+  "revision": "r1",
+  "overall_status": "partial",
+  "criteria": [
+    {
+      "id": "P11-SEVEN-PLATFORM-PLUGIN-LIFECYCLE",
+      "statement": "Build and validate all 7 deterministic plugin packages (portable, codex, chatgpt, claude-code, claude-ai, antigravity, cursor), marketplaces, Cursor rules, CI workflows, and external owner config",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "reports/plugin-lifecycle/025_PLUGIN_P11_FINAL.json + pipeline --check-only --json + plugin-system/tests",
+          "observed": "All 7 targets BUILT (source_digest 37c8c4df7014, 768 bundle files), --check-only UP_TO_DATE (exit 0), 7/7 ZIPs clean, and all plugin tests pass",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P11-DOCS-MANIFEST-AND-OFFLINE-SUITES",
+      "statement": "Verify bilingual documentation (README, README.ar, CHANGELOG, PROJECT_STRUCTURE, CURRENT_HANDOFF, Web/Mobile guides), repository manifest counters (36/461/53/26), and all offline test suites + CLI validators",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "reports/plugin-lifecycle/023_QA_REPORT.md + 597-test Python run + 6/6 Node tests + 13 CLI validators",
+          "observed": "36/461/53/26 manifest synced, 6/6 Node OK, 13/13 CLI validators EXIT 0, 595/597 Python OK (only pre-existing untracked dist/user-testing link fails + 1 Win symlink skip)",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P11-NATIVE-HOST-BROWSER-DEVICE-AND-CLI-EXECUTION",
+      "statement": "Execute native T2-T4 GIS engines (QGIS/GDAL/ArcGIS), Chromium Playwright DOM checks, Android/iOS physical/emulator builds, and live client CLI installations (codex/claude/agy/cursor)",
+      "status": "not_run",
+      "reason": "Native GIS engines, Playwright Chromium, Android/iOS SDKs, and agent CLIs codex/claude/agy/cursor are absent on this host workstation",
+      "evidence": []
+    }
+  ]
+}

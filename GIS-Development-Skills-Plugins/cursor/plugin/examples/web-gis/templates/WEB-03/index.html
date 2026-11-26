@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WEB-03 Spatial Editing Studio (Undo/Redo, Topology & Export)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1.5rem; background: #0b1320; color: #e2e8f0; }
+    .toolbar { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    button { padding: .45rem .8rem; border-radius: .35rem; border: 1px solid #334155; background: #1e293b; color: #f8fafc; cursor: pointer; }
+    pre { background: #020617; padding: 1rem; border-radius: .4rem; overflow-x: auto; max-height: 22rem; }
+  </style>
+</head>
+<body>
+  <h1>WEB-03 Spatial Editing Studio (`W03`)</h1>
+  <div class="toolbar">
+    <button id="addBtn" type="button">Add Control Point</button>
+    <button id="undoBtn" type="button">Undo</button>
+    <button id="redoBtn" type="button">Redo</button>
+    <button id="exportBtn" type="button">Export GeoJSON</button>
+  </div>
+  <div id="status" role="status">Ready</div>
+  <pre id="preview"></pre>
+  <script type="module">
+    import { SpatialEditorStore } from "../../shared/spatial-core.mjs";
+
+    const store = new SpatialEditorStore({
+      type: "FeatureCollection",
+      name: "web03_edit_session",
+      features: [
+        {
+          type: "Feature",
+          id: "seed-01",
+          properties: { name_ar: "نقطة بداية", name_en: "Seed Point" },
+          geometry: { type: "Point", coordinates: [31.2357, 30.0444] },
+        },
+      ],
+    });
+
+    const preview = document.getElementById("preview");
+    const status = document.getElementById("status");
+    const render = () => { preview.textContent = store.exportGeoJson(); };
+
+    let counter = 2;
+    document.getElementById("addBtn").addEventListener("click", () => {
+      store.createFeature({
+        type: "Feature",
+        id: `pt-edit-${counter++}`,
+        properties: { name_ar: "نقطة مضافة", name_en: "Added Point" },
+        geometry: { type: "Point", coordinates: [31.24, 30.05] },
+      });
+      status.textContent = "Feature added atomically";
+      render();
+    });
+    document.getElementById("undoBtn").addEventListener("click", () => {
+      store.undo();
+      status.textContent = "Undo applied";
+      render();
+    });
+    document.getElementById("redoBtn").addEventListener("click", () => {
+      store.redo();
+      status.textContent = "Redo applied";
+      render();
+    });
+    document.getElementById("exportBtn").addEventListener("click", () => {
+      const blob = new Blob([store.exportGeoJson()], { type: "application/geo+json;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "web03-export.geojson";
+      link.click();
+      status.textContent = "GeoJSON downloaded for independent OGR/Python readback";
+    });
+    render();
+  </script>
+</body>
+</html>

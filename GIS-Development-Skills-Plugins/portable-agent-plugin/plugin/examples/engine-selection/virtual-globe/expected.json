@@ -1,0 +1,15 @@
+{
+  "separates_2d_and_3d": true,
+  "blocks_ion_without_key": true,
+  "canonical_state_keys": [
+    "mode",
+    "view_crs",
+    "center_epsg4326",
+    "zoom_or_alt_m",
+    "heading",
+    "pitch",
+    "visible_layer_ids",
+    "selected_ids",
+    "time_iso"
+  ]
+}

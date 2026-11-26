@@ -1,0 +1,148 @@
+{
+  "phase": "P06",
+  "revision": "r4",
+  "source_review": {
+    "commit": "e7e4587ad7a6e51c085ad6360a10ede0cee7ab6e",
+    "capability": "github.repository.read",
+    "effects": [
+      "read"
+    ],
+    "tool_ids": [
+      "github_fetch_commit",
+      "github_fetch_file"
+    ],
+    "command_id": "P06-public-source-metadata",
+    "trace_id": "P06-WINAPP-UIA",
+    "sources": [
+      {
+        "kind": "skill",
+        "length": 37292,
+        "lines": 493,
+        "sha": "2bf4b21fa4fd22179c24f57dae2a5a76f2eb87e9",
+        "url": "https://github.com/microsoft/winappCli/blob/e7e4587ad7a6e51c085ad6360a10ede0cee7ab6e/plugins/winapp/skills/winapp-ui-automation/SKILL.md",
+        "signals": {
+          "desktopInput": true,
+          "screenshots": true,
+          "cli": true,
+          "mayWait": true
+        }
+      },
+      {
+        "kind": "license",
+        "length": 1158,
+        "lines": 22,
+        "sha": "25ef6e9607f14dfaa543181109d05134c09a57cd",
+        "url": "https://github.com/microsoft/winappCli/blob/e7e4587ad7a6e51c085ad6360a10ede0cee7ab6e/LICENSE",
+        "signals": {
+          "isMit": true,
+          "copyright": true,
+          "notice": true
+        }
+      }
+    ]
+  },
+  "candidate_registration": {
+    "id": "0001",
+    "name": "winapp-ui-automation",
+    "source": "https://github.com/microsoft/winappCli/blob/e7e4587ad7a6e51c085ad6360a10ede0cee7ab6e/plugins/winapp/skills/winapp-ui-automation/SKILL.md",
+    "revision": "e7e4587ad7a6e51c085ad6360a10ede0cee7ab6e",
+    "license": "MIT",
+    "license_evidence": "https://github.com/microsoft/winappCli/blob/e7e4587ad7a6e51c085ad6360a10ede0cee7ab6e/LICENSE",
+    "declared_effects": [
+      "desktop-input",
+      "execute",
+      "read",
+      "write"
+    ],
+    "dependencies": [
+      "Microsoft WinApp CLI; compatible released version not verified"
+    ],
+    "purpose": "Evaluate an external cross-process Windows UI Automation adapter for the P05 WPF acceptance gap.",
+    "status": "CANDIDATE_UNREVIEWED",
+    "path": "New Skill/candidates/0001_winapp-ui-automation",
+    "security_review": "NOT RUN",
+    "runtime_test": "NOT RUN",
+    "active": false
+  },
+  "synthetic_outcomes": {
+    "benign": {
+      "id": "0001",
+      "scanner": "stdlib-quarantine",
+      "scanner_version": "1.0",
+      "scope": "ZIP metadata and bounded UTF-8 text inspection with the repository rules",
+      "snapshot_sha256": "0a671d8877eebfa798dfac29f755c086c88641ab9b998832f630e2928219df49",
+      "source": "https://example.invalid/benign",
+      "revision": "1111111111111111111111111111111111111111",
+      "license_evidence": "https://example.invalid/license",
+      "metadata_gaps": [],
+      "findings": [],
+      "archive": {
+        "status": "pass",
+        "archive": "benign.zip",
+        "members_checked": 2,
+        "expanded_bytes_observed": 1231,
+        "issues": [],
+        "limits": {
+          "max_files": 64,
+          "max_bytes": 2097152,
+          "max_member_bytes": 65536,
+          "max_ratio": 200
+        },
+        "note": "Metadata/path screening only; payloads not parsed or extracted."
+      },
+      "status": "READY_FOR_MANUAL_REVIEW",
+      "active": false,
+      "candidate_execution": "NOT RUN",
+      "external_scanners": "NOT RUN",
+      "review": "New Skill/candidates/0001_Synthetic-benign/reviews/044720cdca0eddc0ee145c7f2338a9a1a8acede5905629325acf44f13d373895.json"
+    },
+    "negative": {
+      "id": "0002",
+      "scanner": "stdlib-quarantine",
+      "scanner_version": "1.0",
+      "scope": "ZIP metadata and bounded UTF-8 text inspection with the repository rules",
+      "snapshot_sha256": "1c5648b63be931b5c5ce15404bbb0951f5a694a4f7794c5905125c89c7726b76",
+      "source": "https://example.invalid/negative",
+      "revision": "1111111111111111111111111111111111111111",
+      "license_evidence": "https://example.invalid/license",
+      "metadata_gaps": [],
+      "findings": [
+        {
+          "code": "agent-instruction-override",
+          "severity": "medium",
+          "member": "synthetic-review/SKILL.md",
+          "line": 5
+        },
+        {
+          "code": "executable-or-hook",
+          "severity": "high",
+          "member": "synthetic-review/hooks/inert.ps1",
+          "line": 0
+        }
+      ],
+      "archive": {
+        "status": "pass",
+        "archive": "negative.zip",
+        "members_checked": 3,
+        "expanded_bytes_observed": 1278,
+        "issues": [],
+        "limits": {
+          "max_files": 64,
+          "max_bytes": 2097152,
+          "max_member_bytes": 65536,
+          "max_ratio": 200
+        },
+        "note": "Metadata/path screening only; payloads not parsed or extracted."
+      },
+      "status": "REJECTED_ISOLATED",
+      "active": false,
+      "candidate_execution": "NOT RUN",
+      "external_scanners": "NOT RUN",
+      "review": "New Skill/candidates/0002_Synthetic-negative/reviews/0ff110102448778bf703c70f65692c2259cec84888d40fe85ad586b5b078bd66.json"
+    }
+  },
+  "candidate_payload_extracted": false,
+  "candidate_enabled": false,
+  "independent_external_scanners": "NOT RUN",
+  "external_skill_executed": "NOT RUN"
+}

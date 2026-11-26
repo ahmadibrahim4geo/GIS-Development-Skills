@@ -1,0 +1,19 @@
+{
+  "brand": "GIS Development Skills",
+  "tagline": "The Heart of Geospatial Innovation",
+  "credit": "By Ahmed Ibrahim",
+  "palette": {
+    "navy": "#0B2A44",
+    "teal": "#67B5A6",
+    "cyan_for_banner_only": "#00B8E6",
+    "white": "#FFFFFF",
+    "mist": "#EAF6FA",
+    "text_muted": "#657581"
+  },
+  "primary_banner_px": [
+    2400,
+    400
+  ],
+  "banner_ratio": "6:1",
+  "version": "3.1"
+}

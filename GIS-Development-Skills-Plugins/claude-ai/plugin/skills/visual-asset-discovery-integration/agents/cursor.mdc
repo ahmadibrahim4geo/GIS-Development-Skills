@@ -1,0 +1,37 @@
+---
+description: Discover, verify, prepare, and integrate visual assets (logos, thumbnails, photos, previews) with license compliance and local variants
+globs: **/*
+alwaysApply: false
+---
+
+# Visual Asset Discovery & Integration Rule (Cursor Agent)
+
+Apply this rule whenever working with user interfaces, web/mobile/desktop views, or documentation requiring images, icons, logos, thumbnails, or previews.
+
+## Core Directives
+
+1. **Project-First Discovery:**
+   - Inspect existing images embedded or linked in the project's source website, repository, or documentation first.
+   - If a suitable reusable image exists locally or on the official source site, inspect its license and use it directly before initiating external searches.
+
+2. **Strict Role & Representation Boundary:**
+   - **Official Logo (`role: logo`, `representation: brand-mark`):**
+     - Sourced only from official/authoritative brand assets.
+     - Never generate an AI replacement or recolor/crop official lettering.
+     - Preserve transparent alpha, aspect ratio, and padding (`fit: contain`).
+   - **Scientific / Factual Preview (`role: scientific-preview`, `representation: actual-preview`):**
+     - Must depict the real dataset/model with an explicit `data_reference`.
+     - Never substitute with generic clipart or unrelated stock photos.
+   - **Representative Illustration / Photo (`role: thumbnail` / `photo`):**
+     - Allowed to be illustrative or photographic; must declare true representation (`photograph`, `illustrative`, or `generated`).
+
+3. **License & Provenance Verification:**
+   - Verify creator, source page, and license terms before downloading.
+   - Reject unverified, ambiguous ("unknown"), or restrictive assets.
+   - Retain author attribution in project credit manifests (e.g. `assets/CREDITS.md` or `asset.json`).
+
+4. **Zero-Hotlinking & Local Preparation:**
+   - Never leave hotlinked third-party image URLs in production code.
+   - Save assets locally into the project directory.
+   - Generate required density variants (1x, 2x for Retina) with EXIF metadata stripped.
+   - Emit an `asset.json` manifest recording SHA-256 hashes and dimensions.

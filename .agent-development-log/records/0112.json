@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "sequence": 112,
+  "timestamp_utc": "2026-11-22T21:23:48+00:00",
+  "kind": "plan",
+  "status": "proposed",
+  "summary": "Proposed r1 Mobile GIS, Web GIS and progressive web app coverage",
+  "details": "Audited software catalogs and examples in the 8747283 worktree and read official toolkit, licensing and service references. Draft 0006 proposes the existing mobile and web mapping specialists, a no-key local-data web example, an Android-first native example, optional PWA coverage, vendor terms and independent device/browser gates. Paired Modern Web Guidance and UI/UX Pro Max returned READY and informed accessibility criteria. Three pinned external skill candidates and exact upstream license files were checked. No candidate execution or native mobile/PWA acceptance took place. The router accepted the draft and the approval gate remains closed.",
+  "references": [
+    111
+  ],
+  "task_id": "GIS-WEB-MOBILE-0006",
+  "plan_revision": "r1",
+  "changed_files": [
+    "plans/active/0006_Mobile-and-Web-GIS-Expansion/PLAN.md",
+    "plans/active/0006_Mobile-and-Web-GIS-Expansion/PLAN.json",
+    "plans/active/0006_Mobile-and-Web-GIS-Expansion/SOURCES.md",
+    "New Skill/SKILLS_REGISTRY.json"
+  ],
+  "tests": [
+    "Plan compiler, draft gate, local references and candidate readback"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "0ded7542c0cb4d7fdb35576b7a7e6547dc18059441809bc9ee7be21ffd3afa31",
+  "hash": "894aeeb4c43411fe5c3475f2a7e84efde9ec9b5b3de7fc6e4c3a1bcec6416207"
+}

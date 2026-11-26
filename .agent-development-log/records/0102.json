@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "sequence": 102,
+  "timestamp_utc": "2026-11-21T05:21:05+00:00",
+  "kind": "decision",
+  "status": "proposed",
+  "summary": "Recorded exact r11 publication and archive scopes for user review",
+  "details": "User selected review files before implementation. Enumerated 98 candidate paths, 96 existing plus 2 planned image files, and listed exact brand source mappings and the 32-file 20-Nov local archive move. Original 94-file Brand Kit remains in place. Reviewed observed remote main and local separation boundaries. No production source, archive contents or remote ref was changed.",
+  "references": [
+    101
+  ],
+  "task_id": "BRAND-MAIN-DELIVERY",
+  "plan_revision": "r11",
+  "changed_files": [
+    "plans/active/0004_Brand-Main-Delivery/FILE_SCOPE.ar.md"
+  ],
+  "tests": [
+    "Confirmed all 98 reviewed candidate keys are unique and checked the 96 existing paths"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "739da2dfad9857506166f658cce21dcfd017ec9b4d4d3afabbd5928f56d5a0ce",
+  "hash": "e27b243d5d01858b95b453151099324c6c871587ea9ef16a3f38508e85f601dc"
+}

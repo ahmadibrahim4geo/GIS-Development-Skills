@@ -206,6 +206,22 @@ class GISCodeDiscoveryTests(unittest.TestCase):
         self.assertEqual(res["matching_recipes"], [])
         self.assertEqual(res["matching_sources"], [])
 
+    def test_observed_pro_release_selects_a_matching_reviewed_reference(self):
+        query = "Create ArcGIS Pro SDK ribbon button and dockpane"
+        inventory = {"native_inventory": {"installer_file_versions": [
+            {"product": "ArcGIS Pro", "version": "3.6.0.59527", "status": "VERSION_RESOURCE_READ"}
+        ]}}
+        result = cd.search_knowledge_base(query, platform="arcgis-pro-sdk", native_inventory=inventory)
+        sources = {entry["id"]: entry for entry in result["matching_sources"]}
+        samples = sources["esri-arcgis-pro-sdk-community-samples"]
+        self.assertEqual(result["observed_arcgis_pro_version"], "3.6.0.59527")
+        self.assertEqual(samples["reviewed_revision"]["host_release"], "3.6")
+        self.assertEqual(samples["runtime_status"], "NOT RUN")
+        self.assertNotIn("esri-arcgis-pro-sdk-snippets", sources)
+        self.assertIn("esri-arcgis-pro-sdk-snippets",
+                      {entry["id"] for entry in result["research_sources"]})
+        self.assertEqual(result["matching_recipes"], [])
+
     def test_19_conflicting_hosts_need_an_explicit_target(self):
         query = "Compare QGIS processing algorithm with ArcGIS Pro SDK button"
         unresolved = cd.search_knowledge_base(query)

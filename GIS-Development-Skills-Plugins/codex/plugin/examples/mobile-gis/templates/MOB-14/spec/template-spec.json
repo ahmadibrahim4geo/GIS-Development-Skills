@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "template_id": "MOB-14",
+  "product_class": "M08",
+  "title": "Mobile LiDAR/AR GIS",
+  "target_platforms": [
+    "android",
+    "ios"
+  ],
+  "recommended_stack": "ARCore Geospatial / ARKit ARGeoAnchor + Lat/Lon/H -> ENU transform error check",
+  "vertical_slice_included": false,
+  "shared_fixture": "../../../../../tests/shared-gis-fixtures/geojson_epsg4326_bilingual.geojson",
+  "qa_cases": [
+    "GIS-015",
+    "MOB-QA-04",
+    "MOB-QA-16"
+  ],
+  "acceptance_ids": [
+    "MOB-TPL-14"
+  ],
+  "status": {
+    "static_spec": "VERIFIED_T0",
+    "t1_sqlite_sync_contract": "T0_CONTRACT_SPECIFIED",
+    "android_native_build": "NOT RUN (Android SDK / Gradle / emulator unavailable on host)",
+    "ios_native_build": "NOT RUN (Windows workstation; macOS + Xcode required for Swift/codesign/XCUITest)",
+    "physical_device_gnss_hardware": "NOT RUN (physical mobile handset / BLE RTK hardware absent)"
+  }
+}

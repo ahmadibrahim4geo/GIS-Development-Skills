@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "template_id": "WEB-18",
+  "product_class": "W08",
+  "title": "Asset Management PWA",
+  "recommended_stack": "React/Vue + PostGIS + IndexedDB outbox + conflict resolution & export readback",
+  "runnable_vertical_slice": false,
+  "shared_fixture": "../../../../../tests/shared-gis-fixtures/geojson_epsg4326_bilingual.geojson",
+  "qa_cases": [
+    "GIS-004",
+    "GIS-007",
+    "GIS-012",
+    "WEB-QA-05",
+    "WEB-QA-06",
+    "WEB-QA-10"
+  ],
+  "acceptance_ids": [
+    "WEB-TPL-18"
+  ],
+  "status": {
+    "static_spec": "VERIFIED_T0",
+    "js_node_contract": "SHARED_CORE_COVERED",
+    "headless_browser_e2e": "NOT RUN (Playwright/Chromium binary not installed on workstation)"
+  }
+}

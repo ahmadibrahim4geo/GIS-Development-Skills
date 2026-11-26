@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "sequence": 101,
+  "timestamp_utc": "2026-11-21T05:18:44+00:00",
+  "kind": "plan",
+  "status": "proposed",
+  "summary": "Prepared the r11 brand refresh, local archive and direct main delivery scope",
+  "details": "Inspected the supplied Brand Kit preview and files, live landing/README references, local Git changes and GitHub main. Current main is 42de4a2. User wants a direct main delivery, a broader GIS homepage, and the original kit kept in place. Requested confirmation of the exact public/private and archive boundaries before applying changes under AGENTS.md.",
+  "references": [
+    100
+  ],
+  "task_id": "BRAND-MAIN-DELIVERY",
+  "plan_revision": "r11",
+  "changed_files": [
+    "plans/active/0004_Brand-Main-Delivery/PLAN.json"
+  ],
+  "tests": [
+    "Intent workflow preview validated as AWAITING_REVIEW. GitHub connector read remote main."
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "952e7da92671173a98d7ee8aae3ec332333fc359345784c4dddf9112e0c86567",
+  "hash": "739da2dfad9857506166f658cce21dcfd017ec9b4d4d3afabbd5928f56d5a0ce"
+}

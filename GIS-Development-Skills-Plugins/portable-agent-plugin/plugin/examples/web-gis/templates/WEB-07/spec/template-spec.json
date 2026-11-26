@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "template_id": "WEB-07",
+  "product_class": "W06",
+  "title": "3D Globe & Terrain",
+  "recommended_stack": "CesiumJS + OGC 3D Tiles + ellipsoid fallback on failed terrain provider",
+  "runnable_vertical_slice": false,
+  "shared_fixture": "../../../../../tests/shared-gis-fixtures/geojson_epsg4326_bilingual.geojson",
+  "qa_cases": [
+    "GIS-014",
+    "WEB-QA-09",
+    "WEB-QA-12"
+  ],
+  "acceptance_ids": [
+    "WEB-TPL-07"
+  ],
+  "status": {
+    "static_spec": "VERIFIED_T0",
+    "js_node_contract": "SHARED_CORE_COVERED",
+    "headless_browser_e2e": "NOT RUN (Playwright/Chromium binary not installed on workstation)"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "sequence": 84,
+  "timestamp_utc": "2026-11-20T22:07:02+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "قبول تشغيل GIS وتجربة النسخة المحلية ولوحة الحالة",
+  "details": "شُغلت تجارب QGIS وArcGIS Pro وWPF وChromium على عينات اصطناعية. أثبتنا استقلال عملية Windows UI Automation وقراءة EPSG/NoData وحفظ المشروع وترحيل الوحدة ثم تراجعها. حزمة مستخدم r5 توثّق لقطة شجرة عمل محلية وcommit الأساس. عرضت لوحة الحالة القيم الفعلية وNOT RUN. تصف التقارير حدود T1–T3. بقي تثبيت T4 والنشر خارج القبول المرصود.",
+  "references": [
+    82,
+    83
+  ],
+  "task_id": "P08",
+  "plan_revision": "r5",
+  "changed_files": [
+    "native_tests/qgis_project_roundtrip.py",
+    "native_tests/arcgis_pro_acceptance.py",
+    "native_tests/run_wpf_toolchain.py",
+    "native_tests/wpf-toolchain/InvokeWindow.cs",
+    "native_tests/web_geojson_readback.py",
+    "scripts/render_trial_dashboard.py",
+    "reports/E2E_ACCEPTANCE.md",
+    "reports/P08_NATIVE_ACCEPTANCE.json",
+    "plans/active/0001_Engineering-Suite/STATUS.json"
+  ],
+  "tests": [
+    "494 regression cases: 493 passed and 1 Windows symlink case skipped.",
+    "Static security and skill-pack validation passed; plan-bound r5 P08 DoneProof checked.",
+    "The trial ZIP verified as 4232574e0e44d790ee13f4e510d2b5babc9b7dbb44f47620da21e8dc966357a8.",
+    "Independent readback of dashboard, WPF UIA, QGIS Processing migration and ArcPy data succeeded."
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "0e43243a1e165e56a7d73f789164530dc4dbc235ddf10fbc24d3c65fb5fe25b7",
+  "hash": "3d3d4e8c25b8a126363b5607785a1142d33eaf58bd1e39d2322169a858a8ce0f"
+}

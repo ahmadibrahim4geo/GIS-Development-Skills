@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 76,
+  "timestamp_utc": "2026-11-20T21:19:25+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "تنفيذ وربط منسق الأدوار المحلي P04",
+  "details": "تسجيل 15 دورًا وفق المهارات الموجودة وربط التشغيل بالمهام المراجعة، والتفويض من المضيف لكل عملية، وعزل المخرجات حسب المحاولة، وقراءة مستقلة وقبول مشروط. الدور المنفذ والمراجع متتابعان داخل مضيف واحد.",
+  "references": [
+    75
+  ],
+  "task_id": "P04",
+  "plan_revision": "r3",
+  "changed_files": [
+    "scripts/engineering_workflow.py",
+    "scripts/verify_engineering_workflow.py",
+    "references/engineering-role-registry.json",
+    "references/engineering-role-workflow.md"
+  ],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "e8f496479ee020a913f947cae1262cb66fafff237728edbb5a142a9b34755489",
+  "hash": "10cdf5a426e0c7949b7e3e25be137d96868c6fd40c7f720a1228ac400abf4b1b"
+}

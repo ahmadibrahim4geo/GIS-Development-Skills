@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "sequence": 83,
+  "timestamp_utc": "2026-11-20T22:07:01+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "قبول التوجيه السياقي وحزمة المهارات في عزل محلي",
+  "details": "عُزلت قراءة المحررات والمصممين. رُصد Antigravity IDE وQt Designer المرفق مع QGIS. وجود VS Code ذكره المستخدم، وتعذر تأكيد مسار الملف التنفيذي في المواقع المفحوصة. اجتازت حالات التوجيه الـ19. حزمة ZIP اجتازت التجزئات والروابط وعملت من مجلد فك منفصل. تثبيت الحزمة في الوكلاء وتصرّف الوكيل المستقل بقي NOT RUN.",
+  "references": [
+    82
+  ],
+  "task_id": "P07",
+  "plan_revision": "r5",
+  "changed_files": [
+    "scripts/contextual_routing.py",
+    "scripts/intent_router.py",
+    "scripts/native_toolchain.py",
+    "scripts/toolchain_discovery.py",
+    "tests/test_contextual_routing.py",
+    "reports/ROUTER_DISTRIBUTION_ACCEPTANCE.md",
+    "reports/P07_ROUTER_EVIDENCE.json"
+  ],
+  "tests": [
+    "19 bilingual cases; expected lead skill present in baseline suggestions 6/12 and selected with context 12/12.",
+    "Isolated ZIP verified all 432 content digests, 35 skills and local links, and reran archive CLI.",
+    "Plan-bound r5 P07 DoneProof checked after evidence readback."
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "da7fb2e3671f61f85d9644a313fe1c35df9438ea64379e9f4f84eaa8980b974d",
+  "hash": "0e43243a1e165e56a7d73f789164530dc4dbc235ddf10fbc24d3c65fb5fe25b7"
+}

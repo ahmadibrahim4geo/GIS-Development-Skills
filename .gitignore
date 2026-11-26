@@ -6,3 +6,27 @@ venv/
 .vscode/
 .idea/
 .DS_Store
+
+/testing data/*
+!/testing data/.gitkeep
+/testing results/*
+!/testing results/.gitkeep
+/dist/user-testing/
+/Old - Safe to Remove/
+/GIS_Development_Skills_Complete_Brand_Kit/
+/GIS_Development_Skills_Execution_Package_2026-11-20/
+/.worktrees/
+
+# Plugin Lifecycle isolation, local state, locks, secrets, and heavy ZIP archives
+/.plugin-local/
+/.plugin-secrets/
+/.plugin-staging/
+/.plugin-lock/
+**/owner-config.local.json
+**/credentials.local.json
+**/.env
+**/.env.*
+!**/.env.example
+!/plugin-system/config/owner-config.example.json
+/GIS-Development-Skills-Plugins/**/artifacts/*.zip
+/GIS-Development-Skills-Plugins/**/artifacts/*.zip.sha256

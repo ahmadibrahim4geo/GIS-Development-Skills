@@ -1,0 +1,526 @@
+{
+  "request_id": "GDS-ENGINEERING-SUITE-2026-11-20",
+  "revision": "r6",
+  "reviewed_plan_sha256": "6d0cef7da35c1446a98fd3543183f64fd01453d7f69c9fd764118f40415545e0",
+  "scope": "LOCAL_AUDIT_AND_TRIAL",
+  "local_date": "2026-11-21",
+  "os": "Windows-11-10.0.26300-SP0",
+  "python": "3.14.7",
+  "git_readback": {
+    "head": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+    "local_main": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+    "origin_tracking_main": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+    "remote_main": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+    "remote_main_commit_url": "https://github.com/ahmadibrahim4geo/GIS-Development-Skills/commit/42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+    "branch": "codex/engineering-suite",
+    "origin": "https://github.com/ahmadibrahim4geo/GIS-Development-Skills.git"
+  },
+  "git_delivery": "NOT RUN",
+  "qa": {
+    "exit_codes": {
+      "catalog": "0",
+      "api-catalog": "0",
+      "data-repositories": "0",
+      "skill-pack": "0",
+      "manifest": "0",
+      "skill-flow": "0",
+      "licenses": "0",
+      "security": "0",
+      "units": "0"
+    },
+    "unit_total": 495,
+    "unit_passed": 494,
+    "unit_skipped": 1,
+    "unit_skip_reason": "Windows symbolic-link privilege",
+    "package": {
+      "schema_version": "1.0",
+      "bundle_name": "gis-development-suite",
+      "status": "PASS",
+      "file_count": 432,
+      "missing_files": [],
+      "unexpected_files": [],
+      "hash_or_size_mismatches": [],
+      "required_paths_missing": [],
+      "broken_local_markdown_links": [],
+      "native_gis_execution": "NOT_RUN",
+      "agent_client_installation": "NOT_RUN"
+    },
+    "license_catalog": {
+      "total": 193,
+      "verified_source_licenses": 22,
+      "unverified_source_licenses": 171,
+      "verified_by_category": {
+        "arcgis": 6,
+        "cartography": 1,
+        "data-catalog": 1,
+        "desktop-web": 1,
+        "python": 2,
+        "qgis": 1,
+        "remote-sensing": 5,
+        "spatial-core": 2,
+        "terrain": 1,
+        "web-mapping": 2
+      }
+    },
+    "repository_security": {
+      "status": "pass",
+      "policy": "Heuristic preflight only; external scanners not executed.",
+      "skill_count": 35,
+      "finding_count": 0,
+      "blocking_findings": 0,
+      "findings": [],
+      "archives": [],
+      "external_scanners_not_run": [
+        "Cisco Skill Scanner",
+        "Gitleaks",
+        "Bandit",
+        "Semgrep",
+        "OSV-Scanner",
+        "zizmor",
+        "MCP Scanner"
+      ]
+    }
+  },
+  "traceability": {
+    "original_rows": 152,
+    "reviewed_status_counts": {
+      "NOT RUN": 7,
+      "PARTIAL": 62,
+      "PASS": 83
+    },
+    "unclassified_rows": 0
+  },
+  "appendix_a": {
+    "source_count": 27,
+    "resource_names": [
+      "Agent Skills specification",
+      "OpenAI Skills",
+      "Anthropic Skills",
+      "NVIDIA Skills",
+      "NVIDIA SkillSpector",
+      "Cisco Skill Scanner",
+      "Qt Agent Skills",
+      "Superpowers",
+      "Esri Developer Agent Skills",
+      "ArcGIS Pro SDK Snippets",
+      "ArcGIS Pro SDK Samples",
+      "CesiumJS skills",
+      "Autodesk Platform Services skills",
+      "GDAL",
+      "PROJ",
+      "QGIS",
+      "GRASS GIS",
+      "OpenLayers",
+      "MapLibre",
+      "Cesium",
+      "USGS Spectral Library",
+      "Copernicus Data Space",
+      "NASA JPL ECOSTRESS",
+      "Index Database",
+      "Visual Studio Community",
+      "VS Code",
+      "Qt Creator"
+    ]
+  },
+  "native_retest_in_r6": {
+    "qgis": {
+      "status": "PASS",
+      "host": "4.2.3-Belém do Pará",
+      "project_readback": {
+        "project_crs": "EPSG:3857",
+        "extent_restored": true,
+        "relative_paths": true,
+        "vector_crs": "EPSG:4326",
+        "features": 2,
+        "marker_color": "#167b72",
+        "grid_crs": "EPSG:4326",
+        "grid_nodata": -9999,
+        "missing_cells": 1,
+        "grid_hidden": true
+      },
+      "export": "qgis-web.geojson",
+      "geojson_points": {
+        "Cairo": [
+          31.2357,
+          30.0444
+        ],
+        "Alexandria": [
+          29.9187,
+          31.2001
+        ]
+      }
+    },
+    "wpf": {
+      "status": "PASS",
+      "sdk": "10.0.300",
+      "framework": "net10.0-windows",
+      "stages": {
+        "sdk": 0,
+        "template": 0,
+        "restore": 0,
+        "build": 0,
+        "uia-restore": 0,
+        "uia-build": 0,
+        "launch": 0
+      },
+      "window_readback": {
+        "NativeWindowLoaded": true,
+        "AutomationPattern": "Invoke",
+        "Clicks": 1,
+        "Raster": {
+          "Crs": "EPSG:4326",
+          "Rows": 2,
+          "Columns": 2,
+          "NoData": -9999,
+          "ValidCells": 3
+        },
+        "Label": "EPSG:4326 | 2 x 2 | 3 valid cells",
+        "Runtime": ".NET 10.0.8",
+        "Architecture": "X64"
+      },
+      "assembly_sha256": "cb9e4abbdfe5c6a475479a9605cd2103bf10e95ebb149f6a3a7095134a32b3de",
+      "input_sha256": "3060649ae057da42ada8b4035775947c43a722ca627e64540dafc608c4848efb",
+      "external_uia": {
+        "WindowAutomationId": "RasterReadbackWindow",
+        "ButtonAutomationId": "ReadRaster",
+        "Pattern": "Invoke",
+        "SeparateProcess": true
+      }
+    }
+  },
+  "retained_p08_readbacks": "reports/P08_NATIVE_ACCEPTANCE.json",
+  "esri_reference_selection_from_unpacked_zip": {
+    "query": "Create an ArcGIS Pro SDK ribbon button and dockpane",
+    "detected_platforms": [
+      "arcgis-pro-sdk"
+    ],
+    "selected_platforms": [
+      "arcgis-pro-sdk"
+    ],
+    "platform_resolution": "declared",
+    "matching_recipes": [],
+    "matching_sources": [
+      {
+        "type": "source",
+        "id": "esri-arcgis-pro-sdk-community-samples",
+        "name": "ArcGIS Pro SDK Community Samples",
+        "url": "https://github.com/Esri/arcgis-pro-sdk-community-samples/tree/f403431c53ccf734bfd0c444b3191c92eb2b5a96",
+        "languages": [
+          "C#"
+        ],
+        "license": "Apache-2.0",
+        "score": 63,
+        "issues": [
+          "No explicit spatial constraints declared"
+        ],
+        "limitations": "Multi-file projects; verify matching target ArcGIS Pro SDK minor version before compilation.",
+        "reviewed_revision": {
+          "host_release": "3.6",
+          "revision": "f403431c53ccf734bfd0c444b3191c92eb2b5a96",
+          "url": "https://github.com/Esri/arcgis-pro-sdk-community-samples/tree/f403431c53ccf734bfd0c444b3191c92eb2b5a96",
+          "requirements": "ArcGIS Pro 3.6 and .NET Runtime 8.0.3 or newer",
+          "license_evidence": "https://github.com/Esri/arcgis-pro-sdk-community-samples/blob/f403431c53ccf734bfd0c444b3191c92eb2b5a96/License.txt"
+        },
+        "runtime_status": "NOT RUN"
+      }
+    ],
+    "research_recipes": [
+      {
+        "id": "recipe-arcgis-pro-sdk-button",
+        "title": "ArcGIS Pro SDK Ribbon Button Command",
+        "domain": "arcgis-pro-sdk",
+        "use": "reference-only",
+        "issues": [
+          "Find a source revision matching the installed ArcGIS Pro 3.6.0.59527 and verify the SDK."
+        ],
+        "is_safe_to_adapt": false
+      }
+    ],
+    "research_sources": [
+      {
+        "type": "source",
+        "id": "esri-arcgis-pro-sdk-snippets",
+        "name": "Esri ArcGIS Pro SDK Snippets",
+        "url": "https://github.com/Esri/arcgis-pro-sdk-snippets",
+        "languages": [
+          "C#"
+        ],
+        "license": "Apache-2.0",
+        "score": 0,
+        "issues": [
+          "No explicit spatial constraints declared",
+          "Find a source revision matching the installed ArcGIS Pro 3.6.0.59527 and verify the SDK."
+        ],
+        "limitations": "C# Pro-hosted add-ins. Match the actual Pro minor release and follow the API's thread-affinity rules. The reviewed source is not an ArcPy tool.",
+        "use": "reference-only",
+        "is_safe_to_adapt": false
+      }
+    ],
+    "status": "candidates",
+    "observed_arcgis_pro_version": "3.6.0.59527"
+  },
+  "esri_skill_candidate": {
+    "id": "0002",
+    "source": "https://github.com/Esri/esri-developer-agent-skills/blob/b6fcac59bf7febd4263d77132e3cfd22d6498a5e/README.md",
+    "active": false,
+    "runtime": "NOT RUN"
+  },
+  "scenarios": [
+    {
+      "id": "qgis-project",
+      "label_ar": "حفظ مشروع QGIS والقراءة بعد فتحه",
+      "label_en": "QGIS project persistence and export",
+      "status": "PASS",
+      "tier": "T3",
+      "readback": {
+        "status": "PASS",
+        "host": "4.2.3-Belém do Pará",
+        "project_readback": {
+          "project_crs": "EPSG:3857",
+          "extent_restored": true,
+          "relative_paths": true,
+          "vector_crs": "EPSG:4326",
+          "features": 2,
+          "marker_color": "#167b72",
+          "grid_crs": "EPSG:4326",
+          "grid_nodata": -9999,
+          "missing_cells": 1,
+          "grid_hidden": true
+        },
+        "export": "qgis-web.geojson",
+        "geojson_points": {
+          "Cairo": [
+            31.2357,
+            30.0444
+          ],
+          "Alexandria": [
+            29.9187,
+            31.2001
+          ]
+        }
+      }
+    },
+    {
+      "id": "wpf-external-uia",
+      "label_ar": "زر WPF في عملية منفصلة",
+      "label_en": "WPF cross-process UI Automation",
+      "status": "PASS",
+      "tier": "T3",
+      "readback": {
+        "status": "PASS",
+        "sdk": "10.0.300",
+        "framework": "net10.0-windows",
+        "stages": {
+          "sdk": 0,
+          "template": 0,
+          "restore": 0,
+          "build": 0,
+          "uia-restore": 0,
+          "uia-build": 0,
+          "launch": 0
+        },
+        "window_readback": {
+          "NativeWindowLoaded": true,
+          "AutomationPattern": "Invoke",
+          "Clicks": 1,
+          "Raster": {
+            "Crs": "EPSG:4326",
+            "Rows": 2,
+            "Columns": 2,
+            "NoData": -9999,
+            "ValidCells": 3
+          },
+          "Label": "EPSG:4326 | 2 x 2 | 3 valid cells",
+          "Runtime": ".NET 10.0.8",
+          "Architecture": "X64"
+        },
+        "assembly_sha256": "cb9e4abbdfe5c6a475479a9605cd2103bf10e95ebb149f6a3a7095134a32b3de",
+        "input_sha256": "3060649ae057da42ada8b4035775947c43a722ca627e64540dafc608c4848efb",
+        "external_uia": {
+          "WindowAutomationId": "RasterReadbackWindow",
+          "ButtonAutomationId": "ReadRaster",
+          "Pattern": "Invoke",
+          "SeparateProcess": true
+        }
+      }
+    },
+    {
+      "id": "web",
+      "label_ar": "عرض GeoJSON في المتصفح",
+      "label_en": "Chromium GeoJSON rendering",
+      "status": "PASS",
+      "tier": "T2",
+      "readback": {
+        "version": "157.0.8103.80",
+        "status": "PASS",
+        "browser": "chrome.exe",
+        "source_sha256": "08bb1f54d6d520bf6952e7704966666b93fbef6b3428a64663244621bcee9afd",
+        "crs": "EPSG:4326",
+        "browser_readback": {
+          "points": [
+            {
+              "name": "Cairo",
+              "x": 179,
+              "y": 108
+            },
+            {
+              "name": "Alexandria",
+              "x": 73,
+              "y": 44
+            }
+          ],
+          "keyboardFocus": true,
+          "hidden": true,
+          "restored": true
+        }
+      }
+    },
+    {
+      "id": "arcgis-pro",
+      "label_ar": "قراءة File Geodatabase",
+      "label_en": "ArcGIS Pro vector round trip",
+      "status": "PASS",
+      "tier": "T3",
+      "readback": {
+        "exit_code": 0,
+        "readback": "Native ArcGIS Pro 3.6 temporary GDB readback PASS; count=2; CRS=EPSG:4326; XY=[(31.0, 30.0), (31.1, 30.1)]"
+      }
+    },
+    {
+      "id": "landsat-sensor",
+      "label_ar": "عينات Landsat الاصطناعية",
+      "label_en": "Synthetic Landsat sensor fixtures",
+      "status": "PASS",
+      "tier": "T1",
+      "readback": {
+        "unit_test": "test_landsat8_ndvi_uses_collection_specific_scaling_and_masks"
+      }
+    },
+    {
+      "id": "kmz-archive",
+      "label_ar": "أنماط وأصول KMZ",
+      "label_en": "Offline KMZ document and asset checks",
+      "status": "PASS",
+      "tier": "T1",
+      "readback": {
+        "unit_test": "test_new_kmz_has_relative_png_href_and_source_bytes"
+      }
+    },
+    {
+      "id": "migration",
+      "label_ar": "ترحيل مشروع QGIS والتراجع",
+      "label_en": "QGIS migration and rollback",
+      "status": "PASS",
+      "tier": "T3",
+      "readback": {
+        "status": "PASS",
+        "runs": {
+          "before": {
+            "accepted_feature_count": 2,
+            "algorithm_id": "verified_coordinate_audit",
+            "artifact_sha256": "64a252d87cb217fff31a1da2f93c14061d606bd4386b23ac9ea7c2fcaa3cd0fa",
+            "clean_environment_T4": "NOT RUN",
+            "evidence_tier": "T3",
+            "qgis_version": "4.2.3-Belém do Pará",
+            "rejected_feature_count": 3,
+            "schema_version": "1.0",
+            "status": "verified",
+            "workflow_id": "golden-qgis-coordinate-audit"
+          },
+          "after": {
+            "accepted_feature_count": 2,
+            "algorithm_id": "verified_coordinate_audit",
+            "artifact_sha256": "64a252d87cb217fff31a1da2f93c14061d606bd4386b23ac9ea7c2fcaa3cd0fa",
+            "clean_environment_T4": "NOT RUN",
+            "evidence_tier": "T3",
+            "qgis_version": "4.2.3-Belém do Pará",
+            "rejected_feature_count": 3,
+            "schema_version": "1.0",
+            "status": "verified",
+            "workflow_id": "golden-qgis-coordinate-audit"
+          },
+          "restored": {
+            "accepted_feature_count": 2,
+            "algorithm_id": "verified_coordinate_audit",
+            "artifact_sha256": "64a252d87cb217fff31a1da2f93c14061d606bd4386b23ac9ea7c2fcaa3cd0fa",
+            "clean_environment_T4": "NOT RUN",
+            "evidence_tier": "T3",
+            "qgis_version": "4.2.3-Belém do Pará",
+            "rejected_feature_count": 3,
+            "schema_version": "1.0",
+            "status": "verified",
+            "workflow_id": "golden-qgis-coordinate-audit"
+          }
+        },
+        "restored_file_count": 10
+      }
+    },
+    {
+      "id": "external-skill",
+      "label_ar": "مراجعة المهارات داخل العزل",
+      "label_en": "Quarantined skill review",
+      "status": "PASS",
+      "tier": "T1",
+      "readback": {
+        "unit_tests": [
+          "test_clean_snapshot_is_eligible_only_for_manual_review",
+          "test_override_and_execution_payload_are_inert_and_rejected"
+        ]
+      }
+    },
+    {
+      "id": "production-scenes",
+      "label_ar": "مشاهد Landsat الحقيقية",
+      "label_en": "Real Landsat scenes",
+      "status": "NOT RUN",
+      "tier": "—",
+      "readback": {
+        "reason": "Trial uses repository-owned synthetic pixels."
+      }
+    },
+    {
+      "id": "desktop-designer",
+      "label_ar": "الاستخدام المرئي في Qt Designer",
+      "label_en": "Visual Qt Designer workflow",
+      "status": "NOT RUN",
+      "tier": "—",
+      "readback": {
+        "reason": "Qt Designer executable metadata was observed. Design GUI interaction is outside the observed test."
+      }
+    },
+    {
+      "id": "unexercised-renderers",
+      "label_ar": "QGIS GUI وعرض ثلاثي الأبعاد وWebView2",
+      "label_en": "QGIS GUI, 3D camera and WebView2 scenarios",
+      "status": "NOT RUN",
+      "tier": "—",
+      "readback": {
+        "reason": "GIS checks ran from the QGIS engine, WPF and an isolated Chromium profile."
+      }
+    },
+    {
+      "id": "clean-install",
+      "label_ar": "تثبيت في بيئة نظيفة",
+      "label_en": "Clean-environment installation",
+      "status": "NOT RUN",
+      "tier": "T4",
+      "readback": {
+        "reason": "The trial used the current Windows installation and isolated working folders."
+      }
+    }
+  ],
+  "protected_original_files_verified": 33,
+  "architecture_decision": "Use the observed host version for version-sensitive reuse; preserve unmatched examples as reference; verify SDK/runtime separately.",
+  "execution_mode": "SEQUENTIAL_ROLE_SIMULATION",
+  "review_mode": "SAME_AGENT_REVIEW",
+  "mcp_observations": {
+    "capability": "github.repository.read",
+    "trace_id": "P09-LOCAL-AUDIT-R6",
+    "commands": [
+      "P09-REMOTE-MAIN",
+      "P09-RESOURCE-READ"
+    ],
+    "effect": "read",
+    "direct_repository_writes": 0
+  }
+}

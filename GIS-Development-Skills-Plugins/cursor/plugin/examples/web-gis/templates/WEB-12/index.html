@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <title>WEB-12 Installable Offline-First GIS PWA</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1.5rem; background: #0f172a; color: #f8fafc; }
+    .row { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    button { padding: .45rem .8rem; border-radius: .35rem; border: 1px solid #334155; background: #1e293b; color: #f8fafc; cursor: pointer; }
+    pre { background: #020617; padding: 1rem; border-radius: .4rem; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>WEB-12 Offline-First GIS PWA (`W08`)</h1>
+  <div class="row">
+    <button id="queueBtn" type="button">Queue Offline Edit</button>
+    <button id="backupBtn" type="button">Export JSON Backup</button>
+  </div>
+  <div id="pwaStatus">Checking offline storage contract...</div>
+  <pre id="outboxPreview"></pre>
+  <script type="module">
+    import { WebOfflineOutbox, validateTileSourceUrl } from "../../shared/pwa-sync.mjs";
+
+    const KEY = "gis_web12_outbox_v1";
+    const outbox = new WebOfflineOutbox(localStorage.getItem(KEY));
+    const statusEl = document.getElementById("pwaStatus");
+    const previewEl = document.getElementById("outboxPreview");
+
+    function refresh() {
+      localStorage.setItem(KEY, outbox.serializeBackup());
+      previewEl.textContent = outbox.serializeBackup();
+    }
+
+    document.getElementById("queueBtn").addEventListener("click", () => {
+      outbox.enqueue({
+        clientOpId: `op-${Date.now()}`,
+        featureId: "field-station-01",
+        layerId: "stations",
+        opType: "create",
+        geometry: { type: "Point", coordinates: [31.2357, 30.0444] },
+        attributes: { name_ar: "محطة حقلية", status: "offline-draft" },
+      });
+      refresh();
+    });
+
+    document.getElementById("backupBtn").addEventListener("click", () => {
+      const blob = new Blob([outbox.serializeBackup()], { type: "application/json;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "web12-outbox-backup.json";
+      a.click();
+    });
+
+    try {
+      validateTileSourceUrl("https://cdn.example.invalid/tiles/local.pmtiles");
+      statusEl.textContent = "Tile policy active (public OSM bulk scrape blocked); SW registration attempted.";
+    } catch (err) {
+      statusEl.textContent = err.message;
+    }
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js", { scope: "./" }).catch(() => {});
+    }
+    refresh();
+  </script>
+</body>
+</html>

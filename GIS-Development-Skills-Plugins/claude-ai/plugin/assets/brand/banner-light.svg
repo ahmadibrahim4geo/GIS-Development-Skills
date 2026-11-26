@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="400" viewBox="0 0 2400 400" role="img" aria-labelledby="banner-title banner-desc">
+  <title id="banner-title">GIS Development Skills — The Heart of Geospatial Innovation</title>
+  <desc id="banner-desc">GIS Development Skills banner. By Ahmed Ibrahim.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F9FDFF"/><stop offset="1" stop-color="#EAF6FA"/>
+    </linearGradient>
+    <clipPath id="map-grid"><rect x="1690" width="710" height="276"/></clipPath>
+    <pattern id="grid-points" width="35" height="35" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="2.5" fill="#00B8E6"/>
+    </pattern>
+  </defs>
+  <rect width="2400" height="400" fill="#F4FAFC"/>
+  <rect width="2400" height="400" fill="url(#background)"/>
+  <g clip-path="url(#map-grid)" fill="none" stroke="#00B8E6">
+    <circle cx="2234" cy="219" r="307" fill="url(#grid-points)" opacity=".15" stroke="none"/>
+    <g opacity=".29" stroke-width="2.5">
+      <circle cx="2234" cy="219" r="307"/><circle cx="2234" cy="219" r="278"/>
+      <ellipse cx="2234" cy="219" rx="183" ry="307"/><ellipse cx="2234" cy="219" rx="77" ry="307"/>
+      <ellipse cx="2234" cy="219" rx="307" ry="104"/><ellipse cx="2234" cy="219" rx="307" ry="182"/>
+      <path d="M 1927,219 H 2541 M 2234,-88 V 526"/>
+    </g>
+    <circle cx="2069" cy="199" r="7" fill="#00B8E6" stroke="none" opacity=".62"/>
+    <circle cx="2274" cy="116" r="6" fill="#00B8E6" stroke="none" opacity=".58"/>
+  </g>
+  <g id="brand-mark" transform="translate(91 10) scale(.74)"><g transform="translate(30 37) scale(1.42)"><path d="M 93,18 L 92,19 L 89,19 L 88,20 L 85,20 L 84,21 L 81,21 L 80,22 L 75,23 L 57,32 L 55,34 L 51,36 L 48,39 L 47,39 L 33,53 L 33,54 L 27,61 L 18,78 L 18,80 L 17,81 L 17,83 L 16,84 L 16,86 L 14,90 L 14,93 L 13,94 L 13,99 L 12,100 L 12,123 L 13,124 L 13,129 L 14,130 L 15,137 L 16,138 L 17,143 L 21,150 L 22,154 L 24,156 L 26,161 L 34,171 L 34,172 L 48,186 L 49,186 L 59,194 L 77,203 L 79,203 L 83,205 L 86,205 L 87,206 L 90,206 L 91,207 L 94,207 L 95,208 L 101,208 L 102,209 L 129,209 L 130,208 L 136,208 L 137,207 L 141,207 L 145,205 L 148,205 L 149,204 L 154,203 L 159,200 L 161,200 L 178,190 L 182,186 L 183,186 L 197,172 L 197,171 L 203,164 L 204,161 L 206,159 L 211,149 L 211,147 L 213,144 L 213,142 L 215,138 L 216,131 L 217,130 L 217,126 L 218,125 L 218,119 L 219,118 L 219,94 L 218,93 L 100,93 L 98,95 L 98,129 L 100,131 L 169,131 L 171,133 L 163,147 L 154,156 L 153,156 L 150,159 L 147,160 L 145,162 L 139,165 L 134,166 L 133,167 L 125,168 L 124,169 L 105,169 L 104,168 L 100,168 L 99,167 L 93,166 L 81,160 L 75,155 L 74,155 L 63,143 L 62,140 L 60,138 L 58,134 L 58,132 L 55,126 L 55,123 L 54,122 L 54,117 L 53,116 L 53,105 L 54,104 L 54,99 L 56,95 L 56,92 L 61,82 L 67,75 L 67,74 L 73,68 L 74,68 L 77,65 L 78,65 L 83,61 L 87,59 L 89,59 L 92,57 L 98,56 L 99,55 L 103,55 L 104,54 L 143,54 L 144,53 L 144,18 L 143,17 L 126,17 L 125,16 L 111,16 L 110,17 L 100,17 L 99,18 Z" fill="#0B2A44"/><path d="M 192,53 L 190,55 L 190,80 L 192,82 L 216,82 L 219,80 L 219,55 L 217,53 Z" fill="#67B5A6"/><path d="M 156,53 L 154,55 L 154,80 L 156,82 L 180,82 L 182,81 L 183,79 L 183,56 L 180,53 Z" fill="#67B5A6"/><path d="M 192,17 L 190,19 L 190,44 L 191,46 L 214,46 L 215,47 L 217,46 L 219,44 L 219,27 L 217,23 L 214,20 L 210,18 L 208,18 L 207,17 Z" fill="#67B5A6"/><path d="M 154,19 L 154,45 L 155,46 L 167,46 L 168,47 L 179,47 L 181,46 L 183,44 L 183,20 L 180,17 L 157,17 Z" fill="#67B5A6"/></g></g>
+  <rect x="366" y="73" width="5" height="175" rx="2.5" fill="#67B5A6"/>
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="430" y="148" font-size="108" font-weight="750" letter-spacing="-2" fill="#0B2A44">GIS Development Skills</text>
+    <text x="433" y="225" font-size="54" font-weight="450" fill="#435D6D">The Heart of Geospatial Innovation</text>
+    <path d="M 100 278 H 2300" fill="none" stroke="#3D8D8D" stroke-width="2" opacity=".58"/>
+    <rect x="1676" y="301" width="624" height="76" rx="11" fill="#FFFFFF" stroke="#B0D9D9" stroke-width="2"/>
+    <rect x="1707" y="318" width="5" height="41" rx="2.5" fill="#67B5A6"/>
+    <text id="creator-credit" x="1730" y="356" font-size="52" font-style="normal" font-weight="700" fill="#0B2A44">By Ahmed Ibrahim</text>
+  </g>
+</svg>

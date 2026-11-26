@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="assets/brand/banner-dark.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
+  <img src="assets/brand/banner.png" alt="GIS Development Skills — The Heart of Geospatial Innovation. By Ahmed Ibrahim." width="1200" height="200">
 </p>
 
 <p align="center">Build GIS tools, plugins and geospatial applications with a verifiable development workflow.</p>
 
-<p align="center"><sub>Official vector identity: <a href="assets/brand/README.md">brand assets and usage guide</a> · <a href="assets/brand/logo-light.svg">transparent logo</a> · <a href="assets/brand/icon.svg">standalone icon</a></sub></p>
+<p align="center">English (default) · <a href="README.ar.md" lang="ar">العربية</a> · <a href="https://ahmadibrahim4geo.github.io/GIS-Development-Skills/">Project website</a> · <a href="docs/HOW_TO_USE.md">How to use</a> · <a href="assets/brand/README.md">Brand assets</a></p>
 
 
 
@@ -18,13 +18,20 @@
   <a href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills/actions/workflows/validate.yml"><img alt="Validation workflow status" src="https://img.shields.io/github/actions/workflow/status/ahmadibrahim4geo/GIS-Development-Skills/validate.yml?style=for-the-badge&amp;label=Tests&amp;labelColor=172B3C"></a>
 </p>
 
-## Start with a result, not a catalog
+## What you can build
 
 GIS Development Skills is a bilingual, security-aware skill suite for agents
 that build QGIS/ArcGIS tools, standalone GIS applications, web maps, spatial
 data pipelines and integrations. It turns a free-form request into a reviewed
 plan, routes it to one accountable specialist, and requires evidence before a
 completion claim.
+
+| Project | Start with |
+| --- | --- |
+| ArcGIS toolboxes and QGIS plugins | [ArcPy](skills/arcgis-toolbox-engineering/SKILL.md) · [PyQGIS](skills/qgis-plugin-development/SKILL.md) |
+| GIS apps and interactive maps | [Desktop](skills/gis-desktop-application-development/SKILL.md) · [Mobile](skills/gis-mobile-application-development/SKILL.md) · [Web maps](skills/geospatial-web-mapping/SKILL.md) |
+| Spatial analysis and satellite imagery | [Vector and raster](skills/geospatial-data-processing/SKILL.md) · [Remote sensing](skills/remote-sensing-pipelines/SKILL.md) · [Terrain and hydrology](skills/terrain-hydrology-lidar/SKILL.md) |
+| Data integration, automation and map exchange | [GIS APIs](skills/geospatial-api-integration/SKILL.md) · [Agent workflows](skills/geospatial-ai-agents/SKILL.md) · [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) |
 
 The instructions are independent of a model vendor or agent framework. Use
 [portable execution guidance](references/portable-execution-guidance.md) to scale
@@ -47,6 +54,16 @@ with a compatible Agent Skills client. See the [distribution contract](docs/SKIL
 that named client and version.
 
 ### 2. Give the agent a concrete request
+
+For HTML and web UI, open the [homepage project picker](index.html#how-to-use) and choose **HTML and web interfaces**. The homepage opens in English and the language switch offers Arabic. Follow the [paired setup](references/modern-web-guidance-workflow.md), then run the readiness check from your project root.
+
+```sh
+python -B scripts/web_guidance.py check
+```
+
+> Build a responsive HTML page in English with a button that opens a confirmation dialog. Check both web skills first. Verify keyboard operation and focus return in a real browser at mobile and desktop widths.
+
+The next example covers QGIS Processing.
 
 > Build a QGIS Processing tool that audits an EPSG:4326 GeoJSON point layer.
 > Preserve the source, write to a new output directory, reject malformed or
@@ -128,7 +145,7 @@ Use the [standalone Android/iOS Mobile GIS skill](skills/gis-mobile-application-
 
 ## GIS Software & Source Code Registry — 26 October 2026
 
-The [GIS source code selection guide](references/gis-software-source-registry.md) routes developers to complete **desktop, web and mobile GIS applications**, reusable rendering/processing engines, spatial servers and scientific libraries. The existing [searchable project catalog](references/project-catalog.json) is the **single machine-readable source of truth** (188 unique GitHub repositories after adding 40 nonduplicate public sources); browse its live entries via the [bilingual Explorer](explorer.html#catalog). A public URL or preliminary license metadata is not a build, deployment or license audit: confirm upstream source permissions, exact versions and native tests before reuse.
+The [GIS source code selection guide](references/gis-software-source-registry.md) routes developers to complete **desktop, web and mobile GIS applications**, reusable rendering/processing engines, spatial servers and scientific libraries. The existing [searchable project catalog](references/project-catalog.json) is the **single machine-readable source of truth** (461 curated GitHub repositories paired 1:1 with engine capability profiles); browse its live entries via the [bilingual Explorer](explorer.html#catalog). A public URL or preliminary license metadata is not a build, deployment or license audit: confirm upstream source permissions, exact versions and native tests before reuse.
 
 A practical development skill and curated reference hub for building reliable ArcGIS tools, QGIS plugins, 2D/3D mapping experiences, desktop applications, and geospatial data workflows.
 
@@ -163,7 +180,7 @@ A practical development skill and curated reference hub for building reliable Ar
   </tr>
 </table>
 
-<p align="center"><strong>35 installable GIS skills</strong> · <strong>193 curated geospatial references</strong> · <strong>53 public API sources</strong> · <strong>26 curated data repositories</strong></p>
+<p align="center"><strong>37 installable GIS skills</strong> · <strong>461 curated geospatial references</strong> · <strong>53 public API sources</strong> · <strong>26 curated data repositories</strong></p>
 
 <p align="center">
   <a href="README.ar.md">العربية</a> ·
@@ -175,7 +192,7 @@ A practical development skill and curated reference hub for building reliable Ar
 
 ## End-to-end ownership and publication checks — 26 October 2026
 
-**33 installable skills; one accountable specialist per task.** The complete handoff is: **original prompt → reviewed goal/criteria → GIS Router + domain owner → Security preflight → authorized execution → command/data/native tests → DoneProof evidence vs original plan → Development Journal → user delivery**. [Responsibility matrix](references/repository-wide-skill-orchestration.md), [release readiness audit](docs/RELEASE_READINESS_AUDIT_2026-10-26.md) and [publishing checklist](PUBLISHING.md) explain what each component actually does.
+**37 installable skills; one accountable specialist per task.** The complete handoff is: **original prompt → reviewed goal/criteria → GIS Router + domain owner → Security preflight → authorized execution → command/data/native tests → DoneProof evidence vs original plan → Development Journal → user delivery**. [Responsibility matrix](references/repository-wide-skill-orchestration.md), [release readiness audit](docs/RELEASE_READINESS_AUDIT_2026-10-26.md) and [publishing checklist](PUBLISHING.md) explain what each component actually does.
 
 For control handlers use [UI Command Audit](skills/gis-ui-command-audit/SKILL.md); for import → engine → render → save/export → readback use [GIS Data Flow Diagnostics](skills/gis-data-flow-diagnostics/SKILL.md). Native desktop/mobile tests are separate. Skill instructions do **not** grant OS permissions, run agents or make unobserved work real.
 
@@ -201,7 +218,7 @@ Reviewed inspirations: [Planning with Files](https://github.com/OthmanAdi/planni
 
 ## Four GIS UI quality engineering skills — 26 October 2026
 
-The repository now includes **33 installable GIS specialist skills**, including four independent but interoperable quality workflows:
+The repository now includes **37 installable GIS specialist skills**, including four independent but interoperable quality workflows:
 
 - [GIS UI Command Audit](skills/gis-ui-command-audit/SKILL.md): inspect menu/Ribbon/icon declarations and command bindings with a [read-only offline scanner](scripts/gis_ui_command_audit.py).
 - [GIS Desktop E2E Testing](skills/gis-desktop-e2e-testing/SKILL.md): native Windows UI Automation and WebView2 acceptance workflow, with real-host T3/T4 evidence required.
@@ -414,7 +431,7 @@ Read [`references/earthmapper-case-studies.md`](references/earthmapper-case-stud
 
 - **[GeoLibre R](https://github.com/opengeos/geolibre-r)** — MIT R `htmlwidgets` binding for interactive GIS maps in RStudio, Shiny and Quarto.
 - **[RustGIS](https://github.com/opengeos/RustGIS)** — Apache-2.0 Rust-native GIS application architecture, command bus, crates and WASM/plugin system; distinct from GeoRust.
-- **[Free/public API guide](references/free-geospatial-apis.md)** — 52 curated climate, elevation, DEM, STAC, imagery, basemap, boundaries, population, hazards, routing, ocean and biodiversity service entries, with credentials, free-tier constraints and caveats.
+- **[Free/public API guide](references/free-geospatial-apis.md)** — 53 curated climate, elevation, DEM, STAC, imagery, basemap, boundaries, population, hazards, routing, ocean and biodiversity service entries, with credentials, free-tier constraints and caveats.
 
 The API guide **does not** treat public endpoints as unlimited or licensed for any use. SoilGrids REST is marked paused; OSMF tiles and Nominatim have restrictive public usage policies.
 
@@ -504,9 +521,9 @@ The searchable data lives in [`references/project-catalog.json`](references/proj
 
 1. **v0.1.0** — foundation skill, 25 curated references, 4 starter templates and local validation.
 2. **v0.2.0** — EarthMapper source audit, Windows .NET stack, additional verified repository pointers, satellite-AI research separation.
-3. **v0.3.0** — GeoLibre R / RustGIS source audit and public geospatial API catalog (18 providers) with independent validation and tests.
-4. **v0.4 (planned)** — ArcGIS/QGIS environment integration, tested sample data, advanced parameter validation.
-5. **v0.5 (planned)** — reference 2D/3D GIS desktop implementation with offline data tests and strict license tracking.
+3. **v0.3.0–v0.3.5** — GeoLibre R / RustGIS source audit, public geospatial API catalog (53 curated services), data repositories (26 curated sources), Brand Kit 3.1, bilingual Explorer/Wizard, DoneProof, Development Journal, and UI quality specialists.
+4. **Master Integration V2 (`P00–P11`, completed offline `T0/T1`)** — `geospatial-engine-selection` over **461** 1:1 engine capability profiles, clean-room source-fork & reference-UI rules, Web GIS (`W01–W12`), Mobile GIS (`M01–M10`), paired `modern-web-guidance` + UI/UX Pro Max routing, and deterministic **7-platform** plugin packaging (`portable`, `codex`, `chatgpt`, `claude-code`, `claude-ai`, `antigravity`, `cursor`).
+5. **Upcoming native host verification (`T2–T4`)** — live native execution evidence inside installed ArcGIS Pro, QGIS desktop, Android/iOS SDKs, Chromium Playwright viewports, and live client agent CLIs when attached.
 
 Community proposals and verified pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -568,3 +585,12 @@ Optional read-only IDE/build-tool reconnaissance:
 
 PATH presence is an unverified hint. It does not run IDEs or validate native
 Visual Studio, Qt, QGIS, ArcGIS Pro or installed SDK workloads.
+
+## Master Integration V2, Modern Web Guidance & Multi-Platform Plugin Lifecycle
+
+The repository now unites **37** canonical skills under one single source of truth (`skills/`, `references/`, `scripts/`), adding unified engine selection ([geospatial-engine-selection](skills/geospatial-engine-selection/SKILL.md) over **461** 1:1 capability profiles in `references/engine-capability-profiles.json`), paired HTML/web UI engineering ([Modern Web Guidance](skills/modern-web-guidance/SKILL.md) + UI/UX Pro Max via `python -B scripts/web_guidance.py check`), clean-room source-fork & reference-UI governance ([source-fork guide](references/source-fork-and-ui-reuse.md)), Web GIS ([WEB_GIS_GUIDE.md](docs/WEB_GIS_GUIDE.md)), Mobile GIS ([MOBILE_GIS_GUIDE.md](docs/MOBILE_GIS_GUIDE.md)), bilingual guide ([WEB_MOBILE_GUIDE.ar.md](docs/WEB_MOBILE_GUIDE.ar.md)), and deterministic multi-platform packaging ([distribution contract](docs/SKILL_DISTRIBUTION.md) · developer lifecycle engine `plugin-system/README.md`):
+
+- **All 7 Plugin Outputs (`GIS-Development-Skills-Plugins/README.md` in repo):** `portable`, `codex` (`.codex-plugin/plugin.json` + `.agents/plugins/marketplace.json`), `chatgpt` (OpenAI shared group, stripped hooks), `claude-code` (`.claude-plugin/{plugin,marketplace,hooks}.json`), `claude-ai`, `antigravity`, and `cursor` (`.cursor-plugin/plugin.json` + `.cursor/rules/gis-development-skills.mdc`).
+- **Rebuild, Audit & External Owner Sync:** Run `python -B plugin-system/core/pipeline.py --build-only` (or `Update-All-Plugins.ps1 -BuildOnly`) after canonical edits and `--check-only` before commit/CI. Personal external sync (`Update-My-Platforms.ps1`) reads `%LOCALAPPDATA%\GIS-Development-Skills\PluginSync\owner-config.json` strictly outside Git.
+- **Honest Verification Boundaries:** All offline `T0/T1` structural, routing, manifest, ZIP parity, Web GIS contract (`tests/web-gis/web_gis_contract.test.mjs`), Mobile GIS contract (`tests/mobile-gis/test_mobile_contracts.py`), and website tests run deterministically; native desktop GIS (`qgis`, `ogr2ogr`, ArcGIS Pro), Chromium `Playwright` viewports, native Android/iOS builds, and live agent CLIs (`codex`, `claude`, `agy`, `cursor`) remain honestly marked **`NOT_RUN`** when absent locally.
+

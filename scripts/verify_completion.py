@@ -129,10 +129,14 @@ def reject_constant(value):
     raise ValueError("Non-finite JSON value: " + value)
 
 
-def read_json(path):
-    if not path.is_file() or path.stat().st_size > MAX_REPORT_BYTES:
+def read_json(path, max_bytes=MAX_REPORT_BYTES):
+    if not path.is_file() or path.stat().st_size > max_bytes:
         raise ValueError("Missing or oversized JSON input")
-    return json.loads(path.read_text(encoding="utf-8-sig"),
+    with path.open("rb") as handle:
+        content = handle.read(max_bytes + 1)
+    if len(content) > max_bytes:
+        raise ValueError("Oversized JSON input")
+    return json.loads(content.decode("utf-8-sig"),
                       object_pairs_hook=unique_pairs, parse_constant=reject_constant)
 
 

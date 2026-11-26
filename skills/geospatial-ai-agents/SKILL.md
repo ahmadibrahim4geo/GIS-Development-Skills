@@ -12,6 +12,8 @@ license: MIT
 
 An LLM **chooses tools**; a deterministic GIS engine does the geometry, raster and CRS calculations. Prefer typed actions, never arbitrary code execution or raw shell commands for a user request.
 
+For local handoffs, use the [engineering role workflow](../../references/engineering-role-workflow.md). It binds reviewed tasks to host-provided handlers and records output readback, rework and resume in the prepared test run.
+
 Use [portable execution guidance](../../references/portable-execution-guidance.md) to select effort, discover host capabilities and bound diagnostic retries. Model/framework independence describes the instructions, not verified support in every client; optional delegation still requires host/project authorization.
 
 For optional Model Context Protocol tools, load [MCP Tool Orchestration](../mcp-integration-and-tool-orchestration/SKILL.md) and the [capability routing contract](../../references/mcp-integration-workflow.md). Compare verified host-offered MCP and native adapters with the intended GIS operation; never infer an installed server from this documentation or bypass host approval.

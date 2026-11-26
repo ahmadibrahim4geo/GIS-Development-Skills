@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {"artifact": "qgis-science.json", "comparison": "json", "expected": {
+      "raster": {
+        "crs": "EPSG:4326", "shape": [2, 2], "nodata": -9999,
+        "values": [[10, null], [30, 40]],
+        "same_grid": "ACCEPTED", "different_crs": "CRS_MISMATCH", "shifted_grid": "GRID_MISMATCH"
+      },
+      "polygons": {"crs": "EPSG:4326", "valid": 1, "invalid": 1}
+    }},
+    {"artifact": "landsat.json", "comparison": "json", "expected": {
+      "legacy_clear": 0.5, "legacy_water": 0.5, "legacy_fill": null, "legacy_high_cirrus": null,
+      "current_clear": 0.559322033898, "current_fill": null, "current_cirrus": null,
+      "wrong_qa_scheme": "REJECTED"
+    }},
+    {"artifact": "kml.json", "comparison": "json", "expected": {
+      "style_equal": true, "asset_equal": true, "original_asset_count": 0, "export_asset_count": 0,
+      "xml_bytes_equal": true, "placemarks": 4, "tracks": 1
+    }}
+  ]
+}

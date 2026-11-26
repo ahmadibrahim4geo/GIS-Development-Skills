@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/brand/banner-dark.svg" alt="GIS Development Skills — The Heart of Geospatial Innovation" width="1200">
+  <img src="assets/brand/banner.png" alt="GIS Development Skills — The Heart of Geospatial Innovation. By Ahmed Ibrahim." width="1200" height="200">
 </p>
 
 <p align="center">طوّر أدوات وإضافات وتطبيقات GIS بمنهجية تطوير قابلة للتحقق.</p>
@@ -15,12 +15,19 @@
   <a href="CONTRIBUTING.md">المساهمة</a>
 </p>
 
-## ابدأ بنتيجة قابلة للإثبات، لا بقائمة طويلة
+## إيه اللي تقدر تطوّره؟
 
 **GIS Development Skills** حزمة ثنائية اللغة ومراعية للأمان لتطوير أدوات QGIS
 وArcGIS، وتطبيقات GIS المستقلة، وخرائط الويب، ومسارات معالجة البيانات. تحول
 الطلب إلى خطة يراجعها المستخدم، وتختار مختصًا مسؤولًا، ولا تعلن الاكتمال قبل
 وجود دليل فعلي.
+
+| نوع المشروع | ابدأ بـ |
+| --- | --- |
+| أدوات ArcGIS وإضافات QGIS | [ArcPy](skills/arcgis-toolbox-engineering/SKILL.md) · [PyQGIS](skills/qgis-plugin-development/SKILL.md) |
+| تطبيقات GIS وخرائط تفاعلية | [سطح المكتب](skills/gis-desktop-application-development/SKILL.md) · [الموبايل](skills/gis-mobile-application-development/SKILL.md) · [خرائط الويب](skills/geospatial-web-mapping/SKILL.md) |
+| التحليل المكاني وصور الأقمار الصناعية | [معالجة المتجهات والراستر](skills/geospatial-data-processing/SKILL.md) · [الاستشعار عن بُعد](skills/remote-sensing-pipelines/SKILL.md) · [التضاريس والهيدرولوجيا](skills/terrain-hydrology-lidar/SKILL.md) |
+| ربط البيانات والأتمتة وتبادل الخرائط | [واجهات GIS API](skills/geospatial-api-integration/SKILL.md) · [مسارات الوكلاء](skills/geospatial-ai-agents/SKILL.md) · [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) |
 
 التعليمات مستقلة عن اسم النموذج وإطار الوكيل. يوضح [دليل التنفيذ المرن](references/portable-execution-guidance.md)
 اختيار مستوى Lite أو Standard أو Deep حسب حجم المهمة ومخاطرها، واختيار الأدوات
@@ -39,6 +46,16 @@ Manifest ببصمات الملفات. راجع [عقد التوزيع](docs/SKIL
 بناء الحزمة لا يثبت تثبيتها داخل كل برنامج وكل إصدار من برامج الوكلاء.
 
 ### 2. استخدم طلبًا واضحًا
+
+لملفات HTML وواجهات الويب، اختَر **ملفات HTML وواجهات الويب** من [قائمة أنواع المشروعات في الصفحة الرئيسية](index.html#how-to-use). تفتح الصفحة بالإنجليزية افتراضيًا، ويمكنك اختيار العربية من زر اللغة. بعد [تجهيز المهارتين](references/modern-web-guidance-workflow.md)، شغّل فحص الجاهزية من مجلد مشروعك.
+
+```sh
+python -B scripts/web_guidance.py check
+```
+
+> أنشئ صفحة HTML متجاوبة بالعربية فيها زر يفتح نافذة تأكيد. تحقّق من جاهزية مهارتي الويب أولًا. اختبر اتجاه RTL والتنقل بلوحة المفاتيح ورجوع التركيز في متصفح فعلي على عرض موبايل وسطح مكتب.
+
+لأدوات QGIS Processing، جرّب الطلب التالي.
 
 > ابنِ أداة QGIS Processing تدقق طبقة نقاط GeoJSON معلنة كـ EPSG:4326. حافظ
 > على المصدر، واكتب في مجلد جديد، وارفض العناصر التالفة أو المكررة، واختبر
@@ -108,7 +125,7 @@ python scripts/intent_router.py --plan examples/mcp-tool-routing/plan.example.js
 
 ## دليل برمجة وتطوير تطبيقات GIS المفتوحة المصدر — 26 أكتوبر 2026
 
-أضفنا [دليل البرامج الجغرافية والمصادر البرمجية](references/gis-software-source-registry.md) لتنظيم تطبيقات **سطح المكتب والويب والموبايل** والمحركات والمكتبات والخوادم، وربط كل نوع بالمهارة المناسبة بدل إنشاء مهارات مكررة. يحتوي [الكتالوج المركزي](references/project-catalog.json) الآن على **188 مصدرًا فريدًا** بعد إضافة 40 مستودعًا عامًا لم تكن موجودة، وتظهر المصادر في [المستكشف الثنائي اللغة](explorer.html#catalog). مراجعة وجود المستودع وترخيصه المبدئي لا تثبت تشغيله أو صلاحية إعادة استخدام كل الاعتماديات؛ يلزم فحص الرخص والاختبارات الفعلية.
+أضفنا [دليل البرامج الجغرافية والمصادر البرمجية](references/gis-software-source-registry.md) لتنظيم تطبيقات **سطح المكتب والويب والموبايل** والمحركات والمكتبات والخوادم، وربط كل نوع بالمهارة المناسبة بدل إنشاء مهارات مكررة. يحتوي [الكتالوج المركزي](references/project-catalog.json) الآن على **461 مشروعًا ومصدرًا فريدًا** مرتبطة 1:1 بملفات القدرات، وتظهر المصادر في [المستكشف الثنائي اللغة](explorer.html#catalog). مراجعة وجود المستودع وترخيصه المبدئي لا تثبت تشغيله أو صلاحية إعادة استخدام كل الاعتماديات؛ يلزم فحص الرخص والاختبارات الفعلية.
 
 ## مهارة جديدة: محرك QGIS للتطبيقات المستقلة
 
@@ -116,7 +133,7 @@ python scripts/intent_router.py --plan examples/mcp-tool-routing/plan.example.js
 
 ## تدفق الأوامر والبيانات ومسؤوليات المهارات — 26 أكتوبر 2026
 
-**لدينا 33 مهارة، ولكل مهمة تنفيذية مسؤول محدد.** التسلسل: **طلب المستخدم ← الهدف ومعايير القبول ← التوجيه واختيار المسؤول ← الأمان والصلاحيات ← التنفيذ الحقيقي ← اختبار الأوامر والبيانات والبرنامج ← DoneProof ← سجل التطوير ← التسليم**. راجع [مصفوفة المسؤوليات](references/repository-wide-skill-orchestration.md)، و[تقرير مراجعة الجاهزية](docs/RELEASE_READINESS_AUDIT_2026-10-26.md)، و[دليل النشر](PUBLISHING.md).
+**لدينا 37 مهارة، ولكل مهمة تنفيذية مسؤول محدد.** التسلسل: **طلب المستخدم ← الهدف ومعايير القبول ← التوجيه واختيار المسؤول ← الأمان والصلاحيات ← التنفيذ الحقيقي ← اختبار الأوامر والبيانات والبرنامج ← DoneProof ← سجل التطوير ← التسليم**. راجع [مصفوفة المسؤوليات](references/repository-wide-skill-orchestration.md)، و[تقرير مراجعة الجاهزية](docs/RELEASE_READINESS_AUDIT_2026-10-26.md)، و[دليل النشر](PUBLISHING.md).
 
 [UI Command Audit](skills/gis-ui-command-audit/SKILL.md) يراجع ارتباط الأزرار بوظائفها، و[GIS Data Flow Diagnostics](skills/gis-data-flow-diagnostics/SKILL.md) يتابع الاستيراد والمحرك والعرض والحفظ وإعادة القراءة. الاختبارات الأصلية لسطح المكتب والموبايل منفصلة. ملف المهارة وحده لا ينفذ البرامج ولا يمنح صلاحيات الجهاز.
 
@@ -142,7 +159,7 @@ python scripts/verify_completion.py report.json --plan reviewed-plan.json --requ
 
 ## أربع مهارات جديدة لتدقيق برامج GIS وتصميم واجهاتها واختبارها — 26 أكتوبر 2026
 
-أصبح لدينا **33 مهارة قابلة للتثبيت**، وأضفنا أربع مهارات مترابطة مستقلة عن أي برنامج بعينه: [جرد أوامر الواجهة](skills/gis-ui-command-audit/SKILL.md)، و[اختبار البرامج المكتبية الفعلي](skills/gis-desktop-e2e-testing/SKILL.md)، و[تشخيص تدفق بيانات GIS](skills/gis-data-flow-diagnostics/SKILL.md)، و[تصميم واختبار UI/UX](skills/gis-ui-ux-design-testing/SKILL.md).
+أصبح لدينا **37 مهارة قابلة للتثبيت**، وأضفنا أربع مهارات مترابطة مستقلة عن أي برنامج بعينه: [جرد أوامر الواجهة](skills/gis-ui-command-audit/SKILL.md)، و[اختبار البرامج المكتبية الفعلي](skills/gis-desktop-e2e-testing/SKILL.md)، و[تشخيص تدفق بيانات GIS](skills/gis-data-flow-diagnostics/SKILL.md)، و[تصميم واختبار UI/UX](skills/gis-ui-ux-design-testing/SKILL.md).
 
 يحدد [عقد العمل المشترك](references/gis-ui-quality-coordination.md) مسؤولية كل مهارة والتسليم بين الأوامر والبيانات، وتوثق [مراجع الأدوات الخارجية](references/gis-ui-quality-upstream-sources.md) مصادرها. أضفنا أداتين مجانيتين للفحص الثابت وسجلات البيانات الصناعية، ولا تعتبر نتائجهما دليلًا على التشغيل داخل Windows أو ArcGIS أو QGIS. يمكن اختيار المهارات من [معالج المشاريع](project-wizard.html) بشكل اختياري دون تحويل المسودة إلى تصريح بالتنفيذ.
 
@@ -158,7 +175,7 @@ python scripts/verify_completion.py report.json --plan reviewed-plan.json --requ
 
 ## طوّر أدوات وتطبيقات نظم المعلومات الجغرافية وفق منهجية يمكن التحقق منها.
 
-مهارات تطوير برمجيات نظم المعلومات الجغرافية ومراجع مفتوحة المصدر، تشمل **35 مهارة قابلة للتثبيت** و**193 مرجعًا جغرافيًا** و**53 مصدرًا لواجهات البيانات والخدمات الجغرافية** و**26 دليلًا وبوابةً للبيانات**.
+مهارات تطوير برمجيات نظم المعلومات الجغرافية ومراجع مفتوحة المصدر، تشمل **37 مهارة قابلة للتثبيت** و**461 مرجعًا جغرافيًا** و**53 مصدرًا لواجهات البيانات والخدمات الجغرافية** و**26 دليلًا وبوابةً للبيانات**.
 
 **تحسينات المجانية والعرض:** أصبحت [الواجهة](index.html) تعرض جميع المهارات المدرجة، وزر «عرض المزيد» لكل النتائج، وفلترًا مجانيًا افتراضيًا لخدمات API (42 خدمة مجانية بشروط + خدمة واحدة للاستضافة الذاتية). الخيارات التجارية والتجريبية والمقيدة تُعرض عند اختيار «كل المستويات». راجع [سياسة المجاني أولًا](references/free-first-policy.md) لتفاصيل ترخيص ArcGIS وGlobal Mapper والبيانات والخدمات.
 
@@ -442,3 +459,12 @@ python scripts/search_catalog.py --query rust
 
 ظهور البرنامج في PATH لا يثبت أن الـSDK أو محرر الواجهات أو اختبارات GIS
 الأصلية تعمل؛ يلزم اختبار مباشر داخل بيئة التطوير المستهدفة.
+
+## التكامل الشامل V2 وواجهات الويب الحديثة ودورة حياة الإضافات السبع
+
+يدمج المستودع الآن **37 مهارة** انطلاقًا من مصدر واحد للحقيقة (`skills/` و`references/` و`scripts/`): اختيار المحركات الجغرافية ([مهارة اختيار المحركات](skills/geospatial-engine-selection/SKILL.md) فوق **461** ملف قدرات 1:1 في `references/engine-capability-profiles.json`)، ومسار واجهات الويب وملفات HTML ([إرشادات الويب الحديثة](skills/modern-web-guidance/SKILL.md) بالتكامل مع UI/UX Pro Max عبر `python -B scripts/web_guidance.py check`)، وإعادة استخدام المصادر والواجهات المرجعية النظيفة، وأدلة الويب والموبايل ([WEB_GIS_GUIDE.md](docs/WEB_GIS_GUIDE.md) · [MOBILE_GIS_GUIDE.md](docs/MOBILE_GIS_GUIDE.md) · [الدليل العربي الموحد](docs/WEB_MOBILE_GUIDE.ar.md))، ومنظومة البناء الحتمي للإضافات ([عقد التوزيع](docs/SKILL_DISTRIBUTION.md) · محرك التطوير `plugin-system/README.md`):
+
+- **المنصات السبع المولّدة (`GIS-Development-Skills-Plugins/README.md` في المستودع):** `portable` و`codex` و`chatgpt` (بدون خطافات محلية) و`claude-code` و`claude-ai` و`antigravity` و`cursor` (مع `.cursor/rules/gis-development-skills.mdc`) عبر أمر واحد من المصدر الموحد دون نسخ متكرر للمهارات.
+- **التحديث والمزامنة الخاصة خارج Git:** استعمل `python -B plugin-system/core/pipeline.py --build-only` أو `Update-All-Plugins.ps1 -BuildOnly` لإعادة التوليد والتحقق، و`--check-only` قبل الدفع، واستعمل `Update-My-Platforms.ps1` لإعدادات المالك في `%LOCALAPPDATA%\GIS-Development-Skills\PluginSync\owner-config.json` خارج المستودع تمامًا.
+- **خارطة الطريق والحدود الصادقة للاختبار:** اكتملت اختبارات العقود والبيانات والتوثيق محليًا (`T0/T1`)، بينما تبقى بيئات سطح المكتب (`QGIS`/`GDAL`/`ArcGIS Pro`)، والمتصفح (`Playwright`)، وبناء الموبايل (`Android`/`iOS`)، وتنفيذ وكلاء العملاء الحي (`codex`/`claude`/`agy`/`cursor`) موسومة **`NOT_RUN`** متى غابت عن الجهاز المحلي.
+

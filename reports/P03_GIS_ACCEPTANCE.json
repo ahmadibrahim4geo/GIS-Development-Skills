@@ -1,0 +1,278 @@
+{
+  "target": "P03 scientific fixtures and test-run readback",
+  "os": "Windows",
+  "application_version": "QGIS 4.2.3, bundled GDAL and stand-alone Python",
+  "python_runtime": "QGIS Python 3.12.15 and Python 3.14.7",
+  "crs_units": "EPSG:4326 longitude/latitude degrees; EPSG:3857 metre-grid mismatch fixture; Int16 NoData -9999",
+  "evidence_tier": "T3",
+  "commands_executed": [
+    "project_governance.py new-test-run --input ... --expect expected.json; record-test-run --id 0001",
+    "python-qgis.bat -s -B native_tests/qgis_scientific_readback.py --polygons <copy> --outputs <run>/outputs",
+    "Python 3.14.7 Landsat fixture calculation and KML-to-KMZ byte roundtrip in prepared run",
+    "project_governance.py record-test-run --id 0002 with intentionally absent outputs",
+    "python -m unittest discover -s tests -v"
+  ],
+  "fixtures_used": [
+    "fixtures/landsat8-l2-pixels.json",
+    "examples/kml-kmz/styled-roundtrip.kml",
+    "fixtures/geojson/valid_invalid_polygons.geojson",
+    "fixtures/expected/p03-science.json"
+  ],
+  "expected_result": "Three predeclared output summaries readable and equal for 0001; 0002 records missing outputs as failures. Original and copied input hashes agree.",
+  "observed_result": "Run 0001 passed all three exact comparisons, including installed native raster data reopening. Run 0002 returned exit 1 with recorded FAIL. All source fixture SHA-256 hashes matched their originals.",
+  "not_tested": [
+    "ArcGIS Pro native readback: direct run crashed; supported launcher did not yield a readback before it was stopped",
+    "Actual ATYAF scenes",
+    "Pre-collection and Level-1 satellite products",
+    "KML visual renderer",
+    "Vertical datum, 3D/GUI acceptance and packaged T4"
+  ],
+  "known_limitations": [
+    "Synthetic fixtures only. T3 applies to the observed QGIS/GDAL raster and vector operation. Landsat and KMZ checks are T1.",
+    "No accuracy claims for unseen sensors, samples or CRS transformations."
+  ],
+  "source_changes": "Original fixture bytes preserved; generated outputs reside in new isolated run directories.",
+  "provenance_licensing": "Synthetic project fixtures under repository MIT license; Landsat interpretation checked against product specifications from USGS.",
+  "status": "pass",
+  "native_runtime_verified": true,
+  "evidence_links": [
+    "reports/SCIENTIFIC_TEST_RUNS.md",
+    "P03_SCIENCE/testing results/0001_Scientific-Validation/RESULT.json",
+    "P03_SCIENCE/qgis.log"
+  ],
+  "input_manifest": [
+    {
+      "path": "valid_invalid_polygons.geojson",
+      "bytes": 1286,
+      "sha256": "1ac3d2bb8458e4dc03cb53f64f1c3b5a225690a5757e8160dffe9137852f1c35",
+      "format_hint": "GeoJSON",
+      "metadata": {
+        "feature_count": 2
+      },
+      "provenance_license": "MIT repository synthetic fixtures"
+    },
+    {
+      "path": "landsat8-l2-pixels.json",
+      "bytes": 1066,
+      "sha256": "90c6b49b2708a22477bf7da20c3ba2b1b4eebdfb63967aafa35d36d1e844e80c",
+      "format_hint": "JSON",
+      "metadata": {},
+      "provenance_license": "MIT repository synthetic fixtures"
+    },
+    {
+      "path": "styled-roundtrip.kml",
+      "bytes": 2802,
+      "sha256": "c6be866d50fa05882109502962b9cc80033e8ed591081e9421a2ae7ee27f6716",
+      "format_hint": "KML",
+      "metadata": {},
+      "provenance_license": "MIT repository synthetic fixtures"
+    }
+  ],
+  "positive_run": {
+    "id": "0001",
+    "recorded": "2026-11-20T21:06:39.933714+00:00",
+    "command": "QGIS GDAL scientific readback; Landsat NDVI fixture; KMZ document reopen",
+    "runtime": "QGIS 4.2.3 / GDAL; Python 3.14.7",
+    "semantics": "EPSG:4326 degrees vs EPSG:3857 metres; Int16 NoData -9999; Collection 1 and 2 L2 SR; synthetic fixtures.",
+    "originals_unchanged": true,
+    "fixture_copies_unchanged": true,
+    "status": "PASS",
+    "checks": [
+      {
+        "artifact": "qgis-science.json",
+        "comparison": "json",
+        "expected": {
+          "raster": {
+            "crs": "EPSG:4326",
+            "shape": [
+              2,
+              2
+            ],
+            "nodata": -9999,
+            "values": [
+              [
+                10,
+                null
+              ],
+              [
+                30,
+                40
+              ]
+            ],
+            "same_grid": "ACCEPTED",
+            "different_crs": "CRS_MISMATCH",
+            "shifted_grid": "GRID_MISMATCH"
+          },
+          "polygons": {
+            "crs": "EPSG:4326",
+            "valid": 1,
+            "invalid": 1
+          }
+        },
+        "actual": {
+          "raster": {
+            "crs": "EPSG:4326",
+            "shape": [
+              2,
+              2
+            ],
+            "nodata": -9999,
+            "values": [
+              [
+                10,
+                null
+              ],
+              [
+                30,
+                40
+              ]
+            ],
+            "same_grid": "ACCEPTED",
+            "different_crs": "CRS_MISMATCH",
+            "shifted_grid": "GRID_MISMATCH"
+          },
+          "polygons": {
+            "crs": "EPSG:4326",
+            "valid": 1,
+            "invalid": 1
+          }
+        },
+        "sha256": "3060649ae057da42ada8b4035775947c43a722ca627e64540dafc608c4848efb",
+        "bytes": 416,
+        "status": "PASS"
+      },
+      {
+        "artifact": "landsat.json",
+        "comparison": "json",
+        "expected": {
+          "legacy_clear": 0.5,
+          "legacy_water": 0.5,
+          "legacy_fill": null,
+          "legacy_high_cirrus": null,
+          "current_clear": 0.559322033898,
+          "current_fill": null,
+          "current_cirrus": null,
+          "wrong_qa_scheme": "REJECTED"
+        },
+        "actual": {
+          "legacy_clear": 0.5,
+          "legacy_water": 0.5,
+          "legacy_fill": null,
+          "legacy_high_cirrus": null,
+          "current_clear": 0.559322033898,
+          "current_fill": null,
+          "current_cirrus": null,
+          "wrong_qa_scheme": "REJECTED"
+        },
+        "sha256": "7ba3c9359f30bf3ac20eedb5e94da16f535cbd576055ef2d3570dd347bed54fc",
+        "bytes": 228,
+        "status": "PASS"
+      },
+      {
+        "artifact": "kml.json",
+        "comparison": "json",
+        "expected": {
+          "style_equal": true,
+          "asset_equal": true,
+          "original_asset_count": 0,
+          "export_asset_count": 0,
+          "xml_bytes_equal": true,
+          "placemarks": 4,
+          "tracks": 1
+        },
+        "actual": {
+          "style_equal": true,
+          "asset_equal": true,
+          "original_asset_count": 0,
+          "export_asset_count": 0,
+          "xml_bytes_equal": true,
+          "placemarks": 4,
+          "tracks": 1
+        },
+        "sha256": "de3b88815255c214511795b67b10c0861dca38e0409b985be29993420a6aa8f4",
+        "bytes": 173,
+        "status": "PASS"
+      }
+    ]
+  },
+  "negative_run": {
+    "id": "0002",
+    "recorded": "2026-11-20T21:06:40.352524+00:00",
+    "command": "Negative test withholding all forecast artifact files",
+    "runtime": "Python 3.14.7",
+    "semantics": "Readback must fail on absent output",
+    "originals_unchanged": true,
+    "fixture_copies_unchanged": true,
+    "status": "FAIL",
+    "checks": [
+      {
+        "artifact": "qgis-science.json",
+        "comparison": "json",
+        "expected": {
+          "raster": {
+            "crs": "EPSG:4326",
+            "shape": [
+              2,
+              2
+            ],
+            "nodata": -9999,
+            "values": [
+              [
+                10,
+                null
+              ],
+              [
+                30,
+                40
+              ]
+            ],
+            "same_grid": "ACCEPTED",
+            "different_crs": "CRS_MISMATCH",
+            "shifted_grid": "GRID_MISMATCH"
+          },
+          "polygons": {
+            "crs": "EPSG:4326",
+            "valid": 1,
+            "invalid": 1
+          }
+        },
+        "actual": null,
+        "status": "FAIL",
+        "readback_error": "FileNotFoundError"
+      },
+      {
+        "artifact": "landsat.json",
+        "comparison": "json",
+        "expected": {
+          "legacy_clear": 0.5,
+          "legacy_water": 0.5,
+          "legacy_fill": null,
+          "legacy_high_cirrus": null,
+          "current_clear": 0.559322033898,
+          "current_fill": null,
+          "current_cirrus": null,
+          "wrong_qa_scheme": "REJECTED"
+        },
+        "actual": null,
+        "status": "FAIL",
+        "readback_error": "FileNotFoundError"
+      },
+      {
+        "artifact": "kml.json",
+        "comparison": "json",
+        "expected": {
+          "style_equal": true,
+          "asset_equal": true,
+          "original_asset_count": 0,
+          "export_asset_count": 0,
+          "xml_bytes_equal": true,
+          "placemarks": 4,
+          "tracks": 1
+        },
+        "actual": null,
+        "status": "FAIL",
+        "readback_error": "FileNotFoundError"
+      }
+    ]
+  }
+}

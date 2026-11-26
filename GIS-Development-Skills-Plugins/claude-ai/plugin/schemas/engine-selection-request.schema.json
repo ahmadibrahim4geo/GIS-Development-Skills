@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ahmadibrahim4geo/GIS-Development-Skills/schemas/engine-selection-request.schema.json",
+  "title": "Geospatial Engine Selection 21-Slot Request Schema v1.0",
+  "description": "Structured representation of the 21 architectural intent slots extracted from Arabic/English user requests (REQ-EV2-005).",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "request_text",
+    "target_os",
+    "required_capabilities",
+    "free_only"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0" },
+    "request_text": { "type": "string", "minLength": 1 },
+    "language_hint": { "type": "string", "enum": ["en", "ar", "mixed"] },
+    "intent_modes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "extend-host",
+          "configure-host",
+          "source-fork",
+          "source-component-reuse",
+          "embedded-engine",
+          "ui-shell-migration",
+          "reference-inspired-ui",
+          "multi-engine-composition",
+          "worker-service",
+          "custom-component",
+          "custom-engine"
+        ]
+      }
+    },
+    "delivery_target": { "type": "string" },
+    "existing_project": {
+      "type": ["object", "null"],
+      "properties": {
+        "root_path": { "type": ["string", "null"] },
+        "current_ui": { "type": ["string", "null"] },
+        "current_renderer": { "type": ["string", "null"] },
+        "current_engine": { "type": ["string", "null"] },
+        "named_ambiguous_components": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "preserve_invariants": { "type": "array", "items": { "type": "string" } },
+    "target_os": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": ["windows", "linux", "macos", "web", "android", "ios", "cross-platform"]
+      }
+    },
+    "target_arch": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["x86_64", "arm64", "wasm", "any"] }
+    },
+    "preferred_languages": { "type": "array", "items": { "type": "string" } },
+    "ui_framework_preference": { "type": ["string", "null"] },
+    "required_capabilities": { "type": "array", "items": { "type": "string" } },
+    "optional_capabilities": { "type": "array", "items": { "type": "string" } },
+    "non_mercator_2d_required": { "type": "boolean" },
+    "free_only": { "type": "boolean" },
+    "offline_required": { "type": "boolean" },
+    "allow_network_apis": { "type": "boolean" },
+    "license_policy": {
+      "type": "string",
+      "enum": ["permissive-only", "lgpl-dynamic-ok", "oss-compatible", "gpl-ok", "commercial-host-explicit"]
+    },
+    "integration_preference": {
+      "type": "string",
+      "enum": ["in-process", "bindings-ffi", "worker-ipc", "service", "wasm", "unresolved", "any"]
+    },
+    "deployment_model": {
+      "type": "string",
+      "enum": ["portable", "installer", "pwa", "mobile-store", "container-service", "plugin-addin", "cli"]
+    },
+    "data_scales": {
+      "type": "object",
+      "properties": {
+        "vector_features_max": { "type": ["string", "integer"] },
+        "raster_size_gb": { "type": ["number", "string"] },
+        "concurrent_users": { "type": ["integer", "string"] }
+      }
+    },
+    "hardware_constraints": { "type": "string" },
+    "reference_products": { "type": "array", "items": { "type": "string" } },
+    "weights_override": {
+      "type": "object",
+      "additionalProperties": { "type": "number", "minimum": 0 }
+    }
+  }
+}

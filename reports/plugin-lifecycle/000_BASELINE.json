@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "report_id": "000_BASELINE",
+  "phase": "P00",
+  "date": "2026-11-25",
+  "repository_root": "D:/My Software/Skills/GIS Development Skills",
+  "branch": "codex/engineering-suite",
+  "head_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "dirty_working_tree_preserved": true,
+  "counts": {
+    "skills": 35,
+    "routed_skills": 33,
+    "lexical_domains": 30,
+    "project_catalog_entries": 193,
+    "verified_project_licenses": 22,
+    "urban_registry_entries": 78,
+    "free_api_services": 53,
+    "data_repositories": 26,
+    "code_sources": 17,
+    "code_recipes": 5,
+    "quarantined_external_skills": 6
+  },
+  "confirmed_defects": [
+    {
+      "id": "UDS-LIB-004",
+      "file": "references/urban-design-source-registry.json",
+      "issue": "DuckDB Spatial repo_url points to https://github.com/duckdb/duckdb-skills and claims security_rating=safe",
+      "planned_fix_phase": "P03",
+      "test_id": "E21"
+    },
+    {
+      "id": "DIST-LINK-001",
+      "file": "dist/user-testing/banner-work/brand-kit-readme.md",
+      "issue": "Pre-existing broken relative link assets/brand/banner.png inside untracked dist/ output",
+      "planned_fix_phase": "P00-NOTE",
+      "test_id": "ANTI-REG-008"
+    }
+  ],
+  "validators": {
+    "validate_catalog": "PASS",
+    "validate_api_catalog": "PASS",
+    "validate_data_repositories": "PASS",
+    "validate_skill_pack": "PASS",
+    "build_manifest_check": "PASS",
+    "audit_skill_graph": "PASS",
+    "audit_license_catalog": "PASS",
+    "security_audit": "PASS",
+    "validate_evidence_tiers": "PASS"
+  },
+  "unittest_baseline": {
+    "total_tests_run": 518,
+    "skipped": 1,
+    "failures": 1,
+    "failure_details": "RepositoryInternalLinksTests (1 pre-existing in dist/ + 3 external plan links in 01_Master_Integration_Plan.md resolved in P00)"
+  },
+  "cli_probe_on_path": {
+    "python": "FOUND",
+    "powershell": "FOUND",
+    "git": "FOUND",
+    "node": "FOUND",
+    "npm": "FOUND",
+    "pwsh": "NOT_FOUND",
+    "codex": "NOT_FOUND",
+    "claude": "NOT_FOUND",
+    "agy": "NOT_FOUND",
+    "cursor": "NOT_FOUND",
+    "adb": "NOT_FOUND",
+    "flutter": "NOT_FOUND",
+    "dart": "NOT_FOUND",
+    "qgis": "NOT_FOUND",
+    "gdalinfo": "NOT_FOUND",
+    "ogr2ogr": "NOT_FOUND"
+  },
+  "native_runtime_verification": "NOT_RUN"
+}

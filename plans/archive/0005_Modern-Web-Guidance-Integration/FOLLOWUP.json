@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "request_id": "WEB-SKILLS-0005-FOLLOWUP",
+  "revision": "r1",
+  "tasks": [
+    {
+      "id": "T4",
+      "acceptance_criteria": [
+        "The homepage opens in English and offers an Arabic RTL switch with translated web project guidance.",
+        "The HTML and web interfaces picker displays paired readiness and copies the selected language's request in a real browser.",
+        "The default README is English, links the Arabic version, and explains how to check both skills."
+      ]
+    },
+    {
+      "id": "T5",
+      "acceptance_criteria": [
+        "The verified integration and homepage commits are visible on the GitHub main ref.",
+        "GitHub validation, security, and Pages deployment are observed for the exact delivered head.",
+        "The deployed GitHub Pages homepage exposes the English default, RTL language switch, and working prompt copy."
+      ]
+    }
+  ]
+}

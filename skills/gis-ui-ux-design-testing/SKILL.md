@@ -13,6 +13,8 @@ compatibility: Design reviews and static checks are cross-platform; visual and n
 
 ## Design-to-verification route
 
+For browser interfaces, use [Modern Web Guidance and UI/UX Pro Max](../../references/modern-web-guidance-workflow.md) after checking both local providers. Bring the implementation guide and the design decisions into the same browser acceptance run.
+
 1. Receive the reviewed user goal and target audience from [Intent Orchestrator](../prompt-intent-orchestrator/SKILL.md) through the [GIS Router](../gis-development/SKILL.md); consult [Security Guardian](../gis-security-guardian/SKILL.md). Preserve the user's approved theme, identity, branding, language, platform and protected footer/author content.
 2. Read [shared GIS quality handoffs](../../references/gis-ui-quality-coordination.md), [UI/UX design and testing playbook](../../references/gis-ui-ux-design-testing.md) and [verified public upstream examples](../../references/gis-ui-quality-upstream-sources.md).
 3. Inventory GIS personas and workflows: novice/expert, search → layer discovery → open/edit → map navigation → analysis → export/save/reopen, error recovery, disabled/offline states, shortcut and keyboard use, 2D/3D transitions and panel resize.

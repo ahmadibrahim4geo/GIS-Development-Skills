@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "platform": "claude-code",
+  "display_name": "Claude Code",
+  "phase_status": "ACTIVE_P09",
+  "version": "0.3.5",
+  "source_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "source_digest": "527cf7b1b01b4b4ca593674ba47a6228843547f72ce9fcbdb5c4c24fe14d819e",
+  "carried_components": [
+    "skills (37)",
+    "references",
+    "schemas",
+    "scripts",
+    "templates",
+    "examples",
+    "fixtures",
+    "native_tests",
+    "docs",
+    "assets",
+    "AGENTS.md",
+    "LICENSE"
+  ],
+  "adapted_components": [
+    {
+      "component": "SKILL.md + .claude-plugin/plugin.json",
+      "action": "Generated Claude Code manifest and self-contained canonical bundle."
+    },
+    {
+      "component": ".claude-plugin/{plugin.json, marketplace.json, hooks.json}",
+      "action": "Packaged Claude Code scopes (`user`/`project`/`local`), marketplace catalog, and loop-safe read-only hook descriptor."
+    }
+  ],
+  "excluded_components": [
+    {
+      "item": "plugin-system/, Update-All-Plugins.*, Update-My-Platforms.*, reports/, plans/, .agent-development-log/",
+      "reason": "Developer-only lifecycle infrastructure & secrets excluded from end-user payload (REQ-PL-026 / PL-T26).",
+      "alternative": "Canonical repository governance surface"
+    }
+  ],
+  "notes": "Claude Code package built cleanly (777 files)."
+}

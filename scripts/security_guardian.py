@@ -4,6 +4,7 @@
 This guards archive *structure*, not member payload semantics. It never extracts.
 """
 import argparse
+from io import BytesIO
 import json
 import stat
 import zipfile
@@ -11,7 +12,7 @@ from pathlib import Path, PurePosixPath
 
 
 def inspect_archive(path, *, max_files=1000, max_bytes=268435456,
-                    max_member_bytes=134217728, max_ratio=200):
+                    max_member_bytes=134217728, max_ratio=200, payload=None):
     """Return a safe, redacted decision report; no extraction or writes."""
     path = Path(path)
     findings = []
@@ -20,7 +21,7 @@ def inspect_archive(path, *, max_files=1000, max_bytes=268435456,
     if min(max_files, max_bytes, max_member_bytes, max_ratio) <= 0:
         raise ValueError("limits must be positive")
     try:
-        with zipfile.ZipFile(path, "r", allowZip64=True) as archive:
+        with zipfile.ZipFile(BytesIO(payload) if payload is not None else path, "r", allowZip64=True) as archive:
             members = archive.infolist()
             count = len(members)
             if count > max_files:

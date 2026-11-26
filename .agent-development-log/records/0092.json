@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "sequence": 92,
+  "timestamp_utc": "2026-11-21T04:03:38+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "قبول فحص متطلبات المشروع الجديد والقائم",
+  "details": "أضيف preflight إلى أمر الحوكمة القائم مع مسار من جذر الحزمة. راجع نفس الوكيل التغيير والقراءات. يوثق التقرير editor اختياريًا، والحزم المعلنة، واختيار SDK. يعلق غياب أداة لازمة الإجراء المعتمد عليها مع استمرار الشغل المستقل. تم فحص مشروع جديد دون إنشائه، وبناء حل قائم في عينة Windows مع ثبات بصمات الحل والمشروع. لم يُفتح Rider أو مصمم حقيقي.",
+  "references": [
+    91
+  ],
+  "task_id": "PROJECT-PREFLIGHT",
+  "plan_revision": "r8",
+  "changed_files": [
+    "scripts/project_readiness.py",
+    "scripts/project_governance.py",
+    "scripts/project_structure.py",
+    "scripts/toolchain_advice.py",
+    "scripts/toolchain_discovery.py",
+    "scripts/build_skill_bundle.py",
+    "references/project-governance-workflow.md",
+    "skills/gis-development/SKILL.md",
+    "skills/prompt-intent-orchestrator/SKILL.md",
+    "tests/test_project_readiness.py",
+    "reports/PROJECT_PREFLIGHT_ACCEPTANCE.md",
+    "reports/PROJECT_PREFLIGHT_EVIDENCE.json"
+  ],
+  "tests": [
+    "34 targeted tests passed. Full suite ran 506 with 505 pass and one Windows symlink skip.",
+    "Native .NET 10 SDK built an actual existing .sln in scratch with unchanged solution and project hashes.",
+    "Approval-bound DoneProof and the typed Windows SDK receipt passed.",
+    "Verified 435 package content digests, local links and identical preflight results from fresh ZIP extraction."
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "8bfd4cf8faca9e9330f0e7a7892027d8fba4e5931bf43833d4fe6b12ad80d0ec",
+  "hash": "5e9bfb6c9771d393bb2b31b3adf176b452864d9c88b0f347a58a9180f1508fa6"
+}

@@ -11,11 +11,12 @@
 5. A model-running agent must have deterministic local actions without purchasing a hosted LLM. Local/GPU computation and data transfer can still incur practical expenses. Earth Engine and hosted cloud datasets may require eligible accounts or quotas.
 6. If a free solution is not equivalent in accuracy/outputs to a paid GIS feature, state the limitation; do not invent feature parity.
 
-## All 35 specialists
+## All 37 specialists
 
 | Specialist | Free independent path | Optional dependency or limitation |
 | --- | --- | --- |
 | `gis-development` | Free decision router, offline fixtures and Python examples | Optional commercial hosts only by explicit request |
+| `geospatial-engine-selection` | Offline-first Python CLI catalog discovery (`discover_engines.py`, `compare_engines.py`, `recommend_stack.py`), free/OSS-first hard gates, and `ADR` architecture templates | Optional read-only `api.github.com` metadata checks (`engine_repo_metadata.py`); commercial hosts and heavy SDKs never auto-installed |
 | `gis-code-discovery` | Free deterministic offline search across vetted open-source snippets and recipes (MIT/Apache/BSD/QGIS); no paid AI/API required | Public repositories and documentation have independent licenses; proprietary SDKs (e.g. ArcGIS Pro SDK) require host licenses for native execution |
 | `gis-architecture-visualization` | Local Archify interactive HTML with editable JSON; no paid renderer/API key; offline route/plan validation | External Archify runtime (reviewed Apache-2.0 source), Node.js and a usable browser for browser checks; host setup permissions, source privacy and incomplete upstream Arabic RTL support remain explicit |
 | `clean-room-reference-implementation` | Free read-only reference-file metadata observation, independently authored open-source implementations, deterministic local audit scripts and public KML/OGC standards | Proprietary program binaries/shaders/imagery remain restricted; native Windows tests, authorized agents and external services require separate verification; no mandatory paid provider |
@@ -32,6 +33,7 @@
 | `remote-sensing-pipelines` | STAC/public imagery assets after license checks, GDAL/Rasterio/xarray | GEE/cloud processing or AI may have account/quota requirements |
 | `spatial-databases` | Local PostgreSQL/PostGIS or SQLite/SpatiaLite | Managed hosted databases may charge |
 | `geospatial-web-mapping` | MapLibre/Leaflet/CesiumJS with permitted local/self-hosted layers | Hosted imagery/terrain/maps may charge or forbid caching |
+| `modern-web-guidance` | Local GoogleChrome CLI and guides with UI/UX Pro Max using Node.js and Python | Review the Apache-2.0 artifact and its notices, and the MIT design provider and data provenance |
 | `gis-desktop-application-development` | .NET, Tauri and free GIS engines under their licenses | ArcGIS/Global Mapper runtime DLLs need paid licensing |
 | `gis-mobile-application-development` | Free/native Android/iOS SDKs with license-reviewed MapLibre/Qt/QGIS adapters and local geodata; deterministic offline sync tests | Signing, native hardware tests, optional provider accounts and map data rights require separate verification and user permission |
 | `geospatial-data-discovery` | Metadata catalogs and independently permitted free datasets | Downloading or redistributing assets may be restricted |
@@ -53,7 +55,7 @@
 
 ## API classification (catalog review, not live verification)
 
-The 52 versioned API entries currently classify as **42 conditional free**, **1 self-hosted open source**, **3 restricted public**, **1 trial-only**, **4 commercial/metered**, and **1 temporarily unavailable**. Filter out commercial, trial, restricted and unavailable providers from free-only usage by default. Individual terms and upstream outages can change.
+Use the [versioned API catalog](free-geospatial-apis.json) for the current entries and `cost_tier` values. Free-only recommendations include `free-conditional` and `free-self-hosted` entries, subject to the documented terms and data licenses. Individual terms and upstream outages can change.
 
 **Official grounding:** [QGIS free download](https://www.qgis.org/download/), [Esri ArcGIS Pro trial](https://www.esri.com/en-us/arcgis/products/arcgis-pro/trial), [Global Mapper SDK licensing](https://support.globalmapper.com/hc/en-us/articles/53166637315860-Licensing).
 
@@ -63,3 +65,12 @@ The 52 versioned API entries currently classify as **42 conditional free**, **1 
 - All specialists link this document and provide a distinct no-cost path in the matrix.
 - Data/API catalog metadata must expose access tier without claiming live provider or commercial entitlement.
 - CI validates static counts, labels, links and fallback logic. Real native GIS/browser/hosted API acceptance is a separate test tier.
+
+## Cost Classification & Free-Only Hard Gate (`Engine Architecture V2` §12.1)
+
+Distinguish exact licensing and billing models before selecting or comparing engines, libraries, datasets, or services (`Engine Architecture V2` §12.1 & `Web & Mobile r3` §14):
+
+1. Separate the 9 cost categories explicitly: `free-of-charge`, `open-source`, `source-available`, `free-tier`, `academic-only`, `non-commercial`, `commercial`, `trial`, and `unknown`.
+2. Downloading or inspecting source examples (`open-source` SDK or sample repository) never implies free commercial runtime execution or free hosted map tiles/terrain (`Cesium ion`, `ArcGIS Location Platform`, `Google Maps Platform`, `Mapbox`, `MapTiler`). Always separate **SDK code license**, **hosted tile/API TOS & quotas**, **data license (e.g., OSM ODbL != public OSM tile servers)**, and **font/icon/3D asset licenses**.
+3. In `free_only` workflows (default), any candidate requiring mandatory paid runtime, credit-card billing, expiring commercial trial, or prohibited offline tile scraping fails the exclusion gate regardless of performance or UI score.
+4. Any `unknown` cost/license state stays marked `needs-evidence` (`UNVERIFIED`), never assumed `MIT` or `eligible`.

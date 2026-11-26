@@ -69,3 +69,14 @@ Preserve QAction/handler identity when supported, command availability, toggle s
 - T4 when distribution is in scope: packaging, launch on a clean supported environment, dependencies/licenses and project reopen/readback.
 
 Report native evidence **NOT RUN** when unavailable. Archify schema/render/browser checks concern the diagram only. Apply [DoneProof](../skills/completion-evidence/SKILL.md), keep original data unchanged, and retain per-edge source/evidence references without secrets or invented trace IDs.
+
+## Schema `v2.0` Extension (Backward Compatible with `v1.0`)
+
+`v1.0` declarations remain **strictly unchanged** so existing fixtures (`examples/architecture-visualization/qgis-ribbon.flow.json`, `qgis-ribbon.plan.json`) and `scripts/validate_architecture_flow.py` continue to pass without modification.
+
+For multi-engine composition, open-source fork cleanup (`KEEP / HIDE / DISABLE / REMOVE / REPLACE / DEFER`), or clean-room `reference-inspired-ui` workflows, use the additive `v2.0` contract defined in [architecture-v2.schema.json](../schemas/architecture-v2.schema.json):
+
+- **Preserved `v1.0` guarantees:** `source_host`, `target_host`, `preserved_invariants`, `flow_spec_ref`, `command_mappings`, and strict `unresolved` blockers for unverified components (such as `UI.js`).
+- **Additive `v2.0` declarations:** Multi-value `intent` array aligned with [engine-architecture-taxonomy.md](engine-architecture-taxonomy.md), `reference_products` (behavior reference metadata without implying code reuse), `source_base` (upstream repo, pinned ref, SPDX license when forked), structured `ui` (`framework`, `reference_reuse_mode`, `status`), typed `components[]` (per-component `project_id`, `role`, `integration_mode`, atomic `capabilities`, `license_evidence`, `runtime_evidence`, `dependency_refs`, `data_contract_ref`, `owner`), `capability_requirements`, `feature_inventory_ref`, `command_mapping_ref`, `license_policy`, and `decision_ref`.
+- **`v1.0` to `v2.0` Migration Rule:** Never drop fields from `v1.0`; promote `ui_framework`, `renderer`, and `gis_engine` into typed entries inside `components[]` while retaining `source_host`, `target_host`, `preserved_invariants`, and `flow_spec_ref` identically. `unresolved` components continue to block execution readiness.
+

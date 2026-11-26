@@ -1,0 +1,345 @@
+
+@import url("brand/tokens.css");
+/* GIS Development Skills | geospatial identity refresh | 2026 */
+:root{--bg:#071725;--panel:#0B253A;--panel2:#12344C;--stroke:#2B4E66;--text:#f2f8f8;--muted:#adc1c0;--green:#67B5A6;--mint:#81CCBE;--radius:20px}
+body:before{height:900px;background:radial-gradient(ellipse at 88% 5%,#136a6760 0,transparent 45%),radial-gradient(ellipse at 9% 25%,#164c5c48 0,transparent 47%),radial-gradient(ellipse at 62% 75%,#216D8342 0,transparent 39%)}
+.container{width:min(1190px,calc(100% - 42px))}
+.brand{gap:10px;min-width:0}.brand img{height:47px;width:47px;border-radius:12px;flex-shrink:0;object-position:center}
+.nav-brand-name{font-size:13px;letter-spacing:.2px;font-weight:800;line-height:1.2;color:#f1f8f6}
+.nav-brand-name strong{font-weight:850;color:#9CD8CC}
+.nav-brand-name small{display:block;font-size:10px;font-weight:600;color:#8aaea7;margin-top:3px;letter-spacing:.25px}
+.nav-links{gap:18px}
+.hero{grid-template-columns:1.13fr .87fr;gap:42px;padding-block:94px 77px}
+.hero .eyebrow{padding:8px 12px;border-radius:50px;background:#203a3548;border:1px solid #446e585c;font-size:10px}
+.hero-signature{padding-top:24px}
+.hero-brand{display:block;width:min(100%,620px);height:auto;border-radius:17px;filter:drop-shadow(0 15px 30px #0002)}
+.hero-exact{font-size:clamp(18px,2.1vw,24px);line-height:1.48;font-weight:760;letter-spacing:-.45px;color:#effbf3;margin:22px 0 9px;max-width:660px;text-wrap:balance}
+.hero .lead{font-size:15px;color:#a8c5c1;line-height:1.84;margin-top:15px}
+.hero-visual{min-height:452px;border:1px solid #365e5c;background:linear-gradient(138deg,#123B54 0%,#0C273B 49%,#081D30 100%);transform:perspective(980px) rotateY(-4deg);box-shadow:0 28px 70px #0008,0 0 0 6px #1a3c3c23;isolation:isolate}
+.hero-visual:before{content:"";inset:auto -55px -60px auto;width:265px;height:265px;position:absolute;border-radius:50%;background:#26c7b42b;filter:blur(50px);pointer-events:none}
+.visual-top{font-size:9px;letter-spacing:1.6px}
+.globe-art{max-height:290px;filter:drop-shadow(0 0 32px #53cabc3b)}
+.visual-float{position:absolute;z-index:2;display:flex;flex-direction:column;gap:1px;padding:10px 13px;backdrop-filter:blur(14px);border-radius:11px;border:1px solid #55877a80;background:#102b2de8;box-shadow:0 10px 24px #0005;max-width:190px}
+.visual-float b{color:#A2D9CE;font-size:12px;font-family:monospace}.visual-float span{color:#67cbbb;font-size:9px;letter-spacing:1.5px}
+.visual-float strong{color:#edf9f4;font-size:11px}.float-a{top:92px;right:8px}.float-b{left:5px;bottom:78px}
+.visual-foot{gap:6px}.tech{padding:5px 8px;background:#133233;border-color:#3e7165;font-size:10px}
+.stat{background:linear-gradient(135deg,#193033,#142329);border-color:#2c4d49}.stat strong{font-size:39px}
+.feature{background:linear-gradient(140deg,#12364C,#0B253A);border-color:#34504d;box-shadow:inset 0 1px #8cdec516}
+.feature:hover{border-color:#60cfae}.feature .glyph{background:#17485A;color:#A3D9D0}.feature h3{color:#f2faf7}
+.section-head h2{text-wrap:balance}.explorer{box-shadow:0 25px 90px #0003}
+.author-section{padding-top:95px;padding-bottom:30px}
+.author-panel{display:grid;grid-template-columns:minmax(210px,.75fr) minmax(0,2fr);gap:32px;align-items:center;border:1px solid #4b796c;border-radius:25px;padding:34px;background:linear-gradient(120deg,#143237,#17292c 55%,#113136);position:relative;overflow:hidden}
+.author-panel:after{position:absolute;content:"";right:-100px;top:-110px;width:370px;height:370px;border-radius:50%;background:radial-gradient(circle,#4ab28d24,transparent 68%);pointer-events:none}
+.author-portrait{display:flex;flex-direction:column;gap:11px;align-items:center;text-align:center;position:relative;z-index:1}
+.author-image-frame{height:230px;width:230px;max-width:100%;aspect-ratio:1;border-radius:21px;padding:6px;background:linear-gradient(135deg,#b4ec8e,#25c6cd,#234c4e);box-shadow:0 12px 25px #0006;transform:rotate(-2deg)}
+.author-image-frame img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 25%;border-radius:15px;background:#203c42}
+.author-handle{font-size:12px;color:#c2d5ca;font-family:monospace;direction:ltr}
+.author-project-ref{font-size:12px;color:#9eecc4;text-decoration:underline;text-underline-offset:4px}
+.author-copy{position:relative;z-index:1}
+.author-mark{color:#90e0cf;font-size:11px;letter-spacing:2px;font-weight:800}
+.author-copy h3{font-size:clamp(28px,3.6vw,42px);letter-spacing:-1px;margin:12px 0 4px;color:#fff;line-height:1.25}
+.author-arabic{font-size:.72em;color:#b6eb9f;font-weight:500;letter-spacing:0}
+.author-role{color:#9fe1d4;font-size:14px;font-weight:750;margin:0 0 14px}
+.author-description{color:#c3d8d3;font-size:14px;line-height:1.9;max-width:720px}
+.author-links{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.author-links a{display:inline-flex;gap:8px;align-items:center;justify-content:center;border:1px solid #49766a;background:#1d3d3b;padding:9px 13px;border-radius:10px;color:#effcf4;font-weight:800;font-size:12px;transition:background .15s}
+.author-links a:hover{background:#326459}
+.contact-symbol{display:inline-grid;place-items:center;border-radius:6px;width:22px;height:22px;background:#3e6e5b;color:#dcf7cd;font-family:monospace;font-size:11px;font-weight:900}
+.author-footnote{font-size:12px;color:#93aba4;text-align:center;margin:22px 0 0}
+.foot{align-items:center}
+html[lang="en"] .lang-ar,html[lang="ar"] .lang-en{display:none!important}
+[dir=rtl] .brand img{object-position:center}
+[dir=rtl] .hero-signature,[dir=rtl] .hero-brand{direction:ltr}
+[dir=rtl] .hero-exact{direction:ltr;text-align:right}
+[dir=rtl] .float-a{right:auto;left:8px}[dir=rtl] .float-b{left:auto;right:5px}
+@media(max-width:1000px){.nav-links{gap:10px;font-size:11px}.nav-brand-name{font-size:11px}}
+@media(max-width:900px){.hero-visual{transform:none}.nav-links{display:none}.hero{grid-template-columns:1fr;padding-block:54px 30px}.hero-visual{max-width:620px}.author-panel{grid-template-columns:1fr 1.7fr;gap:19px;padding:22px}.author-image-frame{width:185px;height:185px}}
+@media(max-width:640px){.container{width:calc(100% - 30px)}.brand img{width:42px;height:42px}.nav-brand-name small{font-size:9px}.hero-signature{padding-top:16px}.hero-brand{width:100%;border-radius:13px}.hero-exact{font-size:19px}.hero .lead{font-size:14px}.hero-visual{min-height:360px;transform:none}.float-a{top:70px}.float-b{bottom:55px}.visual-float{padding:6px 8px}.visual-float strong{font-size:9px}.stat strong{font-size:30px}.author-panel{grid-template-columns:1fr;gap:30px;padding:22px}.author-image-frame{width:200px;height:200px}.author-copy h3{font-size:29px}.author-links a{flex:1 1 100px}.author-section{padding-top:60px}}
+@media(prefers-reduced-motion:reduce){.hero-visual,.author-image-frame{transform:none!important}}
+
+/* Brand v2: the approved layered G is the focal point instead of a generic globe */
+.scene-identity{height:312px;min-height:240px;position:relative;display:grid;place-items:center;isolation:isolate;margin:8px auto 9px;overflow:visible}
+.scene-logo{height:252px;width:252px;max-width:75%;object-fit:contain;z-index:2;position:relative;filter:drop-shadow(0 16px 24px rgba(1,10,18,.65));transition:transform .35s ease}
+.hero-visual:hover .scene-logo{transform:translateY(-5px)}
+.scene-orbit{width:300px;height:205px;max-width:88%;border:1px solid rgba(77,228,194,.22);border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-26deg)}
+.orbit-two{transform:translate(-50%,-50%) rotate(26deg);border-color:rgba(112,197,233,.19)}
+.scene-axis{height:1px;background:linear-gradient(90deg,transparent,#6cdbbd40,transparent);position:absolute;inset-inline:7%;top:50%}
+.scene-axis-y{transform:rotate(90deg)}
+.scene-label{color:#82c9b8;font:10px/1.3 monospace;letter-spacing:1px;position:absolute;z-index:1}
+.label-north{top:22px;left:10%}.label-east{right:10%;bottom:18px}
+@media(max-width:640px){.scene-identity{height:235px;min-height:195px}.scene-logo{height:194px;width:194px}.scene-orbit{width:220px;height:140px}.label-north{top:0}.label-east{bottom:0}}
+@media(prefers-reduced-motion:reduce){.scene-logo{transition:none!important}.hero-visual:hover .scene-logo{transform:none!important}}
+
+/* Identity correction, 2026-10-24: real wordmark text, no baked SVG letter-spacing or G distortion. */
+.hero-lockup{display:flex;align-items:center;gap:16px;width:100%;min-width:0;direction:ltr;text-align:left}
+.hero-symbol{width:clamp(96px,11vw,158px);height:auto;aspect-ratio:1;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 10px 20px rgba(2,19,29,.28))}
+.hero-wordmark{min-width:0;flex:1}
+.hero-wordmark h1{display:flex;align-items:baseline;gap:.22em;flex-wrap:wrap;margin:0;font-family:Inter,'Segoe UI',system-ui,sans-serif;font-size:clamp(22px,2.35vw,33px);line-height:1.18;letter-spacing:-.045em;font-weight:700;white-space:normal}
+.hero-wordmark h1 span{display:inline-block}
+.hero-wordmark .word-gis{color:#08d6dc;font-weight:850;font-size:1.22em;letter-spacing:-.03em}
+.hero-wordmark .word-development{color:#f6fafb;font-weight:650}
+.hero-wordmark .word-skills{color:#9eedaa;font-weight:740}
+.hero-tagline{margin:10px 0 0!important;line-height:1.5;color:#b6d7dc;font-size:clamp(12px,1.3vw,16px);font-weight:500;letter-spacing:normal;white-space:normal}
+.hero-exact{margin-top:30px}
+.scene-identity .scene-logo{object-fit:contain}
+.nav-brand-name,.nav-brand-name strong,.nav-brand-name small{letter-spacing:0}
+.nav-brand-name strong{font-weight:740}
+@media(max-width:1100px){.hero-lockup{gap:10px}.hero-symbol{width:112px}.hero-wordmark h1{font-size:clamp(20px,2vw,28px)}}
+@media(max-width:900px){.hero-symbol{width:clamp(105px,22vw,154px)}.hero-wordmark h1{font-size:clamp(23px,3.4vw,36px)}}
+@media(max-width:640px){.hero-lockup{gap:10px;align-items:center}.hero-symbol{width:90px}.hero-wordmark h1{font-size:clamp(20px,5vw,27px);gap:.16em}.hero-tagline{font-size:12px;line-height:1.4;margin-top:7px!important}.hero-exact{margin-top:22px}}
+@media(max-width:360px){.hero-symbol{width:69px}.hero-wordmark h1{font-size:19px}}
+
+
+/* MIRSAD-inspired creator panel, adapted for GIS Development Skills.
+   Keep this after previous author styles: identical visual hierarchy to MIRSAD.
+   All text is switched by html[lang] and direction by html[dir]. */
+.author-section{padding-top:76px;padding-bottom:38px}
+.author-panel.mirsad-author{
+  display:grid;grid-template-columns:200px minmax(0,1fr);gap:2.3rem;
+  align-items:start;position:relative;overflow:visible;padding:2.6rem;
+  border:1px solid #355563;border-top:3px solid #e5b957;border-radius:20px;
+  background:#112a36;box-shadow:0 22px 52px rgba(0,5,13,.22);
+}
+.author-panel.mirsad-author::after{content:none}
+.mirsad-author .author-portrait{text-align:center;display:flex;flex-direction:column;gap:0;align-items:center;min-width:0}
+.mirsad-author .portrait-frame{
+  width:164px;height:164px;flex-shrink:0;margin-inline:auto;padding:4px;
+  border-radius:50%;background:linear-gradient(135deg,#13bcc8,#e6b75b);box-shadow:none;
+}
+.mirsad-author .portrait-frame img{
+  display:block;width:100%;height:100%;object-fit:cover;object-position:center 8%;
+  border:4px solid #112a36;border-radius:50%;background:#fff;
+}
+.mirsad-author .portrait-caption{margin:13px 0 3px;font-size:13px;line-height:1.8;color:#bacdd3;text-align:center}
+.mirsad-author .author-portrait > bdi{font-size:12px;color:#5ce4d8;direction:ltr;unicode-bidi:isolate}
+.mirsad-author .author-content{text-align:start;min-width:0}
+.mirsad-author .author-eyebrow{margin:0 0 8px;color:#64e1d6;font-weight:800;font-size:12px;letter-spacing:0;line-height:1.6}
+.mirsad-author .author-content h2{
+  color:#f5fbfa;font-size:clamp(30px,3vw,39px);font-weight:790;
+  letter-spacing:0;line-height:1.35;margin:0 0 8px;
+}
+.mirsad-author .author-badge{
+  display:inline-block;border:1px solid #345c67;border-radius:5px;
+  padding:5px 11px;margin-top:2px;color:#64e1d6;background:#143340;
+  font-size:12px;font-weight:700;letter-spacing:0;
+}
+.mirsad-author .author-bio{
+  margin:20px 0 0;font-size:14px;color:#bfd5da;
+  line-height:2.05;max-width:none;
+}
+.mirsad-author .contact-actions{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:19px;
+}
+.mirsad-author .contact-button{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:44px;padding:9px 15px;border-radius:9px;
+  border:1px solid #355762;background:#173744;color:#e9f3f8;
+  font-size:13px;font-weight:720;text-decoration:none;
+  transition:border-color .18s ease,background-color .18s ease;
+}
+.mirsad-author .contact-button:hover{border-color:#68d9cf;background:#204650}
+.mirsad-author .contact-button.whatsapp{color:#79f3bd;background:#114536;border-color:#345b52}
+.mirsad-author .contact-button.whatsapp:hover{background:#185643;border-color:#6edbaa}
+.mirsad-author .profile-icon{width:19px;height:19px;flex-shrink:0;color:#69ded5}
+.mirsad-author .contact-button.whatsapp .profile-icon{color:#79f3bd}
+.mirsad-author .consultation{
+  grid-column:1 / -1;display:flex;align-items:center;gap:19px;
+  padding:22px;border:1px solid #316251;border-radius:12px;
+  background:#103e33;margin-top:4px;min-width:0;
+}
+.mirsad-author .consult-icon{
+  display:grid;place-items:center;flex-shrink:0;width:48px;height:48px;
+  border:1px solid #67e2aa;border-radius:11px;color:#75ebbb;
+}
+.mirsad-author .consult-icon .profile-icon{width:26px;height:26px;color:#83e9bc}
+.mirsad-author .consult-copy{flex:1;min-width:0}
+.mirsad-author .consult-copy h3{margin:0;color:#81e9b8;font-size:16px;font-weight:780;line-height:1.5}
+.mirsad-author .consult-copy p{color:#bdd9d0;font-size:13px;line-height:1.9;margin:6px 0 0}
+.mirsad-author .consult-button{
+  white-space:nowrap;display:inline-flex;gap:9px;align-items:center;justify-content:center;
+  min-height:46px;padding:10px 14px;background:#0d2b30;
+  border:1px solid #75e3b4;color:#96f3cb;border-radius:10px;
+  font-size:13px;font-weight:760;
+}
+.mirsad-author .consult-button:hover{background:#1e4a3d}
+.mirsad-author .consult-button .profile-icon{height:18px;width:18px;color:inherit}
+html[lang="ar"] .mirsad-author{direction:rtl}
+html[lang="en"] .mirsad-author{direction:ltr}
+@media(max-width:1080px){
+  .author-panel.mirsad-author{grid-template-columns:170px minmax(0,1fr);gap:24px;padding:30px}
+}
+@media(max-width:720px){
+  .author-section{padding-top:54px}
+  .author-panel.mirsad-author{grid-template-columns:1fr;gap:26px;padding:24px 19px}
+  .mirsad-author .author-content{text-align:start}
+  .mirsad-author .portrait-frame{width:156px;height:156px}
+  .mirsad-author .author-content h2{font-size:30px}
+  .mirsad-author .consultation{flex-wrap:wrap;gap:14px;padding:18px}
+  .mirsad-author .consult-copy{flex:1 1 calc(100% - 70px)}
+  .mirsad-author .consult-button{width:100%;white-space:normal}
+  .mirsad-author .contact-actions{gap:8px}
+  .mirsad-author .contact-button{flex:1 1 auto;padding:9px 12px}
+}
+@media(max-width:400px){
+  .mirsad-author .contact-button{flex-basis:100%}
+  .mirsad-author .consult-copy{flex:1 1 100%}
+}
+
+/* Approved original integrated GIS brand: one graphic, no duplicated wordmark */
+:root { font-synthesis: none; }
+html[lang="en"] body {font-family:Inter,"Segoe UI",system-ui,-apple-system,Arial,sans-serif;}
+html[lang="ar"] body {font-family:Cairo,Tahoma,"Segoe UI",Arial,sans-serif;letter-spacing:0;}
+html[lang="ar"] .hero-content,html[lang="ar"] .hero-exact {direction:rtl;}
+html[lang="en"] .hero-content {direction:ltr;}
+.nav .brand {align-items:center;flex:0 0 auto;}
+.nav .brand img {display:block;width:205px!important;height:auto!important;max-height:none!important;border-radius:8px;object-fit:contain!important;flex-shrink:1;}
+.hero {display:block!important;grid-template-columns:none!important;min-height:0!important;padding:34px 0 54px!important;}
+.hero-primary {display:flex;flex-direction:column;align-items:center;gap:22px;width:100%;margin-inline:auto;}
+.hero-lockup {display:block!important;width:min(100%,1080px)!important;max-width:1080px;margin-inline:auto!important;direction:ltr;text-align:center;border-radius:20px;overflow:hidden;background:#14181a;box-shadow:0 15px 48px #0004;line-height:0;}
+.hero-lockup .hero-symbol {display:block!important;width:100%!important;height:auto!important;max-width:none!important;max-height:none!important;aspect-ratio:830/300!important;object-fit:contain!important;filter:none!important;transform:none!important;flex:initial!important;}
+.hero-content {max-width:850px;width:100%;text-align:center;margin:0 auto;}
+.hero .eyebrow {margin:0 auto 12px;letter-spacing:1.1px;}
+.hero .hero-exact {max-width:830px;margin:14px auto 10px;font-size:clamp(18px,2.25vw,26px);line-height:1.45;letter-spacing:-.025em;font-weight:750;text-wrap:balance;}
+.hero .lead {max-width:790px;margin:12px auto 0;font-size:clamp(14px,1.3vw,16px);line-height:1.85;text-wrap:pretty;}
+.hero .buttons {justify-content:center;gap:12px;margin-top:22px;}
+html[lang="ar"] .hero .hero-exact {letter-spacing:0;}
+@media(max-width:900px) {
+  .hero {padding:26px 0 36px!important;}
+  .hero-primary {gap:17px;}
+  .hero-lockup {border-radius:15px;}
+}
+@media(max-width:640px) {
+  .nav .brand img {width:150px!important;}
+  .nav .nav-right {gap:7px;}
+  .hero {padding:20px 0 26px!important;}
+  .hero-primary {gap:12px;}
+  .hero-lockup {border-radius:12px;}
+  .hero .eyebrow {font-size:9px;letter-spacing:.3px;}
+  .hero .hero-exact {font-size:clamp(17px,4.5vw,20px);margin:9px auto;}
+  .hero .lead {font-size:13px;line-height:1.7;}
+  .hero .buttons {margin-top:17px;}
+}
+
+/* Approved GIS Development Skills / Layered Map v1 — 2026-10-25 */
+:root{
+  --brand-dark-blue:#0B3D91;
+  --brand-blue:#1467C8;
+  --brand-cyan:#1CC8E8;
+  --brand-green:#82D53E;
+  --brand-white:#FFFFFF;
+  --brand-charcoal:#101B24;
+  --green:#82D53E;
+  --mint:#1CC8E8;
+}
+html[lang="en"] body{font-family:Inter,"Segoe UI",Arial,sans-serif;}
+html[lang="ar"] body{font-family:Cairo,Tahoma,"Segoe UI",Arial,sans-serif;}
+.nav .brand{flex:0 0 auto;max-width:min(255px,35vw);min-width:0;gap:0;}
+.nav .brand img{display:block;width:min(250px,100%)!important;max-width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:5 / 1!important;object-fit:contain!important;object-position:center!important;border:0!important;border-radius:0!important;flex-shrink:1;}
+.hero{display:block!important;grid-template-columns:none!important;min-height:0!important;padding:20px 0 56px!important;}
+.hero-primary{width:100%;max-width:1150px;gap:14px!important;margin-inline:auto;}
+.hero-lockup{display:block!important;width:min(100%,1150px)!important;max-width:1150px!important;line-height:0!important;overflow:visible!important;background:transparent!important;border:0!important;box-shadow:none!important;filter:none!important;border-radius:0!important;padding:0!important;margin:0 auto!important;}
+.hero-lockup .hero-symbol{display:block!important;width:100%!important;height:auto!important;max-width:none!important;max-height:none!important;aspect-ratio:10 / 3!important;object-fit:contain!important;object-position:center!important;border-radius:0!important;filter:none!important;box-shadow:none!important;transform:none!important;}
+.hero-content{max-width:860px;text-align:center;}
+.hero .eyebrow{margin:0 auto 10px;color:var(--brand-green);}
+.hero .hero-exact{max-width:820px;margin:11px auto;font-size:clamp(18px,2.2vw,26px);line-height:1.48;letter-spacing:-.025em;font-weight:750;}
+.hero .lead{max-width:760px;margin:8px auto 0;font-size:clamp(14px,1.35vw,16px);line-height:1.75;}
+.hero .buttons{justify-content:center;margin-top:20px;}
+html[lang="ar"] .hero-content{direction:rtl;}
+html[lang="ar"] .hero .hero-exact{letter-spacing:normal;}
+@media(max-width:900px){
+  .nav .brand{max-width:210px;}
+  .nav .brand img{width:210px!important;}
+  .hero{padding:17px 0 35px!important;}
+}
+@media(max-width:640px){
+  .nav .brand{max-width:148px;}
+  .nav .brand img{width:148px!important;}
+  .hero{padding:10px 0 30px!important;}
+  .hero-primary{gap:9px!important;}
+  .hero .eyebrow{font-size:10px;letter-spacing:0;}
+  .hero .hero-exact{font-size:clamp(17px,4.5vw,21px);margin:9px auto;}
+  .hero .lead{font-size:13px;line-height:1.7;}
+  .hero .buttons{margin-top:16px;}
+}
+
+/* Interactive Hub visual integration — retain full data explorer and profile */
+:root{
+  --bg:#050912;--panel:#101c33;--panel2:#0b1324;--stroke:#26364c;
+  --text:#f8fafc;--muted:#aebdd2;--green:#82D53E;--mint:#1CC8E8;
+  --gis-blue:#398CE3;--gis-navy:#0B3D91;--gis-cyan:#1CC8E8;
+}
+html{scroll-behavior:smooth}
+body{background-color:#050912!important;color:#f8fafc;background-image:radial-gradient(ellipse at 13% 6%,#38bdf81a,transparent 33%),radial-gradient(ellipse at 85% 23%,#10b98117,transparent 34%),linear-gradient(#94a3b809 1px,transparent 1px),linear-gradient(90deg,#94a3b809 1px,transparent 1px)!important;background-size:100% 100%,100% 100%,44px 44px,44px 44px!important}
+body:before{opacity:.35;pointer-events:none}
+.nav-wrap{background:#050912ed!important;border-bottom:1px solid #26364c!important;backdrop-filter:blur(17px)}
+.nav-links a,.nav-right .lang{color:#cbd5e1}
+.nav-links a:hover{color:#1CC8E8!important}
+.nav-git{background:#163148!important;border:1px solid #316584!important;color:#73d8f3!important;border-radius:11px!important}
+.nav-git:hover{background:#254b66!important}
+.hero{padding-top:22px!important;padding-bottom:42px!important}
+.hero-primary{gap:15px!important}
+.hero-lockup{max-width:1080px!important;width:min(100%,1080px)!important;margin-inline:auto}
+.hero-lockup img{filter:none!important}
+.hero-content{max-width:830px!important;margin:auto!important}
+.hero .eyebrow{border:1px solid #2d6850;border-radius:30px;background:#0f292b;padding:7px 14px;letter-spacing:.8px!important;font-size:11px!important;color:#a6e8b5!important}
+.hero .dot{background:#82D53E}
+.hero .hero-exact{font-size:clamp(21px,2.6vw,31px)!important;line-height:1.35!important;font-weight:800;letter-spacing:-.4px!important;text-wrap:balance}
+.hero .lead{max-width:790px!important;color:#c1cfdd!important}
+.btn.primary{background:linear-gradient(115deg,#1CC8E8,#82D53E)!important;color:#06202b!important;border-color:transparent!important;font-weight:800!important}
+.btn.secondary{background:#152a43!important;border:1px solid #33516b!important;color:#eaf6ff!important}
+.buttons .btn{min-height:46px;border-radius:12px!important}
+.stats{gap:12px!important;padding:16px!important;border:1px solid #26364c;border-radius:20px;background:#0c1528d9!important}
+.stat{background:transparent!important;border:none!important;border-radius:12px!important;text-align:center;padding:15px 10px!important}
+.stat strong{font-size:clamp(23px,2.8vw,36px)!important;color:#38bdf8!important}
+.stat:nth-child(2) strong{color:#82D53E!important}
+.stat:nth-child(3) strong{color:#fbbf24!important}
+.stat:nth-child(4) strong{color:#c4b5fd!important}
+.stat:nth-child(5) strong{color:#93c5fd!important}
+.stat span{color:#cbd5e1!important}
+section:not(#author){scroll-margin-top:108px}
+.section-head h2{letter-spacing:-.7px!important}
+.overline{color:#38bdf8!important}
+.feature,.workflow .step,.skill-directory a,.catalog-card{background:#101c33cc!important;border-color:#2a3a50!important;backdrop-filter:blur(10px);border-radius:17px!important}
+.feature:hover,.skill-directory a:hover,.catalog-card:hover{border-color:#398CE3!important;background:#152944!important;box-shadow:0 12px 34px #38bdf819}
+.glyph{background:#173954!important;color:#1CC8E8!important}
+.feature .learn,.fine-link{color:#7ed6fa!important}
+input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid #1CC8E8!important;outline-offset:3px}
+.author-section{padding-top:54px!important;padding-bottom:60px!important}
+.author-panel.mirsad-author{background:linear-gradient(125deg,#101c33,#0d2935)!important;border:1px solid #334d64!important;border-top:3px solid #82D53E!important;border-radius:23px!important;box-shadow:0 19px 53px #0004!important;gap:32px!important;padding:clamp(20px,3.2vw,38px)!important;isolation:isolate}
+.author-panel.mirsad-author:after{content:none!important}
+.mirsad-author .portrait-frame{background:linear-gradient(135deg,#1CC8E8,#82D53E)!important}
+.mirsad-author .portrait-frame img{border-color:#101c33!important}
+.mirsad-author .author-eyebrow,.mirsad-author .author-badge{color:#79ddf0!important}
+.mirsad-author .author-badge{border:1px solid #35516a!important;background:#172f46!important;border-radius:8px!important}
+.mirsad-author .author-bio,.mirsad-author .portrait-caption{color:#cbd5e1!important}
+.mirsad-author .contact-button{background:#172f47!important;border-color:#38546d!important;border-radius:10px!important}
+.mirsad-author .contact-button:hover{border-color:#1CC8E8!important;background:#254660!important}
+.mirsad-author .contact-button.whatsapp{background:#123a31!important;color:#baf3cc!important;border-color:#2c6852!important}
+.mirsad-author .contact-button.whatsapp:hover{background:#185043!important}
+.mirsad-author .profile-icon{color:#1CC8E8!important}
+.mirsad-author .contact-button.whatsapp .profile-icon{color:#82D53E!important}
+.mirsad-author .consultation{background:#0f3e37a8!important;border:1px solid #3e755b!important;border-radius:15px!important}
+.mirsad-author .consult-copy h3{color:#a2f1bd!important}
+.mirsad-author .consult-copy p{color:#c9e4dc!important}
+.mirsad-author .consult-button{background:#092c32!important;border-radius:10px!important;border-color:#5aca9d!important;color:#b1f5d0!important}
+.mirsad-author .consult-button:hover{background:#194940!important}
+html[lang="ar"] .mirsad-author{direction:rtl}
+html[lang="en"] .mirsad-author{direction:ltr}
+@media(max-width:900px){
+  .nav{flex-wrap:wrap!important;gap:8px!important;padding-block:10px}
+  .nav-links{order:3!important;display:flex!important;gap:18px!important;overflow:auto;width:100%;padding:6px 0 4px;white-space:nowrap;scrollbar-width:thin}
+  .nav-links a{flex-shrink:0}
+  .hero{padding-top:12px!important}
+  .author-panel.mirsad-author{gap:24px!important}
+}
+@media(max-width:640px){
+  .nav-links{gap:16px!important;font-size:12px}
+  .hero .eyebrow{padding:6px 11px;font-size:10px!important}
+  .hero .hero-exact{font-size:19px!important;letter-spacing:0!important}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:8px!important}
+  .stat:last-child{grid-column:1/-1}
+  .author-panel.mirsad-author{padding:20px 16px!important}
+  .mirsad-author .contact-button{flex:1 1 100%}
+  .mirsad-author .consultation{padding:16px!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}

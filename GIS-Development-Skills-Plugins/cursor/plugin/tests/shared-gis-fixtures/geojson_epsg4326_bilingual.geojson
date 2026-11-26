@@ -1,0 +1,85 @@
+{
+  "type": "FeatureCollection",
+  "name": "gis_shared_bilingual_fixture",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "attribution": "Synthetic test fixture (GIS Development Skills MIT; not real infrastructure)",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "pt-cairo-01",
+      "properties": {
+        "name_ar": "نقطة معاينة القاهرة",
+        "name_en": "Cairo Control Point",
+        "category": "station",
+        "elev_m": 24.5,
+        "notes": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.2357, 30.0444]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ln-corridor-02",
+      "properties": {
+        "name_ar": "محور طريق تجريبي",
+        "name_en": "Synthetic Test Corridor",
+        "category": "corridor",
+        "elev_m": null,
+        "notes": "Supports UTF-8 العربية"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [31.2357, 30.0444],
+          [31.2461, 30.0534]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pg-parcel-03",
+      "properties": {
+        "name_ar": "قطعة أرض صالحة",
+        "name_en": "Valid Parcel Polygon",
+        "category": "parcel",
+        "elev_m": 18.0,
+        "notes": "Closed non-self-intersecting ring"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [31.2300, 30.0400],
+            [31.2320, 30.0400],
+            [31.2320, 30.0420],
+            [31.2300, 30.0420],
+            [31.2300, 30.0400]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mp-sensors-04",
+      "properties": {
+        "name_ar": "مجموعة مستشعرات",
+        "name_en": "MultiPoint Sensor Array",
+        "category": "iot-array",
+        "elev_m": 12.2,
+        "notes": null
+      },
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [31.2200, 30.0300],
+          [31.2250, 30.0350]
+        ]
+      }
+    }
+  ]
+}

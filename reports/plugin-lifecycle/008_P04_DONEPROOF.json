@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P04",
+  "revision": "r1",
+  "overall_status": "partial",
+  "criteria": [
+    {
+      "id": "P04-SKILL-GUIDE-SCHEMAS-AND-TEMPLATES",
+      "statement": "Create concise skills/geospatial-engine-selection/SKILL.md (<=180 lines), references/engine-comparison-guide.md, 2 JSON schemas, and 5 structured architecture templates wired cleanly into router, free-first-policy, intent_router, gis-code-discovery, and repository-manifest (36 skills)",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "scripts/validate_skill_pack.py + scripts/audit_skill_graph.py + scripts/build_manifest.py --check + tests/test_engine_selection.py",
+          "observed": "validate_skill_pack: 36 skills valid; audit_skill_graph: PASS | skills=36 | routed=34 | lexical domains=31; build_manifest --check: 36 skills / 461 references / 53 APIs / 26 data repos",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P04-SIX-CLI-SCRIPTS-AND-MOCK-HTTP-QT-TESTS",
+      "statement": "Implement and verify engine_repo_metadata.py, discover_engines.py, compare_engines.py, recommend_stack.py, validate_engine_profiles.py, and inventory_ui_actions.py (integrated with gis_ui_command_audit.py) across mocked HTTP edges, bilingual AR/EN discovery parity, hard gates, multi-engine decomposition, and bounded XML safety checks",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests.test_engine_profiles + tests.test_engine_selection + tests.test_engine_compatibility + 19 core suites",
+          "observed": "Ran 154 tests in 31.139s OK covering E03, E08..E20, E24, E32, E33, E35, E37, E-26, E-43; validate_engine_profiles.py and security_audit.py passed with 0 errors/0 blocking findings",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P04-PORTABLE-PLUGIN-BUNDLE-REBUILD",
+      "statement": "Rebuild portable plugin package with 36 skills, new P04 references, schemas, templates, scripts, and tests, maintaining deterministic UP_TO_DATE verification",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "reports/plugin-lifecycle/007_PLUGIN_P04_SYNC.json + plugin-system/tests",
+          "observed": "pipeline --build-only returned BUILT (source_digest 0a058a5feecc, 471 bundle files) and immediate --check-only returned UP_TO_DATE; build_skill_bundle --check PASS; 10 plugin lifecycle tests OK",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P04-REPO-INTERNAL-LINKS-PREEXISTING-DIST",
+      "statement": "Repository internal Markdown links integrity across workspace and P04 documents",
+      "status": "partial",
+      "reason": "Zero broken links across canonical docs and all P04 deliverables; test_repository_internal_links reported only 1 pre-existing untracked failure in dist\\user-testing\\banner-work\\brand-kit-readme.md (assets/brand/banner.png)",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests.test_repository_internal_links + build_skill_bundle --check",
+          "observed": "build_skill_bundle --check confirmed 0 broken links across bundled files; test_repository_internal_links isolated sole failure to pre-existing untracked dist file",
+          "result": "fail",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P05-THROUGH-P11-AND-NATIVE-EXTERNAL-SCANS",
+      "statement": "Web GIS expansion (P05), Mobile GIS expansion (P06), Source Fork & Reference UI examples (P07), Repo-wide HTML UI upgrades (P08), 6 client adapters & CI (P09), live api.github.com queries, external SAST scans, and native T2-T4 runs",
+      "status": "not_run",
+      "reason": "Live upstream queries, native GIS execution, external SAST scanners, and Phases P05-P11 remain NOT RUN pending owner approval of P05+",
+      "evidence": []
+    }
+  ]
+}

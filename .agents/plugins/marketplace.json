@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "marketplace": "openai-codex-local",
+  "plugin_id": "ahmadibrahim4geo.gis-development-skills",
+  "name": "gis-development-skills",
+  "display_name": "GIS Development Skills",
+  "version": "0.3.5",
+  "source_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "source_digest": "527cf7b1b01b4b4ca593674ba47a6228843547f72ce9fcbdb5c4c24fe14d819e",
+  "bundle_digest": "771427c6cdba70bb969909d1c484ef2cb77d3e959b19a352b35b3f270568f934",
+  "plugins": [
+    {
+      "id": "ahmadibrahim4geo.gis-development-skills",
+      "name": "gis-development-skills",
+      "title": "GIS Development Skills",
+      "version": "0.3.5",
+      "source_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+      "source_digest": "527cf7b1b01b4b4ca593674ba47a6228843547f72ce9fcbdb5c4c24fe14d819e",
+      "plugin_path": "GIS-Development-Skills-Plugins/codex/plugin",
+      "manifest_path": "GIS-Development-Skills-Plugins/codex/plugin/.codex-plugin/plugin.json",
+      "shared_listing_group": "openai-directory",
+      "license": "MIT",
+      "repository": "https://github.com/ahmadibrahim4geo/GIS-Development-Skills"
+    }
+  ]
+}

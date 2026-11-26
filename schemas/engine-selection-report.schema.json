@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ahmadibrahim4geo/GIS-Development-Skills/schemas/engine-selection-report.schema.json",
+  "title": "Geospatial Engine Selection 10-Section Report Schema v1.0",
+  "description": "Structured architecture recommendation report emitted deterministically by scripts/recommend_stack.py.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "request_summary",
+    "intent_slots",
+    "entity_role_split",
+    "existing_inventory_gate",
+    "recommended_build_models",
+    "candidate_evaluations",
+    "recommended_stack",
+    "component_contracts",
+    "developer_vs_enduser_setup",
+    "fallback_and_compatibility_guardrails",
+    "poc_benchmark_plan",
+    "adr_record",
+    "gaps_and_limitations",
+    "evidence_boundaries"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0" },
+    "status": {
+      "type": "string",
+      "enum": ["recommended", "partial-with-gaps", "unresolved", "blocked-by-gate"]
+    },
+    "request_summary": { "type": "string" },
+    "intent_slots": { "type": "object" },
+    "entity_role_split": { "type": "object" },
+    "existing_inventory_gate": { "type": "object" },
+    "recommended_build_models": { "type": "array", "items": { "type": "string" } },
+    "candidate_evaluations": { "type": "array", "items": { "type": "object" } },
+    "recommended_stack": { "type": "array", "items": { "type": "object" } },
+    "component_contracts": { "type": "array", "items": { "type": "object" } },
+    "developer_vs_enduser_setup": {
+      "type": "object",
+      "required": ["developer_toolchain", "end_user_runtime", "approval_required_downloads"]
+    },
+    "fallback_and_compatibility_guardrails": { "type": "array", "items": { "type": "string" } },
+    "poc_benchmark_plan": { "type": "object" },
+    "adr_record": { "type": "object" },
+    "gaps_and_limitations": { "type": "array", "items": { "type": "string" } },
+    "evidence_boundaries": {
+      "type": "object",
+      "required": ["analysis_tier", "native_runtime_verified", "heavy_installers_executed"]
+    }
+  }
+}

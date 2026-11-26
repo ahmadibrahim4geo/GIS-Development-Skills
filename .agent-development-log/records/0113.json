@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "sequence": 113,
+  "timestamp_utc": "2026-11-25T08:54:41+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Completed P00 baseline and P01 root AGENTS governance, taxonomy, build-vs-reuse policy, and schema v2.0",
+  "details": "Recorded P00 baseline (000_BASELINE.md/.json) at commit 42de4a246a2db1f7d33cc746da9cd3a0f1718a91; authored 0007_Master-Integration (7 plan docs); wired AGENTS.md, references/engine-architecture-taxonomy.md, references/engine-capability-taxonomy.json, references/build-vs-reuse-policy.md, references/free-first-policy.md, schemas/architecture-v2.schema.json, references/ui-engine-architecture-contract.md, scripts/build_skill_bundle.py, PROJECT_STRUCTURE.md, and tests/test_engine_architecture_migration.py. Verified DoneProof, 11 CLI validators, and 59 targeted unit tests OK; full link test shows 1 pre-existing dist/ failure. P02-P11 await user approval.",
+  "references": [
+    112
+  ],
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P00-P01",
+  "plan_revision": "r2",
+  "changed_files": [
+    "AGENTS.md"
+  ],
+  "tests": [
+    "verify_completion + 11 CLI validators + 59 targeted unit tests OK; test_repository_internal_links 1 pre-existing dist failure"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "894aeeb4c43411fe5c3475f2a7e84efde9ec9b5b3de7fc6e4c3a1bcec6416207",
+  "hash": "519e8762f6a4569694869e1e8460e893c56be08e7ccb272cb594f472312d7a02"
+}

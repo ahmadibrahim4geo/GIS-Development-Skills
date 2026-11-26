@@ -26,6 +26,20 @@ class RemoteSensingIndicesTests(unittest.TestCase):
         result = calc_mod.calc_ndvi(nir=0.6, red=0.2)
         self.assertAlmostEqual(result, 0.5, places=5)
 
+    def test_landsat8_ndvi_uses_collection_specific_scaling_and_masks(self):
+        calculate = calc_mod.landsat8_l2_ndvi
+        self.assertAlmostEqual(calculate(1, {"B5": 6000, "B4": 2000}, "pixel_qa", 322), 0.5)
+        self.assertAlmostEqual(calculate(1, {"B5": 6000, "B4": 2000}, "pixel_qa", 324), 0.5)
+        self.assertIsNone(calculate(1, {"B4": -9999, "B5": 6000}, "pixel_qa", 322))
+        self.assertIsNone(calculate(1, {"B4": 2000, "B5": 6000}, "pixel_qa", 834))
+        self.assertAlmostEqual(calculate(2, {"B4": 12000, "B5": 24000}, "QA_PIXEL", 64), 33 / 59)
+        self.assertIsNone(calculate(2, {"B4": 0, "B5": 24000}, "QA_PIXEL", 64))
+        self.assertIsNone(calculate(2, {"B4": 12000, "B5": 24000}, "QA_PIXEL", 4))
+        with self.assertRaises(ValueError):
+            calculate(2, {"B4": 12000, "B5": 24000}, "pixel_qa", 64)
+        with self.assertRaises(ValueError):
+            calculate(1, {"B3": 2000, "B4": 6000}, "pixel_qa", 322)
+
     def test_ndvi_zero_denominator_returns_nan(self):
         result = calc_mod.calc_ndvi(nir=0.0, red=0.0)
         self.assertTrue(math.isnan(result))

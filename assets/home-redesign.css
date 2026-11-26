@@ -1,57 +1,58 @@
 /* GIS Development Skills · redesigned homepage · project typography and colors */
-:root{--ui-bg:#090f10;--ui-surface:#132224;--ui-panel:#172b29;--ui-line:#38564c;--ui-ink:#effaf2;--ui-muted:#acc5b6;--ui-lime:#b0ef8d;--ui-mint:#74dec1}
+@import url("brand/tokens.css");
+:root{--ui-bg:#071725;--ui-surface:#0e2538;--ui-panel:#122e43;--ui-line:#315668;--ui-ink:#F4FAFC;--ui-muted:#A8C0CE;--ui-lime:#67B5A6;--ui-mint:#81CCBE}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{background:#090f10!important;background-image:radial-gradient(ellipse 60% 25% at 70% 0%,#446c531c,transparent 80%),linear-gradient(#91b7a007 1px,transparent 1px),linear-gradient(90deg,#91b7a007 1px,transparent 1px)!important;background-size:auto,48px 48px,48px 48px!important;color:var(--ui-ink)}
-body>header{background:#0b1515f2!important;border-color:#354f44!important;box-shadow:0 12px 34px #0003}
+body{background:#071725!important;background-image:radial-gradient(ellipse 60% 25% at 70% 0%,#1A658938,transparent 80%),linear-gradient(#96C3DA0C 1px,transparent 1px),linear-gradient(90deg,#96C3DA0C 1px,transparent 1px)!important;background-size:auto,48px 48px,48px 48px!important;color:var(--ui-ink)}
+body>header{background:#081A2AF5!important;border-color:#2B4A5E!important;box-shadow:0 12px 34px #0003}
 body>header .hover\:text-sky-400:hover{color:var(--ui-lime)!important}
-#langToggleBtn{background:#19302d!important;color:#e6f3e8!important;border-color:#426354!important}
+#langToggleBtn{background:#15334A!important;color:#e6f3e8!important;border-color:#395A6B!important}
 body>header a[href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills"]{background:var(--ui-lime)!important;color:#152719!important;border-color:var(--ui-lime)!important}
-#mobileMenu{background:#101f1e!important;border-color:#365448!important}
-#mobileMenu a:hover{background:#244338!important}
+#mobileMenu{background:#0B2234!important;border-color:#29495E!important}
+#mobileMenu a:hover{background:#183B51!important}
 main#home{max-width:1200px}
 main#home>section{scroll-margin-top:92px}
 .studio-hero{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(330px,.94fr);gap:42px;align-items:center;padding:67px 0 43px;position:relative}
 .studio-hero-copy{min-width:0;position:relative;z-index:1}
 .studio-eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:100px;border:1px solid #527851;background:#23372b;color:var(--ui-lime);font-size:11px;font-weight:800;letter-spacing:.055em}
-.studio-eyebrow:before{content:"";background:var(--ui-lime);height:7px;width:7px;border-radius:50%;box-shadow:0 0 0 5px #b0ef8d1a}
+.studio-eyebrow:before{content:"";background:var(--ui-lime);height:7px;width:7px;border-radius:50%;box-shadow:0 0 0 5px #67B5A61A}
 .studio-logo{display:block;width:min(100%,490px);height:auto;max-height:156px;object-fit:contain;object-position:left center;margin:20px 0 20px;filter:none!important}
 html[lang=ar] .studio-logo{object-position:right center}
 .studio-hero h1{font-size:clamp(38px,4.5vw,60px);font-weight:850;letter-spacing:-.04em;line-height:1.15;max-width:620px;color:#f4fff7;margin:0 0 18px}
 html[lang=ar] .studio-hero h1{font-size:clamp(32px,3.6vw,49px);letter-spacing:0;line-height:1.55}
 .studio-hero h1 em{font-style:normal;color:var(--ui-lime)}
-.studio-description{color:#b5cebf;font-size:15px;line-height:1.85;max-width:595px;margin:0 0 24px}
+.studio-description{color:#B0C7D6;font-size:15px;line-height:1.85;max-width:595px;margin:0 0 24px}
 .studio-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
-.studio-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:47px;border-radius:10px;padding:12px 19px;font-size:13px;font-weight:800;transition:transform .15s;border:1px solid #4f7260;text-decoration:none}
-.studio-action:hover{transform:translateY(-2px)}.studio-action.main{background:var(--ui-lime);color:#122219;border-color:var(--ui-lime)}.studio-action.secondary{background:#20342f;color:#eafaf0}
+.studio-action{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:47px;border-radius:10px;padding:12px 19px;font-size:13px;font-weight:800;transition:transform .15s;border:1px solid #355D73;text-decoration:none}
+.studio-action:hover{transform:translateY(-2px)}.studio-action.main{background:var(--ui-lime);color:#122219;border-color:var(--ui-lime)}.studio-action.secondary{background:#15364B;color:#eafaf0}
 .studio-footnote{color:#a6bfb0;font-size:11px;line-height:1.8}
-.studio-workbench{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(151deg,#1b3831,#101f21 76%);border:1px solid #476d54;border-radius:24px;padding:23px;box-shadow:0 35px 85px #0006}
+.studio-workbench{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(151deg,#123B54,#081C2E 76%);border:1px solid #365D70;border-radius:24px;padding:23px;box-shadow:0 35px 85px #0006}
 .studio-workbench:before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(#82bb9610 1px,transparent 1px),linear-gradient(90deg,#82bb9610 1px,transparent 1px);background-size:27px 27px}
 .studio-workbench-title{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:15px;border-bottom:1px solid #65846d50;color:#bedec9;font:700 11px ui-monospace,monospace}
-.studio-workbench-title span:last-child{border:1px solid #4b7757;border-radius:99px;padding:5px 10px;color:#c7f5b0;background:#b0ef8d12}
+.studio-workbench-title span:last-child{border:1px solid #4b7757;border-radius:99px;padding:5px 10px;color:#B2E4DB;background:#67B5A616}
 .studio-workbench h2{color:#f3fff7;font-size:23px;font-weight:800;margin:19px 0 9px}
-.studio-workbench>p{color:#b4d5c0;font-size:12px;line-height:1.75}
+.studio-workbench>p{color:#ACC6D7;font-size:12px;line-height:1.75}
 .studio-flow{display:grid;gap:10px;margin:22px 0}
-.studio-flow>div{display:flex;align-items:center;gap:13px;border:1px solid #436650;background:#0c1c1bbc;padding:13px;border-radius:11px}
+.studio-flow>div{display:flex;align-items:center;gap:13px;border:1px solid #315467;background:#071D30BD;padding:13px;border-radius:11px}
 .studio-flow strong{color:var(--ui-lime);font:800 11px ui-monospace,monospace}
 .studio-flow b{display:block;color:#e8fcf1;font-size:13px}
-.studio-flow small{color:#9db7a8;font-size:11px}
+.studio-flow small{color:#9AB7C7;font-size:11px}
 .studio-flow i{margin-inline-start:auto;color:var(--ui-mint);font-style:normal;font-size:13px}
-.studio-status{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px;border-radius:12px;background:#b0ef8d16;border:1px solid #52734f5c}
-.studio-status b{font-size:13px;color:#d4ffbe}.studio-status small{font-size:11px;color:#afc8b9}
+.studio-status{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px;border-radius:12px;background:#67B5A61F;border:1px solid #52734f5c}
+.studio-status b{font-size:13px;color:#C5EBE4}.studio-status small{font-size:11px;color:#ACC3D1}
 .studio-status em{font-style:normal;font:700 11px ui-monospace,monospace;color:#e0fae7;border:1px solid #527e5f;border-radius:7px;padding:6px}
-.studio-metrics{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:0!important;margin:0 0 48px!important;background:#152423!important;border:1px solid #3a574d!important;border-radius:15px!important;overflow:hidden;padding:0!important}
-.studio-metrics>div{padding:20px 12px!important;border-inline-end:1px solid #3a574d!important}
+.studio-metrics{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:0!important;margin:0 0 48px!important;background:#0C263B!important;border:1px solid #28485D!important;border-radius:15px!important;overflow:hidden;padding:0!important}
+.studio-metrics>div{padding:20px 12px!important;border-inline-end:1px solid #28485D!important}
 .studio-metrics>div:last-child{border:0!important}
 .studio-metrics strong{font-size:31px!important;line-height:1.2!important;color:var(--ui-lime)!important}
 .studio-metrics span{color:#b3c6bd!important;font-size:11px!important}
-.studio-howto{border-top:1px solid #395448;padding:65px 0 68px;scroll-margin-top:88px}
+.studio-howto{border-top:1px solid #2B4B60;padding:65px 0 68px;scroll-margin-top:88px}
 .studio-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:26px}
 .studio-head-label{display:block;color:var(--ui-lime);font-size:11px;font-weight:850;letter-spacing:.15em}
 .studio-head h2{font-size:clamp(29px,3.4vw,42px);font-weight:830;line-height:1.25;letter-spacing:-.02em;margin:9px 0 12px}
-.studio-head p{color:#afc8b9;font-size:14px;line-height:1.8;max-width:790px}
+.studio-head p{color:#ACC3D1;font-size:14px;line-height:1.8;max-width:790px}
 .studio-head-aside{color:#9fc1a9;white-space:nowrap;font:800 12px ui-monospace,monospace}
 .studio-four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:17px}
-.studio-four article{padding:19px;border:1px solid #355247;border-radius:13px;background:#122122;min-width:0}
+.studio-four article{padding:19px;border:1px solid #2D4D63;border-radius:13px;background:#0C2337;min-width:0}
 .studio-four b{font:800 11px ui-monospace,monospace;color:var(--ui-mint)}
 .studio-four h3{color:#f3fff7;font-size:15px;font-weight:800;margin:9px 0}
 .studio-four p{font-size:12px;line-height:1.75;color:#aac4b7}
@@ -81,7 +82,7 @@ html[lang=ar] .studio-hero h1{font-size:clamp(32px,3.6vw,49px);letter-spacing:0;
 .studio-faq p{color:#b1cabc;font-size:12px;line-height:1.75;margin:9px 0 0}
 .studio-qa-note{padding:13px 0;margin-top:18px;font-size:12px;color:#9bb8a9;line-height:1.8}
 main#home>section:not(.studio-hero):not(.studio-howto):not(.studio-metrics){border-top-color:#355248!important}
-main#home>section:not(.studio-hero):not(.studio-howto) .glass-card{background:linear-gradient(145deg,#152626,#101c1f)!important;border-color:#395448!important;box-shadow:none!important}
+main#home>section:not(.studio-hero):not(.studio-howto) .glass-card{background:linear-gradient(145deg,#152626,#101c1f)!important;border-color:#2B4B60!important;box-shadow:none!important}
 main#home .glass-card:hover{background:#1a332e!important;border-color:#749975!important;box-shadow:0 13px 26px #0004!important}
 main#home .text-sky-400,main#home .text-cyan-400{color:var(--ui-mint)!important}
 main#home .text-purple-400{color:#b0e5ac!important}
@@ -89,7 +90,7 @@ main#home .text-amber-400{color:#f0d08b!important}
 #capabilities .pathway-tab.active{background:#264739!important;border-color:#628a5c!important;color:#d0ffb4!important}
 #skillModal>div{background:#152523!important;border-color:#547562!important}#skillModal #modalLink{background:var(--ui-lime)!important;color:#132318!important}
 .author-panel.mirsad-author{background:linear-gradient(130deg,#172d29,#122022)!important;border-color:#4a6a54!important;border-top-color:var(--ui-lime)!important;box-shadow:0 27px 65px #0004!important}
-.author-panel.mirsad-author:before{background:radial-gradient(circle,#b0ef8d16,transparent 70%)!important}
+.author-panel.mirsad-author:before{background:radial-gradient(circle,#67B5A61F,transparent 70%)!important}
 .mirsad-author .portrait-frame{background:linear-gradient(135deg,var(--ui-lime),var(--ui-mint))!important}
 .mirsad-author .portrait-frame img{border-color:#152b26!important}
 .mirsad-author .author-eyebrow,.mirsad-author .author-portrait>bdi{color:var(--ui-mint)!important}
@@ -99,10 +100,10 @@ main#home .text-amber-400{color:#f0d08b!important}
 .mirsad-author .profile-icon{color:var(--ui-mint)!important}
 .mirsad-author .consultation{background:#23433275!important;border-color:#668765!important}
 .mirsad-author .consult-button{background:#244b34!important;border-color:#7da273!important}
-footer{background:#090f10!important}footer .foot{border-top-color:#324b41!important}footer .foot a{color:var(--ui-mint)!important}
+footer{background:#071725!important}footer .foot{border-top-color:#324b41!important}footer .foot a{color:var(--ui-mint)!important}
 @media(max-width:1060px){.studio-hero{gap:25px}body>header nav:not(#mobileMenu){gap:12px!important;font-size:11px!important}}
 @media(max-width:930px){.studio-hero{grid-template-columns:1fr;padding:42px 0 34px}.studio-workbench{max-width:660px}.studio-how-grid{grid-template-columns:1fr}.studio-four{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:610px){.studio-hero{padding:32px 0}.studio-logo{max-height:128px}.studio-hero h1{font-size:clamp(33px,8vw,46px)}.studio-workbench{padding:17px}.studio-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important;margin-bottom:34px!important}.studio-metrics>div{padding:16px 10px!important;border-bottom:1px solid #355247}.studio-metrics>div:nth-child(2n){border-inline-end:0!important}.studio-metrics>div:last-child{grid-column:1/-1;border-bottom:0}.studio-head{display:block}.studio-head-aside{display:block;margin-top:12px}.studio-howto{padding:39px 0!important}.studio-four,.studio-faq{grid-template-columns:1fr}.studio-use-card{padding:18px}.studio-use-card .studio-cmd{flex-wrap:wrap}.studio-use-card .studio-copy{margin-inline-start:auto}}
+@media(max-width:610px){.studio-hero{padding:32px 0}.studio-logo{max-height:128px}.studio-hero h1{font-size:clamp(33px,8vw,46px)}.studio-workbench{padding:17px}.studio-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important;margin-bottom:34px!important}.studio-metrics>div{padding:16px 10px!important;border-bottom:1px solid #2D4D63}.studio-metrics>div:nth-child(2n){border-inline-end:0!important}.studio-metrics>div:last-child{grid-column:1/-1;border-bottom:0}.studio-head{display:block}.studio-head-aside{display:block;margin-top:12px}.studio-howto{padding:39px 0!important}.studio-four,.studio-faq{grid-template-columns:1fr}.studio-use-card{padding:18px}.studio-use-card .studio-cmd{flex-wrap:wrap}.studio-use-card .studio-copy{margin-inline-start:auto}}
 @media(prefers-reduced-motion:reduce){.studio-action:hover{transform:none}}
 html,body{overflow-x:hidden}
 .min-w-0{min-width:0!important}
@@ -111,3 +112,49 @@ html,body{overflow-x:hidden}
 @media(min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))!important}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))!important}.md\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
 @media(min-width:1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))!important}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))!important}.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
 
+
+/* Homepage appearance for Brand Kit 3.1. */
+:root { --ui-lime: var(--gis-teal); --ui-ink: var(--gis-mist); }
+.studio-hero { padding-block-start: 39px; }
+.studio-brand-banner { grid-column: 1 / -1; min-width: 0; }
+.studio-brand-banner picture { display: block; }
+.studio-brand-banner .studio-logo {
+  display: block;
+  width: 100%;
+  max-height: none;
+  margin: 0;
+  aspect-ratio: 6 / 1;
+  border: 1px solid #36566c;
+  border-radius: 17px;
+}
+.studio-brand-credit { display: none; }
+@media (max-width: 640px) {
+  .studio-hero { padding-block-start: 25px; }
+  .studio-brand-banner {
+    padding: 10px 14px 13px;
+    border: 1px solid #36566c;
+    border-radius: 13px;
+    background: #0b2a44;
+  }
+  .studio-brand-banner .studio-logo { aspect-ratio: 1220 / 318; border: 0; border-radius: 0; }
+  .studio-brand-credit { display: block; margin-inline: 7px; color: #eaf6fa; font-size: .82rem; font-weight: 700; }
+}
+.studio-hero h1 { font-size: clamp(30px, 3.5vw, 49px); letter-spacing: -.033em; line-height: 1.14; }
+html[lang=ar] .studio-hero h1 { font-size: clamp(28px, 3.25vw, 45px); line-height: 1.42; }
+.studio-logo { width: min(100%, 430px); margin: 0 0 22px; }
+.studio-workbench { border-color: #345e76; background: linear-gradient(155deg, var(--gis-navy), #081c2d 76%); }
+.studio-status b, .studio-status small { display: block; }
+body > header a[href="https://github.com/ahmadibrahim4geo/GIS-Development-Skills"] { white-space: nowrap; }
+.studio-specialty-details > summary {
+  cursor: pointer;
+  width: fit-content;
+  padding: 10px 14px;
+  border-radius: 9px;
+  border: 1px solid #38617a;
+  background: #0d2b42;
+  color: var(--gis-mist);
+  font-size: .875rem;
+  font-weight: 700;
+}
+.studio-specialty-details > summary:focus-visible { outline: 2px solid var(--gis-teal); outline-offset: 3px; }
+.studio-specialty-details[open] > summary { margin-bottom: 18px; }

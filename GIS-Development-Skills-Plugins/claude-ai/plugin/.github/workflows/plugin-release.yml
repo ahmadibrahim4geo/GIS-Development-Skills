@@ -1,0 +1,34 @@
+name: Plugin Release Staging (Manual Approval Only)
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_stage:
+        description: "Type STAGE_RELEASE to build and checksum release archives (no auto store upload)."
+        required: true
+        default: ""
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  plugin-prepare-release:
+    if: ${{ github.event.inputs.confirm_stage == 'STAGE_RELEASE' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source (pinned SHA)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python 3.11 (pinned SHA)
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.11'
+      - name: Stage and verify release artifacts (PREPARED_FOR_SUBMISSION)
+        run: python -B plugin-system/core/pipeline.py --prepare-release --no-report --json
+      - name: Assert blocked unattended publish guard
+        run: |
+          python -c "import subprocess, sys; r=subprocess.run([sys.executable, '-B', 'plugin-system/core/pipeline.py', '--publish', '--no-report']); assert r.returncode == 4, r.returncode; print('Release approval gate verified (exit 4)')"

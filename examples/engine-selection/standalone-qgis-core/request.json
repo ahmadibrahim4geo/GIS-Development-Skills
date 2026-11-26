@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "request_text": "Standalone desktop app using QGIS Core/Processing or WPF IPC worker cleanly",
+  "language_hint": "en",
+  "intent_modes": [
+    "embedded-engine",
+    "worker-service"
+  ],
+  "delivery_target": "desktop",
+  "existing_project": {
+    "current_ui": "WPF Shell",
+    "current_engine": "None"
+  },
+  "preserve_invariants": [
+    "wpf_shell",
+    "process_isolation"
+  ],
+  "target_os": [
+    "windows",
+    "linux"
+  ],
+  "preferred_languages": [
+    "cpp",
+    "python",
+    "csharp"
+  ],
+  "ui_framework_preference": "qt-widgets",
+  "required_capabilities": [
+    "io.vector.gpkg.read",
+    "vector.buffer",
+    "crs.transform",
+    "runtime.worker"
+  ],
+  "free_only": true,
+  "offline_required": true
+}

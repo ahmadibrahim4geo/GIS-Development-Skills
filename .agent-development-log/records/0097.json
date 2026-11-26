@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 97,
+  "timestamp_utc": "2026-11-21T04:46:30+00:00",
+  "kind": "revision",
+  "status": "proposed",
+  "summary": "Refocused the r10 draft on engineering problem-solving at the user clarification",
+  "details": "User clarified that model selection is manual. Replaced model-routing scope with testable problem-solving and verification practices. Reviewed Anthropic Skill Creator and agent workflows plus Superpowers systematic debugging. Retained token, security, portability and skill prerequisite scope. The revised draft validated AWAITING_REVIEW.",
+  "references": [
+    96
+  ],
+  "task_id": "PORTABLE-AGENT-ROOT",
+  "plan_revision": "r10",
+  "changed_files": [
+    "plans/active/0003_Agent-Roots-Portable-Skills/PLAN.json",
+    "plans/active/0003_Agent-Roots-Portable-Skills/RESEARCH.ar.md"
+  ],
+  "tests": [
+    "intent_router.py --workflow accepted all five draft tasks"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "37b039e519fe044d179a48972bf9594042279bc7997bee0cdf1f35ad6cad7510",
+  "hash": "a9b4fece012fb1b1f79c63b569576845ccaeac744f52831d0b3b0d2a3efabae1"
+}

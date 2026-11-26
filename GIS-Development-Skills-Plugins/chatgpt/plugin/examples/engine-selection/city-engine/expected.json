@@ -1,0 +1,10 @@
+{
+  "decomposes_cityengine": true,
+  "rejects_single_monolithic_oss_dropin": true,
+  "required_subsystems": [
+    "procedural_rule_grammar_json",
+    "brep_cad_kernel",
+    "ifc_cityjson_exchange",
+    "3d_renderer"
+  ]
+}

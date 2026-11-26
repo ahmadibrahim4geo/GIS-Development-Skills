@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "request_text": "CityEngine alternative for procedural urban parcels, B-rep CAD booleans, and IFC/CityJSON export",
+  "language_hint": "en",
+  "intent_modes": [
+    "multi-engine-composition",
+    "reference-inspired-ui"
+  ],
+  "delivery_target": "desktop",
+  "existing_project": null,
+  "target_os": [
+    "windows",
+    "linux"
+  ],
+  "preferred_languages": [
+    "cpp",
+    "python"
+  ],
+  "required_capabilities": [
+    "city.parcel.subdivide",
+    "city.building.procedural",
+    "cad.brep.boolean",
+    "bim.ifc"
+  ],
+  "free_only": true,
+  "offline_required": true,
+  "reference_products": [
+    "CityEngine"
+  ]
+}

@@ -1,0 +1,42 @@
+# Contributing
+
+We welcome improvements to platform workflows, vetted libraries, examples, tests, translations and documentation.
+
+## Source intake must update all surfaces
+
+Follow the [atomic source intake workflow](references/source-intake-workflow.md) for every new tool, API, dataset directory or project. Update the relevant JSON, specialist instructions, references, bilingual README/index, changelog, derived counts and tests together. A public repository without an explicit license is **reference-only**, not safe to copy.
+
+## Proposing a library
+
+1. Open an issue with the **exact GitHub owner/repo URL** (names like EarthMapper or GeoLibra are ambiguous).
+2. Explain what a GIS developer can build with it, its supported stack, maintenance/activity evidence, upstream documentation and license.
+3. Add/update a JSON record in `references/project-catalog.json` with all required fields; mark unknown upstream license `verify-upstream` instead of guessing.
+4. Run `python scripts/validate_catalog.py`, `python scripts/validate_api_catalog.py`, `python scripts/validate_skill_pack.py`, and `python -m unittest discover -s tests -v`.
+5. Provide a small, reproducible example only if you are authorized to publish it. Our original code is MIT; third-party code keeps its own license.
+
+## Submit a code template
+
+Include the supported **product and version**, expected inputs and outputs, environment requirements, handling of CRS and units, command to test, failure cases and source/credit. Never claim untested proprietary GIS integration works.
+
+## Pull request review checklist
+
+- [ ] All source URLs are legitimate, canonical and relevant.
+- [ ] License/attribution is preserved; no copied third-party material without permission.
+- [ ] No API tokens, credentials, private data or unlicensed map tiles.
+- [ ] Version-specific behavior documented and tests provided or clearly marked unverified.
+- [ ] No breaking changes in the catalog JSON structure unless versioned.
+## Add or change a specialist agent skill
+
+Maintain valid YAML metadata in `skills/<skill-name>/SKILL.md`; the name must match its lower-case hyphenated folder and the description must not exceed 1024 characters. Make the skill solve a distinct use case, link to domain references rather than copy long guides, and describe versions, inputs, risks, exact QA evidence and what was not tested. Keep `gis-development` as the entry point for cross-platform routing. Run the full validator after edits, update the website skill counter and README, and never claim native GIS execution from generic Python syntax checks.
+
+## Production GIS engineering examples
+
+Contribute new examples under `examples/` **without deleting or altering older content**. Each needs an exact supported version/environment, data license/provenance, synthetic or redistributable fixture, input/output schema, CRS and units, repeatable command, expected outcome, failure cases, and safe output paths. Classify actual evidence using [the T0–T4 quality benchmark](docs/QUALITY_BENCHMARK.md); generic CI, unexecuted PostGIS statements and ArcPy mocks are not native acceptance. Synchronize both README languages, website links, both language dictionaries and counters in the same change.
+
+## Production GIS Agent quality gates
+
+- Add new capabilities without deleting old skills, data catalogs, templates or approved website branding.
+- Write cases and acceptance evidence using [the T0–T4 contract](templates/GIS_ACCEPTANCE_REPORT.md), [geospatial fixture pack](fixtures/README.md) and, when relevant, [native ArcGIS/QGIS tests](native_tests/README.md).
+- Follow [security](references/geospatial-security.md) and [performance](references/geospatial-performance.md) rules. Read [common before/after mistakes](references/gis-antipatterns.md).
+- Keep per-record status unknown unless independently tested, and do not infer license compliance from URL reachability.
+- Run `python scripts/build_manifest.py --check` and the full test suite, and update EN/AR README and website when adding user-facing tools or paths.

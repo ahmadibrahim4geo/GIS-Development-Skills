@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "canonical_bundle_directories": [
+    ".github",
+    "assets",
+    "docs",
+    "examples",
+    "fixtures",
+    "native_tests",
+    "references",
+    "schemas",
+    "scripts",
+    "skills",
+    "templates",
+    "tests"
+  ],
+  "canonical_bundle_files": [
+    ".gitignore",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "PUBLISHING.md",
+    "README.md",
+    "README.ar.md",
+    "SECURITY.md",
+    "explorer.html",
+    "index.html",
+    "project-wizard.html"
+  ],
+  "additional_digest_inputs": [
+    "VERSION",
+    "plans/active/0007_Master-Integration/MASTER_AGENT_PROMPT.md",
+    "plugin-system/config/source-map.json",
+    "plugin-system/config/platforms.json"
+  ],
+  "excluded_directories": [
+    ".agent-development-log",
+    ".git",
+    ".idea",
+    ".plugin-local",
+    ".plugin-lock",
+    ".plugin-secrets",
+    ".plugin-staging",
+    ".pytest_cache",
+    ".venv",
+    "GIS-Development-Skills-Plugins",
+    "GIS_Development_Skills_Complete_Brand_Kit",
+    "New Skill",
+    "Old - Safe to Remove",
+    "__pycache__",
+    "__pypackages__",
+    "build",
+    "dist",
+    "node_modules",
+    "plugin-system",
+    "reports",
+    "testing data",
+    "testing results",
+    "venv"
+  ],
+  "developer_only_files": [
+    "Update-All-Plugins.bat",
+    "Update-All-Plugins.ps1",
+    "Update-My-Platforms.bat",
+    "Update-My-Platforms.ps1"
+  ],
+  "sensitive_filenames": [
+    ".env",
+    "credentials.json",
+    "credentials.local.json",
+    "id_dsa",
+    "id_ecdsa",
+    "id_ed25519",
+    "id_rsa",
+    "owner-config.json",
+    "owner-config.local.json",
+    "secrets.json"
+  ],
+  "sensitive_suffixes": [
+    ".key",
+    ".p12",
+    ".pem",
+    ".pfx"
+  ]
+}

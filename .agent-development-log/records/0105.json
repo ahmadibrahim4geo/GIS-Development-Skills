@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "sequence": 105,
+  "timestamp_utc": "2026-11-21T12:55:12+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Balanced the GIS brand banner and published the readable creator credit",
+  "details": "Refreshed both editable kit variants and all supplied sizes in place and archived the previous copies. Verified responsive banner and upright credit in Chrome, the 517 passing local tests with one Windows symlink skip, repository validators, security audit, exact GitHub main and both GitHub Actions checks, and the live GitHub Pages hero. Published only the 11 reviewed production paths. The local bundle-builder changes were syntax checked and the outputs were rendered independently in Chrome.",
+  "references": [
+    104
+  ],
+  "task_id": "BRAND-BANNER",
+  "plan_revision": "banner-followup",
+  "changed_files": [
+    "assets/brand/banner-dark.svg",
+    "assets/brand/banner.png",
+    "index.html",
+    "README.md",
+    "README.ar.md"
+  ],
+  "tests": [
+    "DoneProof request binding, Chrome desktop and Arabic mobile, repository validators and unittest, GitHub main and Actions and Pages readback"
+  ],
+  "test_result": "passed",
+  "commit": "c6947b0d9ba61d3be00330cc22751f3186247ddd",
+  "previous_hash": "d32b4a7ded423ced5739845ebc62044080a9cb55ae3de7a7a2d23ae73c46840c",
+  "hash": "c9ccefbac38e0ede5c7d9b72744b9410eb4637219bc5d39698c51a7ba228c3df"
+}

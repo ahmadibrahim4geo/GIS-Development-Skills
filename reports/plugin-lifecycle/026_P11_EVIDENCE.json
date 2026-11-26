@@ -1,0 +1,43 @@
+{
+  "target": "GIS-Development-Skills Master Integration V2 (Phases P00-P11 + 7 Plugin Bundles + Web/Mobile GIS)",
+  "os": "Windows workstation (offline Python + Node.js runtime; native GIS/mobile/CLI hosts absent)",
+  "application_version": "0.3.5 (Master Integration V2)",
+  "python_runtime": "Python stdlib + Node.js test runner",
+  "crs_units": "EPSG:4326 / EPSG:32636 / EGM2008 contract checks (offline JSON/GeoJSON/SQLite WAL/ESM fixtures)",
+  "evidence_tier": "T1",
+  "commands_executed": [
+    "python -B plugin-system/core/pipeline.py --build-only --report-label PLUGIN_P11_FINAL",
+    "python -B plugin-system/core/pipeline.py --check-only --no-report --json",
+    "node --test tests/web-gis/web_gis_contract.test.mjs",
+    "python -m unittest discover -s tests -v",
+    "python scripts/validate_skill_pack.py && scripts/build_manifest.py --check && scripts/security_audit.py --root ."
+  ],
+  "fixtures_used": [
+    "tests/shared-gis-fixtures/geojson_epsg4326_bilingual.geojson",
+    "tests/shared-gis-fixtures/expected-shared-contracts.json",
+    "fixtures/landsat8-l2-pixels.json",
+    "examples/mobile-gis/device-acceptance.example.json"
+  ],
+  "expected_result": "All T0/T1 validators, 7 platform plugin builds, Node contract checks, and offline Python suites pass while unavailable T2-T4 native runtimes remain NOT_RUN.",
+  "observed_result": "See reports/plugin-lifecycle/025_PLUGIN_P11_FINAL.json and 026_P11_FINAL_ACCEPTANCE.md for exact observed counts and hashes.",
+  "not_tested": [
+    "Native QGIS / GDAL / PROJ C++ binaries and ArcGIS Pro desktop runtime",
+    "Headless Chromium / Playwright WebGL browser rendering",
+    "Android Gradle APK build, macOS/Xcode iOS codesign, and physical GNSS hardware",
+    "Live installed agent client CLIs (codex, claude, agy, cursor) and external OSV/SAST scanners"
+  ],
+  "known_limitations": [
+    "Untracked pre-existing dist/user-testing/banner-work/brand-kit-readme.md causes 1 isolated link failure in tests/test_repository_internal_links.py",
+    "No git push or external marketplace publish executed"
+  ],
+  "source_changes": "Phases P00-P11 integrated under canonical repository; 7 deterministic bundles rebuilt in 025_PLUGIN_P11_FINAL.",
+  "provenance_licensing": "MIT original repository materials; upstream catalog references retain original upstream licenses.",
+  "status": "partial",
+  "native_runtime_verified": false,
+  "evidence_links": [
+    "reports/plugin-lifecycle/023_QA_REPORT.md",
+    "reports/plugin-lifecycle/025_PLUGIN_P11_FINAL.json",
+    "reports/plugin-lifecycle/026_P11_FINAL_ACCEPTANCE.md",
+    "reports/plugin-lifecycle/026_P11_FINAL_DONEPROOF.json"
+  ]
+}

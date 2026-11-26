@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P03",
+  "revision": "r1",
+  "overall_status": "partial",
+  "criteria": [
+    {
+      "id": "P03-CATALOG-AND-PROFILES-PARITY",
+      "statement": "Preserve single canonical project-catalog.json (461 repos) linked 1:1 with schemas/engine-capability-profile.schema.json and references/engine-capability-profiles.json covering 101/101 atomic capabilities, 18 verification_metadata fields, commercial host classification, 13 non-GitHub docs, and 45 optional engineering tools",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests/test_p03_knowledge_base.py + scripts/validate_catalog.py + scripts/build_manifest.py --check",
+          "observed": "validate_catalog: 461 sources valid; build_manifest --check: 35 skills / 461 references / 53 APIs / 26 data repos; TestP03KnowledgeBase confirmed 1:1 project_id parity, 18/18 verification fields, 101/101 atomic capability coverage across 11 domains, acyclic GDAL/PROJ DAG (E17), and commercial host classification",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P03-DUCKDB-FIX-AND-EXTERNAL-QUARANTINE",
+      "statement": "Fix UDS-LIB-004 DuckDB Spatial URL mismatch across JSON/Markdown registries, remove unverified 'safe' ratings across 78 UDS sources, index 13 discovery ecosystems, document compatibility boundaries, and quarantine 62 external agent skill candidates without execution",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests/test_p03_knowledge_base.py (E21, E22) + tests/test_urban_design_competency.py + scripts/security_audit.py",
+          "observed": "E21 passed (UDS-LIB-004 == duckdb/duckdb-spatial, 0 blind safe entries, EXT-007 == duckdb/duckdb-skills); E22 passed across 62 quarantined candidates + synthetic injection blocking; security_audit --root . returned pass with 0 blocking findings",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P03-PORTABLE-BUNDLE-SYNC-AND-REGRESSION",
+      "statement": "Rebuild portable plugin bundle incorporating P03 artifacts cleanly (PL-T01) and pass core regression suites and static validators",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "reports/plugin-lifecycle/005_PLUGIN_P03_SYNC.json + unittest (101 tests + 10 plugin tests) + 10 CLI validators",
+          "observed": "pipeline --build-only returned BUILT (source_digest 00b3f8c0c62e, 453 bundle files) and immediate --check-only returned UP_TO_DATE; build_skill_bundle --check PASS; 16 unit/regression suites passed (101 tests OK) + plugin-system/tests passed (10 tests OK)",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P03-REPO-INTERNAL-LINKS-PREEXISTING-DIST",
+      "statement": "Repository internal Markdown links integrity check across workspace and P03 documents",
+      "status": "partial",
+      "reason": "Zero broken links in canonical docs and all P03 files; test_repository_internal_links reported only 1 pre-existing untracked failure in dist\\user-testing\\banner-work\\brand-kit-readme.md (assets/brand/banner.png) outside P03 scope",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "python -B -m unittest tests.test_repository_internal_links -v + build_skill_bundle --check",
+          "observed": "build_skill_bundle --check verified 0 broken links across bundled files; test_repository_internal_links isolated sole failure to pre-existing untracked dist\\user-testing\\banner-work\\brand-kit-readme.md",
+          "result": "fail",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P04-THROUGH-P11-AND-NATIVE-EXTERNAL-SCANS",
+      "statement": "Live GitHub repo metadata checks (P04 engine_repo_metadata.py), dedicated P04 CLI validators/selectors, P05-P11 deliverables, external SAST scanners, and native GIS/client T2-T4 verification",
+      "status": "not_run",
+      "reason": "External scanners, live network queries, native GIS host execution, and Phases P04-P11 remain NOT RUN pending owner approval of P04",
+      "evidence": []
+    }
+  ]
+}

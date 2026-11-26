@@ -1,6 +1,6 @@
 ---
 name: kml-kmz-engineering
-description: Preserve original KML/KMZ styles, icons, hierarchy, assets and Google Earth semantics during secure import, rendering, editing and round-trip export in desktop, web and GIS hosts.
+description: Design, diagnose and verify KML and KMZ workflows in Google Earth, ArcGIS, QGIS, desktop and web. Protect styles, icons, hierarchy, assets, time, altitude and extension data during secure import, rendering, editing, conversion and round-trip export.
 ---
 
 # KML & KMZ Engineering
@@ -9,7 +9,28 @@ description: Preserve original KML/KMZ styles, icons, hierarchy, assets and Goog
 
 Use this skill when a GIS application or toolbox reads, writes, converts, renders or packages KML (OGC KML 2.2/2.3) or KMZ (ZIP package containing KML and resources). Load only the sections relevant to the task.
 
-**Mandatory implementation reference:** [Google KML/KMZ document fidelity and compatibility contract](../../references/google-kml-kmz-compatibility.md), grounded in [Google's documentation](https://developers.google.com/kml) and the [OGC standard](https://www.ogc.org/standards/kml/). Use the [self-contained XML fixture](../../examples/kml-kmz/README.md) for offline regression checks. Google Earth `gx:` extensions are not core KML and need independent feature-level support.
+This is the shared KML/KMZ skill for both formats, all target hosts and the routes below. The [compatibility contract](../../references/google-kml-kmz-compatibility.md), [Google's documentation](https://developers.google.com/kml) and [OGC KML](https://www.ogc.org/standards/kml/) provide source traceability and feature-level detail. Use the [XML fixture](../../examples/kml-kmz/README.md) for offline regression checks. Verify Google Earth `gx:` extensions independently of the core KML version.
+
+## Choose the operation
+
+| Goal | Workflow and evidence |
+| --- | --- |
+| View the original | Retain its bytes, folder order, identifiers and resource manifest. Render supported features and record unsupported constructs by name and host version. |
+| Edit a document | Copy on write. Apply the explicit change at the affected feature or style reference. Test that unrelated features, extension nodes and assets are equivalent when reopened. |
+| Convert to a GIS layer | Record the target CRS and schema. Report unsupported hierarchy, styles, overlays, tour, links, time and altitude semantics before relying on the converted output. |
+| Author or package a KMZ | Validate coordinates, styles and paths. Use one root KML entry point and bundle authorized local resources with relative references. Reopen the new file and check its dependencies. |
+
+## Feature and host support
+
+Record parsing, rendering, editing and export separately for each host. Use a focused fixture for each requested construct.
+
+| Construct | Things to retain and verify |
+| --- | --- |
+| Places and geometry | `Document`, `Folder`, `Placemark`, order, `id`, `open`, visibility, points, lines, polygon holes and `MultiGeometry`. Preserve WGS84 coordinates and check axes and topology. |
+| Styles, labels and balloons | Resolve shared `styleUrl`, inline `Style` and `StyleMap` states in the correct document. Detect missing or cyclic references. Preserve styles and typed `SchemaData`. Render safe balloon HTML while retaining the source description. |
+| Icons, models and overlays | Preserve `IconStyle` scale, heading and `hotSpot` units. Keep image bounds, quad, rotation and COLLADA texture references. Record unavailable resources and any temporary display fallback. |
+| Time, 3D and view | Preserve `TimeStamp`, `TimeSpan`, ordered `gx:Track`/`gx:MultiTrack`, tour nodes, `Camera`, `LookAt`, elevation modes, extrusion and tessellation. Keep document state separate from current app view. |
+| Dynamic content | Preserve `Region`, `Lod`, `NetworkLink` and refresh parameters. Retain unsupported XML in the document model and verify that resource loading follows trust policy. |
 
 ## Earth explorer compatibility and dynamic KML
 
@@ -53,6 +74,8 @@ For a Google-Earth-like globe UI, apply the [Google Earth Pro feature reference]
 - Treat KMZ as untrusted ZIP: reject absolute paths, ../ traversal, symlink escapes, encrypted/unsupported members, excessive member count, oversized expanded payloads and extreme compression ratios. Enforce configurable total uncompressed size and per-entry limits *before* extraction; extract only into a controlled temporary directory.
 - Do not automatically fetch NetworkLinks, remote icons, models or overlays. Require explicit user consent, restrict schemes to approved protocols, apply timeouts and size limits, and document privacy/network behavior.
 - Resolve relative resource paths within the package without allowing escape. Avoid unbounded in-memory XML trees or decompression; use streaming/chunking where practical.
+- Before resolving archive paths, normalize separators and encoded path components, and reject duplicate or case-colliding members. Keep an asset manifest with relative path, original byte hash, source or MIME type and references. Resolve model textures relative to their model where the specification requires it.
+- Sanitize balloon HTML and links before presenting them. Keep the sanitized display representation separate from retained source CDATA and XML. Apply the same trust restrictions to redirects as to the original external URL.
 
 ## Shared Icon Manager integration — KML/KMZ-specific adapter
 
@@ -82,8 +105,10 @@ Treat these separately (see [preservation-first KML/KMZ contract](../../referenc
 - Package a portable KMZ with the main KML document and all local referenced resources using safe relative paths. Avoid leaking machine-local paths or credentials.
 - Test KML -> import -> export -> reimport and KMZ -> unpack -> repack -> reopen. Compare geometry/topology, CRS, feature counts, folder hierarchy, ExtendedData, time, styles, assets and altitude semantics. Classify expected versus unintended loss.
 - Include compatibility fixtures for Google Earth, ArcGIS Pro, ArcMap (legacy), QGIS and Cesium; label tests as unverified until executed in real hosts.
+- For an untouched document, retain original package bytes when possible. For an edited copy, verify semantic equivalence outside the changed elements. Compare effective normal/highlight styles, original style references, resource hashes, typed fields, times, altitude and folder visibility.
+- In a native acceptance test, open the saved copy in the target runtime, toggle a folder, inspect a balloon, verify an icon anchor and confirm that missing assets and unsupported objects remain disclosed. Record Google Earth and other host results separately.
 
-**Repository interoperability inventory:** [KML/KMZ open-source project review](../../references/kml-kmz-repository-review.md), including Google libkml, GDAL/OGR LIBKML, fastkml, PyKML, Cesium and QGIS. These are review candidates, not claims of feature parity or successful host testing. See the [generic reliability guide](../../docs/PERFORMANCE_RELIABILITY.md).
+**Repository interoperability inventory:** [KML/KMZ open-source project review](../../references/kml-kmz-repository-review.md), including Google libkml, GDAL/OGR LIBKML, fastkml, PyKML, Cesium and QGIS. Select a library by target behavior and tested version, and verify the exact code, bundled dependencies, imagery and asset rights before reuse. Treat geometry-conversion tools as a separate capability from document fidelity. See the [generic reliability guide](../../docs/PERFORMANCE_RELIABILITY.md).
 
 ## Performance, stability and crash prevention
 - Benchmark increasing feature counts, deeply nested folders, many icons, large overlays and large KMZ archives. Measure peak RAM, elapsed time, UI responsiveness and recovery after cancellation.

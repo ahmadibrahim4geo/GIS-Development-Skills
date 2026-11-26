@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "request_text": "Compare offline Web PWA vs Native Android vs macOS-gated iOS without false platform parity",
+  "language_hint": "en",
+  "intent_modes": [
+    "multi-engine-composition"
+  ],
+  "delivery_target": "web-and-mobile",
+  "existing_project": null,
+  "target_os": [
+    "web",
+    "android",
+    "ios"
+  ],
+  "preferred_languages": [
+    "typescript",
+    "kotlin",
+    "swift"
+  ],
+  "required_capabilities": [
+    "render.2d.vector_tiles",
+    "io.vector.gpkg.read",
+    "runtime.offline"
+  ],
+  "free_only": true,
+  "offline_required": true
+}

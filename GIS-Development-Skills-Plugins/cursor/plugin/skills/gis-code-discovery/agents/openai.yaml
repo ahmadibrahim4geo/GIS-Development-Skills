@@ -1,0 +1,4 @@
+interface:
+  display_name: "GIS Code Discovery & Reuse"
+  short_description: "Discover, evaluate, adapt, and reuse verified GIS code snippets, SDK examples, and algorithms."
+  default_prompt: "Use $gis-code-discovery to find, evaluate, adapt and verify GIS algorithms and SDK snippets across ArcGIS Pro SDK, ArcPy, PyQGIS, GDAL, and WebGIS with license and spatial fidelity checks."

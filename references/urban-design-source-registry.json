@@ -21,9 +21,10 @@
       "license": "ISC",
       "license_notes": "Permissive ISC license (equivalent to MIT/BSD). Safe for commercial and open-source embedding.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Fast planar polygon triangulation supporting complex building footprints and parcels with interior holes/courtyards."
+      "primary_use": "Fast planar polygon triangulation supporting complex building footprints and parcels with interior holes/courtyards.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-002",
@@ -33,9 +34,10 @@
       "license": "BSL-1.0",
       "license_notes": "Boost Software License 1.0 (highly permissive, no attribution required for binary). Safe for all uses.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Robust polygon clipping, boolean union/intersection/difference, and polygon offsetting for building setback calculations."
+      "primary_use": "Robust polygon clipping, boolean union/intersection/difference, and polygon offsetting for building setback calculations.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-003",
@@ -45,21 +47,23 @@
       "license": "LGPL-3.0",
       "license_notes": "LGPL v3. Dynamic linking preserves proprietary application code; modifications to library must remain LGPL.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Open BIM (Building Information Modeling) IFC 4.3 parsing, geometry generation, and semantic export."
+      "primary_use": "Open BIM (Building Information Modeling) IFC 4.3 parsing, geometry generation, and semantic export.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-004",
       "name": "DuckDB Spatial",
-      "repo_url": "https://github.com/duckdb/duckdb-skills",
+      "repo_url": "https://github.com/duckdb/duckdb-spatial",
       "category": "cad_geometry",
       "license": "MIT",
       "license_notes": "MIT license. Permissive and unrestricted for commercial and research applications.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "In-memory analytical spatial SQL engine for ultra-fast spatial joins, filtering, and attribute aggregations."
+      "primary_use": "In-memory analytical spatial SQL engine for ultra-fast spatial joins, filtering, and attribute aggregations.",
+      "security_audit_note": "Fixed URL from duckdb/duckdb-skills to duckdb/duckdb-spatial (2026-11-25); duckdb/duckdb-skills moved to external-agent-skills-registry.json quarantine. Upstream SAST/runtime verification NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-005",
@@ -69,9 +73,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Header-only C++ JSON schema validator based on nlohmann/json.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-ai-agents",
-      "primary_use": "Strict C++ JSON Schema validation for AI copilot tool calls and structured spatial exchange contracts."
+      "primary_use": "Strict C++ JSON Schema validation for AI copilot tool calls and structured spatial exchange contracts.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-006",
@@ -81,9 +86,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Standard modern C++ JSON serialization library.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-ai-agents",
-      "primary_use": "Serialization and deserialization of spatial features, project metadata, and agent messages."
+      "primary_use": "Serialization and deserialization of spatial features, project metadata, and agent messages.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-007",
@@ -93,9 +99,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Permissive mesh optimization library.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "GPU vertex cache optimization, overdraw reduction, and index buffer compression for high-framerate 3D rendering."
+      "primary_use": "GPU vertex cache optimization, overdraw reduction, and index buffer compression for high-framerate 3D rendering.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-008",
@@ -105,9 +112,10 @@
       "license": "BSD-3-Clause",
       "license_notes": "BSD 3-Clause license. Permissive universal asset importer.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-catalogs",
-      "primary_use": "Universal 3D asset import supporting OBJ, FBX, glTF 2.0, DAE, and 3DS model formats."
+      "primary_use": "Universal 3D asset import supporting OBJ, FBX, glTF 2.0, DAE, and 3DS model formats.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-009",
@@ -117,9 +125,10 @@
       "license": "Apache-2.0",
       "license_notes": "Apache 2.0 license. Permissive open-source 3D geospatial runtime.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Native 3D Tiles, terrain elevation mesh streaming, and WGS84 ellipsoidal transformations."
+      "primary_use": "Native 3D Tiles, terrain elevation mesh streaming, and WGS84 ellipsoidal transformations.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-010",
@@ -129,9 +138,10 @@
       "license": "LGPL-2.1",
       "license_notes": "LGPL 2.1+. Source code modularity benchmark. Standalone application architecture reference.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Open-source parametric 3D CAD modeling architecture and workbench modularity pattern."
+      "primary_use": "Open-source parametric 3D CAD modeling architecture and workbench modularity pattern.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-011",
@@ -141,9 +151,10 @@
       "license": "LGPL-2.1",
       "license_notes": "LGPL 2.1+. Civil engineering module for FreeCAD.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Transportation alignment, horizontal/vertical curve design, and road cross-section profile extrusions."
+      "primary_use": "Transportation alignment, horizontal/vertical curve design, and road cross-section profile extrusions.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-012",
@@ -153,9 +164,10 @@
       "license": "MIT",
       "license_notes": "MIT license. High-performance Vulkan/Direct3D11 rendering engine.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Native C++ 3D rendering alternative to heavy game engines with full memory and thread control."
+      "primary_use": "Native C++ 3D rendering alternative to heavy game engines with full memory and thread control.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-013",
@@ -165,9 +177,10 @@
       "license": "LGPL-3.0",
       "license_notes": "LGPL v3. Requires dynamic linking (.dll/.so) in commercial/closed desktop binaries to maintain compliance.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Office/AutoCAD style tabbed ribbon interface with contextual tabs, quick access bar, and ribbon gallery widgets."
+      "primary_use": "Office/AutoCAD style tabbed ribbon interface with contextual tabs, quick access bar, and ribbon gallery widgets.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-014",
@@ -177,9 +190,10 @@
       "license": "LGPL-2.1",
       "license_notes": "LGPL v2.1. Dynamic linking ensures complete license compliance.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Advanced dockable, floatable, and multi-monitor panel system (Visual Studio/Unreal Editor workspace style)."
+      "primary_use": "Advanced dockable, floatable, and multi-monitor panel system (Visual Studio/Unreal Editor workspace style).",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-015",
@@ -189,9 +203,10 @@
       "license": "BSD-3-Clause",
       "license_notes": "BSD 3-Clause. Part of official Qt Solutions catalog.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Dynamic hierarchical parametric property inspector reacting to selected active elements in the viewport."
+      "primary_use": "Dynamic hierarchical parametric property inspector reacting to selected active elements in the viewport.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-016",
@@ -201,9 +216,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Lightweight canvas zoom constraint module.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Locking canvas zoom to standardized metric engineering scales (1:500, 1:1000, 1:2000, 1:2500, 1:5000)."
+      "primary_use": "Locking canvas zoom to standardized metric engineering scales (1:500, 1:1000, 1:2000, 1:2500, 1:5000).",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-017",
@@ -213,9 +229,10 @@
       "license": "CC0-1.0",
       "license_notes": "Public Domain (CC0). Curated reference list.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Curated index of modern Windows native desktop development utilities and toolchains."
+      "primary_use": "Curated index of modern Windows native desktop development utilities and toolchains.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-018",
@@ -225,9 +242,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Professional UI/UX design skill pack.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-ui-ux-design-testing",
-      "primary_use": "Design system tokens, responsive layout rules, accessible color contrast checks, and dark theme polish."
+      "primary_use": "Design system tokens, responsive layout rules, accessible color contrast checks, and dark theme polish.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-019",
@@ -237,9 +255,10 @@
       "license": "BSD-2-Clause",
       "license_notes": "BSD 2-Clause permissive license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Interactive parametric street cross-section assemblies (lanes, sidewalks, bike paths, parking, trees)."
+      "primary_use": "Interactive parametric street cross-section assemblies (lanes, sidewalks, bike paths, parking, trees).",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-020",
@@ -249,9 +268,10 @@
       "license": "Apache-2.0",
       "license_notes": "Apache 2.0 license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "terrain-hydrology-lidar",
-      "primary_use": "Multimodal transport simulation: testing street space reallocation, pedestrian flows, and cycling infrastructure."
+      "primary_use": "Multimodal transport simulation: testing street space reallocation, pedestrian flows, and cycling infrastructure.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-021",
@@ -261,9 +281,10 @@
       "license": "EPL-2.0",
       "license_notes": "Eclipse Public License 2.0. Clean process-boundary XML export avoids license contamination.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "terrain-hydrology-lidar",
-      "primary_use": "Microscopic traffic simulation, vehicle flows, and graphical network editing via Netedit."
+      "primary_use": "Microscopic traffic simulation, vehicle flows, and graphical network editing via Netedit.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-022",
@@ -273,9 +294,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Downloading, constructing, analyzing, and visualizing street networks from OpenStreetMap."
+      "primary_use": "Downloading, constructing, analyzing, and visualizing street networks from OpenStreetMap.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-023",
@@ -285,9 +307,10 @@
       "license": "BSD-3-Clause",
       "license_notes": "BSD 3-Clause license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "terrain-hydrology-lidar",
-      "primary_use": "Micro-simulation of urban land use, household location choices, and real estate market dynamics."
+      "primary_use": "Micro-simulation of urban land use, household location choices, and real estate market dynamics.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-024",
@@ -297,9 +320,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Procedural generation of urban street networks, road hierarchies, and block partitioning."
+      "primary_use": "Procedural generation of urban street networks, road hierarchies, and block partitioning.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-025",
@@ -309,9 +333,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Parametric corridor geometry generation and spline-based road mesh synthesis."
+      "primary_use": "Parametric corridor geometry generation and spline-based road mesh synthesis.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-026",
@@ -323,7 +348,8 @@
       "access_model": "free_open_source",
       "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Algorithmic rules for building footprint extrusion, floor level subdivision, and roof typology generation."
+      "primary_use": "Algorithmic rules for building footprint extrusion, floor level subdivision, and roof typology generation.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-027",
@@ -333,9 +359,10 @@
       "license": "LGPL-3.0",
       "license_notes": "LGPL v3. Open-source railway simulation platform.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Open railway infrastructure modeling, signaling logic, and rail traffic simulation."
+      "primary_use": "Open railway infrastructure modeling, signaling logic, and rail traffic simulation.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-028",
@@ -345,9 +372,10 @@
       "license": "GPL-3.0",
       "license_notes": "GPL v3. Reference service for global railway network schemas.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Global railway track data schemas, gauge classifications, and electrification attributes."
+      "primary_use": "Global railway track data schemas, gauge classifications, and electrification attributes.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-029",
@@ -357,9 +385,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Procedural grid generation, Voronoi territory partitioning, and synthetic landscape modeling."
+      "primary_use": "Procedural grid generation, Voronoi territory partitioning, and synthetic landscape modeling.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-030",
@@ -369,9 +398,10 @@
       "license": "Apache-2.0",
       "license_notes": "Apache 2.0 license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-ai-agents",
-      "primary_use": "Generative parametric CAD geometry generation using neural model sequences."
+      "primary_use": "Generative parametric CAD geometry generation using neural model sequences.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-031",
@@ -381,9 +411,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Pre-coding analysis skill.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-code-discovery",
-      "primary_use": "Phase 1 token optimization: Pre-coding context reduction, surgical scope targeting, and noise elimination."
+      "primary_use": "Phase 1 token optimization: Pre-coding context reduction, surgical scope targeting, and noise elimination.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-032",
@@ -393,9 +424,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Lean build and surgical patch skills.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-code-discovery",
-      "primary_use": "Phase 2 token optimization: Surgical patching during coding, preventing entire-file rewrites and context churn."
+      "primary_use": "Phase 2 token optimization: Surgical patching during coding, preventing entire-file rewrites and context churn.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-033",
@@ -407,7 +439,8 @@
       "access_model": "restricted_development_only",
       "security_rating": "reviewed",
       "accountable_skill": "gis-code-discovery",
-      "primary_use": "Phase 3 token optimization: Post-coding artifact compression, output trimming, and session checkpointing."
+      "primary_use": "Phase 3 token optimization: Post-coding artifact compression, output trimming, and session checkpointing.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-034",
@@ -417,9 +450,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-code-discovery",
-      "primary_use": "Standardized modular context/ architecture (PROJECT_MAP, MODULE_INDEX, CURRENT_HANDOFF, COMMAND_REGISTRY)."
+      "primary_use": "Standardized modular context/ architecture (PROJECT_MAP, MODULE_INDEX, CURRENT_HANDOFF, COMMAND_REGISTRY).",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-035",
@@ -429,9 +463,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-code-discovery",
-      "primary_use": "Guidelines for minimal tool call payloads and quiet terminal command execution."
+      "primary_use": "Guidelines for minimal tool call payloads and quiet terminal command execution.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-036",
@@ -441,9 +476,10 @@
       "license": "Apache-2.0",
       "license_notes": "Apache 2.0 license. Official Anthropic agent skills repository.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "geospatial-ai-agents",
-      "primary_use": "Core agent skills for web artifacts, frontend design, MCP servers, and skill authoring."
+      "primary_use": "Core agent skills for web artifacts, frontend design, MCP servers, and skill authoring.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-037",
@@ -453,9 +489,10 @@
       "license": "BSD-3-Clause",
       "license_notes": "BSD 3-Clause. Official Qt research agent skills.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Qt CMake project setup, modern C++ code review, Qt UI design, and QML test runner skills."
+      "primary_use": "Qt CMake project setup, modern C++ code review, Qt UI design, and QML test runner skills.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-038",
@@ -465,9 +502,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-e2e-testing",
-      "primary_use": "Systematic engineering practices: systematic debugging, TDD, git worktree isolation, verification-before-completion."
+      "primary_use": "Systematic engineering practices: systematic debugging, TDD, git worktree isolation, verification-before-completion.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-039",
@@ -477,9 +515,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "geospatial-ai-agents",
-      "primary_use": "Agentic API gateway orchestration, schema mediation, and rate-limiting patterns."
+      "primary_use": "Agentic API gateway orchestration, schema mediation, and rate-limiting patterns.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-040",
@@ -489,9 +528,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "geospatial-ai-agents",
-      "primary_use": "Foundational AI engineering principles: structured output enforcement, prompt templates, and evaluation loops."
+      "primary_use": "Foundational AI engineering principles: structured output enforcement, prompt templates, and evaluation loops.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-041",
@@ -501,9 +541,10 @@
       "license": "Apache-2.0",
       "license_notes": "Apache 2.0. NVIDIA skill security inspection tool.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-security-guardian",
-      "primary_use": "Static security auditing of agent skills, identifying privilege escalation and unauthorized shell execution."
+      "primary_use": "Static security auditing of agent skills, identifying privilege escalation and unauthorized shell execution.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-042",
@@ -513,9 +554,10 @@
       "license": "Apache-2.0",
       "license_notes": "Apache 2.0. Official NVIDIA performance tuning skills.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-security-guardian",
-      "primary_use": "CUDA performance tuning and Omniverse OpenUSD rendering pipeline optimization."
+      "primary_use": "CUDA performance tuning and Omniverse OpenUSD rendering pipeline optimization.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-043",
@@ -525,9 +567,10 @@
       "license": "CC-BY-SA-4.0",
       "license_notes": "Creative Commons Attribution-ShareAlike 4.0 International.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-security-guardian",
-      "primary_use": "OWASP AI System Verification Standard: security verification benchmarks for autonomous agents."
+      "primary_use": "OWASP AI System Verification Standard: security verification benchmarks for autonomous agents.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-044",
@@ -537,9 +580,10 @@
       "license": "Apache-2.0",
       "license_notes": "Apache 2.0 license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-security-guardian",
-      "primary_use": "Automated prompt injection regression testing for AI copilot input sanitization."
+      "primary_use": "Automated prompt injection regression testing for AI copilot input sanitization.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-045",
@@ -549,9 +593,10 @@
       "license": "Apache-2.0",
       "license_notes": "Apache 2.0 license. Trail of Bits safety auditing skills.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-security-guardian",
-      "primary_use": "Vulnerability scanning, dangerous C++ pattern detection, and unsafe API audits."
+      "primary_use": "Vulnerability scanning, dangerous C++ pattern detection, and unsafe API audits.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-046",
@@ -561,9 +606,10 @@
       "license": "GPL-3.0",
       "license_notes": "GPL v3. Development security reference only.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-security-guardian",
-      "primary_use": "Enterprise AI system security controls and secure software development lifecycle (SSDL) practices."
+      "primary_use": "Enterprise AI system security controls and secure software development lifecycle (SSDL) practices.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-047",
@@ -573,9 +619,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-security-guardian",
-      "primary_use": "AI security threat modeling methodology and risk scoring."
+      "primary_use": "AI security threat modeling methodology and risk scoring.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-048",
@@ -585,9 +632,10 @@
       "license": "Apache-2.0",
       "license_notes": "Apache 2.0 license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-security-guardian",
-      "primary_use": "Google Open Source Vulnerabilities database scanner for C++ and Python dependencies."
+      "primary_use": "Google Open Source Vulnerabilities database scanner for C++ and Python dependencies.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-049",
@@ -597,9 +645,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-security-guardian",
-      "primary_use": "Automated detection of hardcoded secrets, API keys, and sensitive tokens in repositories."
+      "primary_use": "Automated detection of hardcoded secrets, API keys, and sensitive tokens in repositories.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-050",
@@ -609,9 +658,10 @@
       "license": "LGPL-2.1",
       "license_notes": "LGPL 2.1 (CLI engine). Static analysis tool.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-security-guardian",
-      "primary_use": "Static analysis security testing (SAST) for memory safety, buffer overflows, and input validation."
+      "primary_use": "Static analysis security testing (SAST) for memory safety, buffer overflows, and input validation.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-051",
@@ -621,9 +671,10 @@
       "license": "GPL-3.0",
       "license_notes": "GPL v3. Architectural pattern reference for embedded desktop GIS AI copilots.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "geospatial-ai-agents",
-      "primary_use": "Embedded QGIS AI assistant architecture integrating LLM prompts with desktop GIS operations."
+      "primary_use": "Embedded QGIS AI assistant architecture integrating LLM prompts with desktop GIS operations.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-052",
@@ -633,9 +684,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Model Context Protocol interface connecting external LLM agents with FreeCAD parametric documents."
+      "primary_use": "Model Context Protocol interface connecting external LLM agents with FreeCAD parametric documents.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-053",
@@ -645,9 +697,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Agent skills for FreeCAD document automation, sketch creation, and parametric part design."
+      "primary_use": "Agent skills for FreeCAD document automation, sketch creation, and parametric part design.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-054",
@@ -657,9 +710,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "geospatial-data-catalogs",
-      "primary_use": "Model Context Protocol integration for headless Blender 3D geometry and mesh processing."
+      "primary_use": "Model Context Protocol integration for headless Blender 3D geometry and mesh processing.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-055",
@@ -669,9 +723,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Agent skills for GDAL/OGR vector and raster processing workflows."
+      "primary_use": "Agent skills for GDAL/OGR vector and raster processing workflows.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-056",
@@ -681,9 +736,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "geospatial-ai-agents",
-      "primary_use": "GeoAI skills for satellite segmentation, object detection, and geospatial raster analysis."
+      "primary_use": "GeoAI skills for satellite segmentation, object detection, and geospatial raster analysis.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-057",
@@ -693,9 +749,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-code-discovery",
-      "primary_use": "Reverse engineering and runtime structure inspection of external software binaries."
+      "primary_use": "Reverse engineering and runtime structure inspection of external software binaries.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-058",
@@ -705,9 +762,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Modular software component synthesis and structured scaffolding."
+      "primary_use": "Modular software component synthesis and structured scaffolding.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-059",
@@ -717,9 +775,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Offline local inference runtime.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-ai-agents",
-      "primary_use": "Offline local LLM inference option ensuring 100% data privacy without cloud transmission."
+      "primary_use": "Offline local LLM inference option ensuring 100% data privacy without cloud transmission.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-060",
@@ -729,9 +788,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Microsoft C++ package manager.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Automated C++ dependency acquisition and build integration for Qt, GDAL, GEOS, and Assimp."
+      "primary_use": "Automated C++ dependency acquisition and build integration for Qt, GDAL, GEOS, and Assimp.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-061",
@@ -741,9 +801,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Standalone graphics debugger.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Frame capture and GPU pipeline inspection for native 3D renderers."
+      "primary_use": "Frame capture and GPU pipeline inspection for native 3D renderers.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-062",
@@ -753,9 +814,10 @@
       "license": "BSD-3-Clause",
       "license_notes": "BSD 3-Clause license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Nanosecond real-time CPU/GPU frame profiler for identifying bottlenecks in CAD drawing loops."
+      "primary_use": "Nanosecond real-time CPU/GPU frame profiler for identifying bottlenecks in CAD drawing loops.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-063",
@@ -765,9 +827,10 @@
       "license": "CC-BY-4.0",
       "license_notes": "Creative Commons Attribution 4.0 International.",
       "access_model": "free_permissive_assets",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Officially certified IFC sample test models for validating open BIM interoperability."
+      "primary_use": "Officially certified IFC sample test models for validating open BIM interoperability.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-064",
@@ -777,9 +840,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-catalogs",
-      "primary_use": "Directory of free public APIs for weather, elevation, geocoding, and open data enrichment."
+      "primary_use": "Directory of free public APIs for weather, elevation, geocoding, and open data enrichment.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-065",
@@ -789,9 +853,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-code-discovery",
-      "primary_use": "Agent skill for eliminating redundant abstractions and simplifying complex codebases."
+      "primary_use": "Agent skill for eliminating redundant abstractions and simplifying complex codebases.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-066",
@@ -801,9 +866,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Minimalist engineering patterns avoiding over-engineering in agent tool design."
+      "primary_use": "Minimalist engineering patterns avoiding over-engineering in agent tool design.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-067",
@@ -813,9 +879,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Specification-driven implementation discipline ensuring strict adherence to reviewed architecture."
+      "primary_use": "Specification-driven implementation discipline ensuring strict adherence to reviewed architecture.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-068",
@@ -825,9 +892,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Harness engineering rules enforcing clean pull requests, atomic commits, and readable diffs."
+      "primary_use": "Harness engineering rules enforcing clean pull requests, atomic commits, and readable diffs.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-069",
@@ -837,9 +905,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-code-discovery",
-      "primary_use": "Packaging, version tagging, and release automation for open-source repositories."
+      "primary_use": "Packaging, version tagging, and release automation for open-source repositories.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-070",
@@ -849,9 +918,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Professional GitHub README generation with feature grids and quickstart badges."
+      "primary_use": "Professional GitHub README generation with feature grids and quickstart badges.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-071",
@@ -861,9 +931,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Structured documentation generation highlighting engineering evidence."
+      "primary_use": "Structured documentation generation highlighting engineering evidence.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-072",
@@ -873,9 +944,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-ui-ux-design-testing",
-      "primary_use": "Typography, banner layout, and bilingual presentation styling for repository frontpages."
+      "primary_use": "Typography, banner layout, and bilingual presentation styling for repository frontpages.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-073",
@@ -885,9 +957,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "quarantine_in_sandbox",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "General developer workflow skills and terminal automation."
+      "primary_use": "General developer workflow skills and terminal automation.",
+      "security_audit_note": "Metadata audited (2026-11-25): unverified third-party agent skill, MCP server, or binary inspection tool; quarantined pending isolated static/runtime verification."
     },
     {
       "canonical_id": "UDS-LIB-074",
@@ -897,9 +970,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Architectural decision records template.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "Markdown Architectural Decision Records (MADR) format for documenting software choices."
+      "primary_use": "Markdown Architectural Decision Records (MADR) format for documenting software choices.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-075",
@@ -909,9 +983,10 @@
       "license": "MIT",
       "license_notes": "MIT license.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-desktop-application-development",
-      "primary_use": "C++ profiling rules, memory alignment checks, and cache-friendly data layout techniques."
+      "primary_use": "C++ profiling rules, memory alignment checks, and cache-friendly data layout techniques.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-076",
@@ -921,9 +996,10 @@
       "license": "MIT",
       "license_notes": "MIT license. Parent skill hub repository.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "gis-development",
-      "primary_use": "Universal engineering hub for geospatial software, tools, and agent workflows."
+      "primary_use": "Universal engineering hub for geospatial software, tools, and agent workflows.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-077",
@@ -933,9 +1009,10 @@
       "license": "GPL-3.0",
       "license_notes": "GPL v3. Architectural formulas (sun path, solar geometry) implemented in clean-room Python/C++.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "terrain-hydrology-lidar",
-      "primary_use": "Astronomical solar position and solar radiation calculation formulas."
+      "primary_use": "Astronomical solar position and solar radiation calculation formulas.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     },
     {
       "canonical_id": "UDS-LIB-078",
@@ -945,9 +1022,10 @@
       "license": "MIT",
       "license_notes": "MIT/X style license. Industry-standard geospatial engine.",
       "access_model": "free_open_source",
-      "security_rating": "safe",
+      "security_rating": "reviewed",
       "accountable_skill": "geospatial-data-processing",
-      "primary_use": "Foundational vector/raster geospatial data translation, coordinate transformations, and elevation processing."
+      "primary_use": "Foundational vector/raster geospatial data translation, coordinate transformations, and elevation processing.",
+      "security_audit_note": "License & boundary metadata audited (2026-11-25); replaced blind \"safe\" claim because upstream SAST and clean-machine build/runtime verification are NOT RUN."
     }
   ]
 }

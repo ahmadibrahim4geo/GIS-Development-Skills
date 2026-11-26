@@ -1,0 +1,66 @@
+name: Validate GIS Skill
+on:
+  # Validate only main pushes. Feature branches are tested via pull_request.
+  # Avoid duplicate push + PR checks (and duplicate email notifications).
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+# Keep the latest run per branch/PR. Fast successive commits should not
+# generate a backlog of obsolete failing checks and notifications.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, Node.js 24
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0, Node.js 24
+        with:
+          python-version: '3.11'
+      - name: Validate project catalog
+        run: python scripts/validate_catalog.py
+      - name: Audit recorded upstream license evidence
+        run: python scripts/audit_license_catalog.py --summary
+      - name: Offline GIS Security Guardian preflight
+        run: python scripts/security_audit.py --root . --format text
+      - name: Validate mobile device evidence status (fixture-only, no native PASS claims)
+        run: python scripts/validate_mobile_device_evidence.py examples/mobile-gis/device-acceptance.example.json
+      - name: Validate API catalog
+        run: python scripts/validate_api_catalog.py
+      - name: Validate GIS data repositories index
+        run: python scripts/validate_data_repositories.py
+      - name: Validate skill pack and local links
+        run: python scripts/validate_skill_pack.py
+      - name: Check generated manifest and counters
+        run: python scripts/build_manifest.py --check
+      - name: Audit skill routing and ownership coverage
+        run: python scripts/audit_skill_graph.py
+      - name: Validate DoneProof illustrative report structure
+        run: python scripts/verify_completion.py templates/doneproof.example.json
+      - name: Validate acceptance evidence example
+        run: python scripts/validate_evidence.py templates/gis-acceptance.example.json
+      - name: Validate canonical T0-T4 evidence labels
+        run: python scripts/validate_evidence_tiers.py
+      - name: Validate inline website JavaScript syntax
+        run: |
+          python -c "from pathlib import Path; import re; t=Path('index.html').read_text(encoding='utf-8'); m=re.search(r'<script>(.*?)</script>',t,flags=re.S); assert m; Path('site-inline-check.js').write_text(m.group(1),encoding='utf-8')"
+          node --check site-inline-check.js
+          rm site-inline-check.js
+      - name: Run offline unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Syntax check GIS templates
+        run: |
+          python -m py_compile templates/arcmap-script-tool.py templates/arcgis-pro-toolbox.pyt templates/qgis-processing-algorithm.py templates/standalone-geojson-summary.py
+      - name: Syntax check production examples
+        run: |
+          python -m py_compile examples/network-topology/audit_network.py examples/data-catalogs/search_sources.py examples/stac-offline/inspect_items.py examples/terrain-slope/slope_ascii.py examples/api-ingestion/weather_to_geojson.py examples/batch-export/export_layouts_arcgis_pro.py
+      - name: Syntax check helpers and native acceptance scripts
+        run: |
+          python -m py_compile scripts/mcp_tool_router.py scripts/intent_router.py scripts/verify_completion.py scripts/audit_skill_graph.py scripts/development_journal.py scripts/build_manifest.py scripts/audit_license_catalog.py scripts/validate_data_repositories.py scripts/validate_evidence.py scripts/validate_evidence_tiers.py scripts/monitor_public_services.py scripts/benchmark_gis_examples.py fixtures/generate_binary_fixtures.py native_tests/arcgis_pro_acceptance.py native_tests/qgis_acceptance.py scripts/gis_code_discovery.py scripts/prepare_visual_asset.py scripts/evaluate_visual_skill.py scripts/build_skill_bundle.py scripts/security_guardian.py

@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "request_id": "QGIS-RIBBON-DESIGN-EXAMPLE-001",
+  "revision": "r1",
+  "original_request": "خطّط لتحويل أدوات QGIS إلى ribbon داخل QGIS مع الحفاظ على محركه. ابدأ بجرد الأوامر، وصمّم مسار Buffer نموذجي يوضح الطلب والنتيجة والخطأ وحالة الواجهة. هذا مثال تصميم مقترح، ولا ينفّذ التحويل.",
+  "language": "ar",
+  "status": "draft",
+  "approval": {
+    "approved_by_user": false,
+    "approved_revision": null,
+    "high_risk_approved": false
+  },
+  "goal": "Review a QGIS-hosted ribbon design that preserves command semantics and explains UI-to-GIS data flow before implementation.",
+  "target": "Proposed QGIS-hosted plugin design; actual project, QGIS/Qt versions and supported ribbon integration are unresolved.",
+  "desired_outcomes": [
+    "An explicit command inventory/preflight task precedes architectural design.",
+    "The proposed Buffer command has request, result, error, state, progress and cancellation contracts.",
+    "The target remains QGIS-hosted; no engine or renderer replacement is inferred from the word ribbon."
+  ],
+  "success_criteria": [
+    "The compiled draft retains the architecture declaration and flow reference without asserting source or native verification.",
+    "The proposed flow preserves command mapping and separates UI thread state updates from bounded worker computation.",
+    "Unresolved identities, source inventory and native T2-T4 checks remain explicit."
+  ],
+  "constraints": [
+    "Do not modify original projects, datasets, QGIS installations or existing actions in this illustrative draft.",
+    "Do not download a ribbon library, UI.js package or Archify runtime from this plan.",
+    "A supported plugin path must be verified before promising replacement of QGIS application chrome."
+  ],
+  "non_goals": [
+    "Engine replacement, standalone packaging, project save/export and native implementation are outside this design example.",
+    "The flow JSON is not an Archify candidate or an execution trace."
+  ],
+  "assumptions": [
+    "QGIS-hosted ui-reorganization is the user's requested target; plugin feasibility remains a proposal pending source/runtime review.",
+    "sample.buffer is an illustrative stable command ID, not a discovered QGIS native action ID.",
+    "The proposed asynchronous worker must be replaced with verified supported target APIs and thread rules before execution."
+  ],
+  "open_questions": [
+    "Which actual project, QGIS/Qt versions, source/license and supported extension APIs are available?",
+    "What is the complete in-scope QAction/handler/shortcut/enabled/checked inventory?",
+    "Which Buffer provider and cancellation/threading behavior are supported by the target runtime?"
+  ],
+  "tasks": [
+    {
+      "id": "R1",
+      "title": "Inspect target host and command inventory",
+      "description": "Read-only preflight of the actual QGIS project, versions, license, extension feasibility and in-scope action bindings. The sample does not contain that source or claim the inventory exists.",
+      "priority": "must",
+      "kind": "architecture-discovery",
+      "owner_skill": "qgis-plugin-development",
+      "skills": [
+        "qgis-plugin-development",
+        "gis-ui-command-audit",
+        "gis-security-guardian"
+      ],
+      "depends_on": [],
+      "risk": "low",
+      "acceptance_criteria": [
+        "Record actual host/component identity and plugin feasibility, or preserve unresolved status with the missing source identified.",
+        "Inventory real command IDs, handlers, shortcuts and enabled/checked context without treating sample.buffer as a discovered action."
+      ],
+      "tools": []
+    },
+    {
+      "id": "R2",
+      "title": "Review proposed ribbon command and data flow",
+      "description": "Domain-owned architectural design with Archify as optional explanatory support. The linked flow is a proposed Buffer vertical slice; full command parity depends on R1. No UI or engine operation is executed by compilation.",
+      "priority": "must",
+      "kind": "ui-architecture",
+      "owner_skill": "qgis-plugin-development",
+      "skills": [
+        "qgis-plugin-development",
+        "gis-ui-ux-design-testing",
+        "gis-ui-command-audit",
+        "gis-architecture-visualization",
+        "gis-security-guardian"
+      ],
+      "depends_on": [
+        "R1"
+      ],
+      "risk": "low",
+      "acceptance_criteria": [
+        "Retain source/target host, UI framework, renderer, GIS engine, integration mode and preserved invariants through compilation.",
+        "Inspect before/after command mapping and request/result/error/state paths with explicit async progress, cancellation, recovery and thread ownership.",
+        "Label all sample edges proposed; report QGIS native T2-T4 and Archify rendering NOT RUN."
+      ],
+      "tools": [],
+      "architecture": {
+        "schema_version": "1.0",
+        "change_type": "ui-reorganization",
+        "source_host": "QGIS application; exact project and runtime unresolved",
+        "target_host": "Same QGIS application with supported plugin-hosted ribbon groups, subject to feasibility review",
+        "ui_framework": {
+          "name": "Proposed QGIS Qt plugin UI; actual Qt binding and ribbon component unresolved",
+          "role": "ui-shell",
+          "status": "unresolved",
+          "source_ref": null,
+          "version": null
+        },
+        "renderer": {
+          "name": "Existing QGIS map canvas; actual source/runtime unresolved",
+          "role": "map-renderer",
+          "status": "unresolved",
+          "source_ref": null,
+          "version": null
+        },
+        "gis_engine": {
+          "name": "Existing QGIS processing/provider engine; actual provider/runtime unresolved",
+          "role": "geospatial-engine",
+          "status": "unresolved",
+          "source_ref": null,
+          "version": null
+        },
+        "integration_mode": "in-process",
+        "preserved_invariants": [
+          "Keep the QGIS host, map renderer and GIS computation engine.",
+          "Preserve discovered command handlers, shortcuts, selection/layer context and enabled/checked semantics.",
+          "Keep original datasets and project files unchanged; Buffer uses new outputs with explicit CRS/units.",
+          "Do not treat illustrative command IDs, proposed thread boundaries or a diagram as observed execution."
+        ],
+        "command_inventory_ref": null,
+        "flow_spec_ref": "examples/architecture-visualization/qgis-ribbon.flow.json"
+      },
+      "visualization": {
+        "purpose": "structural-change",
+        "diagram_type": "dataflow",
+        "evidence_basis": "proposed",
+        "language": "ar"
+      }
+    }
+  ]
+}

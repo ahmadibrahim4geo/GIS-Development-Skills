@@ -1,0 +1,712 @@
+{
+  "schema_version": "1.0",
+  "catalog_title": "Remote Sensing Indices and Spectral Metrics Catalog",
+  "description": "Structured catalog of verified optical and radar spectral indices with exact formulas, parameters, mathematical ranges, and scientific citations.",
+  "provenance": {
+    "reviewed_on": "2026-11-19",
+    "source_verified": true,
+    "runtime_verified": false,
+    "license": "MIT",
+    "note": "Formulas represent canonical peer-reviewed publications. Thresholds are context-dependent and never universal."
+  },
+  "indices": [
+    {
+      "id": "NDVI_Rouse_1974",
+      "acronym": "NDVI",
+      "name_en": "Normalized Difference Vegetation Index",
+      "name_ar": "مؤشر الفرق المعياري للغطاء النباتي",
+      "domain": "vegetation",
+      "modality": "optical",
+      "formula": "(NIR - RED) / (NIR + RED)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "NIR", "quantity": "surface_reflectance", "description": "Near-infrared reflectance"},
+        {"role": "RED", "quantity": "surface_reflectance", "description": "Red band reflectance"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Non-negative surface reflectance inputs and non-zero denominator."
+      },
+      "typical_observed_range": {
+        "min": -0.2,
+        "max": 0.9,
+        "context": "Water typically < 0; bare soil ~ 0.05 - 0.2; dense green canopy ~ 0.6 - 0.85"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["NDVI"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "NDVI=0.65 does NOT equal 65% vegetation cover. FVC or leaf area requires calibrated empirical models."
+      },
+      "limitations": [
+        "Soil background brightness influences sparse canopy values",
+        "Saturation occurs in dense vegetation (LAI > 3-4)",
+        "Atmospheric aerosols and cloud shadows alter reflectance"
+      ],
+      "science_references": [
+        "Rouse, J. W., et al. (1974). Monitoring the vernal advancement and retrogradation of natural vegetation. NASA/GSFC Final Report, 371 p.",
+        "https://www.usgs.gov/landsat-missions/landsat-normalized-difference-vegetation-index"
+      ]
+    },
+    {
+      "id": "EVI_Huete_2002",
+      "acronym": "EVI",
+      "name_en": "Enhanced Vegetation Index",
+      "name_ar": "مؤشر الغطاء النباتي المحسن",
+      "domain": "vegetation",
+      "modality": "optical",
+      "formula": "G * (NIR - RED) / (NIR + C1 * RED - C2 * BLUE + L)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "NIR", "quantity": "surface_reflectance"},
+        {"role": "RED", "quantity": "surface_reflectance"},
+        {"role": "BLUE", "quantity": "surface_reflectance"}
+      ],
+      "constants": {
+        "G": 2.5,
+        "C1": 6.0,
+        "C2": 7.5,
+        "L": 1.0
+      },
+      "mathematical_range": {
+        "min": -1.5,
+        "max": 1.5,
+        "conditions": "Denominator is not constrained to NIR + RED; range is not strictly [-1, 1]."
+      },
+      "typical_observed_range": {
+        "min": -0.2,
+        "max": 1.0,
+        "context": "Healthy vegetation typically 0.2 - 0.8"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["EVI"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "Requires valid blue reflectance; residual blue noise or cloud contamination causes high distortion."
+      },
+      "limitations": [
+        "Requires reliable blue band reflectance (easily corrupted by aerosols)",
+        "Denominator can approach zero in dark or shadow pixels causing extreme values"
+      ],
+      "science_references": [
+        "Huete, A., et al. (2002). Overview of the radiometric and biophysical performance of the MODIS vegetation indices. Remote Sensing of Environment, 83(1-2), 195-213."
+      ]
+    },
+    {
+      "id": "EVI2_Jiang_2008",
+      "acronym": "EVI2",
+      "name_en": "Two-Band Enhanced Vegetation Index",
+      "name_ar": "مؤشر الغطاء النباتي المحسن ثنائي النطاق",
+      "domain": "vegetation",
+      "modality": "optical",
+      "formula": "G * (NIR - RED) / (NIR + 2.4 * RED + 1.0)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "NIR", "quantity": "surface_reflectance"},
+        {"role": "RED", "quantity": "surface_reflectance"}
+      ],
+      "constants": {
+        "G": 2.5,
+        "C": 2.4,
+        "L": 1.0
+      },
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.5,
+        "conditions": "Omits blue band to avoid atmospheric noise."
+      },
+      "typical_observed_range": {
+        "min": -0.1,
+        "max": 0.9,
+        "context": "Consistent with 3-band EVI in unpolluted conditions"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["EVI2"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false
+      },
+      "limitations": [
+        "Slightly higher sensitivity to sub-pixel clouds than 3-band EVI"
+      ],
+      "science_references": [
+        "Jiang, Z., et al. (2008). Development of a two-band enhanced vegetation index without a blue band. Remote Sensing of Environment, 112(10), 3833-3845."
+      ]
+    },
+    {
+      "id": "SAVI_Huete_1988",
+      "acronym": "SAVI",
+      "name_en": "Soil-Adjusted Vegetation Index",
+      "name_ar": "مؤشر الغطاء النباتي المعدل للتربة",
+      "domain": "vegetation",
+      "modality": "optical",
+      "formula": "((NIR - RED) / (NIR + RED + L)) * (1.0 + L)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "NIR", "quantity": "surface_reflectance"},
+        {"role": "RED", "quantity": "surface_reflectance"}
+      ],
+      "constants": {
+        "L": 0.5
+      },
+      "mathematical_range": {
+        "min": -1.5,
+        "max": 1.5,
+        "conditions": "L=0.5 default; L=1 for low density, L=0.25 for high density"
+      },
+      "typical_observed_range": {
+        "min": -0.1,
+        "max": 0.9,
+        "context": "Semi-arid and sparse vegetation monitoring"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["SAVI"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false
+      },
+      "limitations": [
+        "Requires tuning L factor when vegetation density is extreme"
+      ],
+      "science_references": [
+        "Huete, A. R. (1988). A soil-adjusted vegetation index (SAVI). Remote Sensing of Environment, 25(3), 295-309."
+      ]
+    },
+    {
+      "id": "MSAVI_Qi_1994",
+      "acronym": "MSAVI",
+      "name_en": "Modified Soil-Adjusted Vegetation Index",
+      "name_ar": "مؤشر الغطاء النباتي المعدل للتربة المطور",
+      "domain": "vegetation",
+      "modality": "optical",
+      "formula": "(2.0 * NIR + 1.0 - sqrt((2.0 * NIR + 1.0)^2 - 8.0 * (NIR - RED))) / 2.0",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "NIR", "quantity": "surface_reflectance"},
+        {"role": "RED", "quantity": "surface_reflectance"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Term under radical must be non-negative"
+      },
+      "typical_observed_range": {
+        "min": 0.0,
+        "max": 0.85,
+        "context": "Self-adjusting soil line factor"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["MSAVI", "MSAVI2"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false
+      },
+      "limitations": [
+        "Radical expression must be protected against negative values in noisy pixels"
+      ],
+      "science_references": [
+        "Qi, J., et al. (1994). A modified soil adjusted vegetation index. Remote Sensing of Environment, 48(2), 119-126."
+      ]
+    },
+    {
+      "id": "NDWI_McFeeters_1996",
+      "acronym": "NDWI_Water",
+      "name_en": "Normalized Difference Water Index (McFeeters - Surface Water)",
+      "name_ar": "مؤشر الفرق المعياري للمياه السطحية (ماكفيترز)",
+      "domain": "surface_water",
+      "modality": "optical",
+      "formula": "(GREEN - NIR) / (GREEN + NIR)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "GREEN", "quantity": "surface_reflectance"},
+        {"role": "NIR", "quantity": "surface_reflectance"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Non-negative inputs, non-zero denominator."
+      },
+      "typical_observed_range": {
+        "min": -0.8,
+        "max": 0.8,
+        "context": "Open water > 0 (or empirically calibrated zero-line); vegetation and soil < 0"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["NDWI", "NDWI_McFeeters"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "DO NOT confuse with Gao 1996 (NIR-SWIR) which measures vegetation canopy moisture. Built-up land may yield positive false water pixels in McFeeters NDWI."
+      },
+      "limitations": [
+        "Confounds open water with asphalt, urban shadows, and dark impervious surfaces",
+        "Requires masking of topographic shadows in hilly terrain"
+      ],
+      "science_references": [
+        "McFeeters, S. K. (1996). The use of the Normalized Difference Water Index (NDWI) in the delineation of open water features. International Journal of Remote Sensing, 17(7), 1425-1432."
+      ]
+    },
+    {
+      "id": "NDWI_Gao_1996",
+      "acronym": "NDWI_Gao",
+      "name_en": "Normalized Difference Water Index (Gao - Canopy Moisture)",
+      "name_ar": "مؤشر المحتوى المائي للغطاء النباتي (جاو / NDMI)",
+      "domain": "vegetation_moisture",
+      "modality": "optical",
+      "formula": "(NIR - SWIR) / (NIR + SWIR)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "NIR", "quantity": "surface_reflectance"},
+        {"role": "SWIR", "quantity": "surface_reflectance", "description": "SWIR band ~1.24 µm (Gao 1996 original) or ~1.6 µm (standard satellite adaptation / NDMI)"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Non-negative inputs, non-zero denominator."
+      },
+      "typical_observed_range": {
+        "min": -0.6,
+        "max": 0.6,
+        "context": "High canopy water content: 0.2 - 0.5; dry/stressed canopy < 0"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["NDWI_Gao", "NDMI", "NDWI_Veg", "LSWI"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "Measures liquid water in plant canopies, NOT open surface water bodies."
+      },
+      "limitations": [
+        "Varies with leaf internal structure and canopy dry matter",
+        "Band wavelength shifts between 1.24 µm and 1.6 µm change dynamic range"
+      ],
+      "science_references": [
+        "Gao, B. C. (1996). NDWI—A normalized difference water index for remote sensing of vegetation liquid water from space. Remote Sensing of Environment, 58(3), 257-266."
+      ]
+    },
+    {
+      "id": "MNDWI_Xu_2006",
+      "acronym": "MNDWI",
+      "name_en": "Modified Normalized Difference Water Index",
+      "name_ar": "مؤشر المياه المعدل (شو)",
+      "domain": "surface_water",
+      "modality": "optical",
+      "formula": "(GREEN - SWIR1) / (GREEN + SWIR1)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "GREEN", "quantity": "surface_reflectance"},
+        {"role": "SWIR1", "quantity": "surface_reflectance", "description": "SWIR1 ~1.6 µm"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Non-negative inputs, non-zero denominator."
+      },
+      "typical_observed_range": {
+        "min": -0.7,
+        "max": 0.8,
+        "context": "Water > 0; built-up surfaces and soil yield distinct negative values"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["MNDWI"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "Replaces NIR with SWIR1 to suppress urban/built-up confusion found in McFeeters NDWI."
+      },
+      "limitations": [
+        "Shadows in high-relief or urban skyscraper canyons can still mimic water"
+      ],
+      "science_references": [
+        "Xu, H. (2006). Modification of normalised difference water index (NDWI) to enhance open water features in remotely sensed imagery. International Journal of Remote Sensing, 27(14), 3025-3033."
+      ]
+    },
+    {
+      "id": "NBR_Key_2006",
+      "acronym": "NBR",
+      "name_en": "Normalized Burn Ratio",
+      "name_ar": "مؤشر نسبة الحريق المعياري",
+      "domain": "fire",
+      "modality": "optical",
+      "formula": "(NIR - SWIR2) / (NIR + SWIR2)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "NIR", "quantity": "surface_reflectance"},
+        {"role": "SWIR2", "quantity": "surface_reflectance", "description": "SWIR2 ~2.2 µm"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Non-negative inputs, non-zero denominator."
+      },
+      "typical_observed_range": {
+        "min": -0.8,
+        "max": 0.8,
+        "context": "Healthy vegetation high positive; burned areas strongly negative"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["NBR"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false
+      },
+      "limitations": [
+        "Single-date NBR cannot separate low productivity or bare soil from burned areas without pre-fire baseline"
+      ],
+      "science_references": [
+        "Key, C. H., & Benson, N. C. (2006). Landscape Assessment (LA): Sampling and Analysis Methods. USDA Forest Service General Technical Report RMRS-GTR-164-CD."
+      ]
+    },
+    {
+      "id": "dNBR_Key_2006",
+      "acronym": "dNBR",
+      "name_en": "Differenced Normalized Burn Ratio",
+      "name_ar": "مؤشر تغير شدة الحريق المعياري (الفرق قبل وبعد الحريق)",
+      "domain": "fire",
+      "modality": "optical",
+      "formula": "NBR_pre - NBR_post",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "NBR_pre", "quantity": "dimensionless", "description": "Pre-fire NBR"},
+        {"role": "NBR_post", "quantity": "dimensionless", "description": "Post-fire NBR"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -2.0,
+        "max": 2.0,
+        "conditions": "Standard difference range; multiply by 1000 if using USGS scaled convention."
+      },
+      "typical_observed_range": {
+        "min": -0.3,
+        "max": 1.3,
+        "context": "Unburned: -0.1 to 0.1; Low severity: 0.1 to 0.27; High severity: > 0.66 (unscaled)"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["dNBR", "DeltaNBR"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "USGS burn severity classes (e.g., 0.10, 0.27, 0.44, 0.66) are reference guidelines for US ecosystems. Always specify whether values are unitless (-1 to 1) or scaled by 1000 (-1000 to 1000)."
+      },
+      "limitations": [
+        "Requires pre- and post-fire seasonal alignment to prevent phenology bias",
+        "Phenological green-up or snow alters difference values"
+      ],
+      "science_references": [
+        "Key, C. H., & Benson, N. C. (2006). Landscape Assessment (LA): Sampling and Analysis Methods. USDA Forest Service General Technical Report RMRS-GTR-164-CD."
+      ]
+    },
+    {
+      "id": "NDBI_Zha_2003",
+      "acronym": "NDBI",
+      "name_en": "Normalized Difference Built-up Index",
+      "name_ar": "مؤشر المناطق المبنية المعياري",
+      "domain": "urban_soil",
+      "modality": "optical",
+      "formula": "(SWIR1 - NIR) / (SWIR1 + NIR)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "SWIR1", "quantity": "surface_reflectance"},
+        {"role": "NIR", "quantity": "surface_reflectance"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Non-negative inputs, non-zero denominator."
+      },
+      "typical_observed_range": {
+        "min": -0.6,
+        "max": 0.5,
+        "context": "Built-up areas positive; vegetation negative"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["NDBI"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "Severe confusion with bare dry soil and rocky outcrops. Never classify built-up solely on NDBI > 0."
+      },
+      "limitations": [
+        "High false positive rate over arid, semi-arid, and fallow agricultural soil"
+      ],
+      "science_references": [
+        "Zha, Y., et al. (2003). Use of normalized difference built-up index in automatically mapping urban areas from TM imagery. International Journal of Remote Sensing, 24(3), 583-594."
+      ]
+    },
+    {
+      "id": "BSI_Rikimaru_2002",
+      "acronym": "BSI",
+      "name_en": "Bare Soil Index",
+      "name_ar": "مؤشر التربة العارية",
+      "domain": "soil",
+      "modality": "optical",
+      "formula": "((SWIR1 + RED) - (NIR + BLUE)) / ((SWIR1 + RED) + (NIR + BLUE))",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "SWIR1", "quantity": "surface_reflectance"},
+        {"role": "RED", "quantity": "surface_reflectance"},
+        {"role": "NIR", "quantity": "surface_reflectance"},
+        {"role": "BLUE", "quantity": "surface_reflectance"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Non-negative inputs, non-zero denominator."
+      },
+      "typical_observed_range": {
+        "min": -0.5,
+        "max": 0.5,
+        "context": "Bare soil yields positive values; dense vegetation yields negative"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["BSI"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false
+      },
+      "limitations": [
+        "May overlap with dry non-photosynthetic vegetation"
+      ],
+      "science_references": [
+        "Rikimaru, A., et al. (2002). Tropical forest cover density mapping. ITTO Tropical Forest Update, 12(2), 9-11."
+      ]
+    },
+    {
+      "id": "NDSI_Hall_1995",
+      "acronym": "NDSI_Snow",
+      "name_en": "Normalized Difference Snow Index",
+      "name_ar": "مؤشر الثلوج والجليد المعياري",
+      "domain": "snow_ice",
+      "modality": "optical",
+      "formula": "(GREEN - SWIR1) / (GREEN + SWIR1)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "GREEN", "quantity": "surface_reflectance"},
+        {"role": "SWIR1", "quantity": "surface_reflectance"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Non-negative inputs, non-zero denominator."
+      },
+      "typical_observed_range": {
+        "min": -0.6,
+        "max": 0.9,
+        "context": "Snow typically > 0.4; water can overlap unless NIR threshold is applied"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["NDSI", "NDSI_Snow"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "NDSI shares identical formula with MNDWI (Green-SWIR1). Context and NIR brightness (e.g. NIR > 0.11) are required to separate snow from water."
+      },
+      "limitations": [
+        "Requires cloud masking: cirrus and ice clouds show high NDSI values",
+        "Deep mountain shadows distort snow extraction"
+      ],
+      "science_references": [
+        "Hall, D. K., et al. (1995). Mapping snow cover with MODIS Airborne Simulator data. Remote Sensing of Environment, 54(2), 127-140."
+      ]
+    },
+    {
+      "id": "NDRE_Barnes_2000",
+      "acronym": "NDRE",
+      "name_en": "Normalized Difference Red Edge Index",
+      "name_ar": "مؤشر الحافة الحمراء المعياري للكلوروفيل",
+      "domain": "vegetation_chlorophyll",
+      "modality": "optical",
+      "formula": "(NIR - RED_EDGE) / (NIR + RED_EDGE)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "NIR", "quantity": "surface_reflectance", "description": "Sentinel-2 B8 (10m) or B8A (20m)"},
+        {"role": "RED_EDGE", "quantity": "surface_reflectance", "description": "Sentinel-2 B5 (705nm) or B6 (740nm)"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Requires red-edge band (Sentinel-2, RapidEye, PlanetScope SuperDove, WorldView-3)."
+      },
+      "typical_observed_range": {
+        "min": -0.1,
+        "max": 0.7,
+        "context": "Sensitive to chlorophyll in dense crops where standard NDVI saturates"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["NDRE"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false
+      },
+      "limitations": [
+        "Not available on standard 4-band sensors (Landsat 4-8, older satellites)"
+      ],
+      "science_references": [
+        "Barnes, E. M., et al. (2000). Coincident detection of crop water stress, nitrogen status and canopy density using ground-based multispectral data. In Proceedings of the 5th International Conference on Precision Agriculture."
+      ]
+    },
+    {
+      "id": "NDCI_Mishra_2012",
+      "acronym": "NDCI",
+      "name_en": "Normalized Difference Chlorophyll Index (Water Quality)",
+      "name_ar": "مؤشر الكلوروفيل المعياري لجودة المياه",
+      "domain": "water_quality",
+      "modality": "optical",
+      "formula": "(RED_EDGE1 - RED) / (RED_EDGE1 + RED)",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "RED_EDGE1", "quantity": "surface_reflectance", "description": "Sentinel-2 B5 (~705 nm)"},
+        {"role": "RED", "quantity": "surface_reflectance", "description": "Sentinel-2 B4 (~665 nm)"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": -1.0,
+        "max": 1.0,
+        "conditions": "Valid over water bodies; requires accurate atmospheric water-surface correction."
+      },
+      "typical_observed_range": {
+        "min": -0.3,
+        "max": 0.5,
+        "context": "Higher values indicate elevated chlorophyll-a and potential algal blooms"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "water_surface_reflectance",
+      "aliases": ["NDCI"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "NDCI is a relative optical proxy; converting to physical chlorophyll-a concentration (mg/m³) requires local in-situ calibration and atmospheric correction for inland waters (e.g. C2RCC/ACOLITE)."
+      },
+      "limitations": [
+        "Inaccurate over land or cloud shadows; must be masked to water bodies first",
+        "Sensitive to suspended sediment and CDOM"
+      ],
+      "science_references": [
+        "Mishra, S., & Mishra, D. R. (2012). Normalized difference chlorophyll index: A novel model for remote estimation of chlorophyll-a in turbid productive waters. Remote Sensing of Environment, 117, 394-406."
+      ]
+    },
+    {
+      "id": "RVI_Radar_Charbonneau_2005",
+      "acronym": "RVI_SAR",
+      "name_en": "Radar Vegetation Index (Dual-Pol / Quad-Pol SAR)",
+      "name_ar": "مؤشر الغطاء النباتي الراداري (SAR)",
+      "domain": "sar_vegetation",
+      "modality": "sar",
+      "formula": "(4.0 * VH_lin) / (VV_lin + VH_lin)",
+      "formula_language": "sar-algebra",
+      "required_inputs": [
+        {"role": "VV_lin", "quantity": "linear_backscatter_intensity", "description": "VV backscatter power in LINEAR units (NOT decibels dB!)"},
+        {"role": "VH_lin", "quantity": "linear_backscatter_intensity", "description": "VH cross-polarization power in LINEAR units"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": 0.0,
+        "max": 1.0,
+        "conditions": "Inputs MUST be linear power (intensity = 10^(dB/10)), never raw dB."
+      },
+      "typical_observed_range": {
+        "min": 0.0,
+        "max": 0.8,
+        "context": "Bare surface / smooth water ~ 0; dense rough canopy ~ 0.5 - 0.7"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "radiometrically_terrain_corrected_gamma0",
+      "aliases": ["RVI_SAR", "Dual-Pol RVI"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "Radar RVI measures volumetric microwave scattering, NOT optical greenness. Distinct from Jordan 1969 optical Ratio Vegetation Index."
+      },
+      "limitations": [
+        "Sensitive to soil roughness, dielectric moisture, and incidence angle",
+        "Speckle filtering is mandatory before index calculation"
+      ],
+      "science_references": [
+        "Charbonneau, F. J., et al. (2005). Evaluation of Radarsat-2 polarimetric capabilities for crop monitoring. In Proceedings of the 5th International Symposium on Retrieval of Bio-and Geophysical Parameters from SAR Data."
+      ]
+    },
+    {
+      "id": "RVI_Ratio_Jordan_1969",
+      "acronym": "RVI_Optical",
+      "name_en": "Ratio Vegetation Index (Jordan 1969 - Optical Simple Ratio)",
+      "name_ar": "مؤشر النسبة البسيطة للغطاء النباتي (بصري)",
+      "domain": "vegetation",
+      "modality": "optical",
+      "formula": "NIR / RED",
+      "formula_language": "spectral-algebra",
+      "required_inputs": [
+        {"role": "NIR", "quantity": "surface_reflectance"},
+        {"role": "RED", "quantity": "surface_reflectance"}
+      ],
+      "constants": {},
+      "mathematical_range": {
+        "min": 0.0,
+        "max": 50.0,
+        "conditions": "Non-negative inputs. In dense green canopy, value can exceed 10.0."
+      },
+      "typical_observed_range": {
+        "min": 1.0,
+        "max": 15.0,
+        "context": "Soil ~ 1.0; green vegetation > 2.0"
+      },
+      "units": "dimensionless",
+      "preferred_processing_level": "surface_reflectance",
+      "aliases": ["RVI", "SR", "Simple_Ratio"],
+      "interpretation": {
+        "method": "contextual",
+        "universal_thresholds": false,
+        "physical_percentage_directly": false,
+        "caution": "Do NOT confuse with Radar Vegetation Index. This is the classic 1969 optical simple ratio."
+      },
+      "limitations": [
+        "Highly sensitive to low RED values; approaches infinity as RED approaches zero"
+      ],
+      "science_references": [
+        "Jordan, C. F. (1969). Derivation of leaf-area index from quality of light on the forest floor. Ecology, 50(4), 663-666."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "sequence": 104,
+  "timestamp_utc": "2026-11-21T09:44:51+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Verified r11 on main and GitHub Pages",
+  "details": "Applied Brand Kit 3.1 and preserved all 97 source files, balanced the GIS website and bilingual READMEs, consolidated KML/KMZ in one skill file at user request, and moved the original 32-file execution package into the removable archive with matching hashes. Staged only 99 reviewed files, pushed fast-forward to main and verified exact readback, two CI successes and Pages deployment. The package is built from the published commit. Native KML host and agent-client installation remain untested.",
+  "references": [
+    103
+  ],
+  "task_id": "BRAND-MAIN-DELIVERY",
+  "plan_revision": "r11",
+  "changed_files": [
+    "index.html",
+    "README.md",
+    "README.ar.md",
+    "skills/kml-kmz-engineering/SKILL.md",
+    "plans/archive/0004_Brand-Main-Delivery/PLAN.json",
+    "reports/BRAND_MAIN_R11_ACCEPTANCE.ar.md"
+  ],
+  "tests": [
+    "517 passing of 518; Chrome desktop/mobile and catalog; verified archive and plan-bound DoneProof; GitHub CI and Pages success"
+  ],
+  "test_result": "passed",
+  "commit": "7c45484bdbbbec4db1fe0a0f8b8974c0dc78517e",
+  "previous_hash": "8f8e174cec0fb0a3307041e28157da0b7d8bec56a80e217f45d0e853da88a170",
+  "hash": "d32b4a7ded423ced5739845ebc62044080a9cb55ae3de7a7a2d23ae73c46840c"
+}

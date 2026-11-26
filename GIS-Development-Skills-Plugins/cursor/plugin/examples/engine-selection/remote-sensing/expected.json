@@ -1,0 +1,9 @@
+{
+  "avoids_unnecessary_snap_jvm": true,
+  "sar_requires_explicit_calibration_product": true,
+  "preferred_stack_hints": [
+    "gdal",
+    "rasterio",
+    "pystac"
+  ]
+}

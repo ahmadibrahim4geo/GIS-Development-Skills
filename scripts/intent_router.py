@@ -2,8 +2,8 @@
 """Offline intent route hints and structural plan/approval declaration validation.
 
 NO LLM, remote call, execution, authorization, file writes or OS isolation.
-Run with --text for conservative bilingual keyword hints or --plan for a JSON
-draft from a human/AI. --gate verifies declared fields, not user identity.
+Run with --text for conservative bilingual keyword hints, optionally with
+--context, or --plan for a JSON draft. --gate checks declarations only.
 """
 import argparse
 import copy
@@ -12,9 +12,32 @@ import re
 import sys
 from pathlib import Path, PurePosixPath
 
+if __package__:
+    from .contextual_routing import WEB_SKILLS, web_ui_requested
+else:
+    try:
+        from scripts.contextual_routing import WEB_SKILLS, web_ui_requested
+    except ModuleNotFoundError as exc:
+        if exc.name != "scripts":
+            raise
+        from contextual_routing import WEB_SKILLS, web_ui_requested
+
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 DOMAINS = (
+    ("modern-web-guidance", ("modern-web-guidance", "modern web guidance")),
+    ("geospatial-engine-selection", (
+        "engine selection", "select engine", "choose engine", "compare engines", "recommend stack",
+        "build new application", "use existing program source", "engine replacement", "source fork",
+        "source-fork", "source-component-reuse", "reference ui", "reference-inspired-ui", "multi-engine",
+        "multi engine", "embedded-engine", "build vs reuse", "build-vs-reuse",
+        "اختيار محرك", "مقارنة محركات", "بناء برنامج جديد", "بناء تطبيق جديد", "تطبيق مستقل من الصفر",
+        "اعمل برنامج gis", "صمملي برنامج", "ابدأ من الصفر", "بدل ما تبدأ من الصفر", "اشتقاق",
+        "فورك", "خد البرنامج", "خد qgis", "نضف qgis", "عدل على qgis", "شيل الأدوات", "نضّف qgis",
+        "واجهة مثل arcgis", "عايز واجهة زي", "واجهه مثل", "شريط ريبون", "استبدال المحرك",
+        "تغيير المحرك", "ابني على", "دمج محركين", "بديل مجاني لـ", "برنامج خفيف",
+        "أداة صغيرة", "اداه صغيره", "تحويل إحداثيات فقط", "محرك ثلاثي الابعاد", "محرك خرائط"
+    )),
     ("gis-code-discovery", ("code discovery", "gis code", "code snippet", "code snippets", "sdk snippet", "arcgis sdk", "pyqgis snippet", "gdal sample", "gis recipe", "كود جغرافي", "خوارزمية جغرافية", "مقتطفات برمجية", "وصفات برمجية", "أمثلة برمجية", "كود python", "python code", "تنبؤ مكاني", "خوارزمية تنبؤ", "spatial prediction", "spatial machine learning", "تعلم آلي مكاني", "كود بحثي", "كودًا بحثيًا", "كودا بحثيا", "أكواد بحثية", "research code", "scikit-map", "ponytail", "caveman", "token optimizer", "ترشيد توكنات", "هندسة سياق", "context engineering")),
     ("visual-asset-discovery-integration", ("thumbnail", "visual asset", "image search", "image sourcing", "official logo", "logos", "brand asset", "سامبنيل", "سنبنيل", "ثَمبنيل", "صورة مصغرة", "صورة لكل اختيار", "صور توضيحية", "شعار", "شعارات")),
 
@@ -91,6 +114,9 @@ def route_hints(request, known=None):
     lowered = request.casefold()
     hits = [name for name, tokens in DOMAINS
             if name in known and any(token in lowered for token in tokens)]
+    web_skills = list(WEB_SKILLS) if web_ui_requested(request) else []
+    if web_skills:
+        hits.extend(name for name in ("gis-ui-ux-design-testing", *WEB_SKILLS) if name in known)
     if "gis-security-guardian" in known:
         hits.append("gis-security-guardian")
     architecture_review = architecture_hints(request)
@@ -108,6 +134,7 @@ def route_hints(request, known=None):
         "next_step": "Hosting AI must infer and show the user goal, deliverables, constraints and measurable success criteria; no execution from keywords.",
         "language_hint": "ar" if re.search(r"[\u0600-\u06ff]", request) else "en",
         "suggested_skills": list(dict.fromkeys(hits)),
+        **({"required_web_skills": web_skills} if web_skills else {}),
         "requires_semantic_review": True,
         "architecture_review": architecture_review,
         "approval": "not_requested",
@@ -505,10 +532,13 @@ def main(argv=None):
     action.add_argument("--text", help="Unstructured input; get lexical skill hints, NOT AI understanding")
     action.add_argument("--plan", type=Path, help="Structured JSON plan drafted by an agent or human")
     p.add_argument("--format", choices=("text", "json"), default="text")
+    p.add_argument("--context", type=Path, help="Optional delivery and runtime declarations; requires --text")
     p.add_argument("--gate", action="store_true", help="Check declared revision-scoped approval; never execute")
     p.add_argument("--workflow", action="store_true", help="Compile a goal-first dependency-ordered workflow preview; requires --plan, never executes")
     p.add_argument("--mcp-inventory", type=Path, help="Optional unverified MCP/native tool inventory for read-only capability preview; requires --workflow")
     args = p.parse_args(argv)
+    if args.context and args.text is None:
+        p.error("--context requires --text")
     if args.mcp_inventory and (not args.workflow or args.plan is None):
         p.error("--mcp-inventory requires --plan and --workflow")
     if args.text is not None:
@@ -517,11 +547,26 @@ def main(argv=None):
         if args.workflow:
             p.error("--workflow requires --plan")
         out = route_hints(args.text)
+        if args.context:
+            try:
+                if __package__:
+                    from .contextual_routing import recommend
+                else:
+                    from contextual_routing import recommend
+                context = json.loads(args.context.read_text(encoding="utf-8"))
+                out["contextual_route"] = recommend(args.text, context, available_skills())
+            except (OSError, ValueError) as exc:
+                print("Invalid route context: " + str(exc), file=sys.stderr)
+                return 2
         if args.format == "json":
             print(json.dumps(out, ensure_ascii=False, indent=2))
         else:
             print("Possible skills (keyword hints only):", ", ".join(out["suggested_skills"]))
             print(out["note"])
+            if args.context:
+                recommendation = out["contextual_route"]
+                print("Context preview:", recommendation["status"], recommendation["delivery"] or "")
+                print(recommendation["reason"])
         return 0
     try:
         plan = json.loads(args.plan.read_text(encoding="utf-8"))

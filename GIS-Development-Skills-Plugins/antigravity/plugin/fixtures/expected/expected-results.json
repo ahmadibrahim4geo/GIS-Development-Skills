@@ -1,0 +1,59 @@
+{
+  "polygons": {
+    "total": 2,
+    "valid_ids": [
+      "valid-square"
+    ],
+    "invalid_ids": [
+      "bowtie-self-intersection"
+    ],
+    "note": "Validity based on planar OGC Simple Features; sample coordinates fictional."
+  },
+  "distances": {
+    "great_circle_spherical_approx_m": 111195,
+    "tolerance_m": 100,
+    "model": "haversine R=6371000 m",
+    "warning": "Do not interpret EPSG:4326 degrees as metres."
+  },
+  "shapefile": {
+    "original_property": "very_long_identifier",
+    "expected_truncated_property": "very_long_",
+    "record_count": 1
+  },
+  "geopackage": {
+    "expected_layers": [
+      "points",
+      "lines"
+    ],
+    "expected_features_per_layer": 1,
+    "crs": "EPSG:4326"
+  },
+  "raster": {
+    "shape": [
+      2,
+      2
+    ],
+    "nodata": -9999,
+    "values": [
+      [
+        10,
+        -9999
+      ],
+      [
+        30,
+        40
+      ]
+    ],
+    "grid1_crs": "EPSG:4326",
+    "grid2_crs": "EPSG:3857",
+    "grid_alignment": "intentionally incompatible"
+  },
+  "network": {
+    "unique_lines": 3,
+    "duplicates": 1,
+    "dangles": 4
+  },
+  "weather": {
+    "features": 2
+  }
+}

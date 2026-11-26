@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "platform": "antigravity",
+  "display_name": "Google Antigravity",
+  "phase_status": "ACTIVE_P09",
+  "version": "0.3.5",
+  "source_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "source_digest": "527cf7b1b01b4b4ca593674ba47a6228843547f72ce9fcbdb5c4c24fe14d819e",
+  "carried_components": [
+    "skills (37)",
+    "references",
+    "schemas",
+    "scripts",
+    "templates",
+    "examples",
+    "fixtures",
+    "native_tests",
+    "docs",
+    "assets",
+    "AGENTS.md",
+    "LICENSE"
+  ],
+  "adapted_components": [
+    {
+      "component": "SKILL.md + plugin.json",
+      "action": "Generated Google Antigravity manifest and self-contained canonical bundle."
+    },
+    {
+      "component": "plugin.json + .antigravity/plugin.json",
+      "action": "Packaged Antigravity plugin manifest, workspace rules (`AGENTS.md`), and `agy plugin validate` metadata."
+    }
+  ],
+  "excluded_components": [
+    {
+      "item": "plugin-system/, Update-All-Plugins.*, Update-My-Platforms.*, reports/, plans/, .agent-development-log/",
+      "reason": "Developer-only lifecycle infrastructure & secrets excluded from end-user payload (REQ-PL-026 / PL-T26).",
+      "alternative": "Canonical repository governance surface"
+    }
+  ],
+  "notes": "Google Antigravity package built cleanly (776 files)."
+}

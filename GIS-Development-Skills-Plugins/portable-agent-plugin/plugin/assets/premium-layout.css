@@ -1,0 +1,77 @@
+/* Premium information architecture for GIS Development Skills.
+   Scoped above the author section: author identity, contact panel and footer remain unchanged. */
+:root{--premium-line:rgba(153,211,204,.18);--premium-glow:rgba(83,219,190,.10)}
+body{background:#081218}
+main{overflow:clip}
+.nav-wrap{background:rgba(8,21,27,.93);border-bottom:1px solid var(--premium-line)}
+.nav{min-height:76px}
+.nav-links{gap:clamp(10px,1.7vw,25px)}
+.nav-links a{font-size:12px;letter-spacing:.02em}
+.nav-right .lang,.nav-right .nav-git{min-height:40px;display:inline-flex;align-items:center}
+#home .hero{min-height:600px;gap:clamp(28px,5vw,72px);padding-block:92px 66px;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+#home .hero>div:first-child{position:relative;z-index:1}
+#home .eyebrow{letter-spacing:.13em;font-size:11px}
+#home .hero-signature{margin-block:20px}
+#home .hero-exact{max-width:56ch}
+#home .hero .lead{font-size:16px;line-height:1.9}
+#home .buttons{gap:12px;margin-top:30px}
+#home .buttons .btn{min-height:48px;border-radius:12px;padding-inline:19px}
+#home .hero-visual{border:1px solid rgba(116,213,189,.3);box-shadow:0 28px 90px #0008,0 0 70px var(--premium-glow);background:linear-gradient(140deg,#142d30 0%,#0a1924 70%)}
+#home .stats{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding-bottom:32px}
+#home .stat{background:linear-gradient(145deg,#14272d,#0d1e26);border-color:var(--premium-line);border-radius:16px;min-height:112px;padding:18px}
+#home .stat strong{font-size:clamp(27px,3vw,38px)}
+main>section.container:not(.author-section){padding-block:78px;position:relative}
+main>section.container:not(.author-section)+section.container:not(.author-section){border-top:1px solid rgba(153,211,204,.075)}
+main>section.container:not(.author-section) .section-head{margin-bottom:30px}
+main>section.container:not(.author-section) .section-head h2{font-size:clamp(27px,3vw,40px);letter-spacing:-.035em;line-height:1.23;max-width:22ch}
+html[lang=ar] main>section.container:not(.author-section) .section-head h2{letter-spacing:normal;max-width:none}
+main>section.container:not(.author-section) .section-head p{color:#a8c1c1;max-width:70ch;font-size:14px;line-height:1.85}
+#capabilities .grid,#agent-quality .grid,#examples .grid{gap:15px}
+#capabilities .feature,#agent-quality .feature,#examples .feature{min-height:225px;padding:25px;border-radius:18px;border-color:var(--premium-line);background:linear-gradient(150deg,#14282e,#0e1d25);box-shadow:inset 0 1px rgba(255,255,255,.025)}
+#capabilities .feature:hover,#agent-quality .feature:hover,#examples .feature:hover{background:linear-gradient(150deg,#1a3537,#11232c);box-shadow:0 15px 40px #0004;transform:translateY(-3px)}
+.feature .glyph{border:1px solid rgba(125,228,204,.25);background:#1c3b3c;color:#bdf3da}
+.feature h3{font-size:17px;letter-spacing:-.01em}
+.feature p{font-size:13px;line-height:1.75}
+#all-skills .skill-directory{gap:12px}
+#all-skills .skill-link{min-height:70px;display:flex;align-items:center;border-color:var(--premium-line);background:linear-gradient(145deg,#142830,#102129);border-radius:13px;padding:18px 20px}
+#all-skills .skill-link:hover{background:#1a3539}
+#catalog .explorer{margin-top:24px;background:#0d1d25;border-color:rgba(126,206,192,.3);box-shadow:0 22px 65px #0004}
+#catalog .explorer-top{background:#13272e;padding:22px 24px}
+#catalog .filters{padding:22px 24px;gap:12px}
+#catalog .filters input{min-width:240px;min-height:48px;background:#09191f;border-color:#37585b}
+#catalog .filters select{min-height:48px;background:#09191f}
+#catalog .tabs{background:#09191f}
+#catalog .tab{min-height:41px}
+#catalog .results{gap:14px;padding:0 24px 24px}
+#catalog .result{padding:22px;border-radius:15px;border-color:var(--premium-line);background:#14272e}
+#catalog .result:hover{border-color:#69baa6;transform:translateY(-2px)}
+#catalog .result p{line-height:1.75}
+#catalog .explorer-note{padding:17px 24px}
+.catalog-updates{border-bottom:1px solid var(--premium-line);background:#10252b}
+.catalog-updates>summary{display:flex;align-items:center;gap:12px;padding:16px 24px;cursor:pointer;font-size:13px;font-weight:750;color:#bfe9dd;list-style:none}
+.catalog-updates>summary::-webkit-details-marker{display:none}
+.catalog-updates>summary:focus-visible{outline:2px solid #b4eb91;outline-offset:-3px}
+.catalog-updates>summary .updates-chevron{margin-inline-start:auto;transition:transform .2s}
+.catalog-updates[open]>summary .updates-chevron{transform:rotate(180deg)}
+.catalog-updates-body{max-height:340px;overflow:auto;border-top:1px solid var(--premium-line)}
+.catalog-updates-body .api-expansion{padding:12px 24px;margin:0;border-bottom:1px solid rgba(153,211,204,.09)}
+#get-started .paths{gap:18px}
+#get-started .path-card{padding:30px;border-radius:18px;background:linear-gradient(145deg,#152d32,#102129);border-color:var(--premium-line)}
+#get-started .code-bar{overflow:auto}
+main .workflow{gap:18px}
+main .step{padding:23px;border:1px solid var(--premium-line);border-top:3px solid #6bd3bd;border-radius:15px;background:#11242b}
+main .step h3{font-size:16px;line-height:1.5}
+main .step p{color:#adc4c3;font-size:13px;line-height:1.75}
+@media(max-width:1050px){#home .hero{gap:28px}#home .stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:900px){#home .hero{grid-template-columns:1fr;min-height:auto;padding-top:58px}#home .hero-visual{max-width:640px}main>section.container:not(.author-section){padding-block:58px}}
+@media(max-width:640px){#home .hero{padding-top:42px;gap:25px}#home .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}#home .stat{min-height:100px;padding:15px}#home .stat strong{font-size:30px}#home .buttons .btn{flex:1 1 100%;justify-content:center}main>section.container:not(.author-section){padding-block:44px}#capabilities .feature,#agent-quality .feature,#examples .feature{min-height:auto;padding:22px}#catalog .explorer-top,#catalog .filters{padding:16px}#catalog .results{grid-template-columns:1fr;padding:0 16px 16px}#catalog .filters input,#catalog .filters select,#catalog .filters #costFilterWrap{width:100%;min-width:0}#catalog .filters #costFilterWrap select{width:100%}.catalog-updates>summary{padding:14px 16px}#get-started .path-card{padding:20px}main .step{padding:18px}}
+@media(prefers-reduced-motion:reduce){.catalog-updates>summary .updates-chevron{transition:none}#capabilities .feature:hover,#agent-quality .feature:hover,#examples .feature:hover,#catalog .result:hover{transform:none}}
+
+/* Keep primary navigation discoverable on mobile rather than hiding it. */
+@media(max-width:900px){
+.nav{display:flex;flex-wrap:wrap;gap:0;padding-top:10px}
+.nav .brand{flex:1 1 auto}
+.nav .nav-right{margin-inline-start:auto}
+.nav .nav-links{display:flex!important;order:3;flex:1 0 100%;overflow-x:auto;gap:18px;white-space:nowrap;padding:7px 0 10px;scrollbar-width:thin;scrollbar-color:#426b68 transparent}
+.nav .nav-links a{display:inline-block;padding:6px 0;font-size:12px}
+}

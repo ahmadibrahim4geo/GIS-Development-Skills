@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "documentation_version": "0.3.5",
-  "skill_count": 35,
+  "skill_count": 37,
   "skill_ids": [
     "agent-development-journal",
     "arcgis-toolbox-engineering",
@@ -13,6 +13,7 @@
     "geospatial-data-catalogs",
     "geospatial-data-discovery",
     "geospatial-data-processing",
+    "geospatial-engine-selection",
     "geospatial-web-mapping",
     "gis-architecture-visualization",
     "gis-cartography-symbology",
@@ -30,6 +31,7 @@
     "global-mapper-development",
     "kml-kmz-engineering",
     "mcp-integration-and-tool-orchestration",
+    "modern-web-guidance",
     "prompt-intent-orchestrator",
     "qgis-engine-integration",
     "qgis-plugin-development",
@@ -39,7 +41,7 @@
     "terrain-hydrology-lidar",
     "visual-asset-discovery-integration"
   ],
-  "reference_count": 193,
+  "reference_count": 461,
   "api_count": 53,
   "data_repository_count": 26,
   "generated_from": [

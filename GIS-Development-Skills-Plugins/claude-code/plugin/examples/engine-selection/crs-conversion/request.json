@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "request_text": "أداة خفيفة لتحويل الإحداثيات فقط بدون محرك خرائط ثقيل",
+  "language_hint": "ar",
+  "intent_modes": [
+    "standalone-libs"
+  ],
+  "delivery_target": "cli-library",
+  "existing_project": null,
+  "target_os": [
+    "windows",
+    "linux"
+  ],
+  "preferred_languages": [
+    "cpp",
+    "python"
+  ],
+  "required_capabilities": [
+    "crs.transform",
+    "crs.axis_order"
+  ],
+  "free_only": true,
+  "offline_required": true
+}

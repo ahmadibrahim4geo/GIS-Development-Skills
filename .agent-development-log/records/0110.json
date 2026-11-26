@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 110,
+  "timestamp_utc": "2026-11-22T17:31:11+00:00",
+  "kind": "decision",
+  "status": "approved",
+  "summary": "Authorized main delivery with recorded Codex gap and requested bilingual index and README updates",
+  "details": "The user approved resuming main delivery with the fresh Codex tool-broker gap documented, then requested improvements to index.html and README with English as the default and the paired web skills plus the GitHub delivery workflow. The existing isolated worktree and authorized direct-main route remain the delivery scope.",
+  "references": [
+    109
+  ],
+  "task_id": "WEB-SKILLS-0005",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "b1d88fa395edcc087b54d4e77cc51663379dd9d62d000cda5d72527e94ee5d33",
+  "hash": "d5fabd0239f13a57a8917c5f7e38ac32df427a1d23da512f79d8f915842dd300"
+}

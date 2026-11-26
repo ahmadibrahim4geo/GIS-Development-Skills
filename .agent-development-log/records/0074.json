@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "sequence": 74,
+  "timestamp_utc": "2026-11-20T21:04:44+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "عزل عينات اختبار GIS وإضافة مقارنة سجل النتائج بالمتوقع في P03",
+  "details": "تبقى مدخلات testing data قرائية. تُنشأ نسخ عمل مرقمة ونتائج منفصلة، وتُفصل التوقعات عن ما رُصد. اختبارات snapshot والقراءة المستقلة والرجوع بالخطأ وNDVI الاصطناعية نجحت. اختبار QGIS الأصلي يبدأ بعد تجهيز العينات.",
+  "references": [
+    73
+  ],
+  "task_id": "P03",
+  "plan_revision": "r3",
+  "changed_files": [
+    "scripts/test_runs.py",
+    "native_tests/qgis_scientific_readback.py",
+    "fixtures/expected/p03-science.json"
+  ],
+  "tests": [
+    "test_test_runs.py, test_project_governance.py, test_remote_sensing_indices.py"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "310c576f359054cf22c50aab9a596b2a52aa178b9102cfebfa0eac9bfc51b195",
+  "hash": "d32007173dec4d184d026781ee9f77835aabe34e5750a4ec9f4ca5e242813022"
+}

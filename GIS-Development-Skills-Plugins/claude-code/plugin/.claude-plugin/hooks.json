@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "opt_in": true,
+  "loop_safe": true,
+  "hooks": {
+    "SessionStart": [
+      {
+        "command": "python -B scripts/validate_skill_pack.py",
+        "readonly": true,
+        "enabled_by_default": false
+      }
+    ]
+  }
+}

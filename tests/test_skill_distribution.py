@@ -45,6 +45,33 @@ class SkillDistributionTests(unittest.TestCase):
             archive_audit = bundle.audit_path(Path(first["archive"]))
             self.assertEqual("PASS", archive_audit["status"])
 
+    def test_content_identity_distinguishes_two_builds_from_same_commit(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "references").mkdir()
+            (root / "references" / "repository-manifest.json").write_text('{"skill_ids":[]}', encoding="utf-8")
+            entry = root / "SKILL.md"
+            entry.write_text("First instructions", encoding="utf-8")
+            bundle.write_manifest(root, "same-commit")
+            first = bundle.bundle_identity(root)
+            entry.write_text("Updated instructions", encoding="utf-8")
+            self.assertEqual("FAIL", bundle.bundle_identity(root)["status"])
+            bundle.write_manifest(root, "same-commit")
+            second = bundle.bundle_identity(root)
+            self.assertEqual("PASS", second["status"])
+            self.assertEqual(first["source_commit"], second["source_commit"])
+            self.assertNotEqual(first["manifest_content_sha256"], second["manifest_content_sha256"])
+
+    def test_entrypoint_link_fragments_resolve_to_existing_anchors(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / "SKILL.md").write_text(
+                "# Entry\n[Self](#entry) [Valid](Guide.md#project-setup) [Missing](Guide.md#moved)\n",
+                encoding="utf-8")
+            (root / "Guide.md").write_text("## Project setup\n```md\n# Moved\n```\n", encoding="utf-8")
+            self.assertEqual([{"document": "SKILL.md", "line": 2, "target": "Guide.md#moved",
+                               "reason": "missing-fragment"}], bundle.audit_markdown_links(root))
+
     def test_refuses_to_overwrite_bundle_outputs(self):
         with tempfile.TemporaryDirectory(dir=ROOT) as temporary:
             output = Path(temporary) / "release"

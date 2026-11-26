@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "upstream_repo": "qgis/QGIS",
+  "upstream_tag": "final-3_40_x (pinned upon fork clone)",
+  "actions": [
+    {
+      "action": "mActionAddOgrLayer",
+      "decision": "KEEP",
+      "depends_on": [
+        "ogr_provider",
+        "crs_engine"
+      ],
+      "reason": "Core vector input"
+    },
+    {
+      "action": "mActionToggleEditing",
+      "decision": "KEEP",
+      "depends_on": [
+        "undo_stack",
+        "geos_validity"
+      ],
+      "reason": "Required layer editing"
+    },
+    {
+      "action": "mActionProjectSave",
+      "decision": "KEEP",
+      "depends_on": [
+        "atomic_project_save"
+      ],
+      "reason": "Protected infrastructure"
+    },
+    {
+      "action": "mActionRemoveUnused3DPlugin",
+      "decision": "HIDE",
+      "depends_on": [],
+      "reason": "Follows HIDE-before-REMOVE rule cleanly"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# MOB-18 Fixtures — Mobile Geospatial AI Annotator
+
+- Canonical shared bilingual fixture: [geojson_epsg4326_bilingual.geojson](../../../../../tests/shared-gis-fixtures/geojson_epsg4326_bilingual.geojson)
+- Shared SQLite/GNSS/Sync contract core: [mobile_field_core.py](../../../shared/mobile_field_core.py)

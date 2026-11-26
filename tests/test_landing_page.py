@@ -40,7 +40,7 @@ class LandingPageTests(unittest.TestCase):
         self.assertIn("assets/brand/favicon.svg", self.parser.links)
         self.assertIn("assets/brand/logo-dark.svg", self.parser.links)
         self.assertIn("assets/brand/logo-compact-dark.svg", self.parser.links)
-        self.assertIn("assets/brand/banner-dark.svg", (ROOT / "README.md").read_text(encoding="utf-8"))
+        self.assertIn("assets/brand/banner.png", (ROOT / "README.md").read_text(encoding="utf-8"))
         for name in ("icon", "favicon", "logo-dark", "logo-light",
                      "logo-compact-dark", "logo-compact-light", "banner-dark", "banner-light"):
             asset = ROOT / "assets" / "brand" / (name + ".svg")
@@ -80,78 +80,49 @@ class LandingPageTests(unittest.TestCase):
     def test_readme_header_has_only_one_slogan_and_balanced_wordmark(self):
         for path in ("README.md", "README.ar.md"):
             readme = (ROOT / path).read_text(encoding="utf-8")
-            self.assertIn('src="assets/brand/banner-dark.svg"', readme)
+            self.assertIn('src="assets/brand/banner.png"', readme)
             self.assertIn('href="assets/brand/README.md"', readme)
             self.assertNotIn("<strong>The Heart of Geospatial Innovation</strong>", readme)
         palette = json.loads((ROOT / "assets/brand/palette.json").read_text(encoding="utf-8"))
         self.assertEqual("The Heart of Geospatial Innovation", palette["tagline"])
-        self.assertEqual("#1CC8E8", palette["colors"]["cyan"])
-        self.assertEqual("#82D53E", palette["colors"]["green"])
+        self.assertEqual("#00B8E6", palette["palette"]["cyan_for_banner_only"])
+        self.assertEqual("#67B5A6", palette["palette"]["teal"])
         english = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn(
             "Build GIS tools, plugins and geospatial applications with a verifiable development workflow.",
             english,
         )
 
-    def test_approved_layered_g_brand_used_consistently(self):
-        svg_ns = "{http://www.w3.org/2000/svg}"
-        logo = ET.parse(ROOT / "assets/brand/logo-dark.svg").getroot()
-        icon = ET.parse(ROOT / "assets/brand/icon.svg").getroot()
-        paths_logo = {node.attrib.get("id") for node in logo.findall(f".//{svg_ns}path")}
-        paths_icon = {node.attrib.get("id") for node in icon.findall(f".//{svg_ns}path")}
-        for element in ("top-map", "map-route", "middle-layer", "bottom-layer"):
-            self.assertIn(element, paths_logo)
-            self.assertIn(element, paths_icon)
-        self.assertEqual(paths_logo, paths_icon)
-        nodes = {node.text: node.attrib.get("fill") for node in logo.iter() if node.tag in (f"{svg_ns}text", f"{svg_ns}tspan") and node.text}
-        self.assertEqual("#82D53E", nodes["Heart"])
-        self.assertEqual("#398CE3", nodes["Geospatial"])
-        self.assertEqual("#1CC8E8", nodes["Innovation"])
-        self.assertEqual("#82D53E", nodes["Skills"])
-        self.assertIn('class="hero-symbol" src="assets/brand/logo-dark.svg"', self.html)
-        self.assertNotIn('class="globe-art"', self.html)
-
-    def test_brand_artwork_is_real_editable_vector_not_raster_wrapped_svg(self):
-        svg_ns = "{http://www.w3.org/2000/svg}"
-        for asset in (ROOT / "assets" / "brand").glob("*.svg"):
-            content = asset.read_text(encoding="utf-8")
-            root = ET.fromstring(content)
-            self.assertEqual([], root.findall(f".//{svg_ns}image"), asset.name)
-            self.assertNotIn("data:image/", content, asset.name)
-            self.assertTrue(root.findall(f".//{svg_ns}path"), asset.name)
-            self.assertFalse("filter=" in content, asset.name)
-        logo = ET.parse(ROOT / "assets/brand/logo-dark.svg").getroot()
-        self.assertIsNotNone(logo.find(".//*[@id='gis-i-dot']"))
-        self.assertIsNotNone(logo.find(".//*[@id='gis-i-stem']"))
-        self.assertEqual(self.html.count('class="hero-symbol"'), 1)
-        self.assertIn('class="hero-lockup"', self.html)
-        self.assertIn('class="hero-content"', self.html)
-
-    def test_all_brand_variants_use_font_independent_word_flow(self):
-        """Prevent word collisions even when browsers substitute SVG fonts."""
+    def test_brand_grid_and_compatibility_paths(self):
         ns = "{http://www.w3.org/2000/svg}"
-        names = ("logo-dark", "logo-light", "banner-dark", "banner-light",
-                 "logo-compact-dark", "logo-compact-light")
-        for filename in names:
-            svg = ET.parse(ROOT / "assets/brand" / (filename + ".svg")).getroot()
-            name = svg.find(".//*[@id='brand-name']")
-            tagline = svg.find(".//*[@id='brand-tagline']")
-            self.assertIsNotNone(name, filename)
-            self.assertIsNotNone(tagline, filename)
-            main_parts = name.findall(ns + "tspan")
-            self.assertEqual(["Development", "Skills"],
-                             [part.text for part in main_parts], filename)
-            self.assertNotIn("x", main_parts[1].attrib, filename)
-            self.assertGreater(float(main_parts[1].get("dx")), 0, filename)
-            self.assertEqual("#82D53E", main_parts[1].get("fill"))
-            tokens = tagline.findall(ns + "tspan")
-            self.assertEqual(["The", "Heart", "of", "Geospatial", "Innovation"],
-                             [part.text for part in tokens], filename)
-            for token in tokens[1:]:
-                self.assertNotIn("x", token.attrib, filename)
-                self.assertGreater(float(token.get("dx")), 0, filename)
-            svg_content = (ROOT / "assets/brand" / (filename + ".svg")).read_text(encoding="utf-8")
-            self.assertNotIn("<image", svg_content, filename)
+        assets = ROOT / "assets"
+        brand = assets / "brand"
+        logo = ET.parse(brand / "logo-dark.svg").getroot()
+        icon = ET.parse(brand / "icon.svg").getroot()
+        mark = [(node.get("d"), node.get("fill")) for node in icon.iter(ns + "path")]
+        logo_paths = {(node.get("d"), node.get("fill")) for node in logo.iter(ns + "path")}
+        self.assertEqual(len(mark), 5)
+        self.assertEqual(sum(fill == "#67B5A6" for _, fill in mark), 4)
+        self.assertTrue(set(mark).issubset(logo_paths))
+        self.assertEqual((assets / "logo.svg").read_bytes(), (brand / "logo-dark.svg").read_bytes())
+        self.assertEqual((assets / "icon.svg").read_bytes(), (brand / "icon.svg").read_bytes())
+        self.assertIn('class="hero-symbol" src="assets/brand/logo-dark.svg"', self.html)
+
+    def test_brand_artwork_contains_no_active_or_embedded_image_content(self):
+        for asset in (ROOT / "assets" / "brand").glob("*.svg"):
+            root = ET.parse(asset).getroot()
+            for node in root.iter():
+                self.assertNotIn(node.tag.split("}")[-1], {"image", "script", "foreignObject"}, asset.name)
+                self.assertFalse(any(attr.lower().startswith("on") for attr in node.attrib), asset.name)
+
+    def test_logo_variants_keep_project_wordmark_and_tagline(self):
+        ns = "{http://www.w3.org/2000/svg}"
+        for name in ("logo-dark", "logo-light", "logo-compact-dark", "logo-compact-light"):
+            svg = ET.parse(ROOT / "assets" / "brand" / (name + ".svg")).getroot()
+            self.assertEqual(svg.get("viewBox"), "0 0 1220 318")
+            words = {"".join(node.itertext()).strip() for node in svg.iter(ns + "text")}
+            self.assertIn("GIS Development Skills", words)
+            self.assertIn("The Heart of Geospatial Innovation", words)
 
     def test_public_creator_section_and_contacts(self):
         self.assertIn("author", self.parser.ids)

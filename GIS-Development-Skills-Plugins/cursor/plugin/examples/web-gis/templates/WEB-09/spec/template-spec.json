@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "template_id": "WEB-09",
+  "product_class": "W11",
+  "title": "Live Asset Tracker",
+  "recommended_stack": "MapLibre GL JS + WebSocket/SSE cursor dedup + geofence & PII controls",
+  "runnable_vertical_slice": false,
+  "shared_fixture": "../../../../../tests/shared-gis-fixtures/geojson_epsg4326_bilingual.geojson",
+  "qa_cases": [
+    "WEB-QA-08",
+    "WEB-QA-14",
+    "WEB-QA-15"
+  ],
+  "acceptance_ids": [
+    "WEB-TPL-09"
+  ],
+  "status": {
+    "static_spec": "VERIFIED_T0",
+    "js_node_contract": "SHARED_CORE_COVERED",
+    "headless_browser_e2e": "NOT RUN (Playwright/Chromium binary not installed on workstation)"
+  }
+}

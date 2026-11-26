@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P07",
+  "revision": "r1",
+  "overall_status": "partial",
+  "criteria": [
+    {
+      "id": "P07-THREE-REUSE-AND-INTEGRATION-MANUALS",
+      "statement": "Author source-fork-and-ui-reuse.md, reference-ui-engine-mapping.md, and engine-integration-patterns.md covering 6-level OSS reuse hierarchy, 17 official QGIS links, KEEP/HIDE/DISABLE/REMOVE/REPLACE/DEFER w/ 16 core guards, 27 OSS projects (QGIS/GeoLibre/RustGIS), clean-room 20 UI frameworks / 10 ArcGIS sections, and 8 provider/integration contracts wired into qgis-engine-integration & registry",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests.test_p07_source_reuse_and_examples + tests.test_qgis_engine_integration + scripts/audit_skill_graph.py",
+          "observed": "All P07 manuals, SKILL.md links, and routing checks pass with 0 findings",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P07-EIGHT-EXAMPLE-PACKAGES-AND-QT-UI-INVENTORY",
+      "statement": "Deliver 8 schema-valid example packages under examples/engine-selection/ including Qt .ui safety inventory and clean-room command mapping verified through recommend_stack.py and inventory_ui_actions.py",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests.test_p07_source_reuse_and_examples + tests.test_engine_selection + tests.test_engine_compatibility",
+          "observed": "21/21 tests pass across all 8 examples, Qt .ui extraction (handlers_verified=false), clean-room IP guards, and osgeo-proj lightweight routing",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P07-PORTABLE-PLUGIN-BUNDLE-REBUILD",
+      "statement": "Rebuild portable plugin package containing P07 references, skill updates, recommend_stack guard, and 8 examples with UP_TO_DATE determinism",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "reports/plugin-lifecycle/017_PLUGIN_P07_SYNC.json",
+          "observed": "BUILT (source_digest 3efc3e223eed, 762 bundle files), immediate --check-only UP_TO_DATE, build_skill_bundle --check PASS",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P07-NATIVE-QGIS-FORK-BUILD-CLEAN-VM-AND-P08-P11",
+      "statement": "Native C++/Qt QGIS source compilation (E29), clean VM startup (E30), live KML/3D/CityEngine/SNAP runtimes, and remaining Phases P08-P11",
+      "status": "not_run",
+      "reason": "Native QGIS/Qt C++ build toolchain, clean VM, and commercial hosts absent on workstation; Phases P08-P11 execute next in approved sequence",
+      "evidence": []
+    }
+  ]
+}

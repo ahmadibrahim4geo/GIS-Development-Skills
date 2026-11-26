@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "sequence": 90,
+  "timestamp_utc": "2026-11-21T03:50:02+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "قبول بدائل التطوير ومراجعة جذر المهارة محليًا",
+  "details": "استعرضنا مدخل الحزمة والراوتر. رُبط التوجيه بنوع المشروع وقدرة التحرير أو البناء أو المعاينة أو التصميم. المختبر المحلي رصد Qt Designer وفصل التصميم المرئي عن WPF، وشغّل مسار .NET CLI مع Windows UI Automation. رُوجع التغيير من نفس الوكيل. تثبيت الحزمة لدى عميل وتحريك المصمم المرئي بقي NOT RUN.",
+  "references": [
+    89
+  ],
+  "task_id": "IDE-ALT",
+  "plan_revision": "r7",
+  "changed_files": [
+    "scripts/toolchain_advice.py",
+    "scripts/toolchain_discovery.py",
+    "scripts/native_toolchain.py",
+    "scripts/build_skill_bundle.py",
+    "skills/gis-desktop-application-development/SKILL.md",
+    "references/project-governance-workflow.md",
+    "tests/test_toolchain_discovery.py",
+    "reports/IDE_ALTERNATIVES_ACCEPTANCE.md",
+    "reports/IDE_ALTERNATIVES_EVIDENCE.json"
+  ],
+  "tests": [
+    "13 targeted tests passed, including free fallback and older SDK selection.",
+    "499 of 500 repository tests passed; Windows symlink fixture was skipped.",
+    "Native WPF build, launch, external UIA invocation and QGIS raster readback passed.",
+    "Archive path/links and 433 content digests verified; CLI ran from fresh ZIP extraction.",
+    "DoneProof for both approved r7 tasks verified against the review plan."
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "c4f5e496d2cb6ad4244a7a4126e1740800374fe881308478d037245c2976cd0f",
+  "hash": "eee532f69919de0e1ee49bc0eb7c74cb79ee0999b74eb66325f63e0375c98194"
+}

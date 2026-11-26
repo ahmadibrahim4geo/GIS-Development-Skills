@@ -1,0 +1,1051 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "external-agent-skills-registry",
+  "policy": "Strict quarantine registry for external agent skills, MCP tools, and workflow references (REQ-EV2-002, REQ-EV2-045, REQ-WM-028, REQ-WM-044). NEVER auto-install, auto-execute, or promote without isolated security scanning (NVIDIA SkillSpector / Cisco Skill Scanner / security_audit.py), license audit, and explicit owner authorization.",
+  "default_quarantine_rules": {
+    "approved_for_install": false,
+    "auto_execute": false,
+    "permissions_reviewed": false,
+    "executable_instructions_allowed": false
+  },
+  "candidates": [
+    {
+      "id": "EXT-001",
+      "name": "winapp-ui-automation",
+      "source": "https://github.com/microsoft/winappCli",
+      "verified_ref": "e7e4587ad7a6e51c085ad6360a10ede0cee7ab6e",
+      "license": "MIT",
+      "capabilities": [
+        "windows-uia",
+        "desktop-e2e"
+      ],
+      "new_value_vs_existing": "Cross-process Windows UI Automation helper for WPF P05 acceptance testing",
+      "status": "candidate-review-only",
+      "source_plan": "New Skill/SKILLS_REGISTRY.json#0001",
+      "new_skill_id": "0001",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-002",
+      "name": "Esri Developer Agent Skills",
+      "source": "https://github.com/Esri/esri-developer-agent-skills",
+      "verified_ref": "b6fcac59bf7febd4263d77132e3cfd22d6498a5e",
+      "license": "Apache-2.0",
+      "capabilities": [
+        "arcgis-sdk-docs",
+        "conditional-esri-workflows"
+      ],
+      "new_value_vs_existing": "Conditional ArcGIS SDK docs pattern (keep commercial runtime separate)",
+      "status": "candidate-review-only",
+      "source_plan": "New Skill/SKILLS_REGISTRY.json#0002 + Web_Mobile_r3§13",
+      "new_skill_id": "0002",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-003",
+      "name": "Modern Web Guidance",
+      "source": "https://github.com/GoogleChrome/modern-web-guidance",
+      "verified_ref": "64a6d708f5a43f2cd3fde5d4d7db3905ba1bdf65",
+      "license": "Apache-2.0",
+      "capabilities": [
+        "web-frontend",
+        "pwa-performance"
+      ],
+      "new_value_vs_existing": "Chrome DevRel modern HTML/CSS/PWA guidance",
+      "status": "candidate-review-only",
+      "source_plan": "New Skill/SKILLS_REGISTRY.json#0003 + Web_Mobile_r3§13",
+      "new_skill_id": "0003",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-004",
+      "name": "MapLibre Agent Skills",
+      "source": "https://github.com/maplibre/maplibre-agent-skills",
+      "verified_ref": "2e0349b12eda2c86faff8e1380e1620d82cb97b2",
+      "license": "MIT",
+      "capabilities": [
+        "maplibre-gl-js",
+        "vector-tiles"
+      ],
+      "new_value_vs_existing": "Community MapLibre GL JS skill prompts complementing geospatial-web-mapping",
+      "status": "candidate-review-only",
+      "source_plan": "New Skill/SKILLS_REGISTRY.json#0004 + Web_Mobile_r3§13",
+      "new_skill_id": "0004",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-005",
+      "name": "Google Maps Platform Agent Skills",
+      "source": "https://github.com/googlemaps/agent-skills",
+      "verified_ref": "e7538f369afc18acbd9bde2cdcb9b7a7be6d7978",
+      "license": "Apache-2.0",
+      "capabilities": [
+        "google-maps-api",
+        "commercial-provider-reference"
+      ],
+      "new_value_vs_existing": "Reference-only Google Maps SKU/SDK guidance; requires explicit paid/key gate",
+      "status": "candidate-review-only",
+      "source_plan": "New Skill/SKILLS_REGISTRY.json#0005 + Web_Mobile_r3§13",
+      "new_skill_id": "0005",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-006",
+      "name": "Android Developer Skills",
+      "source": "https://github.com/android/skills",
+      "verified_ref": "c72942584fff970dac86ced78b367fce0c441e52",
+      "license": "Apache-2.0",
+      "capabilities": [
+        "android-compose",
+        "android-testing"
+      ],
+      "new_value_vs_existing": "Official Android Jetpack Compose & adaptive layout skills",
+      "status": "candidate-review-only",
+      "source_plan": "New Skill/SKILLS_REGISTRY.json#0006 + Web_Mobile_r3§13",
+      "new_skill_id": "0006",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-007",
+      "name": "DuckDB Agent Skills (Separated from UDS-LIB-004 Engine)",
+      "source": "https://github.com/duckdb/duckdb-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "duckdb-agent-prompts"
+      ],
+      "new_value_vs_existing": "Separated cleanly from UDS-LIB-004 (duckdb/duckdb-spatial engine) per REQ-EV2-002 & E21",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§0.2 (REQ-EV2-002)",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-008",
+      "name": "isaaccorley/geospatial-skills",
+      "source": "https://github.com/isaaccorley/geospatial-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "gdal-workflows",
+        "raster-vector-cli"
+      ],
+      "new_value_vs_existing": "GDAL/OGR processing prompt workflows",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-055",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-009",
+      "name": "opengeos/geoai-skills",
+      "source": "https://github.com/opengeos/geoai-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "geoai",
+        "remote-sensing"
+      ],
+      "new_value_vs_existing": "OpenGeoS curated GeoAI skill workflows",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-010",
+      "name": "TerraLabAI/geoai-skills",
+      "source": "https://github.com/TerraLabAI/geoai-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "satellite-segmentation",
+        "object-detection"
+      ],
+      "new_value_vs_existing": "GeoAI raster segmentation skill patterns",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-056",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-011",
+      "name": "opengeos/GeoAgent",
+      "source": "https://github.com/opengeos/GeoAgent",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "agentic-gis",
+        "pyqgis-orchestration"
+      ],
+      "new_value_vs_existing": "Geospatial AI agent architecture reference",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-012",
+      "name": "opengeos/cli-anything-qgis",
+      "source": "https://github.com/opengeos/cli-anything-qgis",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "qgis-cli-automation"
+      ],
+      "new_value_vs_existing": "CLI bridge patterns for headless QGIS automation",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-013",
+      "name": "bunkmr/qgis-agent",
+      "source": "https://github.com/bunkmr/qgis-agent",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "GPL-3.0 (preliminary)",
+      "capabilities": [
+        "embedded-qgis-copilot"
+      ],
+      "new_value_vs_existing": "GPL-3.0 Clean-Room architectural reference for QGIS desktop copilots",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-051",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-014",
+      "name": "yonosoft/freecad-mcp",
+      "source": "https://github.com/yonosoft/freecad-mcp",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "cad-mcp-bridge"
+      ],
+      "new_value_vs_existing": "MCP interface reference for FreeCAD parametric documents",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-052",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-015",
+      "name": "glotoff/freecad-skills",
+      "source": "https://github.com/glotoff/freecad-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "freecad-automation"
+      ],
+      "new_value_vs_existing": "FreeCAD sketch/part skill patterns",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-053",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-016",
+      "name": "dcc-mcp/dcc-mcp-blender",
+      "source": "https://github.com/dcc-mcp/dcc-mcp-blender",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "blender-mcp-mesh"
+      ],
+      "new_value_vs_existing": "Headless 3D city mesh MCP automation reference",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-054",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-017",
+      "name": "agentskills/agentskills",
+      "source": "https://github.com/agentskills/agentskills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "Apache-2.0 (verify)",
+      "capabilities": [
+        "agent-skills-standard"
+      ],
+      "new_value_vs_existing": "Published SKILL.md format specification reference",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-018",
+      "name": "anthropics/skills",
+      "source": "https://github.com/anthropics/skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "Apache-2.0 (preliminary)",
+      "capabilities": [
+        "skill-authoring",
+        "mcp-design"
+      ],
+      "new_value_vs_existing": "Upstream skill design and MCP patterns",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-036",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-019",
+      "name": "obra/superpowers",
+      "source": "https://github.com/obra/superpowers",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "tdd-workflow",
+        "worktree-isolation"
+      ],
+      "new_value_vs_existing": "Structured TDD and worktree discipline already reflected natively in AGENTS.md",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-038",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-020",
+      "name": "github/spec-kit",
+      "source": "https://github.com/github/spec-kit",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (verify)",
+      "capabilities": [
+        "spec-driven-development"
+      ],
+      "new_value_vs_existing": "Spec-driven development methodology reference",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-021",
+      "name": "TheQtCompanyRnD/agent-skills",
+      "source": "https://github.com/TheQtCompanyRnD/agent-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "BSD-3-Clause (preliminary)",
+      "capabilities": [
+        "qt-cmake",
+        "qml-testing"
+      ],
+      "new_value_vs_existing": "Qt CMake & QML agent guidance relevant to QGIS fork/embedded tracks",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-037",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-022",
+      "name": "NVIDIA/SkillSpector",
+      "source": "https://github.com/NVIDIA/SkillSpector",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "Apache-2.0 (preliminary)",
+      "capabilities": [
+        "skill-security-scanning"
+      ],
+      "new_value_vs_existing": "External skill static security scanner (NOT RUN unless authorized)",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-041",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-023",
+      "name": "NVIDIA/skills",
+      "source": "https://github.com/NVIDIA/skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "Apache-2.0 (preliminary)",
+      "capabilities": [
+        "cuda-openusd-tuning"
+      ],
+      "new_value_vs_existing": "CUDA/OpenUSD tuning reference",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-042",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-024",
+      "name": "cisco-ai-defense/skill-scanner",
+      "source": "https://github.com/cisco-ai-defense/skill-scanner",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "Apache-2.0 (verify)",
+      "capabilities": [
+        "skill-malware-scanning"
+      ],
+      "new_value_vs_existing": "External skill security scanner already cataloged as optional NOT RUN tool",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26 + AGENTS.md",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-025",
+      "name": "upstash/context7",
+      "source": "https://github.com/upstash/context7",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (verify)",
+      "capabilities": [
+        "live-docs-mcp"
+      ],
+      "new_value_vs_existing": "Optional version-pinned library documentation MCP server",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-026",
+      "name": "modelcontextprotocol/servers",
+      "source": "https://github.com/modelcontextprotocol/servers",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (verify)",
+      "capabilities": [
+        "mcp-reference-servers"
+      ],
+      "new_value_vs_existing": "Official MCP reference implementations (requires host & Security Guardian approval)",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-027",
+      "name": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "ui-design-tokens",
+        "contrast-a11y"
+      ],
+      "new_value_vs_existing": "UI/UX design skill complementing gis-ui-ux-design-testing",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + Web_Mobile_r3§13 + UDS-LIB-018",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-028",
+      "name": "vercel-labs/agent-skills",
+      "source": "https://github.com/vercel-labs/agent-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "react-nextjs-best-practices"
+      ],
+      "new_value_vs_existing": "Web performance & React architecture heuristics",
+      "status": "candidate-review-only",
+      "source_plan": "Web_Mobile_r3§13",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-029",
+      "name": "expo/skills",
+      "source": "https://github.com/expo/skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "expo-react-native",
+        "mobile-dev-build"
+      ],
+      "new_value_vs_existing": "React Native / Expo Dev Build workflows for M04/MOB-04",
+      "status": "candidate-review-only",
+      "source_plan": "Web_Mobile_r3§13",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-030",
+      "name": "microsoft/playwright-mcp",
+      "source": "https://github.com/microsoft/playwright-mcp",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "Apache-2.0 (verify)",
+      "capabilities": [
+        "browser-e2e-automation"
+      ],
+      "new_value_vs_existing": "Playwright browser MCP automation reference for WEB-QA verification",
+      "status": "candidate-review-only",
+      "source_plan": "Web_Mobile_r3§13",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-031",
+      "name": "flutter-dart-ai-official-docs",
+      "source": "https://docs.flutter.dev/ai",
+      "verified_ref": "official-docs-reference",
+      "license": "official-docs",
+      "capabilities": [
+        "flutter-dart-agent-rules"
+      ],
+      "new_value_vs_existing": "Official Flutter & Dart AI coding guidance for MOB-03",
+      "status": "reference-only",
+      "source_plan": "Web_Mobile_r3§13",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-032",
+      "name": "apple-xcode-developer-official-docs",
+      "source": "https://developer.apple.com/documentation/",
+      "verified_ref": "official-docs-reference",
+      "license": "Apple-Developer-Terms",
+      "capabilities": [
+        "swiftui",
+        "corelocation",
+        "arkit-geospatial"
+      ],
+      "new_value_vs_existing": "Official Apple CoreLocation/ARKit/SwiftUI docs (requires macOS/Xcode for builds)",
+      "status": "reference-only",
+      "source_plan": "Web_Mobile_r3§13",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-033",
+      "name": "OWASP/www-project-mobile-application-security",
+      "source": "https://github.com/OWASP/owasp-masvs",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "CC-BY-SA-4.0 (verify)",
+      "capabilities": [
+        "mobile-security-masvs"
+      ],
+      "new_value_vs_existing": "OWASP MASVS standard for Android Keystore / iOS Keychain / mobile network security",
+      "status": "reference-only",
+      "source_plan": "Web_Mobile_r3§13 + §16.5",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-034",
+      "name": "OWASP/AISVS",
+      "source": "https://github.com/OWASP/AISVS",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "CC-BY-SA-4.0 (preliminary)",
+      "capabilities": [
+        "agent-security-verification"
+      ],
+      "new_value_vs_existing": "OWASP AI System Verification Standard",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-043",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-035",
+      "name": "trailofbits/skills",
+      "source": "https://github.com/trailofbits/skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "Apache-2.0 (preliminary)",
+      "capabilities": [
+        "cpp-static-audit",
+        "sharp-edges"
+      ],
+      "new_value_vs_existing": "Security vulnerability auditing skill reference",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-045",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-036",
+      "name": "openai/skills",
+      "source": "https://github.com/openai/skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "threat-modeling",
+        "codex-skills"
+      ],
+      "new_value_vs_existing": "Upstream OpenAI skill catalog reference",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-047",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-037",
+      "name": "morluto/rea",
+      "source": "https://github.com/morluto/rea",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "binary-metadata-inspection"
+      ],
+      "new_value_vs_existing": "Authorized local inspection helper (must never copy proprietary assets)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-057",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-038",
+      "name": "storytold/craft-anything",
+      "source": "https://github.com/storytold/craft-anything",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "scaffolding",
+        "clean-room-analysis"
+      ],
+      "new_value_vs_existing": "Structured clean-room analysis reference",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-058",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-039",
+      "name": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+      "source": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "context-architecture"
+      ],
+      "new_value_vs_existing": "Context engineering patterns",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-034",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-040",
+      "name": "alexgreensh/token-optimizer",
+      "source": "https://github.com/alexgreensh/token-optimizer",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "PolyForm-Noncommercial-1.0",
+      "capabilities": [
+        "dev-token-compaction"
+      ],
+      "new_value_vs_existing": "Noncommercial license restricted strictly to reference/dev evaluation; never bundled",
+      "status": "reference-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-033",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-041",
+      "name": "znlgis-spatial-skills-reference",
+      "source": "https://github.com/znlgis",
+      "verified_ref": "org-profile-verify-repo-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "spatial-agent-workflows"
+      ],
+      "new_value_vs_existing": "External author reference from V2 §26; requires exact pinned repo & SHA before review",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-042",
+      "name": "Marin-Kitagawa-gis-skills-reference",
+      "source": "https://github.com/Marin-Kitagawa",
+      "verified_ref": "org-profile-verify-repo-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "gis-agent-workflows"
+      ],
+      "new_value_vs_existing": "External reference from V2 §26; requires exact repo URL, commit pin, and security scan",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-043",
+      "name": "opengeos/agentic-stac",
+      "source": "https://github.com/opengeos/agentic-stac",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "stac-agent",
+        "eo-search"
+      ],
+      "new_value_vs_existing": "OpenGeoS STAC agent workflow reference (cataloged opengeos-agentic-stac)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-044",
+      "name": "opengeos/qgis-whitebox-agent",
+      "source": "https://github.com/opengeos/qgis-whitebox-agent",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "qgis-agent",
+        "whitebox-orchestration"
+      ],
+      "new_value_vs_existing": "OpenGeoS QGIS + Whitebox agent workflow reference",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-045",
+      "name": "opengeos/gee-agents",
+      "source": "https://github.com/opengeos/gee-agents",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "gee-agent",
+        "cloud-eo"
+      ],
+      "new_value_vs_existing": "OpenGeoS Earth Engine agent workflow reference (cloud quota external)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-046",
+      "name": "opengeos/maplibre-gl-geoagent",
+      "source": "https://github.com/opengeos/maplibre-gl-geoagent",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "verify-upstream",
+      "capabilities": [
+        "maplibre-agent",
+        "web-mapping"
+      ],
+      "new_value_vs_existing": "OpenGeoS MapLibre GL agent workflow reference",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-047",
+      "name": "ponytail",
+      "source": "https://github.com/DietrichGebert/ponytail",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "token_context",
+        "gis-code-discovery"
+      ],
+      "new_value_vs_existing": "Phase 1 token optimization: Pre-coding context reduction, surgical scope targeting, and noise elimination. (synced from UDS-LIB-031)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-031",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-048",
+      "name": "caveman",
+      "source": "https://github.com/JuliusBrussee/caveman",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "token_context",
+        "gis-code-discovery"
+      ],
+      "new_value_vs_existing": "Phase 2 token optimization: Surgical patching during coding, preventing entire-file rewrites and context churn. (synced from UDS-LIB-032)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-032",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-049",
+      "name": "agent-skills-token-efficiency",
+      "source": "https://github.com/prangishviliAbe/agent-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "token_context",
+        "gis-code-discovery"
+      ],
+      "new_value_vs_existing": "Guidelines for minimal tool call payloads and quiet terminal command execution. (synced from UDS-LIB-035)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-035",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-050",
+      "name": "agentic-ai-apis",
+      "source": "https://github.com/cporter202/agentic-ai-apis",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "token_context",
+        "geospatial-ai-agents"
+      ],
+      "new_value_vs_existing": "Agentic API gateway orchestration, schema mediation, and rate-limiting patterns. (synced from UDS-LIB-039)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-039",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-051",
+      "name": "ai-engineering-from-scratch",
+      "source": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "token_context",
+        "geospatial-ai-agents"
+      ],
+      "new_value_vs_existing": "Foundational AI engineering principles: structured output enforcement, prompt templates, and evaluation loops. (synced from UDS-LIB-040)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-040",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-052",
+      "name": "prompt-injection-test",
+      "source": "https://github.com/OWASP/secure-agent-playbook",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "Apache-2.0 (preliminary)",
+      "capabilities": [
+        "security_assurance",
+        "gis-security-guardian"
+      ],
+      "new_value_vs_existing": "Automated prompt injection regression testing for AI copilot input sanitization. (synced from UDS-LIB-044)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-044",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-053",
+      "name": "prodsec-skills",
+      "source": "https://github.com/RedHatProductSecurity/prodsec-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "GPL-3.0 (preliminary)",
+      "capabilities": [
+        "security_assurance",
+        "gis-security-guardian"
+      ],
+      "new_value_vs_existing": "Enterprise AI system security controls and secure software development lifecycle (SSDL) practices. (synced from UDS-LIB-046)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-046",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-054",
+      "name": "code-simplifier",
+      "source": "https://github.com/codebeat/agent-skills-codex",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "secondary_utilities",
+        "gis-code-discovery"
+      ],
+      "new_value_vs_existing": "Agent skill for eliminating redundant abstractions and simplifying complex codebases. (synced from UDS-LIB-065)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-065",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-055",
+      "name": "simple-engineering",
+      "source": "https://github.com/Robot-Inventor/agent-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "secondary_utilities",
+        "gis-desktop-application-development"
+      ],
+      "new_value_vs_existing": "Minimalist engineering patterns avoiding over-engineering in agent tool design. (synced from UDS-LIB-066)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-066",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-056",
+      "name": "implement-spec",
+      "source": "https://github.com/SteveVitali/agent-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "secondary_utilities",
+        "gis-desktop-application-development"
+      ],
+      "new_value_vs_existing": "Specification-driven implementation discipline ensuring strict adherence to reviewed architecture. (synced from UDS-LIB-067)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-067",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-057",
+      "name": "coding-discipline",
+      "source": "https://github.com/ldaume/agentic-engineering-harness",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "secondary_utilities",
+        "gis-desktop-application-development"
+      ],
+      "new_value_vs_existing": "Harness engineering rules enforcing clean pull requests, atomic commits, and readable diffs. (synced from UDS-LIB-068)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-068",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-058",
+      "name": "open-source-publisher",
+      "source": "https://github.com/jaskirat1616/grok-skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "secondary_utilities",
+        "gis-code-discovery"
+      ],
+      "new_value_vs_existing": "Packaging, version tagging, and release automation for open-source repositories. (synced from UDS-LIB-069)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-069",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-059",
+      "name": "enhance-readme",
+      "source": "https://github.com/kensaurus/skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "secondary_utilities",
+        "gis-desktop-application-development"
+      ],
+      "new_value_vs_existing": "Professional GitHub README generation with feature grids and quickstart badges. (synced from UDS-LIB-070)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-070",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-060",
+      "name": "create-readme",
+      "source": "https://github.com/nawawwow/skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "secondary_utilities",
+        "gis-desktop-application-development"
+      ],
+      "new_value_vs_existing": "Structured documentation generation highlighting engineering evidence. (synced from UDS-LIB-071)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-071",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-061",
+      "name": "beautify-github-readme",
+      "source": "https://github.com/oil-oil/beautify-github-readme",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "secondary_utilities",
+        "gis-ui-ux-design-testing"
+      ],
+      "new_value_vs_existing": "Typography, banner layout, and bilingual presentation styling for repository frontpages. (synced from UDS-LIB-072)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-072",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    },
+    {
+      "id": "EXT-062",
+      "name": "general-workflow-skills",
+      "source": "https://github.com/aniruddhaadak80/skills",
+      "verified_ref": "HEAD-unpinned-verify-before-use",
+      "license": "MIT (preliminary)",
+      "capabilities": [
+        "secondary_utilities",
+        "gis-desktop-application-development"
+      ],
+      "new_value_vs_existing": "General developer workflow skills and terminal automation. (synced from UDS-LIB-073)",
+      "status": "candidate-review-only",
+      "source_plan": "Engine_Architecture_V2§26 + UDS-LIB-073",
+      "permissions_reviewed": false,
+      "approved_for_install": false,
+      "auto_execute": false
+    }
+  ]
+}

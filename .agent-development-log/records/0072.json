@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "sequence": 72,
+  "timestamp_utc": "2026-11-20T20:54:40+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "قبول P02 والتحقق من تجربة الترحيل داخل QGIS",
+  "details": "473 اختبارًا ناجحًا و1 متخطى من 474. فحوص الفهارس والمهارات والأمن والحزمة نجحت. QGIS 4.2.3 أعاد النتائج المتوقعة قبل تعديل النسخة المؤقتة وبعده وبعد التراجع، مع تطابق البصمات. سجل تقرير القبول T3 نطاق تشغيل المعالجة؛ GUI وT4 والماسحات الخارجية NOT RUN. المرحلة التالية P03 بعد اعتماد نطاقها.",
+  "references": [
+    71
+  ],
+  "task_id": "P02",
+  "plan_revision": "r2",
+  "changed_files": [
+    "reports/PROJECT_STRUCTURE_ACCEPTANCE.md",
+    "reports/P02_GIS_ACCEPTANCE.json",
+    "context/CURRENT_HANDOFF.md"
+  ],
+  "tests": [
+    "Unit suite, validators, bundle CLI, three real QGIS Processing runs and independent output readback"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "a8326bd7668f1428dd17c5ba5ec84fb8a86aa469550503d319705fb94bc1e752",
+  "hash": "e15976fae544af4ae4c5620692c5bea12e82ade6843c9a65f4c56fe417fb9449"
+}

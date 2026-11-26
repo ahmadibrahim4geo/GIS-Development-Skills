@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "opt_in": true,
+  "loop_safe": true,
+  "note": "Opt-in agent lifecycle hook template. Generated directories under GIS-Development-Skills-Plugins/ and reports/ are excluded from canonical source-digest inputs so verification never triggers recursive rebuilds.",
+  "hooks": {
+    "PreCommit": {
+      "command": "python -B plugin-system/core/pipeline.py --check-only --no-report",
+      "readonly": true
+    },
+    "PostCanonicalEdit": {
+      "command": "python -B plugin-system/core/pipeline.py --build-only --no-report",
+      "loop_prevention_digest_scope": "plugin-system/config/source-map.json"
+    }
+  }
+}

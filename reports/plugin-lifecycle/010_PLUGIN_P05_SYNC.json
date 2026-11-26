@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261125T200124Z",
+  "mode": "build-only",
+  "version": "0.3.5",
+  "source_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "source_digest": "b35e0ec26be974d974cec943eb5f65abf0a2b89cc4e73e6c770ac7e3cc513462",
+  "bundle_digest": "d1f461126c62113359d869a8d4fb7a1011839b857177d119a87d51f2ec8db73c",
+  "bundle_file_count": 597,
+  "exit_code": 0,
+  "overall_state": "BUILT",
+  "owner_config_source": "default-no-owner-file",
+  "platforms": {
+    "portable": {
+      "platform": "portable",
+      "state": "BUILT",
+      "phase_status": "ACTIVE_P02",
+      "bundle_sha256": "ca418b54672b73e87a9cf111f20bb197756d795f65626459a893a4a7250df6e5",
+      "archive_sha256": "2590a2be17c092e56f9cac187f54c8c3d4a63eddefdda74b58466b98a9cea68a",
+      "archive_path": "GIS-Development-Skills-Plugins/portable-agent-plugin/artifacts/gis-development-suite.zip",
+      "file_count": 599,
+      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+    },
+    "codex": {
+      "platform": "codex",
+      "state": "NOT_RUN",
+      "phase_status": "P09_STUB",
+      "bundle_sha256": null,
+      "archive_sha256": null,
+      "notes": "Scaffold ready; full OpenAI Codex (CLI / Desktop) adapter scheduled in P09."
+    },
+    "chatgpt": {
+      "platform": "chatgpt",
+      "state": "NOT_RUN",
+      "phase_status": "P09_STUB",
+      "bundle_sha256": null,
+      "archive_sha256": null,
+      "notes": "Scaffold ready; full ChatGPT adapter scheduled in P09."
+    },
+    "claude-code": {
+      "platform": "claude-code",
+      "state": "NOT_RUN",
+      "phase_status": "P09_STUB",
+      "bundle_sha256": null,
+      "archive_sha256": null,
+      "notes": "Scaffold ready; full Claude Code adapter scheduled in P09."
+    },
+    "claude-ai": {
+      "platform": "claude-ai",
+      "state": "NOT_RUN",
+      "phase_status": "P09_STUB",
+      "bundle_sha256": null,
+      "archive_sha256": null,
+      "notes": "Scaffold ready; full Claude AI / Cowork adapter scheduled in P09."
+    },
+    "antigravity": {
+      "platform": "antigravity",
+      "state": "NOT_RUN",
+      "phase_status": "P09_STUB",
+      "bundle_sha256": null,
+      "archive_sha256": null,
+      "notes": "Scaffold ready; full Google Antigravity adapter scheduled in P09."
+    },
+    "cursor": {
+      "platform": "cursor",
+      "state": "NOT_RUN",
+      "phase_status": "P09_STUB",
+      "bundle_sha256": null,
+      "archive_sha256": null,
+      "notes": "Scaffold ready; full Cursor adapter scheduled in P09."
+    }
+  }
+}

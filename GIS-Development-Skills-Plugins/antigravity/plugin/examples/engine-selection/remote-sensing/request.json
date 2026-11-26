@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "request_text": "Satellite EO COG NDVI pipeline without booting heavy Java SNAP when Rasterio/GDAL suffices",
+  "language_hint": "en",
+  "intent_modes": [
+    "standalone-libs"
+  ],
+  "delivery_target": "python-cli",
+  "existing_project": null,
+  "target_os": [
+    "windows",
+    "linux"
+  ],
+  "preferred_languages": [
+    "python"
+  ],
+  "required_capabilities": [
+    "io.cog",
+    "raster.windowed.read",
+    "rs.indices",
+    "service.stac"
+  ],
+  "free_only": true,
+  "offline_required": true
+}

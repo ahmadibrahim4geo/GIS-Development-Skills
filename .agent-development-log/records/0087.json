@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "sequence": 87,
+  "timestamp_utc": "2026-11-21T03:34:55+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "تنفيذ اختيار المرجع وفق بيئة المشروع المحلية",
+  "details": "Directory/Domain decision: اختيار مثال SDK وفق ArcGIS Pro المثبت، واستخدام المراجعات الأخرى كمراجع بحث. Developer: أضيف خيار CLI لقراءة جرد البيئة ورُبط بإصدارات مصادر موثقة. Integration: روجعت الامتدادات على ملف المهارة والفهرسين والـCLI من المجلد المفكوك. Review: SAME_AGENT_REVIEW، وتأكدت حدود التوافق بالتوثيق دون ادعاء بناء add-in. سُجلت مهارات Esri كمرشح 0002 في الحجر.",
+  "references": [
+    85,
+    86
+  ],
+  "task_id": "P09-LOCAL",
+  "plan_revision": "r6",
+  "changed_files": [
+    "scripts/gis_code_discovery.py",
+    "tests/test_code_discovery.py",
+    "skills/gis-code-discovery/SKILL.md",
+    "references/gis-code-sources.json",
+    "references/gis-code-recipes.json",
+    "references/project-catalog.json",
+    "references/esri-open-source-integration.md",
+    "New Skill/SKILLS_REGISTRY.json"
+  ],
+  "tests": [
+    "Passed the version-specific regression and 22 existing code discovery regressions.",
+    "Observed installed ArcGIS Pro 3.6.0.59527 led the CLI to the pinned 3.6 Esri Community Samples in both source and unpacked ZIP.",
+    "Confirmed the 3.8 snippets stay available as research. Third-party plugin startup and C# add-in remain not run."
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "558d553a538bfbb22ba40133582caab82cf09952f639be437773610fb4644660",
+  "hash": "cd4c37c72cc9ede1196b7bcdbc89197e4412cfbedec1ff24f36a6aeb4b6ceff9"
+}

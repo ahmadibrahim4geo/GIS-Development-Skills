@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "sequence": 100,
+  "timestamp_utc": "2026-11-21T05:00:24+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Implemented and verified local portable agent root r10",
+  "details": "Adapted Argon methodology to the existing portable execution guide. Added root routing, token policy, skill readiness with inert prerequisite inspection, shared client instructions and GitHub delivery rules. Archived the approved plan and built the local ZIP. Verified two fresh Codex trials with identical prompt on r9 and r10, a stale handoff trial, 517 tests with one symlink skip, the offline terrain output, catalog and security checks, and five plan-bound DoneProof files. Corrected a stale historical resources report link. Model use, third-party tool execution, non-Codex live client setup and GitHub writes were not part of runtime verification.",
+  "references": [
+    99
+  ],
+  "task_id": "PORTABLE-AGENT-ROOT",
+  "plan_revision": "r10",
+  "changed_files": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "PUBLISHING.md",
+    "scripts/skill_readiness.py",
+    "scripts/project_governance.py",
+    "references/portable-execution-guidance.md",
+    "plans/archive/0003_Agent-Roots-Portable-Skills/PLAN.json",
+    "reports/PORTABLE_AGENT_R10_ACCEPTANCE.ar.md"
+  ],
+  "tests": [
+    "Full suite 516 pass, 1 skip; bundle and Skill Creator checks pass; two fresh Codex trials and stale handoff; plan-bound DoneProof"
+  ],
+  "test_result": "passed",
+  "commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "previous_hash": "6f8d61e94d80ebad3805495c6ded43846a006bc390fae782ef55e443ee17e187",
+  "hash": "952e7da92671173a98d7ee8aae3ec332333fc359345784c4dddf9112e0c86567"
+}

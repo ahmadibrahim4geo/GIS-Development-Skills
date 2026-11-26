@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "request_id": "GIS-MASTER-INTEGRATION-0007",
+  "revision": "r1",
+  "original_request": "اكمل باقي المراحل كلها (Master Integration V2 + Plugin Lifecycle P09-P11)",
+  "language": "ar",
+  "status": "approved",
+  "approval": {
+    "approved_by_user": true,
+    "approved_revision": "r1",
+    "high_risk_approved": false
+  },
+  "assumptions": [
+    "All canonical updates reside strictly inside d:/My Software/Skills/GIS Development Skills; external agent CLIs and native GIS runtimes absent on host remain NOT_RUN.",
+    "External publishing and git push remain explicitly unexecuted without separate release approval."
+  ],
+  "open_questions": [],
+  "tasks": [
+    {
+      "id": "GIS-MASTER-INTEGRATION-0007-P11",
+      "title": "Complete Master Integration V2 Phases P00-P11 and Final Release-Readiness Handover",
+      "description": "Synchronize 6 client adapters, QA matrix, bilingual README/CHANGELOG/PROJECT_STRUCTURE/HANDOFF docs, derived manifests, 7 built plugin targets, and journal/DoneProof closeout.",
+      "priority": "must",
+      "kind": "geospatial-engine-selection",
+      "skills": [
+        "geospatial-engine-selection",
+        "geospatial-web-mapping",
+        "gis-mobile-application-development",
+        "gis-security-guardian"
+      ],
+      "depends_on": [],
+      "risk": "low",
+      "acceptance_criteria": [
+        "Build and validate all 7 deterministic plugin packages (portable, codex, chatgpt, claude-code, claude-ai, antigravity, cursor), marketplaces, Cursor rules, CI workflows, and external owner config",
+        "Verify bilingual documentation (README, README.ar, CHANGELOG, PROJECT_STRUCTURE, CURRENT_HANDOFF, Web/Mobile guides), repository manifest counters (36/461/53/26), and all offline test suites + CLI validators",
+        "Execute native T2-T4 GIS engines (QGIS/GDAL/ArcGIS), Chromium Playwright DOM checks, Android/iOS physical/emulator builds, and live client CLI installations (codex/claude/agy/cursor)"
+      ],
+      "tools": [
+        {
+          "tool_id": "host.python-cli",
+          "side_effect": "write"
+        }
+      ],
+      "owner_skill": "geospatial-engine-selection"
+    }
+  ],
+  "goal": "Complete Phases P00-P11 of Master Integration V2 and deliver deterministic 7-platform plugin bundles, Web/Mobile GIS expansions, QA matrix evidence, and bilingual documentation.",
+  "target": "GIS-Development-Skills repository, unified catalogs, 7 client bundles, and synchronized documentation.",
+  "desired_outcomes": [
+    "Deterministic 7-platform plugin packaging (portable, codex, chatgpt, claude-code, claude-ai, antigravity, cursor) with outside-Git owner config and SHA-pinned CI workflows",
+    "Unified 461 engine capability profiles, Web GIS/Mobile GIS guides and contract suites, and comprehensive P10/P11 verification reports",
+    "Honest T0-T4 evidence boundaries preserving NOT_RUN for unavailable native GIS, Chromium Playwright, mobile SDK, and agent CLI runtimes"
+  ],
+  "success_criteria": [
+    "Build and validate all 7 deterministic plugin packages (portable, codex, chatgpt, claude-code, claude-ai, antigravity, cursor), marketplaces, Cursor rules, CI workflows, and external owner config",
+    "Verify bilingual documentation (README, README.ar, CHANGELOG, PROJECT_STRUCTURE, CURRENT_HANDOFF, Web/Mobile guides), repository manifest counters (36/461/53/26), and all offline test suites + CLI validators",
+    "Execute native T2-T4 GIS engines (QGIS/GDAL/ArcGIS), Chromium Playwright DOM checks, Android/iOS physical/emulator builds, and live client CLI installations (codex/claude/agy/cursor)"
+  ],
+  "constraints": [
+    "Never store credentials or private owner config inside Git or ZIP archives",
+    "Never fabricate T2-T4 native runtime passes when host tools are absent"
+  ],
+  "non_goals": [
+    "Execute git push or external marketplace publishing without explicit separate release approval"
+  ]
+}

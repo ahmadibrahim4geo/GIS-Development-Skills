@@ -1,0 +1,26 @@
+name: Suggest an improvement
+description: Propose a new GIS workflow, supported platform, feature or source category
+title: "[Proposal] "
+labels: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The GIS development problem
+      description: Explain what is difficult today and who would benefit.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Outline the expected skill guidance, catalog addition, sample or website improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: considerations
+    attributes:
+      label: Compatibility, source, licensing and test considerations
+      description: Include source URLs, GIS software versions, data formats, API access terms and acceptance checks when known.
+    validations:
+      required: false

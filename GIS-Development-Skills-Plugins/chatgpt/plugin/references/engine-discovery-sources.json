@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "engine-discovery-sources",
+  "policy": "Read-only registry of 13 authoritative geospatial, package, standards, and security discovery ecosystems (REQ-EV2-025). Never auto-queries external networks or auto-installs packages.",
+  "ecosystems": [
+    {
+      "id": "osgeo",
+      "name": "OSGeo Foundation Projects",
+      "category": "geospatial-governance",
+      "url": "https://www.osgeo.org/projects/",
+      "lookup_mode": "manual-or-read-only-http",
+      "coverage": "Graduated & community open-source GIS desktop, web, server, and C/C++/Java geospatial engines.",
+      "trust_note": "Strong governance, IP provenance, and OSI-approved license oversight."
+    },
+    {
+      "id": "osgeolive",
+      "name": "OSGeoLive Curated Distribution",
+      "category": "geospatial-bundle",
+      "url": "https://live.osgeo.org/en/overview/overview.html",
+      "lookup_mode": "manual-or-read-only-http",
+      "coverage": "Cross-tested Linux geospatial desktop, server, spatial DB, and crisis/navigation stack.",
+      "trust_note": "Helpful compatibility baseline for co-existing OSS GIS packages on Linux."
+    },
+    {
+      "id": "gdal-ecosystem",
+      "name": "GDAL / OGR & PROJ Official Drivers",
+      "category": "spatial-core",
+      "url": "https://gdal.org/en/stable/drivers/index.html",
+      "lookup_mode": "manual-or-read-only-http",
+      "coverage": "Authoritative vector/raster format drivers, optional third-party libraries, and CRS transforms.",
+      "trust_note": "Driver-level external library dependencies & licenses vary individually."
+    },
+    {
+      "id": "awesome-gis-georust",
+      "name": "Curated Directories (awesome-gis, awesome-georust, gishub)",
+      "category": "curation-directory",
+      "url": "https://github.com/elasticlabs/awesome-gis",
+      "lookup_mode": "local-catalog-or-read-only",
+      "coverage": "Cross-language open-source GIS tooling directories indexed cleanly through project-catalog.json.",
+      "trust_note": "Directory inclusion does not verify security, build health, or redistribution rights."
+    },
+    {
+      "id": "pypi",
+      "name": "PyPI (Python Package Index)",
+      "category": "language-package-registry",
+      "url": "https://pypi.org/",
+      "lookup_mode": "read-only-json-api",
+      "coverage": "Python GIS bindings & libraries (rasterio, geopandas, pyproj, pyogrio, shapely, xarray, torchgeo).",
+      "trust_note": "Distinguish wheel binary native DLL bundling vs conda-forge system libraries."
+    },
+    {
+      "id": "conda-forge",
+      "name": "conda-forge Geospatial Feedstocks",
+      "category": "binary-abi-registry",
+      "url": "https://conda-forge.org/",
+      "lookup_mode": "manual-or-read-only-http",
+      "coverage": "ABI-harmonized C/C++/Python native builds of GDAL, PROJ, GEOS, PDAL, QGIS, GRASS across Windows/Linux/macOS.",
+      "trust_note": "Preferred isolated environment for avoiding native Windows DLL conflicts."
+    },
+    {
+      "id": "npm",
+      "name": "npm Registry (JavaScript / TypeScript)",
+      "category": "language-package-registry",
+      "url": "https://www.npmjs.com/",
+      "lookup_mode": "read-only-json-api",
+      "coverage": "Web GIS renderers & utilities (maplibre-gl, cesium, ol, leaflet, @turf/turf, pmtiles, deck.gl).",
+      "trust_note": "Inspect transitive dependencies & browser bundle size / WebGL support before selecting."
+    },
+    {
+      "id": "nuget",
+      "name": "NuGet (.NET / Windows Desktop GIS)",
+      "category": "language-package-registry",
+      "url": "https://www.nuget.org/",
+      "lookup_mode": "read-only-json-api",
+      "coverage": ".NET geospatial & WPF/MAUI packages (NetTopologySuite, Mapsui, ProjNet, GDAL.Native, Fluent.Ribbon).",
+      "trust_note": "Check .NET TFM target and native runtime RID (win-x64 / arm64) separately."
+    },
+    {
+      "id": "crates-io",
+      "name": "crates.io (Rust Spatial Ecosystem)",
+      "category": "language-package-registry",
+      "url": "https://crates.io/",
+      "lookup_mode": "read-only-json-api",
+      "coverage": "Rust GIS libraries (geo, gdal, proj, rstar, geozero, flatgeobuf, geolibre-rust, wgpu).",
+      "trust_note": "Verify FFI system library requirements (libgdal/libproj) vs pure-Rust implementations."
+    },
+    {
+      "id": "maven-central",
+      "name": "Maven Central (JVM / Android GIS)",
+      "category": "language-package-registry",
+      "url": "https://central.sonatype.com/",
+      "lookup_mode": "read-only-http",
+      "coverage": "Java & Android GIS artifacts (GeoTools, JTS, GraphHopper, OpenTripPlanner, MapLibre Android SDK).",
+      "trust_note": "Mind GeoTools LGPL boundaries and Android AAR ABI splits."
+    },
+    {
+      "id": "ogc-epsg-stac",
+      "name": "OGC Standards, EPSG Registry & STAC Index",
+      "category": "standards-authorities",
+      "url": "https://www.ogc.org/standards/",
+      "lookup_mode": "read-only-http",
+      "coverage": "Authoritative spatial standards: OGC API, GeoPackage, 3D Tiles, CityGML, EPSG CRSs, and STAC catalogs.",
+      "trust_note": "Canonical authority for CRS codes, data encodings, and interoperability schemas."
+    },
+    {
+      "id": "spdx-osi",
+      "name": "SPDX License List & Open Source Initiative (OSI)",
+      "category": "license-authority",
+      "url": "https://spdx.org/licenses/",
+      "lookup_mode": "read-only-http",
+      "coverage": "Standardized SPDX identifiers, copyleft exceptions, and OSI-approved license text verification.",
+      "trust_note": "GitHub API license_hint does not substitute for inspecting LICENSE/COPYING + dependencies."
+    },
+    {
+      "id": "osv-scorecard-cyclonedx",
+      "name": "OSV.dev, OpenSSF Scorecard, CycloneDX & GitHub Advisories",
+      "category": "security-sbom-advisories",
+      "url": "https://osv.dev/",
+      "lookup_mode": "read-only-http-opt-in",
+      "coverage": "Vulnerability advisories, supply-chain security scorecards, and CycloneDX SBOM standards.",
+      "trust_note": "Optional external verification tools remain NOT RUN unless explicitly invoked/authorized."
+    }
+  ]
+}

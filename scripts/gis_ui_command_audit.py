@@ -155,14 +155,15 @@ def inspect_local_icon(root, file_path, icon):
     return None
 
 
-def audit_tree(directory):
+def audit_tree(directory, include_qt_ui=False):
     directory = Path(directory)
     if not directory.is_dir():
         raise ValueError("Target root is not a directory")
     results, errors, scanned = [], [], 0
+    suffixes = {".html", ".htm", ".xaml"}
     # Sorted for deterministic stable fixture results. Ignore symlinked files.
     files = sorted(p for p in directory.rglob("*") if p.is_file() and not p.is_symlink()
-                   and p.suffix.lower() in {".html", ".htm", ".xaml"})
+                   and p.suffix.lower() in suffixes)
     if len(files) > MAX_FILES:
         raise ValueError(f"More than {MAX_FILES} UI sources; narrow scan root")
     for file in files:
@@ -188,7 +189,7 @@ def audit_tree(directory):
                    for item in results if item["ui_element_id"]]
     duplicates = sorted(f"{path}#{ident}" for (path, ident), count
                         in Counter(identifiers).items() if count > 1)
-    return {
+    report = {
         "kind": "static_ui_declaration_inventory",
         "engine_execution": False,
         "native_ui_tested": False,
@@ -204,15 +205,25 @@ def audit_tree(directory):
                         "XAML handlers and templated controls are not semantically resolved",
                         "No claim of working GIS commands without native E2E evidence"],
     }
+    if include_qt_ui:
+        root_dir = Path(__file__).resolve().parents[1]
+        if str(root_dir) not in sys.path:
+            sys.path.insert(0, str(root_dir))
+        from scripts import inventory_ui_actions  # noqa: E402
+        qt_report = inventory_ui_actions.inventory_tree(directory)
+        report["qt_ui_inventory"] = qt_report
+        report["errors"].extend(qt_report["errors"])
+    return report
 
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--root", required=True, help="Folder of local HTML/XAML UI sources")
+    p.add_argument("--include-qt-ui", action="store_true", help="Also inspect Qt Designer .ui files via inventory_ui_actions")
     p.add_argument("--format", choices=("json", "text"), default="json")
     args = p.parse_args(argv)
     try:
-        report = audit_tree(args.root)
+        report = audit_tree(args.root, include_qt_ui=args.include_qt_ui)
     except ValueError as exc:
         p.error(str(exc))
     if args.format == "json":

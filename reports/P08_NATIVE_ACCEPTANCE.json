@@ -1,0 +1,319 @@
+{
+  "request_id": "GDS-ENGINEERING-SUITE-2026-11-20",
+  "revision": "r5",
+  "tested_at_local_date": "2026-11-21",
+  "windows": "Windows-11-10.0.26300-SP0",
+  "python": "3.14.7",
+  "scenarios": [
+    {
+      "id": "qgis-project",
+      "label_ar": "حفظ مشروع QGIS والقراءة بعد فتحه",
+      "label_en": "QGIS project persistence and export",
+      "status": "PASS",
+      "tier": "T3",
+      "readback": {
+        "status": "PASS",
+        "host": "4.2.3-Belém do Pará",
+        "project_readback": {
+          "project_crs": "EPSG:3857",
+          "extent_restored": true,
+          "relative_paths": true,
+          "vector_crs": "EPSG:4326",
+          "features": 2,
+          "marker_color": "#167b72",
+          "grid_crs": "EPSG:4326",
+          "grid_nodata": -9999,
+          "missing_cells": 1,
+          "grid_hidden": true
+        },
+        "export": "qgis-web.geojson",
+        "geojson_points": {
+          "Cairo": [
+            31.2357,
+            30.0444
+          ],
+          "Alexandria": [
+            29.9187,
+            31.2001
+          ]
+        }
+      }
+    },
+    {
+      "id": "wpf-external-uia",
+      "label_ar": "زر WPF في عملية منفصلة",
+      "label_en": "WPF cross-process UI Automation",
+      "status": "PASS",
+      "tier": "T3",
+      "readback": {
+        "status": "PASS",
+        "sdk": "10.0.300",
+        "framework": "net10.0-windows",
+        "stages": {
+          "sdk": 0,
+          "template": 0,
+          "restore": 0,
+          "build": 0,
+          "uia-restore": 0,
+          "uia-build": 0,
+          "launch": 0
+        },
+        "window_readback": {
+          "NativeWindowLoaded": true,
+          "AutomationPattern": "Invoke",
+          "Clicks": 1,
+          "Raster": {
+            "Crs": "EPSG:4326",
+            "Rows": 2,
+            "Columns": 2,
+            "NoData": -9999,
+            "ValidCells": 3
+          },
+          "Label": "EPSG:4326 | 2 x 2 | 3 valid cells",
+          "Runtime": ".NET 10.0.8",
+          "Architecture": "X64"
+        },
+        "assembly_sha256": "e3f85e26889dd1a74dcc6e78010a5a717e58518bb69dd00dd1696f1b44560699",
+        "input_sha256": "3060649ae057da42ada8b4035775947c43a722ca627e64540dafc608c4848efb",
+        "external_uia": {
+          "WindowAutomationId": "RasterReadbackWindow",
+          "ButtonAutomationId": "ReadRaster",
+          "Pattern": "Invoke",
+          "SeparateProcess": true
+        }
+      }
+    },
+    {
+      "id": "web",
+      "label_ar": "عرض GeoJSON في المتصفح",
+      "label_en": "Chromium GeoJSON rendering",
+      "status": "PASS",
+      "tier": "T2",
+      "readback": {
+        "version": "157.0.8103.80",
+        "status": "PASS",
+        "browser": "chrome.exe",
+        "source_sha256": "08bb1f54d6d520bf6952e7704966666b93fbef6b3428a64663244621bcee9afd",
+        "crs": "EPSG:4326",
+        "browser_readback": {
+          "points": [
+            {
+              "name": "Cairo",
+              "x": 179,
+              "y": 108
+            },
+            {
+              "name": "Alexandria",
+              "x": 73,
+              "y": 44
+            }
+          ],
+          "keyboardFocus": true,
+          "hidden": true,
+          "restored": true
+        }
+      }
+    },
+    {
+      "id": "arcgis-pro",
+      "label_ar": "قراءة File Geodatabase",
+      "label_en": "ArcGIS Pro vector round trip",
+      "status": "PASS",
+      "tier": "T3",
+      "readback": {
+        "exit_code": 0,
+        "readback": "Native ArcGIS Pro 3.6 temporary GDB readback PASS; count=2; CRS=EPSG:4326; XY=[(31.0, 30.0), (31.1, 30.1)]"
+      }
+    },
+    {
+      "id": "landsat-sensor",
+      "label_ar": "عينات Landsat الاصطناعية",
+      "label_en": "Synthetic Landsat sensor fixtures",
+      "status": "PASS",
+      "tier": "T1",
+      "readback": {
+        "unit_test": "test_landsat8_ndvi_uses_collection_specific_scaling_and_masks"
+      }
+    },
+    {
+      "id": "kmz-archive",
+      "label_ar": "أنماط وأصول KMZ",
+      "label_en": "Offline KMZ document and asset checks",
+      "status": "PASS",
+      "tier": "T1",
+      "readback": {
+        "unit_test": "test_new_kmz_has_relative_png_href_and_source_bytes"
+      }
+    },
+    {
+      "id": "migration",
+      "label_ar": "ترحيل مشروع QGIS والتراجع",
+      "label_en": "QGIS migration and rollback",
+      "status": "PASS",
+      "tier": "T3",
+      "readback": {
+        "status": "PASS",
+        "runs": {
+          "before": {
+            "accepted_feature_count": 2,
+            "algorithm_id": "verified_coordinate_audit",
+            "artifact_sha256": "64a252d87cb217fff31a1da2f93c14061d606bd4386b23ac9ea7c2fcaa3cd0fa",
+            "clean_environment_T4": "NOT RUN",
+            "evidence_tier": "T3",
+            "qgis_version": "4.2.3-Belém do Pará",
+            "rejected_feature_count": 3,
+            "schema_version": "1.0",
+            "status": "verified",
+            "workflow_id": "golden-qgis-coordinate-audit"
+          },
+          "after": {
+            "accepted_feature_count": 2,
+            "algorithm_id": "verified_coordinate_audit",
+            "artifact_sha256": "64a252d87cb217fff31a1da2f93c14061d606bd4386b23ac9ea7c2fcaa3cd0fa",
+            "clean_environment_T4": "NOT RUN",
+            "evidence_tier": "T3",
+            "qgis_version": "4.2.3-Belém do Pará",
+            "rejected_feature_count": 3,
+            "schema_version": "1.0",
+            "status": "verified",
+            "workflow_id": "golden-qgis-coordinate-audit"
+          },
+          "restored": {
+            "accepted_feature_count": 2,
+            "algorithm_id": "verified_coordinate_audit",
+            "artifact_sha256": "64a252d87cb217fff31a1da2f93c14061d606bd4386b23ac9ea7c2fcaa3cd0fa",
+            "clean_environment_T4": "NOT RUN",
+            "evidence_tier": "T3",
+            "qgis_version": "4.2.3-Belém do Pará",
+            "rejected_feature_count": 3,
+            "schema_version": "1.0",
+            "status": "verified",
+            "workflow_id": "golden-qgis-coordinate-audit"
+          }
+        },
+        "restored_file_count": 10
+      }
+    },
+    {
+      "id": "external-skill",
+      "label_ar": "مراجعة المهارات داخل العزل",
+      "label_en": "Quarantined skill review",
+      "status": "PASS",
+      "tier": "T1",
+      "readback": {
+        "unit_tests": [
+          "test_clean_snapshot_is_eligible_only_for_manual_review",
+          "test_override_and_execution_payload_are_inert_and_rejected"
+        ]
+      }
+    },
+    {
+      "id": "production-scenes",
+      "label_ar": "مشاهد Landsat الحقيقية",
+      "label_en": "Real Landsat scenes",
+      "status": "NOT RUN",
+      "tier": "—",
+      "readback": {
+        "reason": "Trial uses repository-owned synthetic pixels."
+      }
+    },
+    {
+      "id": "desktop-designer",
+      "label_ar": "الاستخدام المرئي في Qt Designer",
+      "label_en": "Visual Qt Designer workflow",
+      "status": "NOT RUN",
+      "tier": "—",
+      "readback": {
+        "reason": "Qt Designer executable metadata was observed. Design GUI interaction is outside the observed test."
+      }
+    },
+    {
+      "id": "unexercised-renderers",
+      "label_ar": "QGIS GUI وعرض ثلاثي الأبعاد وWebView2",
+      "label_en": "QGIS GUI, 3D camera and WebView2 scenarios",
+      "status": "NOT RUN",
+      "tier": "—",
+      "readback": {
+        "reason": "GIS checks ran from the QGIS engine, WPF and an isolated Chromium profile."
+      }
+    },
+    {
+      "id": "clean-install",
+      "label_ar": "تثبيت في بيئة نظيفة",
+      "label_en": "Clean-environment installation",
+      "status": "NOT RUN",
+      "tier": "T4",
+      "readback": {
+        "reason": "The trial used the current Windows installation and isolated working folders."
+      }
+    }
+  ],
+  "qgis_science_receipt": {
+    "raster": {
+      "crs": "EPSG:4326",
+      "shape": [
+        2,
+        2
+      ],
+      "nodata": -9999,
+      "values": [
+        [
+          10,
+          null
+        ],
+        [
+          30,
+          40
+        ]
+      ],
+      "same_grid": "ACCEPTED",
+      "different_crs": "CRS_MISMATCH",
+      "shifted_grid": "GRID_MISMATCH"
+    },
+    "polygons": {
+      "crs": "EPSG:4326",
+      "valid": 1,
+      "invalid": 1
+    }
+  },
+  "wpf_in_process_regression": {
+    "status": "PASS",
+    "sdk": "10.0.300",
+    "framework": "net10.0-windows",
+    "stages": {
+      "sdk": 0,
+      "template": 0,
+      "restore": 0,
+      "build": 0,
+      "launch": 0
+    },
+    "window_readback": {
+      "NativeWindowLoaded": true,
+      "AutomationPattern": "Invoke",
+      "Clicks": 1,
+      "Raster": {
+        "Crs": "EPSG:4326",
+        "Rows": 2,
+        "Columns": 2,
+        "NoData": -9999,
+        "ValidCells": 3
+      },
+      "Label": "EPSG:4326 | 2 x 2 | 3 valid cells",
+      "Runtime": ".NET 10.0.8",
+      "Architecture": "X64"
+    },
+    "assembly_sha256": "980aad6f2c5e47a1b4e04b85ecf22b122d3466a966ac18443515b8b8f770a0b6",
+    "input_sha256": "3060649ae057da42ada8b4035775947c43a722ca627e64540dafc608c4848efb"
+  },
+  "arcgis_recovery": "Initial sandbox access violation, then Windows File Geodatabase workspace cache held a file. Final run used permitted host execution and exited cleanly after releasing the cache.",
+  "chromium_recovery": "The sandbox blocked Crashpad initialization. A host-authorized run used an isolated browser profile and a local fixture URL.",
+  "quality": {
+    "cases": 494,
+    "passed": 493,
+    "skipped_windows_symbolic_link_case": 1,
+    "skill_pack": "PASS",
+    "security_guardian_static": "PASS",
+    "external_scanners": "NOT RUN"
+  },
+  "protected_source_package_files_unchanged": 33
+}

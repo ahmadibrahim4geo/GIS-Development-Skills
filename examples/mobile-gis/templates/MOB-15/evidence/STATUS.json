@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "template_id": "MOB-15",
+  "t0_spec": "PASS",
+  "t1_contract": "PASS",
+  "t3_android_emulator_or_device": "NOT_RUN",
+  "t3_ios_simulator_or_device": "NOT_RUN",
+  "t4_signed_release": "NOT_RUN",
+  "notes": "Static spec & Python SQLite contract only; never report native Android/iOS build without host SDK execution."
+}

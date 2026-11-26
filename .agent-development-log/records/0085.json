@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 85,
+  "timestamp_utc": "2026-11-20T22:15:46+00:00",
+  "kind": "request",
+  "status": "approved",
+  "summary": "اعتماد r6 للمرحلة التاسعة محليًا أولًا",
+  "details": "أجاز المستخدم تنفيذ P09 على المهارة المحلية أولًا، وذكر الرفع إلى GitHub لاحقًا بعد إنجاز المحلي. نطاق r6 المحلي يضم تدقيق 152 بندًا، وأدوار RRG، وملحق A، وفحوص الحالة والتوزيع والتوثيق. GitHub قراءة مرجع فقط، دون commit أو push أو PR أو merge في هذا النطاق.",
+  "references": [
+    84
+  ],
+  "task_id": "P09",
+  "plan_revision": "r6",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "3d3d4e8c25b8a126363b5607785a1142d33eaf58bd1e39d2322169a858a8ce0f",
+  "hash": "69eeb4b5424280799e7fa855e148eb26da269f5db076831050fae2ba0596358e"
+}

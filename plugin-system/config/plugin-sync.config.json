@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "autoBuildAfterDevelopment": true,
+  "autoSyncLocal": true,
+  "autoOwnerRemoteUpdate": false,
+  "autoPublicPublish": false,
+  "lockFileRelativePath": ".plugin-lock/update.lock.json",
+  "lockTimeoutSeconds": 30,
+  "lockStaleSeconds": 600,
+  "stateDirectoryRelativePath": ".plugin-local/state",
+  "rollbackDirectoryRelativePath": ".plugin-local/rollback",
+  "retentionCount": 3,
+  "reportDirectoryRelativePath": "reports/plugin-lifecycle",
+  "ownerConfigEnvVar": "GIS_SKILLS_OWNER_CONFIG",
+  "ownerConfigDefaultWindowsPath": "%LOCALAPPDATA%\\GIS-Development-Skills\\PluginSync\\owner-config.json",
+  "ownerConfigDefaultUnixPath": "~/.config/gis-development-skills/owner-config.json"
+}

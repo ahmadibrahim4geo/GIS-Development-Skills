@@ -1,0 +1,38 @@
+name: Plugin Packages Build & Integrity Audit
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  plugin-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source (pinned SHA)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python 3.11 (pinned SHA)
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.11'
+      - name: Build all 7 deterministic plugin packages (CI mode)
+        run: |
+          python -B plugin-system/core/pipeline.py --build-only --no-report --json
+      - name: Confirm clean idempotent re-check and Linux CI local-sync boundary
+        run: |
+          python -B plugin-system/core/pipeline.py --check-only --no-report --json
+          python -B plugin-system/core/pipeline.py --no-report --json
+      - name: Verify security preflight and ZIP archive safety
+        run: |
+          python scripts/security_audit.py --root . --format text
+          python -c "import importlib.util; from pathlib import Path; spec=importlib.util.spec_from_file_location('b', 'scripts/build_skill_bundle.py'); m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m); [print(p, m.audit_path(p)['status']) for p in sorted(Path('GIS-Development-Skills-Plugins').glob('*/artifacts/*.zip'))]"

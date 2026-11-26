@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "sequence": 81,
+  "timestamp_utc": "2026-11-20T21:45:22+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "قبول P06 وتحديث الحالة بعد التحقق من الحزمة المحلية",
+  "details": "العينة الصالحة هي READY_FOR_MANUAL_REVIEW، وعينة تجاوز التعليمات والـhook هي REJECTED_ISOLATED. لم يتفعّل مرشح Microsoft ولم يُختبر تشغيله. الماسحات الخارجية NOT RUN. استُبعد الحجر من ZIP. أُعيد تشغيل WPF وراجعنا نتائج خط الأساس. النطاق التالي للمراجعة هو P07 ثم P08.",
+  "references": [
+    79,
+    80
+  ],
+  "task_id": "P06",
+  "plan_revision": "r4",
+  "changed_files": [
+    "reports/P05_TOOLCHAIN_EVIDENCE.json",
+    "reports/SKILL_INTAKE_VERIFICATION.md",
+    "reports/P06_QUARANTINE_EVIDENCE.json",
+    "plans/active/0001_Engineering-Suite/STATUS.json",
+    "plans/active/0001_Engineering-Suite/REQUIREMENTS_TRACEABILITY.csv",
+    "context/CURRENT_HANDOFF.md"
+  ],
+  "tests": [
+    "Plan-bound DoneProof r4 for P05 and P06 validated after evidence readback.",
+    "490 unittest cases, 489 passed and 1 Windows symbolic-link case skipped.",
+    "Static skill pack and security audit passed. Local bundle builder, verifier and ZIP readback passed.",
+    "Local bundle SHA-256 485b3c47f296212db1a9293c4244d5010e8cd172108bd0e6a7dbf22136f160dc.",
+    "33 protected package files match original hashes."
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "0e24eafebbcd84b6e25f98fda26d1b138a260f5924886661825c468ad24696d0",
+  "hash": "08c268a6864de4b7bbfe4c4198290aa76e97c13b437b4cec41e8c83fa926e227"
+}

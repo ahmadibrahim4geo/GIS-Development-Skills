@@ -90,7 +90,7 @@ flowchart TD
 - **Safety Gate**: Rejects hallucinated parameters, type mismatches, out-of-range coordinates, and unauthorized actions before passing data to the C++ core engine.
 
 ### 3.5 `DuckDB Spatial Extension` (Analytical In-Memory SQL)
-- **Source**: [https://github.com/duckdb/duckdb-skills](https://github.com/duckdb/duckdb-skills)
+- **Source**: [https://github.com/duckdb/duckdb-spatial](https://github.com/duckdb/duckdb-spatial) (`UDS-LIB-004`, separated cleanly from external agent skill [https://github.com/duckdb/duckdb-skills](https://github.com/duckdb/duckdb-skills))
 - **Role in CAD/GIS**: In-memory analytical SQL processing.
 - **Use Cases**: Instant spatial queries across millions of features:
   ```sql

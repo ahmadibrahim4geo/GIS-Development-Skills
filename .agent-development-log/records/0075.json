@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 75,
+  "timestamp_utc": "2026-11-20T21:19:25+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "قبول P03 بعد إعادة قراءة نواتج GIS",
+  "details": "نجحت القراءة المستقلة لـQGIS وLandsat الاصطناعي وKMZ في التجربة 0001. فشلت التجربة 0002 كما هو متوقع عند غياب المخرجات، وبصمات المدخلات الأصلية والنسخ متطابقة. ArcPy المباشر تعطّل وإعادة التشغيل المدعومة لم تُنتج قراءة.",
+  "references": [
+    74
+  ],
+  "task_id": "P03",
+  "plan_revision": "r3",
+  "changed_files": [
+    "reports/P03_GIS_ACCEPTANCE.json",
+    "reports/SCIENTIFIC_TEST_RUNS.md"
+  ],
+  "tests": [
+    "Prepared positive and negative runs; QGIS 4.2.3 native raster/vector readback; 479 unit tests, 1 skipped"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "d32007173dec4d184d026781ee9f77835aabe34e5750a4ec9f4ca5e242813022",
+  "hash": "e8f496479ee020a913f947cae1262cb66fafff237728edbb5a142a9b34755489"
+}

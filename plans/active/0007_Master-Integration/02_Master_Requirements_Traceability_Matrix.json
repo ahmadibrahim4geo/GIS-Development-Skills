@@ -1,0 +1,3707 @@
+{
+  "schema_version": "1.0",
+  "matrix_id": "MASTER_REQUIREMENTS_TRACEABILITY_MATRIX",
+  "status": "FINALIZED_WITH_ENV_NOT_RUN",
+  "generated": "2026-11-25",
+  "total_requirements": 153,
+  "requirements": [
+    {
+      "req_id": "REQ-PL-001",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§1 Architecture Decisions",
+      "requirement_summary": "Preserve canonical repository as the Single Source of Truth; forbid developing directly inside generated plugin outputs.",
+      "type": "governance",
+      "phase": "P01",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "AGENTS.md",
+        "plugin-system/policy/DEVELOPMENT_LIFECYCLE.md"
+      ],
+      "acceptance_test_ids": [
+        "PL-T03",
+        "ANTI-REG-001"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-001",
+        "REQ-WM-001"
+      ],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-002",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§1 Architecture Decisions",
+      "requirement_summary": "Keep standalone skill folder usability intact without forcing platform plugin installation, preserving licenses and branding.",
+      "type": "structural",
+      "phase": "P02",
+      "priority": "HIGH",
+      "affected_files": [
+        "skills/",
+        "plugin-system/core/builder.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T24",
+        "ANTI-REG-001",
+        "ANTI-REG-006"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-003",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§1 & §3 Root Folder Contract",
+      "requirement_summary": "Create root GIS-Development-Skills-Plugins/ directory containing README.md, index.json, per-platform dirs, and ZIP artifacts.",
+      "type": "structural",
+      "phase": "P02",
+      "priority": "HIGH",
+      "affected_files": [
+        "GIS-Development-Skills-Plugins/README.md",
+        "GIS-Development-Skills-Plugins/index.json"
+      ],
+      "acceptance_test_ids": [
+        "PL-T01",
+        "PL-PLAT-PORTABLE"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Initialized early in P02 on baseline; populated for all 6+1 platforms by P09."
+    },
+    {
+      "req_id": "REQ-PL-004",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§1 Architecture Decisions",
+      "requirement_summary": "Decouple core build engine, platform adapters, and owner-private sync configuration cleanly without mandatory MCP or paid hosting.",
+      "type": "structural",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "plugin-system/core/",
+        "plugin-system/adapters/",
+        "plugin-system/config/platforms.json"
+      ],
+      "acceptance_test_ids": [
+        "PL-T17",
+        "PL-T26"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-041"
+      ],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-005",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§1 & §8.1 Local vs Publish Split",
+      "requirement_summary": "Separate build verification, authorized local synchronization, and owner-gated external publishing into distinct stages.",
+      "type": "governance",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "plugin-system/sync/",
+        "plugin-system/release/",
+        "plugin-system/config/plugin-sync.config.json"
+      ],
+      "acceptance_test_ids": [
+        "PL-T19",
+        "PL-T21",
+        "PL-T22"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-006",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§2 Phase 0 Audit",
+      "requirement_summary": "Audit git root, working tree status, canonical files, licenses, reports/, and existing scripts/build_skill_bundle.py to integrate rather than duplicate.",
+      "type": "structural",
+      "phase": "P00",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "reports/plugin-lifecycle/000_BASELINE.md",
+        "scripts/build_skill_bundle.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T24",
+        "ANTI-REG-005"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-001"
+      ],
+      "notes": "Reuse build_skill_bundle.py allowlist/digest core."
+    },
+    {
+      "req_id": "REQ-PL-007",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§2 Phase 0 CLI Probe",
+      "requirement_summary": "Check installed local CLI tools and versions read-only without accessing browser session tokens or private credentials.",
+      "type": "security",
+      "phase": "P00",
+      "priority": "HIGH",
+      "affected_files": [
+        "reports/plugin-lifecycle/000_BASELINE.md",
+        "scripts/toolchain_discovery.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T12",
+        "PL-T13"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-008",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§3 plugin-system Architecture",
+      "requirement_summary": "Create complete plugin-system/ layout (policy, config, schemas, adapters, core, sync, release, hooks, tests).",
+      "type": "structural",
+      "phase": "P02",
+      "priority": "HIGH",
+      "affected_files": [
+        "plugin-system/README.md",
+        "plugin-system/config/source-map.json",
+        "plugin-system/schemas/",
+        "plugin-system/tests/"
+      ],
+      "acceptance_test_ids": [
+        "PL-T02",
+        "PL-T07",
+        "PL-T08"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-009",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§3 Git Tracking Policy",
+      "requirement_summary": "Track unpacked marketplace plugin dirs and manifests in Git where needed, while excluding heavy ZIP archives from bloating Git via .gitignore + CI artifacts.",
+      "type": "structural",
+      "phase": "P02",
+      "priority": "HIGH",
+      "affected_files": [
+        ".gitignore",
+        "plugin-system/config/platforms.json"
+      ],
+      "acceptance_test_ids": [
+        "PL-T18",
+        "PL-T25"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "ZIPs always generated locally in artifacts/ and CI."
+    },
+    {
+      "req_id": "REQ-PL-010",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§4 Shared Package Inventory",
+      "requirement_summary": "Build canonical file inventory across all GIS domains; invalidate build digest when AGENTS.md or MASTER_AGENT_PROMPT.md changes while isolating dev-only rules.",
+      "type": "functional",
+      "phase": "P02",
+      "priority": "HIGH",
+      "affected_files": [
+        "plugin-system/core/inventory.py",
+        "plugin-system/core/hashing.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T01",
+        "PL-T03",
+        "PL-T26"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-011",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§4 License & Redistribution Guard",
+      "requirement_summary": "Preserve reference URLs, versions, and licenses; block bundling unlicensed third-party code or missing-license external repos (link-only fallback).",
+      "type": "security",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "plugin-system/core/validators.py",
+        "scripts/audit_license_catalog.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T09",
+        "E-46"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-043"
+      ],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-012",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§4 Progressive Disclosure & UTF-8 Check",
+      "requirement_summary": "Validate YAML frontmatter, kebab-case naming, Arabic UTF-8 encoding, and local markdown link integrity during packaging.",
+      "type": "testing",
+      "phase": "P02",
+      "priority": "HIGH",
+      "affected_files": [
+        "scripts/validate_skill_pack.py",
+        "plugin-system/core/validators.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T08",
+        "PL-T10",
+        "ANTI-REG-001"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-005"
+      ],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-013",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§4 Strict Allowlist Security",
+      "requirement_summary": "Enforce explicit allowlist; reject root-escaping symlinks/reparse points, ../ path traversal, caches, Git metadata, and secret files.",
+      "type": "security",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/build_skill_bundle.py",
+        "plugin-system/core/builder.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T05",
+        "PL-T11",
+        "PL-T12"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-014",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§4 Per-Platform Parity Report",
+      "requirement_summary": "Generate parity report per platform documenting carried, adapted, and excluded components with rationale instead of silent omission.",
+      "type": "documentation",
+      "phase": "P09",
+      "priority": "HIGH",
+      "affected_files": [
+        "GIS-Development-Skills-Plugins/index.json",
+        "plugin-system/core/parity.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-PLAT-CHATGPT",
+        "PL-PLAT-CLAUDE-CODE",
+        "E39"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P09 builds parity-report.json for all 7 targets detailing carried, adapted, and excluded items."
+    },
+    {
+      "req_id": "REQ-PL-015",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§5.1 SHA-256 Change Detection",
+      "requirement_summary": "Detect source, untracked, renamed, deleted, manifest template, and source-map changes via SHA-256 digests without relying solely on git diff; separate timestamps from build digest.",
+      "type": "functional",
+      "phase": "P02",
+      "priority": "HIGH",
+      "affected_files": [
+        "plugin-system/core/hashing.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T02",
+        "PL-T04",
+        "PL-T05",
+        "PL-T06",
+        "PL-T07"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-016",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§5.2 10-Step Update Cycle",
+      "requirement_summary": "Implement 10-step update pipeline: project lock w/ stale timeout, audit, clean staging, validation, deterministic ZIP w/ origin commit, atomic swap & rollback, extract verify, local CLI sync, live hash check, release prep.",
+      "type": "functional",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "plugin-system/core/lock.py",
+        "plugin-system/core/builder.py",
+        "plugin-system/sync/sync_manager.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T04",
+        "PL-T14",
+        "PL-T15",
+        "PL-T25",
+        "PL-T29"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-017",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§5.3 Extensible Adapter Contract",
+      "requirement_summary": "Define 11-method adapter contract (detect, capabilities, build, validate, package, status, sync_local, prepare_release, update_owner_remote, verify, rollback) driven by platforms.json without engine if/else hardcoding.",
+      "type": "structural",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "plugin-system/adapters/",
+        "plugin-system/config/platforms.json",
+        "plugin-system/core/registry.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T17"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Pluggability verified by mock adapter in P09."
+    },
+    {
+      "req_id": "REQ-PL-018",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§6 & §15 Codex Adapter",
+      "requirement_summary": "Build & verify Codex CLI/Desktop adapter (.codex-plugin/plugin.json + .agents/plugins/marketplace.json) against live official OpenAI docs.",
+      "type": "functional",
+      "phase": "P09",
+      "priority": "HIGH",
+      "affected_files": [
+        "plugin-system/adapters/codex/",
+        "GIS-Development-Skills-Plugins/codex/",
+        ".agents/plugins/marketplace.json"
+      ],
+      "acceptance_test_ids": [
+        "PL-PLAT-CODEX",
+        "PL-T23"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Codex adapter (.codex-plugin/plugin.json + .agents/plugins/marketplace.json) T0/T1 PASS; live codex CLI absent (NOT_INSTALLED)."
+    },
+    {
+      "req_id": "REQ-PL-019",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§6 & §15 ChatGPT Adapter",
+      "requirement_summary": "Build ChatGPT portable ZIP package sharing OpenAI directory identity without duplicate public listing and stripping unsupported lifecycle hooks.",
+      "type": "functional",
+      "phase": "P09",
+      "priority": "HIGH",
+      "affected_files": [
+        "plugin-system/adapters/chatgpt/",
+        "GIS-Development-Skills-Plugins/chatgpt/"
+      ],
+      "acceptance_test_ids": [
+        "PL-PLAT-CHATGPT",
+        "PL-T21"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "ChatGPT ZIP shares openai-directory group and strips lifecycle hooks (T1 PASS); portal import manual."
+    },
+    {
+      "req_id": "REQ-PL-020",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§6 & §15 Claude Code Adapter",
+      "requirement_summary": "Build Claude Code adapter (.claude-plugin/plugin.json & marketplace.json) handling user/project/local scopes and real CLI help verification.",
+      "type": "functional",
+      "phase": "P09",
+      "priority": "HIGH",
+      "affected_files": [
+        "plugin-system/adapters/claude_code/",
+        "GIS-Development-Skills-Plugins/claude-code/",
+        ".claude-plugin/marketplace.json"
+      ],
+      "acceptance_test_ids": [
+        "PL-PLAT-CLAUDE-CODE",
+        "PL-T23"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Claude Code adapter (.claude-plugin/{plugin,marketplace,hooks}.json) T0/T1 PASS; live claude CLI absent (NOT_INSTALLED)."
+    },
+    {
+      "req_id": "REQ-PL-021",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§6 & §15 Claude AI Adapter",
+      "requirement_summary": "Build Claude AI / Cowork compatible package sharing payload with Claude Code while separating manual/org portal refresh limits.",
+      "type": "functional",
+      "phase": "P09",
+      "priority": "HIGH",
+      "affected_files": [
+        "plugin-system/adapters/claude_ai/",
+        "GIS-Development-Skills-Plugins/claude-ai/"
+      ],
+      "acceptance_test_ids": [
+        "PL-PLAT-CLAUDE-AI",
+        "PL-T13",
+        "PL-T21"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Claude AI package shares payload with claude-code and documents manual org portal refresh limits."
+    },
+    {
+      "req_id": "REQ-PL-022",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§6 & §15 Antigravity Adapter",
+      "requirement_summary": "Build Google Antigravity plugin manifest & skills bundle using verified agy plugin validate command where installed.",
+      "type": "functional",
+      "phase": "P09",
+      "priority": "HIGH",
+      "affected_files": [
+        "plugin-system/adapters/antigravity/",
+        "GIS-Development-Skills-Plugins/antigravity/"
+      ],
+      "acceptance_test_ids": [
+        "PL-PLAT-ANTIGRAVITY",
+        "PL-T23"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Antigravity plugin.json + .antigravity/plugin.json verified (T1 PASS); live agy plugin validate NOT_RUN (agy absent)."
+    },
+    {
+      "req_id": "REQ-PL-023",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§6 & §15 Cursor Adapter",
+      "requirement_summary": "Build Cursor plugin (.cursor-plugin/plugin.json) + .cursor/rules/ integration honoring Cursor team/import rules.",
+      "type": "functional",
+      "phase": "P09",
+      "priority": "HIGH",
+      "affected_files": [
+        "plugin-system/adapters/cursor/",
+        "GIS-Development-Skills-Plugins/cursor/",
+        ".cursor/rules/"
+      ],
+      "acceptance_test_ids": [
+        "PL-PLAT-CURSOR",
+        "PL-T23"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Cursor .cursor-plugin/plugin.json + .cursor/rules/gis-development-skills.mdc verified (T1 PASS); live cursor CLI absent."
+    },
+    {
+      "req_id": "REQ-PL-024",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§6 Portable Plugin Target & Docs",
+      "requirement_summary": "Provide optional Portable Agent Plugin bundle plus stable plugin/listing IDs and bilingual per-platform install/verify READMEs.",
+      "type": "documentation",
+      "phase": "P09",
+      "priority": "MEDIUM",
+      "affected_files": [
+        "plugin-system/adapters/portable/",
+        "GIS-Development-Skills-Plugins/portable-agent-plugin/",
+        "GIS-Development-Skills-Plugins/README.md"
+      ],
+      "acceptance_test_ids": [
+        "PL-PLAT-PORTABLE",
+        "E39"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Portable + 6 client bundles + bilingual platform READMEs built cleanly with stable plugin IDs."
+    },
+    {
+      "req_id": "REQ-PL-025",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§7 Unified CLI Launchers",
+      "requirement_summary": "Implement Update-All-Plugins.ps1/.bat with flags (-CheckOnly, -BuildOnly, -Status, -Force, -Platform, -Rollback, -PrepareRelease, -Publish) and documented exit codes 0,2,3,4,5.",
+      "type": "functional",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "Update-All-Plugins.ps1",
+        "Update-All-Plugins.bat"
+      ],
+      "acceptance_test_ids": [
+        "PL-T06",
+        "PL-T08",
+        "PL-T10",
+        "PL-T14",
+        "PL-T19"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-026",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§7 & §8 Owner Private Launcher",
+      "requirement_summary": "Implement Update-My-Platforms.ps1/.bat (-Configure, -Status, -CheckOnly) reading %LOCALAPPDATA%\\GIS-Development-Skills\\PluginSync\\owner-config.json strictly outside Git.",
+      "type": "security",
+      "phase": "P09",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "Update-My-Platforms.ps1",
+        "Update-My-Platforms.bat",
+        "plugin-system/config/owner-config.example.json"
+      ],
+      "acceptance_test_ids": [
+        "PL-T12",
+        "PL-T20",
+        "PL-T26"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Update-My-Platforms outside-Git owner-config verified via Python CLI + PowerShell AST parser."
+    },
+    {
+      "req_id": "REQ-PL-027",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§8 Security & Credential Isolation",
+      "requirement_summary": "Forbid storing passwords, tokens, cookies, or personal emails in repo/JSON/CI; rely on official CLI sessions or OS Credential Manager with minimal subprocess scoping.",
+      "type": "security",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "plugin-system/config/plugin-sync.config.json",
+        "plugin-system/sync/"
+      ],
+      "acceptance_test_ids": [
+        "PL-T12",
+        "PL-T20",
+        "PL-T26",
+        "ANTI-REG-010"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-028",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§8.2 Gitignore & Leak Checks",
+      "requirement_summary": "Append private lifecycle exclusions to .gitignore and enforce git check-ignore / git ls-files secret scans across staged files, ZIPs, manifests, and CI artifacts.",
+      "type": "security",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        ".gitignore",
+        "scripts/security_audit.py",
+        "plugin-system/tests/"
+      ],
+      "acceptance_test_ids": [
+        "PL-T05",
+        "PL-T12",
+        "ANTI-REG-010"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-029",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§9 Mandatory Agent Policy",
+      "requirement_summary": "Append 10-point Mandatory Plugin Lifecycle policy into AGENTS.md and link across CLAUDE.md, Cursor rules, Antigravity rules, and MASTER_AGENT_PROMPT.md without erasing existing rules.",
+      "type": "governance",
+      "phase": "P01",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        ".cursor/rules/",
+        "plans/active/0007_Master-Integration/MASTER_AGENT_PROMPT.md"
+      ],
+      "acceptance_test_ids": [
+        "PL-T03",
+        "ANTI-REG-001"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-GOV-001"
+      ],
+      "notes": "Command hookup verified immediately once P02 ships Update-All-Plugins.ps1."
+    },
+    {
+      "req_id": "REQ-PL-030",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§10 Defense-in-Depth Automation",
+      "requirement_summary": "Configure agent hooks (loop-safe), optional opt-in Git pre-commit/pre-push hook setup script, and optional opt-in local watcher/Task Scheduler.",
+      "type": "functional",
+      "phase": "P09",
+      "priority": "MEDIUM",
+      "affected_files": [
+        "plugin-system/hooks/",
+        ".github/"
+      ],
+      "acceptance_test_ids": [
+        "PL-T16",
+        "PL-T27"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Opt-in loop-safe Git pre-commit/pre-push, agent hook template, and DryRun scheduled task script implemented."
+    },
+    {
+      "req_id": "REQ-PL-031",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§10 GitHub Actions CI/CD",
+      "requirement_summary": "Create plugin-validate.yml, plugin-build.yml, and plugin-release.yml using commit-pinned actions, concurrency groups, zero PR secrets, and no unsafe pull_request_target.",
+      "type": "testing",
+      "phase": "P09",
+      "priority": "HIGH",
+      "affected_files": [
+        ".github/workflows/plugin-validate.yml",
+        ".github/workflows/plugin-build.yml",
+        ".github/workflows/plugin-release.yml"
+      ],
+      "acceptance_test_ids": [
+        "PL-T18",
+        "PL-T19",
+        "PL-T22"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-048"
+      ],
+      "notes": "plugin-validate.yml, plugin-build.yml, plugin-release.yml created with SHA pins, concurrency, read permissions."
+    },
+    {
+      "req_id": "REQ-PL-032",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§11 Versioning & Channels",
+      "requirement_summary": "Maintain SemVer VERSION file + dev build digest/commit marker separating development from stable channels across shared source digest.",
+      "type": "structural",
+      "phase": "P02",
+      "priority": "HIGH",
+      "affected_files": [
+        "VERSION",
+        "CHANGELOG.md"
+      ],
+      "acceptance_test_ids": [
+        "PL-T06",
+        "PL-T25"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-PL-033",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§11 Numbered Reporting & Recovery",
+      "requirement_summary": "Write numbered JSON+Markdown reports under reports/plugin-lifecycle/ using all 22 standardized states plus N-last known-good per-platform rollback.",
+      "type": "documentation",
+      "phase": "P02",
+      "priority": "HIGH",
+      "affected_files": [
+        "reports/plugin-lifecycle/000_BASELINE.md",
+        "plugin-system/sync/rollback.py"
+      ],
+      "acceptance_test_ids": [
+        "PL-T13",
+        "PL-T14",
+        "PL-T21",
+        "PL-T29"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Retain honest states instead of faking PASS."
+    },
+    {
+      "req_id": "REQ-PL-034",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§11 & §14 Bilingual Guides",
+      "requirement_summary": "Provide substantive CHANGELOG.md entries and bilingual Arabic/English owner onboarding, sync, rollback, and future-platform extension guides.",
+      "type": "documentation",
+      "phase": "P11",
+      "priority": "HIGH",
+      "affected_files": [
+        "CHANGELOG.md",
+        "README.md",
+        "README.ar.md",
+        "GIS-Development-Skills-Plugins/README.md"
+      ],
+      "acceptance_test_ids": [
+        "PL-T24",
+        "ANTI-REG-007"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-061",
+        "REQ-WM-046"
+      ],
+      "notes": "CHANGELOG.md, README.md, README.ar.md, and per-platform bilingual GIS-Development-Skills-Plugins/*/README.md updated cleanly."
+    },
+    {
+      "req_id": "REQ-PL-035",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "Continuous Post-Phase Sync Policy",
+      "requirement_summary": "Re-run Update-All-Plugins build and verification at the end of every approved implementation phase P03-P11 (not waiting only until P11).",
+      "type": "governance",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "Update-All-Plugins.ps1",
+        "GIS-Development-Skills-Plugins/"
+      ],
+      "acceptance_test_ids": [
+        "PL-T01",
+        "PL-T02",
+        "E39"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Explicit User Req #6 mandate. P03 synced in 005_PLUGIN_P03_SYNC (digest 00b3f8c0c62e). P04 synced in 007_PLUGIN_P04_SYNC (digest 0a058a5feecc)."
+    },
+    {
+      "req_id": "REQ-EV2-001",
+      "source_plan": "Engine_V2",
+      "source_section": "§0-§1 Baseline Preservation",
+      "requirement_summary": "Preserve existing 35 skills, project-catalog.json (193), urban registry (78), routing, security, DoneProof, and journal without creating a competing repository.",
+      "type": "governance",
+      "phase": "P00",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/project-catalog.json",
+        "references/urban-design-source-registry.json",
+        "skills/gis-development/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E36",
+        "ANTI-REG-001",
+        "ANTI-REG-002",
+        "ANTI-REG-005"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-PL-001",
+        "REQ-WM-001"
+      ],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-EV2-002",
+      "source_plan": "Engine_V2",
+      "source_section": "§1 DuckDB Spatial Bug Fix",
+      "requirement_summary": "Fix UDS-LIB-004 (DuckDB Spatial) pointing erroneously to duckdb/duckdb-skills; point capability profile to duckdb/duckdb-spatial while retaining duckdb-skills under external skills; audit security_rating: safe claims.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/urban-design-source-registry.json",
+        "references/engine-capability-profiles.json",
+        "references/external-agent-skills-registry.json"
+      ],
+      "acceptance_test_ids": [
+        "E21"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Confirmed live defect in P00 prep. Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-003",
+      "source_plan": "Engine_V2",
+      "source_section": "§2.1-2.2 Engine Skill Scope",
+      "requirement_summary": "Deliver 11 core architectural intelligence functions while enforcing out-of-scope guardrails (no building full rival QGIS/ArcGIS, no heavy auto-install, shortcut trivial edits).",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "HIGH",
+      "affected_files": [
+        "skills/geospatial-engine-selection/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E31",
+        "E33"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-004",
+      "source_plan": "Engine_V2",
+      "source_section": "§3 Unified Software Taxonomy",
+      "requirement_summary": "Machine-readable classification of all 24 entity types (Application..Package/Distribution) with multi-role support and explicit unresolved status for ambiguous UI.js.",
+      "type": "structural",
+      "phase": "P01",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/engine-architecture-taxonomy.md"
+      ],
+      "acceptance_test_ids": [
+        "E07",
+        "E24"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-EV2-005",
+      "source_plan": "Engine_V2",
+      "source_section": "§4.1 Intent Slot Extraction",
+      "requirement_summary": "Extract 21 architectural context slots from user requests (OS, host, code base, retention, license, offline, budget, projections, hardware, packaging, etc.) using non-blocking assumptions where safe.",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "HIGH",
+      "affected_files": [
+        "skills/geospatial-engine-selection/SKILL.md",
+        "schemas/engine-selection-request.schema.json"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E02",
+        "E08",
+        "E09"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-006",
+      "source_plan": "Engine_V2",
+      "source_section": "§4.2 Build Models Matrix",
+      "requirement_summary": "Implement 11 canonical build models plus combinations (extend-host, configure-host, source-fork, source-component-reuse, embedded-engine, ui-shell-migration, reference-inspired-ui, multi-engine-composition, worker-service, custom-component, custom-engine).",
+      "type": "structural",
+      "phase": "P01",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/engine-architecture-taxonomy.md",
+        "skills/geospatial-engine-selection/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-EV2-007",
+      "source_plan": "Engine_V2",
+      "source_section": "§4.3, §22.1 & §33 Arabic Colloquial NLP",
+      "requirement_summary": "Parse 25+ colloquial Arabic/Egyptian and English intent phrases accurately without conflating UI inspiration with source forks or commercial SDKs.",
+      "type": "functional",
+      "phase": "P08",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/intent_router.py",
+        "references/engine-architecture-taxonomy.md",
+        "plans/active/0007_Master-Integration/MASTER_AGENT_PROMPT.md"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E02",
+        "E03",
+        "E19",
+        "ANTI-REG-003"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-036"
+      ],
+      "notes": "P08 T0/T1 verified via intent_router, explorer/wizard/index hubs, role registry, Archify validator link, 0006 archival, and test_p08_repo_integration."
+    },
+    {
+      "req_id": "REQ-EV2-008",
+      "source_plan": "Engine_V2",
+      "source_section": "§5.1 OSS Derivation Hierarchy",
+      "requirement_summary": "Enforce 6-level OSS reuse preference: Profile/Config -> Plugin -> Fork (w/ GPL review) -> Standalone Libs -> Selective Reuse -> Independent App.",
+      "type": "functional",
+      "phase": "P07",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/source-fork-and-ui-reuse.md",
+        "skills/qgis-engine-integration/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E04",
+        "E38"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-009",
+      "source_plan": "Engine_V2",
+      "source_section": "§5.2 & §24.1 Source Inventory Before Deletion",
+      "requirement_summary": "Record upstream tag/SHA/Qt/GDAL/PROJ versions, baseline build, and dependency graph (action -> handler -> service -> provider -> persistent data) before any code deletion.",
+      "type": "functional",
+      "phase": "P07",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/source-fork-and-ui-reuse.md",
+        "templates/SOURCE_FORK_FEATURE_INVENTORY.md",
+        "scripts/inventory_ui_actions.py"
+      ],
+      "acceptance_test_ids": [
+        "E25",
+        "E26"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-010",
+      "source_plan": "Engine_V2",
+      "source_section": "§5.3 KEEP/HIDE/DISABLE/REMOVE/REPLACE/DEFER",
+      "requirement_summary": "Enforce 6-state feature retention plan with HIDE-before-REMOVE progression and explicit protection for 16 critical background/core actions (CRS, Undo, Project Save, Providers, Logs).",
+      "type": "functional",
+      "phase": "P07",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/source-fork-and-ui-reuse.md",
+        "templates/SOURCE_FORK_FEATURE_INVENTORY.md",
+        "examples/engine-selection/qgis-fork/"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E25",
+        "E-25",
+        "E-26",
+        "E-27"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-011",
+      "source_plan": "Engine_V2",
+      "source_section": "§5.4-5.5 Fork Branding, Patch Queue & Packaging",
+      "requirement_summary": "Isolate branding layers and patch queues, preserve upstream notices/licenses, measure before/after size objectively, and require clean-machine acceptance testing.",
+      "type": "compatibility",
+      "phase": "P07",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/source-fork-and-ui-reuse.md"
+      ],
+      "acceptance_test_ids": [
+        "E29",
+        "E38",
+        "E-30"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-012",
+      "source_plan": "Engine_V2",
+      "source_section": "§6.1-6.3 & §24.3 Reference-Inspired UI (Clean Room)",
+      "requirement_summary": "Distinguish behavioral workflow inspiration (ArcGIS Pro / Google Earth Pro / Global Mapper / ENVI / CityEngine) from proprietary binaries/icons/DAML; implement 7-step transformation across 10 UI sections & 20 UI frameworks.",
+      "type": "functional",
+      "phase": "P07",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/reference-ui-engine-mapping.md",
+        "templates/REFERENCE_UI_COMMAND_MAPPING.md",
+        "skills/clean-room-reference-implementation/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E02",
+        "E40",
+        "E-28",
+        "E-45"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-013",
+      "source_plan": "Engine_V2",
+      "source_section": "§7 Build-vs-Reuse Policy & ADRs",
+      "requirement_summary": "Mandate documented engineering ADR justifying custom code over reuse, plus explicit rules blocking needless engine replacement.",
+      "type": "governance",
+      "phase": "P01",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/build-vs-reuse-policy.md",
+        "templates/ARCHITECTURE_DECISION_RECORD.md"
+      ],
+      "acceptance_test_ids": [
+        "E06",
+        "E-41"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-EV2-014",
+      "source_plan": "Engine_V2",
+      "source_section": "§8.1 & §29.1 Atomic Capability Taxonomy",
+      "requirement_summary": "Define 11 capability domains and 70+ atomic capability IDs (io.*, crs.*, vector.*, raster.*, rs.*, render.*, cad.*, city.*, terrain.*, hydrology.*, simulation.*, routing.*, db.*, service.*, ui.*, runtime.*, packaging.*, plugin.*) with bilingual synonyms and 7 support states.",
+      "type": "structural",
+      "phase": "P01",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/engine-capability-taxonomy.json"
+      ],
+      "acceptance_test_ids": [
+        "E19",
+        "E24"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-EV2-015",
+      "source_plan": "Engine_V2",
+      "source_section": "§8.2 & §29.1 Unified Capability Profiles",
+      "requirement_summary": "Create references/engine-capability-profiles.json linked via stable project_id to project-catalog.json with full schema validation and zero catalog duplication.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/engine-capability-profiles.json",
+        "references/project-catalog.json",
+        "schemas/engine-capability-profile.schema.json"
+      ],
+      "acceptance_test_ids": [
+        "E17",
+        "E21",
+        "E24",
+        "ANTI-REG-002"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-003"
+      ],
+      "notes": "Single entry per tech shared across Desktop, Web, Mobile. Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-016",
+      "source_plan": "Engine_V2",
+      "source_section": "§8.3 & §28.1 Discovery Protocol",
+      "requirement_summary": "Follow offline-first 9-step acquisition chain with bounded timeouts, no auto-cloning huge repos, and strict prompt-injection isolation.",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "HIGH",
+      "affected_files": [
+        "skills/geospatial-engine-selection/SKILL.md",
+        "scripts/engine_repo_metadata.py",
+        "scripts/discover_engines.py"
+      ],
+      "acceptance_test_ids": [
+        "E18",
+        "E20",
+        "E22",
+        "E32",
+        "E-40"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-017",
+      "source_plan": "Engine_V2",
+      "source_section": "§9.1 & §25.1 GIS Core, Geometry, CRS & Spatial Indexes Catalog",
+      "requirement_summary": "Catalog & profile QGIS, GDAL/OGR, PROJ, PROJ-data, GEOS, GeographicLib, GRASS, SAGA, WhiteboxTools, GeoTools, JTS, NTS, GeoRust, RStar, libspatialindex, Shapely, GeoPandas, pyogrio, pyproj, Turf.js, Proj4js, S2, H3, Boost.Geometry/Polygon, CGAL, libtess2, earcut, robust-predicates, RBush/Flatbush/KDBush/Supercluster, GeoArrow, liblwgeom without duplicating existing entries.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/project-catalog.json",
+        "references/engine-capability-profiles.json"
+      ],
+      "acceptance_test_ids": [
+        "E08",
+        "E17",
+        "E-01",
+        "E-04"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-012",
+        "REQ-WM-013"
+      ],
+      "notes": "Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-018",
+      "source_plan": "Engine_V2",
+      "source_section": "§9.2 & §25.2 Map, Globe & 3D Geospatial Catalog",
+      "requirement_summary": "Catalog & profile CesiumJS/Native/Unreal/Unity, Sandcastle, osgEarth, NASA WorldWind, KDE Marble, iTowns, Giro3D, MapLibre GL JS/Native/Qt, OpenLayers, Leaflet, deck.gl, Maptalks, Mapsui, Mapnik, GeoStyler, 3D Tiles specs/tools/validator, Quantized Mesh, 3DTilesRendererJS, loaders/luma.gl, Martin, Tegola, pg_tileserv, TiTiler, Tippecanoe, Planetiler, Tilemaker, PMTiles, MBTiles, MapProxy.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/project-catalog.json",
+        "references/engine-capability-profiles.json"
+      ],
+      "acceptance_test_ids": [
+        "E09",
+        "E-10",
+        "E-11",
+        "E-12",
+        "E-13",
+        "E-14"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-011",
+        "REQ-WM-016",
+        "REQ-WM-017"
+      ],
+      "notes": "Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-019",
+      "source_plan": "Engine_V2",
+      "source_section": "§9.3 & §25.3 General Graphics, Fonts, Text & Export Catalog",
+      "requirement_summary": "Catalog & profile Three.js, Babylon.js, Godot, Bevy, O3DE, OGRE-Next, OSG, Filament, VTK, Open3D, Blender, Assimp, meshoptimizer, Draco, tinygltf, Skia, Vulkan, wgpu, Eigen, glTF/Validator, Basis Universal, OpenImageIO, MaterialX, OpenUSD, HarfBuzz, FriBidi, FreeType, ImGui, egui, OSPRay, bgfx, ANGLE, RenderDoc, Tracy, Google Benchmark.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "MEDIUM",
+      "affected_files": [
+        "references/project-catalog.json",
+        "references/engine-capability-profiles.json"
+      ],
+      "acceptance_test_ids": [
+        "E-15",
+        "E-29"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-016"
+      ],
+      "notes": "Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-020",
+      "source_plan": "Engine_V2",
+      "source_section": "§9.4 & §25.4 CAD, BIM, Procedural City & Urban Design Catalog",
+      "requirement_summary": "Catalog & profile OCCT, FreeCAD, CadQuery, build123d, OpenSCAD, OpenJSCAD, CGAL, Clipper2, libigl, Manifold, IfcOpenShell, IFC4.3 spec, ezdxf, netDxf, CityJSON/cjio, 3DCityDB, val3dity, City4CFD, 3dfier, roofer, pyvista, trimesh, MeshLib, OSM2World, UrbanSim, Streetmix, OSMnx, SUMO, OSRD, UTK, Ladybug Tools, and commercial refs CityEngine/pyprt.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/project-catalog.json",
+        "references/engine-capability-profiles.json",
+        "references/urban-design-source-registry.json"
+      ],
+      "acceptance_test_ids": [
+        "E10",
+        "E-16",
+        "E-17",
+        "E-18"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-021",
+      "source_plan": "Engine_V2",
+      "source_section": "§9.5 & §25.5 Raster, EO, Scientific, GeoAI, LiDAR & Photogrammetry Catalog",
+      "requirement_summary": "Catalog & profile Rasterio, OTB, SNAP Engine/Desktop, S1/S2tbx, OSSIM, OpenCV, ITK, scikit-image/learn, xarray/rioxarray/xarray-spatial, Dask, Numba, CuPy, ODC, eo-learn, PySTAC, Py6S, rsgislib, awesome-spectral-indices/spyndex, NASA Worldview, Pangeo, PyTorch, TorchGeo, SAM2, ONNX Runtime, geobench, geospatial-reasoning-benchmarks, PDAL, PCL, Potree/Converter, Entwine, COPC, CloudCompare, laspy/LASzip, MDAL, OpenMVG, OpenMVS, COLMAP, AliceVision, ODM.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/project-catalog.json",
+        "references/engine-capability-profiles.json"
+      ],
+      "acceptance_test_ids": [
+        "E11",
+        "E-06",
+        "E-07",
+        "E-22",
+        "E-23",
+        "E-24"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-015",
+        "REQ-WM-027"
+      ],
+      "notes": "Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-022",
+      "source_plan": "Engine_V2",
+      "source_section": "§9.6 & §25.6 Hydrology, Climate, Networks & Simulation Catalog",
+      "requirement_summary": "Catalog & profile OSRM, Valhalla, GraphHopper, pgRouting, NetworkX, igraph, SUMO, MATSim, OTP, TauDEM, pysheds, richdem, pyflwdir, hydroMT, PCRaster, SWMM, EPANET, MODFLOW6, FloPy, Landlab, OpenFOAM, pvlib, MetPy, wrf-python, WRF, cfgrib/ecCodes, NCEPLIBS-g2, netCDF4, xclim, SciPy with scientific domain guardrails.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/project-catalog.json",
+        "references/engine-capability-profiles.json",
+        "references/urban-simulation-engines.md"
+      ],
+      "acceptance_test_ids": [
+        "E-19",
+        "E-20",
+        "E-21"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-043"
+      ],
+      "notes": "Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-023",
+      "source_plan": "Engine_V2",
+      "source_section": "§9.7 & §25.7 Storage, Services, BigData & Browser/WASM Catalog",
+      "requirement_summary": "Catalog & profile PostgreSQL/PostGIS, SQLite/SpatiaLite, DuckDB Spatial & DuckDB-Wasm, Sedona, Arrow, GeoParquet, GeoPackage, FlatGeobuf, Polars, TileDB, Zarr/Icechunk, GeoServer, MapServer, QGIS Server, pygeoapi, STAC FastAPI/Validator, Nominatim, Emscripten, wasm-bindgen, wasmtime, terrio, geolibre-rust.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/project-catalog.json",
+        "references/engine-capability-profiles.json"
+      ],
+      "acceptance_test_ids": [
+        "E21",
+        "E-05",
+        "E-08"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-040",
+        "REQ-WM-041"
+      ],
+      "notes": "Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-024",
+      "source_plan": "Engine_V2",
+      "source_section": "§9.8 & §24.3 UI Frameworks, Ribbon, Docking & Packaging Catalog",
+      "requirement_summary": "Catalog & evaluate Qt, PySide, PyQt, WPF, WinUI, Avalonia, wxWidgets, Flutter, .NET MAUI, Tauri, Electron, WebView2, Vue, React, Svelte, Angular, SARibbon, Qt-Advanced-Docking-System, Fluent.Ribbon, AvalonDock, Dock(Avalonia), MaterialDesignInXAML, CommunityToolkit, GoldenLayout, Gridstack, MapLibre Qt, Lucide, Fluent Icons, CMake, vcpkg, Conan, OSGeo4W, WiX, Inno Setup, PyInstaller.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/engine-capability-profiles.json",
+        "references/reference-ui-engine-mapping.md"
+      ],
+      "acceptance_test_ids": [
+        "E34",
+        "E-29"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-010",
+        "REQ-WM-020"
+      ],
+      "notes": "Catalog & 461 profiles updated (PyQt noted in non_github_official_docs); dedicated reference-ui-engine-mapping.md scheduled in P07."
+    },
+    {
+      "req_id": "REQ-EV2-025",
+      "source_plan": "Engine_V2",
+      "source_section": "§9.9 Continuous Discovery Portals & Registries",
+      "requirement_summary": "Create references/engine-discovery-sources.json indexing 13 registries (OSGeo, OSGeoLive, GDAL ecosystem, awesome-gis/georust, PyPI, conda-forge, npm, NuGet, crates.io, Maven, OGC/EPSG/STAC, SPDX/OSI, OSV/Scorecard/CycloneDX/GitHub Advisories).",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "MEDIUM",
+      "affected_files": [
+        "references/engine-discovery-sources.json"
+      ],
+      "acceptance_test_ids": [
+        "E32"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-026",
+      "source_plan": "Engine_V2",
+      "source_section": "§10.1-10.2 & §29.2 Hard Exclusion Gates & Weighted Evaluation",
+      "requirement_summary": "Implement deterministic hard_gate (platform, license, security, required capabilities, free_only check) and 0-5 weighted evaluator (25/20/15/15/10/10/5) barring rejected/unknown winners.",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/compare_engines.py",
+        "references/engine-comparison-guide.md"
+      ],
+      "acceptance_test_ids": [
+        "E12",
+        "E13",
+        "E14",
+        "E15",
+        "E16",
+        "E35",
+        "E36",
+        "E-39"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-027",
+      "source_plan": "Engine_V2",
+      "source_section": "§10.3-10.4 & §32.1 Qualitative Comparisons & Benchmark Protocol",
+      "requirement_summary": "Document 10 canonical pair comparisons and repeatable cold/warm/memory/precision PoC benchmark protocol rejecting fabricated speedups.",
+      "type": "testing",
+      "phase": "P04",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/engine-comparison-guide.md"
+      ],
+      "acceptance_test_ids": [
+        "E16",
+        "E30",
+        "WEB-QA-12"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-032"
+      ],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-028",
+      "source_plan": "Engine_V2",
+      "source_section": "§11.1-11.4 & §31 Multi-Engine Composition & Data Contracts",
+      "requirement_summary": "Define 8 provider interfaces, DatasetRef/FeatureIdentity/RasterRef/Renderer/Processing contracts, 8 integration modes, and 3-tier custom composite engine model preventing silent CRS/algorithm swaps.",
+      "type": "structural",
+      "phase": "P07",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/engine-integration-patterns.md",
+        "scripts/recommend_stack.py"
+      ],
+      "acceptance_test_ids": [
+        "E05",
+        "E09",
+        "E10",
+        "E27",
+        "E37",
+        "E-14",
+        "E-38"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-008"
+      ],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-029",
+      "source_plan": "Engine_V2",
+      "source_section": "§12.1-12.3 Free-First, License Gate, SBOM & Security",
+      "requirement_summary": "Distinguish 9 free/commercial cost classes; enforce license gate per transitive dep, font/icon/data attribution, CVE checks, SBOM & THIRD_PARTY_NOTICES before release.",
+      "type": "security",
+      "phase": "P01",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/free-first-policy.md",
+        "references/technology-compatibility.md",
+        "scripts/audit_license_catalog.py"
+      ],
+      "acceptance_test_ids": [
+        "E12",
+        "E13",
+        "E38",
+        "E-44",
+        "E-36",
+        "E-37",
+        "E-48"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-029",
+        "REQ-WM-035"
+      ],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-EV2-030",
+      "source_plan": "Engine_V2",
+      "source_section": "§13 & §14 Reference Scenarios & 8 Examples",
+      "requirement_summary": "Create 8 runnable/verifiable example packages under examples/engine-selection/ covering QGIS fork, ArcGIS-inspired UI, standalone QGIS Core, Virtual Globe, CityEngine, Remote Sensing, CRS tool, and Mobile/Web parity.",
+      "type": "testing",
+      "phase": "P07",
+      "priority": "HIGH",
+      "affected_files": [
+        "examples/engine-selection/qgis-fork/",
+        "examples/engine-selection/arcgis-inspired-ui/",
+        "examples/engine-selection/standalone-qgis-core/",
+        "examples/engine-selection/virtual-globe/",
+        "examples/engine-selection/city-engine/",
+        "examples/engine-selection/remote-sensing/",
+        "examples/engine-selection/crs-conversion/",
+        "examples/engine-selection/mobile-web-gis/"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E02",
+        "E04",
+        "E08",
+        "E09",
+        "E10",
+        "E11",
+        "E-42"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-031",
+      "source_plan": "Engine_V2",
+      "source_section": "§14.1 New Skill geospatial-engine-selection",
+      "requirement_summary": "Create independent concise skill skills/geospatial-engine-selection/SKILL.md owning architectural intent analysis, engine discovery, comparison, composition, and ADRs without overloading gis-development.",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "skills/geospatial-engine-selection/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E02",
+        "E39",
+        "ANTI-REG-001",
+        "ANTI-REG-003"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-032",
+      "source_plan": "Engine_V2",
+      "source_section": "§14.2 Architecture Schema v2 & Migration",
+      "requirement_summary": "Upgrade ui-engine-architecture-contract.md and add schemas/architecture-v2.schema.json while preserving 100% compatibility and roundtrip migration for existing v1.0 flows.",
+      "type": "compatibility",
+      "phase": "P01",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/ui-engine-architecture-contract.md",
+        "schemas/architecture-v2.schema.json",
+        "tests/test_engine_architecture_migration.py"
+      ],
+      "acceptance_test_ids": [
+        "E23",
+        "E24"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-EV2-033",
+      "source_plan": "Engine_V2",
+      "source_section": "§14.3 & §28.2 CLI Script: engine_repo_metadata.py",
+      "requirement_summary": "Implement scripts/engine_repo_metadata.py (api.github.com only, NoRedirect, <=1MB, bounded retry, cache, state='metadata-only') tested via offline mocked HTTP error/redirect cases.",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/engine_repo_metadata.py",
+        "tests/test_engine_profiles.py"
+      ],
+      "acceptance_test_ids": [
+        "E18",
+        "E32",
+        "E-43"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-034",
+      "source_plan": "Engine_V2",
+      "source_section": "§14.3 CLI Script: discover_engines.py",
+      "requirement_summary": "Implement offline-first bilingual scripts/discover_engines.py reusing search_catalog.py/gis_code_discovery.py to filter by capability, platform, language, and license.",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/discover_engines.py",
+        "tests/test_engine_selection.py"
+      ],
+      "acceptance_test_ids": [
+        "E19",
+        "E20",
+        "E40"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-035",
+      "source_plan": "Engine_V2",
+      "source_section": "§14.3 CLI Script: compare_engines.py",
+      "requirement_summary": "Implement deterministic scripts/compare_engines.py applying hard_gate and weighted rubric with negative/tie-break/malformed-input unit tests.",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/compare_engines.py",
+        "tests/test_engine_selection.py"
+      ],
+      "acceptance_test_ids": [
+        "E12",
+        "E13",
+        "E14",
+        "E15",
+        "E16",
+        "E35",
+        "E-44"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-036",
+      "source_plan": "Engine_V2",
+      "source_section": "§14.3 CLI Script: recommend_stack.py",
+      "requirement_summary": "Implement scripts/recommend_stack.py outputting 10-part Markdown/JSON architecture reports (alternatives, gaps, dev/user runtimes, PoC, ADR, NOT RUN).",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/recommend_stack.py",
+        "templates/TECHNOLOGY_SELECTION_REPORT.md",
+        "tests/test_engine_selection.py"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E02",
+        "E04",
+        "E05",
+        "E08",
+        "E09",
+        "E10",
+        "E37",
+        "E-41",
+        "E-42",
+        "E-45"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-037",
+      "source_plan": "Engine_V2",
+      "source_section": "§14.3 CLI Script: validate_engine_profiles.py",
+      "requirement_summary": "Implement scripts/validate_engine_profiles.py validating profile schemas, project_id foreign keys, capability IDs, cycles, and evidence guarantees.",
+      "type": "testing",
+      "phase": "P04",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/validate_engine_profiles.py",
+        "schemas/engine-capability-profile.schema.json",
+        "tests/test_engine_profiles.py"
+      ],
+      "acceptance_test_ids": [
+        "E17",
+        "E21",
+        "E24",
+        "E38"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-038",
+      "source_plan": "Engine_V2",
+      "source_section": "§30 CLI Script: inventory_ui_actions.py",
+      "requirement_summary": "Implement bounded XML Qt .ui scanner scripts/inventory_ui_actions.py (5MB cap, <!DOCTYPE block, path-traversal guard, action/placement extraction) integrated with gis_ui_command_audit.py.",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/inventory_ui_actions.py",
+        "scripts/gis_ui_command_audit.py",
+        "tests/test_engine_compatibility.py"
+      ],
+      "acceptance_test_ids": [
+        "E25",
+        "E26",
+        "E-26"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-039",
+      "source_plan": "Engine_V2",
+      "source_section": "§14.4 Router, Decision Tree, Explorer & Project Wizard Updates",
+      "requirement_summary": "Connect central router, agent-decision-tree.md, intent_router.py, Explorer, and Project Wizard to filter by capability, build model, platform, and clear 'reference-only' vs 'verified-for-target' badges.",
+      "type": "functional",
+      "phase": "P08",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "skills/gis-development/SKILL.md",
+        "references/agent-decision-tree.md",
+        "scripts/intent_router.py",
+        "explorer.html",
+        "project-wizard.html"
+      ],
+      "acceptance_test_ids": [
+        "E31",
+        "ANTI-REG-003",
+        "ANTI-REG-006",
+        "ANTI-REG-007"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-046"
+      ],
+      "notes": "P08 T0/T1 verified via intent_router, explorer/wizard/index hubs, role registry, Archify validator link, 0006 archival, and test_p08_repo_integration."
+    },
+    {
+      "req_id": "REQ-EV2-040",
+      "source_plan": "Engine_V2",
+      "source_section": "§15 & §33.1 Engineering Roles Integration",
+      "requirement_summary": "Map 10/11 V2 architectural/QA/license/scientific responsibilities into existing engineering-role-registry.json without claiming independent agents when running sequentially.",
+      "type": "governance",
+      "phase": "P08",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/engineering-role-registry.json",
+        "references/engineering-role-workflow.md"
+      ],
+      "acceptance_test_ids": [
+        "ANTI-REG-009",
+        "ANTI-REG-010"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-GOV-003"
+      ],
+      "notes": "P08 T0/T1 verified via intent_router, explorer/wizard/index hubs, role registry, Archify validator link, 0006 archival, and test_p08_repo_integration."
+    },
+    {
+      "req_id": "REQ-EV2-041",
+      "source_plan": "Engine_V2",
+      "source_section": "§22.2 Claim Confidence Grades",
+      "requirement_summary": "Enforce 7 claim states (unresolved, documented, source-inspected, compiled, runtime-observed, target-verified, rejected) distinguishing read/write/roundtrip separately.",
+      "type": "testing",
+      "phase": "P01",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/engine-capability-taxonomy.json",
+        "scripts/validate_engine_profiles.py"
+      ],
+      "acceptance_test_ids": [
+        "E14",
+        "E-40"
+      ],
+      "status": "PENDING",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-002"
+      ],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-EV2-042",
+      "source_plan": "Engine_V2",
+      "source_section": "§23 & §23.1 Open-Source Reference Studies (GeoLibre & RustGIS)",
+      "requirement_summary": "Document 27 reference OSS codebases (QGIS..JOSM/iD) and execute deep architecture & 3-way GeoPackage/GeoTIFF/CRS/RTL POC study comparing QGIS vs GeoLibre vs RustGIS.",
+      "type": "compatibility",
+      "phase": "P07",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/source-fork-and-ui-reuse.md",
+        "references/gis-software-source-registry.md"
+      ],
+      "acceptance_test_ids": [
+        "E14",
+        "E-14",
+        "E-42"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-018"
+      ],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-043",
+      "source_plan": "Engine_V2",
+      "source_section": "§24 QGIS Source Engineering Playbook",
+      "requirement_summary": "Catalog 17 official QGIS repo/cookbook/compilation references and document Qt UI/C++/PyQGIS inspection protocol.",
+      "type": "documentation",
+      "phase": "P07",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/source-fork-and-ui-reuse.md",
+        "skills/qgis-engine-integration/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E04",
+        "E-25",
+        "E-26"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-044",
+      "source_plan": "Engine_V2",
+      "source_section": "§25.8 Commercial Host SDK Docs Classification",
+      "requirement_summary": "Register ArcGIS Pro SDK samples/snippets, Maps SDK .NET, CIM/I3S/LERC/Geometry-Java, Global Mapper SDK docs strictly as reference/host-dependent (never free-first default).",
+      "type": "compatibility",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/engine-capability-profiles.json",
+        "references/free-first-policy.md"
+      ],
+      "acceptance_test_ids": [
+        "E03",
+        "E-44",
+        "E-47"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-029"
+      ],
+      "notes": "Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-045",
+      "source_plan": "Engine_V2",
+      "source_section": "§26 External Agent Skills Registry (36 Sources)",
+      "requirement_summary": "Quarantine all 36 external agent skill repos (isaaccorley, znlgis, opengeos/*, TerraLabAI, muend, Marin-Kitagawa, CLI-Anything, agentskills, anthropics, superpowers, spec-kit, microsoft, Qt, NVIDIA SkillSpector, context7, MCP) as reference-only until audited.",
+      "type": "security",
+      "phase": "P03",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/external-agent-skills-registry.json",
+        "New Skill/"
+      ],
+      "acceptance_test_ids": [
+        "E22",
+        "E-35"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-028"
+      ],
+      "notes": "Zero blind installation. Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-046",
+      "source_plan": "Engine_V2",
+      "source_section": "§27 Engineering, Security, Benchmarking & QA Tooling Catalog",
+      "requirement_summary": "Document 45 engineering/inspection/SBOM/security/test/benchmark tools (ripgrep, ast-grep, Tree-sitter, CMake File API, CycloneDX, Syft, ScanCode, REUSE, OSV-Scanner, Gitleaks, pytest, Hypothesis, Playwright, FlaUI, hyperfine, etc.) without making them mandatory runtime deps.",
+      "type": "documentation",
+      "phase": "P03",
+      "priority": "MEDIUM",
+      "affected_files": [
+        "references/engine-comparison-guide.md",
+        "references/engine-capability-profiles.json"
+      ],
+      "acceptance_test_ids": [
+        "E-37",
+        "E-48"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-035"
+      ],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-047",
+      "source_plan": "Engine_V2",
+      "source_section": "§17 & §32 Full Acceptance Matrix (E01-E40 + E-01..E-48)",
+      "requirement_summary": "Execute and record all 40 Engine architecture acceptance scenarios E01-E40 plus all 48 domain/scientific fixture tests E-01 to E-48 across T0-T4 honestly.",
+      "type": "testing",
+      "phase": "P10",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "plans/active/0007_Master-Integration/05_Master_Test_Matrix.json",
+        "tests/"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E12",
+        "E23",
+        "E30",
+        "E36",
+        "E-01",
+        "E-06",
+        "E-22",
+        "E-35",
+        "E-48"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Offline E01-E40 / E-35..47 checks verified at T0/T1; native GDAL/PROJ/QGIS/WebGL/device T2-T4 remain PARTIAL/NOT_RUN honestly."
+    },
+    {
+      "req_id": "REQ-EV2-048",
+      "source_plan": "Engine_V2",
+      "source_section": "§14 Repository Templates",
+      "requirement_summary": "Create 5 structured templates: ENGINE_EVALUATION_REPORT.md, TECHNOLOGY_SELECTION_REPORT.md, ARCHITECTURE_DECISION_RECORD.md, SOURCE_FORK_FEATURE_INVENTORY.md, REFERENCE_UI_COMMAND_MAPPING.md.",
+      "type": "documentation",
+      "phase": "P04",
+      "priority": "HIGH",
+      "affected_files": [
+        "templates/ENGINE_EVALUATION_REPORT.md",
+        "templates/TECHNOLOGY_SELECTION_REPORT.md",
+        "templates/ARCHITECTURE_DECISION_RECORD.md",
+        "templates/SOURCE_FORK_FEATURE_INVENTORY.md",
+        "templates/REFERENCE_UI_COMMAND_MAPPING.md"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E02",
+        "E35"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-001",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§0-§1 Existing Repo Preservation & r1/r2 Absorption",
+      "requirement_summary": "Extend geospatial-web-mapping and gis-mobile-application-development cleanly, absorbing 0006 draft (T1-T6) + T7-T42 and all shared GIS specialists without replacing existing skills.",
+      "type": "governance",
+      "phase": "P05",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "skills/geospatial-web-mapping/SKILL.md",
+        "skills/gis-mobile-application-development/SKILL.md",
+        "plans/active/0006_Mobile-and-Web-GIS-Expansion/"
+      ],
+      "acceptance_test_ids": [
+        "ANTI-REG-001",
+        "ANTI-REG-005"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-PL-001",
+        "REQ-EV2-001"
+      ],
+      "notes": "Archive 0006 in P08 when absorbed with owner approval. Web GIS P05 scope delivered and verified T0/T1; cross-platform Mobile GIS P06 deliverables and headless browser E2E remain pending. P06 Mobile deliverables & T1 contracts completed cleanly; remains PARTIAL pending P08/P10 cross-repo integration or unavailable live hardware/runtime execution. P08 completed absorption & formal archival of 0006 draft while preserving existing 35+1 skills."
+    },
+    {
+      "req_id": "REQ-WM-002",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§0 Trust Grades & 18-Field Source Metadata",
+      "requirement_summary": "Tag sources with V1/V2/V3/RUN-VERIFIED and 18 required metadata fields (official URL, GitHub, OS, language, license/date/version, device reqs, API key/billing, offline rights, size/deps, security, trust, last checked).",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/engine-capability-profiles.json",
+        "references/web-mobile-vendor-license-audit.md"
+      ],
+      "acceptance_test_ids": [
+        "E-36",
+        "E-46",
+        "MOB-QA-20"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-041"
+      ],
+      "notes": "All 18 metadata fields (including version_or_ref & trust_level) schema-enforced across 461 profiles; P05 references/web-mobile-vendor-license-audit.md scheduled in P05."
+    },
+    {
+      "req_id": "REQ-WM-003",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§1.1 & §18.1-18.3 Zero-Duplication Catalog Governance",
+      "requirement_summary": "Cross-check existing project-catalog.json / gis-code-sources.json / free-geospatial-apis.json first; forbid creating separate duplicate Web/Mobile library databases.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/project-catalog.json",
+        "references/engine-capability-profiles.json"
+      ],
+      "acceptance_test_ids": [
+        "ANTI-REG-002",
+        "ANTI-REG-004"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-015"
+      ],
+      "notes": "User Req #4 explicit mandate. Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-004",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§1.3 & §4 Platform-Engineer Selection Matrix",
+      "requirement_summary": "Implement non-dogmatic Technology Decision Engine (16 conditions + 12 quantitative criteria) integrated with geospatial-engine-selection instead of forcing one framework.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/web-gis-products-map.md",
+        "skills/geospatial-engine-selection/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E-42",
+        "WEB-TPL-01",
+        "MOB-TPL-01"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-026"
+      ],
+      "notes": "User Req #5 link to engine selection. Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-005",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§13.1 & §18.5 Anti-Bloat Progressive Disclosure",
+      "requirement_summary": "Keep heavy Web/Mobile encyclopedias and template guides in references/*.md via progressive disclosure; do not split unnecessary standalone skills unless verified gap.",
+      "type": "structural",
+      "phase": "P05",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "skills/geospatial-web-mapping/SKILL.md",
+        "skills/gis-mobile-application-development/SKILL.md",
+        "references/"
+      ],
+      "acceptance_test_ids": [
+        "PL-T08",
+        "ANTI-REG-001"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-PL-012",
+        "REQ-EV2-031"
+      ],
+      "notes": "Addresses 6 candidate skills in r3 §13.1 conservatively. Web GIS P05 scope delivered and verified T0/T1; cross-platform Mobile GIS P06 deliverables and headless browser E2E remain pending. P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-006",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§2 Web Product Map W01-W12",
+      "requirement_summary": "Cover all 12 Web product classes W01-W12 (Static Site, Viewer, Editor, Full-stack Multiuser, Dashboard, 3D/Digital Twin, EO/Raster, PWA, SDI Portal, QGIS Web Publishing, Real-time, StoryMap).",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/web-gis-products-map.md",
+        "skills/geospatial-web-mapping/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "WEB-TPL-01",
+        "WEB-TPL-03",
+        "WEB-TPL-07",
+        "WEB-TPL-12",
+        "WEB-TPL-15"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-007",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§2 Mobile Product Map M01-M10",
+      "requirement_summary": "Cover all 10 Mobile product classes M01-M10 (Native Android, Native iOS, Cross-platform, Hybrid, Survey/Form, GNSS/RTK, Navigation/Geofencing, Mobile 3D/AR, Inspection/Asset, Enterprise Field) respecting PWA != Native & WebView != Native Tested.",
+      "type": "functional",
+      "phase": "P06",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/mobile-gis-platform-selection.md",
+        "skills/gis-mobile-application-development/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "MOB-TPL-01",
+        "MOB-TPL-02",
+        "MOB-TPL-03",
+        "MOB-TPL-06",
+        "MOB-TPL-09",
+        "MOB-TPL-14"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-008",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§3 Shared 8-Layer Architecture",
+      "requirement_summary": "Enforce strict separation across 8 logical layers (Shell/Nav, Map Scene Adapter, GIS Domain, Data Access, Offline/Sync, Auth/Security, Platform Capabilities, QA/Release) without leaking business logic into map SDKs.",
+      "type": "structural",
+      "phase": "P05",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/web-gis-products-map.md",
+        "references/mobile-gis-architecture.md"
+      ],
+      "acceptance_test_ids": [
+        "GIS-001",
+        "GIS-012",
+        "E-14"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-028"
+      ],
+      "notes": "Web GIS P05 scope delivered and verified T0/T1; cross-platform Mobile GIS P06 deliverables and headless browser E2E remain pending. P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-009",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§5.1 General Web UI & Frameworks (26 Libs + 17 Paths)",
+      "requirement_summary": "Reference & profile HTML/CSS/JS/TS, Vite, React, Next.js, Vue, Nuxt, Svelte/SvelteKit, Angular, Astro, Lit, Tailwind, shadcn/ui, Radix, MUI, TanStack Query/Table/Virtual, Zustand/Redux, Zod, RHF, i18next, D3/Observable, ECharts, Plotly, Storybook + 17 web UI paths.",
+      "type": "documentation",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/web-gis-architecture-selection.md",
+        "references/engine-capability-profiles.json"
+      ],
+      "acceptance_test_ids": [
+        "WEB-QA-02",
+        "WEB-QA-03",
+        "WEB-QA-04",
+        "WEB-QA-15"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-024"
+      ],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-010",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§5.2 2D Web Map Renderers (10 Engines + 18 Features)",
+      "requirement_summary": "Cover MapLibre GL JS, OpenLayers, Leaflet, ArcGIS JS SDK, Google Maps JS, Mapbox GL JS, Azure Maps, HERE Maps, MapTiler SDK JS, OpenLayers+QGIS Server and 18 Web GIS interactive map controls without confusing renderers with spatial analysis.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/web-gis-architecture-selection.md",
+        "skills/geospatial-web-mapping/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "GIS-010",
+        "WEB-QA-01",
+        "WEB-TPL-01",
+        "WEB-TPL-02"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-018"
+      ],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-011",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§5.3 JS Draw, Edit & Spatial Analysis (19 Libs + 22 Functions)",
+      "requirement_summary": "Cover Terra Draw, OL Draw/Modify/Snap, Leaflet.draw/Geoman, Mapbox GL Draw, MapLibre plugins, Turf.js/@turf/*, Proj4js, JSTS, polygon-clipping, martinez, rbush, Supercluster, earcut, geodesy, H3, S2, ol-ext + 22 required JS spatial operations.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/browser-geospatial-js-runtime.md"
+      ],
+      "acceptance_test_ids": [
+        "GIS-004",
+        "GIS-005",
+        "GIS-008",
+        "WEB-TPL-03",
+        "WEB-TPL-04"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-017"
+      ],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-012",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§5.4 Web File Formats & Cloud-Native I/O (29 Sources + Roundtrip)",
+      "requirement_summary": "Support GeoJSON RFC7946, KML/KMZ, togeojson/tokml, shpjs/shp-write, geopackage-js/android/ios, FlatGeobuf, GeoParquet, GeoArrow, DuckDB-Wasm, GeoTIFF.js, OL GeoTIFF, georaster/geoblaze, loaders.gl, GeoBuf, PMTiles, MBTiles, MVT, GPX, CSV+WKT, COPC/LAZ, 3D Tiles/glTF, STAC, Zarr/NetCDF, GeoPDF + mandatory format roundtrip test.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/browser-geospatial-js-runtime.md"
+      ],
+      "acceptance_test_ids": [
+        "GIS-001",
+        "GIS-007",
+        "GIS-012",
+        "WEB-QA-05",
+        "WEB-QA-13"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-017",
+        "REQ-EV2-023"
+      ],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-013",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§5.5 EO, Raster, Satellite & Time-Series Web GIS (17 Sources + 15 Tasks)",
+      "requirement_summary": "Cover TiTiler, rio-tiler, COG, STAC Browser/FastAPI/pgSTAC, Earth Search, Planetary Computer, NASA CMR/GIBS, USGS Landsat, Copernicus Data Space, GEE Client JS, ArcGIS ImageServer, maplibre-gl-raster, plotty + real acquisition date/band/NoData verification.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/browser-geospatial-js-runtime.md"
+      ],
+      "acceptance_test_ids": [
+        "GIS-009",
+        "GIS-013",
+        "WEB-TPL-05",
+        "WEB-TPL-06"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-021"
+      ],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-014",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§5.6 3D Web, Digital Twins, LiDAR & VR (17 Sources + 13 Checks)",
+      "requirement_summary": "Cover CesiumJS/Sandcastle/ion, Three.js + 3d-tiles-renderer-js, deck/loaders/luma.gl, kepler.gl, GeoLibre, Potree, iTowns, ol-cesium, 3D Tiles, glTF, CityJSON, 3D Gaussian Splatting, MapillaryJS + all 13 geodesy/Z-fighting/LOD/shadow tests.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/geospatial-3d-ar-mobile-web.md"
+      ],
+      "acceptance_test_ids": [
+        "WEB-QA-09",
+        "WEB-TPL-07",
+        "WEB-TPL-08",
+        "WEB-TPL-16",
+        "E-10",
+        "E-13"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-018",
+        "REQ-EV2-019"
+      ],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-015",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§5.7 Web GIS Apps & Printing (§5.8)",
+      "requirement_summary": "Document 17 reference Web GIS portals (MapStore2, Lizmap, QWC2 [not deprecated QWC], GeoNode, GeoNetwork, Mapbender, uMap, qgis2web, Kepler, GeoLibre, OpenGeoS, QGIS Server, pygeoapi, CKAN, TerriaJS, Cesium Stories, Mapillary demo) plus A4-A0 PDF/print comparison.",
+      "type": "documentation",
+      "phase": "P05",
+      "priority": "MEDIUM",
+      "affected_files": [
+        "references/web-gis-architecture-selection.md",
+        "references/gis-software-source-registry.md"
+      ],
+      "acceptance_test_ids": [
+        "WEB-TPL-02",
+        "WEB-TPL-10",
+        "WEB-TPL-15"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-042"
+      ],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-016",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§6 Web PWA, Offline Storage & OSM Tile Policy",
+      "requirement_summary": "Cover 17 PWA/local-first tools (MDN PWA, Workbox, Vite PWA, IndexedDB, Dexie, RxDB, PouchDB, SQLite-Wasm/OPFS, StorageManager, PowerSync, ElectricSQL, PMTiles/Protomaps, VersaTiles, OpenFreeMap, Martin); enforce ban on bulk OSM tile server scraping and test cold offline launch + conflict.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/web-mobile-offline-sync-contract.md"
+      ],
+      "acceptance_test_ids": [
+        "WEB-QA-06",
+        "WEB-QA-07",
+        "WEB-TPL-12",
+        "WEB-TPL-17",
+        "WEB-TPL-18"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-017",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§7.1 Mobile Frameworks & 12x10 Matrix",
+      "requirement_summary": "Document all 20 mobile frameworks/approaches (Kotlin/Compose, Coroutines, Java Android, Swift/SwiftUI, UIKit, Flutter, RN, Expo, KMP, Compose MP, Capacitor, Ionic, .NET MAUI, Qt/QML, NativeScript, Android/WKWebView, TWA, PWA) + 12 criteria x 10 platforms PoC decision matrix.",
+      "type": "functional",
+      "phase": "P06",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/mobile-gis-platform-selection.md",
+        "references/mobile-gis-stack-decision.md"
+      ],
+      "acceptance_test_ids": [
+        "MOB-TPL-01",
+        "MOB-TPL-02",
+        "MOB-TPL-03",
+        "MOB-TPL-04",
+        "MOB-TPL-05",
+        "MOB-TPL-06"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "No premature PASS from Flutter Web for mobile. P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-018",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§7.2 Mobile Map Engines & Disambiguation",
+      "requirement_summary": "Cover 21 mobile map SDKs (MapLibre Native/Compose/Flutter/RN, flutter_map/vector_map_tiles, Google Maps Android/iOS, Apple MapKit, Mapbox Android/iOS/Flutter, ArcGIS Kotlin/Swift/Flutter/Qt/.NET, osmdroid, Mapsforge, Mapsui, QField/Mergin Qt) distinguishing official Flutter MapLibre vs legacy maplibre_gl packages.",
+      "type": "structural",
+      "phase": "P06",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/mobile-gis-platform-selection.md",
+        "references/engine-capability-profiles.json"
+      ],
+      "acceptance_test_ids": [
+        "MOB-TPL-03",
+        "MOB-TPL-04",
+        "MOB-TPL-07"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-018"
+      ],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-019",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§7.3 Standard 12-Component End-to-End Field GIS Model",
+      "requirement_summary": "Standardize Field GIS architecture: Project Home, Map Canvas, Vector CRUD, Dynamic Bilingual Forms, Provenanced Location Capture, Local Atomic DB, Layer Formats, Offline Map Manager, Outbox Sync Engine, Security/Guest Mode, Safe Share/Export, Signed Release.",
+      "type": "structural",
+      "phase": "P06",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/mobile-gis-architecture.md",
+        "skills/gis-mobile-application-development/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "MOB-QA-06",
+        "MOB-QA-07",
+        "MOB-QA-08",
+        "MOB-QA-15",
+        "MOB-TPL-15",
+        "MOB-TPL-16"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-020",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§7.4 Android Native GIS Stack (18 Libs + 13 Edge Cases)",
+      "requirement_summary": "Cover Kotlin/Compose, Room, WorkManager, DataStore, CameraX, SAF, LocationManager, FusedLocation, Raw GNSS, BLE, USB Host, SensorManager, Keystore, App Links, Baseline Profiles, Emulator, AAB + 13 OS/hardware edge cases (mock GPS, process death, battery saver, missing Play Services).",
+      "type": "functional",
+      "phase": "P06",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/mobile-gis-platform-selection.md"
+      ],
+      "acceptance_test_ids": [
+        "MOB-QA-01",
+        "MOB-QA-03",
+        "MOB-QA-07",
+        "MOB-QA-11",
+        "MOB-QA-16",
+        "MOB-TPL-01"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-021",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§7.5 iOS/iPadOS Native GIS & Apple Toolchain Gate",
+      "requirement_summary": "Cover SwiftUI, MapKit, CoreLocation/Motion/Bluetooth, AVFoundation, PhotosUI, DocumentPicker, SwiftData/SQLite/GRDB/GeoPackage, Keychain, BackgroundTasks, ARKit GeoTracking, Xcode/TestFlight/AppStore; strictly block claiming iOS PASS from Windows without macOS/Xcode.",
+      "type": "compatibility",
+      "phase": "P06",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/mobile-gis-platform-selection.md",
+        "references/web-mobile-testing-release-guide.md"
+      ],
+      "acceptance_test_ids": [
+        "MOB-QA-02",
+        "MOB-TPL-02"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Explicit Windows host constraint recorded. P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-022",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§7.6-7.9 Flutter, React Native/Expo, KMP & Capacitor Hybrid",
+      "requirement_summary": "Cover 23 Flutter/Dart packages + Flutter PoC, 13 React Native/Expo packages + mandatory Dev Build Background Location PoC, KMP commonMain/androidMain/iosMain split + MapLibre Compose, and Capacitor hybrid hardware/GPU bounds.",
+      "type": "functional",
+      "phase": "P06",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/mobile-gis-platform-selection.md",
+        "references/mobile-gis-stack-decision.md"
+      ],
+      "acceptance_test_ids": [
+        "MOB-TPL-03",
+        "MOB-TPL-04",
+        "MOB-TPL-05",
+        "MOB-TPL-06"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-023",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§8.1-8.4 GNSS, RTK, Sensors & Geospatial AR",
+      "requirement_summary": "Enforce 14 location provenance/accuracy layers, RTKLIB/NTRIP/NMEA/Raw GNSS distinction (no fake cm claims), 19 optional hardware interfaces w/ EXIF & deletion controls, and ARCore Geospatial/ARKit ARGeoAnchor tests.",
+      "type": "functional",
+      "phase": "P06",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/mobile-gis-device-gnss-rtk.md",
+        "references/geospatial-3d-ar-mobile-web.md"
+      ],
+      "acceptance_test_ids": [
+        "GIS-015",
+        "MOB-QA-04",
+        "MOB-QA-05",
+        "MOB-QA-10",
+        "MOB-TPL-08",
+        "MOB-TPL-09",
+        "MOB-TPL-14"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-024",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§9 Reference Mobile Apps & 9-Step Integrated Sample",
+      "requirement_summary": "Catalog 19 benchmark mobile field apps (QField, Mergin, Input-legacy, ODK Collect/Central/Enketo, KoboToolbox, OpenMapKit, OsmAnd, Organic Maps, CoMaps, StreetComplete, Every Door, Vespucci, MapSwipe, Transistorsoft, ArcGIS Field Maps/Survey123/QuickCapture) + 9-step integrated mobile sample.",
+      "type": "documentation",
+      "phase": "P06",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/mobile-gis-architecture.md",
+        "examples/mobile-gis/"
+      ],
+      "acceptance_test_ids": [
+        "MOB-TPL-07",
+        "MOB-TPL-10",
+        "MOB-TPL-15"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-025",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§10.1-10.4 Backend, Spatial DBs, OGC APIs, Routing & IoT",
+      "requirement_summary": "Cover 10 Spatial DBs (PostGIS, SpatiaLite, GeoPackage, Room/SQLDelight, GRDB, DuckDB, GeoParquet, S3/MinIO, Redis/Valkey, Supabase), 21 APIs/servers (OGC API Features/Tiles/Maps/Processes, WMS/WFS/WCS/WMTS, GeoServer, QGIS Server, pygeoapi, MapServer, Martin, pg_tileserv/featureserv, TiTiler, Terracotta, rio-tiler, FastAPI+GeoAlchemy2, Node/NestJS, GeoDjango, Sedona, GeoMesa), 10 Geocoding/Routing systems (Nominatim, Photon, Pelias, OSRM, Valhalla, GraphHopper, ORS, OTP, GTFS), and WS/MQTT/SensorThings/FROST/Geofencing/FCM w/ mandatory API security.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/web-gis-architecture-selection.md",
+        "references/engine-capability-profiles.json"
+      ],
+      "acceptance_test_ids": [
+        "WEB-QA-08",
+        "WEB-QA-14",
+        "WEB-TPL-09",
+        "WEB-TPL-10",
+        "WEB-TPL-11",
+        "WEB-TPL-13",
+        "WEB-TPL-14",
+        "MOB-TPL-11"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-022",
+        "REQ-EV2-023"
+      ],
+      "notes": "Web GIS P05 scope delivered and verified T0/T1; cross-platform Mobile GIS P06 deliverables and headless browser E2E remain pending. P06 Mobile deliverables & T1 contracts completed cleanly; remains PARTIAL pending P08/P10 cross-repo integration or unavailable live hardware/runtime execution."
+    },
+    {
+      "req_id": "REQ-WM-026",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§11.1-11.3 Unified Offline-First & Sync Protocol",
+      "requirement_summary": "Implement 8 storage resilience layers and standardized Sync state-machine with 15 vector op contract fields (project_id..sync_state), rejecting blind last-write-wins, backed by 6 failure-fixture classes.",
+      "type": "functional",
+      "phase": "P06",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/web-mobile-offline-sync-contract.md",
+        "examples/web-mobile-shared-fixtures/"
+      ],
+      "acceptance_test_ids": [
+        "GIS-004",
+        "GIS-007",
+        "MOB-QA-06",
+        "MOB-QA-07",
+        "MOB-QA-08",
+        "MOB-QA-09",
+        "MOB-QA-18",
+        "WEB-QA-06"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-016"
+      ],
+      "notes": "Shared between P05 Web PWA & P06 Mobile. P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-027",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§12 GeoAI On-Device & In-Browser",
+      "requirement_summary": "Integrate 13 GeoAI runtimes/tools (ONNX Runtime Web/Mobile, Google LiteRT, TensorFlow.js, MediaPipe, Transformers.js, WebGPU, WebAssembly, TorchGeo, SAM, Grounding DINO, OpenCV/OpenCV.js) separating local/server/cloud, respecting consent, GPU fallback, and affine CRS calibration.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/web-mobile-geoai-options.md"
+      ],
+      "acceptance_test_ids": [
+        "MOB-TPL-18",
+        "WEB-TPL-04"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-021"
+      ],
+      "notes": "Web GIS P05 scope delivered and verified T0/T1; cross-platform Mobile GIS P06 deliverables and headless browser E2E remain pending. P06 Mobile deliverables & T1 contracts completed cleanly; remains PARTIAL pending P08/P10 cross-repo integration or unavailable live hardware/runtime execution."
+    },
+    {
+      "req_id": "REQ-WM-028",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§13 Web & Mobile External Agent Skills",
+      "requirement_summary": "Audit & quarantine 15 Web/Mobile external agent skills (maplibre-agent-skills, googlemaps/agent-skills, android/skills, Esri/esri-developer-agent-skills, modern-web-guidance, ui-ux-pro-max, vercel-labs, Flutter AI, Dart, Apple, Expo, Playwright, OWASP) with pinned SHA/permissions in unified external-agent-skills-registry.json.",
+      "type": "security",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/external-agent-skills-registry.json"
+      ],
+      "acceptance_test_ids": [
+        "E22",
+        "E-35"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-045"
+      ],
+      "notes": "Absorbs 0006/SOURCES.md records 0002-0006. Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-029",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§14 Commercial & Free-Tier Providers (26 Vendors)",
+      "requirement_summary": "Audit 26 providers (Esri, Google, Mapbox, MapTiler, Apple, HERE, Azure Maps, AWS Location, Stadia, Geoapify, TomTom, ORS, GraphHopper, Mapillary, Cesium ion, GEE, Planetary Computer, Copernicus, NASA, USGS, OSM, OpenFreeMap, Protomaps, OpenTopography, geoBoundaries, Natural Earth) using 18-field vendor decision model & no-key test defaults.",
+      "type": "security",
+      "phase": "P05",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/web-mobile-vendor-license-audit.md",
+        "references/free-first-policy.md"
+      ],
+      "acceptance_test_ids": [
+        "E13",
+        "E-31",
+        "E-46",
+        "E-47",
+        "WEB-QA-08",
+        "MOB-QA-20"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-029"
+      ],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-030",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§15.1 & §15.3 Web GIS Templates WEB-01..WEB-18",
+      "requirement_summary": "Specify & validate all 18 Web GIS templates WEB-01 through WEB-18 with mandatory 6-subfolder layout (fixtures, spec, tests, evidence, docs, safety) & independent readback.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "examples/web-gis/",
+        "tests/web-gis/",
+        "docs/WEB_GIS_GUIDE.md"
+      ],
+      "acceptance_test_ids": [
+        "WEB-TPL-01",
+        "WEB-TPL-02",
+        "WEB-TPL-03",
+        "WEB-TPL-04",
+        "WEB-TPL-05",
+        "WEB-TPL-06",
+        "WEB-TPL-07",
+        "WEB-TPL-08",
+        "WEB-TPL-09",
+        "WEB-TPL-10",
+        "WEB-TPL-11",
+        "WEB-TPL-12",
+        "WEB-TPL-13",
+        "WEB-TPL-14",
+        "WEB-TPL-15",
+        "WEB-TPL-16",
+        "WEB-TPL-17",
+        "WEB-TPL-18"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "All 18 templates preserved verbatim from r3 §15.1. Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-031",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§15.2 & §15.3 Mobile GIS Templates MOB-01..MOB-20",
+      "requirement_summary": "Specify & validate all 20 Mobile GIS templates MOB-01 through MOB-20 with balanced depth matching Web, bilingual docs, synthetic fixtures, and platform-honest T0-T4 verdicts.",
+      "type": "functional",
+      "phase": "P06",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "examples/mobile-gis/",
+        "tests/mobile-gis/",
+        "docs/MOBILE_GIS_GUIDE.md"
+      ],
+      "acceptance_test_ids": [
+        "MOB-TPL-01",
+        "MOB-TPL-02",
+        "MOB-TPL-03",
+        "MOB-TPL-04",
+        "MOB-TPL-05",
+        "MOB-TPL-06",
+        "MOB-TPL-07",
+        "MOB-TPL-08",
+        "MOB-TPL-09",
+        "MOB-TPL-10",
+        "MOB-TPL-11",
+        "MOB-TPL-12",
+        "MOB-TPL-13",
+        "MOB-TPL-14",
+        "MOB-TPL-15",
+        "MOB-TPL-16",
+        "MOB-TPL-17",
+        "MOB-TPL-18",
+        "MOB-TPL-19",
+        "MOB-TPL-20"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "All 20 templates preserved verbatim from r3 §15.2. P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-032",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§16.1 Measured Performance & Reliability Budgets",
+      "requirement_summary": "Define measured Web vs Mobile budgets across all 10 domains (First launch, Large data rendering, Raster, 3D, Search/edit, Offline quotas, API limits, Network throttling, Crash recovery, Accessibility) with GPU fallback and zero invented FPS/MB numbers.",
+      "type": "performance",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "docs/PERFORMANCE_RELIABILITY.md",
+        "references/web-gis-architecture-selection.md",
+        "references/web-mobile-testing-release-guide.md"
+      ],
+      "acceptance_test_ids": [
+        "GIS-011",
+        "WEB-QA-12",
+        "MOB-QA-16"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-027"
+      ],
+      "notes": "Web GIS P05 scope delivered and verified T0/T1; cross-platform Mobile GIS P06 deliverables and headless browser E2E remain pending. P06 Mobile deliverables & T1 contracts completed cleanly; remains PARTIAL pending P08/P10 cross-repo integration or unavailable live hardware/runtime execution."
+    },
+    {
+      "req_id": "REQ-WM-033",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§16.2 UI/UX, Arabic RTL/BiDi, Cartography & WCAG 2.2",
+      "requirement_summary": "Enforce mobile-first touch layouts (safe areas/bottom sheets), Arabic RTL UI with LTR coordinate readouts, TalkBack/VoiceOver/keyboard traversal, tabular feature fallback, and authentic time sliders.",
+      "type": "compatibility",
+      "phase": "P06",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/web-gis-architecture-selection.md",
+        "references/web-mobile-testing-release-guide.md"
+      ],
+      "acceptance_test_ids": [
+        "GIS-007",
+        "GIS-010",
+        "GIS-013",
+        "WEB-QA-03",
+        "WEB-QA-04",
+        "WEB-QA-15",
+        "MOB-QA-13",
+        "MOB-QA-14"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-034",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§16.3-16.4 Mobile Signing/Release & Web Delivery Security",
+      "requirement_summary": "Enforce separate Android/iOS build-signing-privacy contracts (AAB/Play Data Safety vs Xcode/IPA/Privacy Manifest) and Web delivery security (GitHub Pages subpath, CSP/CORS/COOP/COEP, no secrets in frontend bundle).",
+      "type": "security",
+      "phase": "P06",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/web-mobile-testing-release-guide.md",
+        "references/web-mobile-vendor-license-audit.md"
+      ],
+      "acceptance_test_ids": [
+        "WEB-QA-08",
+        "WEB-QA-11",
+        "MOB-QA-01",
+        "MOB-QA-02",
+        "MOB-QA-17"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-035",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§16.5 OWASP Threat Model & Licensing Matrix",
+      "requirement_summary": "Mitigate all 10 threat classes (API key exposure, untrusted zip/XXE, popup XSS, geolocation PII, illegal tile scraping, auth tokens, supply chain CVE/SBOM, SQL/FFI path injection, AI cloud upload, offline sync corruption) mapped to OWASP ASVS/MASVS/MASTG.",
+      "type": "security",
+      "phase": "P05",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/web-mobile-vendor-license-audit.md",
+        "skills/gis-security-guardian/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "WEB-QA-08",
+        "WEB-QA-10",
+        "MOB-QA-10",
+        "MOB-QA-17",
+        "MOB-QA-19",
+        "MOB-QA-20",
+        "ANTI-REG-010"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-029"
+      ],
+      "notes": "Web GIS P05 scope delivered and verified T0/T1; cross-platform Mobile GIS P06 deliverables and headless browser E2E remain pending. P06 Mobile deliverables & T1 contracts completed cleanly; remains PARTIAL pending P08/P10 cross-repo integration or unavailable live hardware/runtime execution."
+    },
+    {
+      "req_id": "REQ-WM-036",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§17.1-17.2 Shared Foundation Tasks T1-T15",
+      "requirement_summary": "Execute preserved r1 tasks T1-T6 upgraded to r3 plus Shared Foundation tasks T7-T15 (36-skill gap audit, bilingual stack tree, CRS/format contract, PostGIS/OGC diagrams, vendor audit, RTL UX, offline/sync fixtures, T0-T4 QA, catalog schema updater).",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/",
+        "skills/",
+        "tests/shared-gis-fixtures/"
+      ],
+      "acceptance_test_ids": [
+        "GIS-001",
+        "GIS-002",
+        "GIS-003",
+        "GIS-007",
+        "GIS-012",
+        "ANTI-REG-002"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-015"
+      ],
+      "notes": "Web GIS P05 scope delivered and verified T0/T1; cross-platform Mobile GIS P06 deliverables and headless browser E2E remain pending. P06 Mobile deliverables & T1 contracts completed cleanly; remains PARTIAL pending P08/P10 cross-repo integration or unavailable live hardware/runtime execution."
+    },
+    {
+      "req_id": "REQ-WM-037",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§17.3 Web Workstream Tasks T16-T25",
+      "requirement_summary": "Execute Web GIS workstream tasks T16-T25 covering TS architecture/state, layers/search/identify, geometry edit/analysis, format importers, COG/STAC, Cesium/deck.gl 3D, OGC/PostGIS backend, PWA offline, realtime/routing, Playwright Perf/A11y/subpath deploy.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "skills/geospatial-web-mapping/SKILL.md",
+        "examples/web-gis/",
+        "tests/web-gis/"
+      ],
+      "acceptance_test_ids": [
+        "WEB-QA-01",
+        "WEB-QA-02",
+        "WEB-QA-03",
+        "WEB-QA-05",
+        "WEB-QA-06",
+        "WEB-QA-11",
+        "WEB-QA-12"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-038",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§17.4 Mobile Workstream Tasks T26-T36",
+      "requirement_summary": "Execute Mobile GIS workstream tasks T26-T36 covering Android Kotlin/Compose, iOS SwiftUI, Flutter, RN/Expo, KMP/MapLibre Compose, Capacitor, GNSS/RTK/sensors, Field forms/GPKG/attachments, offline packs/sync, Mobile 3D/AR/AI, signing/privacy/RTL QA.",
+      "type": "functional",
+      "phase": "P06",
+      "priority": "HIGH",
+      "affected_files": [
+        "skills/gis-mobile-application-development/SKILL.md",
+        "examples/mobile-gis/",
+        "tests/mobile-gis/"
+      ],
+      "acceptance_test_ids": [
+        "MOB-QA-01",
+        "MOB-QA-02",
+        "MOB-QA-03",
+        "MOB-QA-04",
+        "MOB-QA-05",
+        "MOB-QA-06",
+        "MOB-QA-12",
+        "MOB-QA-14",
+        "MOB-QA-17"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-039",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§17.5 Optional Follow-ups T37-T42",
+      "requirement_summary": "Cover conditional tasks T37-T42: Cross-platform UI benchmark, Cloud-native EO/AI worker, Multiuser opt-in field tracking, Explorer/gallery bilingual cards, external skill pinning, and release cleanup.",
+      "type": "functional",
+      "phase": "P08",
+      "priority": "MEDIUM",
+      "affected_files": [
+        "explorer.html",
+        "references/external-agent-skills-registry.json",
+        "CHANGELOG.md"
+      ],
+      "acceptance_test_ids": [
+        "ANTI-REG-006",
+        "ANTI-REG-007",
+        "ANTI-REG-009"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P08 T0/T1 verified via intent_router, explorer/wizard/index hubs, role registry, Archify validator link, 0006 archival, and test_p08_repo_integration."
+    },
+    {
+      "req_id": "REQ-WM-040",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§19.1-19.5 Shared, Web & Mobile QA Matrices + Test Tools + T0-T4",
+      "requirement_summary": "Execute & report GIS-001..015, WEB-QA-01..15, MOB-QA-01..20 using explicit PASS/FAIL/NOT RUN/BLOCKED verdicts, SHA, versions, and 16 test tool categories.",
+      "type": "testing",
+      "phase": "P10",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "plans/active/0007_Master-Integration/05_Master_Test_Matrix.json",
+        "docs/WEB_GIS_GUIDE.md",
+        "docs/MOBILE_GIS_GUIDE.md",
+        "docs/WEB_MOBILE_GUIDE.ar.md"
+      ],
+      "acceptance_test_ids": [
+        "GIS-001",
+        "GIS-012",
+        "WEB-QA-01",
+        "WEB-QA-06",
+        "MOB-QA-01",
+        "MOB-QA-02",
+        "MOB-QA-06",
+        "MOB-QA-15"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "QA matrix and 023_QA_REPORT.md record PASS/PARTIAL/NOT_RUN honestly across Node, SQLite WAL, and offline validators (native browser/device NOT_RUN)."
+    },
+    {
+      "req_id": "REQ-WM-041",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§20.1 Quantitative & Qualitative KPIs",
+      "requirement_summary": "Satisfy all 9 KPIs: 22-product coverage explained, 100% curated entries w/ canonical provenance, true GIS roundtrip per core path, zero silent offline loss, separate Android/iOS verdicts, tested Arabic RTL, zero-key tests, zero secret/PII leakage, honest measured pass rates.",
+      "type": "testing",
+      "phase": "P11",
+      "priority": "HIGH",
+      "affected_files": [
+        "reports/plugin-lifecycle/",
+        "plans/active/0007_Master-Integration/02_Master_Requirements_Traceability_Matrix.json"
+      ],
+      "acceptance_test_ids": [
+        "ANTI-REG-006",
+        "ANTI-REG-009",
+        "ANTI-REG-010"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Curated coverage, 15-field contracts, offline SQLite WAL + Node tests, BiDi RTL, zero-key tests, and secret hygiene verified; native WebGL/Android/iOS T3-T4 retain NOT_RUN."
+    },
+    {
+      "req_id": "REQ-GOV-001",
+      "source_plan": "Cross_Plan_Governance",
+      "source_section": "User Req #8 & AGENTS.md Roles Sequence",
+      "requirement_summary": "Enforce strict sequential/independent Programmer -> Independent Reviewer -> Tester -> Acceptance workflow on every phase P00-P11 without self-certification.",
+      "type": "governance",
+      "phase": "P00",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "AGENTS.md",
+        "references/engineering-role-registry.json",
+        "plans/active/0007_Master-Integration/MASTER_AGENT_PROMPT.md"
+      ],
+      "acceptance_test_ids": [
+        "ANTI-REG-009",
+        "ANTI-REG-010"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-PL-029"
+      ],
+      "notes": "Declare sequential role constraint honestly when run in single-agent context."
+    },
+    {
+      "req_id": "REQ-GOV-002",
+      "source_plan": "Cross_Plan_Governance",
+      "source_section": "User Req #8 & DoneProof",
+      "requirement_summary": "Require plan-bound DoneProof verification (verify_completion.py --plan + validate_evidence.py + validate_evidence_tiers.py) plus Agent Development Journal updates before marking any phase complete.",
+      "type": "testing",
+      "phase": "P11",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/verify_completion.py",
+        "scripts/validate_evidence.py",
+        "scripts/development_journal.py",
+        ".agent-development-log/"
+      ],
+      "acceptance_test_ids": [
+        "E30",
+        "ANTI-REG-009",
+        "ANTI-REG-010"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Plan-bound DoneProof (07_Master_Reviewed_Plan.json), validate_evidence.py, validate_evidence_tiers.py, and append-only journal verified cleanly."
+    },
+    {
+      "req_id": "REQ-GOV-003",
+      "source_plan": "Cross_Plan_Governance",
+      "source_section": "User Req #9 & #10 Review-Before-Execution Gate",
+      "requirement_summary": "Complete Master Integration planning pack (01-07 files) in DRAFT first and prohibit any repo edits, installs, commits, or pushes until explicit owner approval.",
+      "type": "governance",
+      "phase": "P00",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "plans/active/0007_Master-Integration/"
+      ],
+      "acceptance_test_ids": [
+        "E33",
+        "PL-T19"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-040"
+      ],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-EV2-049",
+      "source_plan": "Engine_V2",
+      "source_section": "§2.1 Existing Project Inventory Gate",
+      "requirement_summary": "Inspect target project existing code, renderers, and installed libraries before proposing any new dependency or replacement.",
+      "type": "functional",
+      "phase": "P04",
+      "priority": "HIGH",
+      "affected_files": [
+        "skills/geospatial-engine-selection/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E-41"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-050",
+      "source_plan": "Engine_V2",
+      "source_section": "§2.1 End-User vs Developer Setup Distinction",
+      "requirement_summary": "Separate developer build toolchain requirements (CMake, compilers, SDKs, IDEs) from end-user portable/installer runtime requirements cleanly.",
+      "type": "documentation",
+      "phase": "P04",
+      "priority": "HIGH",
+      "affected_files": [
+        "scripts/recommend_stack.py",
+        "templates/TECHNOLOGY_SELECTION_REPORT.md"
+      ],
+      "acceptance_test_ids": [
+        "E29",
+        "E-30"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-051",
+      "source_plan": "Engine_V2",
+      "source_section": "§29.1 Component Dependency Relations & Cycle Detection",
+      "requirement_summary": "Model provides, requires (w/ version/ABI/host), wraps, binds, extends, replaces, conflicts, compatible-with, tested-with, alternative-to, reference-only edges and reject startup cycles.",
+      "type": "structural",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/engine-capability-profiles.json",
+        "scripts/validate_engine_profiles.py"
+      ],
+      "acceptance_test_ids": [
+        "E17",
+        "E24",
+        "E-34"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-052",
+      "source_plan": "Engine_V2",
+      "source_section": "§25.1 CRS Decision Accuracy Guardrails",
+      "requirement_summary": "Validate axis order, geographic vs projected, meters vs degrees, vertical datum, epoch, PROJ grids, antimeridian/polar behavior, and reject Web Mercator for global metric area calculations.",
+      "type": "testing",
+      "phase": "P07",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "skills/coordinate-reference-systems/SKILL.md",
+        "examples/engine-selection/crs-conversion/"
+      ],
+      "acceptance_test_ids": [
+        "E08",
+        "E09",
+        "E-01",
+        "E-02",
+        "E-03",
+        "E-11"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-036"
+      ],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-053",
+      "source_plan": "Engine_V2",
+      "source_section": "§25.2 3D Engine Validation Guardrails",
+      "requirement_summary": "Verify ECEF/ENU precision, floating origin/double coords, dateline, terrain LOD skirts, NoData tiles, GPU context loss, picking, occlusion, and time lighting for 3D engines.",
+      "type": "testing",
+      "phase": "P07",
+      "priority": "HIGH",
+      "affected_files": [
+        "examples/engine-selection/virtual-globe/",
+        "references/engine-integration-patterns.md"
+      ],
+      "acceptance_test_ids": [
+        "E09",
+        "E-10",
+        "E-12",
+        "E-13",
+        "E-15"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-014"
+      ],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-054",
+      "source_plan": "Engine_V2",
+      "source_section": "§25.3 Cartography Fidelity & Loss Reporting",
+      "requirement_summary": "Separate cartographic style conversion across MapLibre Style JSON, QGIS QML, and Esri CIM-spec with mandatory style loss reports and HarfBuzz/FriBidi Arabic text checks.",
+      "type": "compatibility",
+      "phase": "P07",
+      "priority": "HIGH",
+      "affected_files": [
+        "skills/gis-cartography-symbology/SKILL.md",
+        "references/engine-integration-patterns.md"
+      ],
+      "acceptance_test_ids": [
+        "E28",
+        "E-29",
+        "E-38",
+        "GIS-010"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-055",
+      "source_plan": "Engine_V2",
+      "source_section": "§25.4 Urban/CAD Procedural Architecture",
+      "requirement_summary": "Separate procedural DSL/JSON rule grammar (non-arbitrary-code) from B-rep CAD kernels (OCCT/Clipper2/CGAL) and IFC/CityJSON export, avoiding treating CityEngine as having a single monolithic OSS drop-in.",
+      "type": "structural",
+      "phase": "P07",
+      "priority": "HIGH",
+      "affected_files": [
+        "examples/engine-selection/city-engine/",
+        "references/urban-simulation-engines.md"
+      ],
+      "acceptance_test_ids": [
+        "E10",
+        "E-16",
+        "E-17",
+        "E-18"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-056",
+      "source_plan": "Engine_V2",
+      "source_section": "§25.5 Remote Sensing Scientific Integrity",
+      "requirement_summary": "Separate catalog, calibration, atmospheric correction, QA masks, band mapping, spectral formulas, resampling, and target grid; prevent loading heavy SNAP/Java runtime when Rasterio/GDAL suffices.",
+      "type": "testing",
+      "phase": "P07",
+      "priority": "HIGH",
+      "affected_files": [
+        "examples/engine-selection/remote-sensing/",
+        "skills/remote-sensing-pipelines/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E11",
+        "E-06",
+        "E-07",
+        "E-22",
+        "E-23"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-013"
+      ],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-057",
+      "source_plan": "Engine_V2",
+      "source_section": "§25.6 Hydrology, Climate & Network Simulation Guardrails",
+      "requirement_summary": "Separate steady-state vs dynamic models, conservation/units, SWMM hydraulics vs D8 flow accumulation, climate ET/VPD methods, and directed road turn/one-way restrictions.",
+      "type": "testing",
+      "phase": "P07",
+      "priority": "HIGH",
+      "affected_files": [
+        "skills/terrain-hydrology-lidar/SKILL.md",
+        "references/urban-simulation-engines.md"
+      ],
+      "acceptance_test_ids": [
+        "E-19",
+        "E-20",
+        "E-21"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-058",
+      "source_plan": "Engine_V2",
+      "source_section": "§31.1 Cross-Engine Boundary Contracts",
+      "requirement_summary": "Define DatasetRef (opaque IDs avoiding raw untrusted client paths), FeatureIdentity (UUID+FID preservation), RasterRef, Renderer canonical view state, and Processing request/cancel/provenance contracts.",
+      "type": "structural",
+      "phase": "P07",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/engine-integration-patterns.md",
+        "references/ui-engine-architecture-contract.md"
+      ],
+      "acceptance_test_ids": [
+        "E27",
+        "E-14",
+        "E-32",
+        "E-33"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-008"
+      ],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-059",
+      "source_plan": "Engine_V2",
+      "source_section": "§28.1 Safe GitHub Verification Protocol",
+      "requirement_summary": "Enforce read-only metadata/tags checks via verified org URLs, cache per URL+ref+etag, zero auto-running external setup scripts, and privacy protection (never leak user prompts to external search).",
+      "type": "security",
+      "phase": "P04",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/engine_repo_metadata.py",
+        "skills/gis-security-guardian/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E18",
+        "E22",
+        "E32"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P04 (008_P04_DONEPROOF.json); live api.github.com queries, external SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-060",
+      "source_plan": "Engine_V2",
+      "source_section": "§14.4 Architecture Visualization Integration",
+      "requirement_summary": "Link architecture decision diagrams to Archify / existing validate_architecture_flow.py rather than generating disconnected non-validated visuals.",
+      "type": "structural",
+      "phase": "P08",
+      "priority": "MEDIUM",
+      "affected_files": [
+        "skills/gis-architecture-visualization/SKILL.md",
+        "scripts/validate_architecture_flow.py"
+      ],
+      "acceptance_test_ids": [
+        "E23",
+        "E24"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "P08 T0/T1 verified via intent_router, explorer/wizard/index hubs, role registry, Archify validator link, 0006 archival, and test_p08_repo_integration."
+    },
+    {
+      "req_id": "REQ-WM-042",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§11.2 Sync Operation Contract",
+      "requirement_summary": "Standardize sync payload fields (project_id, layer_id, feature_id, op_id, base_revision, geometry, attributes, crs, client_timestamp, server_timestamp, device_id, attachment_manifest, deletion_tombstone, checksum, sync_state) + idempotency.",
+      "type": "structural",
+      "phase": "P06",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "references/web-mobile-offline-sync-contract.md"
+      ],
+      "acceptance_test_ids": [
+        "MOB-QA-08",
+        "MOB-QA-15",
+        "WEB-TPL-17"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-026"
+      ],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-043",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§5.4 & §19.1 Format Interop Roundtrip Gate",
+      "requirement_summary": "Require import -> display -> edit -> export -> independent OGR/QGIS readback checking geometry, CRS, IDs, field types, Arabic UTF-8, nulls, Z/M, time, attachments, and loss report.",
+      "type": "testing",
+      "phase": "P05",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "tests/shared-gis-fixtures/",
+        "references/browser-geospatial-js-runtime.md"
+      ],
+      "acceptance_test_ids": [
+        "GIS-001",
+        "GIS-007",
+        "GIS-012",
+        "WEB-QA-05",
+        "MOB-QA-15"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-047"
+      ],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-044",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§13.2 Candidate External Skill Schema",
+      "requirement_summary": "Register Web/Mobile upstream agent skill candidates using standardized candidate-review-only schema (source, verified_ref, license, capabilities, new_value_vs_existing, permissions_reviewed, approved_for_install).",
+      "type": "security",
+      "phase": "P03",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/external-agent-skills-registry.json",
+        "New Skill/"
+      ],
+      "acceptance_test_ids": [
+        "E22",
+        "E-35"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-045"
+      ],
+      "notes": "Verified T0/T1 in P03 (006_P03_DONEPROOF.json); upstream SAST & native T2-T4 remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-045",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§12.1 GeoAI Agent Safeguards",
+      "requirement_summary": "Require metric projected CRS & user confirmation before GeoAI spatial writes (e.g., 500m school buffer), block hallucinated URLs/CRS, and isolate MCP tool calls.",
+      "type": "security",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/web-mobile-geoai-options.md",
+        "skills/geospatial-ai-agents/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "WEB-QA-10",
+        "MOB-TPL-18"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-046",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§20 & §18.2 Bilingual Documentation Guides",
+      "requirement_summary": "Produce docs/WEB_GIS_GUIDE.md, docs/MOBILE_GIS_GUIDE.md, and docs/WEB_MOBILE_GUIDE.ar.md aligned with Explorer cards generated directly from canonical JSON.",
+      "type": "documentation",
+      "phase": "P11",
+      "priority": "HIGH",
+      "affected_files": [
+        "docs/WEB_GIS_GUIDE.md",
+        "docs/MOBILE_GIS_GUIDE.md",
+        "docs/WEB_MOBILE_GUIDE.ar.md",
+        "explorer.html"
+      ],
+      "acceptance_test_ids": [
+        "ANTI-REG-006",
+        "ANTI-REG-007"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-PL-034",
+        "REQ-EV2-039"
+      ],
+      "notes": "docs/WEB_GIS_GUIDE.md delivered in P05; docs/MOBILE_GIS_GUIDE.md and docs/WEB_MOBILE_GUIDE.ar.md scheduled in P06/P11. P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-047",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§6.1 Browser Storage Persistence Caveats",
+      "requirement_summary": "Handle storage.persist() non-guarantee, iOS Safari quotas, COOP/COEP for SQLite-Wasm OPFS, and manual backup export/re-import recovery when SW cache or IndexedDB is evicted.",
+      "type": "functional",
+      "phase": "P05",
+      "priority": "HIGH",
+      "affected_files": [
+        "references/web-mobile-offline-sync-contract.md"
+      ],
+      "acceptance_test_ids": [
+        "WEB-QA-06",
+        "WEB-TPL-12",
+        "WEB-TPL-17"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "Maps type to functional/reliability constraint cleanly. Verified T0/T1 in P05 via 7 references, pure-ESM modules, WEB-01..WEB-18 specs/slices, Node web_gis_contract.test.mjs, and tests.test_web_gis_expansion; headless Chromium/live services NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-048",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§19.4 Multi-Platform Test Tool Matrix",
+      "requirement_summary": "Integrate guidance for Playwright/Cypress, Vitest/Jest, axe-core/Lighthouse, Newman/pytest, JUnit/Espresso/UIAutomator/Compose, XCTest, flutter_test, RNTL/Maestro, Detox/Appium, OSV/ZAP, DevTools/Profilers cleanly.",
+      "type": "testing",
+      "phase": "P06",
+      "priority": "MEDIUM",
+      "affected_files": [
+        "references/web-mobile-testing-release-guide.md"
+      ],
+      "acceptance_test_ids": [
+        "WEB-QA-01",
+        "MOB-QA-01",
+        "MOB-QA-02"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-046"
+      ],
+      "notes": "P06 T0/T1 verified via mobile references, SQLite/GNSS/15-field core, MOB-01..MOB-20, bilingual guides, and 10+5 unittest suites; native Android/iOS SDK builds & physical hardware NOT RUN."
+    },
+    {
+      "req_id": "REQ-EV2-061",
+      "source_plan": "Engine_V2",
+      "source_section": "§19 Delivery Report Package",
+      "requirement_summary": "Produce numbered verification reports (baseline, taxonomy/catalog, architecture/reuse, implementation, independent review, QA matrix, final acceptance) unified inside existing reports/plugin-lifecycle & .agent-development-log structure.",
+      "type": "documentation",
+      "phase": "P11",
+      "priority": "HIGH",
+      "affected_files": [
+        "reports/plugin-lifecycle/",
+        ".agent-development-log/"
+      ],
+      "acceptance_test_ids": [
+        "ANTI-REG-009",
+        "ANTI-REG-010"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-PL-033"
+      ],
+      "notes": "Unified numbered reports/plugin-lifecycle/000..026 and append-only .agent-development-log records maintained cleanly."
+    },
+    {
+      "req_id": "REQ-EV2-062",
+      "source_plan": "Engine_V2",
+      "source_section": "§34 Quality Gate over Raw Link Count",
+      "requirement_summary": "Verify that 200+ candidate links alone never pass acceptance unless accompanied by canonical URLs, version/ref, license/security status, selection scripts, playbooks, and passing tests.",
+      "type": "governance",
+      "phase": "P10",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/validate_engine_profiles.py",
+        "plans/active/0007_Master-Integration/05_Master_Test_Matrix.json"
+      ],
+      "acceptance_test_ids": [
+        "E24",
+        "E30",
+        "E35",
+        "E36"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [],
+      "notes": "461 profiles linked 1:1 with canonical URLs, scripts (discover/compare/recommend/validate), templates, and passing test_p10 assertions."
+    },
+    {
+      "req_id": "REQ-EV2-063",
+      "source_plan": "Engine_V2",
+      "source_section": "§20 DoD Checklist Items",
+      "requirement_summary": "Confirm final DoD: non-biased multi-engine advice, preserves working renderers/UI when unchanged, routes clean-room vs fork vs plugin correctly, and honors user finality.",
+      "type": "governance",
+      "phase": "P11",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "plans/active/0007_Master-Integration/01_Master_Integration_Plan.md",
+        "skills/geospatial-engine-selection/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E01",
+        "E02",
+        "E06",
+        "E31",
+        "E-41"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-GOV-002"
+      ],
+      "notes": "Non-biased multi-engine advice, renderer preservation (E-41), clean-room vs fork separation, and user approval finality verified."
+    },
+    {
+      "req_id": "REQ-PL-036",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§16-§17 Lifecycle Final DoD",
+      "requirement_summary": "Confirm Plugin DoD: all platforms valid/status-accurate, Update-All-Plugins + BAT operational, no secrets in Git/ZIP/reports, extensible mock adapter proven, bilingual docs complete.",
+      "type": "governance",
+      "phase": "P11",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "Update-All-Plugins.ps1",
+        "GIS-Development-Skills-Plugins/",
+        "reports/plugin-lifecycle/"
+      ],
+      "acceptance_test_ids": [
+        "PL-T12",
+        "PL-T17",
+        "PL-T23",
+        "PL-T24",
+        "PL-T25"
+      ],
+      "status": "PARTIAL",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-GOV-002"
+      ],
+      "notes": "All 7 targets built, Update-All-Plugins + .bat + Update-My-Platforms operational, zero Git/ZIP secret leaks, extensible mock verified; live client CLIs/Remote Push remain NOT_RUN / MANUAL_ACTION_REQUIRED."
+    },
+    {
+      "req_id": "REQ-PL-037",
+      "source_plan": "Plugin_Lifecycle",
+      "source_section": "§8.2 Key-Leak Incident Protocol",
+      "requirement_summary": "On any detected leaked secret, halt publish, warn owner without printing secret value, rotate/revoke upstream, and require explicit authorization before Git history cleanup.",
+      "type": "security",
+      "phase": "P02",
+      "priority": "CRITICAL",
+      "affected_files": [
+        "scripts/security_audit.py",
+        "plugin-system/policy/DEVELOPMENT_LIFECYCLE.md"
+      ],
+      "acceptance_test_ids": [
+        "PL-T12",
+        "PL-T19",
+        "ANTI-REG-010"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-PL-028"
+      ],
+      "notes": ""
+    },
+    {
+      "req_id": "REQ-EV2-064",
+      "source_plan": "Engine_V2",
+      "source_section": "§11.4 Custom Composite Engine & Studio",
+      "requirement_summary": "Support building project-owned SDK/CLI/optional Engine Studio over composed licensed components without claiming sole authorship of underlying libraries or requiring dev tools for end-users.",
+      "type": "structural",
+      "phase": "P07",
+      "priority": "MEDIUM",
+      "affected_files": [
+        "references/engine-integration-patterns.md",
+        "skills/geospatial-engine-selection/SKILL.md"
+      ],
+      "acceptance_test_ids": [
+        "E29",
+        "E38",
+        "E-14"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-EV2-028"
+      ],
+      "notes": "P07 T0/T1 verified via source-fork/reference-ui/integration manuals, 8 example packages, Qt .ui fixture, and test_p07_source_reuse_and_examples; native Qt/QGIS builds remain NOT RUN."
+    },
+    {
+      "req_id": "REQ-WM-049",
+      "source_plan": "Web_Mobile_r3",
+      "source_section": "§1.2 & §22 Plan 0006 Continuity & Archival Handoff",
+      "requirement_summary": "Preserve all r1 T1-T6 deliverables inside 0006_Mobile-and-Web-GIS-Expansion until P05 absorption begins and formally archive 0006 with cross-references upon owner sign-off in P08.",
+      "type": "governance",
+      "phase": "P08",
+      "priority": "HIGH",
+      "affected_files": [
+        "plans/active/0006_Mobile-and-Web-GIS-Expansion/",
+        "plans/archive/"
+      ],
+      "acceptance_test_ids": [
+        "ANTI-REG-005",
+        "ANTI-REG-010"
+      ],
+      "status": "VERIFIED_T0_T1",
+      "conflicts_with": [],
+      "merges_with": [
+        "REQ-WM-001",
+        "REQ-GOV-003"
+      ],
+      "notes": "P08 T0/T1 verified via intent_router, explorer/wizard/index hubs, role registry, Archify validator link, 0006 archival, and test_p08_repo_integration."
+    }
+  ]
+}

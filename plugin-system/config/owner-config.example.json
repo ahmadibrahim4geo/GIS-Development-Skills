@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "note": "Copy to %LOCALAPPDATA%\\GIS-Development-Skills\\PluginSync\\owner-config.json (outside Git). Never store raw tokens, passwords, cookies, or personal details in this repository.",
+  "allowLocalSync": true,
+  "allowRemoteUpdate": false,
+  "allowPublicPublish": false,
+  "authMode": "official-cli-session",
+  "targets": {
+    "portable": {
+      "enabled": true,
+      "localSyncDir": ""
+    },
+    "codex": {
+      "enabled": false,
+      "cliCommand": "codex",
+      "listingAlias": ""
+    },
+    "claude-code": {
+      "enabled": false,
+      "cliCommand": "claude",
+      "scope": "user"
+    },
+    "antigravity": {
+      "enabled": false,
+      "cliCommand": "agy",
+      "localSyncDir": ""
+    },
+    "cursor": {
+      "enabled": false,
+      "localSyncDir": ""
+    }
+  }
+}

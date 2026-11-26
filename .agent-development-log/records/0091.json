@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 91,
+  "timestamp_utc": "2026-11-21T03:54:36+00:00",
+  "kind": "request",
+  "status": "approved",
+  "summary": "اعتماد r8 لفحص متطلبات تطوير المشروع من الجذر",
+  "details": "طلب المستخدم استعمال الأدوات والمحرر المثبتين أولًا ودون محرر منفصل لكل أمر. وافق على r8 المحلي لفحص الجديد من الخطة والقائم من ملفات المشروع، وتقديم روابط رسمية، وبيان خطوات العمل المتأثرة عند غياب أداة لازمة. لا يوجد تفويض لتثبيت أو نشر.",
+  "references": [
+    90
+  ],
+  "task_id": "PROJECT-PREFLIGHT",
+  "plan_revision": "r8",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "eee532f69919de0e1ee49bc0eb7c74cb79ee0999b74eb66325f63e0375c98194",
+  "hash": "8bfd4cf8faca9e9330f0e7a7892027d8fba4e5931bf43833d4fe6b12ad80d0ec"
+}

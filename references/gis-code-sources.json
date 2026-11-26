@@ -22,8 +22,17 @@
         "ArcGIS Pro SDK for .NET"
       ],
       "supported_versions": [
-        "ArcGIS Pro 3.x",
-        ".NET 8"
+        "ArcGIS Pro 3.8 (reviewed branch revision)",
+        ".NET Runtime 10.0.0 or newer"
+      ],
+      "reviewed_revisions": [
+        {
+          "host_release": "3.8",
+          "revision": "22855e3a7c238f2de542602272b2f896d59d50b5",
+          "url": "https://github.com/Esri/arcgis-pro-sdk-snippets/tree/22855e3a7c238f2de542602272b2f896d59d50b5",
+          "requirements": "ArcGIS Pro 3.8 and .NET Runtime 10.0.0 or newer",
+          "license_evidence": "https://github.com/Esri/arcgis-pro-sdk-snippets/blob/22855e3a7c238f2de542602272b2f896d59d50b5/License.txt"
+        }
       ],
       "code_categories": [
         "map-exploration",
@@ -35,9 +44,9 @@
       "license": "Apache-2.0",
       "license_verified": true,
       "maintenance_status": "actively-maintained",
-      "last_checked": "2026-10-29",
+      "last_checked": "2026-11-21",
       "priority": "high",
-      "limitations": "C# only; requires QueuedTask.Run for ArcGIS Pro internal thread affinity. Not usable for ArcPy.",
+      "limitations": "C# Pro-hosted add-ins. Match the actual Pro minor release and follow the API's thread-affinity rules. The reviewed source is not an ArcPy tool.",
       "recommended_use_cases": [
         "ArcGIS Pro ribbon buttons",
         "dockpanes",
@@ -64,8 +73,24 @@
         "WPF"
       ],
       "supported_versions": [
-        "ArcGIS Pro 3.x",
-        ".NET 8"
+        "ArcGIS Pro 3.6 / .NET Runtime 8.0.3 or newer (reviewed release)",
+        "ArcGIS Pro 3.8 / .NET Runtime 10.0.3 or newer (reviewed branch revision)"
+      ],
+      "reviewed_revisions": [
+        {
+          "host_release": "3.6",
+          "revision": "f403431c53ccf734bfd0c444b3191c92eb2b5a96",
+          "url": "https://github.com/Esri/arcgis-pro-sdk-community-samples/tree/f403431c53ccf734bfd0c444b3191c92eb2b5a96",
+          "requirements": "ArcGIS Pro 3.6 and .NET Runtime 8.0.3 or newer",
+          "license_evidence": "https://github.com/Esri/arcgis-pro-sdk-community-samples/blob/f403431c53ccf734bfd0c444b3191c92eb2b5a96/License.txt"
+        },
+        {
+          "host_release": "3.8",
+          "revision": "abd56c5b842318bf3da879c553d9283209cd27e7",
+          "url": "https://github.com/Esri/arcgis-pro-sdk-community-samples/tree/abd56c5b842318bf3da879c553d9283209cd27e7",
+          "requirements": "ArcGIS Pro 3.8 and .NET Runtime 10.0.3 or newer",
+          "license_evidence": "https://github.com/Esri/arcgis-pro-sdk-community-samples/blob/abd56c5b842318bf3da879c553d9283209cd27e7/License.txt"
+        }
       ],
       "code_categories": [
         "ribbon-commands",
@@ -76,7 +101,7 @@
       "license": "Apache-2.0",
       "license_verified": true,
       "maintenance_status": "actively-maintained",
-      "last_checked": "2026-10-29",
+      "last_checked": "2026-11-21",
       "priority": "high",
       "limitations": "Multi-file projects; verify matching target ArcGIS Pro SDK minor version before compilation.",
       "recommended_use_cases": [

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 107,
+  "timestamp_utc": "2026-11-22T16:55:41+00:00",
+  "kind": "decision",
+  "status": "approved",
+  "summary": "Approved r1 web guidance integration and GitHub main delivery",
+  "details": "The user explicitly approved r1 implementation, requested delivery to origin/main after verification, and authorized repair of integration-related GitHub failures. The primary checkout contains unrelated changes; fetched origin/main and isolated implementation in a worktree.",
+  "references": [
+    106
+  ],
+  "task_id": "WEB-SKILLS-0005",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "5c1f4f7deef366f5af0db36a9a1c6740055d8c792ad436359f63c04a0d56f8f3",
+  "hash": "aee7d5ca40e5d5d81ec4942e4320c2451a94daf5d3e400fdd302884e0aadbdcf"
+}

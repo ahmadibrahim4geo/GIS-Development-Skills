@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Platform Sync Report v1.0",
+  "type": "object",
+  "required": ["schema_version", "platform", "status", "installed_digest", "built_digest", "actions"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "platform": { "type": "string" },
+    "status": { "type": "string" },
+    "installed_digest": { "type": ["string", "null"] },
+    "built_digest": { "type": ["string", "null"] },
+    "reload_required": { "type": "boolean" },
+    "actions": { "type": "array", "items": { "type": "string" } },
+    "note": { "type": "string" }
+  }
+}

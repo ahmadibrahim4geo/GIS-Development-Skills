@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 89,
+  "timestamp_utc": "2026-11-21T03:42:20+00:00",
+  "kind": "request",
+  "status": "approved",
+  "summary": "اعتماد r7 لدعم بدائل بيئة التطوير واستعراض جذر الحزمة",
+  "details": "وافق المستخدم مباشرة على r7 المحلي. الغرض توجيه الوكيل للبدائل المثبتة والمجانية حسب قدرات التحرير والبناء والمعاينة والتصميم المرئي، مع مراجعة SKILL.md. تثبيت الأدوات أو تغيير حساباتها أو نشر GitHub خارج العمل الحالي.",
+  "references": [
+    88
+  ],
+  "task_id": "IDE-ALT",
+  "plan_revision": "r7",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "7e900eeb4d26097547afe457d69228881cf64392a9824aa5e341fa605a608768",
+  "hash": "c4f5e496d2cb6ad4244a7a4126e1740800374fe881308478d037245c2976cd0f"
+}

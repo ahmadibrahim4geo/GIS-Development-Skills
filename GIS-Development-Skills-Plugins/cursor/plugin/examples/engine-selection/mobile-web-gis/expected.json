@@ -1,0 +1,5 @@
+{
+  "enforces_pwa_not_native": true,
+  "blocks_ios_pass_on_windows": true,
+  "links_shared_15_field_sync": true
+}

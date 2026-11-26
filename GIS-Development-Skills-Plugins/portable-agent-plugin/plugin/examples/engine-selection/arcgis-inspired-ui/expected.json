@@ -1,0 +1,15 @@
+{
+  "expected_mode": "reference-inspired-ui",
+  "forbidden_assets": [
+    "Esri icons",
+    ".daml",
+    "ArcGIS.Desktop.dll",
+    "commercial-runtime"
+  ],
+  "approved_icon_packs": [
+    "Fluent System Icons",
+    "Lucide"
+  ],
+  "ui_sections": 10,
+  "blocked_host_runtime": "ArcGIS Pro SDK excluded under free_only=true clean-room route"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "request_text": "3D digital twin virtual globe with separate 2D projected viewport and ECEF precision",
+  "language_hint": "en",
+  "intent_modes": [
+    "multi-engine-composition"
+  ],
+  "delivery_target": "desktop-web",
+  "existing_project": null,
+  "preserve_invariants": [
+    "renderer_state_parity",
+    "no_webmercator_area"
+  ],
+  "target_os": [
+    "web",
+    "windows"
+  ],
+  "preferred_languages": [
+    "typescript",
+    "javascript"
+  ],
+  "ui_framework_preference": "react",
+  "required_capabilities": [
+    "render.globe.ellipsoid",
+    "render.3d.terrain",
+    "render.2d.projected",
+    "crs.transform"
+  ],
+  "free_only": true,
+  "offline_required": true
+}

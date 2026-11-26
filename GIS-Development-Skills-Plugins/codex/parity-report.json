@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "platform": "codex",
+  "display_name": "OpenAI Codex (CLI / Desktop)",
+  "phase_status": "ACTIVE_P09",
+  "version": "0.3.5",
+  "source_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "source_digest": "527cf7b1b01b4b4ca593674ba47a6228843547f72ce9fcbdb5c4c24fe14d819e",
+  "carried_components": [
+    "skills (37)",
+    "references",
+    "schemas",
+    "scripts",
+    "templates",
+    "examples",
+    "fixtures",
+    "native_tests",
+    "docs",
+    "assets",
+    "AGENTS.md",
+    "LICENSE"
+  ],
+  "adapted_components": [
+    {
+      "component": "SKILL.md + .codex-plugin/plugin.json",
+      "action": "Generated OpenAI Codex (CLI / Desktop) manifest and self-contained canonical bundle."
+    },
+    {
+      "component": ".codex-plugin/plugin.json + .agents/plugins/marketplace.json",
+      "action": "Mapped Codex plugin manifest (`skills` + `AGENTS.md`) and OpenAI marketplace catalog entry."
+    }
+  ],
+  "excluded_components": [
+    {
+      "item": "plugin-system/, Update-All-Plugins.*, Update-My-Platforms.*, reports/, plans/, .agent-development-log/",
+      "reason": "Developer-only lifecycle infrastructure & secrets excluded from end-user payload (REQ-PL-026 / PL-T26).",
+      "alternative": "Canonical repository governance surface"
+    }
+  ],
+  "notes": "OpenAI Codex (CLI / Desktop) package built cleanly (775 files)."
+}

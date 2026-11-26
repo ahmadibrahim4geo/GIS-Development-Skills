@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "sequence": 80,
+  "timestamp_utc": "2026-11-20T21:45:22+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "تسجيل مرشح Microsoft وتطوير المعاينة المحلية للمهارات الخارجية",
+  "details": "أثبتت P05 فجوة أتمتة WPF من عملية خارجية. راجعت مصدر winapp-ui-automation ورخصة MIT في مراجعة Microsoft المثبّتة. أضفت سجل مرشح غير مفعّل ومعاينة ZIP محلية ببصمة وقيود قراءة، واحتفظت بإيصالات المراجعة دون فكّ المحتوى.",
+  "references": [
+    78,
+    79
+  ],
+  "task_id": "P06",
+  "plan_revision": "r4",
+  "changed_files": [
+    "New Skill/SKILLS_REGISTRY.json",
+    "New Skill/candidates/0001_winapp-ui-automation/SOURCE.md",
+    "scripts/project_governance.py",
+    "scripts/skill_intake.py",
+    "scripts/security_guardian.py",
+    "tests/test_skill_intake.py"
+  ],
+  "tests": [
+    "Four skill-intake tests passed, including archive traversal and digest rejection.",
+    "Local CLI fixture receipts read back and deduplicated on repeat."
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "05d5ef8a9e16e43c01f2d06418b45195294031c2940c199b2bc71084e4d3e603",
+  "hash": "0e24eafebbcd84b6e25f98fda26d1b138a260f5924886661825c468ad24696d0"
+}

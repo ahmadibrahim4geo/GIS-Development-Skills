@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ahmadibrahim4geo/GIS-Development-Skills/schemas/architecture-v2.schema.json",
+  "title": "GIS Development Skills Task Architecture Declaration v2.0",
+  "description": "Backward-compatible architecture v2.0 schema extending v1.0 for multi-engine composition, open-source fork cleanup, and clean-room reference UI declarations without altering v1.0 validation rules.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "intent",
+    "source_host",
+    "target_host",
+    "ui",
+    "components",
+    "capability_requirements",
+    "preserved_invariants",
+    "license_policy"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "intent": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "extend-host",
+          "configure-host",
+          "source-fork",
+          "source-component-reuse",
+          "embedded-engine",
+          "ui-reorganization",
+          "ui-shell-migration",
+          "reference-inspired-ui",
+          "multi-engine-composition",
+          "worker-service",
+          "custom-component",
+          "custom-engine",
+          "engine-integration",
+          "engine-replacement"
+        ]
+      }
+    },
+    "source_host": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_host": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reference_products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "role", "version"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "role": {"type": "string", "minLength": 1},
+          "version": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "source_base": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {"type": "string"},
+        "repo_url": {"type": "string"},
+        "pinned_ref": {"type": ["string", "null"]},
+        "license_spdx": {"type": ["string", "null"]}
+      }
+    },
+    "ui": {
+      "type": "object",
+      "required": ["framework", "reference_reuse_mode", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "framework": {"type": ["string", "null"]},
+        "reference_reuse_mode": {
+          "type": "string",
+          "enum": [
+            "independent-design",
+            "host-configured",
+            "source-fork-cleaned",
+            "component-reuse",
+            "unchanged",
+            "unresolved"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["unresolved", "source-reviewed", "target-verified"]
+        }
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "component_id",
+          "project_id",
+          "role",
+          "version",
+          "source_ref",
+          "integration_mode",
+          "capabilities",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "component_id": {"type": "string", "minLength": 1},
+          "project_id": {"type": "string", "minLength": 1},
+          "role": {"type": "string", "minLength": 1},
+          "version": {"type": ["string", "null"]},
+          "source_ref": {"type": ["string", "null"]},
+          "integration_mode": {
+            "type": "string",
+            "enum": [
+              "in-process",
+              "bindings-ffi",
+              "python-worker",
+              "cli-worker",
+              "worker-ipc",
+              "service",
+              "webview-bridge",
+              "wasm",
+              "source-fork",
+              "plugin",
+              "unresolved"
+            ]
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "unresolved",
+              "documented",
+              "source-inspected",
+              "source-reviewed",
+              "runtime-observed",
+              "target-verified",
+              "rejected"
+            ]
+          },
+          "license_evidence": {"type": ["string", "null"]},
+          "runtime_evidence": {"type": ["string", "null"]},
+          "dependency_refs": {"type": "array", "items": {"type": "string"}},
+          "data_contract_ref": {"type": ["string", "null"]},
+          "owner": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "capability_requirements": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "feature_inventory_ref": {"type": ["string", "null"]},
+    "command_mapping_ref": {"type": ["string", "null"]},
+    "flow_spec_ref": {"type": ["string", "null"]},
+    "preserved_invariants": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "license_policy": {
+      "type": "string",
+      "enum": ["free-first", "oss-only", "commercial-host-explicit", "mixed-reviewed"]
+    },
+    "decision_ref": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,571 @@
+{
+  "request": "P04 / r3",
+  "artifact_kind": "observed local workflow trace",
+  "evidence_tier": "T1",
+  "host": "Windows, Python 3.14.7",
+  "stage_results": {
+    "initial": "REWORK",
+    "repair": "DONE",
+    "rollback": "REWORK",
+    "resume": "DONE"
+  },
+  "attempt_results": [
+    {
+      "attempt": 1,
+      "scale_sample_degrees": 16.95122141,
+      "computed_cells": 9,
+      "sha256": "269ec7bf73f93190e56dc128ebbcb4471cf01720c03e7676bc51308b937a8573",
+      "proof": {
+        "schema_version": "1.0",
+        "request_id": "P04-LOCAL-ENGINEERING-FIXTURE",
+        "task_id": "P04-FIXTURE",
+        "revision": "r3",
+        "overall_status": "failed",
+        "criteria": [
+          {
+            "id": "C1",
+            "statement": "The 5 by 5 ASCII grid has nine 45-degree cells and the expected NoData border.",
+            "status": "failed",
+            "evidence": [
+              {
+                "type": "artifact_readback",
+                "revision": "r3",
+                "reference": "outputs/workflow-slope/attempt-01/slope.asc",
+                "observed": "Independent comparison failed",
+                "result": "fail"
+              }
+            ]
+          }
+        ]
+      },
+      "readback": [
+        {
+          "artifact": "slope.asc",
+          "comparison": "sha256",
+          "expected": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+          "actual": "269ec7bf73f93190e56dc128ebbcb4471cf01720c03e7676bc51308b937a8573",
+          "sha256": "269ec7bf73f93190e56dc128ebbcb4471cf01720c03e7676bc51308b937a8573",
+          "bytes": 303,
+          "status": "FAIL"
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "scale_sample_degrees": 45.0,
+      "computed_cells": 9,
+      "sha256": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+      "proof": {
+        "schema_version": "1.0",
+        "request_id": "P04-LOCAL-ENGINEERING-FIXTURE",
+        "task_id": "P04-FIXTURE",
+        "revision": "r3",
+        "overall_status": "verified",
+        "criteria": [
+          {
+            "id": "C1",
+            "statement": "The 5 by 5 ASCII grid has nine 45-degree cells and the expected NoData border.",
+            "status": "verified",
+            "evidence": [
+              {
+                "type": "artifact_readback",
+                "revision": "r3",
+                "reference": "outputs/workflow-slope/attempt-02/slope.asc",
+                "observed": "Independent comparison matched",
+                "result": "pass"
+              }
+            ]
+          }
+        ]
+      },
+      "readback": [
+        {
+          "artifact": "slope.asc",
+          "comparison": "sha256",
+          "expected": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+          "actual": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+          "sha256": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+          "bytes": 303,
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "attempt": 3,
+      "scale_sample_degrees": 45.0,
+      "computed_cells": 9,
+      "sha256": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+      "proof": {
+        "schema_version": "1.0",
+        "request_id": "P04-LOCAL-ENGINEERING-FIXTURE",
+        "task_id": "P04-FIXTURE",
+        "revision": "r3",
+        "overall_status": "verified",
+        "criteria": [
+          {
+            "id": "C1",
+            "statement": "The 5 by 5 ASCII grid has nine 45-degree cells and the expected NoData border.",
+            "status": "verified",
+            "evidence": [
+              {
+                "type": "artifact_readback",
+                "revision": "r3",
+                "reference": "outputs/workflow-slope/attempt-03/slope.asc",
+                "observed": "Independent comparison matched",
+                "result": "pass"
+              }
+            ]
+          }
+        ]
+      },
+      "readback": [
+        {
+          "artifact": "slope.asc",
+          "comparison": "sha256",
+          "expected": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+          "actual": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+          "sha256": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+          "bytes": 303,
+          "status": "PASS"
+        }
+      ]
+    }
+  ],
+  "workflow": {
+    "schema_version": "1.0",
+    "request_id": "P04-LOCAL-ENGINEERING-FIXTURE",
+    "revision": "r3",
+    "plan_sha256": "6c2b21fa21e808ff3554aaa552807871d3299f2c0ee6554db8c1db0ae7d4321c",
+    "contract_sha256": "945b640f2076da3b2be17c4ea1e98780431467408416dd6e14c7650b146050d2",
+    "host_mode": "SEQUENTIAL_ROLE_SIMULATION",
+    "tasks": {
+      "P04-FIXTURE": {
+        "state": "DONE",
+        "attempts": 3,
+        "events": [
+          {
+            "state": "RECEIVED",
+            "role": "director",
+            "attempt": 0,
+            "at": "2026-11-20T21:16:35.632629+00:00"
+          },
+          {
+            "state": "REVIEWED",
+            "role": "director",
+            "attempt": 0,
+            "at": "2026-11-20T21:16:35.635197+00:00"
+          },
+          {
+            "state": "PLANNED",
+            "role": "director",
+            "attempt": 0,
+            "at": "2026-11-20T21:16:35.637356+00:00"
+          },
+          {
+            "state": "APPROVED",
+            "role": "director",
+            "attempt": 0,
+            "at": "2026-11-20T21:16:35.639220+00:00"
+          },
+          {
+            "state": "PREPARED",
+            "role": "developer",
+            "attempt": 1,
+            "at": "2026-11-20T21:16:35.643506+00:00",
+            "trace_id": "P04-PLANAR-DEM",
+            "command_id": "terrain.horn-offline",
+            "team": {
+              "profile": "STANDARD",
+              "roles": [
+                {
+                  "id": "director",
+                  "name": "Engineering Director",
+                  "skills": [
+                    "prompt-intent-orchestrator"
+                  ],
+                  "handoff": "Reviewed scope and authorization request"
+                },
+                {
+                  "id": "project-manager",
+                  "name": "Project Manager",
+                  "skills": [
+                    "agent-development-journal"
+                  ],
+                  "handoff": "Dependencies, plan revision and current state"
+                },
+                {
+                  "id": "developer",
+                  "name": "Desktop / Web / Mobile Developer",
+                  "skills": [
+                    "gis-desktop-application-development",
+                    "geospatial-web-mapping",
+                    "gis-mobile-application-development"
+                  ],
+                  "handoff": "Executed handler and artifact"
+                },
+                {
+                  "id": "gis",
+                  "name": "GIS Domain Expert",
+                  "skills": [
+                    "geospatial-data-processing",
+                    "coordinate-reference-systems",
+                    "terrain-hydrology-lidar",
+                    "arcgis-toolbox-engineering",
+                    "qgis-plugin-development",
+                    "kml-kmz-engineering"
+                  ],
+                  "handoff": "GIS semantics and expected results"
+                },
+                {
+                  "id": "integration",
+                  "name": "Integration / Data Engineer",
+                  "skills": [
+                    "gis-data-flow-diagnostics",
+                    "geospatial-api-integration"
+                  ],
+                  "handoff": "Output artifact, hash and data contract"
+                },
+                {
+                  "id": "qa",
+                  "name": "QA & Verification Engineer",
+                  "skills": [
+                    "completion-evidence",
+                    "gis-desktop-e2e-testing"
+                  ],
+                  "handoff": "Independent output readback and failures"
+                },
+                {
+                  "id": "release",
+                  "name": "Build / Release Engineer",
+                  "skills": [
+                    "completion-evidence"
+                  ],
+                  "handoff": "Accepted local artifacts and next handoff"
+                }
+              ]
+            }
+          },
+          {
+            "state": "IN_PROGRESS",
+            "role": "developer",
+            "attempt": 1,
+            "at": "2026-11-20T21:16:35.645804+00:00"
+          },
+          {
+            "state": "INTEGRATION",
+            "role": "integration",
+            "attempt": 1,
+            "at": "2026-11-20T21:16:35.651959+00:00",
+            "artifact": "outputs/workflow-slope/attempt-01"
+          },
+          {
+            "state": "TESTING",
+            "role": "qa",
+            "attempt": 1,
+            "at": "2026-11-20T21:16:35.655854+00:00",
+            "outcomes": [
+              "FAIL"
+            ]
+          },
+          {
+            "state": "REVIEW",
+            "role": "qa",
+            "attempt": 1,
+            "at": "2026-11-20T21:16:35.658972+00:00",
+            "review_mode": "SAME_AGENT_REVIEW"
+          },
+          {
+            "state": "REWORK",
+            "role": "qa",
+            "attempt": 1,
+            "at": "2026-11-20T21:16:35.661055+00:00",
+            "proof": "outputs/workflow-slope/attempt-01/DONEPROOF.json"
+          },
+          {
+            "state": "RESUMED",
+            "role": "project-manager",
+            "attempt": 1,
+            "at": "2026-11-20T21:16:35.831799+00:00"
+          },
+          {
+            "state": "APPROVED",
+            "role": "director",
+            "attempt": 1,
+            "at": "2026-11-20T21:16:35.834719+00:00"
+          },
+          {
+            "state": "PREPARED",
+            "role": "developer",
+            "attempt": 2,
+            "at": "2026-11-20T21:16:35.838264+00:00",
+            "trace_id": "P04-PLANAR-DEM",
+            "command_id": "terrain.horn-offline",
+            "team": {
+              "profile": "STANDARD",
+              "roles": [
+                {
+                  "id": "director",
+                  "name": "Engineering Director",
+                  "skills": [
+                    "prompt-intent-orchestrator"
+                  ],
+                  "handoff": "Reviewed scope and authorization request"
+                },
+                {
+                  "id": "project-manager",
+                  "name": "Project Manager",
+                  "skills": [
+                    "agent-development-journal"
+                  ],
+                  "handoff": "Dependencies, plan revision and current state"
+                },
+                {
+                  "id": "developer",
+                  "name": "Desktop / Web / Mobile Developer",
+                  "skills": [
+                    "gis-desktop-application-development",
+                    "geospatial-web-mapping",
+                    "gis-mobile-application-development"
+                  ],
+                  "handoff": "Executed handler and artifact"
+                },
+                {
+                  "id": "gis",
+                  "name": "GIS Domain Expert",
+                  "skills": [
+                    "geospatial-data-processing",
+                    "coordinate-reference-systems",
+                    "terrain-hydrology-lidar",
+                    "arcgis-toolbox-engineering",
+                    "qgis-plugin-development",
+                    "kml-kmz-engineering"
+                  ],
+                  "handoff": "GIS semantics and expected results"
+                },
+                {
+                  "id": "integration",
+                  "name": "Integration / Data Engineer",
+                  "skills": [
+                    "gis-data-flow-diagnostics",
+                    "geospatial-api-integration"
+                  ],
+                  "handoff": "Output artifact, hash and data contract"
+                },
+                {
+                  "id": "qa",
+                  "name": "QA & Verification Engineer",
+                  "skills": [
+                    "completion-evidence",
+                    "gis-desktop-e2e-testing"
+                  ],
+                  "handoff": "Independent output readback and failures"
+                },
+                {
+                  "id": "release",
+                  "name": "Build / Release Engineer",
+                  "skills": [
+                    "completion-evidence"
+                  ],
+                  "handoff": "Accepted local artifacts and next handoff"
+                }
+              ]
+            }
+          },
+          {
+            "state": "IN_PROGRESS",
+            "role": "developer",
+            "attempt": 2,
+            "at": "2026-11-20T21:16:35.840215+00:00"
+          },
+          {
+            "state": "INTEGRATION",
+            "role": "integration",
+            "attempt": 2,
+            "at": "2026-11-20T21:16:35.845450+00:00",
+            "artifact": "outputs/workflow-slope/attempt-02"
+          },
+          {
+            "state": "TESTING",
+            "role": "qa",
+            "attempt": 2,
+            "at": "2026-11-20T21:16:35.849316+00:00",
+            "outcomes": [
+              "PASS"
+            ]
+          },
+          {
+            "state": "REVIEW",
+            "role": "qa",
+            "attempt": 2,
+            "at": "2026-11-20T21:16:35.852056+00:00",
+            "review_mode": "SAME_AGENT_REVIEW"
+          },
+          {
+            "state": "DONE",
+            "role": "release",
+            "attempt": 2,
+            "at": "2026-11-20T21:16:35.854306+00:00",
+            "proof": "outputs/workflow-slope/attempt-02/DONEPROOF.json"
+          },
+          {
+            "state": "REWORK",
+            "role": "release",
+            "attempt": 2,
+            "at": "2026-11-20T21:16:36.022377+00:00",
+            "reason": "Rolled back; prior artifacts retained"
+          },
+          {
+            "state": "RESUMED",
+            "role": "project-manager",
+            "attempt": 2,
+            "at": "2026-11-20T21:16:36.180153+00:00"
+          },
+          {
+            "state": "APPROVED",
+            "role": "director",
+            "attempt": 2,
+            "at": "2026-11-20T21:16:36.183490+00:00"
+          },
+          {
+            "state": "PREPARED",
+            "role": "developer",
+            "attempt": 3,
+            "at": "2026-11-20T21:16:36.187895+00:00",
+            "trace_id": "P04-PLANAR-DEM",
+            "command_id": "terrain.horn-offline",
+            "team": {
+              "profile": "STANDARD",
+              "roles": [
+                {
+                  "id": "director",
+                  "name": "Engineering Director",
+                  "skills": [
+                    "prompt-intent-orchestrator"
+                  ],
+                  "handoff": "Reviewed scope and authorization request"
+                },
+                {
+                  "id": "project-manager",
+                  "name": "Project Manager",
+                  "skills": [
+                    "agent-development-journal"
+                  ],
+                  "handoff": "Dependencies, plan revision and current state"
+                },
+                {
+                  "id": "developer",
+                  "name": "Desktop / Web / Mobile Developer",
+                  "skills": [
+                    "gis-desktop-application-development",
+                    "geospatial-web-mapping",
+                    "gis-mobile-application-development"
+                  ],
+                  "handoff": "Executed handler and artifact"
+                },
+                {
+                  "id": "gis",
+                  "name": "GIS Domain Expert",
+                  "skills": [
+                    "geospatial-data-processing",
+                    "coordinate-reference-systems",
+                    "terrain-hydrology-lidar",
+                    "arcgis-toolbox-engineering",
+                    "qgis-plugin-development",
+                    "kml-kmz-engineering"
+                  ],
+                  "handoff": "GIS semantics and expected results"
+                },
+                {
+                  "id": "integration",
+                  "name": "Integration / Data Engineer",
+                  "skills": [
+                    "gis-data-flow-diagnostics",
+                    "geospatial-api-integration"
+                  ],
+                  "handoff": "Output artifact, hash and data contract"
+                },
+                {
+                  "id": "qa",
+                  "name": "QA & Verification Engineer",
+                  "skills": [
+                    "completion-evidence",
+                    "gis-desktop-e2e-testing"
+                  ],
+                  "handoff": "Independent output readback and failures"
+                },
+                {
+                  "id": "release",
+                  "name": "Build / Release Engineer",
+                  "skills": [
+                    "completion-evidence"
+                  ],
+                  "handoff": "Accepted local artifacts and next handoff"
+                }
+              ]
+            }
+          },
+          {
+            "state": "IN_PROGRESS",
+            "role": "developer",
+            "attempt": 3,
+            "at": "2026-11-20T21:16:36.189787+00:00"
+          },
+          {
+            "state": "INTEGRATION",
+            "role": "integration",
+            "attempt": 3,
+            "at": "2026-11-20T21:16:36.194787+00:00",
+            "artifact": "outputs/workflow-slope/attempt-03"
+          },
+          {
+            "state": "TESTING",
+            "role": "qa",
+            "attempt": 3,
+            "at": "2026-11-20T21:16:36.198641+00:00",
+            "outcomes": [
+              "PASS"
+            ]
+          },
+          {
+            "state": "REVIEW",
+            "role": "qa",
+            "attempt": 3,
+            "at": "2026-11-20T21:16:36.201245+00:00",
+            "review_mode": "SAME_AGENT_REVIEW"
+          },
+          {
+            "state": "DONE",
+            "role": "release",
+            "attempt": 3,
+            "at": "2026-11-20T21:16:36.203421+00:00",
+            "proof": "outputs/workflow-slope/attempt-03/DONEPROOF.json"
+          }
+        ]
+      }
+    }
+  },
+  "final_data_readback": {
+    "id": "0001",
+    "recorded": "2026-11-20T21:16:36.341992+00:00",
+    "command": "verify_engineering_workflow.py initial / repair / rollback / resume",
+    "runtime": "Python 3.14.7, Horn slope",
+    "semantics": "Synthetic 10 metre horizontal and vertical units; slope degrees and NoData border.",
+    "originals_unchanged": true,
+    "fixture_copies_unchanged": true,
+    "status": "PASS",
+    "checks": [
+      {
+        "artifact": "workflow-slope/attempt-03/slope.asc",
+        "comparison": "sha256",
+        "expected": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+        "actual": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+        "sha256": "02f93bd2025ea646fe7ea06b7b14e5afdd2de78e29c34b444a9a12fca22b9e8a",
+        "bytes": 303,
+        "status": "PASS"
+      }
+    ]
+  },
+  "fixture_sha256": "a7013bf12616b38e2e921ceb993b51f89e1d1fe7f4ad551910296fc7552b1ead",
+  "independent_agent_review": "NOT RUN",
+  "parallel_agent_client_adapter": "NOT RUN"
+}

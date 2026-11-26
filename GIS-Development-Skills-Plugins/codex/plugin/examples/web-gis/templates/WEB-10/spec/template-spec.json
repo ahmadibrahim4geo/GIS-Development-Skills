@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "template_id": "WEB-10",
+  "product_class": "W09",
+  "title": "Web GIS Data Portal",
+  "recommended_stack": "PostGIS + pygeoapi / GeoServer + STAC FastAPI + metadata & license cards",
+  "runnable_vertical_slice": false,
+  "shared_fixture": "../../../../../tests/shared-gis-fixtures/geojson_epsg4326_bilingual.geojson",
+  "qa_cases": [
+    "GIS-001",
+    "GIS-012",
+    "WEB-QA-11",
+    "WEB-QA-15"
+  ],
+  "acceptance_ids": [
+    "WEB-TPL-10"
+  ],
+  "status": {
+    "static_spec": "VERIFIED_T0",
+    "js_node_contract": "SHARED_CORE_COVERED",
+    "headless_browser_e2e": "NOT RUN (Playwright/Chromium binary not installed on workstation)"
+  }
+}

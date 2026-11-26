@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "sequence": 121,
+  "timestamp_utc": "2026-11-25T20:46:37+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Completed Phase P09: six platform adapters, marketplaces, rules, hooks, and CI",
+  "details": "Activated codex, chatgpt, claude-code, claude-ai, antigravity, and cursor adapters via shared PackagedClientAdapter and catalogs.py; added opt-in hooks and SHA-pinned GitHub Actions workflows; rebuilt all 7 targets cleanly in 021_PLUGIN_P09_SYNC.json; closed 022_P09_ACCEPTANCE.md and 022_P09_DONEPROOF.json.",
+  "references": [
+    120
+  ],
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P09",
+  "plan_revision": "",
+  "changed_files": [
+    "plugin-system/adapters/client_common.py",
+    "plugin-system/core/catalogs.py",
+    "plugin-system/core/pipeline.py",
+    "plugin-system/config/platforms.json"
+  ],
+  "tests": [
+    "13/13 test_p09_platform_adapters OK; 7/7 targets BUILT (021_PLUGIN_P09_SYNC); --check-only UP_TO_DATE"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "f42cad9319976fede1caaa7c59be1bd5a606f107b25c24e014fecc2535e1e9a1",
+  "hash": "3c783c5f8098395951e696b46290fa3b17dfd4a2abe8c94dd1f1ded53bb421f9"
+}

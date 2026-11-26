@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 94,
+  "timestamp_utc": "2026-11-21T04:15:38+00:00",
+  "kind": "decision",
+  "status": "approved",
+  "summary": "Approved local r9 in chat",
+  "details": "User confirmed after r9 was presented for approval. The plan mirrors that decision. Source and local distribution are in scope.",
+  "references": [
+    93
+  ],
+  "task_id": "AGENT-HARDENING",
+  "plan_revision": "r9",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "80b0ed81db17379c432cf1df5f4ff89eaacb6e85474647db0d79340803d2e67c",
+  "hash": "6b97a454afeaeac68cd86affeb43f79b963d409507ccf6e057f1972267a73cef"
+}

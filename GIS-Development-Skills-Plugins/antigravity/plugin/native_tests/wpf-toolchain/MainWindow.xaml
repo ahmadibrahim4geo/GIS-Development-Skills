@@ -1,0 +1,10 @@
+<Window x:Class="ToolchainSmoke.MainWindow" AutomationProperties.AutomationId="RasterReadbackWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Raster readback test" Height="200" Width="420" Loaded="WindowLoaded">
+    <StackPanel Margin="20">
+        <Button x:Name="ReadRasterButton" Content="Read raster result" AutomationProperties.AutomationId="ReadRaster"
+                HorizontalAlignment="Left" Padding="12,6" Click="ReadRaster"/>
+        <TextBlock x:Name="ResultLabel" AutomationProperties.AutomationId="RasterResult" Margin="0,12,0,0" TextWrapping="Wrap"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P05",
+  "revision": "r1",
+  "overall_status": "partial",
+  "criteria": [
+    {
+      "id": "P05-SEVEN-WEB-MOBILE-REFERENCES",
+      "statement": "Author the 7 Web & cross-platform domain references (web-gis-products-map, web-gis-architecture-selection, browser-geospatial-js-runtime, geospatial-3d-ar-mobile-web, web-mobile-offline-sync-contract, web-mobile-geoai-options, web-mobile-vendor-license-audit) covering W01-W12, formats, EO, 3D, PWA offline sync, GeoAI, and OWASP/license audits",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests.test_web_gis_expansion + scripts/build_skill_bundle.py --check",
+          "observed": "All 7 reference documents validated in bundle check and P05 unit/contract tests with zero broken internal links",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P05-SHARED-CONTRACTS-AND-WEB-TEMPLATES",
+      "statement": "Deliver shared bilingual EPSG:4326 fixtures, pure browser+Node ESM spatial/PWA modules, WEB-01..WEB-18 template structure (including runnable WEB-01, WEB-03, WEB-12 slices), updated geospatial-web-mapping skill, router length compliance, WEB_GIS_GUIDE, and REQ-WM-032 budget matrix",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "node --test tests/web-gis/web_gis_contract.test.mjs + 81 Python test suites + 11 CLI validators",
+          "observed": "Node contract suite 6/6 pass (68.675ms); Python 81-suite run 552 tests OK (skipped=1 Windows symlink test); router 5430 chars < 5500; all 11 CLI validators exit 0",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P05-PORTABLE-PLUGIN-BUNDLE-REBUILD",
+      "statement": "Rebuild portable plugin package with all P05 references, fixtures, modules, WEB-01..WEB-18 templates, and guide updates, maintaining UP_TO_DATE determinism",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "reports/plugin-lifecycle/010_PLUGIN_P05_SYNC.json + plugin-system/tests",
+          "observed": "pipeline --build-only returned BUILT (source_digest b35e0ec26be9, 597 bundle files) and immediate --check-only returned UP_TO_DATE; build_skill_bundle --check PASS; 10 plugin lifecycle tests OK",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P05-REPO-INTERNAL-LINKS-PREEXISTING-DIST",
+      "statement": "Repository internal Markdown links integrity across canonical workspace and P05 templates",
+      "status": "partial",
+      "reason": "Zero broken links across canonical docs and WEB-01..WEB-18 after fixing 54 relative path depths; test_repository_internal_links reported only 1 pre-existing untracked failure in dist\\user-testing\\banner-work\\brand-kit-readme.md (assets/brand/banner.png)",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests.test_repository_internal_links + build_skill_bundle --check",
+          "observed": "build_skill_bundle --check PASS (0 broken bundled links); test_repository_internal_links isolated sole failure to pre-existing untracked dist file",
+          "result": "fail",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P05-HEADLESS-BROWSER-E2E-AND-REMAINING-PHASES",
+      "statement": "Headless Playwright/Chromium Web E2E checks (WEB-QA-01..03, 09, 12, 13, 15), GIS-009 NoData TIFF binary, GIS-011 10k-feature browser RAM profiling, live service/SAST runs, and Phases P06-P11",
+      "status": "not_run",
+      "reason": "Playwright and Chromium binaries are absent on host; live upstream services, external SAST scanners, native T2-T4 runs, and Phases P06-P11 remain NOT RUN pending owner approval of P06+",
+      "evidence": []
+    }
+  ]
+}

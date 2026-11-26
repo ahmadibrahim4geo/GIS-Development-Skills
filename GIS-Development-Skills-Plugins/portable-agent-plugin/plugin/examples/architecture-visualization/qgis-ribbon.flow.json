@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "change_type": "ui-reorganization",
+  "purpose": "Proposed QGIS-hosted Buffer command vertical slice. All IDs are illustrative, actual handlers and runtime APIs are UNINSPECTED, and no native operation or Archify rendering has run. Persistence is outside this flow; original projects/data remain unchanged and results use new output identities.",
+  "persistence_required": false,
+  "source_commands": ["sample.buffer"],
+  "nodes": [
+    { "id": "ribbon-ui", "role": "Proposed ribbon control and visible busy/error state on UI thread" },
+    { "id": "command-binding", "role": "Existing QAction/handler mapping to be inventoried; preserve semantic command identity" },
+    { "id": "application-service", "role": "Validate active layer, selection, parameters, units and bounded task lifecycle on UI thread" },
+    { "id": "processing-task", "role": "Proposed supported in-process worker; actual target API and provider thread rules unresolved" },
+    { "id": "gis-engine", "role": "Existing QGIS computation/provider engine with immutable inputs or supported worker-owned resources" },
+    { "id": "map-canvas", "role": "Existing QGIS renderer/layer store; UI thread owns visible state changes" }
+  ],
+  "edges": [
+    {
+      "id": "invoke-command", "from": "ribbon-ui", "to": "command-binding", "kind": "request",
+      "contract": "sample.buffer trigger; preserve the inventoried native action/handler rather than duplicating its algorithm or registering a conflicting shortcut.",
+      "execution": "sync", "thread_owner": "UI thread", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "validate-request", "from": "command-binding", "to": "application-service", "kind": "request",
+      "contract": "Validate active dataset identity, selection, parameter bounds, source CRS and distance units. Unknown or invalid units/layer context return a typed rejection before task submission. No original dataset edits.",
+      "execution": "sync", "thread_owner": "UI thread", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "dispatch-task", "from": "application-service", "to": "processing-task", "kind": "request",
+      "contract": "Immutable BufferRequest: opaque dataset/output IDs, validated parameters, CRS/unit identifiers and task generation token. Resolve supported worker-owned resources; do not pass live GUI/layer objects across thread boundaries without verified support.",
+      "execution": "async", "thread_owner": "UI dispatcher to supported worker; actual runtime policy unresolved", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "execute-buffer", "from": "processing-task", "to": "gis-engine", "kind": "request",
+      "contract": "Bounded provider/algorithm call using verified target APIs, read-only source and new output. Provider, algorithm ID, license and threading support require preflight; no concrete engine call is asserted by this example.",
+      "execution": "sync", "thread_owner": "Supported worker-owned engine context; unresolved until provider review", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "engine-result", "from": "gis-engine", "to": "processing-task", "kind": "result",
+      "contract": "BufferResult: new output identity, status, output CRS/units, dimensions/counts and warnings. Preserve source metadata needed for independent semantic checks; a successful return alone is not acceptance evidence.",
+      "execution": "sync", "thread_owner": "Supported worker-owned engine context", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "engine-error", "from": "gis-engine", "to": "processing-task", "kind": "error",
+      "contract": "Typed provider/validation/cancellation error with sanitized message and output cleanup state; no credentials, raw coordinates or silent partial success.",
+      "execution": "sync", "thread_owner": "Supported worker-owned engine context", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "deliver-result", "from": "processing-task", "to": "application-service", "kind": "result",
+      "contract": "Queue BufferResult to UI owner with matching task generation; reject stale/cancelled task results and validate output identity before layer registration.",
+      "execution": "async", "thread_owner": "Worker completion to UI thread", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "deliver-error", "from": "processing-task", "to": "application-service", "kind": "error",
+      "contract": "Queue typed failure/cancellation to UI owner, preserve original data and identify any new incomplete output for bounded cleanup/recovery.",
+      "execution": "async", "thread_owner": "Worker completion to UI thread", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "progress-report", "from": "processing-task", "to": "application-service", "kind": "progress",
+      "contract": "Bounded/coalesced progress events with matching task generation. If the actual provider cannot report percent, use an explicit indeterminate indicator rather than invented timings.",
+      "execution": "async", "thread_owner": "Worker event to UI thread", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "request-cancel", "from": "application-service", "to": "processing-task", "kind": "cancel",
+      "contract": "Cooperative cancellation token only when supported by the reviewed provider; otherwise disable cancellation with a visible explanation and bound task duration. Do not kill the host or claim immediate cancellation.",
+      "execution": "async", "thread_owner": "UI request to worker-supported cancellation boundary", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "update-map", "from": "application-service", "to": "map-canvas", "kind": "state",
+      "contract": "On accepted result, register new validated output and update visible layer/selection context on UI thread. Preserve source renderer/project state; actual engine output and visible behavior require T2/T3 checks.",
+      "execution": "sync", "thread_owner": "UI thread", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "restore-command-state", "from": "application-service", "to": "ribbon-ui", "kind": "state",
+      "contract": "Set busy/progress state and restore enabled/checked context after success, error or completed cancellation. Re-evaluate current active layer instead of restoring stale selection assumptions.",
+      "execution": "sync", "thread_owner": "UI thread", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    },
+    {
+      "id": "show-error", "from": "application-service", "to": "ribbon-ui", "kind": "error",
+      "contract": "Display sanitized validation/provider failure or cancellation outcome and actionable recovery; preserve source state and distinguish partial outputs from successful results.",
+      "execution": "sync", "thread_owner": "UI thread", "command_id": "sample.buffer", "evidence_basis": "proposed", "source_ref": null
+    }
+  ],
+  "command_mappings": [
+    {
+      "command_id": "sample.buffer",
+      "before": "UNINSPECTED native QGIS menu/toolbar action; illustrative mapping only, full inventory missing.",
+      "after": "Proposed ribbon Analysis group invoking the same inventoried semantic action, subject to supported plugin APIs.",
+      "handler": "UNINSPECTED; reuse verified existing handler/provider contract after source preflight, no invented QGIS API.",
+      "shortcut": "UNINSPECTED; preserve actual shortcut and avoid duplicate registration.",
+      "enabled_state": "UNINSPECTED actual rule; proposed parity requires valid compatible active layer/context and bounded busy-state behavior.",
+      "checked_state": "UNINSPECTED; preserve actual toggle behavior or document not-applicable only after inventory.",
+      "disposition": "preserved",
+      "reason": "Preservation is a proposed requirement, not observed parity or a complete command inventory."
+    }
+  ],
+  "async_policy": {
+    "progress": "Use reviewed provider progress, coalesce updates and marshal to UI thread; use explicit indeterminate state when percentage is unsupported.",
+    "cancellation": "Verify cooperative cancellation; expose unsupported behavior clearly and bound task duration. Report completion only after worker acknowledgement and state recovery.",
+    "error": "Return typed sanitized validation/provider/cancellation failures; preserve original data and distinguish new incomplete outputs from accepted results.",
+    "recovery": "Validate output before UI registration, reject stale/out-of-order generations, restore current enabled/checked context and leave source/project state unchanged on failure."
+  }
+}

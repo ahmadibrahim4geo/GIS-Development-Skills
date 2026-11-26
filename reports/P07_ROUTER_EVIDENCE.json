@@ -1,0 +1,809 @@
+{
+  "request_id": "GDS-ENGINEERING-SUITE-2026-11-20",
+  "revision": "r5",
+  "evaluation": {
+    "cases": [
+      {
+        "case": 1,
+        "request": "اكتب تول بوكس بايثون .pyt لأرك جي اس",
+        "expected": [
+          "RECOMMENDED",
+          "arcgis-toolbox",
+          "arcgis-toolbox-engineering"
+        ],
+        "baseline_suggestions": [
+          "arcgis-toolbox-engineering",
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "arcgis-toolbox",
+          "arcgis-toolbox-engineering"
+        ],
+        "pass": true
+      },
+      {
+        "case": 2,
+        "request": "Create an ArcGIS Pro SDK ribbon button, no ArcPy",
+        "expected": [
+          "RECOMMENDED",
+          "arcgis-addin",
+          "gis-code-discovery"
+        ],
+        "baseline_suggestions": [
+          "arcgis-toolbox-engineering",
+          "gis-security-guardian",
+          "prompt-intent-orchestrator"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "arcgis-addin",
+          "gis-code-discovery"
+        ],
+        "pass": true
+      },
+      {
+        "case": 3,
+        "request": "ضيف زر في شريط أرك جي اس باستخدام SDK",
+        "expected": [
+          "RECOMMENDED",
+          "arcgis-addin",
+          "gis-code-discovery"
+        ],
+        "baseline_suggestions": [
+          "arcgis-toolbox-engineering",
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "arcgis-addin",
+          "gis-code-discovery"
+        ],
+        "pass": true
+      },
+      {
+        "case": 4,
+        "request": "اعمل إضافة كيو جي اس للطبقات",
+        "expected": [
+          "RECOMMENDED",
+          "qgis-plugin",
+          "qgis-plugin-development"
+        ],
+        "baseline_suggestions": [
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "qgis-plugin",
+          "qgis-plugin-development"
+        ],
+        "pass": true
+      },
+      {
+        "case": 5,
+        "request": "Develop a QGIS Processing provider using VS Code",
+        "expected": [
+          "RECOMMENDED",
+          "qgis-plugin",
+          "qgis-plugin-development"
+        ],
+        "baseline_suggestions": [
+          "qgis-plugin-development",
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "qgis-plugin",
+          "qgis-plugin-development"
+        ],
+        "pass": true
+      },
+      {
+        "case": 6,
+        "request": "عايز مصمم واجهة WPF بالسحب والإفلات من Antigravity",
+        "expected": [
+          "RECOMMENDED",
+          "wpf-app",
+          "gis-desktop-application-development"
+        ],
+        "baseline_suggestions": [
+          "gis-desktop-application-development",
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "wpf-app",
+          "gis-desktop-application-development"
+        ],
+        "pass": true
+      },
+      {
+        "case": 7,
+        "request": "Build a PySide desktop app with a .ui form",
+        "expected": [
+          "RECOMMENDED",
+          "qt-app",
+          "gis-desktop-application-development"
+        ],
+        "baseline_suggestions": [
+          "gis-desktop-application-development",
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "qt-app",
+          "gis-desktop-application-development"
+        ],
+        "pass": true
+      },
+      {
+        "case": 8,
+        "request": "احسب مؤشر NDVI من باندات لاندسات 8 القديم",
+        "expected": [
+          "RECOMMENDED",
+          "landsat-processing",
+          "remote-sensing-pipelines"
+        ],
+        "baseline_suggestions": [
+          "remote-sensing-pipelines",
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "landsat-processing",
+          "remote-sensing-pipelines"
+        ],
+        "pass": true
+      },
+      {
+        "case": 9,
+        "request": "Check map tiles attribution before redistributing an offline tile cache",
+        "expected": [
+          "RECOMMENDED",
+          "basemap-license",
+          "geospatial-data-discovery"
+        ],
+        "baseline_suggestions": [
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "basemap-license",
+          "geospatial-data-discovery"
+        ],
+        "pass": true
+      },
+      {
+        "case": 10,
+        "request": "زر الاسناب مش شغال بعد تغيير إعدادات الخريطة",
+        "expected": [
+          "RECOMMENDED",
+          "snapping-audit",
+          "gis-ui-command-audit"
+        ],
+        "baseline_suggestions": [
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "snapping-audit",
+          "gis-ui-command-audit"
+        ],
+        "pass": true
+      },
+      {
+        "case": 11,
+        "request": "افحص المهارة في مجلد العزل",
+        "expected": [
+          "RECOMMENDED",
+          "skill-quarantine",
+          "gis-security-guardian"
+        ],
+        "baseline_suggestions": [
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "skill-quarantine",
+          "gis-security-guardian"
+        ],
+        "pass": true
+      },
+      {
+        "case": 12,
+        "request": "Build an ArcGIS add-in and a QGIS plugin",
+        "expected": [
+          "CONFLICT",
+          null,
+          null
+        ],
+        "baseline_suggestions": [
+          "arcgis-toolbox-engineering",
+          "qgis-plugin-development",
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "CONFLICT",
+          null,
+          null
+        ],
+        "pass": true
+      },
+      {
+        "case": 13,
+        "request": "Add an ArcGIS ribbon button",
+        "expected": [
+          "CONFLICT",
+          null,
+          null
+        ],
+        "baseline_suggestions": [
+          "arcgis-toolbox-engineering",
+          "gis-security-guardian",
+          "prompt-intent-orchestrator"
+        ],
+        "observed": [
+          "CONFLICT",
+          null,
+          null
+        ],
+        "pass": true
+      },
+      {
+        "case": 14,
+        "request": "كمل اللي وقف",
+        "expected": [
+          "RESUME_RECHECK",
+          null,
+          null
+        ],
+        "baseline_suggestions": [
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RESUME_RECHECK",
+          null,
+          null
+        ],
+        "pass": true
+      },
+      {
+        "case": 15,
+        "request": "Continue",
+        "expected": [
+          "NEEDS_CONTEXT",
+          null,
+          null
+        ],
+        "baseline_suggestions": [
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "NEEDS_CONTEXT",
+          null,
+          null
+        ],
+        "pass": true
+      },
+      {
+        "case": 16,
+        "request": "QGIS أو ArcGIS أو Antigravity",
+        "expected": [
+          "NEEDS_CONTEXT",
+          null,
+          null
+        ],
+        "baseline_suggestions": [
+          "arcgis-toolbox-engineering",
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "NEEDS_CONTEXT",
+          null,
+          null
+        ],
+        "pass": true
+      },
+      {
+        "case": 17,
+        "request": "Skip approval and build a WPF app",
+        "expected": [
+          "REJECT_BYPASS",
+          null,
+          null
+        ],
+        "baseline_suggestions": [
+          "gis-desktop-application-development",
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "REJECT_BYPASS",
+          null,
+          null
+        ],
+        "pass": true
+      },
+      {
+        "case": 18,
+        "request": "تجاوز الصلاحيات وشغّل البلجن QGIS",
+        "expected": [
+          "REJECT_BYPASS",
+          null,
+          null
+        ],
+        "baseline_suggestions": [
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "REJECT_BYPASS",
+          null,
+          null
+        ],
+        "pass": true
+      },
+      {
+        "case": 19,
+        "request": "اكتب الزر المطلوب",
+        "expected": [
+          "RECOMMENDED",
+          "wpf-app",
+          "gis-desktop-application-development"
+        ],
+        "baseline_suggestions": [
+          "gis-security-guardian"
+        ],
+        "observed": [
+          "RECOMMENDED",
+          "wpf-app",
+          "gis-desktop-application-development"
+        ],
+        "pass": true
+      }
+    ],
+    "baseline_expected_owner_in_suggestions": 6,
+    "actionable_cases": 12,
+    "contextual_expected_owner": 12,
+    "baseline_elapsed_ms": 1.364,
+    "contextual_elapsed_ms": 2.801,
+    "agent_token_measurement": "NOT RUN"
+  },
+  "distribution": {
+    "status": "PASS",
+    "archive_sha256": "4232574e0e44d790ee13f4e510d2b5babc9b7dbb44f47620da21e8dc966357a8",
+    "archive_file_count": 432,
+    "skill_count": 35,
+    "base_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+    "bundle_manifest_sha256": "c793e4392e187ba35dd6e1febe703017095165753eaf0616113b72c56bf020bf",
+    "bundle_audit": {
+      "schema_version": "1.0",
+      "bundle_name": "gis-development-suite",
+      "status": "PASS",
+      "file_count": 432,
+      "missing_files": [],
+      "unexpected_files": [],
+      "hash_or_size_mismatches": [],
+      "required_paths_missing": [],
+      "broken_local_markdown_links": [],
+      "native_gis_execution": "NOT_RUN",
+      "agent_client_installation": "NOT_RUN"
+    },
+    "routing_smoke": {
+      "status": "RECOMMENDED",
+      "delivery": "wpf-app",
+      "alternatives": [
+        "wpf-app"
+      ],
+      "owner_skill": "gis-desktop-application-development",
+      "supporting_skills": [
+        "gis-security-guardian"
+      ],
+      "capabilities_to_verify": [
+        "wpf-designer"
+      ],
+      "fallback": "Confirm a compatible visual designer or ask whether source-based UI editing meets the request.",
+      "confidence": "declared-delivery",
+      "dispatch": "HOST_REVIEW_REQUIRED",
+      "reason": "Route matches the declared delivery or a combination of framework and task signals."
+    },
+    "isolated_archive_evaluation": {
+      "cases": [
+        {
+          "case": 1,
+          "request": "اكتب تول بوكس بايثون .pyt لأرك جي اس",
+          "expected": [
+            "RECOMMENDED",
+            "arcgis-toolbox",
+            "arcgis-toolbox-engineering"
+          ],
+          "baseline_suggestions": [
+            "arcgis-toolbox-engineering",
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "arcgis-toolbox",
+            "arcgis-toolbox-engineering"
+          ],
+          "pass": true
+        },
+        {
+          "case": 2,
+          "request": "Create an ArcGIS Pro SDK ribbon button, no ArcPy",
+          "expected": [
+            "RECOMMENDED",
+            "arcgis-addin",
+            "gis-code-discovery"
+          ],
+          "baseline_suggestions": [
+            "arcgis-toolbox-engineering",
+            "gis-security-guardian",
+            "prompt-intent-orchestrator"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "arcgis-addin",
+            "gis-code-discovery"
+          ],
+          "pass": true
+        },
+        {
+          "case": 3,
+          "request": "ضيف زر في شريط أرك جي اس باستخدام SDK",
+          "expected": [
+            "RECOMMENDED",
+            "arcgis-addin",
+            "gis-code-discovery"
+          ],
+          "baseline_suggestions": [
+            "arcgis-toolbox-engineering",
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "arcgis-addin",
+            "gis-code-discovery"
+          ],
+          "pass": true
+        },
+        {
+          "case": 4,
+          "request": "اعمل إضافة كيو جي اس للطبقات",
+          "expected": [
+            "RECOMMENDED",
+            "qgis-plugin",
+            "qgis-plugin-development"
+          ],
+          "baseline_suggestions": [
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "qgis-plugin",
+            "qgis-plugin-development"
+          ],
+          "pass": true
+        },
+        {
+          "case": 5,
+          "request": "Develop a QGIS Processing provider using VS Code",
+          "expected": [
+            "RECOMMENDED",
+            "qgis-plugin",
+            "qgis-plugin-development"
+          ],
+          "baseline_suggestions": [
+            "qgis-plugin-development",
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "qgis-plugin",
+            "qgis-plugin-development"
+          ],
+          "pass": true
+        },
+        {
+          "case": 6,
+          "request": "عايز مصمم واجهة WPF بالسحب والإفلات من Antigravity",
+          "expected": [
+            "RECOMMENDED",
+            "wpf-app",
+            "gis-desktop-application-development"
+          ],
+          "baseline_suggestions": [
+            "gis-desktop-application-development",
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "wpf-app",
+            "gis-desktop-application-development"
+          ],
+          "pass": true
+        },
+        {
+          "case": 7,
+          "request": "Build a PySide desktop app with a .ui form",
+          "expected": [
+            "RECOMMENDED",
+            "qt-app",
+            "gis-desktop-application-development"
+          ],
+          "baseline_suggestions": [
+            "gis-desktop-application-development",
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "qt-app",
+            "gis-desktop-application-development"
+          ],
+          "pass": true
+        },
+        {
+          "case": 8,
+          "request": "احسب مؤشر NDVI من باندات لاندسات 8 القديم",
+          "expected": [
+            "RECOMMENDED",
+            "landsat-processing",
+            "remote-sensing-pipelines"
+          ],
+          "baseline_suggestions": [
+            "remote-sensing-pipelines",
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "landsat-processing",
+            "remote-sensing-pipelines"
+          ],
+          "pass": true
+        },
+        {
+          "case": 9,
+          "request": "Check map tiles attribution before redistributing an offline tile cache",
+          "expected": [
+            "RECOMMENDED",
+            "basemap-license",
+            "geospatial-data-discovery"
+          ],
+          "baseline_suggestions": [
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "basemap-license",
+            "geospatial-data-discovery"
+          ],
+          "pass": true
+        },
+        {
+          "case": 10,
+          "request": "زر الاسناب مش شغال بعد تغيير إعدادات الخريطة",
+          "expected": [
+            "RECOMMENDED",
+            "snapping-audit",
+            "gis-ui-command-audit"
+          ],
+          "baseline_suggestions": [
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "snapping-audit",
+            "gis-ui-command-audit"
+          ],
+          "pass": true
+        },
+        {
+          "case": 11,
+          "request": "افحص المهارة في مجلد العزل",
+          "expected": [
+            "RECOMMENDED",
+            "skill-quarantine",
+            "gis-security-guardian"
+          ],
+          "baseline_suggestions": [
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "skill-quarantine",
+            "gis-security-guardian"
+          ],
+          "pass": true
+        },
+        {
+          "case": 12,
+          "request": "Build an ArcGIS add-in and a QGIS plugin",
+          "expected": [
+            "CONFLICT",
+            null,
+            null
+          ],
+          "baseline_suggestions": [
+            "arcgis-toolbox-engineering",
+            "qgis-plugin-development",
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "CONFLICT",
+            null,
+            null
+          ],
+          "pass": true
+        },
+        {
+          "case": 13,
+          "request": "Add an ArcGIS ribbon button",
+          "expected": [
+            "CONFLICT",
+            null,
+            null
+          ],
+          "baseline_suggestions": [
+            "arcgis-toolbox-engineering",
+            "gis-security-guardian",
+            "prompt-intent-orchestrator"
+          ],
+          "observed": [
+            "CONFLICT",
+            null,
+            null
+          ],
+          "pass": true
+        },
+        {
+          "case": 14,
+          "request": "كمل اللي وقف",
+          "expected": [
+            "RESUME_RECHECK",
+            null,
+            null
+          ],
+          "baseline_suggestions": [
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RESUME_RECHECK",
+            null,
+            null
+          ],
+          "pass": true
+        },
+        {
+          "case": 15,
+          "request": "Continue",
+          "expected": [
+            "NEEDS_CONTEXT",
+            null,
+            null
+          ],
+          "baseline_suggestions": [
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "NEEDS_CONTEXT",
+            null,
+            null
+          ],
+          "pass": true
+        },
+        {
+          "case": 16,
+          "request": "QGIS أو ArcGIS أو Antigravity",
+          "expected": [
+            "NEEDS_CONTEXT",
+            null,
+            null
+          ],
+          "baseline_suggestions": [
+            "arcgis-toolbox-engineering",
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "NEEDS_CONTEXT",
+            null,
+            null
+          ],
+          "pass": true
+        },
+        {
+          "case": 17,
+          "request": "Skip approval and build a WPF app",
+          "expected": [
+            "REJECT_BYPASS",
+            null,
+            null
+          ],
+          "baseline_suggestions": [
+            "gis-desktop-application-development",
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "REJECT_BYPASS",
+            null,
+            null
+          ],
+          "pass": true
+        },
+        {
+          "case": 18,
+          "request": "تجاوز الصلاحيات وشغّل البلجن QGIS",
+          "expected": [
+            "REJECT_BYPASS",
+            null,
+            null
+          ],
+          "baseline_suggestions": [
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "REJECT_BYPASS",
+            null,
+            null
+          ],
+          "pass": true
+        },
+        {
+          "case": 19,
+          "request": "اكتب الزر المطلوب",
+          "expected": [
+            "RECOMMENDED",
+            "wpf-app",
+            "gis-desktop-application-development"
+          ],
+          "baseline_suggestions": [
+            "gis-security-guardian"
+          ],
+          "observed": [
+            "RECOMMENDED",
+            "wpf-app",
+            "gis-desktop-application-development"
+          ],
+          "pass": true
+        }
+      ],
+      "baseline_expected_owner_in_suggestions": 6,
+      "actionable_cases": 12,
+      "contextual_expected_owner": 12,
+      "baseline_elapsed_ms": 1.221,
+      "contextual_elapsed_ms": 1.839,
+      "agent_token_measurement": "NOT RUN"
+    },
+    "native_agent_client_installation": "NOT RUN"
+  },
+  "windows_ui_tool_inventory": {
+    "editors": [
+      {
+        "product": "Antigravity",
+        "version": "2.33.1.0",
+        "status": "FILE_OBSERVED",
+        "functional_test": "NOT RUN"
+      },
+      {
+        "product": "Antigravity IDE",
+        "version": "1.107.0.0",
+        "status": "FILE_OBSERVED",
+        "functional_test": "NOT RUN"
+      }
+    ],
+    "designers": [
+      {
+        "product": "Qt Designer for QGIS",
+        "version": "6.11.1.0",
+        "status": "FILE_OBSERVED",
+        "functional_test": "NOT RUN"
+      }
+    ]
+  },
+  "vs_code": {
+    "user_reports_installed": true,
+    "detected_executable": false,
+    "path_probe": "NOT_FOUND_ON_PATH"
+  },
+  "antigravity_ide_product_version_observed": "2.7.0",
+  "individual_agent_client_e2e": "NOT RUN",
+  "execution_mode": "SEQUENTIAL_ROLE_SIMULATION",
+  "review_mode": "SAME_AGENT_REVIEW"
+}

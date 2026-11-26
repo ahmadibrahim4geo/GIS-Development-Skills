@@ -33,7 +33,9 @@ Use this skill for **QGIS as a reusable GIS engine**, rather than an extension *
 | Need | Compose with | Integration contract |
 | --- | --- | --- |
 | QGIS-hosted plugins | [QGIS Plugin Development](../qgis-plugin-development/SKILL.md) | Do not duplicate host lifecycle/providers |
-| Standalone desktop GIS | [GIS Desktop Development](../gis-desktop-application-development/SKILL.md) | Runtime isolation, installer, GUI/worker tests |
+| Standalone desktop GIS & UI stripping | [GIS Desktop Development](../gis-desktop-application-development/SKILL.md) · [Engine Selection](../geospatial-engine-selection/SKILL.md) | Follow [`source-fork-and-ui-reuse.md`](../../references/source-fork-and-ui-reuse.md) (`HIDE` before `REMOVE`, protect 16 core modules) |
+| Reference-inspired UI & Qt `.ui` audit | [Clean-Room Reference](../clean-room-reference-implementation/SKILL.md) · [UI Command Audit](../gis-ui-command-audit/SKILL.md) | Scan Qt `.ui` safely via [`scripts/inventory_ui_actions.py`](../../scripts/inventory_ui_actions.py); never embed proprietary icons/DAML |
+| Multi-engine IPC / C ABI / host contracts | [Integration Patterns](../../references/engine-integration-patterns.md) | Explicit `DatasetRef`, `ICrsTransformer`, atomic worker cancel/recovery |
 | Raster/vector I/O and scientific analysis | [Geospatial Data Processing](../geospatial-data-processing/SKILL.md) | Explicit CRS, type, NoData, output readback |
 | Coordinate operations | [Coordinate Reference Systems](../coordinate-reference-systems/SKILL.md) | EPSG and transformations, units, datum/grids |
 | Web/3D client mapping | [Geospatial Web Mapping](../geospatial-web-mapping/SKILL.md) | Rendering remains independent of processing |

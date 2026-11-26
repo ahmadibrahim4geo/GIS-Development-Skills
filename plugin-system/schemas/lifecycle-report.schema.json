@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Plugin Lifecycle Report v1.0",
+  "type": "object",
+  "required": ["schema_version", "run_id", "mode", "version", "source_commit", "source_digest", "exit_code", "platforms"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "run_id": { "type": "string" },
+    "mode": { "type": "string" },
+    "version": { "type": "string" },
+    "source_commit": { "type": "string" },
+    "source_digest": { "type": "string" },
+    "exit_code": { "type": "integer", "enum": [0, 2, 3, 4, 5] },
+    "overall_state": { "type": "string" },
+    "platforms": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["state", "phase_status"],
+        "properties": {
+          "state": { "type": "string" },
+          "phase_status": { "type": "string" },
+          "bundle_sha256": { "type": ["string", "null"] },
+          "archive_sha256": { "type": ["string", "null"] },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

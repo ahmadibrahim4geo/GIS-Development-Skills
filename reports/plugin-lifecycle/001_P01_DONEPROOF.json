@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P00-P01",
+  "revision": "r2",
+  "overall_status": "partial",
+  "criteria": [
+    {
+      "id": "P00-BASELINE",
+      "statement": "Inspect repository baseline, SHA, catalogs, local CLI tools, and existing tests read-only without resetting dirty working tree",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "artifact_readback",
+          "reference": "reports/plugin-lifecycle/000_BASELINE.json",
+          "observed": "Recorded HEAD 42de4a246a2db1f7d33cc746da9cd3a0f1718a91, 35 skills, 193 projects, 78 urban entries w/ UDS-LIB-004 defect, 518 baseline tests (1 pre-existing dist/ link issue)",
+          "result": "pass",
+          "revision": "r2"
+        }
+      ]
+    },
+    {
+      "id": "P01-AGENTS-WIRING",
+      "statement": "Connect Master Integration V2 core principles, taxonomy/policy guides, and Mandatory Plugin Lifecycle policy into root AGENTS.md without breaking distribution ZIP links",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests/test_engine_architecture_migration.py + tests/test_skill_distribution.py",
+          "observed": "Ran 59 tests in 10.953s OK across 8 test modules including build_skill_bundle.build() and link verification",
+          "result": "pass",
+          "revision": "r2"
+        }
+      ]
+    },
+    {
+      "id": "P01-TAXONOMY-CONTRACT-V2",
+      "statement": "Author 24-entity taxonomy, 11 build models, 27 Arabic NLP patterns, capability taxonomy JSON, build-vs-reuse policy, free-first tiers, and backward-compatible schema v2.0",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests/test_engine_architecture_migration.py + tests/test_architecture_intent.py + tests/test_free_first_presentation.py",
+          "observed": "E23 v1 flow compatibility and v2 schema/taxonomy tests passed alongside validate_catalog/validate_api_catalog/validate_data_repositories/validate_skill_pack/build_manifest/audit_skill_graph/security_audit",
+          "result": "pass",
+          "revision": "r2"
+        }
+      ]
+    },
+    {
+      "id": "P02-THROUGH-P11-EXECUTION",
+      "statement": "Build plugin-system/, knowledge base, geospatial-engine-selection skill/scripts, Web/Mobile expansions, router wiring, and live platform/native tests",
+      "status": "not_run",
+      "reason": "Phases P02-P11 await explicit owner authorization after P00/P01 review",
+      "evidence": []
+    }
+  ]
+}

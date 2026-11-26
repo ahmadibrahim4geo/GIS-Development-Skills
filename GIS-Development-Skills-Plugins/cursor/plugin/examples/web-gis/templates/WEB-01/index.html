@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WEB-01 Static Map Explorer (Accessible & Subpath-Safe)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1.5rem; background: #0f172a; color: #f8fafc; }
+    .toolbar { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
+    button, input { padding: .45rem .8rem; border-radius: .35rem; border: 1px solid #334155; background: #1e293b; color: #f8fafc; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #334155; padding: .5rem; text-align: start; }
+    .status { font-family: monospace; padding: .4rem .6rem; background: #020617; border-radius: .25rem; }
+  </style>
+</head>
+<body>
+  <main id="app">
+    <h1 id="title">WEB-01 Static Map Explorer (`W01`)</h1>
+    <div class="toolbar">
+      <button id="langBtn" type="button">العربية / EN</button>
+      <input id="filterInput" type="search" aria-label="Filter features" placeholder="Filter bilingual name..." />
+      <span id="coordReadout" class="status" dir="ltr"></span>
+    </div>
+    <p id="notice">Uses relative subpath loading and accessible keyboard feature table fallback (`WEB-QA-11`, `WEB-QA-15`).</p>
+    <table aria-label="Accessible Feature List">
+      <thead><tr><th>ID</th><th>Arabic Name</th><th>English Name</th><th>Geometry</th><th>Details</th></tr></thead>
+      <tbody id="featureRows"></tbody>
+    </table>
+    <section id="popupPanel" aria-live="polite"></section>
+  </main>
+  <script type="module">
+    import {
+      loadGeoJsonFeatureCollection,
+      sanitizePopupHtml,
+      formatCoordinatesBidi,
+      resolveSubpathAsset,
+    } from "../../shared/spatial-core.mjs";
+
+    const state = { lang: "en", filter: "", data: null };
+    const coordEl = document.getElementById("coordReadout");
+    const tbody = document.getElementById("featureRows");
+    const popupEl = document.getElementById("popupPanel");
+
+    function render() {
+      const isAr = state.lang === "ar";
+      document.documentElement.lang = state.lang;
+      document.documentElement.dir = isAr ? "rtl" : "ltr";
+      coordEl.textContent = formatCoordinatesBidi(31.2357, 30.0444, state.lang).text;
+      tbody.replaceChildren();
+      if (!state.data) return;
+      const needle = state.filter.trim().toLowerCase();
+      for (const feat of state.data.features) {
+        const hay = `${feat.id} ${feat.properties.name_ar || ""} ${feat.properties.name_en || ""}`.toLowerCase();
+        if (needle && !hay.includes(needle)) continue;
+        const tr = document.createElement("tr");
+        const cells = [feat.id, feat.properties.name_ar || "", feat.properties.name_en || "", feat.geometry?.type || ""];
+        for (const text of cells) {
+          const td = document.createElement("td");
+          td.textContent = text;
+          tr.appendChild(td);
+        }
+        const actionTd = document.createElement("td");
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = isAr ? "عرض" : "Inspect";
+        btn.addEventListener("click", () => {
+          popupEl.innerHTML = sanitizePopupHtml(feat);
+          location.hash = `feature=${encodeURIComponent(feat.id)}`;
+        });
+        actionTd.appendChild(btn);
+        tr.appendChild(actionTd);
+        tbody.appendChild(tr);
+      }
+    }
+
+    document.getElementById("langBtn").addEventListener("click", () => {
+      state.lang = state.lang === "en" ? "ar" : "en";
+      render();
+    });
+    document.getElementById("filterInput").addEventListener("input", (ev) => {
+      state.filter = ev.target.value;
+      render();
+    });
+
+    const fixtureUrl = resolveSubpathAsset(new URL("./", import.meta.url).href, "../../../../tests/shared-gis-fixtures/geojson_epsg4326_bilingual.geojson");
+    fetch(fixtureUrl)
+      .then((res) => res.json())
+      .then((json) => {
+        state.data = loadGeoJsonFeatureCollection(json);
+        render();
+      })
+      .catch((err) => {
+        popupEl.textContent = `Fixture load fallback: ${err.message}`;
+        render();
+      });
+  </script>
+</body>
+</html>

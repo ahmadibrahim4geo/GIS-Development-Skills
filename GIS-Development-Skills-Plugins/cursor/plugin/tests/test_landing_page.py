@@ -1,0 +1,161 @@
+import json
+import unittest
+import xml.etree.ElementTree as ET
+from html.parser import HTMLParser
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class LinkCollector(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.links = []
+        self.ids = set()
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if "id" in values:
+            self.ids.add(values["id"])
+        if tag in ("img", "script", "link", "a") and "src" in values:
+            self.links.append(values["src"])
+        if tag in ("img", "script", "link", "a") and "href" in values:
+            self.links.append(values["href"])
+
+
+class LandingPageTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.html = (ROOT / "explorer.html").read_text(encoding="utf-8")
+        cls.parser = LinkCollector()
+        cls.parser.feed(cls.html)
+
+    def test_page_has_navigation_and_search_controls(self):
+        for element in ("main", "capabilities", "catalog", "get-started",
+                        "contribute", "searchInput", "categoryFilter",
+                        "catalogResults", "langBtn"):
+            self.assertIn(element, self.parser.ids)
+
+    def test_local_assets_exist(self):
+        self.assertIn("assets/brand/favicon.svg", self.parser.links)
+        self.assertIn("assets/brand/logo-dark.svg", self.parser.links)
+        self.assertIn("assets/brand/logo-compact-dark.svg", self.parser.links)
+        self.assertIn("assets/brand/banner.png", (ROOT / "README.md").read_text(encoding="utf-8"))
+        for name in ("icon", "favicon", "logo-dark", "logo-light",
+                     "logo-compact-dark", "logo-compact-light", "banner-dark", "banner-light"):
+            asset = ROOT / "assets" / "brand" / (name + ".svg")
+            self.assertTrue(asset.is_file(), str(asset))
+            root = ET.parse(asset).getroot()
+            self.assertTrue(root.tag.endswith("svg"))
+
+    def test_api_expansion_and_skill_path(self):
+        catalog=json.loads((ROOT/'references/free-geospatial-apis.json').read_text(encoding='utf-8'))
+        self.assertIn('id="apisCount">{}<'.format(len(catalog['services'])),self.html)
+        self.assertIn('data-i18n="apiExpansion"',self.html)
+        self.assertIn('data-i18n="dataSkill"',self.html)
+        self.assertIn('data-i18n="apiSkill"',self.html)
+        self.assertTrue((ROOT/'skills/geospatial-api-integration/SKILL.md').exists())
+
+    def test_catalog_endpoints_and_shapes(self):
+        for path, key in (("references/project-catalog.json", "projects"),
+                          ("references/free-geospatial-apis.json", "services")):
+            self.assertIn(path, self.html)
+            contents = json.loads((ROOT / path).read_text(encoding="utf-8"))
+            self.assertTrue(contents[key])
+
+    def test_brand_tagline_and_original_mission_statement(self):
+        self.assertIn("The Heart of Geospatial Innovation", self.html)
+        self.assertIn(
+            "Build GIS tools, plugins and geospatial applications with a verifiable development workflow.",
+            self.html,
+        )
+        self.assertIn('class="hero-symbol" src="assets/brand/logo-dark.svg"', self.html)
+        self.assertIn('src="assets/brand/logo-compact-dark.svg"', self.html)
+        self.assertEqual(1, self.html.count('class="hero-symbol"'))
+        self.assertNotIn('class="scene-logo"', self.html)
+        self.assertNotIn('class="hero-wordmark"', self.html)
+        self.assertIn('href="assets/brand-refresh.css"', self.html)
+        self.assertTrue((ROOT / "assets/brand-refresh.css").is_file())
+
+    def test_readme_header_has_only_one_slogan_and_balanced_wordmark(self):
+        for path in ("README.md", "README.ar.md"):
+            readme = (ROOT / path).read_text(encoding="utf-8")
+            self.assertIn('src="assets/brand/banner.png"', readme)
+            self.assertIn('href="assets/brand/README.md"', readme)
+            self.assertNotIn("<strong>The Heart of Geospatial Innovation</strong>", readme)
+        palette = json.loads((ROOT / "assets/brand/palette.json").read_text(encoding="utf-8"))
+        self.assertEqual("The Heart of Geospatial Innovation", palette["tagline"])
+        self.assertEqual("#00B8E6", palette["palette"]["cyan_for_banner_only"])
+        self.assertEqual("#67B5A6", palette["palette"]["teal"])
+        english = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn(
+            "Build GIS tools, plugins and geospatial applications with a verifiable development workflow.",
+            english,
+        )
+
+    def test_brand_grid_and_compatibility_paths(self):
+        ns = "{http://www.w3.org/2000/svg}"
+        assets = ROOT / "assets"
+        brand = assets / "brand"
+        logo = ET.parse(brand / "logo-dark.svg").getroot()
+        icon = ET.parse(brand / "icon.svg").getroot()
+        mark = [(node.get("d"), node.get("fill")) for node in icon.iter(ns + "path")]
+        logo_paths = {(node.get("d"), node.get("fill")) for node in logo.iter(ns + "path")}
+        self.assertEqual(len(mark), 5)
+        self.assertEqual(sum(fill == "#67B5A6" for _, fill in mark), 4)
+        self.assertTrue(set(mark).issubset(logo_paths))
+        self.assertEqual((assets / "logo.svg").read_bytes(), (brand / "logo-dark.svg").read_bytes())
+        self.assertEqual((assets / "icon.svg").read_bytes(), (brand / "icon.svg").read_bytes())
+        self.assertIn('class="hero-symbol" src="assets/brand/logo-dark.svg"', self.html)
+
+    def test_brand_artwork_contains_no_active_or_embedded_image_content(self):
+        for asset in (ROOT / "assets" / "brand").glob("*.svg"):
+            root = ET.parse(asset).getroot()
+            for node in root.iter():
+                self.assertNotIn(node.tag.split("}")[-1], {"image", "script", "foreignObject"}, asset.name)
+                self.assertFalse(any(attr.lower().startswith("on") for attr in node.attrib), asset.name)
+
+    def test_logo_variants_keep_project_wordmark_and_tagline(self):
+        ns = "{http://www.w3.org/2000/svg}"
+        for name in ("logo-dark", "logo-light", "logo-compact-dark", "logo-compact-light"):
+            svg = ET.parse(ROOT / "assets" / "brand" / (name + ".svg")).getroot()
+            self.assertEqual(svg.get("viewBox"), "0 0 1220 318")
+            words = {"".join(node.itertext()).strip() for node in svg.iter(ns + "text")}
+            self.assertIn("GIS Development Skills", words)
+            self.assertIn("The Heart of Geospatial Innovation", words)
+
+    def test_public_creator_section_and_contacts(self):
+        self.assertIn("author", self.parser.ids)
+        self.assertIn("ahmad_ibrahim_original.png", self.html)
+        self.assertIn('class="author-panel mirsad-author"', self.html)
+        self.assertIn('class="portrait-frame"', self.html)
+        self.assertIn('class="contact-actions"', self.html)
+        self.assertIn('class="consultation"', self.html)
+        self.assertIn("https://github.com/ahmadibrahim4geo", self.html)
+        self.assertIn("mailto:ahmadibrahim.geo@gmail.com", self.html)
+        self.assertIn("https://wa.me/201111915925", self.html)
+        self.assertIn("feature-request.yml", self.html)
+
+    def test_author_name_and_profile_are_fully_bilingual(self):
+        section = self.html.split('<section id="author"', 1)[1].split("</section>", 1)[0]
+        self.assertIn('<span class="lang-ar" lang="ar">أحمد إبراهيم</span>', section)
+        self.assertIn('<span class="lang-en" lang="en">Ahmad Ibrahim</span>', section)
+        self.assertNotIn('Ahmad Ibrahim <span', section)
+        self.assertIn('data-i18n-alt="authorPortraitAlt"', section)
+        for token in ('class="lang-ar" lang="ar"', 'class="lang-en" lang="en"'):
+            self.assertGreaterEqual(section.count(token), 6)
+        self.assertIn("document.querySelectorAll(\"[data-i18n-alt]\")", self.html)
+        self.assertIn("document.querySelectorAll(\"[data-i18n-aria]\")", self.html)
+        css = (ROOT / "assets/brand-refresh.css").read_text(encoding="utf-8")
+        self.assertIn('html[lang="ar"] .mirsad-author{direction:rtl}', css)
+        self.assertIn('html[lang="en"] .mirsad-author{direction:ltr}', css)
+
+    def test_language_and_accessibility_features(self):
+        for term in ("lang=\"en\"", "aria-selected",
+                     "document.documentElement.dir", "prefers-reduced-motion",
+                     "data-i18n", "role=\"tablist\""):
+            self.assertIn(term, self.html)
+
+
+if __name__ == "__main__":
+    unittest.main()

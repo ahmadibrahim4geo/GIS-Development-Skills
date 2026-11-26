@@ -28,7 +28,7 @@ When the goal is not obvious, distinguish **explicit facts**, **inferred hypothe
 
 ### Goal → workflow compilation
 
-1. **Analyze:** the hosting AI interprets the user goal, context, expected outputs and risks. The offline `--text` helper supplies keywords only and intentionally returns `goal: null`.
+1. **Analyze:** the hosting AI interprets the user goal, context, expected outputs and risks. The offline `--text` helper intentionally returns `goal: null`. Add `--context` to compare the requested deliverable and declared capabilities with a candidate route.
 2. **Plan:** produce a JSON plan using the v1 fields plus `goal`, `target`, `desired_outcomes`, `success_criteria`, optional `constraints`, `non_goals`, and `owner_skill` for each task. Keep the original prompt unchanged.
 3. **Preview:** run `python scripts/intent_router.py --plan path/to/reviewed-plan.json --workflow --format json`. The helper rejects missing goal/outcome/criteria, unknown skill owners and invalid dependencies, and emits **a stable dependency-ordered task list** with risk, candidate tools and handoffs.
 4. **Review:** the user can approve/revise the identified outcomes, task boundaries and plan revision. A change to requirements or chosen engine returns to AWAITING_REVIEW.
@@ -43,6 +43,17 @@ python scripts/intent_router.py --plan examples/intent-orchestrator/example-plan
 ```
 
 The first command **does not infer a goal**. The second emits an unapproved blueprint only. The third rejects the example because it is not approved and would still not execute even if its fields stated approval. Host-side authorization and runtime execution live outside this helper.
+
+### Contextual routing preview
+
+Use `--text "Build a WPF app with a visual designer" --context context.json --format json`.
+For example, `{"delivery":"wpf-app","available":["dotnet"]}` asks for the WPF route and records that the SDK was observed. The preview still lists `wpf-designer` as a capability to verify. VS Code and Antigravity are editing hosts. An editor observation only supplies evidence about that editor. For a Qt design workflow, record a compatible Qt Designer separately.
+
+`delivery`, `available` and `resume_ref` are optional. The host must infer the
+requested deliverable, verify local capabilities and supply those declarations.
+Named products alone leave the route unresolved. Conflicting deliverables and
+resume without a verified task scope require follow-up before action. The preview
+has no dispatch or approval authority. Run `python -m tests.test_contextual_routing` for the offline bilingual comparison.
 
 ### Minimum review view (localize Arabic/English)
 

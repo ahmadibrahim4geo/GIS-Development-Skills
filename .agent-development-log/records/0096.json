@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 96,
+  "timestamp_utc": "2026-11-21T04:43:09+00:00",
+  "kind": "plan",
+  "status": "proposed",
+  "summary": "Researched and drafted portable agent root and skill readiness r10",
+  "details": "Read the existing agent root, original resource appendix, token and publishing guidance, and skill prerequisites. Checked official Anthropic, Agent Skills, NVIDIA, Cisco and OpenAI references. Prepared a five-step local draft and source notes. The workflow validated AWAITING_REVIEW. No runtime was installed, no model or root policy was changed, and no GitHub write occurred.",
+  "references": [
+    95
+  ],
+  "task_id": "PORTABLE-AGENT-ROOT",
+  "plan_revision": "r10",
+  "changed_files": [
+    "plans/active/0003_Agent-Roots-Portable-Skills/PLAN.json",
+    "plans/active/0003_Agent-Roots-Portable-Skills/RESEARCH.ar.md"
+  ],
+  "tests": [
+    "intent_router.py --workflow validated the five draft tasks"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "974233398c1e22f93b6992995d4675fc6e9bcae5ad46dbef9f6a0303272c1f5f",
+  "hash": "37b039e519fe044d179a48972bf9594042279bc7997bee0cdf1f35ad6cad7510"
+}

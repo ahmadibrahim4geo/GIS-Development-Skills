@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P08",
+  "revision": "r1",
+  "overall_status": "partial",
+  "criteria": [
+    {
+      "id": "P08-ROUTING-DECISION-TREE-AND-ROLE-MAPPING",
+      "statement": "Wire geospatial-engine-selection, Web/Mobile r3 guides, 25+ colloquial AR/EN phrases, V2 role registry mappings, and validate_architecture_flow.py cleanly without breaking E31 lightweight edits",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests.test_p08_repo_integration + tests.test_intent_orchestrator + tests.test_skill_flow_audit + audit_skill_graph.py",
+          "observed": "Colloquial AR/EN routing, E31 lightweight guard, V2 roles (SEQUENTIAL_ROLE_SIMULATION), and Archify validator link all PASS",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P08-EXPLORER-WIZARD-HOMEPAGE-AND-0006-ARCHIVE",
+      "statement": "Update explorer.html (capabilities/role/evidence filters), project-wizard.html, index.html, repository-manifest.json (36/461/53/26), and archive 0006_Mobile-and-Web-GIS-Expansion cleanly",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "73 HTML/routing/manifest tests + pipeline --build-only (019_PLUGIN_P08_SYNC.json) + --check-only",
+          "observed": "73/73 UI, Node JS syntax, wizard, landing page & archive tests OK; bundle BUILT (763 files) and UP_TO_DATE",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P08-LIVE-BROWSER-RENDER-AND-REMAINING-PHASES",
+      "statement": "Live Playwright/Chromium browser DOM interaction on index/explorer/wizard and Phases P09-P11",
+      "status": "not_run",
+      "reason": "Playwright/Chromium binaries absent on host; Phases P09-P11 execute next in approved sequence",
+      "evidence": []
+    }
+  ]
+}

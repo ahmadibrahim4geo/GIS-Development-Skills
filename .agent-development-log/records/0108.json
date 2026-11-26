@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "sequence": 108,
+  "timestamp_utc": "2026-11-22T17:12:23+00:00",
+  "kind": "implementation",
+  "status": "in_progress",
+  "summary": "Implemented paired web guidance in isolated main-based worktree",
+  "details": "Local commit 0adcbeb integrates paired routing, signed-source npm pin, provider readiness, documentation, bilingual website discovery, and reproducible Windows golden fixture line endings. Observed READY with real Modern Web Guidance search/retrieve and UI/UX design/UX results. Edge 158 verified keyboard focus and dismissal in RTL/LTR at 320 and 1280 px. Repository tests: 523 run, one skipped. The packaged Codex executable detected both skills in a fresh prompt; its Windows tool broker blocked command process creation. Trying an isolated official CLI fallback. GitHub main delivery pending.",
+  "references": [
+    107
+  ],
+  "task_id": "WEB-SKILLS-0005",
+  "plan_revision": "r1",
+  "changed_files": [],
+  "tests": [
+    "Provider READY, real Edge browser receipt, 523 repository tests with one skip, catalog/security/audit/bundle checks"
+  ],
+  "test_result": "passed",
+  "commit": "0adcbeb",
+  "previous_hash": "aee7d5ca40e5d5d81ec4942e4320c2451a94daf5d3e400fdd302884e0aadbdcf",
+  "hash": "f048101a361ddb407b0736ae0bda5e326ec8929cfe40d6f1052f359c1d1642b1"
+}

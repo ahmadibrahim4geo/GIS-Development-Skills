@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "platform": "cursor",
+  "display_name": "Cursor",
+  "phase_status": "ACTIVE_P09",
+  "version": "0.3.5",
+  "source_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "source_digest": "527cf7b1b01b4b4ca593674ba47a6228843547f72ce9fcbdb5c4c24fe14d819e",
+  "carried_components": [
+    "skills (37)",
+    "references",
+    "schemas",
+    "scripts",
+    "templates",
+    "examples",
+    "fixtures",
+    "native_tests",
+    "docs",
+    "assets",
+    "AGENTS.md",
+    "LICENSE"
+  ],
+  "adapted_components": [
+    {
+      "component": "SKILL.md + .cursor-plugin/plugin.json",
+      "action": "Generated Cursor manifest and self-contained canonical bundle."
+    },
+    {
+      "component": ".cursor-plugin/plugin.json + .cursor/rules/gis-development-skills.mdc",
+      "action": "Mapped Cursor plugin manifest and workspace `.mdc` governance rule file."
+    }
+  ],
+  "excluded_components": [
+    {
+      "item": "Cursor Team Admin Marketplace auto-sync",
+      "reason": "Team dashboard publishing requires organization admin import rather than unattended local CLI push (REQ-PL-023).",
+      "alternative": "Verified workspace `.cursor/rules/gis-development-skills.mdc` + `artifacts/gis-development-skills-cursor.zip`"
+    },
+    {
+      "item": "plugin-system/, Update-All-Plugins.*, Update-My-Platforms.*, reports/, plans/, .agent-development-log/",
+      "reason": "Developer-only lifecycle infrastructure & secrets excluded from end-user payload (REQ-PL-026 / PL-T26).",
+      "alternative": "Canonical repository governance surface"
+    }
+  ],
+  "notes": "Cursor package built cleanly (776 files)."
+}

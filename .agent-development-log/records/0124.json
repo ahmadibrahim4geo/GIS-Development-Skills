@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "sequence": 124,
+  "timestamp_utc": "2026-11-26T08:46:48+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "Reconciled origin/main (8747283), updated README/HTML, synced 37/461/53/26, rebuilt 7 plugins, verified T0/T1 before push",
+  "details": "Restored 5 missing files from 8747283 and ported all 0adcbeb routing/workflow updates cleanly. Refreshed README.md, README.ar.md, index.html, explorer.html, CHANGELOG.md, and context/CURRENT_HANDOFF.md. Rebuilt 7 plugin outputs (028_PLUGIN_P11_FINAL_SYNC). Check-only UP_TO_DATE, 10 CLI validators pass, Node web-gis 6/6 pass, mobile-gis 10/10 pass, plugin-system 23/23 pass, tests 590/592 pass (1 Win symlink skip; 1 isolated pre-existing untracked dist/user-testing link fail). Native T2-T4 runtimes NOT_RUN.",
+  "references": [],
+  "task_id": "GIS-MASTER-INTEGRATION-0007-GH",
+  "plan_revision": "r1",
+  "changed_files": [
+    "README.md",
+    "README.ar.md",
+    "index.html",
+    "explorer.html",
+    "CHANGELOG.md",
+    "context/CURRENT_HANDOFF.md",
+    "AGENTS.md",
+    "skills/modern-web-guidance/SKILL.md",
+    "references/repository-manifest.json"
+  ],
+  "tests": [
+    "python -m unittest discover -s plugin-system/tests -v",
+    "python -m unittest discover -s tests/mobile-gis -v",
+    "node --test tests/web-gis/web_gis_contract.test.mjs",
+    "python -m unittest discover -s tests -v"
+  ],
+  "test_result": "passed",
+  "commit": "HEAD",
+  "previous_hash": "243d89e7537a7274fa27106851598cd4fdc19724f3f2523b8c9def44be2ce40e",
+  "hash": "1894aee5b12c0128e41374a664dd305717c3bb9bdebdd3f0d52916603177e323"
+}

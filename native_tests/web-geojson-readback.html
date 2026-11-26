@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GeoJSON point readback</title>
+<style>
+body { font: 16px system-ui, sans-serif; margin: 2rem; }
+#map { position: relative; width: 320px; height: 220px; background: #e6f3f0; border: 1px solid #24645e; }
+.point { position: absolute; transform: translate(-50%, -50%); color: #075f57; }
+.point::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 4px; background: currentColor; }
+</style>
+</head>
+<body>
+<h1>GeoJSON control points</h1>
+<button id="toggle" type="button" aria-controls="map" aria-pressed="true">Show control points</button>
+<div id="map" role="region" aria-label="Map of control points"></div>
+<output id="result"></output>
+<script type="application/json" id="source">__FIXTURE__</script>
+<script>
+const map = document.querySelector("#map");
+const button = document.querySelector("#toggle");
+const data = JSON.parse(document.querySelector("#source").textContent);
+for (const feature of data.features) {
+    const [longitude, latitude] = feature.geometry.coordinates;
+    const point = document.createElement("span");
+    point.className = "point";
+    point.textContent = feature.properties.place;
+    point.style.left = ((longitude - 29) * 25) + "%";
+    point.style.top = ((32 - latitude) * 25) + "%";
+    map.append(point);
+}
+button.addEventListener("click", () => {
+    map.hidden = !map.hidden;
+    button.setAttribute("aria-pressed", String(!map.hidden));
+});
+button.focus();
+const keyboardFocus = document.activeElement === button;
+const points = Array.from(map.children, point => ({
+    name: point.textContent,
+    x: Math.round(point.offsetLeft),
+    y: Math.round(point.offsetTop)
+}));
+button.click();
+const hidden = getComputedStyle(map).display === "none" && button.getAttribute("aria-pressed") === "false";
+button.click();
+const restored = getComputedStyle(map).display !== "none" && button.getAttribute("aria-pressed") === "true";
+document.querySelector("#result").textContent = JSON.stringify({points, keyboardFocus, hidden, restored});
+</script>
+</body>
+</html>

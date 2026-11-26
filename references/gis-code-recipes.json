@@ -49,7 +49,7 @@
       "title": "ArcGIS Pro SDK Ribbon Button Command",
       "domain": "arcgis-pro-sdk",
       "language": "C#",
-      "target_environment": "ArcGIS Pro 3.x (.NET 8)",
+      "target_environment": "ArcGIS Pro C# add-in with the SDK and .NET runtime for the installed Pro minor release",
       "state": "adapted",
       "license": "Apache-2.0",
       "source_reference": "https://github.com/Esri/arcgis-pro-sdk-snippets",

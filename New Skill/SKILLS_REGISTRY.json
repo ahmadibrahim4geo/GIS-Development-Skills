@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "skills": [
+    {
+      "id": "0001",
+      "name": "winapp-ui-automation",
+      "source": "https://github.com/microsoft/winappCli/blob/e7e4587ad7a6e51c085ad6360a10ede0cee7ab6e/plugins/winapp/skills/winapp-ui-automation/SKILL.md",
+      "revision": "e7e4587ad7a6e51c085ad6360a10ede0cee7ab6e",
+      "license": "MIT",
+      "license_evidence": "https://github.com/microsoft/winappCli/blob/e7e4587ad7a6e51c085ad6360a10ede0cee7ab6e/LICENSE",
+      "declared_effects": [
+        "desktop-input",
+        "execute",
+        "read",
+        "write"
+      ],
+      "dependencies": [
+        "Microsoft WinApp CLI; compatible released version not verified"
+      ],
+      "purpose": "Evaluate an external cross-process Windows UI Automation adapter for the P05 WPF acceptance gap.",
+      "status": "CANDIDATE_UNREVIEWED",
+      "path": "New Skill/candidates/0001_winapp-ui-automation",
+      "security_review": "NOT RUN",
+      "runtime_test": "NOT RUN",
+      "active": false
+    },
+    {
+      "id": "0002",
+      "name": "Esri Developer Agent Skills",
+      "source": "https://github.com/Esri/esri-developer-agent-skills/blob/b6fcac59bf7febd4263d77132e3cfd22d6498a5e/README.md",
+      "revision": "b6fcac59bf7febd4263d77132e3cfd22d6498a5e",
+      "license": "Apache-2.0",
+      "license_evidence": "https://github.com/Esri/esri-developer-agent-skills/blob/b6fcac59bf7febd4263d77132e3cfd22d6498a5e/LICENSE",
+      "declared_effects": [
+        "network",
+        "read"
+      ],
+      "dependencies": [
+        "Compatible agent-plugin client and explicitly authorized Esri documentation MCP connection for optional hosted integration"
+      ],
+      "purpose": "Candidate developer documentation for ArcGIS SDK and API discovery. Reference review only.",
+      "status": "CANDIDATE_UNREVIEWED",
+      "path": "New Skill/candidates/0002_Esri-Developer-Agent-Skills",
+      "security_review": "NOT RUN",
+      "runtime_test": "NOT RUN",
+      "active": false
+    },
+    {
+      "id": "0003",
+      "name": "Modern Web Guidance",
+      "source": "https://github.com/GoogleChrome/modern-web-guidance/tree/64a6d708f5a43f2cd3fde5d4d7db3905ba1bdf65/skills/modern-web-guidance",
+      "revision": "64a6d708f5a43f2cd3fde5d4d7db3905ba1bdf65",
+      "license": "Apache-2.0",
+      "license_evidence": "https://github.com/GoogleChrome/modern-web-guidance/blob/64a6d708f5a43f2cd3fde5d4d7db3905ba1bdf65/LICENSE",
+      "declared_effects": [
+        "execute",
+        "read"
+      ],
+      "dependencies": [
+        "Node.js >=22; reviewed v1.0.1 CLI package with its bundled guide index and runtime assets; agent skill discovery"
+      ],
+      "purpose": "Evaluate paired activation with UI/UX Pro Max for HTML and browser-based frontend work, with verified prerequisites for both.",
+      "status": "CANDIDATE_UNREVIEWED",
+      "path": "New Skill/candidates/0003_Modern-Web-Guidance",
+      "security_review": "NOT RUN",
+      "runtime_test": "NOT RUN",
+      "active": false
+    },
+    {
+      "id": "0004",
+      "name": "MapLibre Agent Skills",
+      "source": "https://github.com/maplibre/maplibre-agent-skills/tree/2e0349b12eda2c86faff8e1380e1620d82cb97b2",
+      "revision": "2e0349b12eda2c86faff8e1380e1620d82cb97b2",
+      "license": "MIT",
+      "license_evidence": "https://github.com/maplibre/maplibre-agent-skills/blob/2e0349b12eda2c86faff8e1380e1620d82cb97b2/LICENSE.md",
+      "declared_effects": [
+        "read"
+      ],
+      "dependencies": [
+        "Compatible Agent Skills host; MapLibre GL JS requirements follow the selected task"
+      ],
+      "purpose": "Review community MapLibre GL JS-specific agent guidance for browser GIS",
+      "status": "CANDIDATE_UNREVIEWED",
+      "path": "New Skill/candidates/0004_MapLibre-Agent-Skills",
+      "security_review": "NOT RUN",
+      "runtime_test": "NOT RUN",
+      "active": false
+    },
+    {
+      "id": "0005",
+      "name": "Google Maps Platform Agent Skills",
+      "source": "https://github.com/googlemaps/agent-skills/tree/e7538f369afc18acbd9bde2cdcb9b7a7be6d7978",
+      "revision": "e7538f369afc18acbd9bde2cdcb9b7a7be6d7978",
+      "license": "Apache-2.0",
+      "license_evidence": "https://github.com/googlemaps/agent-skills/blob/e7538f369afc18acbd9bde2cdcb9b7a7be6d7978/LICENSE",
+      "declared_effects": [
+        "network",
+        "read"
+      ],
+      "dependencies": [
+        "Compatible Agent Skills host; product-specific accounts, keys and billing if live service is chosen"
+      ],
+      "purpose": "Review optional Google Maps Platform web and native SDK guidance without enabling billing or services",
+      "status": "CANDIDATE_UNREVIEWED",
+      "path": "New Skill/candidates/0005_Google-Maps-Platform-Agent-Skills",
+      "security_review": "NOT RUN",
+      "runtime_test": "NOT RUN",
+      "active": false
+    },
+    {
+      "id": "0006",
+      "name": "Android Developer Skills",
+      "source": "https://github.com/android/skills/tree/c72942584fff970dac86ced78b367fce0c441e52",
+      "revision": "c72942584fff970dac86ced78b367fce0c441e52",
+      "license": "Apache-2.0",
+      "license_evidence": "https://github.com/android/skills/blob/c72942584fff970dac86ced78b367fce0c441e52/LICENSE.txt",
+      "declared_effects": [
+        "execute",
+        "read"
+      ],
+      "dependencies": [
+        "Compatible Agent Skills host; pinned Android SDK and JDK only for the selected Android runtime tests"
+      ],
+      "purpose": "Review Android adaptive Compose UI and Android testing guidance for native mobile GIS",
+      "status": "CANDIDATE_UNREVIEWED",
+      "path": "New Skill/candidates/0006_Android-Developer-Skills",
+      "security_review": "NOT RUN",
+      "runtime_test": "NOT RUN",
+      "active": false
+    }
+  ]
+}

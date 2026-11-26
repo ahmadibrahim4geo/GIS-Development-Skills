@@ -1,6 +1,6 @@
 ---
 name: geospatial-web-mapping
-description: Build and evaluate web maps and desktop-embedded MapLibre/GeoLibre 2D/3D UIs, with real geometry editing, layer state, historical imagery time controls, raster/COG rendering and correctly licensed basemaps.
+description: Build and evaluate web maps and desktop-embedded MapLibre/GeoLibre 2D/3D UIs, with real geometry editing, layer state, PWA offline sync, historical imagery time controls, raster/COG rendering and correctly licensed basemaps.
 license: MIT
 ---
 
@@ -8,29 +8,36 @@ license: MIT
 
 **Free-first default:** Follow [no-cost GIS workflow and licensing policy](../../references/free-first-policy.md). Do not silently require paid GIS execution, LLM/API credits or expiring trials. Disclose vendor-license limits and offer a separately tested analogous free route where feasible.
 
-Use when the deliverable is a web GIS map, browser-based spatial tool or mapping UI in a desktop application.
+Use when the deliverable is a Web GIS product (`W01–W12`), PWA, browser spatial editor/EO viewer, or mapping UI in a desktop shell. For cross-engine choice, multi-engine compositions, or framework selection, invoke [Geospatial Engine Selection](../geospatial-engine-selection/SKILL.md) rather than forcing one stack; the existing [project catalog](../../references/project-catalog.json) and [GIS software source registry](../../references/gis-software-source-registry.md) remain the single source of truth.
 
-For verified upstream *repository availability* (not runtime readiness), choose a web application, 2D/3D renderer, native map SDK or tile server from the [GIS software source registry](../../references/gis-software-source-registry.md). The existing project catalog is the single source of truth; avoid creating a second inventory.
+## Web GIS Reference Guides (Progressive Disclosure)
+
+- **Products, 8 Layers & Decision Matrix (`W01–W12`):** [web-gis-products-map.md](../../references/web-gis-products-map.md)
+- **Web UI Frameworks, 2D Renderers, Portals & Backends:** [web-gis-architecture-selection.md](../../references/web-gis-architecture-selection.md)
+- **JS Spatial Math, Editing, 29 Formats & EO/STAC:** [browser-geospatial-js-runtime.md](../../references/browser-geospatial-js-runtime.md)
+- **3D Globes, Digital Twins, LiDAR & WebXR:** [geospatial-3d-ar-mobile-web.md](../../references/geospatial-3d-ar-mobile-web.md)
+- **PWA, Offline Storage, Tile Policy & 15-Field Sync:** [web-mobile-offline-sync-contract.md](../../references/web-mobile-offline-sync-contract.md)
+- **On-Device & Cloud GeoAI Options:** [web-mobile-geoai-options.md](../../references/web-mobile-geoai-options.md)
+- **26 Providers & 10 OWASP Security Controls:** [web-mobile-vendor-license-audit.md](../../references/web-mobile-vendor-license-audit.md)
+- **Templates (`WEB-01..WEB-18`) & Practical Guide:** [WEB_GIS_GUIDE.md](../../docs/WEB_GIS_GUIDE.md) · [examples/web-gis](../../examples/web-gis/README.md) · [Performance & Budgets](../../docs/PERFORMANCE_RELIABILITY.md)
 
 ## Procedure
 
-1. Clarify if it is a standalone web app, Tauri/WebView2 desktop shell or GeoLibre project.
-2. Read `../../references/desktop-and-web.md`, `../../references/geolibre-integration.md` and `../../references/gishub-software.md`.
-3. Choose mapping renderer (MapLibre/Cesium/GeoLibre) separately from processing engine (GDAL/Whitebox-WASM/Rust/Python).
-4. Use official modules from https://github.com/opengeos/maplibre-gl-components, layer-manager, geo-editor, time-slider and plugin-template as architecture candidates **only after version checks**.
-5. Implement a real user action end-to-end before adding more ribbon/toolbar commands; persist layer visibility, style, selections and camera.
-6. Ensure layers use correct CRS and NoData, handle feature editing with undo, validate project save/open and loading failures.
-7. Historical layers/time controls require actual dated data from legal sources; do not fake or imply imagery availability.
-8. Validate remote data licensing, keys, attribution, offline limitations, provider rates and CORS. Read `../geospatial-api-integration/SKILL.md` and `../../references/free-geospatial-apis.md` for approved source adapters: geoBoundaries, NASA FIRMS/CMR/EONET, HeiGIT routing, water/air layers and data disclaimers. Do not mistake discovery metadata for imagery tiles or OSM edit dates for real-world construction dates.
-9. Run in browser/desktop where possible, check event handlers and real rendering; otherwise state what remains untested.
+1. Identify product class (`W01–W12`), delivery shell (standalone static subpath, Vite/SPA, PWA offline, or Tauri/WebView2 desktop), and consult [desktop-and-web.md](../../references/desktop-and-web.md), [geolibre-integration.md](../../references/geolibre-integration.md), and [gishub-software.md](../../references/gishub-software.md).
+2. Keep the 8 logical layers separated: mapping renderer (`MapLibre` / `OpenLayers` / `Leaflet` / `CesiumJS`) stays distinct from projection/topology compute (`Proj4js`, `Turf`, `JSTS`, `GDAL/Worker`), offline queue, and auth secrets.
+3. Evaluate official [opengeos/maplibre-gl-components](https://github.com/opengeos/maplibre-gl-components) modules (layer-manager, geo-editor, time-slider) **only after version checks** and [external-agent-skills-registry.json](../../references/external-agent-skills-registry.json) security review.
+4. Implement end-to-end real editing, undo/redo, topology validity, Arabic UTF-8 RTL preservation, popup XSS sanitization (`escapeHtml` / `textContent`), subpath relative assets, and accessible table/list fallback before adding extra toolbar controls.
+5. For historical imagery / EO layers, use real dated sources (`STAC` acquisition dates, `COG` NoData/stretch) — never fake acquisition dates from mosaic publish timestamps or OSM edits.
+6. Enforce remote API, tile licensing, CORS, and quota rules via [Geospatial API Integration](../geospatial-api-integration/SKILL.md) and [free-geospatial-apis.md](../../references/free-geospatial-apis.md); **never** scrape or prefetch public `tile.openstreetmap.org` servers for offline PWAs.
+7. Run deterministic Node/Python contract & independent GeoJSON/GeoPackage readback checks (`T1`), plus live browser E2E (`WEB-QA-01..15`) when Playwright/browser runtimes exist — otherwise state explicitly what remains `NOT RUN`.
 
-## Acceptance
+## Acceptance (`GIS-001..014` & `WEB-QA-01..15`)
 
-- [ ] Renderer and data dependencies separated
-- [ ] Buttons work, not visual placeholders
-- [ ] Export, save, reopen and undo functional
-- [ ] Responsive map, long data performance, time axis accuracy
-- [ ] API terms, CRS, attribution and secrets checked
+- [ ] Renderer, domain math (`Proj4js`/topology), persistence, and credentials cleanly separated
+- [ ] Buttons, accessible keyboard table view, Arabic RTL/LTR, and subpath `/repo/` links work (not placeholders)
+- [ ] Import -> Edit -> Undo/Redo -> Export passes independent OGR/Python readback (`GIS-007`, `GIS-012`)
+- [ ] Offline PWA survives cold launch, honors `COOP`/`COEP` / `storage.persist()` fallbacks, exports backup, never scrapes OSM bulk tiles
+- [ ] Popups escape HTML (`WEB-QA-10`); 401/403/429 errors leak zero keys; missing terrain/imagery recovers safely
 
 ## Blue Marble 3D Tiles and terrain forks
 

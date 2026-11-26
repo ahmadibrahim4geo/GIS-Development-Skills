@@ -1,0 +1,10 @@
+{
+  "id": "0005",
+  "title": "Modern Web Guidance Integration",
+  "status": "ARCHIVED_WITH_REFERENCED_EVIDENCE",
+  "revision": 1,
+  "evidence": [
+    ".worktrees/web-guidance-integration/testing results/web-guidance-r1/doneproof-T5.json"
+  ],
+  "delivery": "Authorized by the user for origin/main after applicable verification."
+}

@@ -1,3 +1,4 @@
+import struct
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -9,8 +10,8 @@ class ReadmeLayoutTests(unittest.TestCase):
         md = (ROOT / "README.md").read_text(encoding="utf-8")
         ar = (ROOT / "README.ar.md").read_text(encoding="utf-8")
         ET.parse(ROOT / "assets/brand/banner-dark.svg")
-        self.assertIn("assets/brand/banner-dark.svg", md)
-        self.assertIn("assets/brand/banner-dark.svg", ar)
+        self.assertIn("assets/brand/banner.png", md)
+        self.assertIn("assets/brand/banner.png", ar)
         self.assertEqual(md.count("<td align=\"center\" valign=\"top\""), 6)
         self.assertNotIn("<strong>The Heart of Geospatial Innovation</strong>", md)
         self.assertIn("Build GIS tools, plugins and geospatial applications with a verifiable development workflow.", md)
@@ -29,51 +30,19 @@ class ReadmeLayoutTests(unittest.TestCase):
             ET.parse(ROOT / "assets" / ("readme-" + name + ".svg"))
         self.assertNotIn("v1.0.0", md.split("## What makes this different")[0])
 
-    def test_header_banner_tight_word_spacing_and_no_white_edges(self):
-        """Protect the new 1600x500 full-bleed vector banner and readable word gaps."""
-        path = ROOT / "assets/brand/banner-dark.svg"
-        root = ET.parse(path).getroot()
-        self.assertEqual(root.attrib.get("viewBox"), "0 0 1600 500")
-        self.assertEqual(root.attrib.get("width"), "1600")
-        self.assertEqual(root.attrib.get("height"), "500")
-        ns = "{http://www.w3.org/2000/svg}"
-
-        # The banner's solid background covers every edge; the logo itself
-        # has an independently reusable transparent master.
-        backgrounds = [node for node in root.findall(ns + "rect")
-                       if node.get("width") == "1600" and node.get("height") == "500"]
-        self.assertEqual(len(backgrounds), 1)
-        self.assertEqual(backgrounds[0].get("fill"), "#101B24")
-        transparent_logo = (ROOT / "assets/brand/logo-dark.svg").read_text(encoding="utf-8")
-        self.assertNotIn('<rect width="1400"', transparent_logo)
-
-        # SVG lays out adjacent tspans by glyph advance, not hardcoded
-        # absolute word start X values. This prevents overlaps in Inter
-        # and system fallback fonts at every responsive display size.
-        name = root.find(".//*[@id='brand-name']")
-        tagline = root.find(".//*[@id='brand-tagline']")
-        self.assertIsNotNone(name)
-        self.assertIsNotNone(tagline)
-        name_parts = name.findall(ns + "tspan")
-        self.assertEqual(["Development", "Skills"], [p.text for p in name_parts])
-        self.assertIsNone(name_parts[1].get("x"))
-        self.assertGreaterEqual(float(name_parts[1].get("dx")), 16)
-        self.assertLessEqual(float(name_parts[1].get("dx")), 30)
-        tagline_parts = tagline.findall(ns + "tspan")
-        self.assertEqual(["The", "Heart", "of", "Geospatial", "Innovation"],
-                         [p.text for p in tagline_parts])
-        for word in tagline_parts[1:]:
-            self.assertIsNone(word.get("x"))
-            self.assertGreaterEqual(float(word.get("dx")), 8)
-        palette = {p.text: p.get("fill") for p in name_parts + tagline_parts}
-        self.assertEqual(palette["Heart"], "#82D53E")
-        self.assertEqual(palette["Skills"], "#82D53E")
-        self.assertEqual(palette["Innovation"], "#1CC8E8")
-        self.assertEqual(palette["Geospatial"], "#398CE3")
-        banner = path.read_text(encoding="utf-8")
-        self.assertNotIn("<image", banner)
-        self.assertNotIn("data:image/", banner)
-        self.assertIn('id="gis-i-dot"', banner)
+    def test_supplied_banner_has_native_six_to_one_ratio(self):
+        brand = ROOT / "assets" / "brand"
+        for filename in ("banner-dark.svg", "banner-light.svg"):
+            svg = ET.parse(brand / filename).getroot()
+            self.assertEqual(svg.get("viewBox"), "0 0 2400 400")
+            credit = svg.find(".//*[@id='creator-credit']")
+            self.assertIsNotNone(credit, filename)
+            self.assertEqual(credit.text, "By Ahmed Ibrahim")
+            self.assertEqual(credit.get("font-style"), "normal")
+            self.assertGreaterEqual(int(credit.get("font-size")), 48)
+        png_header = (brand / "banner.png").read_bytes()[:24]
+        self.assertEqual(png_header[:8], bytes.fromhex("89 50 4E 47 0D 0A 1A 0A"))
+        self.assertEqual(struct.unpack(">II", png_header[16:24]), (2400, 400))
 
 
 if __name__ == "__main__":

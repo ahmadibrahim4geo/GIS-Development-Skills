@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "sequence": 111,
+  "timestamp_utc": "2026-11-22T21:12:16+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Published paired web guidance and the English-first homepage on GitHub main",
+  "details": "The user approved delivery with the recorded fresh Codex broker limitation. The isolated branch was fast-forwarded to main at 8747283a15e3953af8b01a30fb7d84da522bb6d8 and the remote SHA matched. The exact head passed GitHub validation, GIS Security Guardian and GitHub Pages. Edge on the published URL confirmed English/LTR by default, Arabic RTL, real clipboard writes for both prompts, and working controls at 375 and 1280 pixels. Final local suite ran 523 tests with one skip. The original paired provider check is verified and original fresh Codex in-session invocation remains partial.",
+  "references": [
+    110
+  ],
+  "task_id": "WEB-SKILLS-0005",
+  "plan_revision": "r1",
+  "changed_files": [
+    ".worktrees/web-guidance-integration/testing results/web-guidance-r1/doneproof-T5.json"
+  ],
+  "tests": [
+    "Local suite, exact GitHub head and action receipts, Edge Pages acceptance"
+  ],
+  "test_result": "passed",
+  "commit": "8747283a15e3953af8b01a30fb7d84da522bb6d8",
+  "previous_hash": "d5fabd0239f13a57a8917c5f7e38ac32df427a1d23da512f79d8f915842dd300",
+  "hash": "0ded7542c0cb4d7fdb35576b7a7e6547dc18059441809bc9ee7be21ffd3afa31"
+}

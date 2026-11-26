@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "fixture_id": "GIS-SHARED-CONTRACTS-P05",
+  "source_geojson": "tests/shared-gis-fixtures/geojson_epsg4326_bilingual.geojson",
+  "gis_001_expected": {
+    "feature_count": 4,
+    "feature_ids": ["pt-cairo-01", "ln-corridor-02", "pg-parcel-03", "mp-sensors-04"],
+    "geometry_types": ["Point", "LineString", "Polygon", "MultiPoint"],
+    "arabic_labels_present": ["نقطة معاينة القاهرة", "محور طريق تجريبي", "قطعة أرض صالحة", "مجموعة مستشعرات"]
+  },
+  "gis_002_cairo_utm36n_reference": {
+    "lon": 31.2357,
+    "lat": 30.0444,
+    "epsg_source": 4326,
+    "epsg_target": 32636,
+    "approx_easting_m": 329899.64,
+    "approx_northing_m": 3325016.74,
+    "roundtrip_tolerance_m": 0.2,
+    "line_corridor_haversine_m_approx": 1416.0,
+    "line_distance_tolerance_m": 25.0
+  },
+  "gis_008_invalid_bowtie_polygon": [
+    [0.0, 0.0],
+    [0.01, 0.01],
+    [0.01, 0.0],
+    [0.0, 0.01],
+    [0.0, 0.0]
+  ],
+  "gis_013_fake_imagery_cases": [
+    {
+      "provider": "esri-wayback",
+      "release_date": "2026-06-15",
+      "acquisition_date": null,
+      "claimed_as_acquisition": true,
+      "must_reject": true
+    },
+    {
+      "provider": "osm-node-edit",
+      "osm_edit_timestamp": "2026-08-01T10:00:00Z",
+      "acquisition_date": null,
+      "claimed_as_acquisition": true,
+      "must_reject": true
+    },
+    {
+      "provider": "sentinel-2-l2a-stac",
+      "acquisition_date": "2026-05-11T08:42:10Z",
+      "release_date": "2026-05-11",
+      "claimed_as_acquisition": true,
+      "must_reject": false
+    }
+  ],
+  "gis_014_antimeridian_segment": {
+    "bbox_unwrapped": [179.5, -10.0, -179.2, 10.0],
+    "spans_antimeridian": true,
+    "shortest_delta_lon_deg": 1.3
+  },
+  "gis_015_vertical_datum_z_utc": {
+    "ellipsoidal_height_m": 42.65,
+    "geoid_undulation_egm2008_m": 15.15,
+    "expected_orthometric_m": 27.5,
+    "tolerance_m": 0.001,
+    "utc_timestamp_pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$",
+    "must_distinguish_datum": true
+  },
+  "mobile_sync_15_fields": [
+    "project_id",
+    "layer_id",
+    "feature_id",
+    "op_id",
+    "base_revision",
+    "geometry",
+    "attributes",
+    "crs",
+    "client_timestamp",
+    "server_timestamp",
+    "device_id",
+    "attachment_manifest",
+    "deletion_tombstone",
+    "checksum",
+    "sync_state"
+  ]
+}

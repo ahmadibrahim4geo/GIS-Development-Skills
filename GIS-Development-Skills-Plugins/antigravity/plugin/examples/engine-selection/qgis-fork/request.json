@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "request_text": "خد QGIS نفسه ونضفه وسيب تحرير الطبقات فقط",
+  "language_hint": "ar",
+  "intent_modes": [
+    "source-fork",
+    "configure-host"
+  ],
+  "delivery_target": "desktop",
+  "existing_project": null,
+  "preserve_invariants": [
+    "crs_engine",
+    "undo_stack",
+    "atomic_project_save",
+    "ogr_gdal_providers"
+  ],
+  "target_os": [
+    "windows",
+    "linux"
+  ],
+  "preferred_languages": [
+    "cpp",
+    "python"
+  ],
+  "ui_framework_preference": "qt-widgets",
+  "required_capabilities": [
+    "io.vector.gpkg.read",
+    "crs.transform",
+    "render.2d.projected",
+    "vector.validate"
+  ],
+  "free_only": true,
+  "offline_required": true,
+  "license_policy": "gpl-ok"
+}

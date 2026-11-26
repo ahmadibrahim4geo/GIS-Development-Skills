@@ -1,0 +1,9 @@
+{
+  "expected_modes": [
+    "embedded-engine",
+    "worker-service"
+  ],
+  "forbids_direct_qt_in_wpf": true,
+  "requires_gpl_notice": true,
+  "native_pyqgis_status": "NOT_RUN (QGIS desktop/qgis_process binary absent on workstation)"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 86,
+  "timestamp_utc": "2026-11-21T03:28:54+00:00",
+  "kind": "revision",
+  "status": "approved",
+  "summary": "التوجيه حسب إصدار البيئة المثبتة",
+  "details": "وضح المستخدم أن المهارة ينبغي أن تستخدم الإصدار المثبت والمتوافق مع الهدف وأن تستفيد من مراجع أي إصدار. التعديل ضمن r6 المحلي. قارنا مراجعات Esri المثبتة وأضفنا مطابقة تقرير Toolchain مع مرجع ArcGIS Pro الموافق. WPF وArcPy تجربتان منفصلتان عن C# SDK.",
+  "references": [
+    85
+  ],
+  "task_id": "P09",
+  "plan_revision": "r6",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "69eeb4b5424280799e7fa855e148eb26da269f5db076831050fae2ba0596358e",
+  "hash": "558d553a538bfbb22ba40133582caab82cf09952f639be437773610fb4644660"
+}

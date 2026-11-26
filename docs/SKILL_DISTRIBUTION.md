@@ -14,7 +14,14 @@ newer. Choose a new output location; existing outputs are never overwritten.
 ```powershell
 python scripts/build_skill_bundle.py --output-dir dist/skill-release
 python scripts/build_skill_bundle.py --check dist/skill-release/gis-development-suite.zip
+python -B scripts/build_skill_bundle.py --identity dist/skill-release/gis-development-suite --format json
 ```
+
+Run `--identity` on the bundle root selected by the client. The command reports
+the actual path and hash of its `SKILL.md` and the content fingerprint derived
+from the bundle inventory. Two builds from the same Git commit can contain
+different working-tree content. Compare their fingerprints and use `--check`
+to verify all installed files against the selected inventory.
 
 The command produces:
 
@@ -54,6 +61,8 @@ and its shared dependencies together. Do not point users to a single nested
 skill install as a verified complete route until an isolated installation test
 shows that its external references are present.
 
+For HTML and browser frontends, the bundle includes the [Modern Web Guidance skill](../skills/modern-web-guidance/SKILL.md) and its readiness helper. The [paired workflow](../references/modern-web-guidance-workflow.md) specifies the reviewed npm archive, Node.js, Python and a compatible UI/UX Pro Max installation.
+
 The archive has a root skill named `gis-development-suite`. A compatible
 Agent Skills installer may accept a local or release-asset archive, for example:
 
@@ -66,6 +75,29 @@ repository that a particular CLI version or coding-agent client completed the
 installation. Before publishing support for a client, record its exact CLI and
 agent versions, install into an isolated project, confirm the installed file
 manifest, trigger a routing smoke request, and report the observed result.
+
+From an expanded or freshly unpacked archive you can run
+`python -m tests.test_contextual_routing` at the bundle root. This exercises the
+included CLI routing code and skill inventory with bilingual inputs without
+writing to an agent client's installed skills directory.
+
+## Use one policy across agent clients
+
+Use the repository `AGENTS.md` for project rules and the expanded pack's
+`SKILL.md` for entry into the bundled skills. Use client instructions to find
+either entry and keep the bundle tree intact.
+
+| Client | Check in a fresh session |
+| --- | --- |
+| Codex | Confirm the workspace `AGENTS.md` or the explicit bundle entry. Compare the active bundle with the approved fingerprint. |
+| Claude Code | Verify the workspace instruction source. The adjacent `CLAUDE.md` imports `AGENTS.md` for sessions that use Claude-specific instruction files. [Instruction discovery](https://code.claude.com/docs/en/memory) |
+| VS Code Copilot | Confirm the active chat harness, the workspace instructions and its recognized skill location. [Instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions) · [Skills](https://code.visualstudio.com/docs/agent-customization/agent-skills) |
+| Antigravity | Verify the workspace rules and the client's skill location. Preserve the full bundle when selecting a skill. [Rules](https://antigravity.google/docs/rules-workflows/) · [Skills](https://antigravity.google/docs/skills) |
+| Other readers | Provide the absolute `AGENTS.md` or bundle `SKILL.md` path. Record which files and checks the session can access. |
+
+Verify discovery and live tool capabilities separately. Use authorized local
+tools when the client provides equivalent checks, and report missing actions
+as BLOCKED or NOT RUN as appropriate. The user configures the model in the client.
 
 ## Evidence boundary
 

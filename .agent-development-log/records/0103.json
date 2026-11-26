@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 103,
+  "timestamp_utc": "2026-11-21T05:23:58+00:00",
+  "kind": "decision",
+  "status": "approved",
+  "summary": "Approved r11 brand refresh, local archive and direct main delivery",
+  "details": "Latest user message authorized execution after the file scope review and updated the supplied Brand Kit to 3.1. Direct main and local-only archive can proceed under the reviewed scope. The optional professional title does not require an author panel change.",
+  "references": [
+    102
+  ],
+  "task_id": "BRAND-MAIN-DELIVERY",
+  "plan_revision": "r11",
+  "changed_files": [],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "e27b243d5d01858b95b453151099324c6c871587ea9ef16a3f38508e85f601dc",
+  "hash": "8f8e174cec0fb0a3307041e28157da0b7d8bec56a80e217f45d0e853da88a170"
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 79,
+  "timestamp_utc": "2026-11-20T21:32:58+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "قبول P05 عبر اكتشاف أدوات Windows وإعادة قراءة WPF",
+  "details": "تم فصل الاستعلامات المثبتة عن PATH. تحقق SDK 10.0.300 وvswhere وقراءة إصدارات GIS. نجح قالب WPF والبناء والإطلاق؛ ضغط AutomationPeer على زر القراءة وظهرت نتائج QGIS السابقة. استعلام workloads احتاج سماح قراءة المضيف. لم تُفحص واجهة IDE أو أتمتة عميل خارجي.",
+  "references": [
+    78
+  ],
+  "task_id": "P05",
+  "plan_revision": "r4",
+  "changed_files": [
+    "reports/TOOLCHAIN_ACCEPTANCE.md",
+    "reports/P05_TOOLCHAIN_EVIDENCE.json"
+  ],
+  "tests": [
+    "Seven offline toolchain cases; observed .NET workload and VS queries; native WPF template, restore, build, launch and receipt"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "bc55f035fb3755cbbdb4b91fb052f2a422f3eb60c5676f71cca63d834c4ec100",
+  "hash": "05d5ef8a9e16e43c01f2d06418b45195294031c2940c199b2bc71084e4d3e603"
+}

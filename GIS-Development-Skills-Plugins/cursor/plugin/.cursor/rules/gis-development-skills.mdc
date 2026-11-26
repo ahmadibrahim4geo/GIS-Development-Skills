@@ -1,0 +1,15 @@
+---
+description: GIS Development Skills governance, engine selection, security guardian, and DoneProof rules
+alwaysApply: true
+---
+
+# GIS Development Skills (`0.3.5` · `527cf7b1b01b`)
+
+<!-- source-digest: 527cf7b1b01b4b4ca593674ba47a6228843547f72ce9fcbdb5c4c24fe14d819e -->
+<!-- version: 0.3.5 -->
+
+- Follow root `AGENTS.md` and `skills/gis-development/SKILL.md` for task routing and single specialist ownership.
+- Run `skills/gis-security-guardian/SKILL.md` checks before accepting third-party code, archives, or network links.
+- Prefer verified open-source geospatial stacks from `references/project-catalog.json` via `scripts/search_catalog.py` before reimplementing engines.
+- Never fabricate `T2-T4` native GIS/browser/device pass results when hosts or SDKs are absent; emit `NOT_RUN` honestly via `skills/completion-evidence/SKILL.md`.
+- Record meaningful work and test verification in `.agent-development-log/` via `scripts/development_journal.py`.

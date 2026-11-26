@@ -1,0 +1,26 @@
+name: GIS service documentation availability (non-blocking)
+on:
+  schedule:
+    - cron: '0 6 * * 0'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  health-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Bounded read-only availability report
+        run: |
+          python scripts/monitor_public_services.py --network --max-checks 39 --timeout 4 --output service-health-report.json
+      - name: Retain report artifact for human review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gis-service-availability
+          path: service-health-report.json
+          retention-days: 30

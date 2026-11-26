@@ -1,0 +1,13 @@
+name: mobile_gis_collector_poc
+description: Representative Flutter scaffold using official MapLibre package (never legacy maplibre_gl). NOT compiled (flutter SDK absent).
+publish_to: none
+version: 0.1.0+1
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  maplibre: ^0.2.0
+  geolocator: ^13.0.0
+  sqlite3: ^2.4.0
+  flutter_secure_storage: ^9.2.2

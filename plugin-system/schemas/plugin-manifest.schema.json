@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Plugin Manifest v1.0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "plugin_id",
+    "platform",
+    "name",
+    "version",
+    "source_commit",
+    "source_digest",
+    "skill_count",
+    "content_sha256"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "plugin_id": { "type": "string", "minLength": 3 },
+    "platform": { "type": "string", "minLength": 2 },
+    "name": { "type": "string", "minLength": 2 },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:[-+][A-Za-z0-9.-]+)?$" },
+    "source_commit": { "type": "string", "minLength": 4 },
+    "source_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "skill_count": { "type": "integer", "minimum": 1 },
+    "content_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "license": { "type": "string" },
+    "author": { "type": "object" },
+    "repository": { "type": "string" }
+  }
+}

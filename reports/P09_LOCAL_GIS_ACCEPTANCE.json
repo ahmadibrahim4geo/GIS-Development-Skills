@@ -1,0 +1,38 @@
+{
+  "target": "P09 local QGIS project and WPF readback regression",
+  "os": "Windows-11-10.0.26300-SP0",
+  "application_version": "QGIS 4.2.3-Belém do Pará, .NET SDK 10.0.300, WPF host .NET 10.0.8",
+  "python_runtime": "QGIS Windows Python via python-qgis.bat and CPython 3.14.7",
+  "crs_units": "Geographic data EPSG:4326 in degrees. Saved QGIS project view EPSG:3857 in projected metres. No distance or area measurement.",
+  "evidence_tier": "T3",
+  "commands_executed": [
+    "python-qgis.bat -B native_tests/qgis_scientific_readback.py --polygons fixtures/geojson/valid_invalid_polygons.geojson --outputs <isolated-qgis-directory>",
+    "python-qgis.bat -B examples/qgis-engine/standalone_roundtrip.py --output <isolated-qgis-directory>/roundtrip.gpkg",
+    "python-qgis.bat -B native_tests/qgis_project_roundtrip.py create --directory <isolated-qgis-directory>",
+    "python-qgis.bat -B native_tests/qgis_project_roundtrip.py reopen --directory <isolated-qgis-directory>",
+    "python -B native_tests/run_wpf_toolchain.py --dotnet <installed-dotnet> --work <scratch-wpf> --raster-readback <isolated-qgis-directory>/qgis-science.json --external-uia"
+  ],
+  "fixtures_used": [
+    "fixtures/geojson/valid_invalid_polygons.geojson",
+    "temporary 2 x 2 synthetic GeoTIFF and two control points"
+  ],
+  "expected_result": "Two EPSG:4326 features; preserved project CRS, extent, layer state and one NoData cell; separate UI Automation click yields three valid cells.",
+  "observed_result": "QGIS independently reopened 2 features with EPSG:4326, project EPSG:3857, NoData -9999, and 1 missing cell. WPF reported 3 valid cells and one click from the separate client.",
+  "not_tested": [
+    "ArcGIS Pro SDK add-in installation or execution",
+    "Full QGIS GUI",
+    "Qt Designer interaction",
+    "Clean-machine T4"
+  ],
+  "known_limitations": [
+    "Synthetic local fixtures and isolated application session only."
+  ],
+  "source_changes": "Read-only fixture inputs. New outputs written to scratch. r6 repository changes include reference matching and documentation.",
+  "provenance_licensing": "Repository-owned synthetic fixtures covered by the repository MIT license. Installed runtimes remain separate prerequisites.",
+  "status": "pass",
+  "native_runtime_verified": true,
+  "evidence_links": [
+    "reports/P09_AUDIT_EVIDENCE.json",
+    "native_tests/README.md"
+  ]
+}

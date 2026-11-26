@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "sequence": 95,
+  "timestamp_utc": "2026-11-21T04:25:24+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "Implemented and verified the approved local r9 agent hardening",
+  "details": "Updated both agent entrypoints, contextual ownership, rooted capability binding, mixed .NET project selection, invalid SDK configuration handling, explicit local tool path checks, bundle identity and entrypoint link fragments. Archived approved plan. Verified ZIP independently, ran a fresh Codex packaged-skill evaluation and built a WPF plus library solution on Windows SDK 10.0.300. 513 tests ran with 512 passing and one Windows symlink skip. All five DoneProof reports matched the approved plan. Installed client copies, native UI and GitHub were outside verified local delivery.",
+  "references": [
+    94
+  ],
+  "task_id": "AGENT-HARDENING",
+  "plan_revision": "r9",
+  "changed_files": [
+    "AGENTS.md",
+    "scripts/build_skill_bundle.py",
+    "scripts/contextual_routing.py",
+    "scripts/project_readiness.py",
+    "scripts/project_governance.py",
+    "skills/gis-development/SKILL.md",
+    "plans/archive/0002_Agent-Hardening/PLAN.json",
+    "reports/AGENT_HARDENING_R9_ACCEPTANCE.md"
+  ],
+  "tests": [
+    "Full unittest suite, six validators, independent Codex host run, real Windows WPF build, verified archive and five revision-bound DoneProof reports"
+  ],
+  "test_result": "passed",
+  "commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "previous_hash": "6b97a454afeaeac68cd86affeb43f79b963d409507ccf6e057f1972267a73cef",
+  "hash": "974233398c1e22f93b6992995d4675fc6e9bcae5ad46dbef9f6a0303272c1f5f"
+}

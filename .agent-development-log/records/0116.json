@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "sequence": 116,
+  "timestamp_utc": "2026-11-25T19:23:41+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Completed P04 Engine Selection Skill, 6 CLI Scripts, Schemas, Templates, and Bundle Sync",
+  "details": "Created concise skills/geospatial-engine-selection/SKILL.md (49 lines, 36th skill), references/engine-comparison-guide.md, 2 schemas (engine-selection-request/report), and 5 templates (EVALUATION, TECHNOLOGY_SELECTION, ADR, SOURCE_FORK_FEATURE_INVENTORY, REFERENCE_UI_COMMAND_MAPPING). Implemented and verified all 6 stdlib CLI scripts (engine_repo_metadata.py, discover_engines.py, compare_engines.py, recommend_stack.py, validate_engine_profiles.py, inventory_ui_actions.py) plus --include-qt-ui delegation in gis_ui_command_audit.py and --include-engines in gis_code_discovery.py. Wired gis-development router, free-first-policy, intent_router, and build_manifest (36 skills). Rebuilt portable bundle (digest 0a058a5feecc; --check-only UP_TO_DATE). Passed 11/11 CLI validators, 154 unit tests across 22 suites, and 10 plugin lifecycle tests. Live api.github.com calls, external SAST scans, native T2-T4 runs, and P05-P11 remain NOT RUN pending owner approval.",
+  "references": [
+    115
+  ],
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P04",
+  "plan_revision": "r1",
+  "changed_files": [
+    "skills/geospatial-engine-selection/SKILL.md",
+    "references/engine-comparison-guide.md",
+    "schemas/engine-selection-request.schema.json",
+    "schemas/engine-selection-report.schema.json",
+    "templates/TECHNOLOGY_SELECTION_REPORT.md",
+    "scripts/engine_repo_metadata.py",
+    "scripts/discover_engines.py",
+    "scripts/compare_engines.py",
+    "scripts/recommend_stack.py",
+    "scripts/validate_engine_profiles.py",
+    "scripts/inventory_ui_actions.py",
+    "tests/test_engine_profiles.py",
+    "tests/test_engine_selection.py",
+    "tests/test_engine_compatibility.py"
+  ],
+  "tests": [
+    "verify_completion + 11 CLI validators + 154 unit tests (22 suites) + 10 plugin tests OK; test_repository_internal_links failed only on pre-existing untracked dist file"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "d454ac5551889005187735ca762f47f7e1bbb78d98548adf279f37ceb2512f17",
+  "hash": "58d43460cdd8153b96e3eb516b7c6d7208162af0d96693b53af219883ff3495c"
+}

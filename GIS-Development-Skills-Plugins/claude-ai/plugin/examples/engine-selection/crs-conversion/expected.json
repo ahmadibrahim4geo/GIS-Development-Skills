@@ -1,0 +1,5 @@
+{
+  "expected_lightweight_leader": "osgeo-proj",
+  "blocks_qgis_bloat_for_tiny_crs": true,
+  "blocks_web_mercator_for_metric_area": true
+}

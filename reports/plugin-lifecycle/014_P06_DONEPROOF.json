@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P06",
+  "revision": "r1",
+  "overall_status": "partial",
+  "criteria": [
+    {
+      "id": "P06-SIX-MOBILE-REFERENCES-AND-SKILL-WIRING",
+      "statement": "Create and update mobile references (mobile-gis-architecture, mobile-gis-platform-selection, mobile-gis-stack-decision, mobile-gis-device-gnss-rtk, web-mobile-testing-release-guide, web-mobile-offline-sync-contract) covering M01-M10, 20 frameworks, 21 map SDKs, 12x10 decision matrix, GNSS/RTK, Android vs iOS build/signing, and bilingual guides wired into SKILL.md",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests.test_mobile_gis_expansion + tests.test_gis_mobile_application + scripts/audit_skill_graph.py",
+          "observed": "All mobile references, docs/MOBILE_GIS_GUIDE.md, docs/WEB_MOBILE_GUIDE.ar.md, and SKILL.md regression anchors passed with 0 broken links",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P06-SQLITE-CORE-SHARED-FIXTURES-AND-20-TEMPLATES",
+      "statement": "Deliver durable SQLite WAL field store, 15-field REQ-WM-042 outbox, v1->v2 migration, GNSS/Z-datum/RTK/mock/permission evaluator, EXIF GPS strip, OSM scrape guard, GeoJSON+GPX readback, expected-shared-contracts GIS-015, and 20 MOB-01..MOB-20 6-folder templates",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests/mobile-gis/test_mobile_contracts.py + tests.test_mobile_gis_expansion + 82 Python suites + validate_mobile_device_evidence.py",
+          "observed": "10/10 SQLite/GNSS/sync/privacy/export contract tests pass; MOB-08 runnable demo OK; 82 Python suites ran 557 tests OK (skipped=1 Windows symlink test); Node 6/6 pass",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P06-PORTABLE-PLUGIN-BUNDLE-REBUILD",
+      "statement": "Rebuild portable plugin bundle containing all P06 references, mobile core, 20 MOB templates, guides, and tests with deterministic UP_TO_DATE verification",
+      "status": "verified",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "reports/plugin-lifecycle/013_PLUGIN_P06_SYNC.json + plugin-system/tests",
+          "observed": "pipeline --build-only returned BUILT (source_digest 9458d566668a, 730 bundle files) and immediate --check-only returned UP_TO_DATE; 10 plugin lifecycle tests OK",
+          "result": "pass",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P06-REPO-INTERNAL-LINKS-PREEXISTING-DIST",
+      "statement": "Repository internal Markdown links integrity across canonical workspace and P06 deliverables",
+      "status": "partial",
+      "reason": "Zero broken links across canonical docs, MOB-01..MOB-20, and bundle files; test_repository_internal_links failed only on pre-existing untracked dist\\user-testing\\banner-work\\brand-kit-readme.md (assets/brand/banner.png)",
+      "evidence": [
+        {
+          "type": "command_output",
+          "reference": "tests.test_repository_internal_links + build_skill_bundle --check",
+          "observed": "build_skill_bundle --check PASS (0 broken bundled links); test_repository_internal_links isolated sole failure to pre-existing untracked dist file",
+          "result": "fail",
+          "revision": "r1"
+        }
+      ]
+    },
+    {
+      "id": "P06-NATIVE-SDK-DEVICE-HARDWARE-AND-PHASES-P07-P11",
+      "statement": "Native Android Gradle/emulator/APK/AAB build (MOB-QA-01), macOS/Xcode Swift iOS build & IPA codesign (MOB-QA-02), Flutter/RN device runs, physical GNSS/BLE RTK/Camera hardware (MOB-QA-05, 10), signed release/uninstall (MOB-QA-17, 19), external SAST scans, and Phases P07-P11",
+      "status": "not_run",
+      "reason": "Android SDK/Gradle/ADB, Flutter/Dart SDK, macOS+Xcode toolchain, and physical mobile handsets/RTK hardware are absent on Windows workstation; Phases P07-P11 await owner approval",
+      "evidence": []
+    }
+  ]
+}

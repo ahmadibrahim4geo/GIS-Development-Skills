@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "sequence": 120,
+  "timestamp_utc": "2026-11-25T20:26:40+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "Completed P08 Repo-Wide Integration (Router, Bilingual Hubs, Role Registry & 0006 Archival)",
+  "details": "Updated agent-decision-tree.md, prompt-intent-orchestrator/SKILL.md, and intent_router.py (25+ colloquial AR/EN phrases + E31 lightweight guard), expanded engineering-role-registry.json & workflow (V2 roles under SEQUENTIAL_ROLE_SIMULATION), linked validate_architecture_flow.py in gis-architecture-visualization SKILL.md, upgraded explorer.html (engine-capability-profiles join, #roleFilter, #evidenceFilter, reference-only vs verified-for-target badges), project-wizard.html, and index.html while preserving #author, mission statement & Brand Kit 3.1. Archived 0006_Mobile-and-Web-GIS-Expansion to plans/archive/. Built manifest (36/461/53/26) and portable bundle (019_PLUGIN_P08_SYNC.json digest d4e9ade4d58f, --check-only UP_TO_DATE). Passed 73/73 UI, Node JS syntax, wizard, landing page & routing tests.",
+  "references": [
+    119
+  ],
+  "task_id": "GIS-MASTER-INTEGRATION-0007-P08",
+  "plan_revision": "r1",
+  "changed_files": [
+    "references/agent-decision-tree.md",
+    "scripts/intent_router.py",
+    "references/engineering-role-registry.json",
+    "explorer.html",
+    "project-wizard.html",
+    "index.html",
+    "tests/test_p08_repo_integration.py"
+  ],
+  "tests": [
+    "verify_completion + 73 UI/routing/manifest tests + pipeline --check-only UP_TO_DATE OK"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "cbf2288ddf5e29130309508bd4499a52f926fb297e8324d0429263c3fe122363",
+  "hash": "f42cad9319976fede1caaa7c59be1bd5a606f107b25c24e014fecc2535e1e9a1"
+}

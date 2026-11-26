@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a reproducible defect in this GIS skill, website, examples or catalog
+title: "[Bug] "
+labels: []
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Agent skill instructions
+        - GIS platform guide
+        - Static website / index
+        - GIS project catalog
+        - GIS API catalog
+        - Python starter template
+        - Tests / automation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What is wrong?
+      description: Include expected and actual behavior; do not share private API keys, credentials or personal data.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: For code, include the target GIS product/version, Python version, OS, input types and minimal reproducible steps.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs, screenshots, sources or links (optional)
+    validations:
+      required: false

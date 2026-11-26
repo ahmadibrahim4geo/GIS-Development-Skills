@@ -1,0 +1,18 @@
+{
+  "expected_mode": "source-fork",
+  "expected_candidates_any": [
+    "qgis-qgis"
+  ],
+  "requires_gpl_review": true,
+  "protected_core_count": 16,
+  "retention_states": [
+    "KEEP",
+    "HIDE",
+    "DISABLE",
+    "REMOVE",
+    "REPLACE",
+    "DEFER"
+  ],
+  "blocked_remove_rule": "E25: cannot REMOVE provider still required by active layer/CRS action; degrade to HIDE or REPLACE",
+  "native_qgis_build_status": "NOT_RUN (Qt/MSVC/QGIS source build environment not provisioned)"
+}

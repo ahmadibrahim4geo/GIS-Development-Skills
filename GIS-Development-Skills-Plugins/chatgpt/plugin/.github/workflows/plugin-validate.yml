@@ -1,0 +1,31 @@
+name: Plugin Lifecycle Validation
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  plugin-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source (pinned SHA)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python 3.11 (pinned SHA)
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.11'
+      - name: Run Plugin Lifecycle unit tests
+        run: python -m unittest discover -s plugin-system/tests -v
+      - name: Enforce stale marketplace and bundle parity gate
+        run: python -B plugin-system/core/pipeline.py --check-only --json

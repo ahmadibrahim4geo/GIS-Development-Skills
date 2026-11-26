@@ -17,6 +17,6 @@ Official reference: https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing
 ## Additional official Esri implementation examples
 
 - [Esri ArcPy](https://github.com/Esri/arcpy) contains debugging guidance and official Python package versions per ArcGIS Pro release. Compare a local release JSON with installed packages via [the read-only checker](esri-python-environment-compatibility.md).
-- [Pro SDK code snippets](https://github.com/Esri/arcgis-pro-sdk-snippets) provide C# add-in patterns targeting Pro 3.7/.NET 10; they are distinct from ArcPy Python toolbox APIs. Inspect actual SDK, QueuedTask and editing requirements.
+- [Pro SDK code snippets](https://github.com/Esri/arcgis-pro-sdk-snippets/blob/22855e3a7c238f2de542602272b2f896d59d50b5/README.md) provide C# add-in patterns. The reviewed revision declares ArcGIS Pro 3.8 and .NET 10. Check the installed Pro minor version before selecting a revision. [Esri developer references and licensing](esri-open-source-integration.md).
 - [Arcade examples](https://github.com/Esri/arcade-expressions) use their own [profile semantics](arcgis-arcade-profiles.md), not Python.
 - [Parallel network analysis](https://github.com/Esri/large-network-analysis-tools), [CAD/BIM](https://github.com/Esri/cad-bim-scripts) and [elevation GP](https://github.com/Esri/elevation-gp-python) demonstrate useful algorithms but require ArcGIS host licenses and native validation.

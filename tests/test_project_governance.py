@@ -4,6 +4,8 @@ Tests use disposable projects only. No external downloads, skill execution, GIS
 runtime, or changes to real user data.
 """
 import json
+from contextlib import redirect_stderr, redirect_stdout
+import io
 import tempfile
 import unittest
 from pathlib import Path
@@ -157,6 +159,108 @@ class ProjectGovernanceTests(unittest.TestCase):
         result = pg.audit(self.root)
         self.assertIn("AGENTS.md", result["missing_required"])
         self.assertEqual(sorted(x.name for x in self.root.iterdir()), before)
+
+    def test_profiles_use_project_and_source_evidence(self):
+        def write(relative, content):
+            path = self.root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content, encoding="utf-8")
+
+        write("desktop/Map.csproj", "<Project><UseWPF>true</UseWPF></Project>")
+        write("qt/CMakeLists.txt", "find_package(Qt6 REQUIRED COMPONENTS Widgets)")
+        write("qgis_addon/metadata.txt", "[general]\nqgisMinimumVersion=3.40\n")
+        write("qgis_addon/__init__.py", "from qgis.core import QgsProject\n")
+        write("Tool.pyt", "import arcpy\nraise RuntimeError('never execute this code')")
+        write("web/package.json", '{"dependencies":{"maplibre-gl":"^5"}}')
+        write("remote/job.py", "import sentinelhub")
+        write("testing data/Private.qgz", "protected user input")
+        write("New Skill/candidates/hidden.py", "from PySide6 import QtGui")
+        write("deps/node_modules/map/package.json", '{"dependencies":{"cesium":"^1"}}')
+        result = pg.audit(self.root)
+        profiles = result["architecture_profiles"]
+        self.assertEqual(profiles["wpf"], ["desktop/Map.csproj"])
+        self.assertEqual(profiles["qt"], ["qt/CMakeLists.txt"])
+        self.assertEqual(profiles["qgis-plugin"], ["qgis_addon/metadata.txt"])
+        self.assertEqual(profiles["qgis"], ["qgis_addon/__init__.py"])
+        self.assertEqual(profiles["arcgis"], ["Tool.pyt"])
+        self.assertEqual(profiles["web-gis"], ["web/package.json"])
+        self.assertEqual(profiles["remote-sensing"], ["remote/job.py"])
+        self.assertNotIn("Private.qgz", str(profiles))
+        self.assertNotIn("hidden.py", str(profiles))
+        self.assertNotIn("node_modules", str(profiles))
+        self.assertEqual(result["runtime_verification"], "NOT RUN")
+
+    def test_linter_finds_local_cycles_duplicate_code_and_missing_project_references(self):
+        (self.root / "main.py").write_text("import helper", encoding="utf-8")
+        for name in ("helper.py", "duplicate.py"):
+            (self.root / name).write_text("import main\n", encoding="utf-8")
+        (self.root / "Map.csproj").write_text(
+            '<Project><ProjectReference Include="Common/Missing.csproj"/></Project>',
+            encoding="utf-8")
+        findings = pg.audit(self.root)["source_findings"]
+        cycle = next(finding for finding in findings if finding["kind"] == "local-dependency-cycle")
+        self.assertEqual(set(cycle["files"]), {"main.py", "helper.py"})
+        duplicate = next(finding for finding in findings if finding["kind"] == "identical-source")
+        self.assertEqual(set(duplicate["files"]), {"helper.py", "duplicate.py"})
+        missing = next(finding for finding in findings if finding["kind"] == "missing-project-reference")
+        self.assertEqual(missing["target"], "Common/Missing.csproj")
+
+    def test_audit_check_reports_document_and_registration_drift(self):
+        pg.init(self.root)
+        self.assertEqual(pg.audit(self.root)["disposition"], "KEEP")
+        self.assertEqual(pg.audit(self.root)["structure_drift"]["documentation"], "CURRENT")
+        folder = self.root / "assets"
+        folder.mkdir()
+        result = pg.audit(self.root)
+        self.assertEqual(result["disposition"], "EXTEND")
+        self.assertEqual(result["structure_drift"]["documentation"], "DRIFTED")
+        self.assertEqual(result["undocumented_directories"], ["assets"])
+        pg.register_folder(self.root, "assets", "Map assets owned by the project")
+        self.assertEqual(pg.audit(self.root)["structure_drift"]["documentation"], "CURRENT")
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(pg.main(["--project", str(self.root), "audit", "--check"]), 0)
+        folder.rmdir()
+        self.assertEqual(pg.audit(self.root)["structure_drift"]["stale_folder_registrations"], ["assets"])
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(pg.main(["--project", str(self.root), "audit", "--check"]), 1)
+            self.assertEqual(pg.main(["--project", str(self.root), "audit"]), 0)
+
+    def test_move_preview_reports_impacted_references_and_keeps_bytes(self):
+        helper = self.root / "helper.py"
+        helper.write_text("def project():\n    return 4326\n", encoding="utf-8")
+        (self.root / "main.py").write_text("from helper import project\n", encoding="utf-8")
+        (self.root / "README.md").write_text("[Module](helper.py)\n", encoding="utf-8")
+        before = {path.name: path.read_bytes() for path in self.root.iterdir()}
+        with redirect_stdout(io.StringIO()) as stdout:
+            self.assertEqual(pg.main(["--project", str(self.root), "plan-move",
+                                      "--from", "helper.py", "--to", "coords.py"]), 0)
+        result = json.loads(stdout.getvalue())
+        self.assertEqual(result["disposition"], "REFACTOR")
+        self.assertFalse(result["applied"])
+        self.assertEqual(result["rollback"], {"from": "coords.py", "to": "helper.py",
+                                              "restore_reference_edits": True})
+        self.assertEqual({ref["file"]: ref["kind"] for ref in result["references_to_review"]},
+                         {"main.py": "python-import", "README.md": "path-mention"})
+        self.assertTrue(all(ref["target_after"] == "coords.py" for ref in result["references_to_review"]))
+        self.assertEqual({path.name: path.read_bytes() for path in self.root.iterdir()}, before)
+
+    def test_move_preview_rejects_protected_paths_and_collisions(self):
+        pg.init(self.root)
+        (self.root / "assets").mkdir()
+        (self.root / "testing data/private.py").write_text("raise RuntimeError('protected')",
+                                                           encoding="utf-8")
+        cases = (("main.py", "../outside.py"), ("main.py", "/Windows/outside.py"),
+                 ("main.py", "AGENTS.md"), ("main.py", "testing data/new.py"),
+                 ("testing data/private.py", "copy.py"), (".", "inside"),
+                 ("assets", "assets/moved"), ("main.py", "absent/moved.py"))
+        for source, destination in cases:
+            with self.subTest(source=source, destination=destination):
+                with redirect_stderr(io.StringIO()) as stderr:
+                    self.assertEqual(pg.main(["--project", str(self.root), "plan-move",
+                                              "--from", source, "--to", destination]), 2)
+                self.assertEqual(json.loads(stderr.getvalue())["action"], "plan-move")
+        self.assertTrue((self.root / "main.py").is_file())
+        self.assertFalse((self.root / "testing data/new.py").exists())
 
 
 if __name__ == "__main__":

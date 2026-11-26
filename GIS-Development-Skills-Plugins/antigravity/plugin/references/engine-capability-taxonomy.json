@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "taxonomy_id": "engine-capability-taxonomy",
+  "description": "Atomic geospatial capability identifiers, bilingual synonyms, capability support states, and claim confidence grades (Engine Architecture V2 §§8.1, 22.2, 29.1).",
+  "capability_support_states": [
+    "unknown",
+    "unsupported",
+    "documented",
+    "extension-required",
+    "external-component-required",
+    "experimentally-tested",
+    "verified-for-target"
+  ],
+  "claim_confidence_grades": [
+    "unresolved",
+    "documented",
+    "source-inspected",
+    "compiled",
+    "runtime-observed",
+    "target-verified",
+    "rejected"
+  ],
+  "relationship_types": [
+    "provides",
+    "requires",
+    "wraps",
+    "binds",
+    "extends",
+    "replaces",
+    "conflicts",
+    "compatible-with",
+    "tested-with",
+    "alternative-to",
+    "reference-only"
+  ],
+  "domains": {
+    "data_io": {
+      "label_en": "Data I/O & Formats",
+      "label_ar": "قراءة وكتابة البيانات والصيغ",
+      "capabilities": [
+        "io.vector.read",
+        "io.vector.gpkg.read",
+        "io.vector.gpkg.write",
+        "io.vector.gpkg.roundtrip.zm",
+        "io.raster.window",
+        "io.cog",
+        "io.kml.style_roundtrip",
+        "io.cad.dxf",
+        "io.bim.ifc",
+        "io.pointcloud.laz",
+        "io.pointcloud.copc",
+        "io.mesh.gltf",
+        "io.geoparquet",
+        "io.flatgeobuf",
+        "io.geoarrow",
+        "io.zarr",
+        "io.netcdf",
+        "io.gpx"
+      ]
+    },
+    "crs_geodesy": {
+      "label_en": "CRS & Geodesy",
+      "label_ar": "الإحداثيات والمساقط والجيوديسيا",
+      "capabilities": [
+        "crs.transform",
+        "crs.transform.vertical-grid",
+        "crs.axis_order",
+        "crs.vertical",
+        "crs.grid_shift",
+        "crs.dynamic_epoch",
+        "geodesy.distance",
+        "geodesy.area"
+      ]
+    },
+    "vector_topology": {
+      "label_en": "Vector & Topology",
+      "label_ar": "المتجهات والطوبولوجيا والهندسة",
+      "capabilities": [
+        "vector.buffer",
+        "geometry.buffer.planar",
+        "geometry.area.geodesic",
+        "vector.overlay",
+        "vector.spatial_join",
+        "vector.snap",
+        "vector.validate",
+        "topology.rules",
+        "geometry.3d.boolean"
+      ]
+    },
+    "raster_scientific": {
+      "label_en": "Raster & Earth Observation",
+      "label_ar": "البيانات الشبكية والاستشعار عن بعد",
+      "capabilities": [
+        "raster.reproject",
+        "raster.windowed.read",
+        "raster.mosaic",
+        "raster.algebra",
+        "raster.zonal_stats",
+        "rs.indices",
+        "rs.classification",
+        "rs.sar",
+        "eo.sar.calibration",
+        "rs.atmospheric_correction",
+        "rs.spectral_library"
+      ]
+    },
+    "map_2d": {
+      "label_en": "2D Map Rendering & Cartography",
+      "label_ar": "رسم الخرائط ثنائية الأبعاد والكارتوجرافيا",
+      "capabilities": [
+        "render.2d.projected",
+        "render.2d.vector_tiles",
+        "render.labels",
+        "render.symbology",
+        "render.selection",
+        "export.kml.stylemap",
+        "cartography.layout_pdf"
+      ]
+    },
+    "globe_3d": {
+      "label_en": "3D Globe, Terrain & Digital Twins",
+      "label_ar": "الكرة الأرضية والتضاريس والمشاهد ثلاثية الأبعاد",
+      "capabilities": [
+        "render.globe.ellipsoid",
+        "render.3d.terrain",
+        "render.3d.terrain.quantized-mesh",
+        "render.3d.tiles",
+        "render.3d.pointcloud",
+        "render.camera",
+        "render.atmosphere",
+        "render.3d.local_precision"
+      ]
+    },
+    "cad_bim_city": {
+      "label_en": "CAD, BIM & Procedural Cities",
+      "label_ar": "التصميم الهندسي ونمذجة المباني والمدن",
+      "capabilities": [
+        "cad.brep",
+        "cad.brep.boolean",
+        "cad.parametric",
+        "bim.ifc",
+        "city.parcel.subdivide",
+        "city.building.procedural",
+        "city.road_geometry",
+        "city.intersections"
+      ]
+    },
+    "terrain_hydrology": {
+      "label_en": "Terrain, Hydrology & Point Clouds",
+      "label_ar": "التضاريس والهيدرولوجيا والسحب النقطية",
+      "capabilities": [
+        "terrain.slope",
+        "terrain.viewshed",
+        "terrain.profile",
+        "hydrology.flow_accumulation",
+        "hydrology.watershed",
+        "simulation.stormwater"
+      ]
+    },
+    "network_simulation": {
+      "label_en": "Routing, Networks & Scientific Simulation",
+      "label_ar": "التوجيه والشبكات والمحاكاة العلمية",
+      "capabilities": [
+        "routing.multimodal",
+        "network.turn-restrictions",
+        "network.graph",
+        "simulation.traffic",
+        "simulation.traffic.microscopic",
+        "simulation.solar",
+        "simulation.groundwater",
+        "simulation.environment"
+      ]
+    },
+    "storage_services": {
+      "label_en": "Spatial Storage & OGC/Web Services",
+      "label_ar": "قواعد البيانات المكانية والخدمات الشبكية",
+      "capabilities": [
+        "db.spatial_sql",
+        "db.local_transaction",
+        "db.distributed",
+        "service.wms",
+        "service.ogc_api",
+        "service.tiles",
+        "service.stac"
+      ]
+    },
+    "engineering_ui_runtime": {
+      "label_en": "UI Shell, Runtime, Offline & Packaging",
+      "label_ar": "الواجهات والتشغيل دون إنترنت والحزم",
+      "capabilities": [
+        "ui.ribbon.command-registry",
+        "ui.dock.layout-persistence",
+        "ui.rtl",
+        "runtime.offline",
+        "offline.no-key",
+        "runtime.embedding",
+        "runtime.worker",
+        "packaging.portable",
+        "deploy.windows.clean-machine",
+        "sdk.bindings",
+        "plugin.lifecycle"
+      ]
+    }
+  },
+  "bilingual_synonyms": {
+    "crs": ["مساقط", "اسقاط", "إحداثيات", "تحويل إحداثيات", "projection", "reprojection", "crs", "datum", "epsg"],
+    "globe_3d": ["كرة ارضية", "ثلاثي الابعاد", "تضاريس ثلاثية", "globe", "3d terrain", "3d tiles", "cesium", "ecef"],
+    "fork": ["اشتقاق", "فورك", "تنظيف", "خد البرنامج", "fork", "cleanup", "strip ui"],
+    "ribbon_ui": ["ريبون", "واجهة مشابهة", "شريط ادوات", "ribbon", "docking", "reference ui"],
+    "offline_mobile": ["اوفلاين", "بدون نت", "ميداني", "موبايل", "gnss", "rtk", "offline", "geopackage", "sync"],
+    "raster_eo": ["راستر", "مرئيات", "اقمار صناعية", "مؤشر طيفي", "cog", "stac", "sar", "ndvi", "landsat", "sentinel"],
+    "vector_edit": ["تحرير", "رسم", "تقاطع", "بفر", "طوبولوجيا", "سناب", "buffer", "overlay", "snapping", "digitizing"]
+  }
+}

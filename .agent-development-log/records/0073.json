@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "sequence": 73,
+  "timestamp_utc": "2026-11-20T21:04:44+00:00",
+  "kind": "request",
+  "status": "approved",
+  "summary": "استكمال P03 وP04 من المراجعة r3",
+  "details": "أكّد المستخدم الاستكمال بعد عرض نطاق r3. المرحلة P03 تختبر بيانات المستودع في نسخة مؤقتة، تليها P04 بعد اجتياز S3. كل اختبار أو تنفيذ يخرج في مسار عمل محلي محدد.",
+  "references": [
+    72
+  ],
+  "task_id": "P03",
+  "plan_revision": "r3",
+  "changed_files": [
+    "plans/active/0001_Engineering-Suite/PLAN.md"
+  ],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "e15976fae544af4ae4c5620692c5bea12e82ade6843c9a65f4c56fe417fb9449",
+  "hash": "310c576f359054cf22c50aab9a596b2a52aa178b9102cfebfa0eac9bfc51b195"
+}

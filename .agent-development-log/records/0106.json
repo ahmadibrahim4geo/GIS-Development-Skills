@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 106,
+  "timestamp_utc": "2026-11-22T16:33:54+00:00",
+  "kind": "plan",
+  "status": "proposed",
+  "summary": "Proposed r1 integration for Modern Web Guidance and UI/UX Pro Max",
+  "details": "Recorded the original Arabic request in plan 0005 and registered Modern Web Guidance v1.0.1 as inactive candidate 0003. Public release source and license inspected. Node v26.7.0 and Python 3.14.7 through the real launcher ran. The default WindowsApps python alias failed. UI/UX Pro Max assets were found and Modern Web Guidance was absent from local discovery. Plan compiler accepted the ordered draft and the execution gate correctly rejected its pending approval. Runtime search, client activation and browser tests are pending. No package was downloaded or executed and no routing implementation was changed.",
+  "references": [],
+  "task_id": "WEB-SKILLS-0005",
+  "plan_revision": "r1",
+  "changed_files": [
+    "plans/active/0005_Modern-Web-Guidance-Integration/PLAN.md",
+    "plans/active/0005_Modern-Web-Guidance-Integration/PLAN.json",
+    "New Skill/SKILLS_REGISTRY.json",
+    "New Skill/candidates/0003_Modern-Web-Guidance/SOURCE.md"
+  ],
+  "tests": [
+    "intent_router.py --workflow and --workflow --gate; source and runtime prerequisite inspection"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "c9ccefbac38e0ede5c7d9b72744b9410eb4637219bc5d39698c51a7ba228c3df",
+  "hash": "5c1f4f7deef366f5af0db36a9a1c6740055d8c792ad436359f63c04a0d56f8f3"
+}

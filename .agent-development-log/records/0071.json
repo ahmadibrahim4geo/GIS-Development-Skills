@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "sequence": 71,
+  "timestamp_utc": "2026-11-20T20:54:39+00:00",
+  "kind": "implementation",
+  "status": "completed",
+  "summary": "توسعة CLI الحوكمة ومعاينة الترحيل P02",
+  "details": "أُضيفت ملفات تعريف البنية ودليل كل نوع، وفحص الانحراف، وخطة ترحيل قرائية مع الآثار والتراجع. بقي CLI الحالي نقطة الدخول. سبق التعديل جرد P01 ومراجعة Windows. المراجعة SAME_AGENT_REVIEW.",
+  "references": [
+    69
+  ],
+  "task_id": "P02",
+  "plan_revision": "r2",
+  "changed_files": [
+    "scripts/project_governance.py",
+    "scripts/project_structure.py",
+    "tests/test_project_governance.py",
+    "references/project-governance-workflow.md"
+  ],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "12bd0da2718af6539299061d8c620f1e024153394fb150b308003d2fdc25a370",
+  "hash": "a8326bd7668f1428dd17c5ba5ec84fb8a86aa469550503d319705fb94bc1e752"
+}
