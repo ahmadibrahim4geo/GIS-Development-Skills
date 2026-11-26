@@ -1,11 +1,10 @@
 # Project development state — agent handoff
 
 Read with INDEX.md and the linked reports. Independently inspect code and tests.
-Recorded steps: 129
+Recorded steps: 130
 
 ## Latest records
 
-- #0120 [completed] Completed P08 Repo-Wide Integration (Router, Bilingual Hubs, Role Registry & 0006 Archival) (related: #0119)
 - #0121 [completed] Completed Phase P09: six platform adapters, marketplaces, rules, hooks, and CI (related: #0120)
 - #0122 [completed] Completed Phase P10: full QA matrix, ZIP/Git secret audit, and anti-regression suite (related: #0121)
 - #0123 [completed] Completed Phase P11 and closed Master Integration V2 (P00-P11) with honest T0/T1 evidence (related: #0122)
@@ -15,6 +14,7 @@ Recorded steps: 129
 - #0127 [completed] Implemented AAREF AR01-AR09 upgrades, resolved 11 independent review findings, and rebuilt 7 platform plugins (related: #0126)
 - #0128 [completed] AR10 verification complete: validators/unit suites/plugin parity pass; native GIS & external CLIs NOT RUN (related: #0127)
 - #0129 [completed] Finalized temp cleanup, index/explorer/README sync, browser verification, and pre-push CI verification (related: #0128)
+- #0130 [completed] Archived Plan 0008, cleaned merged worktree, and synced local portable suite (related: #0129)
 
 ## Open/blocked records (confirm whether still applicable)
 

@@ -1,7 +1,7 @@
 # Claude Code (`claude-code`)
 
 - **Plugin ID:** `ahmadibrahim4geo.gis-development-skills`
-- **Version:** `0.3.5` (`b3101b171c364f70f7b7f8ce27bae6e20d166fa4`)
+- **Version:** `0.3.5` (`01db0e0065535167dc194bc8e646c009c84ffe71`)
 - **Phase Status:** `ACTIVE_P09`
 - **Manifest:** [plugin/.claude-plugin/plugin.json](plugin/.claude-plugin/plugin.json)
 - **Parity Report:** [parity-report.json](parity-report.json)

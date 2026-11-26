@@ -2,79 +2,128 @@
   "schema_version": "1.0",
   "plugin_id": "ahmadibrahim4geo.gis-development-skills",
   "version": "0.3.5",
-  "source_commit": "b3101b171c364f70f7b7f8ce27bae6e20d166fa4",
-  "source_digest": "b7a4508c35dc6c81b88fa093e76b088ea3ba169b004c646dd41bc15b8b30a49d",
-  "bundle_digest": "ea40720a77d5bdd558eafb89596bb680e35bab82fc559566aa0d55bae16e1994",
+  "source_commit": "01db0e0065535167dc194bc8e646c009c84ffe71",
+  "source_digest": "0ecbad2a38a470cccccb8b3b0e683939bd02e4f7678b27d7aa89749b38054cb0",
+  "bundle_digest": "316f779117974eeca47b1d73db6a520bb6ca64307bfbf20c860abbad888309da",
   "platforms": {
     "portable": {
       "platform": "portable",
-      "state": "BUILT",
+      "state": "UP_TO_DATE",
       "phase_status": "ACTIVE_P02",
-      "bundle_sha256": "537295e876d766ce26be3143cc99119ad73ff1bf4c2d4140ef38395f91be0f9b",
-      "archive_sha256": "5889ae999dd7f83cc10d0e29283fad56a986acd6808aaabbc58a77a9d56889c4",
-      "archive_path": "GIS-Development-Skills-Plugins/portable-agent-plugin/artifacts/gis-development-suite.zip",
-      "file_count": 788,
-      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+      "bundle_sha256": "e61d6125440fbef2a303babb1692182ec0ed19606e10bbdad578e95d239faff5",
+      "archive_sha256": "a613fe5564e02b3dd0f5a25cdb04f2dbbd70f71ea5f94d8b3434a5209b7a8f49",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "portable",
+        "state": "SYNCED_VERIFIED",
+        "installed_digest": "e61d6125440fbef2a303babb1692182ec0ed19606e10bbdad578e95d239faff5",
+        "built_digest": "e61d6125440fbef2a303babb1692182ec0ed19606e10bbdad578e95d239faff5",
+        "actions": [
+          "Synchronized portable bundle atomically to configured localSyncDir (SYNCED_VERIFIED)."
+        ]
+      }
     },
     "codex": {
       "platform": "codex",
-      "state": "BUILT",
+      "state": "UP_TO_DATE",
       "phase_status": "ACTIVE_P09",
-      "bundle_sha256": "9ad5a835d6b52939310c122fe9456862314e3ed6e8a82342de7904319c68e470",
-      "archive_sha256": "5ab6c4fb90d002afbcdf39cfadda7ddd682471749f50cc2de09aad3756a8e4d2",
-      "archive_path": "GIS-Development-Skills-Plugins/codex/artifacts/gis-development-skills-codex.zip",
-      "file_count": 788,
-      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+      "bundle_sha256": "d90dc930564d1b1dd36e27428d92a43184ca094079858932ed27fa0c8505b1e9",
+      "archive_sha256": "eae5d82ec45eeaf69eeb5bc29a4bcfe373fe0658b835dea2129d6a2217adb2cd",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "codex",
+        "state": "NOT_INSTALLED",
+        "installed_digest": null,
+        "built_digest": "d90dc930564d1b1dd36e27428d92a43184ca094079858932ed27fa0c8505b1e9",
+        "actions": [
+          "OpenAI Codex (CLI / Desktop) CLI/client not installed and no external localSyncDir configured; skipped cleanly."
+        ]
+      }
     },
     "chatgpt": {
       "platform": "chatgpt",
-      "state": "BUILT",
+      "state": "UP_TO_DATE",
       "phase_status": "ACTIVE_P09",
-      "bundle_sha256": "71f0e999c62f61c38e38837fa00225fd1dbda1f4ffae7fa60ef51ce522209b48",
-      "archive_sha256": "ef31108e4805b82cd292a7e7fffa47d82fc597bdb038f56da82ef0c56fc4d813",
-      "archive_path": "GIS-Development-Skills-Plugins/chatgpt/artifacts/gis-development-skills-chatgpt.zip",
-      "file_count": 788,
-      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+      "bundle_sha256": "840ca1f3bf4670c8c12cb90b997248f58299d33be00aa60f39c8daa9598cb828",
+      "archive_sha256": "2d980f0bedd903d94e5d80bf935fc9dafd519e489bbfe6912c7874fd08f789c1",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "chatgpt",
+        "state": "MANUAL_ACTION_REQUIRED",
+        "installed_digest": null,
+        "built_digest": "840ca1f3bf4670c8c12cb90b997248f58299d33be00aa60f39c8daa9598cb828",
+        "actions": [
+          "ChatGPT requires manual/organization portal upload or refresh; package staged cleanly."
+        ]
+      }
     },
     "claude-code": {
       "platform": "claude-code",
-      "state": "BUILT",
+      "state": "UP_TO_DATE",
       "phase_status": "ACTIVE_P09",
-      "bundle_sha256": "a5ae8ae6d5c682c2c09aa77084f18dacd3f4177956ed15646c8476fb24725b9c",
-      "archive_sha256": "971cffda67acdc1ed8339d61eb1db21a3efe603deead48e56b3c0251e6405d62",
-      "archive_path": "GIS-Development-Skills-Plugins/claude-code/artifacts/gis-development-skills-claude-code.zip",
-      "file_count": 790,
-      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+      "bundle_sha256": "6b77813be2d27900be0abc6960922b58e106f01a897fe72746fbd02f25307870",
+      "archive_sha256": "01b06316cd59cf65760877e7a6da6ef11bdb427fa967fdb7eaa3f455538e8c27",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "claude-code",
+        "state": "NOT_INSTALLED",
+        "installed_digest": null,
+        "built_digest": "6b77813be2d27900be0abc6960922b58e106f01a897fe72746fbd02f25307870",
+        "actions": [
+          "Claude Code CLI/client not installed and no external localSyncDir configured; skipped cleanly."
+        ]
+      }
     },
     "claude-ai": {
       "platform": "claude-ai",
-      "state": "BUILT",
+      "state": "UP_TO_DATE",
       "phase_status": "ACTIVE_P09",
-      "bundle_sha256": "c3482c4b89f5c3a37a71a6f473c4d3f5ac90c56ea644ba1ba641b04881488b39",
-      "archive_sha256": "304ce439e2c04a6ccd9938e4c73db6c57911eda747bfed7a4acb9e65c3804f91",
-      "archive_path": "GIS-Development-Skills-Plugins/claude-ai/artifacts/gis-development-skills-claude-ai.zip",
-      "file_count": 789,
-      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+      "bundle_sha256": "03214fc93803206b19e02c96c68b4cc1e9889ec15beec6b378121dd00438f709",
+      "archive_sha256": "bac79e1d90daccd4e96b33619baa07ebc8aa2cfda621fe4b1c923cf1a6787cc4",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "claude-ai",
+        "state": "MANUAL_ACTION_REQUIRED",
+        "installed_digest": null,
+        "built_digest": "03214fc93803206b19e02c96c68b4cc1e9889ec15beec6b378121dd00438f709",
+        "actions": [
+          "Claude AI / Cowork requires manual/organization portal upload or refresh; package staged cleanly."
+        ]
+      }
     },
     "antigravity": {
       "platform": "antigravity",
-      "state": "BUILT",
+      "state": "UP_TO_DATE",
       "phase_status": "ACTIVE_P09",
-      "bundle_sha256": "47de32f32f8d0170453f311879944b762fed76b5e8780485f554a1769494d5df",
-      "archive_sha256": "3fee4f7364658cf2e389827521a5b8e313784602b6390988cc2de0a9f57c731f",
-      "archive_path": "GIS-Development-Skills-Plugins/antigravity/artifacts/gis-development-skills-antigravity.zip",
-      "file_count": 789,
-      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+      "bundle_sha256": "b411aaaac9ea3334b9fe914e69b1bbed6b57609d53c61c6377e956fc5d524f39",
+      "archive_sha256": "a2574e6c09530312cbd28bf1fd68d2f127526dd9709665344ff0a0aa72b71137",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "antigravity",
+        "state": "NOT_INSTALLED",
+        "installed_digest": null,
+        "built_digest": "b411aaaac9ea3334b9fe914e69b1bbed6b57609d53c61c6377e956fc5d524f39",
+        "actions": [
+          "Google Antigravity CLI/client not installed and no external localSyncDir configured; skipped cleanly."
+        ]
+      }
     },
     "cursor": {
       "platform": "cursor",
-      "state": "BUILT",
+      "state": "UP_TO_DATE",
       "phase_status": "ACTIVE_P09",
-      "bundle_sha256": "cc43af10a0166e90da88099ac70b17d8a3cc973aef948ee57a13103c9dfb81ce",
-      "archive_sha256": "4fdb5f9cd8b26accf1ae8d4b928b18368763851d242dc676a241c8d8ba4a9c67",
-      "archive_path": "GIS-Development-Skills-Plugins/cursor/artifacts/gis-development-skills-cursor.zip",
-      "file_count": 789,
-      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+      "bundle_sha256": "ecb7da5d1233698a5f1483dcd34307398cd80c10c0f945be2498739aa0e5ab83",
+      "archive_sha256": "2ef9dff96863afdbc80f59c831f81362e03a1aaa4a6c8b6986a9710c7856a226",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "cursor",
+        "state": "NOT_INSTALLED",
+        "installed_digest": null,
+        "built_digest": "ecb7da5d1233698a5f1483dcd34307398cd80c10c0f945be2498739aa0e5ab83",
+        "actions": [
+          "Cursor CLI/client not installed and no external localSyncDir configured; skipped cleanly."
+        ]
+      }
     }
   }
 }

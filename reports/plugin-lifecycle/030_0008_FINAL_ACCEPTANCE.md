@@ -1,17 +1,17 @@
 # Plan `0008` Final Acceptance Report — AAREF, English Normalization & 7-Platform Plugin Rebuild
 
 - **Date:** 2026-11-26
-- **Plan:** `plans/active/0008_Agent-Intelligence-AAREF/01_AAREF_Master_Plan.md` (`AR00–AR10`)
-- **Reviewed Plan Blueprint:** `plans/active/0008_Agent-Intelligence-AAREF/04_Reviewed_Plan.json`
+- **Plan:** `plans/archive/0008_Agent-Intelligence-AAREF/01_AAREF_Master_Plan.md` (`AR00–AR10`)
+- **Reviewed Plan Blueprint:** `plans/archive/0008_Agent-Intelligence-AAREF/04_Reviewed_Plan.json`
 - **Baseline Reference:** `HEAD 7c0eb7da684c2670d5e020cbcc6c3b9f6de751bd` · `reports/AR00_BASELINE_AUDIT.md`
-- **Overall Disposition:** `COMPLETED_WITH_ENV_NOT_RUN` (DoneProof `partial` solely because `Update-All-Plugins.ps1` hit Windows PowerShell `Restricted` policy while canonical `python -B plugin-system/core/pipeline.py --build-only` + `--check-only` returned `UP_TO_DATE`, and pre-existing untracked `dist/user-testing/` remains outside branch scope)
+- **Overall Disposition:** `ARCHIVED_WITH_REFERENCED_EVIDENCE` (baseline DoneProof `partial` solely because `Update-All-Plugins.ps1` hit Windows PowerShell `Restricted` policy while canonical `python -B plugin-system/core/pipeline.py --build-only` + `--check-only` returned `UP_TO_DATE`; pre-existing untracked `dist/user-testing/` was subsequently cleaned in follow-up handoff commit `01db0e0`)
 - **Prior Independent Review Gate:** [`reports/INDEPENDENT_REVIEW_0008.md`](../INDEPENDENT_REVIEW_0008.md) (`INDEPENDENT_AGENT` subagent `8e25afd2`, `11/11` findings addressed); final post-remediation test/build checks recorded honestly as deterministic script verification + `SELF_REVIEW`.
 
 ## 1. Delivered Scope Summary
 
 1. **Central Constitution & Progressive Disclosure (`AR01`):**
    - Refactored `AGENTS.md` (125 -> 95 lines) in crisp English preserving every protected baseline invariant and Plan `0007` coordination token with zero `plans/` markdown link leakage.
-   - Mapped `100%` of rules 1:1 in `references/agent-reasoning/rule-registry.json` (`27` rules) and `plans/active/0008_Agent-Intelligence-AAREF/02_Rule_Migration_Matrix.json`.
+   - Mapped `100%` of rules 1:1 in `references/agent-reasoning/rule-registry.json` (`27` rules) and `plans/archive/0008_Agent-Intelligence-AAREF/02_Rule_Migration_Matrix.json`.
    - Offloaded dense website/Brand Kit 3.1/counter details into `references/agent-reasoning/website-and-repo-contracts.md` and consolidated AAREF protocols into `references/agent-reasoning/{reasoning-levels.json,adaptive-controller.md,cognitive-and-decision-methods.md,scientific-gis-reasoning.md,failure-recovery-and-learning.md,model-host-adaptation.md}`.
 2. **Adaptive Reasoning (`L0–L5`) & Orthogonal Impact Gating (`I0–I4`) (`AR02–AR05`):**
    - Extended `scripts/intent_router.py` (`classify_reasoning_profile`, `--classify-profile`, `intent_revision`, `material_unknowns`, `inferred_assumptions`, `decision_capsules`, `I0–I4` risk vs task consistency enforcement).

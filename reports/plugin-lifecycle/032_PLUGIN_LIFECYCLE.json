@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261126T152436Z",
+  "mode": "full",
+  "version": "0.3.5",
+  "source_commit": "01db0e0065535167dc194bc8e646c009c84ffe71",
+  "source_digest": "0ecbad2a38a470cccccb8b3b0e683939bd02e4f7678b27d7aa89749b38054cb0",
+  "bundle_digest": "316f779117974eeca47b1d73db6a520bb6ca64307bfbf20c860abbad888309da",
+  "bundle_file_count": 786,
+  "exit_code": 0,
+  "overall_state": "UP_TO_DATE",
+  "owner_config_source": "external-file:owner-config.json",
+  "platforms": {
+    "portable": {
+      "platform": "portable",
+      "state": "UP_TO_DATE",
+      "phase_status": "ACTIVE_P02",
+      "bundle_sha256": "e61d6125440fbef2a303babb1692182ec0ed19606e10bbdad578e95d239faff5",
+      "archive_sha256": "a613fe5564e02b3dd0f5a25cdb04f2dbbd70f71ea5f94d8b3434a5209b7a8f49",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "portable",
+        "state": "SYNCED_VERIFIED",
+        "installed_digest": "e61d6125440fbef2a303babb1692182ec0ed19606e10bbdad578e95d239faff5",
+        "built_digest": "e61d6125440fbef2a303babb1692182ec0ed19606e10bbdad578e95d239faff5",
+        "actions": [
+          "Synchronized portable bundle atomically to configured localSyncDir (SYNCED_VERIFIED)."
+        ]
+      }
+    },
+    "codex": {
+      "platform": "codex",
+      "state": "UP_TO_DATE",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "d90dc930564d1b1dd36e27428d92a43184ca094079858932ed27fa0c8505b1e9",
+      "archive_sha256": "eae5d82ec45eeaf69eeb5bc29a4bcfe373fe0658b835dea2129d6a2217adb2cd",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "codex",
+        "state": "NOT_INSTALLED",
+        "installed_digest": null,
+        "built_digest": "d90dc930564d1b1dd36e27428d92a43184ca094079858932ed27fa0c8505b1e9",
+        "actions": [
+          "OpenAI Codex (CLI / Desktop) CLI/client not installed and no external localSyncDir configured; skipped cleanly."
+        ]
+      }
+    },
+    "chatgpt": {
+      "platform": "chatgpt",
+      "state": "UP_TO_DATE",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "840ca1f3bf4670c8c12cb90b997248f58299d33be00aa60f39c8daa9598cb828",
+      "archive_sha256": "2d980f0bedd903d94e5d80bf935fc9dafd519e489bbfe6912c7874fd08f789c1",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "chatgpt",
+        "state": "MANUAL_ACTION_REQUIRED",
+        "installed_digest": null,
+        "built_digest": "840ca1f3bf4670c8c12cb90b997248f58299d33be00aa60f39c8daa9598cb828",
+        "actions": [
+          "ChatGPT requires manual/organization portal upload or refresh; package staged cleanly."
+        ]
+      }
+    },
+    "claude-code": {
+      "platform": "claude-code",
+      "state": "UP_TO_DATE",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "6b77813be2d27900be0abc6960922b58e106f01a897fe72746fbd02f25307870",
+      "archive_sha256": "01b06316cd59cf65760877e7a6da6ef11bdb427fa967fdb7eaa3f455538e8c27",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "claude-code",
+        "state": "NOT_INSTALLED",
+        "installed_digest": null,
+        "built_digest": "6b77813be2d27900be0abc6960922b58e106f01a897fe72746fbd02f25307870",
+        "actions": [
+          "Claude Code CLI/client not installed and no external localSyncDir configured; skipped cleanly."
+        ]
+      }
+    },
+    "claude-ai": {
+      "platform": "claude-ai",
+      "state": "UP_TO_DATE",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "03214fc93803206b19e02c96c68b4cc1e9889ec15beec6b378121dd00438f709",
+      "archive_sha256": "bac79e1d90daccd4e96b33619baa07ebc8aa2cfda621fe4b1c923cf1a6787cc4",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "claude-ai",
+        "state": "MANUAL_ACTION_REQUIRED",
+        "installed_digest": null,
+        "built_digest": "03214fc93803206b19e02c96c68b4cc1e9889ec15beec6b378121dd00438f709",
+        "actions": [
+          "Claude AI / Cowork requires manual/organization portal upload or refresh; package staged cleanly."
+        ]
+      }
+    },
+    "antigravity": {
+      "platform": "antigravity",
+      "state": "UP_TO_DATE",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "b411aaaac9ea3334b9fe914e69b1bbed6b57609d53c61c6377e956fc5d524f39",
+      "archive_sha256": "a2574e6c09530312cbd28bf1fd68d2f127526dd9709665344ff0a0aa72b71137",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "antigravity",
+        "state": "NOT_INSTALLED",
+        "installed_digest": null,
+        "built_digest": "b411aaaac9ea3334b9fe914e69b1bbed6b57609d53c61c6377e956fc5d524f39",
+        "actions": [
+          "Google Antigravity CLI/client not installed and no external localSyncDir configured; skipped cleanly."
+        ]
+      }
+    },
+    "cursor": {
+      "platform": "cursor",
+      "state": "UP_TO_DATE",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "ecb7da5d1233698a5f1483dcd34307398cd80c10c0f945be2498739aa0e5ab83",
+      "archive_sha256": "2ef9dff96863afdbc80f59c831f81362e03a1aaa4a6c8b6986a9710c7856a226",
+      "notes": "Source digest and built manifest match; skipped rebuild.",
+      "sync": {
+        "platform": "cursor",
+        "state": "NOT_INSTALLED",
+        "installed_digest": null,
+        "built_digest": "ecb7da5d1233698a5f1483dcd34307398cd80c10c0f945be2498739aa0e5ab83",
+        "actions": [
+          "Cursor CLI/client not installed and no external localSyncDir configured; skipped cleanly."
+        ]
+      }
+    }
+  }
+}

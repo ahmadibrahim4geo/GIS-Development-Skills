@@ -63,7 +63,7 @@ class AAREFPolicyAndReasoningTests(unittest.TestCase):
             self.assertIn("canonical_source file does not exist", joined)
 
     def test_rule_migration_matrix_valid(self):
-        matrix_path = ROOT / "plans" / "active" / "0008_Agent-Intelligence-AAREF" / "02_Rule_Migration_Matrix.json"
+        matrix_path = ROOT / "plans" / "archive" / "0008_Agent-Intelligence-AAREF" / "02_Rule_Migration_Matrix.json"
         data = json.loads(matrix_path.read_text(encoding="utf-8"))
         known = router_mod.available_skills()
         for rule in data["rules"]:

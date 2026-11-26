@@ -4,15 +4,15 @@
   "baseline_commit": "7c0eb7da684c2670d5e020cbcc6c3b9f6de751bd",
   "baseline_agents_sha256": "6dd2c9fadc5f9a9e322cb87455b8bcd3b2dbe4f5dd7e70201d1e04524f6beb67",
   "active_phase": "AR10",
-  "overall_status": "COMPLETED_WITH_ENV_NOT_RUN",
+  "overall_status": "ARCHIVED_WITH_REFERENCED_EVIDENCE",
+  "archived_date": "2026-11-26",
   "approved_by_user_in_host": true,
   "completed_phases": ["AR00", "AR01", "AR02", "AR03", "AR04", "AR05", "AR06", "AR07", "AR08", "AR08.5", "AR09", "AR10"],
   "pending_phases": [],
   "not_run_boundaries": [
     "Native ArcGIS Pro (arcgispro-py3 / COM / GUI), QGIS CLI / PyQGIS, ogr2ogr, gdalinfo, Playwright / Chromium live rendering, Android SDK / adb, macOS / Xcode iOS",
     "External AI client CLI installations (codex, claude, agy, cursor)",
-    "External SAST scanners (gitleaks, bandit, semgrep, osv-scanner, skill-scanner)",
-    "Pre-existing untracked dist/user-testing/banner-work/brand-kit-readme.md link failure (preserved untouched outside branch scope)"
+    "External SAST scanners (gitleaks, bandit, semgrep, osv-scanner, skill-scanner)"
   ],
   "reports": {
     "baseline_audit": "reports/AR00_BASELINE_AUDIT.md",

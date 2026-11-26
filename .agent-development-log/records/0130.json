@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "sequence": 130,
+  "timestamp_utc": "2026-11-26T15:25:18+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "Archived Plan 0008, cleaned merged worktree, and synced local portable suite",
+  "details": "Moved plans/active/0008_Agent-Intelligence-AAREF to plans/archive/, updated STATUS.json/CURRENT_HANDOFF.md/test_aaref_policy_and_reasoning.py/030_0008_FINAL_ACCEPTANCE.md, copied modern-web-guidance-1.0.1.tgz to canonical testing results/web-guidance/, removed merged .worktrees/web-guidance-integration worktree, configured outside-Git AppData owner-config.json, and synced portable bundle cleanly to ~/.codex/skills/gis-development-suite (SYNCED_VERIFIED).",
+  "references": [
+    129
+  ],
+  "task_id": "0008-AAREF",
+  "plan_revision": "r1",
+  "changed_files": [
+    "plans/archive/0008_Agent-Intelligence-AAREF/STATUS.json",
+    "tests/test_aaref_policy_and_reasoning.py",
+    "context/CURRENT_HANDOFF.md",
+    "reports/plugin-lifecycle/030_0008_FINAL_ACCEPTANCE.md"
+  ],
+  "tests": [
+    "pipeline check-only + validate_skill_pack + audit_agent_policy + security_audit + targeted 25 unittests"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "6ffd19bcdecca491b9da804394f1713e0891a7e337874f61aff7d62dfcee8cd9",
+  "hash": "ae98642fc6a6abf405987c33c67f5a6f77fd4d2f3adc5a48d0298d5b10f9823f"
+}

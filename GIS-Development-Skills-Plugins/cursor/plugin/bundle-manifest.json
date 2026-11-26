@@ -1,6 +1,6 @@
 {
   "bundle_name": "gis-development-suite",
-  "content_sha256": "cc43af10a0166e90da88099ac70b17d8a3cc973aef948ee57a13103c9dfb81ce",
+  "content_sha256": "ecb7da5d1233698a5f1483dcd34307398cd80c10c0f945be2498739aa0e5ab83",
   "entrypoint": "SKILL.md",
   "excluded_directories": [
     ".agent-development-log",
@@ -16,17 +16,17 @@
     "node_modules",
     "venv"
   ],
-  "expanded_bytes": 6201263,
+  "expanded_bytes": 6201264,
   "file_count": 789,
   "files": [
     {
       "path": ".cursor-plugin/plugin.json",
-      "sha256": "2a9adefbf98115d750858ba3445c46fe3c51acc9567c11f330ab055d68fac260",
+      "sha256": "2ce577443763acf041cca9ef8aaedb5c1cb691189e75d3c2ad671b6547268542",
       "size": 1047
     },
     {
       "path": ".cursor/rules/gis-development-skills.mdc",
-      "sha256": "0c27eb401ca213ec3b518c45781ca1ee078509c9628320aa8ed27bfc5f3e076b",
+      "sha256": "5be662f95a8b827ea26640a38010b945fb797e6edfdef0eff42607a59edbe53a",
       "size": 957
     },
     {
@@ -3516,8 +3516,8 @@
     },
     {
       "path": "tests/test_aaref_policy_and_reasoning.py",
-      "sha256": "00e47b8f05cc7db6a2cc2e3cb56ddbf3d67a2315315ef9cfe701015785729ece",
-      "size": 13789
+      "sha256": "4334b4c12c3735d581498cd2e4e17b33a174edd9ecf92eb265100ae64a09627f",
+      "size": 13790
     },
     {
       "path": "tests/test_api_catalog.py",
@@ -4013,7 +4013,7 @@
   },
   "manifest_scope": "all bundle files except bundle-manifest.json",
   "schema_version": "1.0",
-  "source_commit": "b3101b171c364f70f7b7f8ce27bae6e20d166fa4",
+  "source_commit": "01db0e0065535167dc194bc8e646c009c84ffe71",
   "source_roots": [
     ".github",
     "assets",
