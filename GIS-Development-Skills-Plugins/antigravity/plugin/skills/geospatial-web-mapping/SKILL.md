@@ -60,7 +60,7 @@ Review [Earth View](../../references/earth-view-architecture.md) for typed base/
 
 ## Browser and WebView device permissions
 
-For browser geolocation, notifications, file picking, camera/microphone, WebUSB/serial/BLE or embedded host access, consult [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) and Security Guardian. Enforce HTTPS/secure contexts, origin and Permissions Policy, real user gestures and restricted WebView/Electron/Tauri bridges. Keep map scene/camera position distinct from user's physical GPS location via [GIS Device Context](../gis-device-context/SKILL.md).
+For browser geolocation, notifications, file picking, camera/microphone, WebUSB/serial/BLE or embedded host access, consult [System Capabilities & Permissions](../system-capabilities-and-permissions/SKILL.md) and Security Guardian. Enforce HTTPS/secure contexts, origin and Permissions Policy, real user gestures and restricted WebView/Electron/Tauri bridges. Keep map scene/camera position distinct from user's physical GPS location via [GIS Device Context](../gis-device-context/SKILL.md), and apply [scientific GIS invariants](../../references/agent-reasoning/scientific-gis-reasoning.md) (XYZ vs TMS tile schema, view reprojection correctness, and honest `NOT RUN` browser boundaries).
 
 ## Visual assets (conditional)
 

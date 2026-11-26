@@ -184,8 +184,8 @@ This specification defines the architectural contract for adding external scient
 
 ---
 
-## 5. ملخص باللغة العربية (Arabic Summary)
+## 5. Integration Summary
 
-- **المستودعات الخمسة:** أُضيفت مستودعات OpenGeoHub وOpenLandMap كـ**مراجع برمجية وعلمية** وليست أدوات تنفيذية جاهزة. مستودعات `scikit-map` (ترخيص MIT) و`spatial-prediction-eml` (ترخيص CC-BY-SA-4.0) و`spatial-layers` (ترخيص GPL-3.0) موثقة التراخيص، بينما `soildb` و`GEDTM30` لا تملكان ترخيصاً صريحاً في الجذر وتعتبران مراجع مفاهيمية يمنع نسخ كودهما مباشرة.
-- **اكتشاف البيانات والبروتوكولات:** فهرس STAC الخاص بـ OpenLandMap هو فهرس استاتيكي (Static STAC Catalog) مخزن على S3 ولا يدعم بالضرورة البحث الديناميكي (`/search`). يتم الوصول إلى البيانات عبر مرئيات COG تدعم طلبات البايت (HTTP Range) ولا يُفترض وجود خوادم WMS أو XYZ جاهزة لكل طبقة دون التحقق.
-- **واجهة استعراض البيانات في Z-EARTH:** تصميم الواجهة يعتمد على التدفق: (القسم ← المصدر المعتمد ← المجموعة ← المتغير ← الفترة الزمنية المؤكدة ← الإضافة للخريطة)، مع دعم كامل للغة العربية ودليل خريطة متزامن وشريط زمني يقتصر على التواريخ الفعلية فقط دون اختراع فترات زمنية وهمية.
+- **Five Reference Repositories:** Added OpenGeoHub and OpenLandMap repositories as **scientific and engineering references**, not turnkey runtime tools. `scikit-map` (`MIT`), `spatial-prediction-eml` (`CC-BY-SA-4.0`), and `spatial-layers` (`GPL-3.0`) carry explicit licenses, whereas `soildb` and `GEDTM30` omit root license files and remain conceptual references whose source must not be copied directly.
+- **Discovery & Access Protocols:** The main OpenLandMap STAC index is a static S3 STAC catalog that does not automatically support dynamic `/search` CQL2 queries. Pixel access relies on Cloud-Optimized GeoTIFF (`COG`) byte-range requests; never assume hosted WMS/XYZ endpoints exist for every dataset without checking.
+- **Data Explorer Workflow (`Z-EARTH`):** Structure selection sequentially as Section -> Verified Source -> Collection -> Variable -> Confirmed Time Extent -> Map Layer Addition, preserving bilingual RTL/LTR labels, synchronized legends, and strictly verified timestamps without inventing synthetic dates.

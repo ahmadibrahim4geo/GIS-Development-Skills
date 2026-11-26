@@ -54,7 +54,7 @@ Use [mobile architecture guide](../../references/mobile-gis-architecture.md) (12
 
 Read [mobile device testing matrix](../../references/mobile-gis-device-test-matrix.md) and [testing/signing guide](../../references/web-mobile-testing-release-guide.md). T0 checks contracts and links (`MOB-01..MOB-20`); T1 uses deterministic offline permission/sync/auth SQLite fixtures; T2 tests real GIS file readback and adapters; T3 uses Android emulator/device plus iOS simulator/device (`macOS/Xcode` required) with real map, permissions and lifecycle interaction; T4 signs, installs, launches, updates and uninstalls packages (`AAB` vs `IPA`) with release evidence. Mark unavailable native gates **NOT RUN**, never PASS.
 
-An [offline contract example + `MOB-01..20`](../../examples/mobile-gis/README.md), [English Mobile Guide](../../docs/MOBILE_GIS_GUIDE.md), [Arabic Web/Mobile Guide](../../docs/WEB_MOBILE_GUIDE.ar.md), and [mobile regression tests](../../tests/test_gis_mobile_application.py) prove only reference policy and deterministic SQLite/sync semantics, **not** that an Android/iOS binary or device driver has been built.
+An [offline contract example + `MOB-01..20`](../../examples/mobile-gis/README.md), [English Mobile Guide](../../docs/MOBILE_GIS_GUIDE.md), [Arabic Web/Mobile Guide](../../docs/WEB_MOBILE_GUIDE.ar.md), [scientific GIS invariants](../../references/agent-reasoning/scientific-gis-reasoning.md), and [mobile regression tests](../../tests/test_gis_mobile_application.py) prove only reference policy and deterministic SQLite/sync semantics, **not** that an Android/iOS binary or device driver has been built.
 
 ## Visual assets (conditional)
 

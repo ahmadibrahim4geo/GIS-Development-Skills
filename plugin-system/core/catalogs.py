@@ -26,6 +26,8 @@ def _codex_marketplace_payload(context: AdapterContext, codex_cfg: PlatformConfi
                 "id": context.plugin_id,
                 "name": "gis-development-skills",
                 "title": context.suite_name,
+                "description": "The Heart of Geospatial Innovation — By Ahmed Ibrahim",
+                "icon": "assets/icon.svg",
                 "version": context.version,
                 "source_commit": context.source_commit,
                 "source_digest": context.source_digest,
@@ -58,7 +60,8 @@ def _claude_marketplace_payload(context: AdapterContext, claude_cfg: PlatformCon
             {
                 "name": "gis-development-skills",
                 "plugin_id": context.plugin_id,
-                "description": "Verifiable GIS Engineering, Spatial Architecture, Web/Mobile GIS, and Security Governance Suite.",
+                "description": "The Heart of Geospatial Innovation — By Ahmed Ibrahim",
+                "icon": "assets/icon.svg",
                 "version": context.version,
                 "source": f"./{claude_cfg.bundle_dir}",
                 "manifest": claude_cfg.manifest_path,

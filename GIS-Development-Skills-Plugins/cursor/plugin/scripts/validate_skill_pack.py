@@ -108,7 +108,7 @@ def inspect_repository(root=ROOT):
     for markdown in [root / "README.md", root / "README.ar.md"]:
         if markdown.is_file():
             errors.extend(check_links(markdown, root))
-    for guide in (root / "references").glob("*.md"):
+    for guide in sorted((root / "references").rglob("*.md")):
         errors.extend(check_links(guide, root))
     html = root / "explorer.html"
     if html.is_file():

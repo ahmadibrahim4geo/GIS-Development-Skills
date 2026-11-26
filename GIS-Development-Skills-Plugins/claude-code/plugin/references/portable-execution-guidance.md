@@ -43,14 +43,12 @@ For explanations, check supplied material or relevant sources. For documentation
 
 Fixtures, mocks, source reviews and screenshots cannot replace required native integration or packaged workflows. Retain T0–T4 meanings from the [evidence registry](evidence-tiers.json) and [quality benchmark](../docs/QUALITY_BENCHMARK.md). Record actual commands/actions, observations and gaps. Static checks prove those checks only, not model compliance or correct installation in every client.
 
-## ملخص الاستخدام بالعربية
+## Summary across depth modes and hosts
 
-المنهج مستقل عن اسم النموذج وإطار الوكيل، والتنفيذ يعتمد على قدرات البيئة وصلاحياتها الفعلية. ملف Markdown لا يثبت التوافق مع كل البرامج أو يضمن التزام النماذج به.
+Execution modes remain independent of model weights and client vendor branding; runtime behavior follows verified host tools and permissions. Markdown guidance alone never enforces cross-client compliance.
 
-- **Lite — خفيف:** سؤال واضح أو تعديل صغير قابل للتراجع، مع تحقق مناسب من المعلومة أو الناتج.
-- **Standard — اعتيادي:** خطوات مترابطة، مع خطة ومعايير قبول وقرار تالٍ محفوظة في السجل الحالي.
-- **Deep — موسع:** عمل معقد أو حساس أو إصدار، مع ترتيب التبعيات والمخاطر وأدلة لكل نتيجة.
+- **Lite / L0–L1:** Clear read-only query or small reversible edit with targeted verification ([`adaptive-controller.md`](agent-reasoning/adaptive-controller.md)).
+- **Standard / L2:** Connected steps backed by a reviewed plan, acceptance criteria, and journal record.
+- **Deep / Strategic (L3–L5):** Root-cause investigation, architectural changes, or high-impact releases with explicit dependency ordering, risk gates, and per-criterion evidence.
 
-المستوى لا يُسقط موافقة المستخدم أو حدود الصلاحيات. افحص الموجود قبل البحث الخارجي أو البناء، وسجّل سبب الاختيار والترخيص. اختبر فرضية محددة عند الخطأ وأعد نفس الفحص بعد الإصلاح؛ تجنب التكرار دون دليل جديد. استخدم الوكلاء الفرعيين عند توفر الدعم والتصريح فقط، مع بقاء التنفيذ المتسلسل ممكنًا.
-
-يظل منسق النية مسؤولًا عن فهم الطلب ومراجعته، وموجّه GIS عن اختيار المختص، وحارس الأمان عن حدود التنفيذ، وسجل التطوير عن التاريخ، وDoneProof عن ربط الادعاء بالدليل. غياب برنامج GIS أو أداة لازمة يترك الاختبار المعني NOT RUN أو BLOCKED؛ الاختبار البديل لا يثبت تشغيلًا أصليًا لم يحدث.
+Reasoning depth never waives user authorization or `I0–I4` security boundaries. Inspect existing files before external search or custom builds, record selection rationale and license verification, run discriminating failure hypotheses instead of repeating identical failing actions, and delegate parallel subagents only when host-supported and authorized. Prompt Intent Orchestrator owns requirements and revisions; GIS Router owns specialist selection; Security Guardian owns safety boundaries; Development Journal owns project history; DoneProof owns claim-to-evidence verification (`NOT RUN` / `BLOCKED` whenever native GIS tools are absent).

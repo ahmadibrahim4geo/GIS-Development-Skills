@@ -129,3 +129,8 @@ create a linked revision or cancellation. This local hash chain is not a signatu
 | [#0122](reports/0122.md) | 2026-11-25T20:50:25+00:00 | verification | completed | #0121 | Completed Phase P10: full QA matrix, ZIP/Git secret audit, and anti-regression suite |
 | [#0123](reports/0123.md) | 2026-11-25T20:57:47+00:00 | handoff | completed | #0122 | Completed Phase P11 and closed Master Integration V2 (P00-P11) with honest T0/T1 evidence |
 | [#0124](reports/0124.md) | 2026-11-26T08:46:48+00:00 | handoff | completed | — | Reconciled origin/main (8747283), updated README/HTML, synced 37/461/53/26, rebuilt 7 plugins, verified T0/T1 before push |
+| [#0125](reports/0125.md) | 2026-11-26T09:15:43+00:00 | request | approved | — | Adopt AAREF master intelligence plan with English technical consistency, zero skill duplication, and clean 7-platform plugin rebuild |
+| [#0126](reports/0126.md) | 2026-11-26T09:15:51+00:00 | verification | completed | #0125 | AR00 baseline audit recorded on HEAD 7c0eb7da |
+| [#0127](reports/0127.md) | 2026-11-26T14:16:10+00:00 | implementation | completed | #0126 | Implemented AAREF AR01-AR09 upgrades, resolved 11 independent review findings, and rebuilt 7 platform plugins |
+| [#0128](reports/0128.md) | 2026-11-26T14:16:10+00:00 | verification | completed | #0127 | AR10 verification complete: validators/unit suites/plugin parity pass; native GIS & external CLIs NOT RUN |
+| [#0129](reports/0129.md) | 2026-11-26T14:33:18+00:00 | handoff | completed | #0128 | Finalized temp cleanup, index/explorer/README sync, browser verification, and pre-push CI verification |

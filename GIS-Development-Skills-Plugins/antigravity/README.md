@@ -1,7 +1,7 @@
 # Google Antigravity (`antigravity`)
 
 - **Plugin ID:** `ahmadibrahim4geo.gis-development-skills`
-- **Version:** `0.3.5` (`42de4a246a2db1f7d33cc746da9cd3a0f1718a91`)
+- **Version:** `0.3.5` (`7c0eb7da684c2670d5e020cbcc6c3b9f6de751bd`)
 - **Phase Status:** `ACTIVE_P09`
 - **Manifest:** [plugin/plugin.json](plugin/plugin.json)
 - **Parity Report:** [parity-report.json](parity-report.json)

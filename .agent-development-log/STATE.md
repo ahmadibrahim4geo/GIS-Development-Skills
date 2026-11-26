@@ -1,20 +1,20 @@
 # Project development state — agent handoff
 
 Read with INDEX.md and the linked reports. Independently inspect code and tests.
-Recorded steps: 124
+Recorded steps: 129
 
 ## Latest records
 
-- #0115 [completed] Completed P03 Unified Knowledge Base, Capability Profiles, and Portable Bundle Sync (related: #0114)
-- #0116 [completed] Completed P04 Engine Selection Skill, 6 CLI Scripts, Schemas, Templates, and Bundle Sync (related: #0115)
-- #0117 [completed] Completed P05 Web GIS Expansion (W01-W12, WEB-01..WEB-18, 7 References, Pure-ESM Contracts & Bundle Sync) (related: #0116)
-- #0118 [completed] Completed P06 Mobile GIS Expansion (M01-M10, MOB-01..MOB-20, SQLite/GNSS/Sync Core & Bundle Sync) (related: #0117)
-- #0119 [completed] Completed P07 Source Reuse, Forks, Reference UIs & 8 Example Packages (related: #0118)
 - #0120 [completed] Completed P08 Repo-Wide Integration (Router, Bilingual Hubs, Role Registry & 0006 Archival) (related: #0119)
 - #0121 [completed] Completed Phase P09: six platform adapters, marketplaces, rules, hooks, and CI (related: #0120)
 - #0122 [completed] Completed Phase P10: full QA matrix, ZIP/Git secret audit, and anti-regression suite (related: #0121)
 - #0123 [completed] Completed Phase P11 and closed Master Integration V2 (P00-P11) with honest T0/T1 evidence (related: #0122)
 - #0124 [completed] Reconciled origin/main (8747283), updated README/HTML, synced 37/461/53/26, rebuilt 7 plugins, verified T0/T1 before push
+- #0125 [approved] Adopt AAREF master intelligence plan with English technical consistency, zero skill duplication, and clean 7-platform plugin rebuild
+- #0126 [completed] AR00 baseline audit recorded on HEAD 7c0eb7da (related: #0125)
+- #0127 [completed] Implemented AAREF AR01-AR09 upgrades, resolved 11 independent review findings, and rebuilt 7 platform plugins (related: #0126)
+- #0128 [completed] AR10 verification complete: validators/unit suites/plugin parity pass; native GIS & external CLIs NOT RUN (related: #0127)
+- #0129 [completed] Finalized temp cleanup, index/explorer/README sync, browser verification, and pre-push CI verification (related: #0128)
 
 ## Open/blocked records (confirm whether still applicable)
 

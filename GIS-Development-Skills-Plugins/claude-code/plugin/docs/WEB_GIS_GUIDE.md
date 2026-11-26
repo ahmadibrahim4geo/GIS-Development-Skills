@@ -1,4 +1,6 @@
-# Web GIS Engineering Guide (`W01–W12`, `WEB-01..WEB-18`) / دليل تطوير خرائط وتطبيقات الويب
+# Web GIS Engineering Guide (`W01–W12`, `WEB-01..WEB-18`)
+
+> Arabic summary companion: [`docs/WEB_MOBILE_GUIDE.ar.md`](WEB_MOBILE_GUIDE.ar.md).
 
 > Companion guide to [`skills/geospatial-web-mapping/SKILL.md`](../skills/geospatial-web-mapping/SKILL.md) and [`examples/web-gis/README.md`](../examples/web-gis/README.md).
 

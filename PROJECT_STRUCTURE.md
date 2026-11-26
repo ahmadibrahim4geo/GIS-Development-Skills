@@ -8,10 +8,10 @@ explains how to audit a development project that uses this suite.
 | Directory | Purpose |
 | --- | --- |
 | skills | General router, shared responsibilities and domain-specific skill entry points |
-| references | Maintained guidance, catalog data, registries and evidence definitions |
+| references | Maintained guidance, catalog data, registries, evidence definitions, and `agent-reasoning/` AAREF specifications |
 | schemas | Versioned JSON schemas (such as architecture v2 contracts) for offline structural validation |
-| scripts | Standard-library validation, distribution, planning and governance tools |
-| tests | Local regression coverage for scripts, catalogs, skills and the site |
+| scripts | Standard-library validation, distribution, planning, AAREF policy audit, GAIB evaluation, and governance tools |
+| tests | Local regression coverage for scripts, catalogs, skills, site, and `agent_behavior/` GAIB suites |
 | fixtures | Versioned, documented test inputs and expected results |
 | testing data | Local, user-owned test inputs kept separate from outputs |
 | testing results | Local run manifests, isolated fixture copies, outputs and readback receipts |

@@ -8,7 +8,7 @@ Choose sources dynamically from the project's topic, current provider, source we
 
 Expand, replace or skip sources whenever the project calls for it. Use any relevant internet source accessible through authorized host tools; record where the selected asset actually came from, rather than forcing it into a predefined source category. Stop once the brief is satisfied.
 
-بالعربية: يختار الوكيل مصادر الصور حسب المشروع والمهمة، ويستطيع استخدام صورة مناسبة موجودة داخل موقع المصدر الذي يعمل عليه مباشرة بعد مراجعتها. أسماء المواقع هنا أمثلة اختيارية، وليست قائمة حصرية ولا ترتيب بحث إلزاميًا.
+In practice, agents select imagery dynamically according to the project domain and task requirements, including suitable verified assets already present on the active provider or documentation site, treating named repositories here as extensible starting points rather than a fixed mandatory sequence.
 
 ## Non-exhaustive source examples
 

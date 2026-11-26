@@ -25,11 +25,11 @@ the host provides as trusted Python callables.
   binding against the checkpoint. Rollback invalidates the active result and
   preserves earlier attempts. Review a new plan and start a new run when the
   plan revision, inputs, expected results or permitted output scope changes.
-- Runtime events use SEQUENTIAL_ROLE_SIMULATION and SAME_AGENT_REVIEW. The
-  host records verified milestones in the existing [development
+- Runtime events use SEQUENTIAL_ROLE_SIMULATION and SAME_AGENT_REVIEW (mapped to canonical DoneProof `review_mode: "SELF_REVIEW"`—never claim `INDEPENDENT_AGENT` without distinct subagent/session review evidence). The host records verified milestones in the existing [development
   journal](agent-development-journal-guide.md). Run checkpoints describe
   execution and do not replace the journal. V2 architectural roles (`engine-selector`,
-  `clean-room-reviewer`, `license-auditor`, and profile `V2_ARCHITECTURE`) map
+  `clean-room-reviewer`, `license-auditor`, and profile `V2_ARCHITECTURE`) plus
+  AAREF logical functions ([`failure-recovery-and-learning.md`](agent-reasoning/failure-recovery-and-learning.md)) map
   explicitly into this registry without claiming multi-agent parallelism when
   executed sequentially by one session.
 

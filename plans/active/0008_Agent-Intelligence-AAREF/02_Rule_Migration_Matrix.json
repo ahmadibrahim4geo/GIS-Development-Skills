@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.0",
+  "plan_id": "0008_Agent-Intelligence-AAREF",
+  "baseline_agents_sha256": "6dd2c9fadc5f9a9e322cb87455b8bcd3b2dbe4f5dd7e70201d1e04524f6beb67",
+  "registry_sync": "1:1 synchronized with references/agent-reasoning/rule-registry.json",
+  "rules": [
+    {
+      "rule_id": "CORE-PRINCIPLES-01",
+      "legacy_lines": "AGENTS.md:103",
+      "canonical_source": "references/engine-architecture-taxonomy.md",
+      "agents_anchor": "#non-negotiable-engineering-principles",
+      "owner": "gis-development",
+      "strength": "MUST",
+      "disposition": "preserved_verbatim_principles",
+      "notes": "Retains Goal first, five reuse principles, evidence before certainty, orthogonal depth vs safety, single owner, and additive preservation."
+    },
+    {
+      "rule_id": "CORE-START-01",
+      "legacy_lines": "AGENTS.md:5",
+      "canonical_source": "references/intent-orchestration-workflow.md",
+      "agents_anchor": "#start-here",
+      "owner": "prompt-intent-orchestrator",
+      "strength": "MUST",
+      "disposition": "preserved_and_refined",
+      "notes": "Requires outcome, checks, protected inputs, root verification, and reviewed intake for I2-I3."
+    },
+    {
+      "rule_id": "CORE-START-02",
+      "legacy_lines": "AGENTS.md:6",
+      "canonical_source": "skills/gis-security-guardian/SKILL.md",
+      "agents_anchor": "#start-here",
+      "owner": "gis-security-guardian",
+      "strength": "MUST",
+      "disposition": "preserved_and_refined",
+      "notes": "Applies Security Guardian and Token Optimization Triad across intake through handoff."
+    },
+    {
+      "rule_id": "CORE-START-03",
+      "legacy_lines": "AGENTS.md:7",
+      "canonical_source": "references/project-governance-workflow.md#skill-readiness-before-use",
+      "agents_anchor": "#start-here",
+      "owner": "gis-development",
+      "strength": "MUST",
+      "disposition": "preserved_and_refined",
+      "notes": "Preserves single accountable owner and skill readiness check."
+    },
+    {
+      "rule_id": "CORE-START-04",
+      "legacy_lines": "AGENTS.md:8",
+      "canonical_source": "references/portable-execution-guidance.md#work-within-existing-ownership",
+      "agents_anchor": "#start-here",
+      "owner": "gis-development",
+      "strength": "MUST",
+      "disposition": "preserved_and_refined",
+      "notes": "Preserves small verifiable slices, root-cause diagnosis, and rerun checks."
+    },
+    {
+      "rule_id": "CORE-START-05",
+      "legacy_lines": "AGENTS.md:9",
+      "canonical_source": "skills/completion-evidence/SKILL.md",
+      "agents_anchor": "#start-here",
+      "owner": "completion-evidence",
+      "strength": "MUST",
+      "disposition": "preserved_and_refined",
+      "notes": "Preserves journal resume, DoneProof gate, and authorized GitHub delivery boundary."
+    },
+    {
+      "rule_id": "WEB-UI-PAIR-01",
+      "legacy_lines": "AGENTS.md:11",
+      "canonical_source": "references/modern-web-guidance-workflow.md",
+      "agents_anchor": "#orchestration-review-and-specialist-boundaries",
+      "owner": "modern-web-guidance",
+      "strength": "MUST",
+      "disposition": "preserved_verbatim_semantics",
+      "notes": "Full paired gate (Modern Web Guidance + UI/UX Pro Max before implementation, surfacing missing prerequisites)."
+    },
+    {
+      "rule_id": "MOD-HOST-01",
+      "legacy_lines": "AGENTS.md:13",
+      "canonical_source": "references/agent-reasoning/model-host-adaptation.md",
+      "agents_anchor": "#instruction-authority-and-trust-boundaries",
+      "owner": "gis-development",
+      "strength": "MUST",
+      "disposition": "preserved_and_extended_with_capability_snapshot",
+      "notes": "Preserves model neutrality, host/OS primacy, and docs/SKILL_DISTRIBUTION.md#use-one-policy-across-agent-clients setup link."
+    },
+    {
+      "rule_id": "CORE-APPROVAL-01",
+      "legacy_lines": "AGENTS.md:15-16",
+      "canonical_source": "references/intent-orchestration-workflow.md",
+      "agents_anchor": "#adaptive-reasoning-impact-gating-and-execution-flow",
+      "owner": "prompt-intent-orchestrator",
+      "strength": "MUST",
+      "disposition": "strengthened_with_impact_decoupling_I0_I4",
+      "notes": "Preserves mandatory goal-first intake, intent_router --workflow compilation, and non-consent JSON warning."
+    },
+    {
+      "rule_id": "AAREF-ADP-01",
+      "legacy_lines": "AAREF:REQ-ADP-01..09,REQ-FLOW-01..12",
+      "canonical_source": "references/agent-reasoning/adaptive-controller.md",
+      "agents_anchor": "#adaptive-reasoning-impact-gating-and-execution-flow",
+      "owner": "prompt-intent-orchestrator",
+      "strength": "MUST",
+      "disposition": "new_capability_integrated",
+      "notes": "Decouples L0-L5 reasoning depth from I0-I4 authorization impact gates."
+    },
+    {
+      "rule_id": "AAREF-COG-01",
+      "legacy_lines": "AAREF:REQ-COG-01..18,REQ-RES-01..09,REQ-DEC-01..09",
+      "canonical_source": "references/agent-reasoning/cognitive-and-decision-methods.md",
+      "agents_anchor": "#adaptive-reasoning-impact-gating-and-execution-flow",
+      "owner": "gis-development",
+      "strength": "SHOULD",
+      "disposition": "new_capability_integrated",
+      "notes": "On-demand 18 cognitive methods, source hierarchy, counterfactuals, and Decision Capsules."
+    },
+    {
+      "rule_id": "AAREF-FAIL-01",
+      "legacy_lines": "AAREF:REQ-FAIL-01..11",
+      "canonical_source": "references/agent-reasoning/failure-recovery-and-learning.md",
+      "agents_anchor": "#adaptive-reasoning-impact-gating-and-execution-flow",
+      "owner": "gis-development",
+      "strength": "MUST",
+      "disposition": "new_capability_integrated",
+      "notes": "Root-cause isolation, 2-failure REPLAN circuit breaker, 3-failure stop/BLOCKED, zero security auto-retry."
+    },
+    {
+      "rule_id": "ACC-DONEPROOF-01",
+      "legacy_lines": "AGENTS.md:17-18,54,63,68",
+      "canonical_source": "references/doneproof-verification-protocol.md",
+      "agents_anchor": "#verification-review-truthfulness-and-delivery",
+      "owner": "completion-evidence",
+      "strength": "MUST",
+      "disposition": "strengthened_with_review_mode_validation",
+      "notes": "Plan-bound verify_completion.py plus honest review_mode (INDEPENDENT_AGENT|HUMAN_REVIEW|SELF_REVIEW|NOT_RUN) and T0-T4 native limits."
+    },
+    {
+      "rule_id": "CTX-JOURNAL-01",
+      "legacy_lines": "AGENTS.md:19",
+      "canonical_source": "skills/agent-development-journal/SKILL.md",
+      "agents_anchor": "#context-memory-and-sanitized-learning",
+      "owner": "agent-development-journal",
+      "strength": "MUST",
+      "disposition": "strengthened_with_capsules_checkpoints_and_lessons",
+      "notes": "Single hash-chained ledger plus Decision Capsules, Checkpoints, and quarantined sanitized Lessons without policy self-modification."
+    },
+    {
+      "rule_id": "ROUTE-SINGLE-01",
+      "legacy_lines": "AGENTS.md:20",
+      "canonical_source": "skills/gis-development/SKILL.md",
+      "agents_anchor": "#orchestration-review-and-specialist-boundaries",
+      "owner": "gis-development",
+      "strength": "MUST",
+      "disposition": "preserved_verbatim_semantics",
+      "notes": "Single compact router (<5500 chars) + domain skills without minor duplication."
+    },
+    {
+      "rule_id": "ARCH-VIS-01",
+      "legacy_lines": "AGENTS.md:21",
+      "canonical_source": "references/archify-integration.md",
+      "agents_anchor": "#orchestration-review-and-specialist-boundaries",
+      "owner": "gis-architecture-visualization",
+      "strength": "MUST",
+      "disposition": "preserved_verbatim_semantics",
+      "notes": "Conditional visualization composition with Archify discovery and native evidence boundary."
+    },
+    {
+      "rule_id": "MCP-ORCH-01",
+      "legacy_lines": "AGENTS.md:22",
+      "canonical_source": "references/mcp-capability-registry.json",
+      "agents_anchor": "#orchestration-review-and-specialist-boundaries",
+      "owner": "mcp-integration-and-tool-orchestration",
+      "strength": "MUST",
+      "disposition": "preserved_verbatim_semantics",
+      "notes": "Routes optional MCP/native tools after domain ownership and Security Guardian grants."
+    },
+    {
+      "rule_id": "VIS-ASSET-01",
+      "legacy_lines": "AGENTS.md:24",
+      "canonical_source": "skills/visual-asset-discovery-integration/SKILL.md",
+      "agents_anchor": "#orchestration-review-and-specialist-boundaries",
+      "owner": "visual-asset-discovery-integration",
+      "strength": "MUST",
+      "disposition": "preserved_verbatim_semantics",
+      "notes": "Handles requested visual assets with source credits and representation honesty."
+    },
+    {
+      "rule_id": "RES-PROVENANCE-01",
+      "legacy_lines": "AGENTS.md:25-27,AAREF:REQ-GIS-01..15",
+      "canonical_source": "references/agent-reasoning/scientific-gis-reasoning.md",
+      "agents_anchor": "#gis-scientific-invariants-and-source-governance",
+      "owner": "gis-development",
+      "strength": "MUST",
+      "disposition": "preserved_and_linked_to_scientific_reasoning",
+      "notes": "Enforces primary specs/licenses, immutable inputs, Define Projection != Project, RS scaling/QA masks, and index disambiguation."
+    },
+    {
+      "rule_id": "SITE-BRAND-CONTRACTS-01",
+      "legacy_lines": "AGENTS.md:28-63,70-72",
+      "canonical_source": "references/agent-reasoning/website-and-repo-contracts.md",
+      "agents_anchor": "#repository-website-and-brand-kit-contracts",
+      "owner": "modern-web-guidance",
+      "strength": "MUST",
+      "disposition": "moved_details_to_owned_reference_with_mandatory_root_pointer",
+      "notes": "Preserves Brand Kit 3.1, verbatim mission, #author panel, HOW_TO_USE bilingual guides, GitHub Pages subpath, counters, API discoverability, and CI triggers via website-and-repo-contracts.md."
+    },
+    {
+      "rule_id": "RUNTIME-POL-01",
+      "legacy_lines": "AGENTS.md:65-69",
+      "canonical_source": "references/agent-decision-tree.md",
+      "agents_anchor": "#gis-scientific-invariants-and-source-governance",
+      "owner": "gis-development",
+      "strength": "MUST",
+      "disposition": "preserved_and_linked",
+      "notes": "Retains decision tree, LEGACY_FULL_SKILL/full-guidance archive links, fixtures, native_tests, security/performance refs."
+    },
+    {
+      "rule_id": "SEC-GUARD-01",
+      "legacy_lines": "AGENTS.md:74-79",
+      "canonical_source": "skills/gis-security-guardian/SKILL.md",
+      "agents_anchor": "#instruction-authority-and-trust-boundaries",
+      "owner": "gis-security-guardian",
+      "strength": "MUST",
+      "disposition": "preserved_and_decoupled_from_reasoning_depth",
+      "notes": "Cross-cutting trust boundaries, security_audit.py, honest absent external scanners, and confirmed high/critical release blockers."
+    },
+    {
+      "rule_id": "UI-QUAL-01",
+      "legacy_lines": "AGENTS.md:81-83",
+      "canonical_source": "references/gis-ui-quality-coordination.md",
+      "agents_anchor": "#orchestration-review-and-specialist-boundaries",
+      "owner": "gis-ui-command-audit",
+      "strength": "MUST",
+      "disposition": "preserved_verbatim_semantics",
+      "notes": "Coordinates the 4 UI quality specialists with command_id/trace_id and T2-T4 NOT RUN honesty."
+    },
+    {
+      "rule_id": "REPO-ORCH-01",
+      "legacy_lines": "AGENTS.md:85-90",
+      "canonical_source": "references/repository-wide-skill-orchestration.md",
+      "agents_anchor": "#orchestration-review-and-specialist-boundaries",
+      "owner": "prompt-intent-orchestrator",
+      "strength": "MUST",
+      "disposition": "preserved_verbatim_semantics",
+      "notes": "Retains orchestration ownership and System Capabilities & Permissions boundaries."
+    },
+    {
+      "rule_id": "GOV-PROJ-01",
+      "legacy_lines": "AGENTS.md:92-99",
+      "canonical_source": "references/project-governance-workflow.md",
+      "agents_anchor": "#target-project-governance-and-testing-data",
+      "owner": "prompt-intent-orchestrator",
+      "strength": "MUST",
+      "disposition": "preserved_verbatim_semantics",
+      "notes": "Preserves target project preflight, read-only testing data/, isolated testing results/, DRAFT sequential plans/active/, New Skill/ quarantine."
+    },
+    {
+      "rule_id": "ARCH-MASTER-01",
+      "legacy_lines": "AGENTS.md:101-107",
+      "canonical_source": "references/engine-architecture-taxonomy.md",
+      "agents_anchor": "#unified-geospatial-architecture-reuse--platform-governance-master-integration-v2--active-root-policy",
+      "owner": "geospatial-engine-selection",
+      "strength": "MUST",
+      "disposition": "preserved_with_all_required_tokens_no_plans_md_links",
+      "notes": "Retains taxonomy, UI.js unresolved guard, ADR gate, 4 mandatory roles, and Plan 0007 coordination."
+    },
+    {
+      "rule_id": "DIST-PLUGIN-01",
+      "legacy_lines": "AGENTS.md:109-124",
+      "canonical_source": "plugin-system/policy/DEVELOPMENT_LIFECYCLE.md",
+      "agents_anchor": "#mandatory-plugin-lifecycle-policy-canonical-source-first--phased-rollout",
+      "owner": "completion-evidence",
+      "strength": "MUST",
+      "disposition": "preserved_and_aligned_with_phase_readiness",
+      "notes": "Retains canonical-first builds, Update-All-Plugins.ps1 -BuildOnly, SHA-256 parity, credential isolation, and strict failure/publishing gates."
+    }
+  ]
+}

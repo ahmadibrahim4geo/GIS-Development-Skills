@@ -70,7 +70,7 @@ The script does **not** ship a full external database or transform coordinate ar
 
 - [ ] Official Esri labels and Horizontal/Vertical separation maintained
 - [ ] Favorites persisted; Layers derived from current user data, never hard-coded
-- [ ] `wkid`/`latestWkid`, authority, deprecation, epoch/version provenance handled
+- [ ] `wkid`/`latestWkid`, authority, deprecation, epoch/version provenance handled; never confuse `Define Projection` metadata assignment with `Project` mathematical transformation ([scientific invariants](../../references/agent-reasoning/scientific-gis-reasoning.md))
 - [ ] Full geographic area and transformation constraints validated, not name-only guesses
 - [ ] Known correct control-point round-trip and datum-grid availability tests
 - [ ] Source/engine licenses and target runtime recorded; untested UI claims marked

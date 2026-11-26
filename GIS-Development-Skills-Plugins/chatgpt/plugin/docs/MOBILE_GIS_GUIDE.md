@@ -1,4 +1,6 @@
-# Mobile GIS Engineering Guide (`M01–M10`, `MOB-01..MOB-20`) / دليل تطوير تطبيقات الموبايل المكانية
+# Mobile GIS Engineering Guide (`M01–M10`, `MOB-01..MOB-20`)
+
+> Arabic summary companion: [`docs/WEB_MOBILE_GUIDE.ar.md`](WEB_MOBILE_GUIDE.ar.md).
 
 > Companion engineering handbook to [`skills/gis-mobile-application-development/SKILL.md`](../skills/gis-mobile-application-development/SKILL.md) and [`examples/mobile-gis/README.md`](../examples/mobile-gis/README.md).
 

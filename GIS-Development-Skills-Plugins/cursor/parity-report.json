@@ -4,8 +4,8 @@
   "display_name": "Cursor",
   "phase_status": "ACTIVE_P09",
   "version": "0.3.5",
-  "source_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
-  "source_digest": "527cf7b1b01b4b4ca593674ba47a6228843547f72ce9fcbdb5c4c24fe14d819e",
+  "source_commit": "7c0eb7da684c2670d5e020cbcc6c3b9f6de751bd",
+  "source_digest": "76eafea2bb37750a418aa60e53701f0accde76ee2b6fefc1dd1c14f6893d6c05",
   "carried_components": [
     "skills (37)",
     "references",
@@ -42,5 +42,5 @@
       "alternative": "Canonical repository governance surface"
     }
   ],
-  "notes": "Cursor package built cleanly (776 files)."
+  "notes": "Cursor package built cleanly (789 files)."
 }

@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "request_id": "0008-AAREF-MASTER",
+  "revision": "r1",
+  "original_request": "Audit AGENTS.md and related skills/references/scripts, adopt D:\\My Software\\Skills\\GIS_AGENT_INTELLIGENCE_MASTER_DEVELOPMENT_PLAN.md (AAREF) with strict English technical consistency, preserve Plan 0007 and all 37 skills, evaluate before vs after behavior, rebuild the 7-platform plugins cleanly with icon/tagline/author credit, and validate with tests and DoneProof.",
+  "language": "en",
+  "status": "approved",
+  "approval": {
+    "approved_by_user": true,
+    "approved_revision": "r1",
+    "high_risk_approved": false
+  },
+  "goal": "Upgrade AGENTS.md and associated orchestration, routing, reasoning, verification, journal memory, English technical specs, GAIB benchmarks, and 7-platform plugins without regression.",
+  "target": "d:\\My Software\\Skills\\GIS Development Skills (preserve 37 canonical skills, Plan 0007 P00-P11, Brand Kit 3.1, bilingual user guides, and all offline regression suites)",
+  "desired_outcomes": [
+    "Concise English AGENTS.md constitution backed by rule-registry.json and zero rule drops",
+    "Decoupled L0-L5 adaptive depth and I0-I4 impact controls in intent_router.py and prompt-intent-orchestrator",
+    "Honest review_mode enforcement in verify_completion.py and Decision Capsules + quarantined sanitized lessons in development_journal.py",
+    "Empirical GAIB Condition A vs B vs C behavioral benchmark and isolated INDEPENDENT_AGENT review gate",
+    "Consistent English technical references and rebuilt 7-platform plugins passing pipeline.py --check-only"
+  ],
+  "success_criteria": [
+    "AR00 baseline and Conditions A/B captured before constitutional/skill edits",
+    "Rule migration matrix covers 100% of AGENTS.md L1-L125 with zero dropped rules or test regressions",
+    "intent_router.py, verify_completion.py, development_journal.py, and audit_agent_policy.py pass positive and negative unit tests",
+    "GAIB before/after report compares A, B, and C cleanly with independent agent review findings resolved",
+    "All 7 plugin bundles pass pipeline.py --check-only and all core validators/test suites pass honestly"
+  ],
+  "constraints": [
+    "Never copy proprietary code/assets or weaken Security Guardian / host consent gates",
+    "Never push to git remotes, publish externally, or fake T2-T4 native GIS / client execution when runtimes are absent"
+  ],
+  "non_goals": [
+    "Creating a 38th redundant skill or modifying Plan 0007",
+    "Removing Arabic user-facing explanatory guides or test-asserted Arabic routing fixtures"
+  ],
+  "assumptions": [
+    "Python 3.14 and Node.js 26.7 form the verified offline T0/T1 runtime while QGIS, ArcGIS Pro Python execution, ogr2ogr, Playwright, and external AI CLIs remain NOT RUN"
+  ],
+  "open_questions": [],
+  "tasks": [
+    {
+      "id": "T1_AR00_BASELINE",
+      "title": "AR00 baseline audit and pre-edit GAIB A/B capture",
+      "description": "Record repository state, validator baselines, toolchain availability, and isolated pre-edit Condition A and B GAIB evaluations.",
+      "priority": "must",
+      "kind": "audit-baseline",
+      "skills": [
+        "gis-code-discovery",
+        "gis-security-guardian",
+        "agent-development-journal"
+      ],
+      "depends_on": [],
+      "risk": "low",
+      "acceptance_criteria": [
+        "AR00 baseline report recorded with exact HEAD hash and baseline test/pipeline counts",
+        "Pre-edit GAIB Condition A and Condition B evaluations captured before changing AGENTS.md or skills"
+      ],
+      "tools": [
+        {
+          "tool_id": "host.readonly-audit",
+          "side_effect": "read"
+        }
+      ],
+      "owner_skill": "gis-code-discovery"
+    },
+    {
+      "id": "T2_AR01_CONSTITUTION",
+      "title": "AR01 rule migration matrix, ADR-0008, AGENTS.md, and AAREF reference architecture",
+      "description": "Create ADR-0008, complete AGENTS.md rule migration matrix, machine-auditable rule-registry.json, consolidated English references/agent-reasoning/ specs, and clean AGENTS.md preserving all test invariants.",
+      "priority": "must",
+      "kind": "constitution-architecture",
+      "skills": [
+        "geospatial-engine-selection",
+        "gis-architecture-visualization",
+        "gis-security-guardian",
+        "prompt-intent-orchestrator"
+      ],
+      "depends_on": ["T1_AR00_BASELINE"],
+      "risk": "medium",
+      "visualization": {
+        "purpose": "architecture-explanation",
+        "diagram_type": "architecture",
+        "evidence_basis": "source-reviewed",
+        "language": "en"
+      },
+      "acceptance_criteria": [
+        "Rule migration matrix covers 100% of AGENTS.md L1-L125 with zero dropped rules or test regressions",
+        "Consolidated English references/agent-reasoning/ documents cover L0-L5, I0-I4, 18 cognitive methods, scientific GIS, failure recovery, learning, and model/host adaptation"
+      ],
+      "tools": [
+        {
+          "tool_id": "host.canonical-edit",
+          "side_effect": "write"
+        }
+      ],
+      "owner_skill": "geospatial-engine-selection"
+    },
+    {
+      "id": "T3_AR02_06_UPGRADES",
+      "title": "AR02-AR06 upgrade orchestrator, routing, scientific GIS invariants, security, DoneProof, journal memory, and English docs",
+      "description": "Upgrade intent_router.py, verify_completion.py, development_journal.py, skills metadata/links, and convert non-test Arabic technical prose to English while preserving bilingual user guides and test fixtures.",
+      "priority": "must",
+      "kind": "engineering-upgrade",
+      "skills": [
+        "coordinate-reference-systems",
+        "remote-sensing-pipelines",
+        "geospatial-data-processing",
+        "terrain-hydrology-lidar",
+        "geospatial-web-mapping",
+        "gis-mobile-application-development",
+        "gis-security-guardian",
+        "prompt-intent-orchestrator",
+        "completion-evidence",
+        "agent-development-journal"
+      ],
+      "depends_on": ["T2_AR01_CONSTITUTION"],
+      "risk": "medium",
+      "acceptance_criteria": [
+        "intent_router.py supports backward-compatible L0-L5 depth, I0-I4 impact decoupling, intent_revision, material_unknowns, and inferred_assumptions",
+        "verify_completion.py validates review_mode truthfulness and independent review evidence",
+        "development_journal.py supports Decision Capsules, compact Checkpoints, and quarantined sanitized Lessons without auto-modifying AGENTS.md",
+        "Audited technical references and adapter descriptions are normalized to English without breaking bilingual user guides or unit tests"
+      ],
+      "tools": [
+        {
+          "tool_id": "host.canonical-edit",
+          "side_effect": "write"
+        }
+      ],
+      "owner_skill": "coordinate-reference-systems"
+    },
+    {
+      "id": "T4_AR07_085_EVAL_REVIEW",
+      "title": "AR07-AR08.5 deterministic policy validator, GAIB A/B/C benchmark, and independent review",
+      "description": "Add audit_agent_policy.py, evaluate_agent.py, behavioral suites, Condition C isolated evals, A/B/C comparison report, and isolated INDEPENDENT_AGENT review with remediation.",
+      "priority": "must",
+      "kind": "eval-and-review",
+      "skills": [
+        "gis-code-discovery",
+        "gis-security-guardian",
+        "completion-evidence"
+      ],
+      "depends_on": ["T3_AR02_06_UPGRADES"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "audit_agent_policy.py and test_aaref_policy_and_reasoning.py pass positive and negative fixtures",
+        "GAIB Condition A vs B vs C comparison report authored cleanly with honest sample/environment limits",
+        "Isolated INDEPENDENT_AGENT reviewer inspects specs and diffs and all confirmed findings are fixed and re-tested"
+      ],
+      "tools": [
+        {
+          "tool_id": "host.readonly-eval",
+          "side_effect": "read"
+        }
+      ],
+      "owner_skill": "gis-code-discovery"
+    },
+    {
+      "id": "T5_AR09_10_REBUILD_VERIFY",
+      "title": "AR09-AR10 7-platform plugin rebuild, docs/manifest sync, final test suites, and DoneProof",
+      "description": "Align PortableAdapter and plugin credits, rebuild all 7 plugin bundles via Update-All-Plugins.ps1 -BuildOnly, sync docs/CHANGELOG/handoff, run all validators/tests, and bind DoneProof.",
+      "priority": "must",
+      "kind": "release-verification",
+      "skills": [
+        "modern-web-guidance",
+        "visual-asset-discovery-integration",
+        "gis-security-guardian",
+        "completion-evidence",
+        "agent-development-journal"
+      ],
+      "depends_on": ["T4_AR07_085_EVAL_REVIEW"],
+      "risk": "low",
+      "acceptance_criteria": [
+        "All 7 plugin packages rebuilt cleanly via Update-All-Plugins.ps1 -BuildOnly and pass pipeline.py --check-only with UP_TO_DATE",
+        "All repository validators and unit/contract tests pass (reporting pre-existing untracked dist/user-testing link error separately and absent native GIS runtimes as NOT RUN)",
+        "DoneProof acceptance report verified via verify_completion.py against this plan and development journal closed cleanly"
+      ],
+      "tools": [
+        {
+          "tool_id": "host.build-and-test",
+          "side_effect": "write"
+        }
+      ],
+      "owner_skill": "modern-web-guidance"
+    }
+  ]
+}

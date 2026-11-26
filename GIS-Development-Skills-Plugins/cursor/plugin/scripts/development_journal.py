@@ -18,6 +18,49 @@ STATUSES = {"proposed", "approved", "in_progress", "completed", "failed",
             "blocked", "cancelled", "reverted", "not_run"}
 LINKED_KINDS = {"revision", "cancellation", "rollback"}
 REC_RX = re.compile(r"^[0-9]{4,}\.json$")
+LESSON_STATES = ("CANDIDATE", "REVIEWED", "VALIDATED", "ACTIVE", "SUPERSEDED", "REJECTED")
+LESSON_TRANSITIONS = {
+    "CANDIDATE": {"REVIEWED", "REJECTED"},
+    "REVIEWED": {"VALIDATED", "REJECTED"},
+    "VALIDATED": {"ACTIVE", "REJECTED"},
+    "ACTIVE": {"SUPERSEDED", "REJECTED"},
+    "SUPERSEDED": set(),
+    "REJECTED": set(),
+}
+REVIEW_MODES = {"INDEPENDENT_AGENT", "HUMAN_REVIEW", "SELF_REVIEW", "NOT_RUN"}
+_SECRET_PATTERNS = (
+    re.compile(r"sk-[A-Za-z0-9_-]{12,}"),
+    re.compile(r"github_pat_[A-Za-z0-9_]{16,}"),
+    re.compile(r"ghp_[A-Za-z0-9]{16,}"),
+    re.compile(r"AKIA[0-9A-Z]{16}"),
+    re.compile(r"AIza[0-9A-Za-z_-]{20,}"),
+    re.compile(r"BEGIN\s+(?:RSA|EC|OPENSSH|PRIVATE)\s+KEY"),
+    re.compile(r"Bearer\s+[A-Za-z0-9._-]{12,}", re.IGNORECASE),
+    re.compile(r'(?:"?(?:password|api[_-]?key|secret[_-]?token|access[_-]?token)"?\s*[:=]\s*"?[^\s",}]{4,})', re.IGNORECASE),
+    re.compile(r"(?:[A-Za-z]:\\|/)?(?:Users|home)[\\/][^\s\",}]+"),
+    re.compile(r"(?:^|[\s\"'\\/])\.(?:env|pem|p12|pfx|key)(?:$|[\s\"'])"),
+    re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"),
+    re.compile(r"(?:SYSTEM OVERRIDE|ignore previous instructions)", re.IGNORECASE),
+)
+
+
+def _contains_auto_modify(obj) -> bool:
+    if isinstance(obj, dict):
+        if obj.get("auto_modify_policy") is True or obj.get("modify_agents_md_automatically") is True:
+            return True
+        return any(_contains_auto_modify(v) for v in obj.values())
+    if isinstance(obj, list):
+        return any(_contains_auto_modify(v) for v in obj)
+    return False
+
+
+def _assert_sanitized_payload(payload):
+    text = json.dumps(payload, ensure_ascii=False)
+    for rx in _SECRET_PATTERNS:
+        if rx.search(text):
+            raise ValueError("Payload contains unsafe secret, PII, secret path, or untrusted injection pattern")
+    if _contains_auto_modify(payload):
+        raise ValueError("Autonomous modification of root AGENTS.md policy is forbidden")
 
 
 def _canonical(value):
@@ -221,7 +264,169 @@ def verify(project):
         path = journal / name
         if path.is_symlink() or not path.is_file() or path.read_text(encoding="utf-8") != expected:
             raise ValueError("generated journal file missing/changed: " + name)
+    for sidecar in ("capsules.jsonl", "lessons.jsonl"):
+        sp = journal / sidecar
+        if sp.exists():
+            if sp.is_symlink() or not sp.is_file():
+                raise ValueError("invalid sidecar file: " + sidecar)
+            for idx, line in enumerate(sp.read_text(encoding="utf-8").splitlines(), start=1):
+                if not line.strip():
+                    continue
+                obj = json.loads(line)
+                _assert_sanitized_payload(obj)
+                if sidecar == "lessons.jsonl" and obj.get("review_state") not in LESSON_STATES:
+                    raise ValueError(f"lessons.jsonl:{idx} invalid review_state")
+    cp_latest = journal / "checkpoints" / "latest.json"
+    if cp_latest.exists():
+        if cp_latest.is_symlink() or not cp_latest.is_file():
+            raise ValueError("invalid checkpoint file")
+        _assert_sanitized_payload(json.loads(cp_latest.read_text(encoding="utf-8")))
+    for row in rows:
+        _assert_sanitized_payload(row)
     return rows
+
+
+def record_capsule(project, capsule):
+    """Append a reviewed/concise Decision Capsule without exposing secrets or hidden deliberation."""
+    if not isinstance(capsule, dict):
+        raise ValueError("capsule must be an object")
+    for req in ("decision_id", "task_id", "question", "selection", "short_rationale"):
+        _text(capsule.get(req), req)
+    rm = capsule.get("review_mode", "NOT_RUN")
+    if rm not in REVIEW_MODES:
+        raise ValueError("invalid capsule review_mode")
+    _assert_sanitized_payload(capsule)
+    journal = location(project)
+    _initialized(journal)
+    out = dict(capsule)
+    out.setdefault("recorded_utc", datetime.now(timezone.utc).isoformat(timespec="seconds"))
+    path = journal / "capsules.jsonl"
+    with _locked(journal):
+        if path.is_symlink():
+            raise ValueError("capsules.jsonl cannot be a symlink")
+        prev = path.read_text(encoding="utf-8") if path.exists() else ""
+        _write(path, prev + json.dumps(out, ensure_ascii=False) + "\n", overwrite=True)
+    return out
+
+
+def write_checkpoint(project, checkpoint):
+    """Persist a compact long-horizon resume checkpoint preserving HEAD, revision, and protected inputs."""
+    if not isinstance(checkpoint, dict):
+        raise ValueError("checkpoint must be an object")
+    for req in ("task_id", "root", "head", "intent_revision", "next_authorized_action"):
+        _text(checkpoint.get(req), req)
+    for opt_list in ("protected_inputs", "completed_ids", "pending_ids", "evidence_refs", "critical_decisions", "known_failures"):
+        if opt_list in checkpoint and not isinstance(checkpoint[opt_list], list):
+            raise ValueError(f"{opt_list} must be a list")
+    _assert_sanitized_payload(checkpoint)
+    journal = location(project)
+    _initialized(journal)
+    cp_dir = journal / "checkpoints"
+    if cp_dir.is_symlink():
+        raise ValueError("checkpoints directory cannot be a symlink")
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    out = {
+        "schema_version": "1.0",
+        "working_tree_summary": "",
+        "plan_ref": "",
+        "completed_ids": [],
+        "pending_ids": [],
+        "evidence_refs": [],
+        "critical_decisions": [],
+        "known_failures": [],
+        "protected_inputs": [],
+        "environment_status": "unknown",
+        **checkpoint,
+        "timestamp": now,
+        "timestamp_utc": now,
+    }
+    with _locked(journal):
+        cp_dir.mkdir(exist_ok=True)
+        _write(cp_dir / "latest.json", json.dumps(out, indent=2, ensure_ascii=False) + "\n", overwrite=True)
+    return out
+
+
+def list_lessons(project):
+    journal = location(project)
+    _initialized(journal)
+    path = journal / "lessons.jsonl"
+    if not path.exists():
+        return []
+    if path.is_symlink():
+        raise ValueError("lessons.jsonl cannot be a symlink")
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def propose_lesson(project, lesson):
+    """Store a quarantined CANDIDATE lesson after sanitization; never promote directly to ACTIVE."""
+    if not isinstance(lesson, dict):
+        raise ValueError("lesson must be an object")
+    if lesson.get("review_state", "CANDIDATE") != "CANDIDATE":
+        raise ValueError("new lessons must enter quarantine as CANDIDATE")
+    for req in ("lesson_id", "source_task", "domain", "observed_problem", "verified_cause"):
+        _text(lesson.get(req), req)
+    ev = lesson.get("evidence_refs")
+    if not isinstance(ev, list) or not ev:
+        raise ValueError("lesson requires non-empty evidence_refs")
+    if "applicability" in lesson and not isinstance(lesson["applicability"], dict):
+        raise ValueError("lesson.applicability must be a dict")
+    if "recheck_on" in lesson and not isinstance(lesson["recheck_on"], list):
+        raise ValueError("lesson.recheck_on must be a list")
+    _assert_sanitized_payload(lesson)
+    journal = location(project)
+    _initialized(journal)
+    existing = list_lessons(project)
+    if any(item.get("lesson_id") == lesson["lesson_id"] for item in existing):
+        raise ValueError("duplicate lesson_id: " + lesson["lesson_id"])
+    entry = {
+        "applicability": {"engine": "general", "version": "unspecified"},
+        "recommended_action": None,
+        "recheck_on": ["dependency_upgrade", "conflicting_evidence"],
+        **lesson,
+        "review_state": "CANDIDATE",
+        "policy_modification_allowed": False,
+        "recorded_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    path = journal / "lessons.jsonl"
+    with _locked(journal):
+        prev = path.read_text(encoding="utf-8") if path.exists() else ""
+        _write(path, prev + json.dumps(entry, ensure_ascii=False) + "\n", overwrite=True)
+    return entry
+
+
+def promote_lesson(project, lesson_id, new_state, *, reviewer, review_mode, independent_review_evidence=None):
+    """Promote or reject a quarantined lesson via controlled state transitions and independent review."""
+    if new_state not in LESSON_STATES or review_mode not in REVIEW_MODES:
+        raise ValueError("invalid lesson state or review_mode")
+    _text(reviewer, "reviewer")
+    if new_state in ("VALIDATED", "ACTIVE") and review_mode not in ("INDEPENDENT_AGENT", "HUMAN_REVIEW"):
+        raise ValueError("promoting a lesson to VALIDATED/ACTIVE requires INDEPENDENT_AGENT or HUMAN_REVIEW")
+    if review_mode == "INDEPENDENT_AGENT" and new_state in ("REVIEWED", "VALIDATED", "ACTIVE"):
+        if not independent_review_evidence:
+            raise ValueError("INDEPENDENT_AGENT review_mode requires non-empty independent_review_evidence")
+    journal = location(project)
+    _initialized(journal)
+    lessons = list_lessons(project)
+    found = False
+    with _locked(journal):
+        for item in lessons:
+            if item.get("lesson_id") == lesson_id:
+                cur = item.get("review_state")
+                if new_state not in LESSON_TRANSITIONS.get(cur, set()):
+                    raise ValueError(f"invalid lesson transition: {cur} -> {new_state}")
+                item["review_state"] = new_state
+                item["reviewer"] = reviewer
+                item["review_mode"] = review_mode
+                if independent_review_evidence:
+                    item["independent_review_evidence"] = independent_review_evidence
+                item["reviewed_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+                found = True
+                break
+        if not found:
+            raise ValueError("lesson not found: " + lesson_id)
+        content = "".join(json.dumps(x, ensure_ascii=False) + "\n" for x in lessons)
+        _write(journal / "lessons.jsonl", content, overwrite=True)
+    return next(x for x in lessons if x["lesson_id"] == lesson_id)
 
 
 def add(project, *, kind, status, summary, details, references=None,
@@ -263,6 +468,7 @@ def add(project, *, kind, status, summary, details, references=None,
             "tests": evidence, "test_result": test_result, "commit": commit,
             "previous_hash": rows[-1]["hash"] if rows else None
         }
+        _assert_sanitized_payload(row)
         row["hash"] = digest(row)
         _write(journal / "records" / f"{number:04d}.json",
                json.dumps(row, indent=2, ensure_ascii=False) + "\n")
@@ -282,7 +488,7 @@ def repair(project):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
-    for name in ("init", "add", "status", "verify", "repair"):
+    for name in ("init", "add", "status", "verify", "repair", "capsule", "checkpoint", "lesson-propose", "lesson-promote", "lesson-list"):
         p = commands.add_parser(name)
         p.add_argument("--project", required=True, type=Path)
         if name == "add":
@@ -298,6 +504,14 @@ def main(argv=None):
             p.add_argument("--test-result", choices=["passed", "failed", "blocked", "not_run"],
                            default="not_run")
             p.add_argument("--commit", default="")
+        elif name in ("capsule", "checkpoint", "lesson-propose"):
+            p.add_argument("--input", required=True, type=Path, help="JSON payload file")
+        elif name == "lesson-promote":
+            p.add_argument("--lesson-id", required=True)
+            p.add_argument("--state", choices=list(LESSON_STATES), required=True)
+            p.add_argument("--reviewer", required=True)
+            p.add_argument("--review-mode", choices=sorted(REVIEW_MODES), required=True)
+            p.add_argument("--review-evidence", default="")
     args = parser.parse_args(argv)
     try:
         if args.command == "init":
@@ -315,8 +529,29 @@ def main(argv=None):
             print((location(args.project) / "STATE.md").read_text(encoding="utf-8"))
         elif args.command == "verify":
             print(f'Journal valid: {len(verify(args.project))} records')
-        else:
+        elif args.command == "repair":
             print(f'Rebuilt derived reports for {repair(args.project)} records')
+        elif args.command == "capsule":
+            payload = json.loads(args.input.read_text(encoding="utf-8"))
+            out = record_capsule(args.project, payload)
+            print(f'Decision Capsule {out["decision_id"]} recorded')
+        elif args.command == "checkpoint":
+            payload = json.loads(args.input.read_text(encoding="utf-8"))
+            out = write_checkpoint(args.project, payload)
+            print(f'Checkpoint written for {out["task_id"]}')
+        elif args.command == "lesson-propose":
+            payload = json.loads(args.input.read_text(encoding="utf-8"))
+            out = propose_lesson(args.project, payload)
+            print(f'Quarantined lesson {out["lesson_id"]} recorded ({out["review_state"]})')
+        elif args.command == "lesson-promote":
+            out = promote_lesson(
+                args.project, args.lesson_id, args.state,
+                reviewer=args.reviewer, review_mode=args.review_mode,
+                independent_review_evidence=args.review_evidence or None,
+            )
+            print(f'Lesson {out["lesson_id"]} updated to {out["review_state"]}')
+        elif args.command == "lesson-list":
+            print(json.dumps(list_lessons(args.project), indent=2, ensure_ascii=False))
         return 0
     except (ValueError, OSError, KeyError, TypeError, json.JSONDecodeError) as exc:
         print("ERROR: " + str(exc), file=sys.stderr)

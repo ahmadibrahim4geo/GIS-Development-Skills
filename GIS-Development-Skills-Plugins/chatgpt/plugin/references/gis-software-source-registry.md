@@ -93,13 +93,13 @@ The catalog's `repository_access_checked_on` means that the **public GitHub repo
 
 The catalog's `category` is an existing UI filter and `primary_skill` on new records points to the *recommended owner*. These do not create an executable integration or a mandatory dependency.
 
-## العربية — خطوات الاستخدام
+## Quick Usage Steps
 
-إذا كنت تريد تطوير برنامج GIS جديد:
-1. حدد هل المطلوب برنامج مكتبي، موقع خرائط، تطبيق موبايل، محرك معالجة أو خادم GIS.
-2. افتح [مستكشف البرامج والمكتبات](../explorer.html#catalog) وابحث باستخدام الاسم أو التصنيف أو بيئة التشغيل؛ ستظهر أيضًا المشروعات الجديدة من نفس قاعدة البيانات الأساسية.
-3. اقرأ مهارة التطوير المناسبة من الجدول بالأعلى ثم قارن المحركات والواجهات المرشحة.
-4. تحقق من رخصة **كل مشروع وتبعياته** قبل استخدام الكود. وجود مستودع عام لا يعني السماح بإعادة توزيع الصور والبيانات أو تشغيل خدمات مرخصة.
-5. اجعل الوكيل يمر أولًا عبر مهارة فهم الطلب والتوجيه والأمان، ثم اختبر العمل على بيانات GIS حقيقية. لا تعتبر اختبارات التوثيق دليلًا على نجاح التطبيق.
+When building or extending GIS software:
+1. Classify the target delivery format: desktop application, web mapping app, mobile field client, processing engine, or spatial server.
+2. Search the [Software & Library Explorer](../explorer.html#catalog) by name, category, or runtime environment; entries resolve dynamically from the same canonical catalog JSON.
+3. Review the mapped development skill from the routing table above and evaluate candidate renderers vs compute engines.
+4. Verify the **exact license and transitive dependencies** of each repository before copying code or bundling assets.
+5. Route every consequential request through intent review, domain selection, Security Guardian checks, and real data testing—documentation checks alone never verify runtime behavior.
 
 **Maintenance:** Add, update or de-duplicate source URLs only in [project-catalog.json](project-catalog.json). Keep this guide selective and navigational; do not replicate JSON inventory or manually claim tested host compatibility. The [OpenGeoS GIS software guide](gishub-software.md) remains the specialist guide for that ecosystem, and the [data repositories catalog](geospatial-data-repositories.md) remains separate from *software source code*.

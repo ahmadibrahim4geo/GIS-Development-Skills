@@ -1,4 +1,4 @@
-# Build vs Reuse Policy / سياسة البناء مقابل إعادة الاستخدام
+# Build vs Reuse Policy
 
 > **Principle:** **Discover Before Building. Reuse Before Reinventing. Free and Open Source First. Verify Before Claiming. Integrate Without Regression.**  
 > **Scope:** Authoritative architectural decision order (`Engine Architecture Reuse Plan V2` §7, §10–§12).

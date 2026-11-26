@@ -70,12 +70,12 @@ GET https://api.geoapify.com/v1/geocode/search?text=Cairo&filter=countrycode:eg&
 
 Keep secrets out of committed code, README URLs, logs, telemetry and public sites. Query arguments must be URL-encoded, parsed and checked per provider schema.
 
-## ملاحظات بالعربية
+## Provider Usage Notes
 
-- **مفتوح المصدر:** يمكنك تشغيل Pelias بنفسك، لكنه يحتاج بيانات وسيرفر، وليس API سحابيًا مجانيًا جاهزًا.
-- **مجاني بشروط:** Nominatim مناسب للبحث اليدوي العرضي فقط، ولا يجوز توصيله بخاصية اقتراح الأسماء أثناء الكتابة على الخادم العام. Photon العام خادم تجريبي وليس خدمة مضمونة.
-- **مجاني بحصة:** GeoNames وGeoapify وLocationIQ ومزودون آخرون لهم رصيد أو حد للطلبات. يجب مراجعة الترخيص التجاري ونسبة الاستخدام لكل مزود.
-- **تجربة فقط:** OpenCage يمنح ٢٥٠٠ طلب يوميًا **للتجربة** وليس لتشغيل تطبيق إنتاجي مستمر.
-- **تجاري:** Google Places وMapbox وHERE وTomTom تعرض خططًا مدفوعة؛ وجود رصيد شهري مجاني لا يعني إلغاء شروط الفوترة والاحتفاظ بالنتائج.
+- **Self-hosted open source:** Pelias can be self-hosted cleanly, but requires source gazetteer datasets and dedicated server infrastructure rather than a turnkey free public API.
+- **Usage-capped public endpoints:** Public Nominatim suits occasional manual lookups only and must **not** back interactive autocomplete/type-ahead search; public Photon instances are community-run demos without uptime guarantees.
+- **Quota-governed tiers:** GeoNames, Geoapify, LocationIQ, and similar services enforce daily request limits and attribution/commercial-license terms that must be checked before integration.
+- **Evaluation tiers only:** OpenCage's 2,500 requests/day trial quota does not authorize continuous production traffic.
+- **Commercial providers:** Google Places, Mapbox, HERE, and TomTom require billed plans for production workloads; a monthly free credit tier does not waive caching, display, or attribution terms.
 
 **Last provider-documentation review:** 2026-10-25. All hosted status values remain **unknown** until explicitly tested. Verify official pricing again at implementation/deployment.

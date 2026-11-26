@@ -12,7 +12,7 @@ license: MIT
 
 **Intake:** [Contract](../../references/repository-wide-skill-orchestration.md) → [Intent review](../prompt-intent-orchestrator/SKILL.md).
 
-**Route:** [decision tree](../../references/agent-decision-tree.md); rendering ≠ analysis.
+**Route:** [decision tree](../../references/agent-decision-tree.md); rendering != analysis.
 
 **Effort:** [guide](../../references/portable-execution-guidance.md).
 
@@ -63,7 +63,7 @@ license: MIT
 
 ## Rules (always apply)
 
-[MCP routing](../../references/mcp-integration-workflow.md) follows preflight. Apply [execution](../../references/repository-wide-skill-orchestration.md), [GIS](../../references/gis-development-full-guidance.md), [security](../gis-security-guardian/SKILL.md) rules (sources, CRS, units, NoData, licenses, permissions, readback); verify via [DoneProof](../completion-evidence/SKILL.md), [T0–T4 report](../../templates/GIS_ACCEPTANCE_REPORT.md), [validator](../../scripts/validate_evidence.py).
+[MCP](../../references/mcp-integration-workflow.md) follows preflight. Apply [contract](../../references/repository-wide-skill-orchestration.md), [AAREF](../../references/agent-reasoning/adaptive-controller.md), [science](../../references/agent-reasoning/scientific-gis-reasoning.md), [GIS](../../references/gis-development-full-guidance.md), [security](../gis-security-guardian/SKILL.md); verify via [DoneProof](../completion-evidence/SKILL.md), [T0–T4](../../templates/GIS_ACCEPTANCE_REPORT.md), [validator](../../scripts/validate_evidence.py).
 
 **Checks:** [security](../../references/geospatial-security.md) · [performance](../../references/geospatial-performance.md).
 

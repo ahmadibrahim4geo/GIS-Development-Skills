@@ -1,6 +1,6 @@
 # Visual Asset Discovery & Integration — 27 October 2026
 
-أضفنا مهارة عامة للبحث عن الصور المصغّرة والشعارات الرسمية والصور التوضيحية ولقطات الشاشة والأغلفة والخلفيات، وتجهيزها ودمجها في المشاريع. مثال التضاريس لا يقيّد نطاقها. تعمل من خلال أدوات البحث والتنزيل والتوليد الموجودة فعلًا لدى المضيف.
+Added a cross-cutting skill for discovering, evaluating, preparing, and integrating thumbnails, official logos, illustrations, screenshots, covers, and backgrounds into projects—beyond terrain selectors alone—using authorized host search, retrieval, and preparation tools.
 
 ## Delivered behavior
 

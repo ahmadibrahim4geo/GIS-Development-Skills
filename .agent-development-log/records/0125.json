@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "sequence": 125,
+  "timestamp_utc": "2026-11-26T09:15:43+00:00",
+  "kind": "request",
+  "status": "approved",
+  "summary": "Adopt AAREF master intelligence plan with English technical consistency, zero skill duplication, and clean 7-platform plugin rebuild",
+  "details": "User approved Plan 0008 (AR00-AR10): upgrade AGENTS.md, orchestrator, routing, adaptive reasoning L0-L5, impact gate I0-I4, scientific GIS reasoning, sanitized lessons, GAIB A/B/C evals, independent review gate, and 7-platform plugin logo/credit rebuild.",
+  "references": [],
+  "task_id": "0008-AAREF",
+  "plan_revision": "rev-1",
+  "changed_files": [
+    "plans/active/0008_Agent-Intelligence-AAREF/REQUEST.md"
+  ],
+  "tests": [],
+  "test_result": "not_run",
+  "commit": "",
+  "previous_hash": "1894aee5b12c0128e41374a664dd305717c3bb9bdebdd3f0d52916603177e323",
+  "hash": "8560e55f86243e0c9ebc0f352c139ee08eb22edd4920d2ae245e9869e7287f75"
+}

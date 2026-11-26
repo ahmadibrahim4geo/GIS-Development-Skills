@@ -43,6 +43,8 @@ class ClaudeAiAdapter(PackagedClientAdapter):
             "schema_version": "1.0",
             "plugin_id": context.plugin_id,
             "platform": "claude-ai",
+            "description": "The Heart of Geospatial Innovation — By Ahmed Ibrahim",
+            "icon": "../assets/icon.svg",
             "shared_payload_with": "claude-code",
             "version": context.version,
             "source_digest": context.source_digest,

@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261126T141118Z",
+  "mode": "build-only",
+  "version": "0.3.5",
+  "source_commit": "7c0eb7da684c2670d5e020cbcc6c3b9f6de751bd",
+  "source_digest": "d49d2b139a2786062f0c2603bafc388a326f4708bbe4065917de18be533c3427",
+  "bundle_digest": "7759a7f98552cb7a0d31911683ddcaa69ed59f02fe75642f25d3c676ecc5eb8a",
+  "bundle_file_count": 786,
+  "exit_code": 0,
+  "overall_state": "BUILT",
+  "owner_config_source": "default-no-owner-file",
+  "platforms": {
+    "portable": {
+      "platform": "portable",
+      "state": "BUILT",
+      "phase_status": "ACTIVE_P02",
+      "bundle_sha256": "dde038df92365b164f95fee91aa954e94de5f8b7929be221bb942cf5fe15590e",
+      "archive_sha256": "c1520091e0fb8a8796ae7c41731029c4af693aac1a0e5d4b76ef1164a9eef934",
+      "archive_path": "GIS-Development-Skills-Plugins/portable-agent-plugin/artifacts/gis-development-suite.zip",
+      "file_count": 788,
+      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+    },
+    "codex": {
+      "platform": "codex",
+      "state": "BUILT",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "ba4618a2f820161290715b48c3fb00f7aacad0d3754e4e8b7b16dc14c105a6d6",
+      "archive_sha256": "bfa7b02d88a16214abeacd6f14935c0d33217d1090c1b0a2a2bfa5dfa1bce33f",
+      "archive_path": "GIS-Development-Skills-Plugins/codex/artifacts/gis-development-skills-codex.zip",
+      "file_count": 788,
+      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+    },
+    "chatgpt": {
+      "platform": "chatgpt",
+      "state": "BUILT",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "8b9407d354ac39fa84b8b03e937e350a108eba4bd8d769f9c96c2a79a67ce628",
+      "archive_sha256": "007389049591196c528997225b97414bd82ca493b582ca34ed9989d1803f162e",
+      "archive_path": "GIS-Development-Skills-Plugins/chatgpt/artifacts/gis-development-skills-chatgpt.zip",
+      "file_count": 788,
+      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+    },
+    "claude-code": {
+      "platform": "claude-code",
+      "state": "BUILT",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "e41ca4494bf9e72fbd6e9aeb9f5e081ea3c6434856e0a3922611b8281d0c997b",
+      "archive_sha256": "a7d83eb4da2abf6df90570da1fe48e8dcefbf57e889698bbcb4ad02c7d76196f",
+      "archive_path": "GIS-Development-Skills-Plugins/claude-code/artifacts/gis-development-skills-claude-code.zip",
+      "file_count": 790,
+      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+    },
+    "claude-ai": {
+      "platform": "claude-ai",
+      "state": "BUILT",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "ffe6de2007cf4895184553ced8516fc08c0ad2c4408538f7a246249d593bf7c0",
+      "archive_sha256": "b69255b994ef57644dcc81005da2ae5b36c0d0dc1fb8ab1d63226e69d451382b",
+      "archive_path": "GIS-Development-Skills-Plugins/claude-ai/artifacts/gis-development-skills-claude-ai.zip",
+      "file_count": 789,
+      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+    },
+    "antigravity": {
+      "platform": "antigravity",
+      "state": "BUILT",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "73c40aaab78e1aa570065c19104f59d2581ad7664ed87c1c266f339bc25a2db9",
+      "archive_sha256": "9a7e1617291b6e8ce758b3dfaff7113efa32ebf3a55a8a07efba7627b2784d1f",
+      "archive_path": "GIS-Development-Skills-Plugins/antigravity/artifacts/gis-development-skills-antigravity.zip",
+      "file_count": 789,
+      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+    },
+    "cursor": {
+      "platform": "cursor",
+      "state": "BUILT",
+      "phase_status": "ACTIVE_P09",
+      "bundle_sha256": "118224d2c0cacaad8ac673fce8fd8b0e828260ee2a89ae6042f483e8da55e9aa",
+      "archive_sha256": "1309fd972c0b6ec8702c69f848e8b61e68b78c75794ad25afcc16c6dfe2090b4",
+      "archive_path": "GIS-Development-Skills-Plugins/cursor/artifacts/gis-development-skills-cursor.zip",
+      "file_count": 789,
+      "notes": "Cleanly staged, validated, packaged, and atomically updated."
+    }
+  }
+}

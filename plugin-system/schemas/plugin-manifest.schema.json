@@ -23,6 +23,8 @@
     "source_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
     "skill_count": { "type": "integer", "minimum": 1 },
     "content_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "description": { "type": "string", "maxLength": 200 },
+    "icon": { "type": "string", "description": "Relative path to the plugin icon file (SVG preferred)" },
     "license": { "type": "string" },
     "author": { "type": "object" },
     "repository": { "type": "string" }

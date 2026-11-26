@@ -33,9 +33,14 @@ completion claim.
 | Spatial analysis and satellite imagery | [Vector and raster](skills/geospatial-data-processing/SKILL.md) · [Remote sensing](skills/remote-sensing-pipelines/SKILL.md) · [Terrain and hydrology](skills/terrain-hydrology-lidar/SKILL.md) |
 | Data integration, automation and map exchange | [GIS APIs](skills/geospatial-api-integration/SKILL.md) · [Agent workflows](skills/geospatial-ai-agents/SKILL.md) · [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) |
 
-The instructions are independent of a model vendor or agent framework. Use
-[portable execution guidance](references/portable-execution-guidance.md) to scale
-effort from Lite to Standard or Deep and select authorized tools by capability.
+The instructions are independent of a model vendor or agent framework. Use the
+[Adaptive Agent Reasoning &amp; Engineering Framework (AAREF)](references/agent-reasoning/adaptive-controller.md)
+and [portable execution guidance](references/portable-execution-guidance.md) to
+scale reasoning depth (`L0–L5`) proportionally while keeping safety/impact gates
+(`I0–I4`), scientific GIS checks, sanitized journal learning, and evidence
+contracts independent and strictly enforced. Packaging targets all 7 plugin
+platforms (`Portable`, `Codex`, `ChatGPT`, `Claude Code`, `Claude AI`,
+`Antigravity`, `Cursor`) with Brand Kit 3.1 identity and author attribution.
 Installation and behavior still require verification in each client; every mode
 retains the existing approval and evidence requirements.
 

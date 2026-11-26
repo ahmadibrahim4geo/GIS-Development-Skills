@@ -1,140 +1,103 @@
-# تقرير المزامنة والتكامل لمصادر OpenGeoHub وOpenLandMap
 # OpenGeoHub & OpenLandMap Synchronization and Integration Report
 
-**التاريخ:** 30 أكتوبر 2026  
-**المستودع المحلي:** `d:\My Software\GIS-Development-Skills`  
-**الفرع:** `main`  
-**Merge Commit للـ PR #36:** `017262d73679318a8d22ac07c38ea63693ebb9e8`  
-**الحالة:** مكتمل ومتحقق منه بنجاح (Completed & Verified)  
+**Date:** 30 October 2026  
+**Local Repository:** `d:\My Software\GIS-Development-Skills`  
+**Branch:** `main`  
+**Merged PR #36 Commit:** `017262d73679318a8d22ac07c38ea63693ebb9e8`  
+**Status:** Completed & Verified
 
 ---
 
-## 1. حالة المستودع قبل المزامنة وبعدها (Repository State)
+## 1. Repository State Before and After Synchronization
 
-### قبل المزامنة:
-- الفرع: `main`
-- الـ Commit المحلي: `c442698` (fix: report homepage test evidence accurately)
-- حالة شجرة العمل: نظيفة (Clean working tree, no unstaged changes)
-- العدادات السابقة: 35 مهارة، 188 مرجع مشاريع، 52 خدمة API، 24 مستودع بيانات جغرافية، 12 مصدراً برمجياً في `gis-code-sources.json`.
+### Before Synchronization
+- Branch: `main`
+- Local commit: `c442698` (`fix: report homepage test evidence accurately`)
+- Working tree: Clean (no unstaged changes)
+- Prior historical counts at that release: 35 skills, 188 project references, 52 API services, 24 geospatial data repositories, and 12 documented code sources in `gis-code-sources.json`.
 
-### بعد المزامنة والمطابقة:
-- تم تنفيذ `git fetch origin` وجلب commit الدمج `017262d` من الفرع الرئيسي `origin/main` (PR #36).
-- تم تنفيذ الدمج الآمن السريع `git merge --ff-only origin/main` دون أي تعارضات أو فقدان بيانات، ودون استخدام أي أوامر قسرية (`reset --hard` أو `clean -fd`).
-- تم فحص أوجه النقص ومطابقة الوثائق والواجهة وأنظمة التوجيه.
-- العدادات الحالية المعتمدة: **35 مهارة**، **193 مرجع مشاريع**، **52 خدمة API**، **26 مستودع بيانات جغرافية**، **17 مصدراً برمجياً وعلمياً موثقاً**.
-
----
-
-## 2. التحديثات المجلوبة عبر PR #36
-
-تضمن PR #36 (`017262d`) التغييرات التالية:
-1. إضافة 5 مستودعات علمية جديدة في `references/project-catalog.json` و`references/gis-code-sources.json`.
-2. إضافة مدخلين جديدين لمستودعات البيانات في `references/geospatial-data-repositories.json` (`opengeohub-foundation` و`openlandmap-stac`).
-3. تحديث ملف `references/geospatial-data-repositories.md` وتحديث `references/repository-manifest.json`.
-4. إنشاء ملف مرجعي أولي `references/opengeohub-openlandmap-integration.md`.
-5. تحديثات أولية في `skills/geospatial-data-catalogs/SKILL.md`، و`skills/geospatial-data-discovery/SKILL.md`، و`skills/gis-code-discovery/SKILL.md`.
+### After Synchronization and Reconciliation
+- Executed `git fetch origin` retrieving PR #36 merge commit `017262d` from `origin/main`.
+- Fast-forwarded cleanly via `git merge --ff-only origin/main` without conflicts, data loss, or destructive git reset/clean commands.
+- Audited synchronization gaps across routing, discovery catalogs, UI counters, documentation, and regression tests.
+- Historical synchronized counts at PR #36 closure: **35 skills**, **193 project references**, **52 API services**, **26 geospatial data repositories**, and **17 documented scientific/code sources**.
 
 ---
 
-## 3. المشكلات التي تم تحديدها وإصلاحها (Remediated Gaps)
+## 2. Upstream Changes Brought via PR #36
 
-أثناء المراجعة الفنية التفصيلية، تم رصد عدة نواقص (تقصير) في تنفيذ PR #36 وتمت معالجتها بالكامل:
+PR #36 (`017262d`) introduced:
+1. Five scientific repositories added to `references/project-catalog.json` and `references/gis-code-sources.json`.
+2. Two new data directory entries in `references/geospatial-data-repositories.json` (`opengeohub-foundation` and `openlandmap-stac`).
+3. Updated `references/geospatial-data-repositories.md` and `references/repository-manifest.json`.
+4. Initial `references/opengeohub-openlandmap-integration.md` guide.
+5. Initial updates to `skills/geospatial-data-catalogs/SKILL.md`, `skills/geospatial-data-discovery/SKILL.md`, and `skills/gis-code-discovery/SKILL.md`.
 
-| المجال / الملف | النقص المرصود (Gap) | الإصلاح المنفذ (Fix Applied) |
+---
+
+## 3. Remediated Integration Gaps
+
+| Domain / File | Observed Gap in Initial PR #36 | Fix Applied |
 |---|---|---|
-| **توجيه النوايا** (`scripts/intent_router.py`) | لم يكن يدعم سيناريوهات التوجيه الخاصة بالتنبؤ المكاني، وخصائص التربة، والغطاء الأرضي، ومرئيات COG، ومقارنة المصادر. كانت توجه بشكل خاطئ إلى `arcgis-toolbox` أو الحارس فقط. | تم تزويد `DOMAINS` بمصطلحات ثنائية اللغة دقيقة (تنبؤ مكاني، spatial prediction، خصائص التربة، land cover، طبقة cog، مستودعات البيانات البيئية، كودًا بحثيًا) لتوجيه كل طلب للمهارة المتخصصة الصحيحة. |
-| **محرك اكتشاف الأكواد** (`scripts/gis_code_discovery.py`) | غياب تصنيف نمذجة التنبؤ المكاني ضمن `PLATFORM_PATTERNS`. | تمت إضافة نمط `spatial-modeling` لدعم خوارزميات التنبؤ والتعلم الآلي المكاني (spatial ML) ورفع ترتيب `scikit-map` و`spatial-prediction-eml`. |
-| **الدليل المرجعي** (`references/opengeohub-openlandmap-integration.md`) | كان مقتضباً جداً (22 سطراً فقط) ولم يوضح بالتفصيل متى يستخدم الوكيل كل مستودع ومتى لا يستخدمه، ولم يفصل بين بروتوكولات البيانات (Static STAC vs STAC API vs COG vs WMS). | تم توسيعه إلى وثيقة هندسية متكاملة تتضمن جدول المستودعات الخمسة، وحدود استخدام كل منها، ومخطط تدفق البيانات، والجدول المقارن لبروتوكولات الوصول، ومواصفات واجهة Z-EARTH Data Explorer. |
-| **ملف README والنسخة العربية** (`README.md`, `README.ar.md`) | ظل عداد مستودعات البيانات مكتوباً كـ 24 بدلاً من 26، وظل عداد مصادر الكود 12 بدلاً من 17. | تم تصحيح العدادات (26 مستودع بيانات، 17 مصدراً موثقاً)، وتحديث فقرات التوثيق وسرد تفاصيل المستودعات الخمسة وتراخيصها وحدودها. |
-| **صفحة الموقع** (`index.html`) | بقاء نصوص قسم اكتشاف الأكواد تشير إلى 12 مستودعاً وغياب بطاقة استعراض مصادر OpenGeoHub. | تم تحديث العداد إلى 17 مستودعاً ومصدراً علمياً، وإضافة بطاقة مميزة ثنائية اللغة في قسم سجل البرمجيات تربط مباشرة بمرجع التكامل واستعراض البيانات. |
-| **صفحة المستكشف** (`explorer.html`) | بقاء إشعار مستودعات البيانات يشير إلى 24. | تم تحديث الإشعار إلى 26 دليلاً وبوابة، وإضافة رابط الدليل المرجعي لـ OpenGeoHub وOpenLandMap. |
-| **سجل التغييرات** (`CHANGELOG.md`) | إيجاز غير دقيق لا يعكس التعديلات البرمجية في التوجيه والاختبارات. | تم تفصيل التحديثات ومزامنة التغييرات. |
-| **اختبارات الانحدار** (`tests/test_code_discovery.py`) | عدم وجود اختبارات مخصصة لسيناريوهات المستخدم الخمسة ولمصادر OpenGeoHub. | تمت إضافة 3 اختبارات جديدة (`test_11`, `test_12`, `test_13`) للتحقق آلياً من استرجاع `scikit-map`، واكتشاف عدم وجود ترخيص في `soildb`، ومطابقة سيناريوهات التوجيه الخمسة. |
+| **Intent routing** (`scripts/intent_router.py`) | Bilingual prompts for spatial prediction, soil properties, land cover, COG layers, and research-code comparisons lacked domain keyword hints. | Added precise bilingual domain phrases to `DOMAINS` (`gis-code-discovery`, `geospatial-data-discovery`, `remote-sensing-pipelines`, `geospatial-data-catalogs`). |
+| **Code discovery** (`scripts/gis_code_discovery.py`) | Missing `spatial-modeling` pattern in `PLATFORM_PATTERNS`. | Added `spatial-modeling` weighting so `scikit-map` and `spatial-prediction-eml` rank appropriately. |
+| **Integration reference** (`references/opengeohub-openlandmap-integration.md`) | Initial 22-line stub lacked repository boundaries and protocol distinctions (Static STAC vs STAC API vs COG vs WMS). | Expanded into full reference covering repository matrix, protocol comparison, data flow, and Z-EARTH Data Explorer UI workflow. |
+| **README & Arabic README** (`README.md`, `README.ar.md`) | Stale counters remained at 24 data repositories and 12 code sources. | Synchronized counters (26 data repositories, 17 code sources) and repository license/boundary notes. |
+| **Homepage** (`index.html`) | Stale code-discovery counter (`12`) and missing OpenGeoHub review card. | Updated counter to `17` and added OpenGeoHub / OpenLandMap card linking directly to the integration guide. |
+| **Explorer** (`explorer.html`) | Stale notice showing 24 data repositories. | Updated notice to `26` guides/portals and linked the integration guide. |
+| **Release log** (`CHANGELOG.md`) | Overly brief note missing routing/test updates. | Documented synchronized routing, discovery, UI, and test additions. |
+| **Regression tests** (`tests/test_code_discovery.py`) | Missing dedicated checks for the five user scenarios and license boundaries. | Added `test_11`, `test_12`, and `test_13` verifying `scikit-map` lookup, `soildb` unverified-license warnings, and all five routing scenarios. |
 
 ---
 
-## 4. فحص وحالة المستودعات الخمسة الجديدة
+## 4. Audited Repository & License Summary (PR #36 Cohort)
 
-| المستودع | الغرض الأساسي | اللغات والأدوات | الترخيص والإثبات | متى يستخدمه الوكيل | متى **لا** يستخدمه الوكيل |
+| Repository | Primary Purpose | Languages / Stack | License & Evidence Status | When Agents Should Reference It | When Agents **Must Not** Copy/Assume It |
 |---|---|---|---|---|---|
-| **`scikit-map`** | مكتبة تعلم آلي مكاني وتنبؤ | Python, scikit-learn, rasterio, GDAL | **MIT** (موثق في جذر المستودع) | عند بناء خطوط أنابيب تنبؤ مكاني وتطبيق Cross-Validation مكاني لتفادي التسريب الناتج عن الارتباط الذاتي المكاني. | لا يُستخدم للتعلم الآلي الجدولي البسيط (يُفضل `scikit-learn` القياسي)، ولا يُعتمد كحزمة إنتاجية دون قياس الذاكرة على المرئيات الضخمة. |
-| **`soildb`** | مواءمة ونمذجة قواعد بيانات التربة | Python, R, SQL | **verify-upstream** (لم يُعثر على ترخيص في الجذر) | كمرجع مفاهيمي لمخططات بيانات قطاعات التربة ومتغيرات SoilGrids وطرق الارتباط مع المتغيرات البيئية. | **يُمنع النسخ المباشر للكود** لعدم وجود ترخيص واضح. لا يُعامل كأداة قابلة للتثبيت أو كخدمة قاعدة بيانات حية. |
-| **`GEDTM30`** | نموذج تضاريس وارتفاع عالمي بدقة 30م | Python, GDAL, Bash | **verify-upstream** (لم يُعثر على ترخيص في الجذر) | كمرجع خوارزمي لدمج عدة نماذج ارتفاع (SRTM, ALOS, Copernicus) لملء الفجوات وإزالة التشوهات. | **يُمنع النسخ المباشر للكود**. لا يفترض وجود خدمة تدفق بلاطات حية. لا يُستخدم للتحويل الرأسي الهندسي دون فحص المرجع الجيوديسي. |
-| **`spatial-prediction-eml`** | تعلم آلي تجميعي للتنبؤ المكاني | R (`mlr`, `ranger`, `sp`, `raster`) | **CC-BY-SA-4.0** (موثق في جذر المستودع) | لدراسة خوارزميات التنبؤ المكاني التجميعي والنمذجة المركبة وتقدير عدم اليقين في بيئة R. | لا يُدمج في برمجيات تجارية مغلقة بسبب شرط المشاركة بالمثل (ShareAlike). لا يُشغل مباشرة داخل بيئات Python/C# دون جسر برمجي. |
-| **`spatial-layers`** | تعريفات الطبقات والترميز الكارتوجرافي | Python, JSON, SLD, QML | **GPL-3.0** (موثق في جذر المستودع) | لتصميم لوحات الألوان العلمية وتصنيفات الرموز لطبقات التربة والغطاء النباتي والبيئة. | **لا يُنسخ كودها إلى برمجيات مغلقة** احتراماً لترخيص GPL-3.0 الحقوقي المترابط. تُعتمد المواصفات المستقلة نظيفة المصدر (Clean-room). |
+| **`scikit-map`** | Spatial ML & environmental mapping | Python, `scikit-learn`, `rasterio`, GDAL | **MIT** (verified in repo root) | Building spatial CV pipelines resistant to spatial autocorrelation leakage | Plain tabular ML (prefer standard `scikit-learn`) or unbenchmarked huge rasters |
+| **`soildb`** | Soil database harmonization & modeling | Python, R, SQL | **verify-upstream** (no explicit root license) | Studying soil profile schemas and SoilGrids covariate structure | **Do not copy code directly**; not an installable CLI tool or live DB service |
+| **`GEDTM30`** | 30 m global ensemble terrain model | Python, GDAL, Bash | **verify-upstream** (no explicit root license) | Algorithmic study of multi-DEM fusion (SRTM, ALOS, Copernicus) | **Do not copy code directly**; assume no live tile stream or skip vertical datum checks |
+| **`spatial-prediction-eml`** | Ensemble spatial prediction in R | R (`mlr`, `ranger`, `sp`, `raster`) | **CC-BY-SA-4.0** (verified in repo root) | Studying ensemble uncertainty mapping in R | Embedding in closed/proprietary products under ShareAlike restrictions |
+| **`spatial-layers`** | Environmental cartographic styles & layer defs | Python, JSON, SLD, QML | **GPL-3.0** (verified in repo root) | Studying scientific color ramps and symbology classifications | **Do not copy into non-GPL software**; follow clean-room authoring rules |
 
 ---
 
-## 5. نتائج اختبار سيناريوهات التوجيه الخمسة (Routing Scenarios)
+## 5. Verified Routing Scenarios (`scripts/intent_router.py`)
 
-تم اختبار السيناريوهات عبر أداة `scripts/intent_router.py`:
-
-1. **السيناريو 1: ابحث عن كود Python للتنبؤ المكاني**
-   - **المهارات المقترحة:** `gis-code-discovery`, `arcgis-toolbox-engineering`, `gis-security-guardian`.
-   - **التقييم:** ممتاز؛ التقط التنبؤ المكاني وكود بايثون ووجّه لمهارة اكتشاف الأكواد الجغرافية.
-2. **السيناريو 2: اكتشف خرائط خصائص التربة لمنطقة جغرافية محددة**
-   - **المهارات المقترحة:** `geospatial-data-discovery`, `gis-security-guardian`.
-   - **التقييم:** ممتاز؛ وجّه مباشرة لمهارة اكتشاف وتنزيل البيانات الجغرافية.
-3. **السيناريو 3: ابحث عن منتجات Land Cover ذات تغطية زمنية**
-   - **المهارات المقترحة:** `remote-sensing-pipelines`, `geospatial-data-discovery`, `gis-security-guardian`.
-   - **التقييم:** ممتاز؛ جمع بين معالجة الاستشعار والتغطية الزمنية واكتشاف البيانات.
-4. **السيناريو 4: حدد إمكانية استعراض طبقة COG داخل تطبيق GIS**
-   - **المهارات المقترحة:** `remote-sensing-pipelines`, `gis-security-guardian`.
-   - **التقييم:** ممتاز؛ حدد التعامل مع مرئيات السحاب COG كمسار استشعار وبيانات راستر.
-5. **السيناريو 5: قارن بين مصدر بيانات مفتوح ومستودع يضم كودًا بحثيًا**
-   - **المهارات المقترحة:** `gis-code-discovery`, `geospatial-data-catalogs`, `gis-security-guardian`.
-   - **التقييم:** ممتاز؛ جمع بين مهارة فهارس ومستودعات البيانات ومهارة استكشاف الأكواد البحثية.
+Tested against bilingual prompts using offline keyword hints:
+1. Spatial prediction Python code -> `gis-code-discovery`, `arcgis-toolbox-engineering`, `gis-security-guardian`.
+2. Soil property maps for an AOI -> `geospatial-data-discovery`, `gis-security-guardian`.
+3. Land cover products with temporal coverage -> `remote-sensing-pipelines`, `geospatial-data-discovery`, `gis-security-guardian`.
+4. Viewing a COG raster inside a GIS app -> `remote-sensing-pipelines`, `gis-security-guardian`.
+5. Comparing an open data source vs a research-code repo -> `gis-code-discovery`, `geospatial-data-catalogs`, `gis-security-guardian`.
 
 ---
 
-## 6. نتائج اختبارات التحقق الشاملة (Validation & Test Suites)
+## 6. Historical Validation & Test Results (30 October 2026)
 
-تم تشغيل حزم الفحص والاختبار بالكامل:
-
-```bash
-# 1. التحقق من كتالوج المشاريع
-python scripts/validate_catalog.py
-# النتيجة: Catalog valid: 193 sources (PASS)
-
-# 2. التحقق من كتالوج واجهات البرمجة APIs
-python scripts/validate_api_catalog.py
-# النتيجة: API catalog valid: 52 services (PASS)
-
-# 3. التحقق من كتالوج مستودعات البيانات
-python scripts/validate_data_repositories.py
-# النتيجة: Data source directory valid: 26 entries (PASS)
-
-# 4. التحقق من حزمة المهارات وروابط الوثائق والموقع
-python scripts/validate_skill_pack.py
-# النتيجة: Skill pack valid: 35 skills; README, reference and website paths checked (PASS)
-
-# 5. التحقق من ملف المانيفست الشامل
-python scripts/build_manifest.py --check
-# النتيجة: Manifest valid: 35 skills / 193 references / 52 APIs / 26 data repositories (PASS)
-
-# 6. تشغيل حزمة الاختبارات الوحدوية الكاملة
-python -m unittest discover -s tests -v
-# النتيجة: Ran 394 tests -> OK (skipped=1, failures=0) (PASS)
-```
+- `python scripts/validate_catalog.py` -> PASS (`193 sources`)
+- `python scripts/validate_api_catalog.py` -> PASS (`52 services`)
+- `python scripts/validate_data_repositories.py` -> PASS (`26 entries`)
+- `python scripts/validate_skill_pack.py` -> PASS (`35 skills`)
+- `python scripts/build_manifest.py --check` -> PASS (`35 skills / 193 references / 52 APIs / 26 data repositories`)
+- `python -m unittest discover -s tests -v` -> Ran `394 tests -> OK (skipped=1, failures=0)`
 
 ---
 
-## 7. الملفات المعدلة في المستودع المحلي (Modified Files Summary)
+## 7. Modified Files in Historical Synchronization Cohort
 
-1. `references/opengeohub-openlandmap-integration.md` (توسيع الدليل وتوثيق البروتوكولات والمستودعات ومواصفات واجهة استعراض البيانات).
-2. `scripts/intent_router.py` (إضافة الكلمات المفتاحية ثنائية اللغة لسيناريوهات التوجيه).
-3. `scripts/gis_code_discovery.py` (إضافة تصنيف نمذجة التعلم الآلي المكاني `spatial-modeling`).
-4. `tests/test_code_discovery.py` (إضافة 3 اختبارات وحدوية تؤكد نجاح اكتشاف المصادر والتحقق من التراخيص وسيناريوهات التوجيه).
-5. `README.md` (تحديث عداد مستودعات البيانات إلى 26، وتحديث عداد مصادر الكود إلى 17، وتفصيل مستودعات OpenGeoHub).
-6. `README.ar.md` (تحديث عداد مستودعات البيانات إلى 26، ومصادر الكود إلى 17، وتفصيل المستودعات بالعربية).
-7. `index.html` (تحديث العداد إلى 17 مصدراً، وإضافة بطاقة استعراض بيانات OpenGeoHub وOpenLandMap ومرجعها الهندسي).
-8. `explorer.html` (تحديث العداد إلى 26 دليلاً وبوابة، وإضافة رابط الدليل المرجعي الجديد).
-9. `CHANGELOG.md` (تسجيل اكتمال المزامنة والتحسينات المضافة بالتفصيل).
+1. `references/opengeohub-openlandmap-integration.md`
+2. `scripts/intent_router.py`
+3. `scripts/gis_code_discovery.py`
+4. `tests/test_code_discovery.py`
+5. `README.md` and `README.ar.md`
+6. `index.html` and `explorer.html`
+7. `CHANGELOG.md`
 
 ---
 
-## 8. المشكلات المتبقية والقيود (Residual Status & Boundaries)
+## 8. Residual Boundaries Preserved
 
-- **تراخيص `soildb` و`GEDTM30`:** لم يُنشر لها ملف ترخيص صريح في الجذر؛ تظل مصنفة بدقة كـ `verify-upstream` و`license_verified: false` ويُمنع نسخ أكوادها.
-- **طبيعة بيانات OpenLandMap:** الفهرس الرئيسي استاتيكي على S3 وليس STAC API ديناميكي؛ تم توثيق ذلك بوضوح لمنع أي ادعاءات غير حقيقية حول إمكانية البحث المباشر بـ CQL2 دون فحص.
-- **عدم الرفع التلقائي (No Push):** التزاماً بقيود المستخدم، جميع التعديلات محفوظة محلياً في شجرة العمل، ولم يتم تنفيذ أي Push إلى GitHub بانتظار مراجعة واعتماد المستخدم.
+- **`soildb` & `GEDTM30` licensing:** Remain flagged `verify-upstream` (`license_verified: false`); direct code copying stays prohibited.
+- **Static OpenLandMap STAC architecture:** Hosted as static S3 STAC metadata rather than guaranteed dynamic `/search` CQL2 API.
+- **No unapproved remote push:** Local synchronization verification left `origin` untouched pending explicit authorization.

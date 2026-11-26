@@ -53,8 +53,8 @@ Based on `JuliusBrussee/caveman`:
 Based on `alexgreensh/token-optimizer`:
 
 ### 4.1 Artifact & Scratch Compaction
-- **Evidence retention**: Keep relevant test output and readback in their existing evidence locations. Summarize the essentials in conversation.
-- **Checkpoint distillation**: Preserve the active task, verified result, next action and any open dependency in the existing handoff for substantial work.
+- **Evidence retention**: Keep relevant test output and readback in their existing evidence locations. Never drop `acceptance_criteria`, `protected_inputs`, host permissions, units, CRS, or failure signatures during context compaction.
+- **Checkpoint distillation**: Preserve the active task, `intent_revision`, verified result, next authorized action, and open dependencies cleanly in `context/CURRENT_HANDOFF.md` and `.agent-development-log/checkpoints/latest.json`; label telemetry explicitly as `actual`, `estimated`, or `UNKNOWN` (never extrapolate char lengths into exact tokens without a verified tokenizer).
 
 ### 4.2 Legal & Licensing Quarantine Notice
 > **Important Legal Boundary**: `alexgreensh/token-optimizer` is licensed under `PolyForm-Noncommercial-1.0`. In accordance with our repository security standards, its scripts and techniques are quarantined strictly to developer-side agent workflows. They are **never packaged, bundled, or distributed** inside shipped desktop software binaries.

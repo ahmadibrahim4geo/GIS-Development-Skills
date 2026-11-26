@@ -45,6 +45,8 @@ class AntigravityAdapter(PackagedClientAdapter):
             "schema_version": "1.0",
             "plugin_id": context.plugin_id,
             "name": "gis-development-skills",
+            "description": "The Heart of Geospatial Innovation — By Ahmed Ibrahim",
+            "icon": "../assets/icon.svg",
             "version": context.version,
             "source_digest": context.source_digest,
             "skills": "../skills",

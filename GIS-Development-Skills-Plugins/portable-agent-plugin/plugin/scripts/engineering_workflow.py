@@ -255,7 +255,7 @@ class LocalWorkflow:
                 self._event(data, task_id, "FAILED", "developer", reason=type(error).__name__)
                 self._event(data, task_id, "REWORK", "qa")
                 return row
-            self._event(data, task_id, "REVIEW", "qa", review_mode="SAME_AGENT_REVIEW")
+            self._event(data, task_id, "REVIEW", "qa", review_mode="SELF_REVIEW")
             self._event(data, task_id, "DONE" if passed else "REWORK", "release" if passed else "qa",
                         proof=(attempt / "DONEPROOF.json").relative_to(self.workspace).as_posix())
             return row

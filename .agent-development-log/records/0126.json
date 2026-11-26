@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "sequence": 126,
+  "timestamp_utc": "2026-11-26T09:15:51+00:00",
+  "kind": "verification",
+  "status": "completed",
+  "summary": "AR00 baseline audit recorded on HEAD 7c0eb7da",
+  "details": "Core validators passed; unittest 590/592 passed (1 skipped, 1 pre-existing untracked dist/user-testing link fail); mobile 10/10 pass; web-gis 6/6 pass; plugin-system tests 23/23 pass; plugin pipeline --check-only failed due to prior unbuilt manual plugin.json edits.",
+  "references": [
+    125
+  ],
+  "task_id": "0008-AAREF",
+  "plan_revision": "rev-1",
+  "changed_files": [
+    "reports/AR00_BASELINE_AUDIT.md"
+  ],
+  "tests": [
+    "validate_catalog,validate_api_catalog,validate_skill_pack,audit_skill_graph,security_audit,build_manifest,unittest,mobile-gis,web-gis,plugin-tests"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "8560e55f86243e0c9ebc0f352c139ee08eb22edd4920d2ae245e9869e7287f75",
+  "hash": "120d96d7981126636bbb986e453fa4b069919d7b158d7e8736265da84ae88a13"
+}

@@ -1,6 +1,6 @@
 {
   "bundle_name": "gis-development-suite",
-  "content_sha256": "e435e87c5e6f5f3c5c1f3f5690155d1358200ba4ae6fa71c4407b55f75cbc27f",
+  "content_sha256": "1e8e8439c989e61f1b3c5a453fbbf30aa5d4858f4ff0d6bb76e339105668c576",
   "entrypoint": "SKILL.md",
   "excluded_directories": [
     ".agent-development-log",
@@ -16,13 +16,13 @@
     "node_modules",
     "venv"
   ],
-  "expanded_bytes": 6129565,
-  "file_count": 776,
+  "expanded_bytes": 6247064,
+  "file_count": 789,
   "files": [
     {
       "path": ".claude-plugin/plugin.json",
-      "sha256": "074a0277b0db929daf5e20a46e23a5a39598db573757b94f0bc7161868f7f3c4",
-      "size": 292
+      "sha256": "83782733103a3d771a409da22341107323eeb848ba683065ff05d1d5ce8ffda7",
+      "size": 403
     },
     {
       "path": ".github/ISSUE_TEMPLATE/bug-report.yml",
@@ -81,13 +81,13 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "6dd2c9fadc5f9a9e322cb87455b8bcd3b2dbe4f5dd7e70201d1e04524f6beb67",
-      "size": 22904
+      "sha256": "5d7823783ac9eb58cb19909cd4b940e571f1a4fda5e1d5d089fea45270e259d0",
+      "size": 17469
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "ae427338e4c8b5605bf905b1d6c68f858a728735411b9357911bd73f01b3dd62",
-      "size": 40070
+      "sha256": "e44e892533d278db91a8c3bff40547d08d3d2f92ba1d263f8ca7e7bde9f80697",
+      "size": 42931
     },
     {
       "path": "CLAUDE.md",
@@ -111,13 +111,13 @@
     },
     {
       "path": "README.ar.md",
-      "sha256": "f817294b51131d02a1b0a2f2100ec77ccf8c905e438ab2d3dcb39a0f8d41c7f1",
-      "size": 73019
+      "sha256": "a83c2863ed780284a0a388dbf1bc5af53ec556f09275f107f8531535652cf5a5",
+      "size": 73356
     },
     {
       "path": "README.md",
-      "sha256": "00a4f298d1e1cfc79d04b681bb37c892d938b1bf24511d1a784bd1a315ad534b",
-      "size": 65986
+      "sha256": "32085038aa9010670d649da3f39ea964b17c0d9ffd4acfd781ba7412800b85f3",
+      "size": 66411
     },
     {
       "path": "SECURITY.md",
@@ -311,13 +311,13 @@
     },
     {
       "path": "docs/MOBILE_GIS_GUIDE.md",
-      "sha256": "fc44d023023843f301a8b326d237221ab0373a3437a2fcee5dcf5ddb67c506dc",
-      "size": 3620
+      "sha256": "b225c0986da39e5273fc937663ff2c4657a01358e4577084604b3460d6dd5b2e",
+      "size": 3635
     },
     {
       "path": "docs/OPENGEOHUB_OPENLANDMAP_SYNCHRONIZATION_REPORT_2026-10-30.md",
-      "sha256": "e82bc680b7b840c1c84a035ecd1c0e471b3cee37ac1170377470fd94867ac6b6",
-      "size": 15515
+      "sha256": "6b8b05812241c99b02b512786317c72f9da3b112f52ce5a39ee34ce4cffbf571",
+      "size": 7628
     },
     {
       "path": "docs/PERFORMANCE_RELIABILITY.md",
@@ -386,13 +386,13 @@
     },
     {
       "path": "docs/VISUAL_ASSETS_INTEGRATION_2026-10-27.md",
-      "sha256": "13b65b0a9ea6d2d5cc00c666e4de7d6909d53b6eb73b0b621a649be194baa6e0",
-      "size": 3934
+      "sha256": "21a348a7a0c5b04e845e6f4decc1932e5ddce505ec94bad107fea27c68071443",
+      "size": 3769
     },
     {
       "path": "docs/WEB_GIS_GUIDE.md",
-      "sha256": "43775e7ec3e9e0aa38c08cec3f93f1b00cdae69eee93e57742df414f7c9d6c85",
-      "size": 2102
+      "sha256": "cd8edb2941243b1cd95d741680d98f18f2427e378d8ea5fc4c333bb198ccac24",
+      "size": 2127
     },
     {
       "path": "docs/WEB_MOBILE_GUIDE.ar.md",
@@ -2121,8 +2121,8 @@
     },
     {
       "path": "explorer.html",
-      "sha256": "cc0fe16b3ceb161390dc120f63043b3eeb0a9766ce26b8ebffec5a7b851d37a5",
-      "size": 115092
+      "sha256": "2bab54fd9c2aa4d4f0d35046a684dcf14d36ef9713a004051c7a70bc65922455",
+      "size": 116324
     },
     {
       "path": "fixtures/README.md",
@@ -2166,8 +2166,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "27198104c0b84227bc90990987acaca68664c628a6368b10ffe48e738b21dcdf",
-      "size": 171577
+      "sha256": "bfe965ff5c7150927e19a95d3d85aa0b8d1cc0097ec0bbafb7c297e700cc8688",
+      "size": 172363
     },
     {
       "path": "native_tests/README.md",
@@ -2226,8 +2226,8 @@
     },
     {
       "path": "plugin.json",
-      "sha256": "0263ad66ab18fb900ad4c89523fc619bd46ab880b10de6739a322e699ef81dc8",
-      "size": 1010
+      "sha256": "81a80b4611fcc10a2a2772f9fd2b3632f4bb3073b68a1b1c1a7472fd40264a27",
+      "size": 1115
     },
     {
       "path": "project-wizard.html",
@@ -2253,6 +2253,46 @@
       "path": "references/agent-memory-skill-references.md",
       "sha256": "7d3560a07bb93619ff335b4145359b63ca0b7596c976b750f614ae81f6fb1fda",
       "size": 1993
+    },
+    {
+      "path": "references/agent-reasoning/adaptive-controller.md",
+      "sha256": "acf9e27643575294ba5846d669099125ec7e59301c87723c01b19f1cd3944626",
+      "size": 6661
+    },
+    {
+      "path": "references/agent-reasoning/cognitive-and-decision-methods.md",
+      "sha256": "982ed829eb7d4686bf3cadf4b50f4db873d5d0dbb0191372fb7344c1657e9fb5",
+      "size": 5974
+    },
+    {
+      "path": "references/agent-reasoning/failure-recovery-and-learning.md",
+      "sha256": "23c48226afd08352c6df46bae523ffd09d41c2c1b1d13ddf6a77477a8f8b9c0e",
+      "size": 5606
+    },
+    {
+      "path": "references/agent-reasoning/model-host-adaptation.md",
+      "sha256": "7607871f54584a3bf6d801474eba0e52c899926bc4043980eaefb3e1a5a0ff30",
+      "size": 3329
+    },
+    {
+      "path": "references/agent-reasoning/reasoning-levels.json",
+      "sha256": "c634dcf73a955a5b63467a8902a1bac6d220ed80e03b651a01ccdbfe1c77adb9",
+      "size": 5519
+    },
+    {
+      "path": "references/agent-reasoning/rule-registry.json",
+      "sha256": "fca2431df4be5ce4bdf425ddfd1d7be435338b233bc4266599df70afa88b5681",
+      "size": 17477
+    },
+    {
+      "path": "references/agent-reasoning/scientific-gis-reasoning.md",
+      "sha256": "e6a4700992aac53ca0e9d59b50bddf983c5c12448c74adb3f25cf7b267f47e6c",
+      "size": 5708
+    },
+    {
+      "path": "references/agent-reasoning/website-and-repo-contracts.md",
+      "sha256": "207aa006cd9d989b3ac8f62d3e30064959f60fdea59f2980a44c446ca7636649",
+      "size": 5745
     },
     {
       "path": "references/ahmad-ibrahim-gis-case-studies.md",
@@ -2296,8 +2336,8 @@
     },
     {
       "path": "references/build-vs-reuse-policy.md",
-      "sha256": "3eab0d01eae93011efcde6df9f7e45cbd186ee9edc1e8cf51f96fd4f0045166c",
-      "size": 3402
+      "sha256": "887ec13cdadf120a4cfd6891bbe004f57b852ee7bc3b1b78a9630a6df888f9f8",
+      "size": 3335
     },
     {
       "path": "references/cartographic-style-guide.md",
@@ -2331,8 +2371,8 @@
     },
     {
       "path": "references/doneproof-verification-protocol.md",
-      "sha256": "4839f80a4d3021a7358a7d9110bf6ab2f76810bb18ba1c42e74eca640fada5f4",
-      "size": 3575
+      "sha256": "40999c1e31cd13f51cc5c0354aecf85a4d7569df3ab9a2e833ee66471ef92cf8",
+      "size": 3733
     },
     {
       "path": "references/dotnet-gis.md",
@@ -2386,8 +2426,8 @@
     },
     {
       "path": "references/engineering-role-workflow.md",
-      "sha256": "8dbdbf2c45c70ebd8ea3c558081da7c78a13b868805274d90839dd91ee0a1a83",
-      "size": 3792
+      "sha256": "9d5a096f93e9dd105167b38ec1b179c549429ac9e9fc250d31fc7f4d699d7913",
+      "size": 4055
     },
     {
       "path": "references/esri-crs-and-spatialreference.md",
@@ -2436,8 +2476,8 @@
     },
     {
       "path": "references/geocoding-place-search.md",
-      "sha256": "2f65cd72de802657e931253d2e51de4b48b23a157620123552cbf06b83520993",
-      "size": 9868
+      "sha256": "fba6581c8853abdc54ebf03a58f860b298f5fdd93aa44c89fe2265b191b38ef8",
+      "size": 9715
     },
     {
       "path": "references/geolibre-integration.md",
@@ -2511,8 +2551,8 @@
     },
     {
       "path": "references/gis-software-source-registry.md",
-      "sha256": "57f1074d5a4e3742507eb70f85770e1fc40f950f7aa01bc62d8bca0f36928bf7",
-      "size": 13693
+      "sha256": "385e294cb81bbb1f8e4ed67ec5e7f7128b0e99fd8bc184118a438337353a5abc",
+      "size": 13277
     },
     {
       "path": "references/gis-ui-command-audit.md",
@@ -2631,8 +2671,8 @@
     },
     {
       "path": "references/opengeohub-openlandmap-integration.md",
-      "sha256": "fc325d0d8901450e18493e21e5f33ede117e5bc4529e1824ff102afe3f3a29b0",
-      "size": 18246
+      "sha256": "8bb04e6c157cfae629bcd8d076dd3940f19970a4454d4f10cd48f3a154d051fc",
+      "size": 17732
     },
     {
       "path": "references/opengeos-advanced-integration.md",
@@ -2641,8 +2681,8 @@
     },
     {
       "path": "references/portable-execution-guidance.md",
-      "sha256": "da0f5851eb3cc00cccfdd1dc19d48e46cabfd68cf592a409823ecdb0e205bb45",
-      "size": 7841
+      "sha256": "fba34e992fad71b121d3cf065a55df9fe4d650ebc15809567ee5117b13d2d021",
+      "size": 7348
     },
     {
       "path": "references/production-workflows.md",
@@ -2786,8 +2826,8 @@
     },
     {
       "path": "references/token-optimization-triad.md",
-      "sha256": "349f20f22c8dd6e3e3a6f4c965058c3eb11cbd8d928871ca77edc043679ed533",
-      "size": 4833
+      "sha256": "d72804fd359d3f795227abe49940e1f2d7225f0d240434b9223b9a5497b5dd83",
+      "size": 5148
     },
     {
       "path": "references/ui-engine-architecture-contract.md",
@@ -2836,8 +2876,8 @@
     },
     {
       "path": "references/visual-asset-sources.md",
-      "sha256": "47566b681f625c8baa9eadd7a01bd110e40fd002ac16d34e08c4562ef34da5f3",
-      "size": 6560
+      "sha256": "46b2eb1bcda7fd11b3e7c99928d025b4f2198dc966f606a2e94441b9510f83dd",
+      "size": 6459
     },
     {
       "path": "references/visual-asset-workflow.md",
@@ -2900,6 +2940,11 @@
       "size": 3595
     },
     {
+      "path": "scripts/audit_agent_policy.py",
+      "sha256": "6da75151726c26e8a798a79ececda7b4a34f944a516f5311d1f57f3db091b906",
+      "size": 10091
+    },
+    {
       "path": "scripts/audit_license_catalog.py",
       "sha256": "360148f18c0cbd54aa67987fad15c1832025f30698a16f41fc46210ba56488bb",
       "size": 3577
@@ -2946,8 +2991,8 @@
     },
     {
       "path": "scripts/development_journal.py",
-      "sha256": "ced216c3b7a633a279ac841b09e1aadeb1153cac68eeaefdbadf6041bdded3c6",
-      "size": 15317
+      "sha256": "2a5eb219ef41d1332c57a4220ceebbca62e8b9ed992d969d53ab48d83f9aeac2",
+      "size": 27252
     },
     {
       "path": "scripts/discover_engines.py",
@@ -2961,8 +3006,13 @@
     },
     {
       "path": "scripts/engineering_workflow.py",
-      "sha256": "564ecc5c4ce08a6697b7abc31c3b50a20cd3c2d4dfa9907d05f9f13e5114e245",
-      "size": 15131
+      "sha256": "c35b5ed87deca9f0dbe497cdb309b75640deb17f6a29aafacea17f3a83c5b41c",
+      "size": 15125
+    },
+    {
+      "path": "scripts/evaluate_agent.py",
+      "sha256": "25d4b526739b0a4e99d3cfccdbb179c7b622da9515c616ddf5298416869602a8",
+      "size": 7492
     },
     {
       "path": "scripts/evaluate_visual_skill.py",
@@ -2986,8 +3036,8 @@
     },
     {
       "path": "scripts/intent_router.py",
-      "sha256": "d39fe9e23518304341dfbf2531134d145306dd030ecaf04df832a50f7cc461df",
-      "size": 38099
+      "sha256": "d7996a1e47822b95b072f615336a04418f554fb002d8e5dc47004ac573952372",
+      "size": 46364
     },
     {
       "path": "scripts/inventory_ui_actions.py",
@@ -3131,13 +3181,13 @@
     },
     {
       "path": "scripts/validate_skill_pack.py",
-      "sha256": "79dee44291e05a43ac50855f2a85835455eb37b91bfaf7ca8bad2279123ae135",
-      "size": 7380
+      "sha256": "75dadf69db2921124f4bf6f27f08cbc2e9dd80acc88e4312bfec90a6ff5f9307",
+      "size": 7389
     },
     {
       "path": "scripts/verify_completion.py",
-      "sha256": "30ad702370f46f501423ee3b6fe88cbf2c8d2caaa92336da98b84c80287f0ba0",
-      "size": 7834
+      "sha256": "362c957eafdeff8b4b60c2b8093cb9e1f45498f05377b33ca14e60130fdc9031",
+      "size": 9895
     },
     {
       "path": "scripts/verify_engineering_workflow.py",
@@ -3151,8 +3201,8 @@
     },
     {
       "path": "skills/agent-development-journal/SKILL.md",
-      "sha256": "e7a990c41147e9340f7f97fcad9c5729246ad4a03aeab8f84944e9fc283b970b",
-      "size": 7017
+      "sha256": "18acf472c15a07453d74e341e296931facc87ac1fb75e9b554bda82704430352",
+      "size": 7448
     },
     {
       "path": "skills/arcgis-toolbox-engineering/SKILL.md",
@@ -3166,13 +3216,13 @@
     },
     {
       "path": "skills/completion-evidence/SKILL.md",
-      "sha256": "dd6970c7dbfeea491a4cfe5dbfc38b2a9cb23ec19eb9f04f79799d48bee5ba84",
-      "size": 3060
+      "sha256": "19650287d4cb35e143d5d75edecad722b9c9c4ec2e645279741513ec42088917",
+      "size": 3358
     },
     {
       "path": "skills/coordinate-reference-systems/SKILL.md",
-      "sha256": "0e2f7d6e923cc548b6ce3fb4e9a4269b72debaa1840d0462db740d70052faa9a",
-      "size": 7055
+      "sha256": "8d5c0e14e451d15c4ad14c49ef44ba83fcf4bfa514e0a2cc2d094c0874348458",
+      "size": 7241
     },
     {
       "path": "skills/geospatial-ai-agents/SKILL.md",
@@ -3196,8 +3246,8 @@
     },
     {
       "path": "skills/geospatial-data-processing/SKILL.md",
-      "sha256": "27611aaaf8e6c56391b5f3e17e143b00f71a466320385ee446ac1dc750a8f325",
-      "size": 2911
+      "sha256": "887b433a570efe7e062cc778daa46fcbc432e33441cea50ba755a3e7bec0bf2e",
+      "size": 3003
     },
     {
       "path": "skills/geospatial-engine-selection/SKILL.md",
@@ -3206,8 +3256,8 @@
     },
     {
       "path": "skills/geospatial-web-mapping/SKILL.md",
-      "sha256": "1db3ec79220c6f0b5261e0d40bd41dcbfe7c2362ed59e9d7510928b6219452d6",
-      "size": 8326
+      "sha256": "89c4eb74b30456fb2b1dcf2c0021041a4d07d6f9a744996f00898cde9de64bf2",
+      "size": 8524
     },
     {
       "path": "skills/gis-architecture-visualization/SKILL.md",
@@ -3266,8 +3316,8 @@
     },
     {
       "path": "skills/gis-development/SKILL.md",
-      "sha256": "78c6c46f2bcfc60763edebd9bfd12aba66b2db2dd58156bffaf5cc220098be92",
-      "size": 5524
+      "sha256": "777099d51123c8cc9510b8d79091cda746713f30027d442b8aef08fdcb9b5e02",
+      "size": 5577
     },
     {
       "path": "skills/gis-device-context/SKILL.md",
@@ -3281,13 +3331,13 @@
     },
     {
       "path": "skills/gis-mobile-application-development/SKILL.md",
-      "sha256": "b28b63c28f6776868e13b96b5400d4040ca9eb43537fb22b881b1e01b52828d9",
-      "size": 8888
+      "sha256": "1ea0991811ccfe232f4b75fc30a2e0d2a3020b77fd6e17d16b7c44a65bdcf8ee",
+      "size": 8979
     },
     {
       "path": "skills/gis-security-guardian/SKILL.md",
-      "sha256": "87f40025a697dcd11276af0bf8b22e1c81214e2996f94b3637f47d49ed259cf3",
-      "size": 7689
+      "sha256": "80652e9c3284ec000694884de6b0a9f47bc83ecd818b68eecdd3554f9826b3ce",
+      "size": 8062
     },
     {
       "path": "skills/gis-ui-command-audit/SKILL.md",
@@ -3321,8 +3371,8 @@
     },
     {
       "path": "skills/prompt-intent-orchestrator/SKILL.md",
-      "sha256": "64a28b5dfd4fc901ce09f5c939d45d42be16c86d5e4a17f9be4393b7d30aba44",
-      "size": 12215
+      "sha256": "b7825163570b4c53af76d26dde640821146b39f559bc7a527b47989adb17f1e3",
+      "size": 12750
     },
     {
       "path": "skills/qgis-engine-integration/SKILL.md",
@@ -3336,8 +3386,8 @@
     },
     {
       "path": "skills/remote-sensing-pipelines/SKILL.md",
-      "sha256": "5232c3cb8e9922d49ed4684199552656721ae6cdeb6bfdb77dc8040d9fa83b5c",
-      "size": 8048
+      "sha256": "998be325ee0a1ddb1a7d083bd59b12719d361884808b9193cbd084ae48e74256",
+      "size": 8311
     },
     {
       "path": "skills/spatial-databases/SKILL.md",
@@ -3351,8 +3401,8 @@
     },
     {
       "path": "skills/terrain-hydrology-lidar/SKILL.md",
-      "sha256": "885128e6725487da6ffacf07d76744d30e4a5e7e92095f3af25a35afeb7316b8",
-      "size": 4347
+      "sha256": "5af8e797793845dac408c31d93ef4c65e0c400b321d0b06736eb41b89bb6726e",
+      "size": 4485
     },
     {
       "path": "skills/visual-asset-discovery-integration/SKILL.md",
@@ -3440,6 +3490,16 @@
       "size": 1010
     },
     {
+      "path": "tests/agent_behavior/holdout_cases.json",
+      "sha256": "19962359046932a600466602910f065807df5f45cf8e22b6792b16d713af9e37",
+      "size": 5477
+    },
+    {
+      "path": "tests/agent_behavior/pilot_cases.json",
+      "sha256": "be59817453484c97d8e91a632f6f631fdaf0d99a622a7371e197ce595d9341ad",
+      "size": 8307
+    },
+    {
       "path": "tests/mobile-gis/test_mobile_contracts.py",
       "sha256": "7d5948ddf997ccb02a87f2a8916a60a02477452c128d7d7ca5caa9aff596deef",
       "size": 14148
@@ -3453,6 +3513,11 @@
       "path": "tests/shared-gis-fixtures/geojson_epsg4326_bilingual.geojson",
       "sha256": "24e2cbd88d2f4be16cc8faa1c6245513e9ae38569d83fb0343f5487318bbe8ed",
       "size": 2111
+    },
+    {
+      "path": "tests/test_aaref_policy_and_reasoning.py",
+      "sha256": "00e47b8f05cc7db6a2cc2e3cb56ddbf3d67a2315315ef9cfe701015785729ece",
+      "size": 13789
     },
     {
       "path": "tests/test_api_catalog.py",
@@ -3948,7 +4013,7 @@
   },
   "manifest_scope": "all bundle files except bundle-manifest.json",
   "schema_version": "1.0",
-  "source_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
+  "source_commit": "7c0eb7da684c2670d5e020cbcc6c3b9f6de751bd",
   "source_roots": [
     ".github",
     "assets",

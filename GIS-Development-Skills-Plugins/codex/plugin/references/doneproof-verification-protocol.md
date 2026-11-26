@@ -10,7 +10,7 @@ Native GIS and desktop tests: T0/T1 unit/static work does not prove T2 engine ex
 
 ## JSON report v1 (optional for complex tasks)
 
-Top-level: `schema_version: "1.0"`, nonempty `task_id`, reviewed plan `request_id`, current `revision`, `overall_status`, and a nonempty `criteria` list. For plan-bound release verification, `request_id` is required; older structure-only reports without it remain readable.
+Top-level: `schema_version: "1.0"`, nonempty `task_id`, reviewed plan `request_id`, current `revision`, `overall_status`, optional `review_mode` (`INDEPENDENT_AGENT|HUMAN_REVIEW|SELF_REVIEW|NOT_RUN`, with required `independent_review_evidence` when claiming `INDEPENDENT_AGENT`), and a nonempty `criteria` list. For plan-bound release verification, `request_id` is required; older structure-only reports without it remain readable.
 
 Each criterion: unique `id`, clear `statement`, `status` (`verified|partial|failed|blocked|not_run`), and `evidence` list. For `partial|blocked|not_run`, `reason` is required. For `verified`, passing evidence is required without failed observations; for `failed`, failing evidence is required; `not_run` cannot include observed evidence.
 

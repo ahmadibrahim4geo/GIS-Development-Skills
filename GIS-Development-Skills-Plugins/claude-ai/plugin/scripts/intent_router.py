@@ -73,6 +73,15 @@ DOMAINS = (
 RISKS = {"low", "medium", "high", "critical"}
 SIDE_EFFECTS = {"read", "write", "network", "destructive"}
 STATUSES = {"draft", "approved"}
+REASONING_LEVELS = {"L0", "L1", "L2", "L3", "L4", "L5"}
+IMPACT_CLASSES = {"I0", "I1", "I2", "I3", "I4"}
+ORDINAL_LEVELS = {"low", "medium", "high", "unknown"}
+REVIEW_MODES = {"INDEPENDENT_AGENT", "HUMAN_REVIEW", "SELF_REVIEW", "NOT_RUN"}
+CLASSIFIER_DIMENSIONS = (
+    "complexity", "uncertainty", "coupling", "reversibility",
+    "scientific_impact", "security_impact", "external_effect",
+    "environment_readiness", "scope_clarity", "user_requested_depth",
+)
 VISUALIZATION_SKILL = "gis-architecture-visualization"
 VISUALIZATION_FIELDS = {
     "purpose": {"architecture-explanation", "feature-design", "cross-component-diagnosis", "structural-change"},
@@ -101,6 +110,90 @@ def architecture_hints(request):
     return {"required": required, "signals": signals,
             "basis": "lexical-hints-only", "delivery_model": "unresolved" if required else None,
             "next_step": "Host must distinguish source host, delivery host, changed component and protected behavior; inspect named components before selecting an adapter."}
+
+
+def classify_reasoning_profile(dimensions):
+    """Deterministically map explicit ordinal fields to L0-L5 and orthogonal I0-I4.
+
+    Operates ONLY on structured JSON flags/ordinals; never parses raw natural
+    language and never authorizes side effects or host permissions.
+    """
+    if not isinstance(dimensions, dict):
+        raise ValueError("dimensions must be a JSON object")
+    clean = {}
+    high_defaults = {"reversibility", "scope_clarity", "environment_readiness"}
+    for key in CLASSIFIER_DIMENSIONS:
+        default_val = "high" if key in high_defaults else ("low" if key != "user_requested_depth" else None)
+        val = dimensions.get(key, default_val)
+        if key == "user_requested_depth":
+            if val is not None and val not in REASONING_LEVELS and val not in ORDINAL_LEVELS:
+                raise ValueError(f"invalid user_requested_depth: {val}")
+            clean[key] = val
+        else:
+            if val not in ORDINAL_LEVELS:
+                raise ValueError(f"{key} must be one of {sorted(ORDINAL_LEVELS)}")
+            clean[key] = val
+
+    read_only = bool(dimensions.get("read_only", False))
+    multi_file = bool(dimensions.get("multi_file", False))
+    unsupported = bool(dimensions.get("unsupported_or_forbidden", False))
+
+    if unsupported:
+        impact = "I4"
+    elif clean["external_effect"] == "high" or clean["security_impact"] == "high" or (not read_only and clean["reversibility"] == "low"):
+        impact = "I3"
+    elif (not read_only and (multi_file or clean["coupling"] in ("medium", "high") or clean["scientific_impact"] == "high" or clean["external_effect"] == "medium" or clean["reversibility"] == "unknown")):
+        impact = "I2"
+    elif not read_only:
+        impact = "I1"
+    else:
+        impact = "I0"
+
+    if clean["scientific_impact"] == "high" and clean["uncertainty"] in ("high", "unknown"):
+        depth = "L5"
+    elif clean["coupling"] == "high" and clean["complexity"] == "high":
+        depth = "L4"
+    elif clean["uncertainty"] in ("high", "unknown") or (clean["complexity"] == "high" and clean["scope_clarity"] in ("low", "unknown")):
+        depth = "L3"
+    elif clean["complexity"] == "medium" or clean["coupling"] == "medium" or clean["scientific_impact"] == "medium" or multi_file or clean["environment_readiness"] in ("low", "unknown"):
+        depth = "L2"
+    elif not read_only:
+        depth = "L1"
+    else:
+        depth = "L0"
+
+    if impact in ("I3", "I4") and int(depth[1]) < 2:
+        depth = "L2"
+
+    warnings = []
+    req_depth = clean.get("user_requested_depth")
+    depth_map = {"low": "L1", "medium": "L2", "high": "L4", "unknown": "L3"}
+    mapped_req = depth_map.get(req_depth, req_depth)
+    if mapped_req in REASONING_LEVELS:
+        if int(mapped_req[1]) > int(depth[1]):
+            depth = mapped_req
+        elif int(mapped_req[1]) < int(depth[1]):
+            warnings.append(f"user_requested_depth '{req_depth}' cannot downgrade required workflow depth '{depth}' or security gate '{impact}'")
+
+    methods = ["Adaptive Reasoning"]
+    if clean["scientific_impact"] in ("medium", "high"):
+        methods.append("Scientific Reasoning")
+    if clean["uncertainty"] in ("high", "unknown"):
+        methods.extend(["Uncertainty Management", "Root Cause Analysis"])
+    if impact in ("I2", "I3") or depth in ("L4", "L5"):
+        methods.extend(["Systems Thinking", "Decision Intelligence", "Critical Thinking"])
+
+    return {
+        "schema_version": "1.0",
+        "reasoning_level": depth,
+        "impact_class": impact,
+        "requires_plan_review": impact in ("I2", "I3"),
+        "requires_high_impact_gate": impact == "I3",
+        "blocked": impact == "I4",
+        "warnings": warnings,
+        "recommended_methods": list(dict.fromkeys(methods)),
+        "note": "Deterministic ordinal mapping only; host still owns semantic review and user authorization.",
+    }
 
 
 def available_skills(root=SKILLS):
@@ -261,9 +354,38 @@ def validate_plan(plan, known=None, require_approved=False):
         val = plan.get(field)
         if not isinstance(val, list) or any(not _text(x) for x in val):
             errors.append(field + " must be a list of strings")
-    for field in ("constraints", "non_goals"):
+    for field in ("constraints", "non_goals", "material_unknowns", "inferred_assumptions", "preferences", "explicit_requirements", "protected_inputs"):
         if field in plan and (not isinstance(plan[field], list) or any(not _text(v) for v in plan[field])):
-            errors.append(field + " must be a list of strings")
+            errors.append(field + " must be a list of nonempty strings")
+    if "approval_evidence_ref" in plan:
+        aer = plan.get("approval_evidence_ref")
+        if not (_text(aer) or (isinstance(aer, dict) and bool(aer))):
+            errors.append("approval_evidence_ref must be a nonempty string or object when provided")
+    if "intent_revision" in plan and not _text(plan.get("intent_revision")):
+        errors.append("intent_revision must be a nonempty string when provided")
+    if "reasoning_level" in plan and plan.get("reasoning_level") not in REASONING_LEVELS:
+        errors.append("reasoning_level must be one of L0..L5")
+    impact_class = plan.get("impact_class")
+    if "impact_class" in plan:
+        if impact_class not in IMPACT_CLASSES:
+            errors.append("impact_class must be one of I0..I4")
+        elif impact_class == "I4":
+            errors.append("impact_class I4 is forbidden or unsupported and cannot pass workflow gate")
+    if "decision_capsules" in plan:
+        capsules = plan["decision_capsules"]
+        if not isinstance(capsules, list):
+            errors.append("decision_capsules must be a list")
+        else:
+            for idx, cap in enumerate(capsules):
+                if not isinstance(cap, dict):
+                    errors.append(f"decision_capsules[{idx}] must be an object")
+                    continue
+                for req in ("decision_id", "question", "selection", "short_rationale"):
+                    if not _text(cap.get(req)):
+                        errors.append(f"decision_capsules[{idx}].{req} must be a nonempty string")
+                rm = cap.get("review_mode")
+                if rm is not None and rm not in REVIEW_MODES:
+                    errors.append(f"decision_capsules[{idx}].review_mode is invalid")
     approval = plan.get("approval")
     if not isinstance(approval, dict):
         approval = {}
@@ -278,7 +400,7 @@ def validate_plan(plan, known=None, require_approved=False):
         return errors + ["tasks must be a nonempty array"]
     ids = set()
     depends = {}
-    high_risk = False
+    high_risk = (impact_class == "I3")
     for n, task in enumerate(tasks):
         pref = "tasks[" + str(n) + "]"
         if not isinstance(task, dict):
@@ -371,6 +493,17 @@ def validate_plan(plan, known=None, require_approved=False):
         visited.add(node)
     for ident in depends:
         walk(ident)
+    has_write_or_network = any(
+        isinstance(t, dict) and isinstance(t.get("tools"), list) and any(
+            isinstance(tool, dict) and tool.get("side_effect") in ("write", "network", "destructive")
+            for tool in t["tools"]
+        )
+        for t in tasks
+    )
+    if impact_class == "I0" and (high_risk or has_write_or_network):
+        errors.append("impact_class I0 cannot declare high/critical risks or mutating/network/destructive tools")
+    if impact_class == "I1" and high_risk:
+        errors.append("impact_class I1 cannot declare high/critical risks or destructive tools")
     if require_approved or status == "approved":
         if status != "approved" or approval.get("approved_by_user") is not True:
             errors.append("execution gate: plan is not user-approved")
@@ -453,13 +586,20 @@ def compile_workflow(plan, known=None, require_approved=False):
         "valid": not errors,
         "request_id": plan.get("request_id") if isinstance(plan, dict) else None,
         "revision": plan.get("revision") if isinstance(plan, dict) else None,
+        "intent_revision": plan.get("intent_revision", plan.get("revision")) if isinstance(plan, dict) else None,
+        "reasoning_level": plan.get("reasoning_level", "L2") if isinstance(plan, dict) else None,
+        "impact_class": plan.get("impact_class", "I2") if isinstance(plan, dict) else None,
         "original_request": plan.get("original_request") if isinstance(plan, dict) else None,
         "goal": plan.get("goal") if isinstance(plan, dict) else None,
         "target": plan.get("target") if isinstance(plan, dict) else None,
         "desired_outcomes": plan.get("desired_outcomes") if isinstance(plan, dict) else None,
         "success_criteria": plan.get("success_criteria") if isinstance(plan, dict) else None,
-        **{key: copy.deepcopy(plan[key]) for key in ("constraints", "non_goals", "assumptions", "open_questions")
-           if isinstance(plan, dict) and key in plan},
+        **{key: copy.deepcopy(plan[key]) for key in (
+            "constraints", "non_goals", "assumptions", "open_questions",
+            "material_unknowns", "inferred_assumptions", "preferences",
+            "decision_capsules", "explicit_requirements", "protected_inputs",
+            "approval_evidence_ref"
+        ) if isinstance(plan, dict) and key in plan},
         "phases": list(WORKFLOW_PHASES),
         "status": "BLOCKED" if errors else "AWAITING_HOST_AUTHORIZATION" if require_approved else "AWAITING_REVIEW",
         "approval_declarations_checked": bool(require_approved and not errors),
@@ -531,6 +671,7 @@ def main(argv=None):
     action = p.add_mutually_exclusive_group(required=True)
     action.add_argument("--text", help="Unstructured input; get lexical skill hints, NOT AI understanding")
     action.add_argument("--plan", type=Path, help="Structured JSON plan drafted by an agent or human")
+    action.add_argument("--classify-profile", type=Path, help="Classify explicit ordinal dimensions JSON into L0-L5 and I0-I4 (no NLP)")
     p.add_argument("--format", choices=("text", "json"), default="text")
     p.add_argument("--context", type=Path, help="Optional delivery and runtime declarations; requires --text")
     p.add_argument("--gate", action="store_true", help="Check declared revision-scoped approval; never execute")
@@ -541,6 +682,18 @@ def main(argv=None):
         p.error("--context requires --text")
     if args.mcp_inventory and (not args.workflow or args.plan is None):
         p.error("--mcp-inventory requires --plan and --workflow")
+    if args.classify_profile is not None:
+        try:
+            dims = json.loads(args.classify_profile.read_text(encoding="utf-8"))
+            profile = classify_reasoning_profile(dims)
+        except (OSError, ValueError) as exc:
+            print("Invalid dimensions file: " + str(exc), file=sys.stderr)
+            return 2
+        if args.format == "json":
+            print(json.dumps(profile, ensure_ascii=False, indent=2))
+        else:
+            print(f"Profile: {profile['reasoning_level']} / {profile['impact_class']} (plan_review={profile['requires_plan_review']}, high_impact_gate={profile['requires_high_impact_gate']})")
+        return 1 if profile["blocked"] else 0
     if args.text is not None:
         if args.gate:
             p.error("--gate requires --plan")
@@ -577,7 +730,10 @@ def main(argv=None):
         blueprint = compile_workflow(plan, require_approved=args.gate)
         if args.mcp_inventory and blueprint["valid"]:
             try:
-                from mcp_tool_router import route_plan
+                if __package__:
+                    from .mcp_tool_router import route_plan
+                else:
+                    from mcp_tool_router import route_plan
                 inventory = json.loads(args.mcp_inventory.read_text(encoding="utf-8"))
                 blueprint["tool_route_preview"] = route_plan(plan, inventory)
                 blueprint["tool_routing_note"] = "Candidate capabilities only; no live MCP discovery, authorization or invocation."

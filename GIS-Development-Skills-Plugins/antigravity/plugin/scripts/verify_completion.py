@@ -7,6 +7,7 @@ from pathlib import Path
 STATES = {"verified", "partial", "failed", "blocked", "not_run"}
 MAX_REPORT_BYTES = 262_144
 KINDS = {"command_output", "artifact_readback", "provider_receipt", "native_interaction", "manual_review"}
+REVIEW_MODES = {"INDEPENDENT_AGENT", "HUMAN_REVIEW", "SELF_REVIEW", "NOT_RUN"}
 
 
 def nonempty(x):
@@ -84,6 +85,35 @@ def validate(data):
                     "blocked" if all(v == "blocked" for v in statuses) else "partial")
         if overall != expected:
             errors.append("overall_status must be " + expected + " for the criteria provided")
+    def _has_evidence(ind):
+        if nonempty(ind):
+            return True
+        if isinstance(ind, dict):
+            return any(_has_evidence(v) for v in ind.values())
+        if isinstance(ind, list):
+            return any(_has_evidence(x) for x in ind)
+        return False
+
+    review_mode = data.get("review_mode")
+    if review_mode is not None:
+        if not isinstance(review_mode, str) or review_mode not in REVIEW_MODES:
+            errors.append("Invalid review_mode")
+        elif review_mode == "INDEPENDENT_AGENT":
+            if not _has_evidence(data.get("independent_review_evidence")):
+                errors.append("INDEPENDENT_AGENT review_mode requires non-empty independent_review_evidence")
+        elif review_mode in ("SELF_REVIEW", "NOT_RUN") and _has_evidence(data.get("independent_review_evidence")):
+            errors.append(f"{review_mode} cannot declare independent_review_evidence")
+    for i, item in enumerate(items):
+        if isinstance(item, dict) and "review_mode" in item:
+            rm = item.get("review_mode")
+            if not isinstance(rm, str) or rm not in REVIEW_MODES:
+                errors.append("criteria[{}]: invalid review_mode".format(i))
+            elif rm == "INDEPENDENT_AGENT":
+                ind_item = item.get("independent_review_evidence", data.get("independent_review_evidence"))
+                if not _has_evidence(ind_item):
+                    errors.append("criteria[{}]: INDEPENDENT_AGENT requires independent_review_evidence".format(i))
+            elif rm in ("SELF_REVIEW", "NOT_RUN") and _has_evidence(item.get("independent_review_evidence")):
+                errors.append(f"criteria[{i}]: {rm} cannot declare independent_review_evidence")
     return errors
 
 def validate_against_plan(report, plan):
@@ -159,6 +189,8 @@ def main(argv=None):
         errors.append("Release gate requires --plan to prevent omitted acceptance criteria")
     if args.require_verified and data.get("overall_status") != "verified":
         errors.append("Release gate: overall_status is not verified")
+    if args.require_verified and data.get("review_mode") == "NOT_RUN" and not nonempty(data.get("review_waiver_reason")):
+        errors.append("Release gate: review_mode NOT_RUN requires non-empty review_waiver_reason")
     if errors:
         for error in errors:
             print("ERROR:", error)

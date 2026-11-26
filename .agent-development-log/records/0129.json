@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "sequence": 129,
+  "timestamp_utc": "2026-11-26T14:33:18+00:00",
+  "kind": "handoff",
+  "status": "completed",
+  "summary": "Finalized temp cleanup, index/explorer/README sync, browser verification, and pre-push CI verification",
+  "details": "Removed disposable dist/user-testing (10394 files), testing results/review-modern-web-guidance-1.0.1 (321 files), and __pycache__ dirs. Fixed explorer.html capKeys() TypeError on dict prof.capabilities, added all 37 skillNames entries, updated stale 23->37 fallback, added AAREF cards/links to index.html, explorer.html, README.md, README.ar.md, and verified live browser behavior with 0 console errors.",
+  "references": [
+    128
+  ],
+  "task_id": "0008-AAREF",
+  "plan_revision": "r1",
+  "changed_files": [
+    "index.html",
+    "explorer.html",
+    "README.md",
+    "README.ar.md",
+    "context/CURRENT_HANDOFF.md"
+  ],
+  "tests": [
+    "Browser UI Verifier (EN/AR + mobile + io.vector search)"
+  ],
+  "test_result": "passed",
+  "commit": "",
+  "previous_hash": "99e90f63c581676119bd47b58f121ec82060a18164d39068c1f3338268541c65",
+  "hash": "6ffd19bcdecca491b9da804394f1713e0891a7e337874f61aff7d62dfcee8cd9"
+}

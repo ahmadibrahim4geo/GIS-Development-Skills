@@ -56,7 +56,7 @@ The [free STAC ItemCollection metadata test](../../examples/stac-offline/README.
 6. Validate against known reference pixels and imagery footprints, including missing scenes, time-zone boundaries, antimeridian and uneven observation counts.
 7. Report independent computational evidence and failures; do not assert native Earth Engine/GDAL correctness from documentation-only checks.
 
-Read [STAC/COG workflow](../../examples/remote-sensing/STAC_COG_WORKFLOW.md), [production workflows](../../references/production-workflows.md) and [quality benchmark](../../docs/QUALITY_BENCHMARK.md).
+Read [STAC/COG workflow](../../examples/remote-sensing/STAC_COG_WORKFLOW.md), [production workflows](../../references/production-workflows.md), [scientific GIS invariants](../../references/agent-reasoning/scientific-gis-reasoning.md) (including per-pixel QA masking, Landsat C2 L2 reflectance unpacking before division, zero-denominator guards, and McFeeters water NDWI vs Gao canopy NDWI disambiguation), and [quality benchmark](../../docs/QUALITY_BENCHMARK.md).
 
 ## NASA GIBS and Copernicus globe reference
 

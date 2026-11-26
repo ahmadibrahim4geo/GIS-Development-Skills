@@ -29,10 +29,14 @@
 | التحليل المكاني وصور الأقمار الصناعية | [معالجة المتجهات والراستر](skills/geospatial-data-processing/SKILL.md) · [الاستشعار عن بُعد](skills/remote-sensing-pipelines/SKILL.md) · [التضاريس والهيدرولوجيا](skills/terrain-hydrology-lidar/SKILL.md) |
 | ربط البيانات والأتمتة وتبادل الخرائط | [واجهات GIS API](skills/geospatial-api-integration/SKILL.md) · [مسارات الوكلاء](skills/geospatial-ai-agents/SKILL.md) · [KML/KMZ](skills/kml-kmz-engineering/SKILL.md) |
 
-التعليمات مستقلة عن اسم النموذج وإطار الوكيل. يوضح [دليل التنفيذ المرن](references/portable-execution-guidance.md)
-اختيار مستوى Lite أو Standard أو Deep حسب حجم المهمة ومخاطرها، واختيار الأدوات
-بحسب القدرات المصرح بها. يظل التثبيت والسلوك بحاجة للتحقق داخل كل برنامج؛ ولا
-يُلغي أي مستوى متطلبات الموافقة أو أدلة النتيجة.
+التعليمات مستقلة عن اسم النموذج وإطار الوكيل. يجمع
+[إطار الاستدلال والهندسة التكيفي (AAREF)](references/agent-reasoning/adaptive-controller.md)
+و[دليل التنفيذ المرن](references/portable-execution-guidance.md) بين تدرّج عمق
+التحليل (`L0–L5`) وبوابات الأمان والتأثير المستقلة (`I0–I4`) وضوابط GIS العلمية
+والتعلم المنقّح عبر سجل التطوير. تتوفر الإضافات لسبع منصات (`Portable` و`Codex`
+و`ChatGPT` و`Claude Code` و`Claude AI` و`Antigravity` و`Cursor`) بهوية Brand Kit 3.1.
+يظل التثبيت والسلوك بحاجة للتحقق داخل كل برنامج؛ ولا يُلغي أي مستوى متطلبات
+الموافقة أو أدلة النتيجة.
 
 ### 1. ابنِ الحزمة المكتفية ذاتيًا
 

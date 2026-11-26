@@ -65,6 +65,8 @@ class PortableAdapter(PluginAdapter):
             "plugin_id": context.plugin_id,
             "platform": self.config.id,
             "name": context.suite_name,
+            "description": "The Heart of Geospatial Innovation — By Ahmed Ibrahim",
+            "icon": "assets/icon.svg",
             "version": context.version,
             "source_commit": context.source_commit,
             "source_digest": context.source_digest,

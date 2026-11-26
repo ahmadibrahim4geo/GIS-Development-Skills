@@ -8,15 +8,16 @@
   "metadata": {
     "plugin_id": "ahmadibrahim4geo.gis-development-skills",
     "version": "0.3.5",
-    "source_commit": "42de4a246a2db1f7d33cc746da9cd3a0f1718a91",
-    "source_digest": "527cf7b1b01b4b4ca593674ba47a6228843547f72ce9fcbdb5c4c24fe14d819e",
-    "bundle_digest": "771427c6cdba70bb969909d1c484ef2cb77d3e959b19a352b35b3f270568f934"
+    "source_commit": "7c0eb7da684c2670d5e020cbcc6c3b9f6de751bd",
+    "source_digest": "76eafea2bb37750a418aa60e53701f0accde76ee2b6fefc1dd1c14f6893d6c05",
+    "bundle_digest": "6d60d8822139e3c61bc2a9f770866d7223e8ca9bc6d798e8f324b743ab09296f"
   },
   "plugins": [
     {
       "name": "gis-development-skills",
       "plugin_id": "ahmadibrahim4geo.gis-development-skills",
-      "description": "Verifiable GIS Engineering, Spatial Architecture, Web/Mobile GIS, and Security Governance Suite.",
+      "description": "The Heart of Geospatial Innovation — By Ahmed Ibrahim",
+      "icon": "assets/icon.svg",
       "version": "0.3.5",
       "source": "./GIS-Development-Skills-Plugins/claude-code/plugin",
       "manifest": "GIS-Development-Skills-Plugins/claude-code/plugin/.claude-plugin/plugin.json",
