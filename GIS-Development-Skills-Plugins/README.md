@@ -1,6 +1,6 @@
 # GIS Development Skills — Generated Plugin Packages / حزم الإضافات المولدة
 
-- **Version:** `0.3.5` (`cb46a75f15026752760e0e489f4ec4520bffdd7d`)
+- **Version:** `0.3.5` (`b3101b171c364f70f7b7f8ce27bae6e20d166fa4`)
 - **Canonical Source:** [Repository README](../README.md) · [AGENTS Policy](../AGENTS.md) · [Lifecycle Architecture](../plugin-system/README.md)
 - **Important Rule:** Do not edit files in this folder by hand. Regenerate from canonical sources via `Update-All-Plugins.ps1` (or `python -B plugin-system/core/pipeline.py`).
 

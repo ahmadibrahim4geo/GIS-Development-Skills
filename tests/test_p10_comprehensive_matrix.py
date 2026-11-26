@@ -252,7 +252,7 @@ class P10ComprehensiveMatrixTests(unittest.TestCase):
                 self.assertEqual("pass", zres["status"], f"Archive security failure in {zpath}: {zres}")
         else:
             with tempfile.TemporaryDirectory() as tmp_zip_dir:
-                built = build_skill_bundle.build_bundle(ROOT, Path(tmp_zip_dir))
+                built = build_skill_bundle.build(Path(tmp_zip_dir), root=ROOT)
                 zres = security_guardian.inspect_archive(Path(built["archive"]))
                 self.assertEqual("pass", zres["status"], f"Archive security failure in temp bundle: {zres}")
 

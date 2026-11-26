@@ -1,7 +1,7 @@
 # OpenAI Codex (CLI / Desktop) (`codex`)
 
 - **Plugin ID:** `ahmadibrahim4geo.gis-development-skills`
-- **Version:** `0.3.5` (`cb46a75f15026752760e0e489f4ec4520bffdd7d`)
+- **Version:** `0.3.5` (`b3101b171c364f70f7b7f8ce27bae6e20d166fa4`)
 - **Phase Status:** `ACTIVE_P09`
 - **Manifest:** [plugin/.codex-plugin/plugin.json](plugin/.codex-plugin/plugin.json)
 - **Parity Report:** [parity-report.json](parity-report.json)

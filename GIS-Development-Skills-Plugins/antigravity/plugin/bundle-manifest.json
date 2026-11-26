@@ -1,6 +1,6 @@
 {
   "bundle_name": "gis-development-suite",
-  "content_sha256": "31b49439543ef7125f52bd89f9dd171f76979ba66377bf0420dca000348b99a5",
+  "content_sha256": "47de32f32f8d0170453f311879944b762fed76b5e8780485f554a1769494d5df",
   "entrypoint": "SKILL.md",
   "excluded_directories": [
     ".agent-development-log",
@@ -16,12 +16,12 @@
     "node_modules",
     "venv"
   ],
-  "expanded_bytes": 6200722,
+  "expanded_bytes": 6200720,
   "file_count": 789,
   "files": [
     {
       "path": ".antigravity/plugin.json",
-      "sha256": "179d379a82d79252c51a149b6d8e6fb1e8faa3e1be718c5066740b5b4406023b",
+      "sha256": "c0bf8a09a1b0df466fea179d627844bac6dcfcaff860ddf60c4f18f5f5429e17",
       "size": 427
     },
     {
@@ -2226,7 +2226,7 @@
     },
     {
       "path": "plugin.json",
-      "sha256": "14f5fecc1f264073e6464cf691e466fbe019421fe9e0b0881778bc36d0692d67",
+      "sha256": "db7ec6a0c4a4e1758629b91d2af53ad5efaea999dd8b5259978c40f0f834febb",
       "size": 1034
     },
     {
@@ -3796,8 +3796,8 @@
     },
     {
       "path": "tests/test_p10_comprehensive_matrix.py",
-      "sha256": "12a8149d8db88cd7612267712dc244860794de02ea067a48a513fb545de6701e",
-      "size": 15826
+      "sha256": "682fad22a6f3d384b4b7b57ecb4d374adc631e8eeffdf19975addbf67cde6b2f",
+      "size": 15824
     },
     {
       "path": "tests/test_plugin_lifecycle.py",
@@ -4013,7 +4013,7 @@
   },
   "manifest_scope": "all bundle files except bundle-manifest.json",
   "schema_version": "1.0",
-  "source_commit": "cb46a75f15026752760e0e489f4ec4520bffdd7d",
+  "source_commit": "b3101b171c364f70f7b7f8ce27bae6e20d166fa4",
   "source_roots": [
     ".github",
     "assets",

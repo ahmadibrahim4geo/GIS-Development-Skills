@@ -5,9 +5,9 @@
   "name": "gis-development-skills",
   "display_name": "GIS Development Skills",
   "version": "0.3.5",
-  "source_commit": "cb46a75f15026752760e0e489f4ec4520bffdd7d",
-  "source_digest": "0a5f4803de594b86954b0f8a164c4a5cf7928ab02700255dc0d545dcd5554393",
-  "bundle_digest": "03e4df8638024d3f26dea576c82ec834f58b6c1decf396adecc8eb34dcf81255",
+  "source_commit": "b3101b171c364f70f7b7f8ce27bae6e20d166fa4",
+  "source_digest": "b7a4508c35dc6c81b88fa093e76b088ea3ba169b004c646dd41bc15b8b30a49d",
+  "bundle_digest": "ea40720a77d5bdd558eafb89596bb680e35bab82fc559566aa0d55bae16e1994",
   "plugins": [
     {
       "id": "ahmadibrahim4geo.gis-development-skills",
@@ -16,8 +16,8 @@
       "description": "The Heart of Geospatial Innovation — By Ahmed Ibrahim",
       "icon": "assets/icon.svg",
       "version": "0.3.5",
-      "source_commit": "cb46a75f15026752760e0e489f4ec4520bffdd7d",
-      "source_digest": "0a5f4803de594b86954b0f8a164c4a5cf7928ab02700255dc0d545dcd5554393",
+      "source_commit": "b3101b171c364f70f7b7f8ce27bae6e20d166fa4",
+      "source_digest": "b7a4508c35dc6c81b88fa093e76b088ea3ba169b004c646dd41bc15b8b30a49d",
       "plugin_path": "GIS-Development-Skills-Plugins/codex/plugin",
       "manifest_path": "GIS-Development-Skills-Plugins/codex/plugin/.codex-plugin/plugin.json",
       "shared_listing_group": "openai-directory",
