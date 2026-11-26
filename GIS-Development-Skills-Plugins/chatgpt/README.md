@@ -1,7 +1,7 @@
 # ChatGPT (`chatgpt`)
 
 - **Plugin ID:** `ahmadibrahim4geo.gis-development-skills`
-- **Version:** `0.3.5` (`7c0eb7da684c2670d5e020cbcc6c3b9f6de751bd`)
+- **Version:** `0.3.5` (`cb46a75f15026752760e0e489f4ec4520bffdd7d`)
 - **Phase Status:** `ACTIVE_P09`
 - **Manifest:** [plugin/plugin.json](plugin/plugin.json)
 - **Parity Report:** [parity-report.json](parity-report.json)

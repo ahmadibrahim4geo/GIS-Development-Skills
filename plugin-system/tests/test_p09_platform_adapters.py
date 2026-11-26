@@ -244,7 +244,9 @@ class P09PlatformAdapterTests(unittest.TestCase):
                 ),
                 encoding="utf-8",
             )
-            with mock.patch("shutil.which", side_effect=lambda cmd: "/usr/bin/cursor" if cmd == "cursor" else None):
+            with mock.patch.dict(os.environ, {"GITHUB_ACTIONS": ""}), mock.patch(
+                "shutil.which", side_effect=lambda cmd: "/usr/bin/cursor" if cmd == "cursor" else None
+            ):
                 res = pipeline_mod.run_pipeline(
                     copy_root,
                     mode="full",

@@ -1,6 +1,6 @@
 {
   "bundle_name": "gis-development-suite",
-  "content_sha256": "91a344c3a30a39caabbdedff4dbdb3aa9d656bacff8804e42770fc7607faf4f1",
+  "content_sha256": "44acd55c02251477fb3064003390c0d179a81c6eb8d7dcc32628eb71f259c6a0",
   "entrypoint": "SKILL.md",
   "excluded_directories": [
     ".agent-development-log",
@@ -16,23 +16,23 @@
     "node_modules",
     "venv"
   ],
-  "expanded_bytes": 6246647,
+  "expanded_bytes": 6200362,
   "file_count": 788,
   "files": [
     {
       "path": ".github/ISSUE_TEMPLATE/bug-report.yml",
-      "sha256": "1e123af6b19a1902b50e9dd544040231c3160ad06a4ddd87b0d12e78f4ffb403",
-      "size": 1187
+      "sha256": "0b3968f5df8f686b0d69dcef25700b2b0243c49b21ee06e669b364073b1c4d96",
+      "size": 1147
     },
     {
       "path": ".github/ISSUE_TEMPLATE/feature-request.yml",
-      "sha256": "a060b512c777552344d08bf5f350d0796af30c0b933bd91ba101e018ad10b50e",
-      "size": 906
+      "sha256": "ff46808f7e67413874b043e4d4a49f797fe04fdbe1b431550dd95533e9d8f8fd",
+      "size": 880
     },
     {
       "path": ".github/ISSUE_TEMPLATE/new-source.yml",
-      "sha256": "0813ea3191de58804d86905d715ddb6cb71990e080b6724b45c17416535ec76e",
-      "size": 630
+      "sha256": "a49da1c9ac6d6fa01a615e98d09cfadf7b08a15a80e93ed7f6656477368fcbd9",
+      "size": 608
     },
     {
       "path": ".github/PULL_REQUEST_TEMPLATE.md",
@@ -41,8 +41,8 @@
     },
     {
       "path": ".github/workflows/monitor-services.yml",
-      "sha256": "302580f7390dedc5991a253043468fcf80a92a24efc53dad768cdc8741d40df1",
-      "size": 817
+      "sha256": "21e49f07d61ec2ebb23b1262d69bfb834bd3436c4d9b15ac2c5a57b661c774da",
+      "size": 791
     },
     {
       "path": ".github/workflows/plugin-build.yml",
@@ -61,8 +61,8 @@
     },
     {
       "path": ".github/workflows/security.yml",
-      "sha256": "49704bbd426f3bfc4c4fb49cf23dbeeb1d9de0ad68291d3d43c5ac5d5dda7ba0",
-      "size": 1438
+      "sha256": "5fe8bf90c2aa4ffaaab06ab2f1c757a25a255d038fe1e354d8b0f955be720c58",
+      "size": 1401
     },
     {
       "path": ".github/workflows/validate.yml",
@@ -71,8 +71,8 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "b9c4ed53036d036bb647b4def92a0801ef8988a452eb86d01020894f804c16b6",
-      "size": 742
+      "sha256": "4f11a720f26cad7518020ede54da1560a9ab7cebaab03bad775a0d9f352133cf",
+      "size": 710
     },
     {
       "path": "AGENTS.md",
@@ -81,8 +81,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "e44e892533d278db91a8c3bff40547d08d3d2f92ba1d263f8ca7e7bde9f80697",
-      "size": 42931
+      "sha256": "c8c45e146db5273f1954078e0da61fa69dbb3c06c5eab8dd227ab88cc55d3e9b",
+      "size": 42617
     },
     {
       "path": "CLAUDE.md",
@@ -91,33 +91,33 @@
     },
     {
       "path": "CONTRIBUTING.md",
-      "sha256": "ffbea9b81ee01fe49c4cbb7cfa3c876cd420387a3213ebed1f37fde4125fab0b",
-      "size": 4106
+      "sha256": "5308baa3fc4b2781ce4be5f43722339016d870b0265ad990812ed47b09c77361",
+      "size": 4064
     },
     {
       "path": "LICENSE",
-      "sha256": "b9c6c5df88376dffbe6c93f682ca64629e0f5c7bcad08e03390e198fd10ee176",
-      "size": 1089
+      "sha256": "563f947018b70ce3e26a5491c5880ed904c141d32ee500bd41998f19ddf56841",
+      "size": 1069
     },
     {
       "path": "PUBLISHING.md",
-      "sha256": "a196885731792563c536ad81b701a0b6026317ae61570406d2e1b5a4c1ac597b",
-      "size": 6098
+      "sha256": "6282a5a5dd703c79fbb8080a39b079718ee54d2c80de0c0754ebdd8b894b7ff2",
+      "size": 6014
     },
     {
       "path": "README.ar.md",
-      "sha256": "a83c2863ed780284a0a388dbf1bc5af53ec556f09275f107f8531535652cf5a5",
-      "size": 73356
+      "sha256": "d95d399bf7e46fed1f741a3e499f03a5594433fc81390ccd4a3a8c0f9ca4905e",
+      "size": 72882
     },
     {
       "path": "README.md",
-      "sha256": "32085038aa9010670d649da3f39ea964b17c0d9ffd4acfd781ba7412800b85f3",
-      "size": 66411
+      "sha256": "3ff04ba5a1e13899ed14c819940dbd63e0b84f4c7a182b9b8432c299242c4637",
+      "size": 65810
     },
     {
       "path": "SECURITY.md",
-      "sha256": "8d66e7dba0ad3b4af8bc9f287f3985dc72930e659c02963633fb358602514220",
-      "size": 1759
+      "sha256": "c2d8ac0431a91a4f95f724088d63502867cabeb33f2e57e8747a92e230be4e8e",
+      "size": 1733
     },
     {
       "path": "SKILL.md",
@@ -126,28 +126,28 @@
     },
     {
       "path": "assets/README.md",
-      "sha256": "6ea69bc6c29b826d8564eaa4c37920f6e3693fd9c32db8c400132280ff9c012c",
-      "size": 674
+      "sha256": "bf3eff5333c5b749bb3ae12e4a2bedf043c2c189c5d3f29e6ec75e3760e68e2a",
+      "size": 663
     },
     {
       "path": "assets/brand-refresh.css",
-      "sha256": "698601874177962ddb30f9be7c1bcd70749da181863fb2f2b68274da9749e6fb",
-      "size": 26894
+      "sha256": "0957155fc84f4e271352c920d8a0e27825776606da26b61d7128d0a423bb5ae4",
+      "size": 26549
     },
     {
       "path": "assets/brand/README.md",
-      "sha256": "aeb2505a5fe35556d0cdcad8a670cc093e670556f3d59615453e77f29fd52fe9",
-      "size": 1281
+      "sha256": "fc155f00f973ff825d3fb633ca64e2cea66a21cd19c3d3b6fdc9f9f7c40eae32",
+      "size": 1260
     },
     {
       "path": "assets/brand/banner-dark.svg",
-      "sha256": "1c0183c347aafb1f7bd35fdfb75c20f062920bacaba020202dfc2576c0945e27",
-      "size": 4385
+      "sha256": "bd79ed5e38b617f26ad681be8fc3685f632ed75352405ec628292676d1eee17a",
+      "size": 4349
     },
     {
       "path": "assets/brand/banner-light.svg",
-      "sha256": "3f2ecaa513f9ee03da6f45bb202afdcd35660c25ca4a7d34bcbb423445afbeb5",
-      "size": 4385
+      "sha256": "b8aaf77d862e8a7e2592bb473d2d3ce5ffb2622ae270e879bdec85820f9f858a",
+      "size": 4349
     },
     {
       "path": "assets/brand/banner.png",
@@ -156,8 +156,8 @@
     },
     {
       "path": "assets/brand/export_png.py",
-      "sha256": "37b236b5c7264060cbd8a8eb842ed94d6c2298081d44f43bf271ca513b3a6fc9",
-      "size": 1621
+      "sha256": "4fae24431bb9b8b3b751d39c510d9c62e118139d188cac5b5e24c8307f014d51",
+      "size": 1571
     },
     {
       "path": "assets/brand/favicon.svg",
@@ -191,13 +191,13 @@
     },
     {
       "path": "assets/brand/palette.json",
-      "sha256": "043a71e993ada86db922122f0f38f4c7034c82e7ff5d13bd7189263bb85462c6",
-      "size": 415
+      "sha256": "9f0a7a702fbdb1348ce5401b767ed2aee07cd08c2791ecc1d87220ebd875a081",
+      "size": 396
     },
     {
       "path": "assets/brand/showcase.html",
-      "sha256": "bffd411750bfcdd6ed7be86f97418a2d646babc3073b2cf79a6d7800f3ced0b1",
-      "size": 4935
+      "sha256": "377a24c874fed836778776d10b1dcb3a38581db60577c669aa718e43bd89458e",
+      "size": 4877
     },
     {
       "path": "assets/brand/social-preview.png",
@@ -206,8 +206,8 @@
     },
     {
       "path": "assets/brand/tokens.css",
-      "sha256": "f853ebab7b9b34e66558bfbf486c29f91cf9de30d25f0222d2b4c4d7a5b56770",
-      "size": 223
+      "sha256": "a12ca8f4ac86c67fc08ac9f684a0e65c8b119ddf1a2574d70449f587134d4ed5",
+      "size": 214
     },
     {
       "path": "assets/gis-brand-lockup.svg",
@@ -216,8 +216,8 @@
     },
     {
       "path": "assets/home-redesign.css",
-      "sha256": "456d52a3d92e57258e22c0a233cf2c38e7591c27d93b47b8ed9ec381a89981be",
-      "size": 15457
+      "sha256": "31adc35bfe480ac2df9cdcfa98978f7e7a0ab8c2edc0899774a47c3c6617604b",
+      "size": 15297
     },
     {
       "path": "assets/icon.svg",
@@ -226,8 +226,8 @@
     },
     {
       "path": "assets/interactive-hub.css",
-      "sha256": "c30fe8cce876806eaad6ce18a52b104437a98372f19eb80a6dffec0fcfd0864d",
-      "size": 46739
+      "sha256": "606d2039b3eba1033edc88b63d4e81883f0370abb3b107a0ded338afd0dd4cc4",
+      "size": 45137
     },
     {
       "path": "assets/logo.svg",
@@ -236,8 +236,8 @@
     },
     {
       "path": "assets/premium-layout.css",
-      "sha256": "f598eef881a0cd26f7972ac6b7fcbafcbd72d93802d085bddeba71eb303152a0",
-      "size": 7029
+      "sha256": "f57589ac1c00f5c858e54acc386b5a09b332fc78cf8c575c96a6742ff9bc2958",
+      "size": 6952
     },
     {
       "path": "assets/readme-apis.svg",
@@ -246,8 +246,8 @@
     },
     {
       "path": "assets/readme-banner.svg",
-      "sha256": "1c0183c347aafb1f7bd35fdfb75c20f062920bacaba020202dfc2576c0945e27",
-      "size": 4385
+      "sha256": "bd79ed5e38b617f26ad681be8fc3685f632ed75352405ec628292676d1eee17a",
+      "size": 4349
     },
     {
       "path": "assets/readme-desktop.svg",
@@ -276,8 +276,8 @@
     },
     {
       "path": "docs/ARCHIFY_INTEGRATION_2026-10-27.md",
-      "sha256": "377dd7ce9fe4fdf87a90b6e151652ac9778e00414aee761295f477702e83b8c3",
-      "size": 3963
+      "sha256": "a22ff4c47bfaa6c95d0847cce04e04f72b91d75355ec842c908d57fae6177c67",
+      "size": 3927
     },
     {
       "path": "docs/ARCHITECTURE_INTENT_REVIEW_2026-11-05.ar.md",
@@ -286,23 +286,23 @@
     },
     {
       "path": "docs/ENGINEERING_UPDATES_2026-10.md",
-      "sha256": "43f8a9e1642e5c9b1cc5064b3ea02271c996cadcef01c09a498ed10bf6fb0299",
-      "size": 7085
+      "sha256": "40383f68ed6946087ccddc5667a182944e44a358a4ce46278773a7e60be80f9a",
+      "size": 7028
     },
     {
       "path": "docs/GITHUB_ACTIONS_TROUBLESHOOTING.md",
-      "sha256": "bf0a775a00a64ab57e326a035e904c0df68af1f7b7ea2aba4ce2ebe91408a47b",
-      "size": 3581
+      "sha256": "3f5aedacfbaafbe9acd3a8b4996b6e8bdaf7eabe549485be492eb78377161c1d",
+      "size": 3546
     },
     {
       "path": "docs/HOW_TO_USE.ar.md",
-      "sha256": "e01c82cacff7f97a33b5f9083d682bd0b06be0f9daaade801ef30c6e5d746871",
-      "size": 14562
+      "sha256": "66ce44ffb57139d0e58adf4cb0634d256e1165ec82ead53b3e43e2ff9f8bbfda",
+      "size": 14441
     },
     {
       "path": "docs/HOW_TO_USE.md",
-      "sha256": "8b1434488c221ea508ac2e2409dee20d72a7d9df69d6e1340d3f42795fb5bbb8",
-      "size": 12043
+      "sha256": "394a95d435471e38d2aba43828f203f00d578799da03d8b6720ae39e3f89eebe",
+      "size": 11923
     },
     {
       "path": "docs/MOBILE_GIS_GUIDE.md",
@@ -316,38 +316,38 @@
     },
     {
       "path": "docs/PERFORMANCE_RELIABILITY.md",
-      "sha256": "65f592700f84d19af9680136ac089c4099bd616d1c4cf78af20ffba83f668a0d",
-      "size": 3340
+      "sha256": "7de7bca6f3d4ad575259e80d9dcef77db0beb45fb669e43c35f623d1ec61a623",
+      "size": 3299
     },
     {
       "path": "docs/PR12_CI_FAILURE_AUDIT_2026-10-25.md",
-      "sha256": "d832cd8212409bfbb993ef6be60f28163966c2d58242bfa6a6fdb75454dc896d",
-      "size": 12967
+      "sha256": "07979a4c387d25cadeea39f2ce178cc5a99be9349ca98494fdc26fbfbba92583",
+      "size": 12883
     },
     {
       "path": "docs/PR15_KML_KMZ_HISTORY_RECONCILIATION.md",
-      "sha256": "5d8d2a07b98e41507ce71656941643c44dd42cb5791cf37d4b6d5d7769df28dc",
-      "size": 2156
+      "sha256": "6ce9889ef23db058c9528d5c90719f242b4ef6dcb18eb5dc58bdd791cadbe033",
+      "size": 2133
     },
     {
       "path": "docs/PR25_DESKTOP_SKILL_RECONCILIATION.md",
-      "sha256": "3d2a6d27fe496f66780f4b971267ae2bfc1dc48abfc44b6c6bf25a92baf51297",
-      "size": 1708
+      "sha256": "932be57e9ae254da20687863d5beabe469205fe3c59b8e7b885cff9d6f72279c",
+      "size": 1694
     },
     {
       "path": "docs/PR27_GIS_SOFTWARE_REGISTRY_RECONCILIATION.md",
-      "sha256": "96218de79e327b60dad9b92b3e3186ede03358f6cd750cf200a12b91506f9c42",
-      "size": 2082
+      "sha256": "fa6cf9dcd09d861fcd6094a8d39a1f6d1b8c3b2db2a425e1285580ad488f266e",
+      "size": 2060
     },
     {
       "path": "docs/PROJECT_WIZARD_PLAN.md",
-      "sha256": "bb93dd190cb53c880d467b41174201eb66a8508365ace7c0b13d752c1e5559f7",
-      "size": 4496
+      "sha256": "e38a1f5cb4e8f879446bfd881b7d86316c9c3938f4c5c3d0ef455fcc9c577288",
+      "size": 4450
     },
     {
       "path": "docs/QUALITY_BENCHMARK.md",
-      "sha256": "a0244b576da8a9903d912b7a7c1ffe15b5bb3f65533421b5f46e9e75e434c9f7",
-      "size": 3694
+      "sha256": "ebafc04e710c47855f4f8c498a7a6b5478ac87900287c112f8ac03fbd388b96e",
+      "size": 3662
     },
     {
       "path": "docs/RELEASE_CANDIDATE_TRUST_LAUNCH_R1.md",
@@ -356,18 +356,18 @@
     },
     {
       "path": "docs/RELEASE_READINESS_AUDIT_2026-10-26.md",
-      "sha256": "41a9103cb472290090f5d5c8f3b780b7a07d2d2b71e908f21509fff08b9ba027",
-      "size": 8110
+      "sha256": "530a2279ce6c2e621e435540788c6bd2d4a616564310c70776277534355527e6",
+      "size": 8037
     },
     {
       "path": "docs/REPOSITORY_SETTINGS.md",
-      "sha256": "8d266910c32dd30343607f8aac90ae625af1267f03aee2134014d85f7d6361a6",
-      "size": 3819
+      "sha256": "8b02c29b8c41f854785ed8d8d7b0a5365b55e7da428fdbe29c535e5a897f00d2",
+      "size": 3772
     },
     {
       "path": "docs/SERVICE_MONITORING.md",
-      "sha256": "54ba066d492ac2a41f435ea7febdf50f2238bedf65d1d42e51b3ae633042ae59",
-      "size": 1628
+      "sha256": "c7d686ddcb09fc87cf0e217f2719acfaa49284b462c1b1428c0917a261d85ae8",
+      "size": 1613
     },
     {
       "path": "docs/SKILL_DISTRIBUTION.md",
@@ -376,13 +376,13 @@
     },
     {
       "path": "docs/TECHNICAL_AUDIT_2026-10-24.md",
-      "sha256": "eeac6ff8589831268b3e5e33003d4e0091855b64802fd8a576c8f66d1c1feee5",
-      "size": 7096
+      "sha256": "39fe1165381e5dc8eec44507e0376f062e5c006f769d263791a8822e4987bac2",
+      "size": 7021
     },
     {
       "path": "docs/VISUAL_ASSETS_INTEGRATION_2026-10-27.md",
-      "sha256": "21a348a7a0c5b04e845e6f4decc1932e5ddce505ec94bad107fea27c68071443",
-      "size": 3769
+      "sha256": "7e9b18184810cffcec1accca3aeaed9d1c53b75a4ffd18422fe94dc65e9e35f8",
+      "size": 3743
     },
     {
       "path": "docs/WEB_GIS_GUIDE.md",
@@ -396,33 +396,33 @@
     },
     {
       "path": "examples/README.md",
-      "sha256": "7fc929f9bf104f2c48253440adc35b5fbeb185f9ddf8055f03be8884f3c53455",
-      "size": 3377
+      "sha256": "b61b5d74e0cf004aab99d53d815d8090c3a078b6a5a7f14d6f83861424c28659",
+      "size": 3343
     },
     {
       "path": "examples/api-ingestion/README.md",
-      "sha256": "35850717b0109e3d274099968ccf41f506d0ecaf0a02835a5875828a5dc04caa",
-      "size": 1022
+      "sha256": "0133ffce4099dacee887548e87c693eb3924bb8d66ad00a1ca6dcb066dfed1c1",
+      "size": 1009
     },
     {
       "path": "examples/api-ingestion/fixtures/open_meteo_hourly.json",
-      "sha256": "72d16b61e772deb8d648b456038b1f67d9ab658d08ddac84c64021916c8e84e6",
-      "size": 277
+      "sha256": "39780cc4aa26faad697df9c953100b490bd1122c048580c0d9d8f3771fa23127",
+      "size": 259
     },
     {
       "path": "examples/api-ingestion/weather_to_geojson.py",
-      "sha256": "315a7f00c201d8e3686f399912b68b4eba2c2b4483d0c443e4a836df73bfaa41",
-      "size": 3547
+      "sha256": "087c59011d364e3a5d9a0540c1c8d3be0b102d0061e2127fe5ceb2af47733d74",
+      "size": 3473
     },
     {
       "path": "examples/architecture-visualization/README.md",
-      "sha256": "57cbf87e298fac82e6dae86ed3d88c606ac3f7e258722b67a51743ed8289dfbe",
-      "size": 4523
+      "sha256": "483f4754da9575a7cf4270c1f507aa2c224cae5cb5fd283bb0be1f1af1274092",
+      "size": 4480
     },
     {
       "path": "examples/architecture-visualization/plan.example.json",
-      "sha256": "e1bdb9bfe86a412b06c34516dfdf5a36bb702d998f5b4007664e38a2f3bf76f8",
-      "size": 1609
+      "sha256": "4f23e29e8915a9d3097dd7555f4b3d24aa2f733111f163f3b5b5f92b9a77d23b",
+      "size": 1558
     },
     {
       "path": "examples/architecture-visualization/qgis-ribbon.flow.json",
@@ -436,38 +436,38 @@
     },
     {
       "path": "examples/architecture-visualization/skill-routing.delivery.json",
-      "sha256": "2d88f6d7b39e5e0f3f44340d3df2e7994d259043beff353120d489ee23cc85a6",
-      "size": 673
+      "sha256": "ceb8205b2aab14662cdb2f22adb591c66f9deccec7cf405d32c2e1b1f663b78d",
+      "size": 656
     },
     {
       "path": "examples/architecture-visualization/skill-routing.html",
-      "sha256": "eb56577c39a00016830ca3c69e7694777c2df6eb2da4243ec1e0298e95b4b624",
-      "size": 853377
+      "sha256": "4bbf8de29079f67dc0b28dea84c6c83acdd33e6889901e0a58bb8d09b34d8ba9",
+      "size": 838566
     },
     {
       "path": "examples/architecture-visualization/skill-routing.workflow.json",
-      "sha256": "0f10427cc364cdcae7f827eb5dd32961a9d4e17cf936e8e82588fbed18b1922a",
-      "size": 4014
+      "sha256": "ef19d5dc0327e013bb467a0db77e1bf7b51102ed3b9296fe68e1abe5b85bfb53",
+      "size": 3837
     },
     {
       "path": "examples/batch-export/README.md",
-      "sha256": "25ff8f4e19721400dfa46a815bc19c24b9fea82003c49d22401c5c95e9c5bcce",
-      "size": 827
+      "sha256": "5edf3b211e48715cd9d4b61ec172037bf097001de02c7d2487d1db1e33e9af37",
+      "size": 817
     },
     {
       "path": "examples/batch-export/export_layouts_arcgis_pro.py",
-      "sha256": "698ecbbace1112c495733781b0c47524503142f9be56e69c2f777ed1eff2c66c",
-      "size": 2331
+      "sha256": "3a49359a88a77d05f3961f100fd3105b8db934ed447a8cf90d6cdf91f21e7b1a",
+      "size": 2275
     },
     {
       "path": "examples/cartography/README.md",
-      "sha256": "daeb86c565c7075c4433a4dd72abd58b906322aed06c60c3cf74ff2afff60284",
-      "size": 987
+      "sha256": "92fdf04e99dad85903a6e231d9b3e919753964a823aecd849fe96ae9bcddfa51",
+      "size": 978
     },
     {
       "path": "examples/cartography/maplibre-demo-style.json",
-      "sha256": "c628092413083d8608cf4d468f4c21b3efc80b137c61a7e5a83841ab27ce99f9",
-      "size": 2903
+      "sha256": "fba2c7a772c63114e49a58a2ce35204f80c9d308fb1e7ff7f7a511d5b2e99b35",
+      "size": 2766
     },
     {
       "path": "examples/code-discovery/README.md",
@@ -476,203 +476,203 @@
     },
     {
       "path": "examples/data-catalogs/README.md",
-      "sha256": "ae74b67f8bfe50ef3b223a2c1f814f8bcb4285f89a0e22f645fa34226db750f8",
-      "size": 1057
+      "sha256": "0bc4ab372609202bcb0a595da96cd5cdc0a739e340baec499d0dac4cb4695242",
+      "size": 1043
     },
     {
       "path": "examples/data-catalogs/search_sources.py",
-      "sha256": "6cb2890b67b7db448582781860a6b4f4f32c7ff486210ce3dc883b9e9f3e3b58",
-      "size": 2464
+      "sha256": "e29e648df6ee2bcccf9f29aaa2940d74a8134c2664d8193090dee12f4a642dfe",
+      "size": 2402
     },
     {
       "path": "examples/data-flow-diagnostics/README.md",
-      "sha256": "618fefb390f5f7372b6b9f723a2e7a994be6aecd75c3ab73b98b89d89cd3cfb6",
-      "size": 1287
+      "sha256": "b85a0d0f763ee3afa8024211b0485354866af0d432fc30f4712afaca582e5b4e",
+      "size": 1276
     },
     {
       "path": "examples/data-flow-diagnostics/trace.example.json",
-      "sha256": "5f621dd68a0e4f20aec8b581921959626dada6083370efa2336ebee9583b5df4",
-      "size": 1471
+      "sha256": "597638fb4513efe4bdceaf053a2f6027b46bfcdd2b2f72377f4d2887476654b8",
+      "size": 1399
     },
     {
       "path": "examples/desktop-e2e/README.md",
-      "sha256": "4bcf7eb33cdbda65488d5f290ad2f5c962d16c08f033b26e8ae1b9e67a1a3541",
-      "size": 3113
+      "sha256": "150e0ea331e2ca641a225b74bf320865338b90573cbf7c356e2e76ba5af3d3f8",
+      "size": 3071
     },
     {
       "path": "examples/development-journal/README.md",
-      "sha256": "320a162ba6b44b52aee28371726d18129c83f2872c0d72b350a196ad403c4333",
-      "size": 1746
+      "sha256": "b8733a5f878325a8a13332e5c07ea8edc01fef8a8cf80bddacc19cb49570c1c9",
+      "size": 1729
     },
     {
       "path": "examples/device-context/README.md",
-      "sha256": "4e7675255c47009035b7f5dc268f0ffaabbdbf78ac7536fcf862afc75283b55b",
-      "size": 1377
+      "sha256": "a63cd451d2f9bffe2342ed7b65175fdc21a7280dd74c8cf6a228603f02bd0a4b",
+      "size": 1364
     },
     {
       "path": "examples/device-context/device_context.py",
-      "sha256": "e8b5f006f9b68393cb3c43f05a3623680e52d2ff0acbb74b4fc6623f6d482ab1",
-      "size": 2507
+      "sha256": "c129aa353113a23e43e51731c99eab3e97619323222a31bf3d5b6eb1c383d496",
+      "size": 2454
     },
     {
       "path": "examples/engine-selection/README.md",
-      "sha256": "ed00d1b6ba35c995c919e49bfc102dcc563749541d2f36ce625035e05f050d36",
-      "size": 520
+      "sha256": "32d09000f511a81813020d38d8f358b783565f74c89800ae775e422238799c72",
+      "size": 516
     },
     {
       "path": "examples/engine-selection/arcgis-inspired-ui/README.md",
-      "sha256": "d6047322833ea8af2b39a9a5b0e203cf0b139f3a977a7a8a4cf4f31902aad5f0",
-      "size": 310
+      "sha256": "92f4fa80ee31143b30e7c51c874100730ed6a7050d15948bf930cc141806ebc2",
+      "size": 305
     },
     {
       "path": "examples/engine-selection/arcgis-inspired-ui/command_mapping.json",
-      "sha256": "ceddb6b92a6ed9ca96b1612d42d4727a4ad576ce68def56d7a072a27fbe3092d",
-      "size": 768
+      "sha256": "50983871b8979f666856fbc51a7892cee42b7a7e0c80ffe5a3c540c0572cc6ab",
+      "size": 739
     },
     {
       "path": "examples/engine-selection/arcgis-inspired-ui/expected.json",
-      "sha256": "c5cbedc5bc9a49bc6a0080a4e129b7fe6703b8b44ea946555fc83c77471f8013",
-      "size": 357
+      "sha256": "b9c3bb87b79c817fc730581262aff4bfe53684917fe5612103c07318afa7766e",
+      "size": 342
     },
     {
       "path": "examples/engine-selection/arcgis-inspired-ui/request.json",
-      "sha256": "38d3a664f3486d8fd8d91ee52185714284c652dfc612a4e43572cc95ba26a0d0",
-      "size": 791
+      "sha256": "9038eb2fb1552ad3e090622db21e6ed3a945fa49407b59d675d16afc516bd51b",
+      "size": 757
     },
     {
       "path": "examples/engine-selection/city-engine/README.md",
-      "sha256": "c541eb11fca6cc794fc91b77dbd18545ba4fefd14bec6be463c4c3ef31582a2e",
-      "size": 296
+      "sha256": "c92aa62469cb0d89d529f71b19e5f6918c554211b82967b5f08613c1f179c5eb",
+      "size": 291
     },
     {
       "path": "examples/engine-selection/city-engine/expected.json",
-      "sha256": "dceee77440c9d91c09d63960934eb3d13ec90cfe903c2bf01c991fd4c2ce6a90",
-      "size": 232
+      "sha256": "6a799be00b094cc8a4cda062f88e5dbf2d3f0c4d639c7017b3b35bd6a27f6cbe",
+      "size": 222
     },
     {
       "path": "examples/engine-selection/city-engine/request.json",
-      "sha256": "8b0cc240ccb3b49823d5b9c652c5528f7b4cec20565473ecf307a75ccd09df6d",
-      "size": 683
+      "sha256": "4d772e049aff50597ee5411c418d8a9b31c0795e6eef64d42723598c4902c648",
+      "size": 653
     },
     {
       "path": "examples/engine-selection/crs-conversion/README.md",
-      "sha256": "f683ac2018c88313d983c526a6d5fefaf354ad47a21ea54137b0046bcbbc5301",
-      "size": 302
+      "sha256": "2bd15362f5ed30135a6970eb2aa9677ecfbf0a62cb84c6c941b1352f5139b0c3",
+      "size": 297
     },
     {
       "path": "examples/engine-selection/crs-conversion/expected.json",
-      "sha256": "53bae6d768d590ab409b01e823d167205cbf357f1ab1ccfcdc4844dffecc1c53",
-      "size": 144
+      "sha256": "4c6ff278c1b2446e663a13f7684cfb92e6deb6d00132e1e6315ff42df1382369",
+      "size": 139
     },
     {
       "path": "examples/engine-selection/crs-conversion/request.json",
-      "sha256": "0b34f423ae812631af0eb4e5fd6f76eb584fef3adc292dc43cc7b939b885e62d",
-      "size": 540
+      "sha256": "e0d2a1115bcca3f09525bcaf0f800abe30dd845eb98633db2d71d500940c8443",
+      "size": 516
     },
     {
       "path": "examples/engine-selection/mobile-web-gis/README.md",
-      "sha256": "84bb53dfd5684263cccb238b643049e4a97d0539ee0bfa5e731a93afdda4f92b",
-      "size": 302
+      "sha256": "6314956579eded8dda42b523d056d6dcdf5cf6cf8d8b5653c37c4364ca779f33",
+      "size": 297
     },
     {
       "path": "examples/engine-selection/mobile-web-gis/expected.json",
-      "sha256": "95bf1233d2ce0a91384b886645b088a6c5636dfe0e91f00b782af17368e697be",
-      "size": 119
+      "sha256": "7283b56b39f63eadf391a47836b79276a7f8066bebc70e86ecb03143c34e8758",
+      "size": 114
     },
     {
       "path": "examples/engine-selection/mobile-web-gis/request.json",
-      "sha256": "402193318cfa7a89d5e799917c869fa249c47b5c4d0fc51fc07c4e47022f3eeb",
-      "size": 613
+      "sha256": "e5354acef20c85326d42c6bb538e3e66781de163cbc96b945453cc3dbad0b7bd",
+      "size": 586
     },
     {
       "path": "examples/engine-selection/qgis-fork/README.md",
-      "sha256": "2c7503a30bd1af4115f35fd7ae279ce814c54e4fffd5a68217f365f7a1cfb187",
-      "size": 292
+      "sha256": "e829793a156325806327c4642e535565a52b3ec442ed34abd682ca5ebabe63c5",
+      "size": 287
     },
     {
       "path": "examples/engine-selection/qgis-fork/expected.json",
-      "sha256": "1cecceda23b951eb4363fce310580cf0256ca90a75b79029e9498aadbc14d0fc",
-      "size": 500
+      "sha256": "d78bc5f45bf6e62de3fb0153b79b456191a3620497c097ecd326549a96a366b9",
+      "size": 482
     },
     {
       "path": "examples/engine-selection/qgis-fork/feature_retention.json",
-      "sha256": "01a5e3a0cac3a8b5dd1ea7d37fbe5864371c8da8cdf491f79a4be8202072ffbe",
-      "size": 914
+      "sha256": "4cca35d7050ee05a19f2150e878dbe2f71bf3848df13c60d323ca7f4cf3413cc",
+      "size": 875
     },
     {
       "path": "examples/engine-selection/qgis-fork/minimal_qgis_subset.ui",
-      "sha256": "d10e2d65a80b494d01876eb6d62dbebabf546c6c7c2a7facb9966106da77424d",
-      "size": 1264
+      "sha256": "c10b547ab55ea7f612df836b0ec364cda3da0b07890197c5ce9b7056323bcd4b",
+      "size": 1232
     },
     {
       "path": "examples/engine-selection/qgis-fork/request.json",
-      "sha256": "b6b6e4ee1e31da667048117d941e0ed0d0cf1383a405b32e80f7dc4a42dda29a",
-      "size": 786
+      "sha256": "f1cbd0f1bb5d4b1e9bd01a89248d8b42212a19f3d20e340beb7e87023fdfdc4e",
+      "size": 751
     },
     {
       "path": "examples/engine-selection/remote-sensing/README.md",
-      "sha256": "9199c16fe5b397dfb4950aebe541a9e044d8b4ab19d62d757f633b56f1325a91",
-      "size": 302
+      "sha256": "804cc3a12824b71ed92fbbe867274f1d2ef75d5d5ba591349622d3eeb04c57dc",
+      "size": 297
     },
     {
       "path": "examples/engine-selection/remote-sensing/expected.json",
-      "sha256": "c653a3b93120c9493086bae23cd8609469f44b8aae46bc80e2aa79a1db30a7e8",
-      "size": 179
+      "sha256": "10c1f1ddfcc7d3bb0499dd50df23d895fbc6fbdbe69597c68b525b0ff2cd00fc",
+      "size": 170
     },
     {
       "path": "examples/engine-selection/remote-sensing/request.json",
-      "sha256": "198f2c032b35fbfbdb468d92fa8916a3bdbb8fd61804235c8633249ddf6666e9",
-      "size": 558
+      "sha256": "610945c7ee232e996961d6af279c5f2074e6a1a9fa33f2efa3c220f320b8f038",
+      "size": 533
     },
     {
       "path": "examples/engine-selection/standalone-qgis-core/README.md",
-      "sha256": "8b26fb1a4ee6b46de04d6330987a45cdb59bcc52e1f4de4ba264c7d50facd651",
-      "size": 314
+      "sha256": "472719ad7aede48fa6060c7c7aef372b01666677c1c4c132a40a79ca2da10a50",
+      "size": 309
     },
     {
       "path": "examples/engine-selection/standalone-qgis-core/expected.json",
-      "sha256": "701a5b64dabcbbde10092b293931d5a89be49a41de7fc3f342267c431ef34f80",
-      "size": 244
+      "sha256": "b3b0ecbd10047d36acd9751188a1d65cc1ca34b697ba3b4498396a82c092707b",
+      "size": 235
     },
     {
       "path": "examples/engine-selection/standalone-qgis-core/request.json",
-      "sha256": "e7da2419727113a03361352ac067838992f99f98ed92c79da66aeb7ff24cb7ab",
-      "size": 786
+      "sha256": "5e1c49987edbabb7176c3eae90c1316f6746797edc7c0707782738767771654f",
+      "size": 750
     },
     {
       "path": "examples/engine-selection/virtual-globe/README.md",
-      "sha256": "ec98ebf61de9c260739e233dc72fdecfdcdb631c2c7a394ae9760378d204eddf",
-      "size": 300
+      "sha256": "d0e6bba2ea6c1419ac49d1bad6d03967d78c71ff2123821accea9dc39f16c9ab",
+      "size": 295
     },
     {
       "path": "examples/engine-selection/virtual-globe/expected.json",
-      "sha256": "623b0e5cbf5d90af3c374269c855203b7b202eb7e78aded1044e9c1ecf745008",
-      "size": 276
+      "sha256": "bb31b0663d70b1c0ace3c23c8d431ba08dfbb701ecc5eb65ee99a35a14446c62",
+      "size": 261
     },
     {
       "path": "examples/engine-selection/virtual-globe/request.json",
-      "sha256": "84c0d71298f5a9468b786ef26fee7b3f7f6d936636d6abfeb9c8d94a93d1844c",
-      "size": 736
+      "sha256": "698f254fa005686a6523817e5dcc7dc5a1d5101518932578c35617ef5f003afb",
+      "size": 705
     },
     {
       "path": "examples/gazetteer/README.md",
-      "sha256": "c5ce339be5ece67e5106d1280c45297cbb98c195a7d32795d6537116ae395cfe",
-      "size": 1433
+      "sha256": "afaf85cd4d64f86dfce4f47f23cdc748c4a615d79a789c9e6c7d8f17bc4dca07",
+      "size": 1418
     },
     {
       "path": "examples/gazetteer/viewport_labels.py",
-      "sha256": "088474d73d3183c05aaa627cd3767a2ff634964afb69496f78853d29ee1eaf3b",
-      "size": 7184
+      "sha256": "e20a00529c1368cf4e05b177651276a0b516cb97f2d0df8b1e8fcc90bac15b94",
+      "size": 7023
     },
     {
       "path": "examples/geocoding/README.md",
-      "sha256": "b05382bcbf1aac3d2fc1834464f05602bd55945d3835c44760b3307563bf0c2d",
-      "size": 1489
+      "sha256": "9b1eb5230291fc100242e98a25c700aae31a8f943dc7ed44958ba6f743e23fc4",
+      "size": 1473
     },
     {
       "path": "examples/geocoding/place_search.py",
-      "sha256": "bb710b70c8f3b648d2c0575cb8398edfaee2ffdfc8455579d90b3427333a4c31",
-      "size": 5686
+      "sha256": "9d4df00c5cdd575c93a395ac7a0a39cedd6effd6c9476838a93b5115b541e715",
+      "size": 5560
     },
     {
       "path": "examples/golden-qgis-coordinate-audit/.gitattributes",
@@ -731,78 +731,78 @@
     },
     {
       "path": "examples/icon-manager/README.md",
-      "sha256": "d8ec9d8978d948dff436a696c49a342cbc561503c89a55e9f80104fdcabc0421",
-      "size": 2342
+      "sha256": "b908128df69bc5218d67c33c38773e0ce1532e0df233a499307268b8cfe74695",
+      "size": 2323
     },
     {
       "path": "examples/icon-manager/export_new_kmz.py",
-      "sha256": "da06c2b926961a02d833ffe64ec0d31efe96a8813c5f0d5f6da45e3cef7c5914",
-      "size": 7647
+      "sha256": "d553bd65cc9878dc4a723509be299da5c17f4e860ca0d92514f0d28ffd3f23f1",
+      "size": 7473
     },
     {
       "path": "examples/icon-manager/index.html",
-      "sha256": "07c980109f4f63da947a82e39e57773729fdf8d052b861971bdf1562503e96ab",
-      "size": 13001
+      "sha256": "98839efd83afc9a6e615acd485e92fd76fdcbdced76ea2ab4be98d37d123fe73",
+      "size": 12869
     },
     {
       "path": "examples/intent-orchestrator/README.md",
-      "sha256": "35085051e74eda1db05a92697d3cc7725160bb77ee5b8f0715cbf356115754ab",
-      "size": 2652
+      "sha256": "bc29b703bb09efde87702399ad09ad3858ae1b241c9bcdd2d414e9b496536bc9",
+      "size": 2622
     },
     {
       "path": "examples/intent-orchestrator/example-plan.json",
-      "sha256": "1b4039d83299acecd5b69374f4ec0089e294f6f2c5d5f95982444c7ad397676c",
-      "size": 4434
+      "sha256": "7a92a7c85523ea2306412bbf92c699289b8e53f3765bc13c092b30bf5a414029",
+      "size": 4321
     },
     {
       "path": "examples/kml-kmz/README.md",
-      "sha256": "4783bfdffc05a05fd7323c4e2a42aa37d3d1a7c1a2fdb8f066358dd4d3c681e6",
-      "size": 1209
+      "sha256": "e3a7cc5605318c64b7fb630d7b7f65182f4f13deb140e7ffc4a860780a8d7ce3",
+      "size": 1198
     },
     {
       "path": "examples/kml-kmz/styled-roundtrip.kml",
-      "sha256": "c6be866d50fa05882109502962b9cc80033e8ed591081e9421a2ae7ee27f6716",
-      "size": 2802
+      "sha256": "035d8cba6ad8d7bff829ef59451aeefa833d1b33bf0522356bca43464602a000",
+      "size": 2761
     },
     {
       "path": "examples/kml-style-preservation/README.md",
-      "sha256": "e6fb78de8113fd6eccc110ba6f8a00315e6224166e40b93bb20ea1175ae5bcfe",
-      "size": 1498
+      "sha256": "97aee7a1d8c873f1aa480cfe46fb7cac4605a0e481bf71092a0dc1c83832f252",
+      "size": 1483
     },
     {
       "path": "examples/kml-style-preservation/verify_kmz_style.py",
-      "sha256": "0301e9728b7502ad921290e38956531cfeef9d517beada91074593ff353384c7",
-      "size": 3624
+      "sha256": "43c0e5bc3b05cf21d1c38dee4fa7d09082a5ddae216d00ef17c590888a9090e4",
+      "size": 3536
     },
     {
       "path": "examples/mcp-tool-routing/README.md",
-      "sha256": "c86a73c36bd78a3d9fa8339f9b42da1a6e7bbda5c1f05824413cc28fb58f4abb",
-      "size": 951
+      "sha256": "0c4c43d68014c398f0d5493e5ef6f599d6e35f82072f02b0ac58802afca49335",
+      "size": 941
     },
     {
       "path": "examples/mcp-tool-routing/inventory.example.json",
-      "sha256": "41aa2eb13177bf2f83f8cf987eae4aaca309025fd8cb1bdf145ca6c391e39ae6",
-      "size": 805
+      "sha256": "4c4fc7f03b78e3d4a45d18e3ce2d25e15432e872538013137f465abda133e010",
+      "size": 766
     },
     {
       "path": "examples/mcp-tool-routing/plan.example.json",
-      "sha256": "15d4e32a8d78531d58c5cf032af3d4756c8fe5589ccb473a062744f63ef341a2",
-      "size": 2219
+      "sha256": "3ef7a54ee0cecd81741aa657f88bb35775352e9eabb7a4386fcffccffb1705cd",
+      "size": 2137
     },
     {
       "path": "examples/mobile-gis/README.md",
-      "sha256": "cbb35abaf398d0d2556021fc65f88d1f86eaeebbc0be10c5e5449bcec0a454cd",
-      "size": 2181
+      "sha256": "50cda7f1c24f19ff2e075e50906fe2ab332455968a26398e5f06ee00292f9bdd",
+      "size": 2166
     },
     {
       "path": "examples/mobile-gis/device-acceptance.example.json",
-      "sha256": "05e2e8c3dae092baff2806737e4ac58bcd7cda702bb923c776cf9be760a69447",
-      "size": 829
+      "sha256": "ba9437736e5db94d0b130bc2465e852a74967eb7e96974fe52e40d5fbb17c2dd",
+      "size": 802
     },
     {
       "path": "examples/mobile-gis/offline_sync_contract.py",
-      "sha256": "92bbc4d412d765423f9b48ea1943ea7aa1acd97f6124a19727315bb1d6961ce7",
-      "size": 4159
+      "sha256": "872077bea4f59f6f66f08485e157e01a748f75a3fcef9e3fdc91817ec8732811",
+      "size": 4059
     },
     {
       "path": "examples/mobile-gis/shared/mobile_field_core.py",
@@ -811,653 +811,653 @@
     },
     {
       "path": "examples/mobile-gis/templates/MOB-01/MainActivity.kt",
-      "sha256": "1fa6af141df8ae158e272e8653c0a977a72a407397da4cc57621f335d8f0fc48",
-      "size": 399
+      "sha256": "096cc2a7c929e73bd81e05c0e4c06785a4e63f810b3773d9b3859d1db79886f9",
+      "size": 390
     },
     {
       "path": "examples/mobile-gis/templates/MOB-01/docs/README.md",
-      "sha256": "dfdb41f6614fa85bdd3e0af8f29fb047590ac22846d380e78c81ec5343413a46",
-      "size": 327
+      "sha256": "3848a23590c58c61a7a91d7b83817b1581bab108d6161f13889bcd49868e8b0b",
+      "size": 322
     },
     {
       "path": "examples/mobile-gis/templates/MOB-01/evidence/STATUS.json",
-      "sha256": "0146c7bc4518a5dc07ecbe5f19949e9fa2b58b9a2e39cf396148fd4a3a8fad02",
-      "size": 359
+      "sha256": "5f161a87f08f30f8dd58ee03ceced7113a0fe0b91f7b373dedcd36cc491a338b",
+      "size": 349
     },
     {
       "path": "examples/mobile-gis/templates/MOB-01/fixtures/README.md",
-      "sha256": "0972cd28947dac06da74fd45e67a58eff5778c18d3ec40536bf842ce3c21fe11",
-      "size": 306
+      "sha256": "8474ea55aec2851f26dfec359d3844b26ad92147d428ff5479c873a7b2f39156",
+      "size": 302
     },
     {
       "path": "examples/mobile-gis/templates/MOB-01/safety/THREAT_CONTROLS.md",
-      "sha256": "1dfd9f49f35e0981a7cb87479152dff2afba257eb28f86ed4237190205ec0ab5",
-      "size": 397
+      "sha256": "993fca6ef2e399003adb27080b1e676257322367543c31af2ef7d8c8f58bc258",
+      "size": 393
     },
     {
       "path": "examples/mobile-gis/templates/MOB-01/spec/template-spec.json",
-      "sha256": "8213550b3a40020ea94f007548eaa8e2be0aa595f7605e6f7dce1affc988fd86",
-      "size": 906
+      "sha256": "484d2b7ae246f394fa6418b25df72e74b5b740dc607a80269ce2c41abcecd07a",
+      "size": 877
     },
     {
       "path": "examples/mobile-gis/templates/MOB-01/tests/ACCEPTANCE_CASES.md",
-      "sha256": "5119993b8e7431328cdee9e97f98d5f268fc60bb4d4b4345e86b8ff269428715",
-      "size": 146
+      "sha256": "e363fd7090e9107f55592ba1aa8162fb9282fb21b1b34c98686f4b6b147afc34",
+      "size": 138
     },
     {
       "path": "examples/mobile-gis/templates/MOB-02/FieldCollectorView.swift",
-      "sha256": "0e7f279f4ae55ab15cce69a674047f380eecf7289b4aa3ed4ccfcaf48f599eb1",
-      "size": 314
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-02/docs/README.md",
-      "sha256": "e05b62d8efd45fd67864de5532f82e1ecc12266d7c926e61c202032b89d6e2b7",
-      "size": 337
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-02/evidence/STATUS.json",
-      "sha256": "8e3198338e1e9fac5c5239e7f1be51fc8fb5cd94abf3803ad33f720169e540f8",
-      "size": 362
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-02/fixtures/README.md",
-      "sha256": "36ca9cbad96af0b35ffa6c590b124932df231ee194c17739f130f47508c8366f",
-      "size": 296
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-02/safety/THREAT_CONTROLS.md",
-      "sha256": "0c836130a1183c6d0c9274fda4cceaafbd0208aa54160e2eda420eb55e5cf1c4",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-02/spec/template-spec.json",
-      "sha256": "096676d23a9d43191608053965a39892cd5950f1371f09645b4fd4c169b442a9",
-      "size": 926
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-02/tests/ACCEPTANCE_CASES.md",
-      "sha256": "8b8a67d3ee0cb570edc331e8f3359bf4a414ac55ecc616f1894c0d37f9e7ded0",
-      "size": 146
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-03/docs/README.md",
-      "sha256": "19552112b606fbe849a4ca7a1378c384c8badc5a4f12bd73de795b8e028e1373",
-      "size": 353
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-03/evidence/STATUS.json",
-      "sha256": "f525ff735e72b5490bd07aa26e05adcd7dcb193f703355add619ef6442f29929",
-      "size": 359
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-03/fixtures/README.md",
-      "sha256": "93f848a0cdd9c1d8c4a6769fd4dab13c367d74a55ec5004d9bbbb07be6d38a64",
-      "size": 314
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-03/pubspec.yaml",
-      "sha256": "bad4a2f7c8f3650b2297c60ac560ae087dd6b25578b3366f7dd69b5d38cf375f",
-      "size": 389
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-03/safety/THREAT_CONTROLS.md",
-      "sha256": "96b9dd59de79cbb9234ae370476709b1b74fd9ff2bd2ff509692769769e33916",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-03/spec/template-spec.json",
-      "sha256": "ded49e9d30032767784c6a51893088e3980c3f0eec829ea8e44a4a451bcb40b1",
-      "size": 1011
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-03/tests/ACCEPTANCE_CASES.md",
-      "sha256": "8411f74d5310a95a5151570b75071894ef28ebff44f90ce8e624b103834322ff",
-      "size": 146
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-04/docs/README.md",
-      "sha256": "3a7c79c675a5a94724ea1f6649428dd7243ebd0c532bf04a0305707fd5d40dbe",
-      "size": 341
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-04/evidence/STATUS.json",
-      "sha256": "c588e1f8af2aa74b4d295277814a47c2b708b7ed4b57aa957df40844ecdf04c2",
-      "size": 362
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-04/fixtures/README.md",
-      "sha256": "cf377497e73fa46510b6edbcb0f89a4b2092b48b322f23c3987c551fc5e6f636",
-      "size": 304
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-04/safety/THREAT_CONTROLS.md",
-      "sha256": "60e369236a03d239075dc8fbd3219fa1122966355ca41f42103e4ecbaa602239",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-04/spec/template-spec.json",
-      "sha256": "b2610e9ef679f2efd61f23f75e75f6a3d6c0e08edd5a7af165a502055a28cb5c",
-      "size": 980
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-04/tests/ACCEPTANCE_CASES.md",
-      "sha256": "451eeb5e900f6a55d308309bbfff8b68dabeb95137772b7bd817b2b238477ae1",
-      "size": 135
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-05/docs/README.md",
-      "sha256": "3ceade28da66391f916f62dc814183f8ead912b48666889f21389fb29d985232",
-      "size": 344
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-05/evidence/STATUS.json",
-      "sha256": "e81d192600f91d82a1543dacf0108d57110dfbeefae0d4a0f6755f412dd11494",
-      "size": 362
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-05/fixtures/README.md",
-      "sha256": "213f01c36aa60645a226173f462405cfda5f35bbdf8dc57d6afdb6d92a1a18c6",
-      "size": 303
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-05/safety/THREAT_CONTROLS.md",
-      "sha256": "92a6ace47b52b8d1f82d70a021fc5997881adc11ec08dd28ed72bf62eb9ef4aa",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-05/spec/template-spec.json",
-      "sha256": "2d191fe2bedf10f597a09bac745214e948b068f687a9d984a9886906b11d2796",
-      "size": 983
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-05/tests/ACCEPTANCE_CASES.md",
-      "sha256": "98a49ab14843c863de5b907453a4753d1972e04accbe0d2ef23fae891e724820",
-      "size": 135
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-06/docs/README.md",
-      "sha256": "323d9361c68e65e69f624d514e3b6564f10733f1edb4e0c928e6811d6202075b",
-      "size": 360
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-06/evidence/STATUS.json",
-      "sha256": "4a6cd14a3fed7d1f992648a75f1d8112ea1aa97c0a650f9e860b7ad19e9acab7",
-      "size": 362
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-06/fixtures/README.md",
-      "sha256": "ddbdc044026517c0bf360474a4ffdf5e476f0554e31a23ec57a4c1fc209c922d",
-      "size": 308
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-06/safety/THREAT_CONTROLS.md",
-      "sha256": "3ae2f5dfc02caa0d5beb104db3613aa2ad58b1fd7dc1dee2a413f6b60c6617ae",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-06/spec/template-spec.json",
-      "sha256": "3d4ce0c321c48ec8c8be362ecf5bde03e67a83281a5779f9c5867bd1deb212a5",
-      "size": 981
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-06/tests/ACCEPTANCE_CASES.md",
-      "sha256": "cf649a3ee2f0771ead4a1b80a3b10917abdade5a7d2071e98dfb5c081dcf07fd",
-      "size": 120
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-07/docs/README.md",
-      "sha256": "543ecd60b439d75e06ab19907889790dd5e36542a04bad5f51cdb0de19ce3c2c",
-      "size": 351
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-07/evidence/STATUS.json",
-      "sha256": "3b94ebbb0aa046c67a8dcafcd0380dfa291199fb7b245e5f1ddda2e4b4c45a0c",
-      "size": 362
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-07/fixtures/README.md",
-      "sha256": "4ddbd967696e406661f0e4ffb72c90be0423ca2b883cda0d9da09d4af1263b8a",
-      "size": 310
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-07/safety/THREAT_CONTROLS.md",
-      "sha256": "74629835203921d83df778235921f6f717f060ca0bb3b388fa4fc76a0f3faf17",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-07/spec/template-spec.json",
-      "sha256": "533d21896b453ab62e0756096e327123608c41e3f89dde55c2f710f0fac07b11",
-      "size": 968
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-07/tests/ACCEPTANCE_CASES.md",
-      "sha256": "884acb590d106923fdc8f9ea4a4c5b908e9dc7b18ab6a622dadf39516f27d90d",
-      "size": 116
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-08/docs/README.md",
-      "sha256": "db8ddb5b464364e27d0163b3c4127dd0ddbcec2bcde6d4392041d2a7ddabd086",
-      "size": 335
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-08/evidence/STATUS.json",
-      "sha256": "90d7bff4f3267ce440341c71005a9d8cd7ce041f6399f2f10e5f4cd159753a4a",
-      "size": 359
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-08/fixtures/README.md",
-      "sha256": "296876980a6e6004b66690bc8bf09533df35198378f8a07210ebbc28da562f1e",
-      "size": 299
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-08/run_gnss_logger_contract.py",
-      "sha256": "60ede55bc5a9c2c3a83eb8dce7564d7f16b1e5b7fd6d68c9a7cc091f0e53fb78",
-      "size": 1860
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-08/safety/THREAT_CONTROLS.md",
-      "sha256": "674620a20bbc6ca1093a2c7df8d64023c0e634a3d5e0ab01067ba71a2a25c4f3",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-08/spec/template-spec.json",
-      "sha256": "d76fbc0778ee2d3506ea5c0053fa8fcc3c9cca37699dbd3348d6fe6286e03a5e",
-      "size": 977
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-08/tests/ACCEPTANCE_CASES.md",
-      "sha256": "23cdfc5d33cd6a24e1fbd69d7b08ee8ef02f33bfda7469b8397db1330d36f956",
-      "size": 133
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-09/docs/README.md",
-      "sha256": "124ca79e75919d9b4b6aaef412e75e8ad26450389a275264d8f68a4808fb9707",
-      "size": 346
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-09/evidence/STATUS.json",
-      "sha256": "a7922dbab02e860ad47901dda369a6b5a074008012cbbeeba0c79345ff0af51f",
-      "size": 362
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-09/fixtures/README.md",
-      "sha256": "28e368e623f55170b75d9025309ea0c40b75f61d2f3050ddfa2a251a6d63d51c",
-      "size": 307
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-09/safety/THREAT_CONTROLS.md",
-      "sha256": "88a8c9186c5d291571b530080fe84a2b86bf7587be99be314dcf7c724b7ed42c",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-09/spec/template-spec.json",
-      "sha256": "0ef62361bee8329247d19da32637c684e28420a9473d7b73f397f5ce2e8f0010",
-      "size": 965
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-09/tests/ACCEPTANCE_CASES.md",
-      "sha256": "89082b52dbf5de689595fb27053819a1866370949cab76bc8463ca31cc482a55",
-      "size": 118
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-10/docs/README.md",
-      "sha256": "2b037922fdf0fe809ae11deb53a1a3fa6023248c3ac18c4804d0239e71bad9e7",
-      "size": 339
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-10/evidence/STATUS.json",
-      "sha256": "78746a5f71fd10af016a6d85eee3444e62d810b0683a0f23d310eacf40670556",
-      "size": 362
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-10/fixtures/README.md",
-      "sha256": "9ec42a7579f4711b2250b5faaeeecc3282a78d6dfc94aeb9cde4d770fc8b3bdd",
-      "size": 300
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-10/safety/THREAT_CONTROLS.md",
-      "sha256": "c0079f4452331898d8ef6b9e4f82cd106c8ddcbcd8c23b7a6e1855aa4a8ccfd2",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-10/spec/template-spec.json",
-      "sha256": "3472afca92fb6b21f0bc4185ea2ddccbc52eb2e1698c10a7479a7fdaa361148b",
-      "size": 960
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-10/tests/ACCEPTANCE_CASES.md",
-      "sha256": "3b9e8ffa3a7a22dc5cad12f28f059287143628cfa1cdd583c5fe7bf2d90ebd4d",
-      "size": 120
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-11/docs/README.md",
-      "sha256": "4fe527b73fe1d27866cce3311d5acbaa836ed2f08879a7ebf13b7106526483d2",
-      "size": 349
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-11/evidence/STATUS.json",
-      "sha256": "02f84e9f3326593b39213efcc00894cb489ce5ff7c1ac7ce6d12417ea2ee9a74",
-      "size": 362
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-11/fixtures/README.md",
-      "sha256": "dc8a1238690001ec49cd74921126a31eb4ff13ecfc425ffdb1008c6eb2c0e6bb",
-      "size": 305
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-11/safety/THREAT_CONTROLS.md",
-      "sha256": "18ed25201e670ef39f92632e67d6e00a01d4b075591afabb9d056e7cb4dec65a",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-11/spec/template-spec.json",
-      "sha256": "6f0e9cd2423672b52551acefda09f607021963a3661d1b8561acc61a3d163ac5",
-      "size": 970
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-11/tests/ACCEPTANCE_CASES.md",
-      "sha256": "882b8e5b537c3a6c9049a02ae82b4ae5f22c9fa0399fd701fd3909163a38ec75",
-      "size": 120
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-12/docs/README.md",
-      "sha256": "6c3c26262274accea8ab3927890962e7e4da61be70a5b97d3f0a70d37238ac86",
-      "size": 343
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-12/evidence/STATUS.json",
-      "sha256": "73ff3e8fd1d0361100a919af7d77ddd76f5a53d6249f6695c6938a12866c097c",
-      "size": 359
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-12/fixtures/README.md",
-      "sha256": "7c2698fbdba39acc93cc333648202aaa0f58014836262dbbe838bb4cf83ee672",
-      "size": 303
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-12/safety/THREAT_CONTROLS.md",
-      "sha256": "4ba6016211c955fa0c929098e2872e87fd9d9fadd6a01c1fab31156a4ab02ce0",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-12/spec/template-spec.json",
-      "sha256": "c6b2faec287b7dcee123199e17db5b36ee6b9475bb5c0bdf797b688a12cad9f3",
-      "size": 970
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-12/tests/ACCEPTANCE_CASES.md",
-      "sha256": "96b5382ed75d0ebb4506b5a58dafb4127ac6e4591246c5a795a3d869d11f2e55",
-      "size": 120
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-13/docs/README.md",
-      "sha256": "5525cafc9bb9b2e61ea260818161b87d90153cd3a2d693d1185f2c9ee6213e78",
-      "size": 340
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-13/evidence/STATUS.json",
-      "sha256": "e9e928f55c57705af63c5fbb67318c30a0953d57568c617f8e9580154313ecb0",
-      "size": 362
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-13/fixtures/README.md",
-      "sha256": "01d076e624b3fefcb2324a6fdd8f1305d7d83cf4d469920db1adce0e49535292",
+      "sha256": "13d482533f9d827d0396ee8e43f1f46efd07095d9d1a1b5cf6324a68d87a7bee",
       "size": 306
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-13/safety/THREAT_CONTROLS.md",
-      "sha256": "885b8b99ee38ccdf1e1395891b30a59b602e6e0e8fb459ed4f1a9b627e76b732",
-      "size": 397
+      "path": "examples/mobile-gis/templates/MOB-02/docs/README.md",
+      "sha256": "041715f935872448683147355ab5910d8c6696495164c619c92858adfa800d9c",
+      "size": 332
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-13/spec/template-spec.json",
-      "sha256": "c0a109e89ff6ee6c071b5892e7f3816dba8074a8230e5f1251815fe42c7ebd19",
-      "size": 957
+      "path": "examples/mobile-gis/templates/MOB-02/evidence/STATUS.json",
+      "sha256": "c5c3e9f68b141195df3bf63950e894d79592696a7c3e5ae875bd5a2db4625f20",
+      "size": 352
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-13/tests/ACCEPTANCE_CASES.md",
-      "sha256": "89727fca9b1919a0189a1bf5cff8967350dea89da094b8ebdc3d698c67c6a037",
-      "size": 116
+      "path": "examples/mobile-gis/templates/MOB-02/fixtures/README.md",
+      "sha256": "012347b6bc1fd1573d5434003161ebff306d76c0e5a24531f51260eeb4e84a46",
+      "size": 292
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-14/docs/README.md",
-      "sha256": "db18ffc939c3d0dd7095b6c6d78e6a29e17087c2ea7e1aff4d742df6166e5de6",
-      "size": 343
+      "path": "examples/mobile-gis/templates/MOB-02/safety/THREAT_CONTROLS.md",
+      "sha256": "be7cf40b1ef828719cce60f7a7ba18ba9fdd1f3c802151dbfa0332aaabc198c4",
+      "size": 393
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-14/evidence/STATUS.json",
-      "sha256": "ea5a8333ff3a7d7b14242953b71aeff435d80c353eea07f7665eb176062fcb1c",
-      "size": 362
+      "path": "examples/mobile-gis/templates/MOB-02/spec/template-spec.json",
+      "sha256": "23fe6c65223040a9f48dd1af0c5a0a5980862a3a6ed951f0de1d36b8c9c26c0d",
+      "size": 897
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-14/fixtures/README.md",
-      "sha256": "aba9e94d0b1db2a50ced22761f50804dfeb038453026170f8e0a058baa2a829c",
-      "size": 301
+      "path": "examples/mobile-gis/templates/MOB-02/tests/ACCEPTANCE_CASES.md",
+      "sha256": "994fd6bcbfc204c7fbb3e175e883f8786c24083de5db92f6455606e00a0d2f2a",
+      "size": 138
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-14/safety/THREAT_CONTROLS.md",
-      "sha256": "bd0a67167c23dba0ad9d891b935a23b0c36ceb939fb7adbfb461b74c28940570",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-14/spec/template-spec.json",
-      "sha256": "68b5b3467a3ca69c9cdaf84fa15ca6a65a3c00a0dc3a5b8da0c23e0e04cb4f5a",
-      "size": 962
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-14/tests/ACCEPTANCE_CASES.md",
-      "sha256": "9bff75088b96e78d6e93f8e4b29aac41dd08b9cc6df2ea3e1baeb213fbfa5f51",
-      "size": 118
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-15/docs/README.md",
-      "sha256": "a5b4a97007264e134a7d56c93803bb43e30185ba048c98a596524aa9e5b9d6cc",
-      "size": 349
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-15/evidence/STATUS.json",
-      "sha256": "34df19e4126f01338861dd92cc52d6749dc6c16d1a8956c2cb48ca461c4d941f",
-      "size": 359
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-15/fixtures/README.md",
-      "sha256": "50257e77eb64a612c9876b8eaa378fe4f170456d11f48bae2e8d1ffd2dfc799d",
-      "size": 305
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-15/safety/THREAT_CONTROLS.md",
-      "sha256": "2cf10ef95e963c2af51ac86fafaf6ea4531411ae0a8ede0bba9adc1062148e44",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-15/spec/template-spec.json",
-      "sha256": "96867e1e693d02f94bb4549b9a0e0781e5c9d59324cb6889300a37d809c06822",
-      "size": 994
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-15/tests/ACCEPTANCE_CASES.md",
-      "sha256": "184c1c0daebb5dbb9dc8f3da4dc932e4fa3180a68804f680164b9585515a41bb",
-      "size": 135
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-16/docs/README.md",
-      "sha256": "729183047ed25502a1e417780ee348b4706b0a7527a72191f392c38df73bf82f",
+      "path": "examples/mobile-gis/templates/MOB-03/docs/README.md",
+      "sha256": "81582388c20bd3e3d63e905cc5a1e55928d0b6b5e10a446e40b83f70ac14597d",
       "size": 348
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-16/evidence/STATUS.json",
-      "sha256": "3fa6d85ac5ecac53be6de7559108416231f65780f098530ebb8176f08e32b56b",
-      "size": 362
+      "path": "examples/mobile-gis/templates/MOB-03/evidence/STATUS.json",
+      "sha256": "55f46fde864b990069ab0886683d4028ddeacfdd4cb0c2d380d9208cfda2a0d8",
+      "size": 349
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-16/fixtures/README.md",
-      "sha256": "ef46978b06c46b550908481f6b3493d8b70a9e80742171b13075b51daf96473a",
-      "size": 311
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-16/safety/THREAT_CONTROLS.md",
-      "sha256": "48668c132b65637f73481892e088f9f3b306b85941cffc9a207421cbd41af0ec",
-      "size": 397
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-16/spec/template-spec.json",
-      "sha256": "882a18f0ec6732b051067d17b01a1c4a3f755994167e6b523a25b09e89aa1179",
-      "size": 981
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-16/tests/ACCEPTANCE_CASES.md",
-      "sha256": "4a9ed067e2c99f42bb7f68b10e72ae7b8b04629e5556c4b76828f5bb6ed68046",
-      "size": 129
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-17/docs/README.md",
-      "sha256": "ba98321e67de0d7b1d01b8f72e60100b974820ef32af3d7b8ff5945256614d98",
-      "size": 350
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-17/evidence/STATUS.json",
-      "sha256": "52de039a825a90e8d3598fd68163a05d33bd701342455ca6966c9bcc5fd6d9ac",
-      "size": 362
-    },
-    {
-      "path": "examples/mobile-gis/templates/MOB-17/fixtures/README.md",
-      "sha256": "0c455a20f073d942ae3131e08f9754c13fac3f02ccbf576121731cb156c40707",
+      "path": "examples/mobile-gis/templates/MOB-03/fixtures/README.md",
+      "sha256": "3cc3978334e7656751a585520e7ae3aab98aee374e93617b1b6ad463e3141a09",
       "size": 310
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-17/safety/THREAT_CONTROLS.md",
-      "sha256": "ae48521867665da7aad68321bb0de6fb57ef28ecb557fc4a8dfae5ef25c436f5",
-      "size": 397
+      "path": "examples/mobile-gis/templates/MOB-03/pubspec.yaml",
+      "sha256": "a1ce570c82c1d1284a170bdddf408e1dc706d3f0848d77fb1745154b9b50598f",
+      "size": 376
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-17/spec/template-spec.json",
-      "sha256": "b6d71125cbfec551d042b00a0db1ef0d18d556c075d8efed762f2eb4fc842186",
-      "size": 892
+      "path": "examples/mobile-gis/templates/MOB-03/safety/THREAT_CONTROLS.md",
+      "sha256": "0e8ceb902d61f6e883f018ec3952ecfe2255a7ae9b54eaf96be18c6ab3d1c264",
+      "size": 393
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-17/tests/ACCEPTANCE_CASES.md",
-      "sha256": "df81e7c4adb3e8037be5f9a4ce70e98076c4359ff2c55c4e5b032fc2e21a8957",
-      "size": 120
+      "path": "examples/mobile-gis/templates/MOB-03/spec/template-spec.json",
+      "sha256": "247795318df3634f077a35ba751658ba1e1020bd110f9e97ca327acfdeec9115",
+      "size": 981
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-18/docs/README.md",
-      "sha256": "707406b9aadf99464f34897e0a62b1deaf6b96d0574598e2c8d829d25b0d5223",
-      "size": 354
+      "path": "examples/mobile-gis/templates/MOB-03/tests/ACCEPTANCE_CASES.md",
+      "sha256": "ea34c9ca44b6acd39abe6d2dc5e067e0c0c5b6ec8f31766f0419ceaccb715c7c",
+      "size": 138
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-18/evidence/STATUS.json",
-      "sha256": "06804fb0fad8a6034fd7c7d4506d38257f93171a306f8a030c8fb7245fb5785a",
-      "size": 362
+      "path": "examples/mobile-gis/templates/MOB-04/docs/README.md",
+      "sha256": "8d97690b5cad29c1acf1c346ccf0942f036644c621c06e781c6aea11d269e1ed",
+      "size": 336
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-18/fixtures/README.md",
-      "sha256": "1584183cb6ff23808f3fc47a1fa93a1fc917138951ec2ca57fe9112efe33fc3f",
-      "size": 312
+      "path": "examples/mobile-gis/templates/MOB-04/evidence/STATUS.json",
+      "sha256": "4fe5f8e29846d2252eac4f6f12e4c7f0bf73a9845c837c9abfaefc32692b7382",
+      "size": 352
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-18/safety/THREAT_CONTROLS.md",
-      "sha256": "c52dd7c63823d86aad8cc49c4f84f639a4fba6c0957bc66644b1bf9055c5b303",
-      "size": 397
+      "path": "examples/mobile-gis/templates/MOB-04/fixtures/README.md",
+      "sha256": "5b979b6681a556fd1e60577b97e8b6add84b511690f41567cd3aefb9ccf8a1ab",
+      "size": 300
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-18/spec/template-spec.json",
-      "sha256": "7eb2a1ee0b928a4afbb9a0c4b36c90cbbb205d63f23bc4f28306515c69e95e9f",
-      "size": 955
+      "path": "examples/mobile-gis/templates/MOB-04/safety/THREAT_CONTROLS.md",
+      "sha256": "e3679eff54ac22d20b16368edd316f8f4f59019ac8a14f9f0120b2613125ee16",
+      "size": 393
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-18/tests/ACCEPTANCE_CASES.md",
-      "sha256": "5125f9bc564afd4da5217f1f9cf1e1cfc02ecfb419a293d6eec67d9a09f7db33",
-      "size": 103
+      "path": "examples/mobile-gis/templates/MOB-04/spec/template-spec.json",
+      "sha256": "03a78d1b643b5b68277c3dc91dd995bef9d9cb6cbad448921722eb7e79507eb8",
+      "size": 951
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-19/docs/README.md",
-      "sha256": "e512a9c8f82c5b4d34848b80d6c81c738af0c173bcdeab69a2d3269c4b96afa0",
-      "size": 360
+      "path": "examples/mobile-gis/templates/MOB-04/tests/ACCEPTANCE_CASES.md",
+      "sha256": "c66ccd18bd4741fa1e17de66d8e9d89cdb4c35acfae01f422fac07711891709a",
+      "size": 128
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-19/evidence/STATUS.json",
-      "sha256": "9c18367e2f590b197b8d33926b1b6d87941845d2d14b63229462107574b582bc",
-      "size": 362
+      "path": "examples/mobile-gis/templates/MOB-05/docs/README.md",
+      "sha256": "d89ca5f7ff0405079f8eeef9b7fad7e8dcd7b8067d2caf5dc3e30f071a9ad672",
+      "size": 339
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-19/fixtures/README.md",
-      "sha256": "78f168432fabca6802ffacd29382513850ca6d86abc2149e31eb0817bc02894d",
-      "size": 315
+      "path": "examples/mobile-gis/templates/MOB-05/evidence/STATUS.json",
+      "sha256": "7b1b0e3a32010fe4c36bcb2cfbb088f097eb869bb7648feabea02863765c6234",
+      "size": 352
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-19/safety/THREAT_CONTROLS.md",
-      "sha256": "caee5d1c2ecc01e92af442286019d3b5d82f337d7f3f575e90b5fb08d6dfab9c",
-      "size": 397
+      "path": "examples/mobile-gis/templates/MOB-05/fixtures/README.md",
+      "sha256": "3e67071e75df1be55d22a7c72a8deb62d0d2978748b837011341441c5c468e89",
+      "size": 299
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-19/spec/template-spec.json",
-      "sha256": "2c5207072097bbb523a7992f7874cfbe8df46f7ff415fa7ade89038370f6b7a5",
-      "size": 979
+      "path": "examples/mobile-gis/templates/MOB-05/safety/THREAT_CONTROLS.md",
+      "sha256": "f8e990c9c4423fddb2b1ba97edd7e8a1ddeea3187eebaffde3aecb03c34a6e47",
+      "size": 393
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-19/tests/ACCEPTANCE_CASES.md",
-      "sha256": "f3d4282e4271cbffe14ef9a7585b9d2e1ec19cdffa8a29ea4e0b88f4df7279a5",
-      "size": 118
+      "path": "examples/mobile-gis/templates/MOB-05/spec/template-spec.json",
+      "sha256": "4a6044f17bf33607ad8bcc9138f5227784b7053d25a25784d900d2d89d6cf08b",
+      "size": 954
     },
     {
-      "path": "examples/mobile-gis/templates/MOB-20/docs/README.md",
-      "sha256": "161fcde22770721ff177a7098b4b8a8eae45160aade0878725e97cdb272ab351",
+      "path": "examples/mobile-gis/templates/MOB-05/tests/ACCEPTANCE_CASES.md",
+      "sha256": "71e21360964bd9b55c70ba70e869605b0a64f1169e1944c97c2310a43a6f2fcb",
+      "size": 128
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-06/docs/README.md",
+      "sha256": "c0763eff1c457c6eeeb3965b3a03b0fee5eb14373ff6d27d5129dca617a19d9a",
+      "size": 355
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-06/evidence/STATUS.json",
+      "sha256": "2fcad91cedf3f2b53bf1f348a7a43c34eb281645763c467ee99ad25cc7a956f5",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-06/fixtures/README.md",
+      "sha256": "b852f080112b02fefe030b62bde36d67f782c11a03a97cd275bc0916c3d0bb1c",
+      "size": 304
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-06/safety/THREAT_CONTROLS.md",
+      "sha256": "9b093a545dabc72c7ba9df78307746ff0f60c3883b1ef243b4036c6157a45565",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-06/spec/template-spec.json",
+      "sha256": "c37bedae76b4a593188ddaf2be3fe100ad3bc72f5e2f8bcf30f7e50e8dfd67bc",
+      "size": 953
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-06/tests/ACCEPTANCE_CASES.md",
+      "sha256": "7aba00ffffd3c93715991dbc1d39bbe9db79657554509a9af0d07e287ed21920",
+      "size": 114
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-07/docs/README.md",
+      "sha256": "7d3d923fd85ddf90060acc1749c64f9544b528b7b74380789b7bfa044b3ee6b2",
+      "size": 346
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-07/evidence/STATUS.json",
+      "sha256": "b4d6df4c2bb598d7906b5607082f3c8413a219e45041f3dc34c3cf8a00db65cf",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-07/fixtures/README.md",
+      "sha256": "fb20a64ab5486c1c2ec0abc1818735d17669059791c2af6d33e464985c3edc06",
+      "size": 306
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-07/safety/THREAT_CONTROLS.md",
+      "sha256": "de40d816ed098d2a87efba1fc460830c72b88612d519ea0d5deb966ec9a1fd18",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-07/spec/template-spec.json",
+      "sha256": "a3799e78402273c23afce90577d5832a5b6785de2b73fefe03e488fd5ab2f71d",
+      "size": 940
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-07/tests/ACCEPTANCE_CASES.md",
+      "sha256": "6326322e7c8cd9ba6d65f5a5b60880ae5f99f265bd833af963db10d498f97333",
+      "size": 110
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-08/docs/README.md",
+      "sha256": "6ab8f2ed94b83668cd46b674bc663bb2883207a1c41de75d4ea5a3182936cacc",
+      "size": 330
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-08/evidence/STATUS.json",
+      "sha256": "11b135a6e39aefb15ff423b2904a64ac9e36fb3946b0797f350f9a410703a34e",
+      "size": 349
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-08/fixtures/README.md",
+      "sha256": "4d9b9638a7bc3400b9c6225579dd3ba0b865596bb18307403b582ccff33c99e8",
+      "size": 295
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-08/run_gnss_logger_contract.py",
+      "sha256": "84f673877cdf524f0aaa5205ad379165d90ae074ad7392a31e3c55346f1ba77c",
+      "size": 1808
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-08/safety/THREAT_CONTROLS.md",
+      "sha256": "d84af51acd5fe0180a72043ada724c76dbb146247a612d7b3ef5a02d7b784c34",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-08/spec/template-spec.json",
+      "sha256": "aef21c8434498d757ab959999c88adea8689df212c06b5405e2d61d83a8a168b",
+      "size": 948
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-08/tests/ACCEPTANCE_CASES.md",
+      "sha256": "3bd009a51392f756788a0d0b8cfa6b9bc9e4b49fe9414183203d0e456149d5fe",
+      "size": 126
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-09/docs/README.md",
+      "sha256": "530bd79ce6d42f69dc52ffcbe96526d9012716ada8c27fd2347ee055feeb6365",
+      "size": 341
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-09/evidence/STATUS.json",
+      "sha256": "2e05215aeb210e30ca152359c3635e8e1e008ecfa9941d44ade8f220c0fc8322",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-09/fixtures/README.md",
+      "sha256": "80c3c08501f4e6c6dd23f7d91669f739c08bcb4d4bb95c2a4eea8cf78f56bea5",
+      "size": 303
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-09/safety/THREAT_CONTROLS.md",
+      "sha256": "0d4011f2b3b77ac0514eec495d140540eb917f30820afbd7ebafe107bd14de9d",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-09/spec/template-spec.json",
+      "sha256": "0b7200e2df468cc3e9ab5a3b56b84d61010f0b804b8f1d300f634aff10685efa",
+      "size": 937
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-09/tests/ACCEPTANCE_CASES.md",
+      "sha256": "eb8e15f82cf7ad374578cad30687d14628a205eceb6804f5d5f8a8ba448170ac",
+      "size": 112
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-10/docs/README.md",
+      "sha256": "b543cd7c7712fcb697c91dff5982308a54c2eb4e5dc661d708c13a4156761504",
+      "size": 334
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-10/evidence/STATUS.json",
+      "sha256": "11899e973be4b417da7122c37923088773bdddeffeb3d400949fe63657711e9a",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-10/fixtures/README.md",
+      "sha256": "58aa8ed97613986671592b1ce0c05dad94b61f0456cc9c141369c1234485df74",
+      "size": 296
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-10/safety/THREAT_CONTROLS.md",
+      "sha256": "6f80bf065e33d4c93c8fbb2a76c9555018670ff575b0e8349a9689bb2f0b493a",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-10/spec/template-spec.json",
+      "sha256": "c79ff1b722a1851466a39da83e31ed03e0b0a81e7e556150776555a340242c44",
+      "size": 932
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-10/tests/ACCEPTANCE_CASES.md",
+      "sha256": "379e2055050e0e729e713dea37aa8e05ccd906920f3d0da370b612eeff991e0e",
+      "size": 114
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-11/docs/README.md",
+      "sha256": "b581f57314c35c17bc137c9a684c30b038cc5d12d075cf7b67e55c058284d2f9",
       "size": 344
     },
     {
+      "path": "examples/mobile-gis/templates/MOB-11/evidence/STATUS.json",
+      "sha256": "1d99398bcc809b26b8c9d16553798f60a9869ec3d7d99caab23be7dfc96e5d94",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-11/fixtures/README.md",
+      "sha256": "34fbe7f18d09e088b7c688d281380d18576736f5d394d83798c822c38193eb6b",
+      "size": 301
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-11/safety/THREAT_CONTROLS.md",
+      "sha256": "ea0c5e173412b9ce7a4e097420970853edb36328a5cc2e800485e468f62eee16",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-11/spec/template-spec.json",
+      "sha256": "f510324d7cb536a4befd7d1e223444336b64960fe050ed6fc6b9cd8d1b4759b3",
+      "size": 942
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-11/tests/ACCEPTANCE_CASES.md",
+      "sha256": "703e46da503590172e418147a01fedb6c8182215ec0d9aab7628779dfc40478c",
+      "size": 114
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-12/docs/README.md",
+      "sha256": "8b4969b7cbce6a0ac4e9ac029be8e146e9242ad393cbe6574fd7e112c88cc8ee",
+      "size": 338
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-12/evidence/STATUS.json",
+      "sha256": "b28d4995164dbebd7b782a7e1c62e549b09743e30ba3604682ebc7a589fbd6c5",
+      "size": 349
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-12/fixtures/README.md",
+      "sha256": "1ddfce14e5d1f8568b6e3d367bd9cc4247572a540ee2ae52dec670930f783cc1",
+      "size": 299
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-12/safety/THREAT_CONTROLS.md",
+      "sha256": "c939af2833af9f909b5442443e82f88270a2b995c44d4b3d8d9e616f9b41e5be",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-12/spec/template-spec.json",
+      "sha256": "37e37de015279814c3864c825b1ad95eed6d3becb8031698f598dc66878cbaa5",
+      "size": 942
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-12/tests/ACCEPTANCE_CASES.md",
+      "sha256": "4c1b8df000c760b7f198b9e4196aad51e687d946375f2f9f8f9fe69bc971c025",
+      "size": 114
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-13/docs/README.md",
+      "sha256": "0f4ecb31474371d07140bb14a78df8401b97a0b732bd6fde8366375f493211fa",
+      "size": 335
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-13/evidence/STATUS.json",
+      "sha256": "8517ee833c97dae0969ab7bc857412cf8529f7d70a31617365534137c98a16ba",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-13/fixtures/README.md",
+      "sha256": "78ad9931847941b979b113cfa7d0dc2fc6ddabe0d8f7552d3b6f3401933e3879",
+      "size": 302
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-13/safety/THREAT_CONTROLS.md",
+      "sha256": "1ad4cd16878d034cfcd97f5a817b18d0b93454da1d982385e3a2e2a976a7880a",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-13/spec/template-spec.json",
+      "sha256": "1b61cee9ef7f3d63235b271d6d32a0df341af2870f9cbb272f99da07d50769c4",
+      "size": 929
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-13/tests/ACCEPTANCE_CASES.md",
+      "sha256": "a0e0544ddd6dfd05e3c3ef030040753599fb9316db57395a5637dd20ae424ffc",
+      "size": 110
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-14/docs/README.md",
+      "sha256": "2eb006be6ada29d1debe1bcb89bd7ee66f05f31f5705ee7bf7273dfaf3d7ecd8",
+      "size": 338
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-14/evidence/STATUS.json",
+      "sha256": "c3aa9d7cfdb2878011100b011f81404e36c593b8f61f59eab3f6236b516e1a1b",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-14/fixtures/README.md",
+      "sha256": "21c4b2862f443c7ebf962ead036f3ac7e282018df8fb6e6243203b3d292accff",
+      "size": 297
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-14/safety/THREAT_CONTROLS.md",
+      "sha256": "7e79eb78d65f69a260ae005e81e141424d8c8ff97417148f4b2c1460d2e58710",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-14/spec/template-spec.json",
+      "sha256": "f53cf2cee1b017251306d0773c013737d9bafbdd29d9f9da30a0a568abc2f3cd",
+      "size": 934
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-14/tests/ACCEPTANCE_CASES.md",
+      "sha256": "53729dbf33868058b7459db02c38afc93e320826be978c61f87ce11d212ff0c2",
+      "size": 112
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-15/docs/README.md",
+      "sha256": "0ad68b3e4a9e2ff65b8c2c92667dd5a57b111438c4c4590a2d30763a0f599e9f",
+      "size": 344
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-15/evidence/STATUS.json",
+      "sha256": "0945ac226d850c0b0df9d316a6e19534e1534adf6bc8372d400a2eaf50951a77",
+      "size": 349
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-15/fixtures/README.md",
+      "sha256": "338474e5019605ebb69ef521355121708f553f49bb9d4c8ce912a78984d8351f",
+      "size": 301
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-15/safety/THREAT_CONTROLS.md",
+      "sha256": "fb27d04148b9ae99ee49a4a25076fe77954eb6e91cf7a6cd5657be827ed3e9fe",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-15/spec/template-spec.json",
+      "sha256": "92b052dc432cd7703f3864f1a45ce05aa52568669808f6b8d3ee5c2c49c2dd8b",
+      "size": 965
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-15/tests/ACCEPTANCE_CASES.md",
+      "sha256": "5d47ad17038d03ef72af59a35f228e053f7d83cbf257b901a9ba68d50d717130",
+      "size": 128
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-16/docs/README.md",
+      "sha256": "0aba77cac865e56ffd161f5b52ddf7769c954fc2d64cdf618cf55709c65cf63b",
+      "size": 343
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-16/evidence/STATUS.json",
+      "sha256": "0b468d60ca17cbefea2fb01536c7b7086357f85157b7a1f6638edfbc1e27a871",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-16/fixtures/README.md",
+      "sha256": "afe85d464844de8c9dee2549e2baa0f2057fc7967268d846f4b1d1c4c3cba4c5",
+      "size": 307
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-16/safety/THREAT_CONTROLS.md",
+      "sha256": "97ba788859d87470b9472cb7d06fc2298cef84d5343917044b19a0872f5ce21a",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-16/spec/template-spec.json",
+      "sha256": "767ea10706b5565a0829a732e1cfa2e80cb8b73a72d5f0798547ec0bf8485185",
+      "size": 952
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-16/tests/ACCEPTANCE_CASES.md",
+      "sha256": "f5158fde0b3a7b746119953a451273dfda5f66bd4d9793c503e139fa16526c74",
+      "size": 122
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-17/docs/README.md",
+      "sha256": "13b93ae655a39be00dee2e3bd0b56923f0bbab729cb78a5e625010735a41fac2",
+      "size": 345
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-17/evidence/STATUS.json",
+      "sha256": "a1bd3547c422f145d43ee20d71ecee58da93a2ac3e90c2eb0d8969a7012062b2",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-17/fixtures/README.md",
+      "sha256": "b89cf6744782dda32b2a21d008068f84ed389ae69bf98ba19c35e1d334f8f270",
+      "size": 306
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-17/safety/THREAT_CONTROLS.md",
+      "sha256": "27f0f488c03a6fa67e16f0872613b0f6b969c41f8d48071047a3e0d08fe49fbd",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-17/spec/template-spec.json",
+      "sha256": "8e01888ed470ecc36c055e138ab6f7ca87479e3a35caf0d4bde2532b80ad885e",
+      "size": 865
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-17/tests/ACCEPTANCE_CASES.md",
+      "sha256": "fcf3a64ff8852e6647fba2f88c0fadac117f9d74e49f48328060eeb13efa2de1",
+      "size": 114
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-18/docs/README.md",
+      "sha256": "0415b331dcfad0290f4bf06fb21e6fa5fa941bacbf98f49697ee80c8dbf9eca6",
+      "size": 349
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-18/evidence/STATUS.json",
+      "sha256": "d56c3feb63457c95bc00f16925028866cdf7235d8c0b3e3046323d8bb55495e0",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-18/fixtures/README.md",
+      "sha256": "fd052356b3c0fc5db00714f6cbbe53e2cdd7b27c48677658f962fb99e913ae09",
+      "size": 308
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-18/safety/THREAT_CONTROLS.md",
+      "sha256": "8c91f7b84dcb97f4886a48143dbcf57193519f003a5c200e29f162ff8d1fb665",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-18/spec/template-spec.json",
+      "sha256": "4b4c4fdd2908c56760fde579d36e6d00723ab3b2958c585115e99c6750d4f83b",
+      "size": 928
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-18/tests/ACCEPTANCE_CASES.md",
+      "sha256": "c2292a8b633b01ec127571fd2382998237998c2bfe43897a1c256fdbb494e146",
+      "size": 98
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-19/docs/README.md",
+      "sha256": "ec1cedf4bd6b85b13842262cecb1a41c84b762217b82b32d58aada6e2afe6c33",
+      "size": 355
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-19/evidence/STATUS.json",
+      "sha256": "a4701aa47ec3a00d869dd2861d462061611e5bd289a27dfa75ac0d3b879c85fe",
+      "size": 352
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-19/fixtures/README.md",
+      "sha256": "8eba201bdefd4331e18cccf32e0e1f87f09cc1dfe82023efdfffd78926c5d77d",
+      "size": 311
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-19/safety/THREAT_CONTROLS.md",
+      "sha256": "97e5b41d72dc32a456c925bf72bb730ff5ef487b2288e07147d42a6df0229ad7",
+      "size": 393
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-19/spec/template-spec.json",
+      "sha256": "978c6f19f4be235f0306ecead4509cc7580a927477069c16e5e36e5810e8918e",
+      "size": 951
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-19/tests/ACCEPTANCE_CASES.md",
+      "sha256": "a1d55d82b0b024487e6b5cd8f6b858537814eaba4bf6beb2584e4bc4fbed0e0e",
+      "size": 112
+    },
+    {
+      "path": "examples/mobile-gis/templates/MOB-20/docs/README.md",
+      "sha256": "2a27be64cb30adfd25f232da02aef0df2f2d6afb5c6201813ccee9b9ad770e7d",
+      "size": 339
+    },
+    {
       "path": "examples/mobile-gis/templates/MOB-20/evidence/STATUS.json",
-      "sha256": "97050720dd66387977421ed47d660842724af868309fb8cfa13ba65c2554dbeb",
-      "size": 359
+      "sha256": "9477d1497774225a83486e37ed786cd4fd126dd768d467edf1a9ec697b3a852a",
+      "size": 349
     },
     {
       "path": "examples/mobile-gis/templates/MOB-20/fixtures/README.md",
-      "sha256": "5050db77a5988384afa49163ecff2bb7f398cf5fd46075ba3e734f08b9f35c03",
-      "size": 305
+      "sha256": "d3f6ea3f29eb473270e1b7c68875ceb235b76ee918fc82c3d9341b5ed6a0a8d0",
+      "size": 301
     },
     {
       "path": "examples/mobile-gis/templates/MOB-20/safety/THREAT_CONTROLS.md",
-      "sha256": "20060d508bee0d721a907c8c69c5ffc6650f5f5f5397a16296c6756709666f1d",
-      "size": 397
+      "sha256": "961265e9b24155c796af96f99ea8df546d341f2f2651a286da187464ddf648da",
+      "size": 393
     },
     {
       "path": "examples/mobile-gis/templates/MOB-20/spec/template-spec.json",
-      "sha256": "363e72538bc453b71d5a3b711aa5d76510e2459c764921035cb0f8130001e55f",
-      "size": 971
+      "sha256": "3b8df1f7573b58a5f723922850713771fa09fc24f4c850f38c3a9bd92b896b5c",
+      "size": 943
     },
     {
       "path": "examples/mobile-gis/templates/MOB-20/tests/ACCEPTANCE_CASES.md",
-      "sha256": "02f1d2625b18e38106763fcfd26cccafcc6a01a1088f42c8732e9dcc7e10f914",
-      "size": 120
+      "sha256": "20d35932d934c804bbfedc83635eeea39a57f278d93ae65e374cb7f02fc694af",
+      "size": 114
     },
     {
       "path": "examples/network-topology/README.md",
-      "sha256": "08cf1cc621845c18bbacaa439826b50b12f4296c001c3be2a17564d2429ef09e",
-      "size": 861
+      "sha256": "fb74aac63dc08e6cdbea1f76c2c2bc7d8ea9fadeaa1e60f00d8ff074fd05124c",
+      "size": 852
     },
     {
       "path": "examples/network-topology/audit_network.py",
-      "sha256": "4f613fc41f1fd29554fd801a29b4d616fdd799209989c2ad4ae75cdeca8a8628",
-      "size": 3094
+      "sha256": "3e708f80721e2c5199bb7a2027dafad60cbc1682cc78b014c5c481041e1cb9a7",
+      "size": 3025
     },
     {
       "path": "examples/network-topology/fixtures/network.geojson",
-      "sha256": "30d62337e3ae50771b3545bbcc5739421d1f91cd2dffb9ab524bc1c380c1314d",
-      "size": 1329
+      "sha256": "e4194750da554c69e60747c2de5ae6cf93dbe999862be123dfa8e3ea45f63b51",
+      "size": 1252
     },
     {
       "path": "examples/qgis-engine/README.md",
-      "sha256": "ad5334b6d4778558f3225ca1cab35ebfdc7aff92426dd2fa3d37669db86833c2",
-      "size": 1259
+      "sha256": "79fbd6bb8b98de4ceb11fa554f0fe30ddb9259aadf3b1174a796abc22f938c5d",
+      "size": 1244
     },
     {
       "path": "examples/qgis-engine/standalone_roundtrip.py",
-      "sha256": "265831c77e3e06dc6112d147e9b72b3dcc910c092427989c7a61d9dc32c5050d",
-      "size": 3475
+      "sha256": "2b82b5df3486884fe2e9e5d6729b82ea19c4e32cdeb2561ef2bface7a64e3e18",
+      "size": 3407
     },
     {
       "path": "examples/remote-sensing/STAC_COG_WORKFLOW.md",
-      "sha256": "68ca27827fb53961d8ede57ee759bc63d401778d7f336b84da661eba2154224c",
-      "size": 1462
+      "sha256": "13f66027726ad0a37c5c5a0ac0250e2bd55713b37bce7ab61e586936c4c86694",
+      "size": 1449
     },
     {
       "path": "examples/remote-sensing/synthetic_index_calculator.py",
@@ -1466,68 +1466,68 @@
     },
     {
       "path": "examples/spatial-sql/postgis_network_index.sql",
-      "sha256": "6db784bd361f4fd2bc73fee2a460d61be4f6078daa6180db15179a1cbabe32b3",
-      "size": 1057
+      "sha256": "98ddcdbdd703c40403ca853f55b66da17456d4a5ebad8176ed7bce32ac500256",
+      "size": 1033
     },
     {
       "path": "examples/stac-offline/README.md",
-      "sha256": "f89d9522dee967d1032c56a2e80d4911ed836e5f8799ca6f7171041394ef4448",
-      "size": 1835
+      "sha256": "4395fabded054a2af2ea68522f45862a3b53d4d65a2d98945ea8548523b0e75f",
+      "size": 1815
     },
     {
       "path": "examples/stac-offline/fixtures/stac_items.json",
-      "sha256": "05d855edecb25e0ffe05ac0cb3bb8fe0865c1b07cc04be941a697d16fe403595",
-      "size": 1428
+      "sha256": "6a8f2acce78811935b735134643409efde7da1c8fd1f042de23d621e4f05dcde",
+      "size": 1361
     },
     {
       "path": "examples/stac-offline/inspect_items.py",
-      "sha256": "fb5ee4d5712cf90f51297a4a6d1c51909827d0ac6c6ae98c95a2ee43fb8490af",
-      "size": 4338
+      "sha256": "fdc13dde82159ffd596fc2ac2f5bf673af4e893dbd3cf705c7f560078cfaac51",
+      "size": 4240
     },
     {
       "path": "examples/system-capabilities/README.md",
-      "sha256": "048d00930400db82d20f2782db34d41aa993dee968bae46bc929d9201f32556e",
-      "size": 932
+      "sha256": "87908a52f5f7a6da3d5a90313a6b33d6a81004b2055d3368dc1e97c401eb535e",
+      "size": 920
     },
     {
       "path": "examples/terrain-slope/README.md",
-      "sha256": "053c22398ebcf2050014b98223b1aa2d07db28f28e424495fb22cf1593f1144a",
-      "size": 2387
+      "sha256": "e18d89b08239e2df774f2986abc470ed59bfbcb9fe5c4918c5481b178ebee57c",
+      "size": 2363
     },
     {
       "path": "examples/terrain-slope/fixtures/planar_slope.asc",
-      "sha256": "a7013bf12616b38e2e921ceb993b51f89e1d1fe7f4ad551910296fc7552b1ead",
-      "size": 163
+      "sha256": "77f4d9b191fa65b784777c58f7ceccda86ece122646b75e3a3ea7d814efb2e7e",
+      "size": 152
     },
     {
       "path": "examples/terrain-slope/slope_ascii.py",
-      "sha256": "54c1ae5dfbfa0b92bb6a9c498d2af8eb0acf08ab3657dc075cc26e05543aaff0",
-      "size": 7264
+      "sha256": "c8d46b472eb6e87da4426d71feee780bf98ce747f2c54360c7787c5338e3b4b0",
+      "size": 7112
     },
     {
       "path": "examples/ui-command-audit/README.md",
-      "sha256": "14e1589252949f088d39b2fa9f6b2f3f89e69e479949b7834a8907fc3611d0a4",
-      "size": 1186
+      "sha256": "e2b3815cea2546294c3430269b06189ef6dbd20c1a607f200075d84aa2ca7f9a",
+      "size": 1170
     },
     {
       "path": "examples/ui-command-audit/fixture/icon.svg",
-      "sha256": "da31cbbaa69660c7cf3c0f5b89ae2914af65e64af21286af2caaea61072ab2c0",
-      "size": 313
+      "sha256": "be39fd09ab289aed5ce7502be01fc431796256cc7bbb65a507d58dadcb0d2d5e",
+      "size": 309
     },
     {
       "path": "examples/ui-command-audit/fixture/panel.html",
-      "sha256": "669c4eb04ebd6a68af611ca159b411ad977e792b3e9e36e81b632025f097376e",
-      "size": 469
+      "sha256": "6eae60f2afa7ef7d1d8190f70b15de243d43f1181b1ee86da42c2956c728d9be",
+      "size": 462
     },
     {
       "path": "examples/ui-command-audit/fixture/window.xaml",
-      "sha256": "fef2c4834ad1efd7760ee3b39306c16f584f448d7de98216fa9f1f6d78413103",
-      "size": 694
+      "sha256": "cf50b7dfae845b491fc8174e535251a36fa856b83ebeb9d56cd94f2fc66af061",
+      "size": 680
     },
     {
       "path": "examples/ui-ux/README.md",
-      "sha256": "3609c61419fe9c50d550d354e06b76e886e93ab64d263722aed126971f2c73d6",
-      "size": 2362
+      "sha256": "5e7be20c1dec4d5f57d012fcc59943ddf4c1488a29358410a4bfe0ac2715f015",
+      "size": 2342
     },
     {
       "path": "examples/visual-assets/README.md",
@@ -1561,8 +1561,8 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-01/fixtures/README.md",
-      "sha256": "eb5b19a35c4264ffdbbdd69427c9f511b35d60c5a526f517cd1986b0f6a77221",
-      "size": 272
+      "sha256": "f0c19866748b41d2f42d899a6659c8de5cad4f4a77b6e4f8d9f507d55e6df400",
+      "size": 268
     },
     {
       "path": "examples/web-gis/templates/WEB-01/index.html",
@@ -1571,13 +1571,13 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-01/safety/THREAT_CONTROLS.md",
-      "sha256": "7efbe7f2b2fc43cb3e400176c790c3f35f8743b6f38ce2d765de9401096ea96c",
-      "size": 358
+      "sha256": "34d0a27210b15c907290401f7b44969e473d750152fa7d3effe64d0efd4058c6",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-01/spec/template-spec.json",
-      "sha256": "0a689c50fcd8a8a0db94b118ec929ee46b15677445a79a8c5ca52719e206fb94",
-      "size": 719
+      "sha256": "de953c7df0557aef6dc9c71c79d5aeade1e82ca647cf1d52bfb563254ca760b2",
+      "size": 694
     },
     {
       "path": "examples/web-gis/templates/WEB-01/tests/TESTS.md",
@@ -1596,18 +1596,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-02/fixtures/README.md",
-      "sha256": "465b4647c65424cf7cc29227d399261cead3e6cb51bf0625d60b8376c6fde360",
-      "size": 283
+      "sha256": "b8b2075b06974165c16eb1894359fe5958ccbddce1be096dc7a590867e476bd8",
+      "size": 279
     },
     {
       "path": "examples/web-gis/templates/WEB-02/safety/THREAT_CONTROLS.md",
-      "sha256": "0557248b8da662dcfdf267f9f671b1c37e6ee7a73c4b40b496b5730944ec2bac",
-      "size": 358
+      "sha256": "fd700839752cb62b419f8c8a91ea5fee28a078bc6c2e6e4d13a61fdf541e80d1",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-02/spec/template-spec.json",
-      "sha256": "cfa23c1784c024b95e860cf99f6250d54dcb71ff4eac9f9a012a326ad3a6de6a",
-      "size": 736
+      "sha256": "45e2a96f6acd17913dfc481f69f18a03d56171151f9896c279b1e1fb37b0d360",
+      "size": 712
     },
     {
       "path": "examples/web-gis/templates/WEB-02/tests/TESTS.md",
@@ -1626,8 +1626,8 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-03/fixtures/README.md",
-      "sha256": "8f859aa9f9acb76fb80d90b1a097745d5503d9841e63cef0c8fc34475434ff32",
-      "size": 275
+      "sha256": "a74d4aed046395bc34e20c302267255a380106a77f9d3f633cb767f553035e77",
+      "size": 271
     },
     {
       "path": "examples/web-gis/templates/WEB-03/index.html",
@@ -1636,13 +1636,13 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-03/safety/THREAT_CONTROLS.md",
-      "sha256": "6e85cddec1f4cd473b4d5b37a5141c0ae95cb2e6131fc87d76c5985c02338dd3",
-      "size": 358
+      "sha256": "15cd6c7cd1b6742769798fa94dec50bcc22cc3f20bd1bcf6fa18196f7e1d133a",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-03/spec/template-spec.json",
-      "sha256": "1888781a0cb3caac7cce105402e3f798dd4409c0ca66b34f11f592a906592845",
-      "size": 762
+      "sha256": "de63434218f8b875a11423998af9557165f1d26ac7cd2d7ece25cbbba6236435",
+      "size": 735
     },
     {
       "path": "examples/web-gis/templates/WEB-03/tests/TESTS.md",
@@ -1661,18 +1661,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-04/fixtures/README.md",
-      "sha256": "42bf2ed908f5d2f7c6295c755eff3eb43a8c226cac10640a89227fb705c19e1c",
-      "size": 280
+      "sha256": "a8e172662c5abe70f7b40e4e5548a3787e1f02f2c218c6cb072dd4ae451c5870",
+      "size": 276
     },
     {
       "path": "examples/web-gis/templates/WEB-04/safety/THREAT_CONTROLS.md",
-      "sha256": "5dde613d46dc76d749540a62c95dc71cb84f7acd4e1912df706a090d11b74d2c",
-      "size": 358
+      "sha256": "c1e976bf71eb2fa360a0b8f8f29485e99dbc488f74317b1a9831ab89a9f79ea2",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-04/spec/template-spec.json",
-      "sha256": "0543fd665eb9748c3427acf5f0760d1592a19f67c513e413da3d6ab52cddf945",
-      "size": 694
+      "sha256": "239a29207438490a0efe3bb7dcac1e435cedf4f1ecbdfddecaf9d3321eb56944",
+      "size": 671
     },
     {
       "path": "examples/web-gis/templates/WEB-04/tests/TESTS.md",
@@ -1691,18 +1691,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-05/fixtures/README.md",
-      "sha256": "f291623c4ecb084ec48f8cb4256b29e8581ff173830032e4a8d471c7d9902fa0",
-      "size": 279
+      "sha256": "57e14124270ef701989e5337242930a93a2b51400a65eff8dfc7bbba09532c27",
+      "size": 275
     },
     {
       "path": "examples/web-gis/templates/WEB-05/safety/THREAT_CONTROLS.md",
-      "sha256": "2ea68493383329f7750cb6704829a3c9775322778d8429d74f77458b7a945f2a",
-      "size": 358
+      "sha256": "c358a8aac84c5ce99005826ef161dd2d69e8a9fc1614593d70378667da2979e5",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-05/spec/template-spec.json",
-      "sha256": "94e52203e61c200bcc3229cfc767a892b8f5a1437921955c9bfb83e7f66b5f8e",
-      "size": 683
+      "sha256": "645ce53c601c027a204a73f3263a6341b3b4ff17434ad158585463201acd97a1",
+      "size": 661
     },
     {
       "path": "examples/web-gis/templates/WEB-05/tests/TESTS.md",
@@ -1721,18 +1721,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-06/fixtures/README.md",
-      "sha256": "a6bfd050828c18474bf8a6b3a8daae7d490986c0324219980feeca948fef593c",
-      "size": 281
+      "sha256": "84c68f5fc68927fe1e5f18a7d5e959e5047fc2d55fca09e05d5e4be31291f978",
+      "size": 277
     },
     {
       "path": "examples/web-gis/templates/WEB-06/safety/THREAT_CONTROLS.md",
-      "sha256": "7f22ed23b328ca2c9ad7e9e3a0aa3de0b9bb4db533dfcc83cd0f473841c20764",
-      "size": 358
+      "sha256": "2237ca1548023cd362ba3c011b31a32b6a5526e5dab17d99b529947cd3c1035e",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-06/spec/template-spec.json",
-      "sha256": "c1d9281086d0f945573007e80e6267f273c2989f4d85d617bd0c47019c71429f",
-      "size": 718
+      "sha256": "fb0f69fcee272de0e3c3b7f2d8ad5fac47fcfc1410fa457adaf531bea57a705e",
+      "size": 695
     },
     {
       "path": "examples/web-gis/templates/WEB-06/tests/TESTS.md",
@@ -1751,18 +1751,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-07/fixtures/README.md",
-      "sha256": "26eb7316f6209173f73fec31e6f64582bc801a09e33ae38a2f0b7f413a95f9ee",
-      "size": 271
+      "sha256": "14b104c188dec854d1c603ed1afff9c3e3f14b9ce7229558bb617cb94c539ec5",
+      "size": 267
     },
     {
       "path": "examples/web-gis/templates/WEB-07/safety/THREAT_CONTROLS.md",
-      "sha256": "78bf03989f25125172567cb7d313daf6350c1bedf91b121636e64d3bbf8e9f53",
-      "size": 358
+      "sha256": "38c627de86954befa4993d109114ea977f22d137e001610d699a8499b6dc23db",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-07/spec/template-spec.json",
-      "sha256": "e2785f9f0804ba90bb729e3aabcd1133d6e346d9888516f8f428eecb51d787ac",
-      "size": 680
+      "sha256": "54fefa36d656b866c89b83ba73bbed2bc62292e917c7453e9d92bc83863c01b0",
+      "size": 658
     },
     {
       "path": "examples/web-gis/templates/WEB-07/tests/TESTS.md",
@@ -1781,18 +1781,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-08/fixtures/README.md",
-      "sha256": "0cbdeff22ffbf61ae7e78cb933040e3ae4f4e9ac81cd0c8a515fa8b296707747",
-      "size": 281
+      "sha256": "929c30a232f12add91d3db550ebcb8bc9a10b02d683f20ae17a3138737294471",
+      "size": 277
     },
     {
       "path": "examples/web-gis/templates/WEB-08/safety/THREAT_CONTROLS.md",
-      "sha256": "bf82a7363297325a878d49a062bcddb4827622edd61f120f8eb7883347765e20",
-      "size": 358
+      "sha256": "e9f7258b3c1d07890d9e200f3b9549f6efe7b3a8bebf8f83de64bd5069e8a795",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-08/spec/template-spec.json",
-      "sha256": "727252326bd8140a3d18f3c924aa407cd1e61d86bb8747a2fde18dfff33934f8",
-      "size": 704
+      "sha256": "ea2fc1fbfc6a97c6ae7de7b8c09ce368cc94023cc5c257d2a3f153d51907783f",
+      "size": 681
     },
     {
       "path": "examples/web-gis/templates/WEB-08/tests/TESTS.md",
@@ -1811,18 +1811,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-09/fixtures/README.md",
-      "sha256": "009c420b9b726e9595a9b817c54ce46d630010ba6a3e7c91ce6d041614357a02",
-      "size": 271
+      "sha256": "1c9f6006bc8a7208bf74770130955f05bc3113e38120eba345bf0845e7607ec1",
+      "size": 267
     },
     {
       "path": "examples/web-gis/templates/WEB-09/safety/THREAT_CONTROLS.md",
-      "sha256": "5e463e712d98d8f38721858d5e030f5ed7418422022335e7025e4a68034a755a",
-      "size": 358
+      "sha256": "591987f3a8d7f74df261315d6997d67f01f643ce8ca4f2cacb90f165829558a1",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-09/spec/template-spec.json",
-      "sha256": "70ae818d13ef06ecda364e5dc69d918e8f8fe469f4579853280d34773d349859",
-      "size": 680
+      "sha256": "d3f77d88da1110a8920103082b06bf23da6c341bdd06f0f4ea47506da72c10b3",
+      "size": 658
     },
     {
       "path": "examples/web-gis/templates/WEB-09/tests/TESTS.md",
@@ -1841,18 +1841,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-10/fixtures/README.md",
-      "sha256": "c8e76a3ae7235650c6230a1fe8613d25fd8ef605c6b643b1db30d5846c72d545",
-      "size": 272
+      "sha256": "25f5a55d281d526b38e18ed7215c2862346592ff8e574da8e293a799d9845fec",
+      "size": 268
     },
     {
       "path": "examples/web-gis/templates/WEB-10/safety/THREAT_CONTROLS.md",
-      "sha256": "625e9046c4021075fee0b06d0cb7fae3a72e1645d2b813e1d13c69faef64eb39",
-      "size": 358
+      "sha256": "b02abce25804e027709662fc8bb4a49aa2879973722e09c54002116c543d3cf6",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-10/spec/template-spec.json",
-      "sha256": "2cef7a661211d8ccae89b375703977b95f2f2af14733564be0bb06d9f3a3f471",
-      "size": 698
+      "sha256": "f36c92b4dbe72cf86e2f356bb3354848a2f9c292653e517f8a2f704b91b5ad64",
+      "size": 675
     },
     {
       "path": "examples/web-gis/templates/WEB-10/tests/TESTS.md",
@@ -1871,18 +1871,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-11/fixtures/README.md",
-      "sha256": "5897136c69ee0b8c50fa750e3de3f699f308b92a25128f1086fd4885a4b085c5",
-      "size": 273
+      "sha256": "241e7ef585c6cf2a77de300be3318f8f7a566e6a3715c5dbdea861c24515b377",
+      "size": 269
     },
     {
       "path": "examples/web-gis/templates/WEB-11/safety/THREAT_CONTROLS.md",
-      "sha256": "0e7aba2d597585a616312ab44726c9fc868e5868ae2e0890d1d4913a13da784a",
-      "size": 358
+      "sha256": "bbe9e555cc504223f2c21cf34e7f35d68beb8808b4e3a42cf5d8fa466613c94d",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-11/spec/template-spec.json",
-      "sha256": "b5df56d08348feb2a7696b732cbc49c42e76926e88bb9fe272e46f9dd8c6386f",
-      "size": 696
+      "sha256": "06b4b07fc8145237774542f540d38d5eaa59669e6fd2476f88660d2a15267214",
+      "size": 673
     },
     {
       "path": "examples/web-gis/templates/WEB-11/tests/TESTS.md",
@@ -1901,8 +1901,8 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-12/fixtures/README.md",
-      "sha256": "b084af2d9b67dca21ccbe34ebc076476b67a8929813b71e2d6ffd972a4f06dcf",
-      "size": 276
+      "sha256": "2b49bd55e0f5cd4e471f4891126be2e2e7328f95289b2078e540b4920a3dbd49",
+      "size": 272
     },
     {
       "path": "examples/web-gis/templates/WEB-12/index.html",
@@ -1916,13 +1916,13 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-12/safety/THREAT_CONTROLS.md",
-      "sha256": "276184da04955dc4d2226b6a850a568e1ee55c263db81f4a864302bf147f258e",
-      "size": 358
+      "sha256": "7765fe622587a466bfe87dfb5631fe9a42962e15ecfd6d69eea46353e7db297f",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-12/spec/template-spec.json",
-      "sha256": "08a342a9a526da7c1b642a4458d5f111d5f01589d60028ca5cf1f1fbea206d69",
-      "size": 716
+      "sha256": "1f5d220206a8c03da54d2559d268dafcf3f1ab3bd70a60affd76a52a3be6046f",
+      "size": 692
     },
     {
       "path": "examples/web-gis/templates/WEB-12/sw.js",
@@ -1946,18 +1946,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-13/fixtures/README.md",
-      "sha256": "71249ea70ab7ae8e9df074cd0a9b2a3c9c0bdb22d201db76b7f3efd7a2101c3a",
-      "size": 279
+      "sha256": "4ca727913bb6e1227fd348f3af448129b39c9b04e26056044da19ada8506dc55",
+      "size": 275
     },
     {
       "path": "examples/web-gis/templates/WEB-13/safety/THREAT_CONTROLS.md",
-      "sha256": "f610b2d5d8c22ab80c97bbbe062025b0e35df17ba627d2fe8b5762903a99b231",
-      "size": 358
+      "sha256": "7d0204f910df4d87c875c5efebab433e2975910ea0e25504be19943e95a0fa30",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-13/spec/template-spec.json",
-      "sha256": "404a9537d73a82bc851b244c0ef948a03d0b8da9862490b994fd78fffb81acfd",
-      "size": 702
+      "sha256": "f3dcd4753c687eecbc0f790375e656260b248ebe1cc1b7e0bc59781e48a5662a",
+      "size": 679
     },
     {
       "path": "examples/web-gis/templates/WEB-13/tests/TESTS.md",
@@ -1976,18 +1976,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-14/fixtures/README.md",
-      "sha256": "948808dfc9a48ed787b8aa85f8147bd677a7db0b39dcb6b30fbd01a8c37291c0",
-      "size": 281
+      "sha256": "70a476fe3558651ccaf646f8e2c405b833a35e427a4e2fe47c669b2fd2c669b2",
+      "size": 277
     },
     {
       "path": "examples/web-gis/templates/WEB-14/safety/THREAT_CONTROLS.md",
-      "sha256": "0b14e84b1e86aec93c5e809ff048c9068543912b49f22249a1c25640d37693b2",
-      "size": 358
+      "sha256": "454ad13f93c706019c1cfc8dcead6f3afdd0cbffd3940649f469cccb19e74528",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-14/spec/template-spec.json",
-      "sha256": "15c9fefbe00262a3e1bbbea71f6e3b42d502de2136fc7b9bf959e8b7fcdfc4ca",
-      "size": 702
+      "sha256": "1f4bf6fd569cf6c2acd9975f57d51f1bd15b9a679133fd6ece57ff98ac26d3d6",
+      "size": 680
     },
     {
       "path": "examples/web-gis/templates/WEB-14/tests/TESTS.md",
@@ -2006,18 +2006,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-15/fixtures/README.md",
-      "sha256": "8072925430fa90578ed28c8ae7b26d35730c8c63100b2039c95e4b5f1f0599d6",
-      "size": 279
+      "sha256": "55232fdab0f6add91cc58b29fe840f806476cd64546d40bac3cc565f9b8f7052",
+      "size": 275
     },
     {
       "path": "examples/web-gis/templates/WEB-15/safety/THREAT_CONTROLS.md",
-      "sha256": "61d86eb790c9e346ec77c53d13a2d15eef8f7f1b77e87c1e0e600866378942e3",
-      "size": 358
+      "sha256": "0f74d19b3a6a13b6ba70e7e33ecbcf46f0828eaf9bd557f3af3264cff0a318e7",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-15/spec/template-spec.json",
-      "sha256": "9bca7bc689b2573efbc32cd1ca1b389c2e4a6688eab6b3980463d4256587beee",
-      "size": 695
+      "sha256": "72fb32045daf9bd69cd6bf878aa74ab4c0c3e05df5ef4ca479ebc56646ced8a2",
+      "size": 673
     },
     {
       "path": "examples/web-gis/templates/WEB-15/tests/TESTS.md",
@@ -2036,18 +2036,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-16/fixtures/README.md",
-      "sha256": "aa7f7c8bb9c0689800a5fb71cf983a8c86c071b3606dcc44b24ef82f9dac10e4",
-      "size": 275
+      "sha256": "d95d1108d9b4e9216ac25700f85a216ac6f5821869b120d26f46d4e4d4a733f9",
+      "size": 271
     },
     {
       "path": "examples/web-gis/templates/WEB-16/safety/THREAT_CONTROLS.md",
-      "sha256": "2206f50b61f625e542adfe73deda903f769d49430ecbbe76a5be4e1a497d9ee4",
-      "size": 358
+      "sha256": "b5c0df15232276ac7b31a3ac992490e060883288600ba438b19c6801dd944aab",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-16/spec/template-spec.json",
-      "sha256": "ff900977f64002fa8303cc009067fa6c5c25cd6aadab7e7e9a202bf333e6ae17",
-      "size": 679
+      "sha256": "216eeedb313ac3bdb15d3d79e041e621d287bb2b9a6200ecabb997d10739dff2",
+      "size": 657
     },
     {
       "path": "examples/web-gis/templates/WEB-16/tests/TESTS.md",
@@ -2066,18 +2066,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-17/fixtures/README.md",
-      "sha256": "969d15ea4b1a4956f06089efce1817c69be39cf0dbc53a565c1155342d0e8104",
-      "size": 281
+      "sha256": "92aa96fb707da888da0e4156ea1d9450f48601b002b4cc15da89ba1ac48890df",
+      "size": 277
     },
     {
       "path": "examples/web-gis/templates/WEB-17/safety/THREAT_CONTROLS.md",
-      "sha256": "af152ae69bea1e87b6e71867f23549df5dcfc7a16537f0b95ffed6b9aa215a0c",
-      "size": 358
+      "sha256": "ae29812d1de7c4c38bd96df38d69db2fa44ef2e0af9406fea694fe94927291c8",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-17/spec/template-spec.json",
-      "sha256": "6f04e60943f7bc2e922a8138a2a2046bfa7b593c9584a7863f5a17213395f193",
-      "size": 703
+      "sha256": "5950c1515772d2c9de9f15eda3c12d84dfa135ea0b7bfe46060cad5c11770aa1",
+      "size": 680
     },
     {
       "path": "examples/web-gis/templates/WEB-17/tests/TESTS.md",
@@ -2096,18 +2096,18 @@
     },
     {
       "path": "examples/web-gis/templates/WEB-18/fixtures/README.md",
-      "sha256": "1d636c0ca7c4d6c9d24805b6d04d26823ac4b547c10ff170149856af337dc06f",
-      "size": 273
+      "sha256": "7751e78e4c65a5c8c8db23f5b6c5dd95d50c5443d70dd40689e016e2b6e8f37e",
+      "size": 269
     },
     {
       "path": "examples/web-gis/templates/WEB-18/safety/THREAT_CONTROLS.md",
-      "sha256": "f114bfb0c1201cb6f979d597e32fc5f00de7a3378ece36c475d727c759e301e2",
-      "size": 358
+      "sha256": "69cee1808c950528c0d8f8c0ffe882f602433993406c74fcde7e80df99ce5708",
+      "size": 353
     },
     {
       "path": "examples/web-gis/templates/WEB-18/spec/template-spec.json",
-      "sha256": "0e5482c48d516291a27eb247b96e0be85b920abc5935c1ca4054dc412473217a",
-      "size": 739
+      "sha256": "892b4784c089bbb86072be45820f9aba577d6096d0b5cfca6fb3a877b2daa214",
+      "size": 714
     },
     {
       "path": "examples/web-gis/templates/WEB-18/tests/TESTS.md",
@@ -2116,18 +2116,18 @@
     },
     {
       "path": "explorer.html",
-      "sha256": "2bab54fd9c2aa4d4f0d35046a684dcf14d36ef9713a004051c7a70bc65922455",
-      "size": 116324
+      "sha256": "0dae54e5ace43eb1a09c05b76969f3b8efa7e4ebb084d876f3d3e86bcc74d6d0",
+      "size": 115628
     },
     {
       "path": "fixtures/README.md",
-      "sha256": "c6518816e67848eed47cdaa504c928dd7994d1f0cd491a4cbfa7634e6d7db375",
-      "size": 1736
+      "sha256": "184bc204ed347d0a09e6c6d1a25bf6e24cff0e3f79d9f9a3d86d6466694908ab",
+      "size": 1717
     },
     {
       "path": "fixtures/expected/expected-results.json",
-      "sha256": "88f9b75f00002560ca2f0b6234c318ac194a8b657dc11c47cda1919d7085c26d",
-      "size": 1193
+      "sha256": "ac26ef43c8e9daf23ab3cc9bdfd5b9bb38c1b1228eade2ed7d0bccd20e6dd875",
+      "size": 1134
     },
     {
       "path": "fixtures/expected/p03-science.json",
@@ -2141,18 +2141,18 @@
     },
     {
       "path": "fixtures/generate_binary_fixtures.py",
-      "sha256": "6b8d69706f0571218f79a92197c7f3906df7e9f6124d6388c092eee9e6346052",
-      "size": 2629
+      "sha256": "5a3fda4e8e4e8c2bf60d6d6bc2adacc63b34728d3457c429ae16fa129b751c9e",
+      "size": 2571
     },
     {
       "path": "fixtures/geojson/points_lines.geojson",
-      "sha256": "0c853b590d212977352b062b870f5385784c91d792f5418898981ed1b2911728",
-      "size": 928
+      "sha256": "91e14757a8af246989a51788c6c9490f4dda00dc51221378503dd214533a7043",
+      "size": 874
     },
     {
       "path": "fixtures/geojson/valid_invalid_polygons.geojson",
-      "sha256": "1ac3d2bb8458e4dc03cb53f64f1c3b5a225690a5757e8160dffe9137852f1c35",
-      "size": 1286
+      "sha256": "8f24e4b6b4ab790a70e6bc9cd1edbe4c1ba1e508c6903b150ec7be1aaefd5882",
+      "size": 1212
     },
     {
       "path": "fixtures/landsat8-l2-pixels.json",
@@ -2161,23 +2161,23 @@
     },
     {
       "path": "index.html",
-      "sha256": "bfe965ff5c7150927e19a95d3d85aa0b8d1cc0097ec0bbafb7c297e700cc8688",
-      "size": 172363
+      "sha256": "509f13d6434dc4554cd7a9d389d8cc4a72cab2a79db2b0e089d396f780884bac",
+      "size": 170926
     },
     {
       "path": "native_tests/README.md",
-      "sha256": "960cc377e845c9d99abf63c0b37327dacac1eed85d120cf442665d0a999ce1f9",
-      "size": 5693
+      "sha256": "7b9995c16c23a7a604fde3a1a075f2dd518d9a54621eddfa3212115f76e96977",
+      "size": 5611
     },
     {
       "path": "native_tests/arcgis_pro_acceptance.py",
-      "sha256": "efce23b3c65925317025e45fcd38d9a2d5eb685c883142067622d7baadce4f7a",
-      "size": 1727
+      "sha256": "76896a74a088a67849a1d746f47bf7eab5e99a7602c5a26af4370e447876673a",
+      "size": 1690
     },
     {
       "path": "native_tests/qgis_acceptance.py",
-      "sha256": "39549e3d5476085f42a67eb9b09a5a42b17ea691bce38f179bf1fbb01f630dc0",
-      "size": 2098
+      "sha256": "f51573900e91dc163da9c13ac57c896956750d371630531c18e8e280f1b0b29b",
+      "size": 2055
     },
     {
       "path": "native_tests/qgis_project_roundtrip.py",
@@ -2221,13 +2221,13 @@
     },
     {
       "path": "plugin.json",
-      "sha256": "a31a339bd583b75da919e4bf5b06b989af62ce776f0d92720dbb4d4514de9d8e",
+      "sha256": "999f21b817fb5ff975eca121be394d34c33d4d8b9b7df4216e3faccc70f7f3f2",
       "size": 1101
     },
     {
       "path": "project-wizard.html",
-      "sha256": "3c072f095fb21d9c32d798f7edb721ac2c9fef4fa6b6c9f1e9325b8c6a3a0ccc",
-      "size": 42059
+      "sha256": "6ff14bbf4f0ffb75ac63da7d50b33bd100cca4e33e07282bc9533d85c7036d66",
+      "size": 41771
     },
     {
       "path": "references/agent-context-memory-architecture.md",
@@ -2236,18 +2236,18 @@
     },
     {
       "path": "references/agent-decision-tree.md",
-      "sha256": "2dbd0d648b42246a54e45479a529079c0f02d59a6838faea35d186d04345f70c",
-      "size": 12884
+      "sha256": "49f68bdd1b51c3118a3340f3fa4906e52bc16fb08470df630ea6d5420d1ae4ef",
+      "size": 12818
     },
     {
       "path": "references/agent-development-journal-guide.md",
-      "sha256": "71ae2928e56e5f7472825724ee04d9b463f900d7f91fb2ce6cc863c1587d4848",
-      "size": 4780
+      "sha256": "8d84f5e3ae1fbc30936c92e6bc9f4d43c0c0affaf1ed91db6d2d9c7f42791c0a",
+      "size": 4732
     },
     {
       "path": "references/agent-memory-skill-references.md",
-      "sha256": "7d3560a07bb93619ff335b4145359b63ca0b7596c976b750f614ae81f6fb1fda",
-      "size": 1993
+      "sha256": "3f90bd1a0c01e4c9f95bdbcd0a8648487d5932d81f55b6b12d24bd7959d5d7f1",
+      "size": 1981
     },
     {
       "path": "references/agent-reasoning/adaptive-controller.md",
@@ -2291,38 +2291,38 @@
     },
     {
       "path": "references/ahmad-ibrahim-gis-case-studies.md",
-      "sha256": "582d1b714a2cdf30b668d3591b73f1e195c4947b2a414e05279d143fbe25baaa",
-      "size": 7946
+      "sha256": "a00b9613a5ab44088b2cc6f89995acc76fcc1d6e0a50f23461b57f43c0abdd88",
+      "size": 7881
     },
     {
       "path": "references/approved-service-hosts.json",
-      "sha256": "02bd72cc802e20fbc31c3286f4603539cae6fbc24fa30dda8382162c93a8c9a1",
-      "size": 1078
+      "sha256": "5be83e2de61fdcbdf40521cdee73f7303bb6b969e149f74ae19f781b5f598e1b",
+      "size": 1041
     },
     {
       "path": "references/arcgis-arcade-profiles.md",
-      "sha256": "efb42f92dafb43ce3709ca57c8d55843418963341aed440e1abae0182ffea1dc",
-      "size": 1654
+      "sha256": "65e364e4e823dce783d0c1618ee8306660394c08d7a9fa7e4ebb749255b03861",
+      "size": 1637
     },
     {
       "path": "references/arcgis-pro.md",
-      "sha256": "760a2e435f487e011af00018af60a22fb3d9129145827f0a98c1eff5ea40bbee",
-      "size": 2656
+      "sha256": "ef32fe6eda6ac118e49635584e3e0e8799e25f1ea2be4e0741b9cedafd77a038",
+      "size": 2634
     },
     {
       "path": "references/archify-integration.md",
-      "sha256": "fe713e3e5b649588c962c5dfdee2005e45537fc6f721a647aadd20c12a6eba1e",
-      "size": 12694
+      "sha256": "b53b72e62293f3b90cafe59e5fb078ecdab12e9392588b84be9f009bfc26cfb2",
+      "size": 12586
     },
     {
       "path": "references/arcmap-legacy.md",
-      "sha256": "cecdf94d378d1fd0f8f08c7028de3b6a0b6c9a1cc0821d9263bd9784b9da11f6",
-      "size": 1638
+      "sha256": "a436a7543c011a342e3ef5688bc5f1a8d72fd6b4a8a55e70bc4e98b9f2b3e23e",
+      "size": 1617
     },
     {
       "path": "references/blue-marble-global-mapper.md",
-      "sha256": "faccab78b4fb935907d67cbf3a8306a872252c52547158a372997b0e5fa4ba6d",
-      "size": 6883
+      "sha256": "859742ce3860bb0824c0c9b56a6d4689778661baa91f5c3a5865d1a9cb1ea88a",
+      "size": 6835
     },
     {
       "path": "references/browser-geospatial-js-runtime.md",
@@ -2336,53 +2336,53 @@
     },
     {
       "path": "references/cartographic-style-guide.md",
-      "sha256": "6f66091a6797a8b23f0c826ba6aff29b8300c5736636d944258e84f7ff934fc5",
-      "size": 5283
+      "sha256": "b94d60f86aab62a8003e606e24e86013fd59923e5f0f185dd226b28cfdcb96ca",
+      "size": 5239
     },
     {
       "path": "references/cartographic-style-sources.json",
-      "sha256": "f7b51b276359187f09be7251f8d79fbd32a39a1fcb8d135bfd38d62c7c426e79",
-      "size": 18836
+      "sha256": "5d2eb6b83d21758b4f98a16f95d685494bee8a0e6cae9c44be9f7f6bc55cfbb5",
+      "size": 18346
     },
     {
       "path": "references/desktop-and-web.md",
-      "sha256": "5f82350493f9aa81eaec760533017b203c9bb3097f9223952afc8916cecaf0dc",
-      "size": 4758
+      "sha256": "e305fa3ee5001631704e03b7034827071716ec16383f9e0612940542b57b7fad",
+      "size": 4709
     },
     {
       "path": "references/desktop-application-engineering.md",
-      "sha256": "687c3b5f72949a1cb44d231270a3dbc3d6381fd8c9ad21d396817ffbf0d09488",
-      "size": 14040
+      "sha256": "d0cab436eb312ae41826e02350ab15296bf57bef9c98a7f478d292f696f1bca5",
+      "size": 13911
     },
     {
       "path": "references/desktop-gis-technology-directory.md",
-      "sha256": "a24e519e7ce5b1fafa5ade43cb9391b3a510f1c1bfce6ee6b00555c153765e4e",
-      "size": 5929
+      "sha256": "d2b0056c46e6d433d11985669e611690d27e2e8c55bd9d5ec50489bdeea89dfb",
+      "size": 5865
     },
     {
       "path": "references/device-context-and-sunlight.md",
-      "sha256": "1d05d2737b13c6ae85b3daa2cd05c454402b1c93d3a86eff7822b0384fc22d8a",
-      "size": 3532
+      "sha256": "33fb6f91d3f25ba899b0667260cbcd4d372e3078227f221d5f50aae15a6eff28",
+      "size": 3496
     },
     {
       "path": "references/doneproof-verification-protocol.md",
-      "sha256": "40999c1e31cd13f51cc5c0354aecf85a4d7569df3ab9a2e833ee66471ef92cf8",
-      "size": 3733
+      "sha256": "81bca091f7653211e7c6006f2aa60ebc86f51bf6bac0049e7a3448f2aa1ae83b",
+      "size": 3703
     },
     {
       "path": "references/dotnet-gis.md",
-      "sha256": "ec389e4c9b7e8248bb96140e2337fc342b5f2a4db7f2847e8160ad3011700d2f",
-      "size": 3224
+      "sha256": "14874d83966ca63efe2e95c032379b25a2b289a59e091fb23a4e379898d2cbf6",
+      "size": 3190
     },
     {
       "path": "references/earth-view-architecture.md",
-      "sha256": "d1c0b76e8830330a7f12689230f5bcde3c4604975011fd2014160d12b8de26de",
-      "size": 5290
+      "sha256": "1fbd53a5ec67bb98b07d7021c2746a40063c5684e467c86a0bda3dd1ef7f1f77",
+      "size": 5251
     },
     {
       "path": "references/earthmapper-case-studies.md",
-      "sha256": "acd0da25189b758435519e8423788d2c2f0b745ff702277dc116b42a0ce59e7f",
-      "size": 4435
+      "sha256": "3e7da4028f6b8c18833ad52a8d4bb3e3b5c9a815b0fbf17f90788cede1640b17",
+      "size": 4399
     },
     {
       "path": "references/engine-architecture-taxonomy.md",
@@ -2426,18 +2426,18 @@
     },
     {
       "path": "references/esri-crs-and-spatialreference.md",
-      "sha256": "1db93a9a064c4905886e1549ab283e5a8d2ce2bc79e7443b21748431732b7788",
-      "size": 9110
+      "sha256": "9b87b8960122f69c84e351be05febe3191f51e644d35df81e54f9c863315ae22",
+      "size": 9010
     },
     {
       "path": "references/esri-open-source-integration.md",
-      "sha256": "3aee19fb496887093e8479109afa44908b353589a74320b5771401a1e9a49ed0",
-      "size": 11625
+      "sha256": "a1d4327b178b42aace043967262ad1b08e919a0a354ce460c7d3f4dafd1ea0f8",
+      "size": 11551
     },
     {
       "path": "references/esri-python-environment-compatibility.md",
-      "sha256": "de62a46d22c3c5e3269459fda04a9c4274082988e885aad428b1af5c9cb08f8d",
-      "size": 1875
+      "sha256": "5fd0b77f57e69818609284536f354421d73a8daa67674d426252078f64095fa1",
+      "size": 1858
     },
     {
       "path": "references/evidence-tiers.json",
@@ -2451,33 +2451,33 @@
     },
     {
       "path": "references/free-first-policy.md",
-      "sha256": "0d9abdbde75b2ca32aa5b49dd486329435265d4147d852bd06a63ad5298ef1e2",
-      "size": 12597
+      "sha256": "040a2b00648e48c52f19ee3cded6815ac5ad918c447bfe68ac41ff092ef4bc6d",
+      "size": 12521
     },
     {
       "path": "references/free-geospatial-apis.json",
-      "sha256": "963f2baac28725955447bbd62e2142722006748f11550e02285c47ef7c8773ec",
-      "size": 68194
+      "sha256": "0983fb9823c061fb1cd9d23856cc747d79a97d0e588858e7221f96bf131dec1b",
+      "size": 66636
     },
     {
       "path": "references/free-geospatial-apis.md",
-      "sha256": "eff6de64e31f9b241387bc002944f1aa48945f0f08cd1a080aa413fb1dbf6c51",
-      "size": 16691
+      "sha256": "254e8d70f86abbf69aa3258965a119140ec7fd00dbd6bab01fad11931fb4856c",
+      "size": 16561
     },
     {
       "path": "references/geoai-satellite-map.md",
-      "sha256": "6933d69a602a4fbc3cc203d3f5729b7b25d2efebfda3f0027963ae9aa213e8a6",
-      "size": 2091
+      "sha256": "27cf7d66fc7960510c610ff90b031630b7eb9bf93befde94a7667c6afce1bd2b",
+      "size": 2067
     },
     {
       "path": "references/geocoding-place-search.md",
-      "sha256": "fba6581c8853abdc54ebf03a58f860b298f5fdd93aa44c89fe2265b191b38ef8",
-      "size": 9715
+      "sha256": "cd260efc6ba9d0d52ad49b9524a0a655bcbdd4a2132a83a2539e1781517d0bb8",
+      "size": 9634
     },
     {
       "path": "references/geolibre-integration.md",
-      "sha256": "2a8e0ba671f4431f3c91681201812e2a7c754ad2ed721b9759f710560cbf71f0",
-      "size": 5279
+      "sha256": "0e0d3eb8646a0723c6671d7c20b15db7206c5175c54540ee7ce455debbe718e9",
+      "size": 5211
     },
     {
       "path": "references/geospatial-3d-ar-mobile-web.md",
@@ -2486,33 +2486,33 @@
     },
     {
       "path": "references/geospatial-data-repositories.json",
-      "sha256": "f33c59b5a7ebb6df68575165165291664b17c6cfe4de5a4495def1cfcc5b429f",
-      "size": 14845
+      "sha256": "69315cdffb9650db17f3885c91195dc3681e0e065135f715ddf8d86d579808a2",
+      "size": 14421
     },
     {
       "path": "references/geospatial-data-repositories.md",
-      "sha256": "75190fdce977cd93cb127ab7d2f066a3d1e969948c5f28c5af13e6d9c1cd7a9a",
-      "size": 4290
+      "sha256": "76ce6ef864cbd6fb5ffb615f284b06b85bd95c08d4f134236a722b238022246d",
+      "size": 4249
     },
     {
       "path": "references/geospatial-foundations.md",
-      "sha256": "ba5530a1f7d2b0f7fa7adae95c2979888c80ee870a8300544d8f3b91d55ea099",
-      "size": 1793
+      "sha256": "8678fd12242ec0486840a4dcf53e8a5a9397c7c7b3aa21a64a5f3b897ac047b2",
+      "size": 1773
     },
     {
       "path": "references/geospatial-performance.md",
-      "sha256": "a5ad3aefd2a682c0cd7f3dfe425a347de834f52540f724cc24a7e475b157b0c3",
-      "size": 1925
+      "sha256": "cc81af93cc072d9df198979dc2861db83c9d3dcb2ded7c13cd38de8d99e6721b",
+      "size": 1903
     },
     {
       "path": "references/geospatial-security.md",
-      "sha256": "ae5e593a0ef990d48bb4cdcb088246d0cb6ddfae16926bd0aa81ce6fcc2f46aa",
-      "size": 2480
+      "sha256": "2ec167df8fa5e444d51497436769de7d9d9a9eadef30642e73df618993208a19",
+      "size": 2457
     },
     {
       "path": "references/gis-antipatterns.md",
-      "sha256": "de1aa0f967edd69990ce06702680810dec7f8f74b900a7104fa2479ccfcf580a",
-      "size": 1403
+      "sha256": "c6dc19004d6c670e510712facf552159a13a34a94c92b960790b7b4f82ded271",
+      "size": 1389
     },
     {
       "path": "references/gis-code-recipes.json",
@@ -2521,113 +2521,113 @@
     },
     {
       "path": "references/gis-code-sources.json",
-      "sha256": "46302c0c29afeeedfb8bdd9c37a9804d84f9ec2be8983280fe1ac10f1d3e5a81",
-      "size": 23122
+      "sha256": "8684cc1fac907708aae022943e1cd39868244a010cb8f12ac3143209448bbdbc",
+      "size": 22415
     },
     {
       "path": "references/gis-data-flow-diagnostics.md",
-      "sha256": "7e2b36d12fa81379792fb96bd824673e256d1824b9d9deb1b8212388e0cc878e",
-      "size": 5028
+      "sha256": "06689d72e8420eab5d8943eee0eee6612dd487ecb9edf84694b4b717b3948012",
+      "size": 4966
     },
     {
       "path": "references/gis-desktop-e2e-testing.md",
-      "sha256": "1c67680c046345c62045e76472c57def369d61284088bf682668647c839072c4",
-      "size": 4291
+      "sha256": "f672566fff4f40b88f6ce3d5a6d777a3ce6ad7cd80d2b4cdbb4887eb5f73f82c",
+      "size": 4250
     },
     {
       "path": "references/gis-development-full-guidance.md",
-      "sha256": "7f5ec87f6e42dfeb92bca12d95202ce3ff472180cfe8b95af0aea9407da40da0",
-      "size": 16233
+      "sha256": "f24f0c6368fddffa5257e8b278099f872e52a141a86c6c3b0ea2d4395e0fc36e",
+      "size": 16108
     },
     {
       "path": "references/gis-multilingual-arabic-guide.md",
-      "sha256": "a960aaa6423d5ffa5f8bc84c8c151ec20cc2fe0c55a9acdac5c11b5a9da0d3f8",
-      "size": 6109
+      "sha256": "c2446d6b47698d4493c49b2c5de860d08a9783d58b978d4ea551f2a2e4df3656",
+      "size": 6005
     },
     {
       "path": "references/gis-software-source-registry.md",
-      "sha256": "385e294cb81bbb1f8e4ed67ec5e7f7128b0e99fd8bc184118a438337353a5abc",
-      "size": 13277
+      "sha256": "5677f449e08684e6355d2e86f2c062f509bd6ae9e09cf1992b9a8683bc22e2ce",
+      "size": 13172
     },
     {
       "path": "references/gis-ui-command-audit.md",
-      "sha256": "37d2f60c05fae499334eae32d1368015d6024bbfdbf16f363f13277eaa1417a0",
-      "size": 4669
+      "sha256": "2b0a79bd83390b90e24f92be67c83e217642ffc8061d6f8bba16e12a7217e64d",
+      "size": 4622
     },
     {
       "path": "references/gis-ui-quality-coordination.md",
-      "sha256": "90d362017ca9b704a490743ff87c8e04c46148eec4fbf92c4f6ab168a8f2099f",
-      "size": 6684
+      "sha256": "31c48624ea97746b2f4a63683e6407b7a6c6758fe4059c09045d3a28f6e0e990",
+      "size": 6609
     },
     {
       "path": "references/gis-ui-quality-upstream-sources.md",
-      "sha256": "c1c1f5a3c2c89028c37ce94710df8273c81e477d826537325a5ecae346c1ee09",
-      "size": 5831
+      "sha256": "0b4605956b47f29d154fb77159ec594fb343e0807543fd88434fb336c5fa1d30",
+      "size": 5774
     },
     {
       "path": "references/gis-ui-ux-design-testing.md",
-      "sha256": "014a45bbc5308f63a85ec68a1d85fdb2d24a704a035cf187dfb416147bd10fbb",
-      "size": 4648
+      "sha256": "ef789b93faa94ca5073672f7abaf110c5bb7a5f0638c3057dcfa858b924747e8",
+      "size": 4603
     },
     {
       "path": "references/gishub-software.md",
-      "sha256": "f05cb35257e2111c9e1a11d7104f6dd1141da6a8ed667badbf93c1f4621a26fd",
-      "size": 9666
+      "sha256": "9ca29b5933278fcb3a5ebce0286db3f2408900c42f6fcff5aab57cd2a0bb0659",
+      "size": 9579
     },
     {
       "path": "references/google-earth-pro-engineering.md",
-      "sha256": "07a306ea42d21710b4e10cd1d60b8a3ef1abbe4f1376505f4cec5e794f7644a1",
-      "size": 7545
+      "sha256": "44da647f474cdcfbcef75404bbca5751dc69f932741c450780ccc84f40061a89",
+      "size": 7496
     },
     {
       "path": "references/google-kml-kmz-compatibility.md",
-      "sha256": "79e70e80a464325aaed98c895fc5d411c2df4d60e52abc186595a4e1270a8211",
-      "size": 13008
+      "sha256": "5236de137b135c97ccd0d1f4d7dd248731e8f6fc8fe8f5be5b62534e3bb8e1f5",
+      "size": 12911
     },
     {
       "path": "references/historical-imagery-timeline.md",
-      "sha256": "4228fe284cb9e5576320458306ccacaaeed70c31f1e99876249e9faba0948507",
-      "size": 8101
+      "sha256": "27273422c2caf8189c23db2e2ee408f649a767be4abd890f655aa81429f80a7d",
+      "size": 8021
     },
     {
       "path": "references/intent-orchestration-workflow.md",
-      "sha256": "bd8349d3df16aa1c0d563ff9a3f717f919661af1f9bfd7624b5ba591e27e0c95",
-      "size": 14128
+      "sha256": "034bd7c507a75ff6eee97040334ae36b3c9cc5c571a2b488aca4bf0a67cd6545",
+      "size": 14015
     },
     {
       "path": "references/kml-kmz-repository-review.md",
-      "sha256": "38ebd9e31996d08e8f18d60f9c27a7be4679d6e0f9d5b28a3185c40ac72c3347",
-      "size": 4677
+      "sha256": "3a49288a940547ac0d9150fded8dcee21426d91a7e4a33ea4fc7502ccf6d5cfb",
+      "size": 4653
     },
     {
       "path": "references/kml-kmz-symbol-preservation.md",
-      "sha256": "1b383bc746d56282233e0193c871f210eadcfeb4dee910feb32e1f0425f27738",
-      "size": 7912
+      "sha256": "bedbdee92091cd283df594e255df04c73c56270750b2a75cd5abd280a2154f16",
+      "size": 7863
     },
     {
       "path": "references/map-marker-icon-library.md",
-      "sha256": "4b87d8000517ef549f06923418225d7f965c8a2f2f6336f1d0c8f684b224b7ff",
-      "size": 6741
+      "sha256": "5305d50c98651dbdeac32441d59a92fcd28cc4d0887a93ec5e588427671c6883",
+      "size": 6700
     },
     {
       "path": "references/mcp-capability-registry.json",
-      "sha256": "9dcc2d5a2adc52c2f1506431be19c57f4ed1a9ef67849929318790143f3e2324",
-      "size": 1674
+      "sha256": "c578c6790b020669f107f64f30bd0bbc5812a0a105494e5d71e5d5538a029631",
+      "size": 1596
     },
     {
       "path": "references/mcp-integration-workflow.md",
-      "sha256": "0bbac46f3d67b4f0a991e2fe76c80d27732810f42fdf06802cec56fa66641502",
-      "size": 5418
+      "sha256": "4149d09498a73041bb235e86774de46fecd21cad92afb78b4f3009d5b7f1f758",
+      "size": 5372
     },
     {
       "path": "references/mobile-gis-architecture.md",
-      "sha256": "0dba4401581ebb63866ed96fc0e0da04e99a02f75737b77128f24e05bd05475c",
-      "size": 8038
+      "sha256": "f85c81fa6a895d262055318e038f3b3fe748aeb42e5b9ea4f082669f44586e3e",
+      "size": 7967
     },
     {
       "path": "references/mobile-gis-authentication.md",
-      "sha256": "1e4ec009ffbb3c96ee2c5990c9eaff35712283c0b92c1fdff97934adac18f8f1",
-      "size": 3749
+      "sha256": "6334737378e2db9af06795c6325c5c11789e8136891d1cca703d6a46d1cfa55f",
+      "size": 3714
     },
     {
       "path": "references/mobile-gis-device-gnss-rtk.md",
@@ -2636,13 +2636,13 @@
     },
     {
       "path": "references/mobile-gis-device-test-matrix.md",
-      "sha256": "9c8eea2dfad2b9e14d697b2066e360c5c5a3f3dc390753e43ce4d15bdcade05f",
-      "size": 4293
+      "sha256": "40c4326fb62b542f4d5e6d0e9350fbd67886241a28078378d6ddb0e9312fc8e3",
+      "size": 4261
     },
     {
       "path": "references/mobile-gis-offline-sync.md",
-      "sha256": "79247c3806a12e048ca6c5531562bae3eb5ad57ef4da2c3f000bf9d3b1bb279c",
-      "size": 4371
+      "sha256": "915bd98c1ff5b697ac967a82c01ce390077b8e2b648ac0a5a24f9fa201c05049",
+      "size": 4325
     },
     {
       "path": "references/mobile-gis-platform-selection.md",
@@ -2671,8 +2671,8 @@
     },
     {
       "path": "references/opengeos-advanced-integration.md",
-      "sha256": "18eceebd80a46a4b8d64a17e18e361a8a2fc619b86112b38f9d1e27856bd7cb2",
-      "size": 5730
+      "sha256": "7ecda11764b0cd42742d36bbd4ca20e2cf6345c7809d34e2dc0cb41712e6113b",
+      "size": 5689
     },
     {
       "path": "references/portable-execution-guidance.md",
@@ -2681,8 +2681,8 @@
     },
     {
       "path": "references/production-workflows.md",
-      "sha256": "59e8e492014a15fa1cada68d6fe3de82fb2a5b0af0c07b994321d791c83a94c4",
-      "size": 1877
+      "sha256": "3d0a2dbee9cbe848332d84536a3d4519860825517f3821a61be40a46fa0c7e2f",
+      "size": 1861
     },
     {
       "path": "references/project-catalog.json",
@@ -2691,18 +2691,18 @@
     },
     {
       "path": "references/project-governance-workflow.md",
-      "sha256": "92f49ac804f829aa9a99f54018e1e7e52342aaf8be9aafbdccfda63f9352ef37",
-      "size": 24079
+      "sha256": "e838c3efcdeb657e8fee2e71540daca912f1aa27286b4ba24e49f1f4152ebc97",
+      "size": 23716
     },
     {
       "path": "references/qgis-engine-integration.md",
-      "sha256": "54f35a9c57525a7a5a7cd61fa4b0e8c953c3860be31299653601d8bce3573278",
-      "size": 6743
+      "sha256": "2872842d4dfcf6b69cc307ef99d00ee6d1710c06e8169bbe8a95a343682e7531",
+      "size": 6688
     },
     {
       "path": "references/qgis.md",
-      "sha256": "fc2dd93ecda14ee3b5728f1aa1e99b16a8663c18aa13040925dba6de94646c50",
-      "size": 1869
+      "sha256": "5a61bf9e2906aad19ae10406b64c9b5d52128ae57aee00283da879880030c8a6",
+      "size": 1844
     },
     {
       "path": "references/reference-ui-engine-mapping.md",
@@ -2741,18 +2741,18 @@
     },
     {
       "path": "references/repository-manifest.json",
-      "sha256": "c5a73f613cd5974719921cd83e14de9103c122f35555976cc7f8e3e61b440a49",
-      "size": 1762
+      "sha256": "ee351909034d5e486bad9c7e7903486f115390e9130717aea8067664a6350e99",
+      "size": 1708
     },
     {
       "path": "references/repository-orchestration-upstream-sources.md",
-      "sha256": "7c6067f345d716563f8699ccc8221aa7a56e3fe53bb26e3bf9c532ecbcf5dabc",
-      "size": 7218
+      "sha256": "c6617a81cc448ab87d8e23d9702fa05b6b1044c28ef3c1b4c0abb600527eed31",
+      "size": 7161
     },
     {
       "path": "references/repository-wide-skill-orchestration.md",
-      "sha256": "7ec02923832e87fe51590592ace2e80c3925f6e0f7f1e2a885c4bfab5e699fe6",
-      "size": 18667
+      "sha256": "e5d817afd60273f1540702e7211dce661eaf78c936805ad03297fb136efdf4cd",
+      "size": 18518
     },
     {
       "path": "references/reversible-cad-ai-copilot.md",
@@ -2761,33 +2761,33 @@
     },
     {
       "path": "references/rustgis-and-geolibre-r.md",
-      "sha256": "5ae8c6541ecc9bea5a682aeadd90a0c0fa210e923f0c848fa180ef12436afb0b",
-      "size": 2818
+      "sha256": "53c7b72fcc85d36c4fc06aec6d2f58e38ecdc1b2382d1fbed1d7e983a3542bba",
+      "size": 2783
     },
     {
       "path": "references/security/agent-safety.md",
-      "sha256": "f1897f0e3508a10a44ba20cc2f8d5df13b0b810d028ec21e05233b004ca4679e",
-      "size": 3063
+      "sha256": "b1e752a9a05d78e74b98434ae42aa770ea270774b1163506ebc8eaaad986d3ea",
+      "size": 3026
     },
     {
       "path": "references/security/gis-input-threats.md",
-      "sha256": "c5cc3569d8eb18af2f6344f2421bf7a4b199282b535b9829c6a2695698178eca",
-      "size": 2647
+      "sha256": "9cf7cefacedce9dff1e25aee35517b4dd1ea353291d600bc89f20b3732674e14",
+      "size": 2619
     },
     {
       "path": "references/security/security-tools.json",
-      "sha256": "60233aa0c51c105adbc36d402e821c12212f5c2bd1e66a176ff9a86a56869ef5",
-      "size": 6251
+      "sha256": "cef6bf8cd30c9eb4716377f42f524676793b1037c80d9a855f7a1aff7756d0c1",
+      "size": 6075
     },
     {
       "path": "references/security/tooling-and-ci.md",
-      "sha256": "c989d1a0a67703d8a41185d090b3076c4e1f288d9363dde4451bd36c67f351bb",
-      "size": 2944
+      "sha256": "58e905917954586e4cd72c85f9ba8b29190dbed482e57b6b058af00396a4e9fa",
+      "size": 2910
     },
     {
       "path": "references/skill-creator-superpowers-review.md",
-      "sha256": "988d155fba261e823788c090c26d42cb60f2d5160e13e22d158fda6911f8eaaa",
-      "size": 1892
+      "sha256": "3f96b556325a9363be2097ca02d5751f4b6c239b94ae00dca61ecc4e7f0b6954",
+      "size": 1879
     },
     {
       "path": "references/source-fork-and-ui-reuse.md",
@@ -2796,23 +2796,23 @@
     },
     {
       "path": "references/source-intake-workflow.md",
-      "sha256": "349a4a437f23c9bd9036962f0ef93816400af7a2929f4f61b3227fca57453fe0",
-      "size": 3262
+      "sha256": "7f7d864681a8c94a967d549d9a72e5f179c1a0400832cb306b4312d5f35aac8a",
+      "size": 3245
     },
     {
       "path": "references/system-capabilities-permissions.md",
-      "sha256": "a2c8cd5d34373b28582e0339b10a680bbe57436a05b7791d8d7519e3d25602fc",
-      "size": 3408
+      "sha256": "9af132dd5152b3c6433562ca39378f88d4718aa60066f6d3a6502b5c2c5a85a6",
+      "size": 3385
     },
     {
       "path": "references/system-capability-registry.json",
-      "sha256": "ecffd98d68655b34107aed51023d660213ed2e33872923e1223bac19481cd7de",
-      "size": 5545
+      "sha256": "1aebcbb9403dc59dce59f86752c2bf57bf42f2014545e43334c71f75a2786b45",
+      "size": 5318
     },
     {
       "path": "references/system-skill-interop.md",
-      "sha256": "09c78303dc99b91ade84641d23166901133e00c358a345da105e72d0f4a43151",
-      "size": 2241
+      "sha256": "f5ee2e53694be646d998f50b5e5a0e200fb07d1592409a72eb5b8f834feaa4b2",
+      "size": 2230
     },
     {
       "path": "references/technology-compatibility.md",
@@ -2831,13 +2831,13 @@
     },
     {
       "path": "references/unified-gis-icon-manager.md",
-      "sha256": "62ed6b349a051a4cadc10e940faa104953aedb484c72aa83776e25f7c3c766bd",
-      "size": 9494
+      "sha256": "d5321e36c54c1d322c582c44ad852fb2505af02079ad371ae701f61a67018dea",
+      "size": 9427
     },
     {
       "path": "references/upstream-license-audit.md",
-      "sha256": "ec28902f966f87884888fc55c22d5709d7e244b4e95fc4bd38d3e47ad8d04775",
-      "size": 5070
+      "sha256": "e05197e9a181d03d69b242c083de160b02d5528f6be682d641d41620bd58363b",
+      "size": 5027
     },
     {
       "path": "references/urban-design-competency-coverage.md",
@@ -2871,13 +2871,13 @@
     },
     {
       "path": "references/visual-asset-sources.md",
-      "sha256": "46b2eb1bcda7fd11b3e7c99928d025b4f2198dc966f606a2e94441b9510f83dd",
-      "size": 6459
+      "sha256": "e5e0cb35ced4e00b54fc26a67c2ed6adcc17b904bee1cc916757ad55225d908f",
+      "size": 6420
     },
     {
       "path": "references/visual-asset-workflow.md",
-      "sha256": "fbade8a86d4d35362556cd0fc0e8105fc2d2db9cca1d116b72ea1cee60e218b2",
-      "size": 5988
+      "sha256": "f05f4cc6b679823eb218a30315d35edbac8120e996bf6fc69e6f7e402167f8f0",
+      "size": 5934
     },
     {
       "path": "references/web-gis-architecture-selection.md",
@@ -2911,8 +2911,8 @@
     },
     {
       "path": "references/world-gazetteer-reference-layer.md",
-      "sha256": "2c9767643dc46a8326fa963901db1897196c8d4cd35ec2162e70b3b94fee0470",
-      "size": 7691
+      "sha256": "80e62b031bea69d6058962778a8f5f3894a56b6459ea7301689bc466bb94957b",
+      "size": 7623
     },
     {
       "path": "schemas/architecture-v2.schema.json",
@@ -2941,23 +2941,23 @@
     },
     {
       "path": "scripts/audit_license_catalog.py",
-      "sha256": "360148f18c0cbd54aa67987fad15c1832025f30698a16f41fc46210ba56488bb",
-      "size": 3577
+      "sha256": "bcd71416c15e2aa66490b7dd4c0dc3ea5f3d0c7587d961c711adae6c7e3657c2",
+      "size": 3496
     },
     {
       "path": "scripts/audit_skill_graph.py",
-      "sha256": "0588b1890ac867d772570a9dcb2b7b4bf26a11fac6db79ddb6960733cc3ef301",
-      "size": 4980
+      "sha256": "ffb2e65bd14901468186107ddf8b53856bf7fc952c9bb5c582ae3f1fb884d856",
+      "size": 4878
     },
     {
       "path": "scripts/benchmark_gis_examples.py",
-      "sha256": "23e102f590eaeae23525e310d3b29a4c2d011fd40ec5a54cf83ce2cc6c4dda88",
-      "size": 1807
+      "sha256": "83f555805476e90f0f2c4fa2422b878f356890be4cad5ff9563948ca3b88764d",
+      "size": 1760
     },
     {
       "path": "scripts/build_manifest.py",
-      "sha256": "2f22acb58bd247727b92f60499d511289d33ca19034946dbc85f297a3a5b2274",
-      "size": 4857
+      "sha256": "c1a6b7837de6bfb4d992c7a0b320e9ac914474b85ebc77ec969aff95d2bcd234",
+      "size": 4760
     },
     {
       "path": "scripts/build_skill_bundle.py",
@@ -2966,8 +2966,8 @@
     },
     {
       "path": "scripts/check_arcgis_python_env.py",
-      "sha256": "7e022946cb8a136fb52e5d967fb4e7d2f253fd7c0016431b2f97ab9486e0ccb0",
-      "size": 3632
+      "sha256": "8a5c52170cf812fd1d7ab774f6f25c38db7d877ddfd42fb798b41635fff76350",
+      "size": 3561
     },
     {
       "path": "scripts/compare_engines.py",
@@ -2981,13 +2981,13 @@
     },
     {
       "path": "scripts/crs_catalog.py",
-      "sha256": "ce37b8a13a04322d74a95957b730aab83340db487e0eba5e2f1d2cc53ef7312b",
-      "size": 10251
+      "sha256": "5defe477aa6bd24768de366d55b212fb06fee79e966b2e2820e832eccafef2b9",
+      "size": 10010
     },
     {
       "path": "scripts/development_journal.py",
-      "sha256": "2a5eb219ef41d1332c57a4220ceebbca62e8b9ed992d969d53ab48d83f9aeac2",
-      "size": 27252
+      "sha256": "998f6d1ef63f0ce172385d7873e118798b419c3fc1f6d6a214bae30e34719d07",
+      "size": 26690
     },
     {
       "path": "scripts/discover_engines.py",
@@ -3021,13 +3021,13 @@
     },
     {
       "path": "scripts/gis_data_flow_diagnostics.py",
-      "sha256": "427bd08710065a29ba3ec43a98f7f7f912e56a3079daf6f982132cdc1025077a",
-      "size": 8806
+      "sha256": "607fd41c9cff266e699755eb6f4c90d29fe46cfa22493747896d34134c36b021",
+      "size": 8628
     },
     {
       "path": "scripts/gis_ui_command_audit.py",
-      "sha256": "346387607cca93b23945466839ebac889b78beff9ebaf0ac77f32078f29fb6bf",
-      "size": 10883
+      "sha256": "9b309f81ed91540aa1ec2c1f9e95d7aa5d1496da57e7b6e922d5ff7b772bce98",
+      "size": 10640
     },
     {
       "path": "scripts/intent_router.py",
@@ -3041,13 +3041,13 @@
     },
     {
       "path": "scripts/mcp_tool_router.py",
-      "sha256": "8e5376b81ca5f92f3cac3ffe5ed269160e098e5c39c324a5555a2957935c2d1b",
-      "size": 7597
+      "sha256": "e7e74e975c00f2a88c9e646919dbd1bf07ac96cea1a8fbfe446c25905cf8acc9",
+      "size": 7450
     },
     {
       "path": "scripts/monitor_public_services.py",
-      "sha256": "a932be655eb2394ccfb789de7b39c9bbb2b576a64bfcdb19e21fd6f966821cb7",
-      "size": 4651
+      "sha256": "e819c9a932fba75fac481214188f91f3e465d6cdeb683e42b2e0fd7337357409",
+      "size": 4544
     },
     {
       "path": "scripts/native_toolchain.py",
@@ -3061,8 +3061,8 @@
     },
     {
       "path": "scripts/project_governance.py",
-      "sha256": "4abb7ce54974b93debeadfb3417fe13f40374c26d472384ebea9c4072bbcf70a",
-      "size": 37382
+      "sha256": "ecff212e1f00af157f06e40d1e116d930f9249c4a92a79dab1af1dfcbc78c818",
+      "size": 36694
     },
     {
       "path": "scripts/project_readiness.py",
@@ -3086,18 +3086,18 @@
     },
     {
       "path": "scripts/search_api_catalog.py",
-      "sha256": "a567c57e89d7f176d78bb5698271949f041d7030be42a5c21fff2a42fb92b282",
-      "size": 1638
+      "sha256": "8125e52b3658489cc1de3c56d98d82af4116fcc84f5538e81878351331778e28",
+      "size": 1596
     },
     {
       "path": "scripts/search_catalog.py",
-      "sha256": "6ad0e96e3d7472fec4fa36b5fad44e0746c80447959d2d7c6087162e4ff1a2da",
-      "size": 1775
+      "sha256": "dda49cca559d0e345c9e38812682d7ae13af8be5aa1aa0adf43a6e5916624d61",
+      "size": 1736
     },
     {
       "path": "scripts/security_audit.py",
-      "sha256": "47db12593bd3df60f1df8c5aeef883e5306bbd6b4dd024b11cdd2aad2c5b3388",
-      "size": 5318
+      "sha256": "f1a0d8ef3389f7c1b93f7819003e0a2edce32a3319859f85c4350ac45b8bbf60",
+      "size": 5198
     },
     {
       "path": "scripts/security_guardian.py",
@@ -3116,8 +3116,8 @@
     },
     {
       "path": "scripts/system_capability_check.py",
-      "sha256": "112da3f09b605ee47e53921166609cdab083b00a14a3c95272e46924c58f7ab8",
-      "size": 2941
+      "sha256": "c8401091f3db8f542d9a28e38aa0f979e6c19a728bfe3910f80dcfce07ee6c42",
+      "size": 2874
     },
     {
       "path": "scripts/test_runs.py",
@@ -3131,13 +3131,13 @@
     },
     {
       "path": "scripts/toolchain_discovery.py",
-      "sha256": "7a3c4d99698560c0c777cb9e29cdb131676d7e732689dbfd01a2fe6fe36b408b",
-      "size": 7049
+      "sha256": "9707e2a870c5b9cd815b25b96e7957d6bb5976c91e2cd12b9048a479d1ee7bec",
+      "size": 6896
     },
     {
       "path": "scripts/validate_api_catalog.py",
-      "sha256": "4e1a0f0fa1299845bb7022d4279be625a726630a2b22fc5bb635cda673ad294e",
-      "size": 4664
+      "sha256": "4248f59325844243ea865fdcb2a45b0eb4749025bc4d54a62d409ab0f2fbf92e",
+      "size": 4566
     },
     {
       "path": "scripts/validate_architecture_flow.py",
@@ -3146,13 +3146,13 @@
     },
     {
       "path": "scripts/validate_catalog.py",
-      "sha256": "9817a27ffc1f4d2148f0c3930e9eb85a5fd19a9da0d5cf79c6545f94bba1dcf7",
-      "size": 4658
+      "sha256": "0daf7f431530f931f9f54e3cd3fbc327312794c454d8d2e956cf9bc00e769e8b",
+      "size": 4575
     },
     {
       "path": "scripts/validate_data_repositories.py",
-      "sha256": "9e35f141675fee99a2c4ef0409e8a89d7bc2c2ca9befcfd1f94697c6de8e32d7",
-      "size": 3410
+      "sha256": "b26c85ccfb4600662967e8f69a800b1719ab42bed1d35fd80d129e08c91947c4",
+      "size": 3337
     },
     {
       "path": "scripts/validate_engine_profiles.py",
@@ -3161,8 +3161,8 @@
     },
     {
       "path": "scripts/validate_evidence.py",
-      "sha256": "de5ca307a9a76a1502ff9f80b0f100ea046de5137c480c6d59e3e36b8b3f3b09",
-      "size": 4033
+      "sha256": "d09034825bcc3fba0c87ff13199b1cb6af008b24a804cebb5408c58c287c392a",
+      "size": 3944
     },
     {
       "path": "scripts/validate_evidence_tiers.py",
@@ -3171,18 +3171,18 @@
     },
     {
       "path": "scripts/validate_mobile_device_evidence.py",
-      "sha256": "322917cd7b17646a054b97307f95514ae3ae7b8f068951f143f8042bfa6d123e",
-      "size": 4259
+      "sha256": "feeecbb86ba8b044696f424a796dcc1006364a6a793c5410616264cf8d82fb72",
+      "size": 4166
     },
     {
       "path": "scripts/validate_skill_pack.py",
-      "sha256": "75dadf69db2921124f4bf6f27f08cbc2e9dd80acc88e4312bfec90a6ff5f9307",
-      "size": 7389
+      "sha256": "1fa5d707b3a7841a70de590719a7b9cf722afcf29c0a1513f3b1c1966992529d",
+      "size": 7217
     },
     {
       "path": "scripts/verify_completion.py",
-      "sha256": "362c957eafdeff8b4b60c2b8093cb9e1f45498f05377b33ca14e60130fdc9031",
-      "size": 9895
+      "sha256": "5cc8ca45ec9ee22a0ee85c7e4e898c7b9105079f13ec038c8b410222170c0425",
+      "size": 9691
     },
     {
       "path": "scripts/verify_engineering_workflow.py",
@@ -3196,53 +3196,53 @@
     },
     {
       "path": "skills/agent-development-journal/SKILL.md",
-      "sha256": "18acf472c15a07453d74e341e296931facc87ac1fb75e9b554bda82704430352",
-      "size": 7448
+      "sha256": "ef125410f34a9e8562ced3c2fdbab153257c960b4284c6fac4edf606657d4f17",
+      "size": 7371
     },
     {
       "path": "skills/arcgis-toolbox-engineering/SKILL.md",
-      "sha256": "659da7131e38a0dc0f1815344fe8a717ddef09e72149ccca3bef398cc378ed11",
-      "size": 7563
+      "sha256": "eea7a936c8537123359296b997881e879ad3766e0b700d30de66aa47e4c77c5c",
+      "size": 7490
     },
     {
       "path": "skills/clean-room-reference-implementation/SKILL.md",
-      "sha256": "f503f7e405887788fdfdf249356c6a883ec4e02747ca67a377284e8a4dd8f5c3",
-      "size": 4566
+      "sha256": "65c21f9580129c926e3ee6898a3ddc4516615b88559744cc9f65de529fe9dbc5",
+      "size": 4509
     },
     {
       "path": "skills/completion-evidence/SKILL.md",
-      "sha256": "19650287d4cb35e143d5d75edecad722b9c9c4ec2e645279741513ec42088917",
-      "size": 3358
+      "sha256": "2225b54b35c1ba86fa021695234112e8187870a7ebea9d838fbb9de3e1d5934a",
+      "size": 3331
     },
     {
       "path": "skills/coordinate-reference-systems/SKILL.md",
-      "sha256": "8d5c0e14e451d15c4ad14c49ef44ba83fcf4bfa514e0a2cc2d094c0874348458",
-      "size": 7241
+      "sha256": "29268e7846ee9053d6e71a30e5e468dadcd8c0f16d7b3cefbcf4943a0035ba87",
+      "size": 7165
     },
     {
       "path": "skills/geospatial-ai-agents/SKILL.md",
-      "sha256": "717dd72ebc43f51d3cd381bfa0fbefc27d7412be88327f1b7e7f40ec1d0ce841",
-      "size": 5516
+      "sha256": "5da5b616bdc8d6b0f35f82014708800d29f49ecdc9a22fc7f997f53281358818",
+      "size": 5471
     },
     {
       "path": "skills/geospatial-api-integration/SKILL.md",
-      "sha256": "6e59a13d25c7348e3227cc264f1cf31ffafbb711c80f492acf957c69e01da03d",
-      "size": 8383
+      "sha256": "edf4c4dbdc1546b53cdbd5833c1ddd0abd64d589e7cf9fb800b67e62b0114e95",
+      "size": 8312
     },
     {
       "path": "skills/geospatial-data-catalogs/SKILL.md",
-      "sha256": "03fdd722253d24c477e8839023283d6aec3164ef99b5d449537337ae012fd225",
-      "size": 3720
+      "sha256": "b885926a53beaddd5ad2ee28d4e80f90cfe2b982d319f0f9f11c99a9f9cc2376",
+      "size": 3690
     },
     {
       "path": "skills/geospatial-data-discovery/SKILL.md",
-      "sha256": "51d14dad23eacacf678e9dbdc7322979c607f414f1e1db5dc2c8cdf6c5aab5db",
-      "size": 5833
+      "sha256": "1ea9530c3319917aa17bd3065869cb8aa604dd5f8a1c668bc596b405f865c65a",
+      "size": 5773
     },
     {
       "path": "skills/geospatial-data-processing/SKILL.md",
-      "sha256": "887b433a570efe7e062cc778daa46fcbc432e33441cea50ba755a3e7bec0bf2e",
-      "size": 3003
+      "sha256": "b874b5c2d23fa18bb13864f85e3b5f794c8b8a0d729788f397cb909fd81ce03e",
+      "size": 2977
     },
     {
       "path": "skills/geospatial-engine-selection/SKILL.md",
@@ -3256,18 +3256,18 @@
     },
     {
       "path": "skills/gis-architecture-visualization/SKILL.md",
-      "sha256": "76c93ea799fba554c3f806f49eb815707aafa972d3e4ead50f83eda7fab9d51b",
-      "size": 7965
+      "sha256": "670c8b8465b6f1bed0e195ee6159b6b90999eabbe77c5d39f8d4e294b5e5f1ab",
+      "size": 7923
     },
     {
       "path": "skills/gis-cartography-symbology/SKILL.md",
-      "sha256": "aadc8d2f474e8ad7f085baa9bd59ca037a847e1cb1ff2a973ec416094a185b8b",
-      "size": 11242
+      "sha256": "d0dd30b787e46c73d85a4aca0b21f4e6b3d00a28237a539faf0c3f6ef13d3518",
+      "size": 11164
     },
     {
       "path": "skills/gis-code-discovery/SKILL.md",
-      "sha256": "23c3d627f9d8403fb16d17dc16887221e4fac98ba1927c50eae57c51c8d0dea3",
-      "size": 6868
+      "sha256": "c4beb59c434335f0a14cd246b364a63c47dce1af26f4f27a83c0ec01f8150166",
+      "size": 6797
     },
     {
       "path": "skills/gis-code-discovery/agents/README.md",
@@ -3291,73 +3291,73 @@
     },
     {
       "path": "skills/gis-data-flow-diagnostics/SKILL.md",
-      "sha256": "fffecbf85e1c813eb05e66eb989696f946bb010aa5edb3020433193533a21a88",
-      "size": 4669
+      "sha256": "695fabb449f04dfd2ccf92294f98f6ff1a2d5dfa2666d8789682133ef41e59d1",
+      "size": 4640
     },
     {
       "path": "skills/gis-desktop-application-development/SKILL.md",
-      "sha256": "e5c4d8d193675851f75f8f55686464d36dd653284d5ab16c88541f1af5ec8800",
-      "size": 28921
+      "sha256": "ed801f2b3c4c987720bf34dfade2265bdd534553938dbbde26d36cdb54948193",
+      "size": 28700
     },
     {
       "path": "skills/gis-desktop-e2e-testing/SKILL.md",
-      "sha256": "99c162f4407c339f2495bcc422bd9dddcff2a22e949c6af3621850a6f0a0ce07",
-      "size": 4707
+      "sha256": "e9ecbf77bd2eccfa71ce70b3154ba6daec4776b55fe604b21a836fd6df0f788a",
+      "size": 4674
     },
     {
       "path": "skills/gis-development/LEGACY_FULL_SKILL.md",
-      "sha256": "a8a8b3bc66b7ab15ed85c601447071f12b726283df16e62ef631fa1750f2db40",
-      "size": 16230
+      "sha256": "0297e4f2c5b488f7eaf5a018dbe80bd220b199e9c1dd58e060c5cedcaa15636c",
+      "size": 16105
     },
     {
       "path": "skills/gis-development/SKILL.md",
-      "sha256": "777099d51123c8cc9510b8d79091cda746713f30027d442b8aef08fdcb9b5e02",
-      "size": 5577
+      "sha256": "b3f111b086e7c90729e05c845a9d58bb36ac9a5b348df6115bea8e61886ae631",
+      "size": 5507
     },
     {
       "path": "skills/gis-device-context/SKILL.md",
-      "sha256": "78ec2c8356dabc76e3655a8d1ce8e9d5b275c34a3dd85a493b0ebfc0dd50f0b0",
-      "size": 6439
+      "sha256": "8bdd6797d987933c33baf28fc2e0a922dc71f405d18d869debc9f96c8debbf1a",
+      "size": 6394
     },
     {
       "path": "skills/gis-internationalization-arabic/SKILL.md",
-      "sha256": "b5afb1cc633f94a62d3f43fbe2a15d9e36e0d0275a24a118bf7b930504af1de8",
-      "size": 5704
+      "sha256": "3a391853b1c668f1cda7e618bc0b899fd2948be59daf5f95a72b341dba8b0c88",
+      "size": 5648
     },
     {
       "path": "skills/gis-mobile-application-development/SKILL.md",
-      "sha256": "1ea0991811ccfe232f4b75fc30a2e0d2a3020b77fd6e17d16b7c44a65bdcf8ee",
-      "size": 8979
+      "sha256": "6586ccb7784c54a279ccd1d70c29528f77d59d8ec90019dbcee44f002738e148",
+      "size": 8918
     },
     {
       "path": "skills/gis-security-guardian/SKILL.md",
-      "sha256": "80652e9c3284ec000694884de6b0a9f47bc83ecd818b68eecdd3554f9826b3ce",
-      "size": 8062
+      "sha256": "a41f4f756d76d67ed63dca4a0f4147b9e88e0626bab1745c0d7474787347df3d",
+      "size": 7994
     },
     {
       "path": "skills/gis-ui-command-audit/SKILL.md",
-      "sha256": "54d1139f76fb36ea2ca38456f4afcf78de1d89480b89d8161ea6349ffdbc9ca6",
-      "size": 4722
+      "sha256": "f5e81a7b6213515d8ecd49e617d30468ef50e8e7b8aeac657807f5efc2af834a",
+      "size": 4686
     },
     {
       "path": "skills/gis-ui-ux-design-testing/SKILL.md",
-      "sha256": "abe97a9e782dd9aff28df9e213379f8083ea3993c4cc7a5391e9311c26446ba7",
-      "size": 5854
+      "sha256": "aacfd663e1fdb72d9e0d7072978620971fc9b3e250c6bb3484a46aec9466b45f",
+      "size": 5812
     },
     {
       "path": "skills/global-mapper-development/SKILL.md",
-      "sha256": "0483ca296b2e2bdea945962c87967b3f31789069414a0d33818fbf1e4e8e7fbd",
-      "size": 5367
+      "sha256": "692634e7dff9f8e8b7626d87714416bae4c68515b4ff06f827d86b3e8db7af52",
+      "size": 5320
     },
     {
       "path": "skills/kml-kmz-engineering/SKILL.md",
-      "sha256": "4d636b1896a840e44a11c0d4749cd7eeacf54f445889534c6db73d129b11df5d",
-      "size": 18188
+      "sha256": "73f137877addbe1b47945ab9328ee542e306229700783ad42cbbb5420761f6b6",
+      "size": 18046
     },
     {
       "path": "skills/mcp-integration-and-tool-orchestration/SKILL.md",
-      "sha256": "c8b96d067cb3c45af1b456df8657e843b3c80a55af8c19a5c9684ca3f0dba42c",
-      "size": 4008
+      "sha256": "532cd05d456af36a97dc0513ef67be22dfb51acb061eb417c42c98dc26ba4fa7",
+      "size": 3975
     },
     {
       "path": "skills/modern-web-guidance/SKILL.md",
@@ -3366,18 +3366,18 @@
     },
     {
       "path": "skills/prompt-intent-orchestrator/SKILL.md",
-      "sha256": "b7825163570b4c53af76d26dde640821146b39f559bc7a527b47989adb17f1e3",
-      "size": 12750
+      "sha256": "e2014f7ef29be51ef6608540d385fedbfc872c3aa9b880f7755610c5d850bab0",
+      "size": 12668
     },
     {
       "path": "skills/qgis-engine-integration/SKILL.md",
-      "sha256": "3f325bbeb4776e57e3645b7851b32474e8fff7eaaf0ad00f6a531f6eed99fbf1",
-      "size": 7660
+      "sha256": "24710042fd1af6e6b4da840a8abebe4639b17bee8da5867b269654106252cb72",
+      "size": 7598
     },
     {
       "path": "skills/qgis-plugin-development/SKILL.md",
-      "sha256": "094fd5e6c1f4be4fefc6eafa125054f614e78f0d3d2dc383e512021104cd633a",
-      "size": 3181
+      "sha256": "aa8d955ab2489687e5532d06d0f934368decb0df3db940b6697219b310f45307",
+      "size": 3139
     },
     {
       "path": "skills/remote-sensing-pipelines/SKILL.md",
@@ -3386,18 +3386,18 @@
     },
     {
       "path": "skills/spatial-databases/SKILL.md",
-      "sha256": "a6e25afffa45afe230ec7a30c1cba3456fbc2bccec53217060ad0744298ab26c",
-      "size": 2488
+      "sha256": "0bce7a462993ba34f8ac1492699c230b8930df0fa68d1dfcce986f1ff36fb762",
+      "size": 2462
     },
     {
       "path": "skills/system-capabilities-and-permissions/SKILL.md",
-      "sha256": "da00ea9fea35fdb4de42704415c19e442468e1ff91d43376243229eaa4a709b5",
-      "size": 4735
+      "sha256": "d986f46b074cbadfcad6318e0a37a67cf60e7a49a342dcaa716946000f651184",
+      "size": 4705
     },
     {
       "path": "skills/terrain-hydrology-lidar/SKILL.md",
-      "sha256": "5af8e797793845dac408c31d93ef4c65e0c400b321d0b06736eb41b89bb6726e",
-      "size": 4485
+      "sha256": "35ac6f0ee902d30c752f6633a3a152cef0e67c3a73e73f2f61d25942e938dfc4",
+      "size": 4455
     },
     {
       "path": "skills/visual-asset-discovery-integration/SKILL.md",
@@ -3421,8 +3421,8 @@
     },
     {
       "path": "skills/visual-asset-discovery-integration/agents/openai.yaml",
-      "sha256": "eee02cb7000613bfe8f19b784a3a556c659188b1783e5cbaa51c9a67c4cb6f41",
-      "size": 342
+      "sha256": "b152c78f08d7dd01c711826f7b88194c2607d0d71f058683c4f7a7b33d368313",
+      "size": 338
     },
     {
       "path": "templates/ARCHITECTURE_DECISION_RECORD.md",
@@ -3436,8 +3436,8 @@
     },
     {
       "path": "templates/GIS_ACCEPTANCE_REPORT.md",
-      "sha256": "6c71279307215f7d9007695b651f11dac4685218c380bae803a1677eb9dab5e9",
-      "size": 1124
+      "sha256": "3c3152f6fb15bc3f9ba142746161a9830ebe86e1224a75356512948456883069",
+      "size": 1096
     },
     {
       "path": "templates/REFERENCE_UI_COMMAND_MAPPING.md",
@@ -3456,33 +3456,33 @@
     },
     {
       "path": "templates/arcgis-pro-toolbox.pyt",
-      "sha256": "1254227171a432fd0a098b09869d32d15f73fd0ad9bc17ec3f751e474b3f6254",
-      "size": 2046
+      "sha256": "73413499cfa520d06df89b69f2e2b6aa67665fbde294f0998d0ee356e0e3a8ad",
+      "size": 1995
     },
     {
       "path": "templates/arcmap-script-tool.py",
-      "sha256": "d13c31a9738a8acbf62aee6e9b3fdabb25e026b14f4626a1b9c71a18b707ce6f",
-      "size": 890
+      "sha256": "c47b1f4b042e4ebeae6568d9af20b1eafebb7cb013792448312253c3856014b0",
+      "size": 867
     },
     {
       "path": "templates/doneproof.example.json",
-      "sha256": "4dd12ae4e0dc9930cb4d34a0808b770f03cac37b42ce7642988ee7b7ae137fee",
-      "size": 735
+      "sha256": "5ad26b6cfaedf846cd5642b575786267a5e6436c0aea0f54589f6380275b183f",
+      "size": 706
     },
     {
       "path": "templates/gis-acceptance.example.json",
-      "sha256": "2485fdca34a0482f5649945649a3498112d7a126a04eba726f71615bf954153e",
-      "size": 1016
+      "sha256": "8ade725563290355796e1b1f163d2ab3fb6b64277d9fc64f0b46c5cb9e061fd1",
+      "size": 988
     },
     {
       "path": "templates/qgis-processing-algorithm.py",
-      "sha256": "c11f831683dba3541a46b179f78a9886cd04cf6715675938fc511be903b618ac",
-      "size": 1504
+      "sha256": "86801341d3b684ddccb08eca26491d54f7a06192fa2d6969e29a8e6237680115",
+      "size": 1460
     },
     {
       "path": "templates/standalone-geojson-summary.py",
-      "sha256": "4c6ac44c36a9a668c75c6e667efc4d6e9369a7fdee963dbf70d0ff7d1f328f4c",
-      "size": 1010
+      "sha256": "dfa26e27362e950011956d60d7cd5830702c6477257a1dd3c2e5ed917cdb1570",
+      "size": 984
     },
     {
       "path": "tests/agent_behavior/holdout_cases.json",
@@ -3516,13 +3516,13 @@
     },
     {
       "path": "tests/test_api_catalog.py",
-      "sha256": "a282d9d8c926545080a6ce3e2b965407de49f2255b9dfd258e95e8b687d135cb",
-      "size": 6196
+      "sha256": "d72670f265b8fed065e5feab183fe2e383e7a47acf5cb5c04733dffacdf5f731",
+      "size": 6096
     },
     {
       "path": "tests/test_archify_integration.py",
-      "sha256": "1477e94fcb587ab7578559b1eed514ebb8c68076951e639852f8a7fcc11433c4",
-      "size": 4829
+      "sha256": "4c2ce4aecf8368c4ffcc316c38663c3a117ce46f8768e3d2311374dce3f126fd",
+      "size": 4740
     },
     {
       "path": "tests/test_architecture_intent.py",
@@ -3531,23 +3531,23 @@
     },
     {
       "path": "tests/test_cartography_device_context.py",
-      "sha256": "cc3e312e96bb8c19c0e59b8fbbbba3e744f7a64161ae1a2eb20a299cf68ce1bc",
-      "size": 2695
+      "sha256": "9c9b9e028d4f9ce05f20ac7200f9ca36b194ebbdda15927ccee67391df89a3f5",
+      "size": 2635
     },
     {
       "path": "tests/test_catalog.py",
-      "sha256": "1abb7c1cac99c3aa069a32e4e77d83e0ccf1c15c71b0e2d6e0d67168c361927f",
-      "size": 3129
+      "sha256": "84f5a012ccb49f52771240e0bcfe597378b4b69d549f8947426af258c42f4c8b",
+      "size": 3058
     },
     {
       "path": "tests/test_catalog_validator_failures.py",
-      "sha256": "7b5851d7f3a70c59a5593c298c14f63c45d84c3a67b29d8e3948ad4723373949",
-      "size": 4656
+      "sha256": "c780a01326cc5dc7a1d00099965f208c325d67d250c72df483c71baf910266bc",
+      "size": 4560
     },
     {
       "path": "tests/test_clean_room_reference_skill.py",
-      "sha256": "6ec879a2566c3432139b85982338d8bd25e15e00b66136f234a0faf35a3aabe3",
-      "size": 2004
+      "sha256": "f3a1d4bd887b0dc260009762f8e20ed0eaa09c5d531bce6368cf7a63b35454c4",
+      "size": 1965
     },
     {
       "path": "tests/test_code_discovery.py",
@@ -3561,13 +3561,13 @@
     },
     {
       "path": "tests/test_crs_catalog.py",
-      "sha256": "12abca796b7c8aa8c8d937ea304828438509c68724c193fafd995fe1f0117e1e",
-      "size": 4468
+      "sha256": "afb6f72515b7dfd0c85cd74baca5cccca2c7a3d6b9a900cb620f87bac9384b70",
+      "size": 4383
     },
     {
       "path": "tests/test_data_repository_catalog.py",
-      "sha256": "d83da1b3fc481fc3edebac882df392903d67493115f6a3de10d36711c108e745",
-      "size": 3610
+      "sha256": "67e307783ebf43a685f00850b97ee6117dcb12cd203456625f078756c587614f",
+      "size": 3538
     },
     {
       "path": "tests/test_development_journal.py",
@@ -3581,13 +3581,13 @@
     },
     {
       "path": "tests/test_doneproof.py",
-      "sha256": "f951fc6734d57c8835c5ca6014d879398ab7ef427a2176e573b1ca1cfef3c2f1",
-      "size": 4198
+      "sha256": "67b02dffc540067567a0e9753e78b1692c0396d08268849dc8d9809d7e734145",
+      "size": 4097
     },
     {
       "path": "tests/test_earth_view_reference.py",
-      "sha256": "6ef9f4b1b5705ba724b4ec6014d65b2359c76cd5463b3cbce7dcc0f7227a5d36",
-      "size": 2574
+      "sha256": "f7eefe20e5778d50eddaab4624c1fc7da1de67c48c5c25179e23a70b0fd0aeff",
+      "size": 2529
     },
     {
       "path": "tests/test_engine_architecture_migration.py",
@@ -3616,13 +3616,13 @@
     },
     {
       "path": "tests/test_esri_python_env.py",
-      "sha256": "9a5e91a270dc952bc5e9befe4de710ceb7d7fabb1f04253c8098f4a9f7c627b6",
-      "size": 3514
+      "sha256": "8d73e2367afdc264017ae68ce23005029c2c4fb971c3edfd6b3074b331c4c9e1",
+      "size": 3448
     },
     {
       "path": "tests/test_evidence_contract.py",
-      "sha256": "6398b22f2cbe188e303e79b0a9e49649f085859dbcb5b17ec3732a981781e7c0",
-      "size": 2038
+      "sha256": "ba2c2315e910cd5b205d6c152b74e2d35c86f6a5ca70128f636112921ea0f62f",
+      "size": 1990
     },
     {
       "path": "tests/test_evidence_tiers.py",
@@ -3631,58 +3631,58 @@
     },
     {
       "path": "tests/test_free_first_presentation.py",
-      "sha256": "12022b1a4b3d86fcc1a272fcdd67ba68c33a55a2d9dfad3c6a66a374edf8cd5b",
-      "size": 3812
+      "sha256": "1a96bdd70dc52cde096c5df310e727bb38bafad26ba976038a45defdc4a27304",
+      "size": 3742
     },
     {
       "path": "tests/test_geocoding_example.py",
-      "sha256": "b3cb20e2c8a9cb6bcb51720ca38960b64841a6135268be7f89eea72e8b4ae113",
-      "size": 2564
+      "sha256": "56ac0d8db192f8b917f02ef0d06d96beba6df2ca2f496cea7505b5a5ebe1541d",
+      "size": 2510
     },
     {
       "path": "tests/test_gis_fixtures.py",
-      "sha256": "19161b923ddf44b6ab2f3d8e466cbc755985487bec2d1021ce7cfcacf897dd68",
-      "size": 1981
+      "sha256": "af2840a2863c8a44c1e3a721b513bf428b34835734ae2ffeb1250c9711632e73",
+      "size": 1939
     },
     {
       "path": "tests/test_gis_mobile_application.py",
-      "sha256": "6434fe697421893d617805ee589c055b6df9fcd17d50032d640fb3de22620c9b",
-      "size": 7347
+      "sha256": "051decadc901a0d134e4dcebd31bbc7ed039b22e606ece4dcc1a8422342e06b7",
+      "size": 7212
     },
     {
       "path": "tests/test_gis_mobile_device_evidence.py",
-      "sha256": "31651927669f46826897dfc1d178403c6d71f0728e23286b31fb14d3ecc70d15",
-      "size": 2964
+      "sha256": "54d5147686e4ffa100dc1d91b0ff0bd58c674c11f7ab8c417492d09716138332",
+      "size": 2896
     },
     {
       "path": "tests/test_gis_pathway_behavior.py",
-      "sha256": "48bde7b10322fc3efc018df8518ff83bce4c6c265f5309780c35ded907b241e4",
-      "size": 4635
+      "sha256": "df7ff080a2d5895d154fd47c2914440cd95d4008ca88f2d9c1493cbbe0e7da20",
+      "size": 4530
     },
     {
       "path": "tests/test_gis_software_source_registry.py",
-      "sha256": "225c3e8742928b08f01ef843c4a6bcb295f0ba09d3c6b20776341bb38e52539a",
-      "size": 5046
+      "sha256": "be18b027b373ab8e543468ba266ccc64e0d36bf0f855cc10f6804c9b3b22bef4",
+      "size": 4946
     },
     {
       "path": "tests/test_gis_ui_quality_four_skills.py",
-      "sha256": "86e00775e6149d29f5ea876fd1c4f20d713550055e5ed3190dc7caa4a2d8d506",
-      "size": 11734
+      "sha256": "d06f39987a5910ac5d858fffee229f84b2348492975a2055dc61096a97141f82",
+      "size": 11500
     },
     {
       "path": "tests/test_gishub_software.py",
-      "sha256": "194912c706b8a79bf731ff3863b31d8d5b7d99abfaa6167f676d6ec9f105c859",
-      "size": 2326
+      "sha256": "52f3dfae7c20bff23253b1b49bb2a28e00d5639670907dd9a4ff51d8d3fee3b2",
+      "size": 2272
     },
     {
       "path": "tests/test_global_mapper_references.py",
-      "sha256": "6a67f1fa1714b2585edcb4ced159fcd46121afe6215c98a19aa97e749c7415ac",
-      "size": 3520
+      "sha256": "ff33e6a8144f3ec9e154cceefba65ff0265dd24bed23098a961473440a8b6559",
+      "size": 3456
     },
     {
       "path": "tests/test_goal_first_workflow_cli.py",
-      "sha256": "0bc30379b48a3a82927b67c140c7ee3188ca1b8b492cd0cbe57ddd3c2f331d52",
-      "size": 3744
+      "sha256": "437922e428137be58639f51c9a7148ac16278d363a9def499bba4a6cec6fe9e7",
+      "size": 3668
     },
     {
       "path": "tests/test_golden_qgis_coordinate_audit.py",
@@ -3691,73 +3691,73 @@
     },
     {
       "path": "tests/test_google_earth_blog_reference.py",
-      "sha256": "4002295195e86790ff262b3b837cebe67ae819a057cb3535c1e4ba95aebce112",
-      "size": 3245
+      "sha256": "1eb46cc0acab369b719d4c43bdaaa1beabb88a622bc220b26b0973eb3f44ad83",
+      "size": 3176
     },
     {
       "path": "tests/test_home_redesign.py",
-      "sha256": "1d2adef0efefe56d5bf831674d07c1531e44f704d8c05ba80f0641040c7eefc8",
-      "size": 4943
+      "sha256": "9957b0e4068a69b807dcc7af73ee7a6efec34b51ec9a8935b14a8d79320a43d2",
+      "size": 4845
     },
     {
       "path": "tests/test_how_to_use.py",
-      "sha256": "c67348a5021d1568f9779b10b762bbabc551eedc18ad53e3540bb576f4ca957c",
-      "size": 3029
+      "sha256": "a9577fc21892c5d35ec27d86d102b43886df00ba1da0800a2efcddd3bf0f179c",
+      "size": 2960
     },
     {
       "path": "tests/test_icon_manager.py",
-      "sha256": "5ec2c5c50e4fc68a3066d22dee93531135ed14d656344736a6e3ef47b2130e8b",
-      "size": 6787
+      "sha256": "3ada0d6cda83aa95c2ae2797606ba850d1d635d6fea636f209b216b52e99430d",
+      "size": 6648
     },
     {
       "path": "tests/test_intent_orchestrator.py",
-      "sha256": "43c0e149839bddb1b9b8af9e4033cc50b5e04f890735cf069807a3dc760f8e66",
-      "size": 9563
+      "sha256": "fc33ee1c8ffa75168a2cf6548324f1fc4d14f057fa03e0abae7612ebfc696682",
+      "size": 9383
     },
     {
       "path": "tests/test_interactive_hub.py",
-      "sha256": "e7215ff9f40843c62aaff6f0d9e4e015f17efed6bde148acbc342700fa361c9c",
-      "size": 4397
+      "sha256": "65ffb6adaf3c6ee71600a1aa731f4f04f217937f644639d994dd213d7205ff0e",
+      "size": 4304
     },
     {
       "path": "tests/test_kml_kmz_contract.py",
-      "sha256": "74f51bb8bd37bd164572a2908a4b9ad013906fe9354b32ac9a06a2fe3173772b",
-      "size": 3718
+      "sha256": "a9d1fdcead3dda78757d354f73a7b84e7db02176f4d3aed5b30b0a82d753c1a4",
+      "size": 3622
     },
     {
       "path": "tests/test_kml_license_review.py",
-      "sha256": "7d0399e4c046b0265b1133bd1b1c125b1a97f6941dac5ca869ae3ccef87f7b3b",
-      "size": 2386
+      "sha256": "240d339038ae3603886c8e8fea7b886f9ec324c552e494ea183bec8ebf547a4d",
+      "size": 2339
     },
     {
       "path": "tests/test_kml_preservation.py",
-      "sha256": "171d099860d41133c77e42eafd287b2966b0ff548b8c2807dacf8f5590ecdfb1",
-      "size": 3715
+      "sha256": "1a45b346f23152a5b020f7f3215b4f5d2a9e817d3431f1cd5d07299004a8b657",
+      "size": 3646
     },
     {
       "path": "tests/test_kml_style_preservation.py",
-      "sha256": "77cfc5f67a79c1ba4e22e3f9f2b12e84f23abf88b62b031f583c3dbed67339c8",
-      "size": 5329
+      "sha256": "5d4036f96df99392f577e70f51ea8ed1be4f5e7d86a72616f8528c3b74b936be",
+      "size": 5220
     },
     {
       "path": "tests/test_landing_page.py",
-      "sha256": "61f7b4c82417d57f44cd08f3b42a157d4f5cf643b02474b77af5b0b9046bf7b8",
-      "size": 8681
+      "sha256": "1e930f6d797eb32044f3d95c445089ce6598454438e320d417f5f7d9d6050470",
+      "size": 8520
     },
     {
       "path": "tests/test_license_audit.py",
-      "sha256": "b62e0ec73a74db4efc310119f673a680aaf9c4ce17fb00c0527429a380468dc6",
-      "size": 2448
+      "sha256": "91bdc3743715b9c35df4a5525e08ce0649dd5e68f022d5862866b4a954c14c4d",
+      "size": 2402
     },
     {
       "path": "tests/test_manifest_and_metadata.py",
-      "sha256": "6d5295525a52f745acf78a169aef2a4954123fd44293418264f24eb2b9904eb0",
-      "size": 2043
+      "sha256": "1ca27a39e7e2217fc68002cf940da5d80d01f5fed7a52a4884c419056e59bc6a",
+      "size": 2007
     },
     {
       "path": "tests/test_mcp_tool_router.py",
-      "sha256": "5e1ec94be785089c72363179724561e78775f0c549608840a7ce209ba6a7872e",
-      "size": 4627
+      "sha256": "bcfe5a627dd79024a7c3e75809538b3b65767fa35c597c764da23c6d32031823",
+      "size": 4545
     },
     {
       "path": "tests/test_mobile_gis_expansion.py",
@@ -3766,8 +3766,8 @@
     },
     {
       "path": "tests/test_owner_case_studies.py",
-      "sha256": "ab2e0cd69c8fd22846c1bbbb8d800b88c7607c8cfcacfb1385d274e07b122fd9",
-      "size": 2727
+      "sha256": "fd33f0efb81af6e99e3d77d41de285630d113f6f522e08e2af381716cac50811",
+      "size": 2664
     },
     {
       "path": "tests/test_p03_knowledge_base.py",
@@ -3791,8 +3791,8 @@
     },
     {
       "path": "tests/test_p10_comprehensive_matrix.py",
-      "sha256": "cfef515104bb3d0de6b2214c100ed298b6d9691581e08975b849ad480de2ea88",
-      "size": 15170
+      "sha256": "12a8149d8db88cd7612267712dc244860794de02ea067a48a513fb545de6701e",
+      "size": 15826
     },
     {
       "path": "tests/test_plugin_lifecycle.py",
@@ -3801,13 +3801,13 @@
     },
     {
       "path": "tests/test_production_examples.py",
-      "sha256": "8dba8a608ef8f64b4df6eb4f5a9dcffc075d30ff65a8e00c7d57df9384377da4",
-      "size": 2986
+      "sha256": "c052301a13eff8268fb59731f0903a1470cc8689f1367cc738929bf928a6b974",
+      "size": 2920
     },
     {
       "path": "tests/test_project_governance.py",
-      "sha256": "372bed290589859a57cea14d75e79177ff86df4964bda69ba19c72c1d91db3d9",
-      "size": 15264
+      "sha256": "61336a83d4637649891d3a066b586bc6deb025410ebdcab510fd59a16fff0c1e",
+      "size": 14997
     },
     {
       "path": "tests/test_project_readiness.py",
@@ -3816,28 +3816,28 @@
     },
     {
       "path": "tests/test_project_wizard_behavior.py",
-      "sha256": "2ea1f431ad220d559be99088e5ee3375927009f29d852703056c2e8e4141b4a7",
-      "size": 21546
+      "sha256": "27e21d45e0a2b8c361b6371b2567d8848276191fc27fb85abf74da373e14c25b",
+      "size": 21161
     },
     {
       "path": "tests/test_project_wizard_integration.py",
-      "sha256": "49edcfdefaa50fbf1b7b6ad2c4e030bdaef1ccdfc403465fb3feb51a8849909e",
-      "size": 3155
+      "sha256": "c96668d214c53eb579f603f9d0a6023fbc61fe42677f59939f685044228dddce",
+      "size": 3089
     },
     {
       "path": "tests/test_qgis_engine_integration.py",
-      "sha256": "ef50438cc3ad32229cacaa93809c925664a96e789babc51cc6b831a4351e553b",
-      "size": 1951
+      "sha256": "6ea4068208cee2b196929b1e35b4b80e7fd467353c480e60c47226150da28bbd",
+      "size": 1913
     },
     {
       "path": "tests/test_readme_layout.py",
-      "sha256": "abf5aace64fed0f2bb54f037afdc28169537a7863fa3203668f996129acb73de",
-      "size": 2423
+      "sha256": "18a2390562ce045dcc7bdd3996df64fc66c0a90605cb1c041c8d1c20f479de82",
+      "size": 2374
     },
     {
       "path": "tests/test_release_readiness_contract.py",
-      "sha256": "4d8ccc04898d6a068994f904fc07bb900aa25968e1cb3bc5ae3599e93cfa025e",
-      "size": 6531
+      "sha256": "08c88138a93ea71d7277f8c9835742484d1db1a72be8a0bee23ddccb38a4e343",
+      "size": 6394
     },
     {
       "path": "tests/test_remote_sensing_indices.py",
@@ -3846,13 +3846,13 @@
     },
     {
       "path": "tests/test_repository_internal_links.py",
-      "sha256": "0eff4cf5d86ef3650708de3bd31c1516186982bfbcd1a20ff3eccae18b32ec90",
-      "size": 2104
+      "sha256": "461cb0967f7b89052855c98d73fc818c91a5b13e57a799ac6ac602086071a060",
+      "size": 2051
     },
     {
       "path": "tests/test_repository_orchestration_contract.py",
-      "sha256": "9aff48d949d8ef85a47a57a3faf3b5ce891140c01448a216d9c2abe686f3e658",
-      "size": 2895
+      "sha256": "30b6733d0f55cb5c8f08816a6f7698921b9e3502393079559f82fd63d2be754c",
+      "size": 2827
     },
     {
       "path": "tests/test_security_guardian.py",
@@ -3861,13 +3861,13 @@
     },
     {
       "path": "tests/test_security_performance.py",
-      "sha256": "7ebafb6f7da59ddd1e0e7c86e9a9daa2c0531cfe2867f87578b156de32a2b9d7",
-      "size": 1007
+      "sha256": "1420b908dbafb4a606672397e6f89bd796fa062fc9b08eee7ae6a9b7f00b4180",
+      "size": 985
     },
     {
       "path": "tests/test_service_monitor.py",
-      "sha256": "052c19453e2bc5c9dd9b282b12a16fda54af2e7980fa0f3315566c14f9806268",
-      "size": 1811
+      "sha256": "798a9b14764a8970aa8e33b6a0d84323a80f8729f997952ef6e5e285b85f1fa3",
+      "size": 1777
     },
     {
       "path": "tests/test_skill_distribution.py",
@@ -3876,8 +3876,8 @@
     },
     {
       "path": "tests/test_skill_flow_audit.py",
-      "sha256": "3f0808e78c92f8522518ca6566a6233a5fafd2d03d5297242368544acb1878c3",
-      "size": 3786
+      "sha256": "366dc1dc73052a24743520f4d51391284f190316a61cb001b87bc6f46a740bc2",
+      "size": 3710
     },
     {
       "path": "tests/test_skill_intake.py",
@@ -3886,8 +3886,8 @@
     },
     {
       "path": "tests/test_skill_pack.py",
-      "sha256": "f0136ec150c82bb8c39905672320cec45b5ac032fb6273fd449982930c6ce63c",
-      "size": 3006
+      "sha256": "22442694f6946912cd09f4dc8fd368ad7d45306d9722a9be59b42f62ebe29e7f",
+      "size": 2946
     },
     {
       "path": "tests/test_skill_readiness.py",
@@ -3896,18 +3896,18 @@
     },
     {
       "path": "tests/test_stac_offline.py",
-      "sha256": "fad783edb751f87eb3291bdd633d83dec6418a85884e637a906cdc1adbe7e022",
-      "size": 1622
+      "sha256": "adf518fc5b90e1056f33395a03ff2989cd8f60580079dd3276370ab83143bde4",
+      "size": 1583
     },
     {
       "path": "tests/test_system_capabilities_permissions.py",
-      "sha256": "4352d9eab750e90e7d76d676cf5201587d7c20d3a81e81e30735a3740b81b19f",
-      "size": 2874
+      "sha256": "4595f4c0af00498423aecf5e90ebae61638c3166f0ebd048729f65da2b7cbf54",
+      "size": 2814
     },
     {
       "path": "tests/test_terrain_slope.py",
-      "sha256": "0a1ae17daa705127259d632a150f0404fdf32b5dea83bbfe5d2ba1200126cfba",
-      "size": 3185
+      "sha256": "45986cf4078b89388ab8dd4645d0e0ed6d06c773a49af08ca5e904f72bcdcf73",
+      "size": 3117
     },
     {
       "path": "tests/test_test_runs.py",
@@ -3916,8 +3916,8 @@
     },
     {
       "path": "tests/test_toolchain_discovery.py",
-      "sha256": "509141841f1e0690370542adecd3b23f97d42edf0f5b1c8594e46ba7c5c67883",
-      "size": 11645
+      "sha256": "66af659146dea8955b50fbfe7c957bdf0ef2a549b5dfd47a05d1d32427cb4bc5",
+      "size": 11440
     },
     {
       "path": "tests/test_urban_design_competency.py",
@@ -3941,18 +3941,18 @@
     },
     {
       "path": "tests/test_website_runtime_integrity.py",
-      "sha256": "43d03b0c3943bf00a6dd5ba58c57af288dbadd4a5264fe2b5674aaae05868a23",
-      "size": 2899
+      "sha256": "abbc36d225200a942b15300ef66c54fa9b1fbd5113ff50f28fafc42a0047cbea",
+      "size": 2822
     },
     {
       "path": "tests/test_workflow_event_policy.py",
-      "sha256": "3c1b404d981049019da02281cdb56cf7c0de2571c28dd1df7779f4fb4e5490be",
-      "size": 1432
+      "sha256": "933a616bd8b0391d7eef26766b953568087ccfeda9890736337d8518c83992f0",
+      "size": 1401
     },
     {
       "path": "tests/test_world_gazetteer.py",
-      "sha256": "4af38f260457796950145220b2e1a976d5a3bc482ded280f7573eb21a303179c",
-      "size": 3177
+      "sha256": "e1920e699134cac0d243b6d3e5778c87a97a4fe25e4badbac1631658a2ab9ad7",
+      "size": 3103
     },
     {
       "path": "tests/web-gis/web_gis_contract.test.mjs",
@@ -4008,7 +4008,7 @@
   },
   "manifest_scope": "all bundle files except bundle-manifest.json",
   "schema_version": "1.0",
-  "source_commit": "7c0eb7da684c2670d5e020cbcc6c3b9f6de751bd",
+  "source_commit": "cb46a75f15026752760e0e489f4ec4520bffdd7d",
   "source_roots": [
     ".github",
     "assets",

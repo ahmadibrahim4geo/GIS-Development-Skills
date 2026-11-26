@@ -4,8 +4,8 @@
   "display_name": "Google Antigravity",
   "phase_status": "ACTIVE_P09",
   "version": "0.3.5",
-  "source_commit": "7c0eb7da684c2670d5e020cbcc6c3b9f6de751bd",
-  "source_digest": "76eafea2bb37750a418aa60e53701f0accde76ee2b6fefc1dd1c14f6893d6c05",
+  "source_commit": "cb46a75f15026752760e0e489f4ec4520bffdd7d",
+  "source_digest": "0a5f4803de594b86954b0f8a164c4a5cf7928ab02700255dc0d545dcd5554393",
   "carried_components": [
     "skills (37)",
     "references",

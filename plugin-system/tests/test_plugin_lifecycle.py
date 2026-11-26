@@ -12,6 +12,7 @@ import sys
 import tempfile
 import time
 import unittest
+from unittest import mock
 import zipfile
 from pathlib import Path
 
@@ -427,20 +428,21 @@ class ExperimentalMockAdapter:
                 encoding="utf-8",
             )
 
-            full_res = pipeline.run_pipeline(
-                repo,
-                mode="full",
-                selected_platforms=["portable"],
-                owner_config_path=owner_cfg,
-                write_report=False,
-            )
-            self.assertEqual("SYNCED_VERIFIED", full_res["platforms"]["portable"]["sync"]["state"])
+            with mock.patch.dict(os.environ, {"GITHUB_ACTIONS": ""}):
+                full_res = pipeline.run_pipeline(
+                    repo,
+                    mode="full",
+                    selected_platforms=["portable"],
+                    owner_config_path=owner_cfg,
+                    write_report=False,
+                )
+                self.assertEqual("SYNCED_VERIFIED", full_res["platforms"]["portable"]["sync"]["state"])
 
-            # Verify live hash match -> tamper installed copy -> OUTDATED (PL-T29)
-            cfg = [c for c in registry_mod.list_platform_configs(repo, registry_mod.load_platforms_registry(repo)) if c.id == "portable"][0]
-            adapter = registry_mod.load_adapter(repo, cfg)
-            ctx_res = pipeline.run_pipeline(repo, mode="status", selected_platforms=["portable"], owner_config_path=owner_cfg, write_report=False)
-            self.assertEqual("UP_TO_DATE", ctx_res["platforms"]["portable"]["state"])
+                # Verify live hash match -> tamper installed copy -> OUTDATED (PL-T29)
+                cfg = [c for c in registry_mod.list_platform_configs(repo, registry_mod.load_platforms_registry(repo)) if c.id == "portable"][0]
+                adapter = registry_mod.load_adapter(repo, cfg)
+                ctx_res = pipeline.run_pipeline(repo, mode="status", selected_platforms=["portable"], owner_config_path=owner_cfg, write_report=False)
+                self.assertEqual("UP_TO_DATE", ctx_res["platforms"]["portable"]["state"])
 
             inst_manifest = sync_dest / "bundle-manifest.json"
             bm = json.loads(inst_manifest.read_text(encoding="utf-8"))
